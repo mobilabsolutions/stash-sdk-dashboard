@@ -2,7 +2,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
-import { theme, GlobalStyle } from '../components/style'
+import { theme, GlobalStyle } from '../assets/style'
 import { LocaleProvider } from '../hooks/use_localization'
 
 const getLocale = req => {

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import localizedNumber from './localized_number'
 import localizedText from './localized_text'
-import texts from './texts'
+import texts from '../../assets/texts'
 
 const localeContext = React.createContext('en')
 localeContext.displayName = 'LocaleContext'

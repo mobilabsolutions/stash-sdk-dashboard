@@ -4,7 +4,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 
 import { useLocalization } from './index'
-import { withTestSetup } from '../../components/test'
+import { withTestSetup } from '../../test_utils'
 
 const PaymentDashboard = () => {
   const { getText } = useLocalization()

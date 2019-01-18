@@ -3,7 +3,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { withTestSetup } from '../../test'
+import { withTestSetup } from '../../../test_utils'
 import H1 from './h1'
 import H2 from './h2'
 import H3 from './h3'
