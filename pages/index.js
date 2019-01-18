@@ -1,13 +1,11 @@
-import { Localization } from '../components/translations'
+import { useLocalization } from '../hooks'
 
 export default () => {
+  const { getText } = useLocalization()
+
   return (
-    <Localization>
-      {({ getText }) => (
-        <div>
-          <span>{getText('Welcome')}</span>
-        </div>
-      )}
-    </Localization>
+    <div>
+      <span>{getText('Welcome')}</span>
+    </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../style'
-import { LocaleProvider } from '../translations'
+import { LocaleProvider } from '../../hooks/use_localization'
 
 import Router from 'next/router'
 const mockedRouter = { push: () => {}, prefetch: () => {} }

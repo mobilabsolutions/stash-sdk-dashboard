@@ -3,14 +3,14 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Localization } from './index'
-import { withTestSetup } from '../test'
+import { useLocalization } from './index'
+import { withTestSetup } from '../../components/test'
 
-const PaymentDashboard = () => (
-  <Localization>
-    {({ getText }) => <span>{getText('Payment Dashboard')}</span>}
-  </Localization>
-)
+const PaymentDashboard = () => {
+  const { getText } = useLocalization()
+
+  return <span>{getText('Payment Dashboard')}</span>
+}
 
 it('Should "getText" in "en"', () => {
   const TestComponent = withTestSetup(PaymentDashboard)
@@ -28,11 +28,11 @@ it('Should "getText" in "de"', () => {
   expect(tree).toMatchSnapshot()
 })
 
-const Number = () => (
-  <Localization>
-    {({ formatNumber }) => <span>{formatNumber(123.45)}</span>}
-  </Localization>
-)
+const Number = () => {
+  const { formatNumber } = useLocalization()
+
+  return <span>{formatNumber(123.45)}</span>
+}
 
 it('Should "formatNumber" in "en"', () => {
   const TestComponent = withTestSetup(Number)

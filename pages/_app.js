@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
 import { theme, GlobalStyle } from '../components/style'
-import { LocaleProvider } from '../components/translations'
+import { LocaleProvider } from '../hooks/use_localization'
 
 const getLocale = req => {
   const locales = req
