@@ -2,7 +2,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
-import { theme, GlobalStyle } from '../style'
+import { theme, GlobalStyle } from '../components/style'
 
 export default class extends App {
   static async getInitialProps({ Component, router, ctx }) {

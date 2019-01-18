@@ -14,7 +14,7 @@ export default {
     A800: '#035C58',
     A900: '#012E2C'
   }),
-  secondary: Object.assign('#172935', {
+  shade: Object.assign('#172935', {
     A50: '#EDEFF0',
     A100: '#D1D5D7',
     A200: '#A3AAAF',

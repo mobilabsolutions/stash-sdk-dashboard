@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H1 Should Render 1`] = `
+<h1
+  className="h1__H1-sc-1dhgt1i-0 dyjYny"
+>
+  Heading 1
+</h1>
+`;
+
+exports[`H2 Should Render 1`] = `
+<h2
+  className="h2__H2-sc-1d7ooui-0 hdQUXs"
+>
+  Heading 2
+</h2>
+`;
+
+exports[`H3 Should Render 1`] = `
+<h3
+  className="h3__H3-h296jt-0 eInSZT"
+>
+  Heading 3
+</h3>
+`;
+
+exports[`H4 Should Render 1`] = `
+<h4
+  className="h4__H4-zwc3qv-0 kGyvmt"
+>
+  Heading 4
+</h4>
+`;
+
+exports[`H5 Should Render 1`] = `
+<h5
+  className="h5__H5-ylrd96-0 bHdWQg"
+>
+  Heading 5
+</h5>
+`;
