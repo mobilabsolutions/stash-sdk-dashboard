@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should "formatNumber" in "de" 1`] = `
+<span>
+  123.45
+</span>
+`;
+
+exports[`Should "formatNumber" in "en" 1`] = `
+<span>
+  123.45
+</span>
+`;
+
+exports[`Should "getText" in "de" 1`] = `
+<span>
+  Zahlungs-Dashboard
+</span>
+`;
+
+exports[`Should "getText" in "en" 1`] = `
+<span>
+  Payment Dashboard
+</span>
+`;

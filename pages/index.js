@@ -1,7 +1,13 @@
+import { Localization } from '../components/translations'
+
 export default () => {
   return (
-    <div>
-      <span>Welcome</span>
-    </div>
+    <Localization>
+      {({ getText }) => (
+        <div>
+          <span>{getText('Welcome')}</span>
+        </div>
+      )}
+    </Localization>
   )
 }

@@ -3,6 +3,22 @@ import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
 import { theme, GlobalStyle } from '../components/style'
+import { LocaleProvider } from '../components/translations'
+
+const getLocale = req => {
+  const locales = req
+    ? (req.headers['accept-language'] || 'en')
+        .split(',')
+        .map(item => {
+          const match = item.match(/([a-z]{2}(-[A-Z]{2})?)/)
+          if (match) return match[1]
+          return null
+        })
+        .filter(item => item !== null)
+    : navigator.languages
+
+  return locales.length > 0 ? locales[0] : 'en'
+}
 
 export default class extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -12,22 +28,24 @@ export default class extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    return { pageProps }
+    return { pageProps, locale: getLocale(ctx.req) }
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, locale } = this.props
 
     return (
       <>
-        <Head key="1">
+        <Head>
           <title>Payment Dashboard</title>
           <GlobalStyle />
         </Head>
-        <Container key="2">
-          <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
-          </ThemeProvider>
+        <Container>
+          <LocaleProvider value={locale}>
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </LocaleProvider>
         </Container>
       </>
     )

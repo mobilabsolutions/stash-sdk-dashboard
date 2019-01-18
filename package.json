@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production node ./server/index.js",
     "test": "npm run lint && npm run jest",
     "docker": "sh ./scripts/start_docker.sh",
+    "docker:stop": "docker stop payment-sdk-dashboard_01",
     "lint": "eslint .",
     "jest": "NODE_ENV=test jest",
     "jest:watch": "NODE_ENV=test jest --watch",
