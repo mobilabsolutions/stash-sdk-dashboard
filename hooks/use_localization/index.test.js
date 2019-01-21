@@ -21,7 +21,7 @@ it('Should "getText" in "en"', () => {
 })
 
 it('Should "getText" in "de"', () => {
-  const TestComponent = withTestSetup(PaymentDashboard, 'de')
+  const TestComponent = withTestSetup(PaymentDashboard, { locale: 'de' })
 
   const component = renderer.create(<TestComponent />)
   const tree = component.toJSON()
@@ -43,7 +43,7 @@ it('Should "formatNumber" in "en"', () => {
 })
 
 it('Should "formatNumber" in "de"', () => {
-  const TestComponent = withTestSetup(Number, 'de')
+  const TestComponent = withTestSetup(Number, { locale: 'de' })
 
   const component = renderer.create(<TestComponent />)
   const tree = component.toJSON()

@@ -9,7 +9,9 @@
     "prettier/react",
     "prettier/standard"
   ],
-  "globals": {},
+  "globals": {
+    "fetch": true
+  },
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error"

@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../assets/style'
-import { LocaleProvider } from '../hooks/use_localization'
+import { NextContextProvider } from '../hooks/use_next_context'
 
 import Router from 'next/router'
 const mockedRouter = { push: () => {}, prefetch: () => {} }
@@ -12,14 +12,29 @@ const getDisplayName = Component => {
   return Component.displayName || Component.name || 'Component'
 }
 
-export default (WrappedComponent, locale = 'en') => {
+export default (
+  WrappedComponent,
+  { locale = 'en', pathname = '/', query = {}, asPath = '/', cookie = '' } = {}
+) => {
+  const context = {
+    pathname,
+    query,
+    asPath,
+    req: {
+      headers: {
+        'accept-language': locale,
+        cookie
+      }
+    }
+  }
+
   const wrapper = props => {
     return (
-      <LocaleProvider value={locale}>
+      <NextContextProvider context={context}>
         <ThemeProvider theme={theme}>
           <WrappedComponent {...props} />
         </ThemeProvider>
-      </LocaleProvider>
+      </NextContextProvider>
     )
   }
   wrapper.displayName = `WithTestSetup(${getDisplayName(WrappedComponent)})`

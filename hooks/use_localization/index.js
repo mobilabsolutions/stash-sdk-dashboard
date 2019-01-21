@@ -1,14 +1,10 @@
-import React, { useContext } from 'react'
-
+import texts from '../../assets/texts'
+import { useNextContext } from '../use_next_context'
 import localizedNumber from './localized_number'
 import localizedText from './localized_text'
-import texts from '../../assets/texts'
-
-const localeContext = React.createContext('en')
-localeContext.displayName = 'LocaleContext'
 
 export const useLocalization = () => {
-  const locale = useContext(localeContext)
+  const { locale } = useNextContext()
 
   return {
     locale,
@@ -16,5 +12,3 @@ export const useLocalization = () => {
     formatNumber: value => localizedNumber(value, locale)
   }
 }
-
-export const LocaleProvider = localeContext.Provider
