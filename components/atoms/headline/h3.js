@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const H3 = styled.h3`
+export default styled.h3`
   color: ${props => props.theme.shade.A700};
   font-family: ${props => props.theme.fontHeadline}
   font-size: 1.25em;
@@ -12,6 +12,3 @@ const H3 = styled.h3`
   margin: 0 0 0.3em 0;
   text-align: center;
 `
-H3.displayName = 'H3'
-
-export default H3

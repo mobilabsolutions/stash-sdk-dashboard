@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const H5 = styled.h5`
+export default styled.h5`
   color: ${props => props.theme.shade.A700};
   font-family: ${props => props.theme.fontHeadline}
   font-size: 0.8em;
@@ -11,6 +11,3 @@ const H5 = styled.h5`
   line-height: 1.29;
   margin: 0 0 0.1em 0;
 `
-H5.displayName = 'H5'
-
-export default H5
