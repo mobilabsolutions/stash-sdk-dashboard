@@ -1,3 +1,7 @@
+process.env.TZ = 'UTC'
+
+require('isomorphic-fetch')
+
 const fastify = require('fastify')
 const proxy = require('fastify-http-proxy')
 const Next = require('next')

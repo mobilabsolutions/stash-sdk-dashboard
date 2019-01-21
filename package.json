@@ -46,6 +46,7 @@
   "dependencies": {
     "fastify": "1.13.4",
     "fastify-http-proxy": "1.0.0",
+    "isomorphic-fetch": "2.2.1",
     "next": "7.0.2",
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
