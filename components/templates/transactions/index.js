@@ -38,9 +38,29 @@ const TransactionId = styled.p`
   flex: 1 1 25%;
 `
 
+const getStatusBackgroundColor = props => {
+  switch (props.status) {
+    case 'bs_initiated':
+      return props.theme.primary.A700
+    case 'approved':
+      return props.theme.primary.A800
+    case 'declined':
+      return props.theme.shade.A800
+    case 'cancelled':
+      return props.theme.shade.A700
+    case 'refunded':
+      return props.theme.violet.A800
+    case 'error':
+      return props.theme.orange.A800
+
+    default:
+      return props.theme.primary.A800
+  }
+}
+
 const Status = styled.p`
   color: ${props => props.theme.shade.A50};
-  background-color: ${props => props.theme.primary.A800};
+  background-color: ${getStatusBackgroundColor};
   font-family: ${props => props.theme.font};
   font-size: 1em;
   text-transform: uppercase;
@@ -81,7 +101,11 @@ const Amount = styled.p`
 `
 
 export default ({ data }) => {
-  const { formatDate, formatAmount } = useLocalization()
+  const { getText, formatDate, formatAmount } = useLocalization()
+
+  if (!data || data.length === 0) {
+    return <div />
+  }
 
   return (
     <Wrapper>
@@ -94,7 +118,7 @@ export default ({ data }) => {
           <Item key={row.transactionId}>
             <ItemRow>
               <TransactionId>#{row.transactionId}</TransactionId>
-              <Status>{row.status}</Status>
+              <Status status={row.status}>{getText(row.status)}</Status>
               <Timestamp>{dateString}</Timestamp>
             </ItemRow>
             <ItemRow>
