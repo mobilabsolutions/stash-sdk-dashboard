@@ -5,18 +5,21 @@ import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 import styled from 'styled-components'
 
+import { useLocalization } from '../../../hooks'
+
 const Wrapper = styled.div``
 
 export default ({ startDate, endDate, setRange }) => {
+  const { getText } = useLocalization()
   const [focusedInput, setFocusedInput] = useState(null)
 
   return (
     <Wrapper>
       <DateRangePicker
         startDate={startDate}
-        startDateId="your_unique_start_date_id"
+        startDateId="filter_start_date_id"
         endDate={endDate}
-        endDateId="your_unique_end_date_id"
+        endDateId="filter_end_date_id"
         onDatesChange={({ startDate, endDate }) => setRange(startDate, endDate)}
         focusedInput={focusedInput}
         onFocusChange={focusedInput => setFocusedInput(focusedInput)}
@@ -24,6 +27,9 @@ export default ({ startDate, endDate, setRange }) => {
         noBorder
         isOutsideRange={value => value.isAfter(moment())}
         initialVisibleMonth={() => moment().add(-1, 'months')}
+        startDatePlaceholderText={getText('Start Date')}
+        endDatePlaceholderText={getText('End Date')}
+        hideKeyboardShortcutsPanel
       />
     </Wrapper>
   )

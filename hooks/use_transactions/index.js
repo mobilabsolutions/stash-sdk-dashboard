@@ -11,7 +11,7 @@ const initValue = {
   startDate: moment().add(-7, 'days'),
   endDate: moment(),
   startPos: 0,
-  pageSize: 400,
+  pageSize: 20,
   error: null
 }
 

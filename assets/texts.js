@@ -4,6 +4,8 @@ export default {
   Login: { de: 'Anmeldung' },
   Transactions: { de: 'Transaktionen' },
   Settings: { de: 'Einstellungen' },
+  'Start Date': { de: 'von Datum' },
+  'End Date': { de: 'bis Datum' },
   bs_initiated: { en: 'initiated', de: 'initiiert' },
   approved: { de: 'genehmigt' },
   declined: { de: 'abgelehnt' },
