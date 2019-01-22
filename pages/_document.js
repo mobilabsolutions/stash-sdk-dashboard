@@ -35,6 +35,7 @@ export default class extends Document {
             rel="apple-touch-icon-precomposed"
             href="/static/icons/icon-180x180.png"
           />
+          <link rel="stylesheet" href="/static/css/datepicker.css" />
           {styleTags}
         </Head>
         <body>

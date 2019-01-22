@@ -1,5 +1,9 @@
 import React, { useContext, useState } from 'react'
 
+import moment from 'moment'
+import 'moment/locale/en-gb'
+import 'moment/locale/de'
+
 const isClient = typeof window === 'object'
 
 const nextContext = React.createContext(null)
@@ -77,9 +81,11 @@ export const NextContextProvider = ({ children, context }) => {
   }
 
   const locale = cookies['__locale'] || getLocale(context.req)
+  moment.locale(locale)
   const setLocale = locale => {
     if (!isClient) return
 
+    moment.locale(locale)
     setCookie('__locale', locale)
   }
 

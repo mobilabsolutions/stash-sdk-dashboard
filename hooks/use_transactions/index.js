@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import moment from 'moment'
 
 import { useApi } from '../use_api'
 
@@ -7,10 +8,10 @@ const isClient = typeof window === 'object'
 const initValue = {
   data: [],
   isLoading: true,
-  fromDate: null,
-  toDate: null,
+  startDate: moment().add(-7, 'days'),
+  endDate: moment(),
   startPos: 0,
-  pageSize: 20,
+  pageSize: 400,
   error: null
 }
 
@@ -33,8 +34,8 @@ export const useTransactions = () => {
     let url = `/api/v1/transactions?pagesize=${state.pageSize}`
 
     if (state.startPos) url += `&startpos=${state.startPos}`
-    if (state.fromDate) url += `&fromDate=${state.fromDate}`
-    if (state.toDate) url += `&fromDate=${state.toDate}`
+    if (state.startDate) url += `&fromDate=${state.startDate.toISOString()}`
+    if (state.endDate) url += `&toDate=${state.endDate.toISOString()}`
 
     apiGet(url)
       .then(response => {
@@ -54,21 +55,20 @@ export const useTransactions = () => {
         })
       })
   }, [
-    state.fromDate,
-    state.toDate,
+    state.startDate,
+    state.endDate,
     state.startPos,
     state.pageSize,
     refreshCount
   ])
 
-  const changeFromDate = fromDate => setState({ ...state, fromDate })
-  const changeToDate = toDate => setState({ ...state, toDate })
+  const setRange = (fromDate, toDate) =>
+    setState({ ...state, startDate: fromDate, endDate: toDate })
   const refresh = () => refreshCount++
 
   return {
     ...state,
-    changeFromDate,
-    changeToDate,
+    setRange,
     refresh
   }
 }
