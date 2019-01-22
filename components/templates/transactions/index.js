@@ -58,7 +58,7 @@ const Timestamp = styled.p`
   font-family: ${props => props.theme.font};
   font-size: 1em;
   margin: 0px 2em 0px 1em;
-  flex: 0 0 16em;
+  flex: 0 0 18em;
 `
 
 const Reason = styled.p`
