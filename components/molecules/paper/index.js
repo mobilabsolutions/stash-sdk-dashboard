@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Border = styled.div`
   display: flex;
   padding: 24px;
-  background-color: ${props => props.theme.shade.A50};
+  background-color: ${props => props.theme.shade.A500};
   height: 100%;
 `
 

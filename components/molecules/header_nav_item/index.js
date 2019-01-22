@@ -10,8 +10,8 @@ const A = styled.a`
 const H1 = styled.h1`
   color: ${props =>
     props.isActive ? props.theme.primary.A700 : props.theme.shade.A700};
-  font-family: ${props => props.theme.fontHeadline}
-  font-size: 2em;
+  font-family: ${props => props.theme.fontHeadline};
+  font-size: 1.5em;
   font-stretch: normal;
   font-style: normal;
   font-weight: bold;

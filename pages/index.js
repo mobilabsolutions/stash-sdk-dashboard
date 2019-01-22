@@ -1,10 +1,9 @@
 import Router from 'next/router'
 
-import { Page } from '../components/templates'
-import { useLocalization, useTransactions } from '../hooks'
+import { Page, Transactions } from '../components/templates'
+import { useTransactions } from '../hooks'
 
 export default () => {
-  const { getText } = useLocalization()
   const { data, error } = useTransactions()
 
   if (error && error.statusCode === 401) {
@@ -14,13 +13,7 @@ export default () => {
 
   return (
     <Page activePath="/">
-      <span>{getText('Welcome')}</span>
-      <div>
-        {data &&
-          data.map((row, index) => (
-            <span key={index}>{JSON.stringify(row)}</span>
-          ))}
-      </div>
+      <Transactions data={data} />
     </Page>
   )
 }

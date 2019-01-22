@@ -16,7 +16,9 @@ const Header = styled.header`
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
+  margin-top: 0.5em;
   margin-left: 1.5em;
+  align-items: baseline;
 `
 
 export default ({ activePath }) => {
@@ -24,7 +26,9 @@ export default ({ activePath }) => {
 
   return (
     <Header>
-      <Logo />
+      <div>
+        <Logo />
+      </div>
       <Nav>
         <HeaderNavItem
           label={getText('Transactions')}

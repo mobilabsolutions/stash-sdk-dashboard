@@ -3,6 +3,7 @@ export default {
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
   white: '#FFF',
   primary: Object.assign('#08E8DE', {
+    A25: '#F5FEFE',
     A50: '#ECFEFD',
     A100: '#CEFBF9',
     A200: '#9DF6F2',
@@ -15,6 +16,7 @@ export default {
     A900: '#012E2C'
   }),
   shade: Object.assign('#172935', {
+    A25: '#F6F7F7',
     A50: '#EDEFF0',
     A100: '#D1D5D7',
     A200: '#A3AAAF',
@@ -27,6 +29,7 @@ export default {
     A900: '#091015'
   }),
   blue: Object.assign('#2E7EF2', {
+    A25: '##F7FAFE',
     A50: '#EFF5FE',
     A100: '#D8E7FD',
     A200: '#B7D2FB',
@@ -39,6 +42,7 @@ export default {
     A900: '#12315E'
   }),
   orange: Object.assign('#ED4E39', {
+    A25: '#FEF8F7',
     A50: '#FEF2F0',
     A100: '#FCDEDA',
     A200: '#F9C2BA',
@@ -51,6 +55,7 @@ export default {
     A900: '#5C1E16'
   }),
   violet: Object.assign('#172473', {
+    A25: '#F5F6FA',
     A50: '#EDEEF5',
     A100: '#D4D6E5',
     A200: '#AFB3CF',

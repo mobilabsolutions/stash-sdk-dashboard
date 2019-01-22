@@ -5,12 +5,12 @@ const Footer = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  background-color: ${props => props.theme.shade.A50};
+  background-color: ${props => props.theme.shade.A500};
 `
 
 const Span = styled.span`
-  color: ${props => props.theme.shade.A700};
-  font-family: ${props => props.theme.fontHeadline}
+  color: ${props => props.theme.shade.A50};
+  font-family: ${props => props.theme.fontHeadline};
   font-size: 0.8em;
   line-height: 1.29;
   margin-right: 24px;

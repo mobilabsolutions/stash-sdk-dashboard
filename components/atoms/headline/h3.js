@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export default styled.h3`
   color: ${props => props.theme.shade.A700};
-  font-family: ${props => props.theme.fontHeadline}
+  font-family: ${props => props.theme.fontHeadline};
   font-size: 1.25em;
   font-stretch: normal;
   font-style: normal;
