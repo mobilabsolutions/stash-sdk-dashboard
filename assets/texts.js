@@ -4,6 +4,7 @@ export default {
   Login: { de: 'Anmeldung' },
   Transactions: { de: 'Transaktionen' },
   Settings: { de: 'Einstellungen' },
+  'Date Range': { de: 'Datumsbereich' },
   'Start Date': { de: 'von Datum' },
   'End Date': { de: 'bis Datum' },
   bs_initiated: { en: 'initiated', de: 'initiiert' },

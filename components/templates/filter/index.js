@@ -7,7 +7,19 @@ import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  border-bottom: solid 1px ${props => props.theme.shade.A800};
+`
+const Label = styled.label`
+  color: ${props => props.theme.shade.A800};
+  font-family: ${props => props.theme.font};
+  font-size: 1em;
+  font-weight: bold;
+`
 
 export default ({ startDate, endDate, setRange }) => {
   const { getText } = useLocalization()
@@ -15,6 +27,7 @@ export default ({ startDate, endDate, setRange }) => {
 
   return (
     <Wrapper>
+      <Label forHml="filter_start_date_id">{getText('Date Range')}</Label>
       <DateRangePicker
         startDate={startDate}
         startDateId="filter_start_date_id"

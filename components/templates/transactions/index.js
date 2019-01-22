@@ -2,18 +2,20 @@ import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
 
-const Wrapper = styled.ol`
-  display: flex;
+const List = styled.ol`
+  flex: 1 1 100%;
   flex-direction: column;
   margin: 0;
   padding: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 259px);
 `
 
 const Item = styled.li`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  :nth-child(odd) {
+  :nth-child(even) {
     background-color: ${props => props.theme.shade.A25};
   }
   :hover {
@@ -89,6 +91,15 @@ const Reason = styled.p`
   flex: 1 1 75%;
 `
 
+const CustomerId = styled.p`
+  color: ${props => props.theme.shade.A700};
+  font-family: ${props => props.theme.font};
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0px;
+  flex: 1 1 50%;
+`
+
 const Amount = styled.p`
   color: ${props => props.theme.shade.A800};
   font-family: ${props => props.theme.font};
@@ -108,7 +119,7 @@ export default ({ data }) => {
   }
 
   return (
-    <Wrapper>
+    <List>
       {data.map((row, index) => {
         const timestamp = new Date(row.timestamp)
         const dateString = formatDate(timestamp)
@@ -125,9 +136,14 @@ export default ({ data }) => {
               <Reason>{row.reason}</Reason>
               <Amount>{amountString}</Amount>
             </ItemRow>
+            {!!row.customerId && (
+              <ItemRow>
+                <CustomerId>{row.customerId}</CustomerId>
+              </ItemRow>
+            )}
           </Item>
         )
       })}
-    </Wrapper>
+    </List>
   )
 }
