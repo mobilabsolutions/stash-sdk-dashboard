@@ -15,6 +15,10 @@ export default (texts, locale, id, args) => {
     localizedText = textObject[locale.substring(0, 2)]
   }
 
+  if (!localizedText && locale !== 'en') {
+    localizedText = textObject.en
+  }
+
   let text = localizedText || id
   if (args) {
     for (let key of Object.keys(args)) {

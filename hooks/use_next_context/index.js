@@ -69,7 +69,7 @@ export const NextContextProvider = ({ children, context }) => {
   const setCookie = (key, value, expiryDate) => {
     if (!isClient) return
 
-    setStateCookies({ ...cookies, [key]: value })
+    setStateCookies(prevCookies => ({ ...prevCookies, [key]: value }))
 
     if (expiryDate) {
       document.cookie = `${encodeURI(key)}=${encodeURI(

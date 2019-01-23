@@ -22,12 +22,12 @@ export default () => {
     isLoading
   } = useTransactions()
   if (!token) {
-    Router.push('/login')
+    Router.push('/settings')
     return null
   }
 
   if (error && error.statusCode === 401) {
-    Router.push('/login')
+    Router.push('/settings')
     return null
   }
 

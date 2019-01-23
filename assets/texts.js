@@ -18,5 +18,9 @@ export default {
   'Loading Data': { de: 'Daten werden geladen' },
   'No Data': { de: 'Keine Daten' },
   Text: { de: 'Text' },
-  Status: { de: 'Status' }
+  Status: { de: 'Status' },
+  en: { en: 'English' },
+  de: { en: 'Deutsch' },
+  Token: {},
+  Language: { de: 'Sprache' }
 }

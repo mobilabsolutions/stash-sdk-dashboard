@@ -1,12 +1,17 @@
-import { useLocalization } from '../hooks'
-import { Page } from '../components/templates'
+import { useSettings } from '../hooks'
+import { Page, Settings } from '../components/templates'
 
 export default () => {
-  const { getText } = useLocalization()
+  const { locale, setLocale, token, setToken } = useSettings()
 
   return (
     <Page activePath="/settings">
-      <span>{getText('Settings')}</span>
+      <Settings
+        locale={locale}
+        setLocale={setLocale}
+        token={token}
+        setToken={setToken}
+      />
     </Page>
   )
 }
