@@ -16,6 +16,8 @@ export default () => {
     setPage,
     status,
     setStatus,
+    reason,
+    setReason,
     token,
     isLoading
   } = useTransactions()
@@ -37,6 +39,8 @@ export default () => {
         setRange={setRange}
         status={status}
         setStatus={setStatus}
+        reason={reason}
+        setReason={setReason}
       />
       <Transactions data={data} isLoading={isLoading} />
       <Pagination

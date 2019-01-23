@@ -5,65 +5,70 @@ import { useApi } from '../use_api'
 
 const isClient = typeof window === 'object'
 
-const initValue = {
-  data: [],
-  isLoading: true,
-  startDate: moment().add(-7, 'days'),
-  endDate: moment(),
-  startPos: 0,
-  pageSize: 100,
-  status: 'all',
-  error: null
+const getInitValue = () => {
+  return {
+    data: [],
+    loadingCount: 0,
+    startDate: moment().add(-7, 'days'),
+    endDate: moment(),
+    startPos: 0,
+    pageSize: 100,
+    status: 'all',
+    reason: '',
+    error: null
+  }
 }
 
-let refreshCount = 0
-
 export const useTransactions = () => {
+  const [state, setState] = useState(getInitValue())
   const { get: apiGet, token } = useApi()
-  const [state, setState] = useState(initValue)
 
   useEffect(() => {
     if (!isClient) return
 
-    if (!state.isLoading)
-      setState({
-        ...state,
-        isLoading: true,
-        error: null
-      })
+    const loadData = () => {
+      let url = `/api/v1/transactions?pagesize=${state.pageSize}`
 
-    let url = `/api/v1/transactions?pagesize=${state.pageSize}`
+      if (state.startPos) url += `&startpos=${state.startPos}`
+      if (state.startDate) url += `&fromDate=${state.startDate.toISOString()}`
+      if (state.endDate) url += `&toDate=${state.endDate.toISOString()}`
+      if (state.status !== 'all') url += `&status=${state.status.toUpperCase()}`
+      if (state.reason) url += `&reason=${state.reason}`
 
-    if (state.startPos) url += `&startpos=${state.startPos}`
-    if (state.startDate) url += `&fromDate=${state.startDate.toISOString()}`
-    if (state.endDate) url += `&toDate=${state.endDate.toISOString()}`
-    if (state.status !== 'all') url += `&status=${state.status.toUpperCase()}`
+      return apiGet(url)
+        .then(response =>
+          setState(prevState => ({
+            ...prevState,
+            data: response.result.transactions,
+            totalCount: response.result.totalCount,
+            error: null,
+            loadingCount: prevState.loadingCount - 1
+          }))
+        )
+        .catch(error =>
+          setState(prevState => ({
+            ...prevState,
+            data: [],
+            error,
+            loadingCount: prevState.loadingCount - 1
+          }))
+        )
+    }
 
-    apiGet(url)
-      .then(response => {
-        setState({
-          ...state,
-          data: response.result.transactions,
-          totalCount: response.result.totalCount,
-          isLoading: false
-        })
-      })
-      .catch(error => {
-        setState({
-          ...state,
-          data: [],
-          error,
-          isLoading: false
-        })
-      })
+    setState(prevState => ({
+      ...prevState,
+      loadingCount: prevState.loadingCount + 1,
+      error: null
+    }))
+
+    loadData()
   }, [
     state.startDate,
     state.endDate,
     state.startPos,
     state.pageSize,
     state.status,
-    token,
-    refreshCount
+    state.reason
   ])
 
   const numberOfPages =
@@ -73,25 +78,39 @@ export const useTransactions = () => {
   const selectedPage = Math.ceil(state.startPos / state.pageSize) + 1
 
   const setRange = (fromDate, toDate) =>
-    !state.isLoading &&
-    setState({ ...state, startDate: fromDate, endDate: toDate, startPos: 0 })
+    setState(prevState => ({
+      ...prevState,
+      startDate: fromDate,
+      endDate: toDate,
+      startPos: 0
+    }))
+
   const setPage = page =>
-    !state.isLoading &&
-    setState({ ...state, startPos: (page - 1) * state.pageSize })
+    setState(prevState => ({
+      ...prevState,
+      startPos: (page - 1) * state.pageSize
+    }))
 
   const setStatus = status =>
-    !state.isLoading && setState({ ...state, status, startPos: 0 })
+    setState(prevState => ({ ...prevState, status, startPos: 0 }))
 
-  const refresh = () => refreshCount++
+  const setReason = reason =>
+    setState(prevState => ({ ...prevState, reason, startPos: 0 }))
 
   return {
-    ...state,
+    data: state.data,
+    isLoading: state.loadingCount > 0,
+    startDate: state.startDate,
+    endDate: state.endDate,
+    status: state.status,
+    reason: state.reason,
+    error: state.error,
     setRange,
     numberOfPages,
     selectedPage,
     setPage,
     setStatus,
-    refresh,
+    setReason,
     token
   }
 }

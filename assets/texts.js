@@ -16,5 +16,7 @@ export default {
   cancelled: { de: 'abgebrochen' },
   error: { de: 'fehler' },
   'Loading Data': { de: 'Daten werden geladen' },
-  'No Data': { de: 'Keine Daten' }
+  'No Data': { de: 'Keine Daten' },
+  Text: { de: 'Text' },
+  Status: { de: 'Status' }
 }

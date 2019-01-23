@@ -19,12 +19,12 @@ const Wrapper = styled.div`
     margin: 0px;
   }
   ul > li {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 5px;
     margin-left: 4px;
     margin-right: 4px;
-    line-height: 40px;
+    line-height: 36px;
     font-family: ${props => props.theme.fontHeadline};
     font-size: 16px;
     font-weight: bold;

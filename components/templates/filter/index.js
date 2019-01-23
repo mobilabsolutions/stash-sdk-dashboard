@@ -6,7 +6,7 @@ import moment from 'moment'
 import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
-import { Radio } from '../../molecules'
+import { Input, Radio } from '../../molecules'
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,10 +33,11 @@ const OptionList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-left: 8px;
 `
 
 const OptionWrapper = styled.div`
-  margin: 8px 24px 0 0;
+  margin: 8px 24px 0 0px;
 `
 
 const statusOptions = [
@@ -49,7 +50,15 @@ const statusOptions = [
   'cancelled'
 ]
 
-export default ({ startDate, endDate, setRange, status, setStatus }) => {
+export default ({
+  startDate,
+  endDate,
+  setRange,
+  status,
+  setStatus,
+  reason,
+  setReason
+}) => {
   const { getText } = useLocalization()
   const [focusedInput, setFocusedInput] = useState(null)
 
@@ -91,6 +100,15 @@ export default ({ startDate, endDate, setRange, status, setStatus }) => {
             </OptionWrapper>
           ))}
         </OptionList>
+      </ItemWrapper>
+      <ItemWrapper>
+        <Label>{getText('Text')}</Label>
+        <Input
+          id="filter_reason"
+          name="reason"
+          value={reason}
+          onChanged={setReason}
+        />
       </ItemWrapper>
     </Wrapper>
   )
