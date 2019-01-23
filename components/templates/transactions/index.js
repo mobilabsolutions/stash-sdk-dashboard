@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 
+import { CenteredText } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 
 const List = styled.ol`
-  flex: 1 1 100%;
+  display: block;
+  flex: 1 1 auto;
   flex-direction: column;
   margin: 0;
   padding: 0;
   overflow-y: scroll;
-  max-height: calc(100vh - 259px);
+  max-height: calc(100% - 100px);
 `
 
 const Item = styled.li`
@@ -111,11 +113,15 @@ const Amount = styled.p`
   flex: 0 0 4em;
 `
 
-export default ({ data }) => {
+export default ({ data, isLoading }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
 
   if (!data || data.length === 0) {
-    return <div />
+    return isLoading ? (
+      <CenteredText>{getText('Loading Data')}</CenteredText>
+    ) : (
+      <CenteredText>{getText('No Data')}</CenteredText>
+    )
   }
 
   return (

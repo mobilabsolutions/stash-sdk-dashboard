@@ -13,5 +13,7 @@ export default {
   refunded: { de: 'erstattet' },
   rejected: { de: 'abgelehnt' },
   cancelled: { de: 'abgebrochen' },
-  error: { de: 'fehler' }
+  error: { de: 'fehler' },
+  'Loading Data': { de: 'Daten werden geladen' },
+  'No Data': { de: 'Keine Daten' }
 }

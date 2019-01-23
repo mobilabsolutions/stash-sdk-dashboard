@@ -28,9 +28,9 @@ export default () => {
   }
 
   return (
-    <Page activePath="/" isLoading={isLoading}>
+    <Page activePath="/">
       <Filter startDate={startDate} endDate={endDate} setRange={setRange} />
-      <Transactions data={data} />
+      <Transactions data={data} isLoading={isLoading} />
       <Pagination
         numberOfPages={numberOfPages}
         selectedPage={selectedPage}
