@@ -64,11 +64,13 @@ export const useTransactions = () => {
 
   const setRange = (fromDate, toDate) =>
     setState({ ...state, startDate: fromDate, endDate: toDate })
+  const setStartPos = startPos => setState({ ...state, startPos })
   const refresh = () => refreshCount++
 
   return {
     ...state,
     setRange,
+    setStartPos,
     refresh
   }
 }

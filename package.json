@@ -60,7 +60,7 @@
     "eslint-config-prettier": "3.6.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-jsx": "6.0.2",
-    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-import": "2.15.0",
     "eslint-plugin-node": "8.0.1",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-promise": "4.0.1",
@@ -68,7 +68,7 @@
     "eslint-plugin-standard": "4.0.0",
     "jest": "23.6.0",
     "nodemon": "1.18.9",
-    "prettier": "1.16.0",
+    "prettier": "1.16.1",
     "react-test-renderer": "16.8.0-alpha.1",
     "updtr": "3.1.0"
   }

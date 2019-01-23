@@ -7,6 +7,8 @@ import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
 
+import { Pagination } from '../../molecules'
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -21,9 +23,20 @@ const Label = styled.label`
   font-weight: bold;
 `
 
-export default ({ startDate, endDate, setRange }) => {
+export default ({
+  startDate,
+  endDate,
+  setRange,
+  startPos,
+  pageSize,
+  totalCount,
+  setStartPos
+}) => {
   const { getText } = useLocalization()
   const [focusedInput, setFocusedInput] = useState(null)
+
+  const numberOfPages = Math.floor(totalCount / pageSize)
+  const selectedPage = Math.floor(startPos / pageSize) + 1
 
   return (
     <Wrapper>
@@ -43,6 +56,11 @@ export default ({ startDate, endDate, setRange }) => {
         startDatePlaceholderText={getText('Start Date')}
         endDatePlaceholderText={getText('End Date')}
         hideKeyboardShortcutsPanel
+      />
+      <Pagination
+        numberOfPages={numberOfPages}
+        selectedPage={selectedPage}
+        onPageNumberClicked={page => setStartPos((page - 1) * pageSize)}
       />
     </Wrapper>
   )

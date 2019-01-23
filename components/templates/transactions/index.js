@@ -8,7 +8,7 @@ const List = styled.ol`
   margin: 0;
   padding: 0;
   overflow-y: auto;
-  max-height: calc(100vh - 259px);
+  max-height: calc(100vh - 279px);
 `
 
 const Item = styled.li`
