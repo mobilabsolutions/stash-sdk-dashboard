@@ -11,6 +11,12 @@ const Wrapper = styled.div`
     list-style: none;
     display: flex;
     align-items: center;
+    position: absolute;
+    bottom: -52px;
+    left: -32px;
+    z-index: 10;
+    height: 52px;
+    margin: 0px;
   }
   ul > li {
     width: 40px;
@@ -19,30 +25,29 @@ const Wrapper = styled.div`
     margin-left: 4px;
     margin-right: 4px;
     line-height: 40px;
-    font-family: ${props => props.theme.font};
+    font-family: ${props => props.theme.fontHeadline};
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    color: ${props => props.theme.shade.A200};
+    color: ${props => props.theme.shade.A100};
     cursor: pointer;
-    align-items: center;
   }
   ul > li.number:hover,
   ul > li.selectedPage,
   ul > li.arrow:hover {
-    color: ${props => props.theme.white};
-    background-color: ${props => props.theme.shade.A100};
-    fill: ${props => props.theme.white};
+    color: ${props => props.theme.shade.A500};
+    background-color: ${props => props.theme.shade.A50};
+    fill: ${props => props.theme.shade.A500};
   }
   ul > li.number:hover,
   ul > li.arrow:hover {
-    background-color: ${props => props.theme.shade.A200};
+    background-color: ${props => props.theme.shade.A100};
   }
   ul > li.arrow:hover {
   }
   li.arrow {
     transform: rotate(90deg);
-    fill: ${props => props.theme.shade.A200};
+    fill: ${props => props.theme.shade.A100};
   }
   li.arrowHidden {
     visibility: hidden;
@@ -52,7 +57,7 @@ const Wrapper = styled.div`
   }
 `
 
-export default ({ selectedPage, numberOfPages, onPageNumberClicked }) => {
+export default ({ selectedPage, numberOfPages, onSelectPage }) => {
   if (numberOfPages <= 1) return null
 
   const pageNumbers = Array.from(
@@ -85,7 +90,7 @@ export default ({ selectedPage, numberOfPages, onPageNumberClicked }) => {
       <ul>
         <li
           className={classNameDown}
-          onClick={() => onPageNumberClicked(selectedPage - 1)}
+          onClick={() => onSelectPage(selectedPage - 1)}
         >
           <DownIcon />
         </li>
@@ -94,7 +99,7 @@ export default ({ selectedPage, numberOfPages, onPageNumberClicked }) => {
             className={selectedPage === number ? 'selectedPage' : 'number'}
             key={number}
             onClick={() => {
-              onPageNumberClicked(number)
+              onSelectPage(number)
             }}
           >
             {number}
@@ -102,11 +107,11 @@ export default ({ selectedPage, numberOfPages, onPageNumberClicked }) => {
         ))}
         <li
           className={classNameUp}
-          onClick={() => onPageNumberClicked(selectedPage + 1)}
+          onClick={() => onSelectPage(selectedPage + 1)}
         >
           <UpIcon />
         </li>
-      </ul>{' '}
+      </ul>
     </Wrapper>
   )
 }

@@ -71,5 +71,5 @@ export const useApi = () => {
   const post = (path, content) => apiCall(token, 'POST', path, content)
   const del = (path, content) => apiCall(token, 'DELETE', path, content)
 
-  return { get, put, patch, post, del }
+  return { get, put, patch, post, del, token }
 }

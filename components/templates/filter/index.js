@@ -7,8 +7,6 @@ import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
 
-import { Pagination } from '../../molecules'
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -35,9 +33,6 @@ export default ({
   const { getText } = useLocalization()
   const [focusedInput, setFocusedInput] = useState(null)
 
-  const numberOfPages = Math.floor(totalCount / pageSize)
-  const selectedPage = Math.floor(startPos / pageSize) + 1
-
   return (
     <Wrapper>
       <Label forHml="filter_start_date_id">{getText('Date Range')}</Label>
@@ -56,11 +51,6 @@ export default ({
         startDatePlaceholderText={getText('Start Date')}
         endDatePlaceholderText={getText('End Date')}
         hideKeyboardShortcutsPanel
-      />
-      <Pagination
-        numberOfPages={numberOfPages}
-        selectedPage={selectedPage}
-        onPageNumberClicked={page => setStartPos((page - 1) * pageSize)}
       />
     </Wrapper>
   )

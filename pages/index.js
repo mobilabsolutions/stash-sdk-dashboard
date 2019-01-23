@@ -1,6 +1,7 @@
 import Router from 'next/router'
 
 import { Page, Filter, Transactions } from '../components/templates'
+import { Pagination } from '../components/molecules'
 import { useTransactions } from '../hooks'
 
 export default () => {
@@ -10,11 +11,16 @@ export default () => {
     startDate,
     endDate,
     setRange,
-    startPos,
-    pageSize,
-    setStartPos,
-    totalCount
+    selectedPage,
+    numberOfPages,
+    setPage,
+    token,
+    isLoading
   } = useTransactions()
+  if (!token) {
+    Router.push('/login')
+    return null
+  }
 
   if (error && error.statusCode === 401) {
     Router.push('/login')
@@ -22,17 +28,14 @@ export default () => {
   }
 
   return (
-    <Page activePath="/">
-      <Filter
-        startDate={startDate}
-        endDate={endDate}
-        setRange={setRange}
-        startPos={startPos}
-        pageSize={pageSize}
-        totalCount={totalCount}
-        setStartPos={setStartPos}
-      />
+    <Page activePath="/" isLoading={isLoading}>
+      <Filter startDate={startDate} endDate={endDate} setRange={setRange} />
       <Transactions data={data} />
+      <Pagination
+        numberOfPages={numberOfPages}
+        selectedPage={selectedPage}
+        onSelectPage={setPage}
+      />
     </Page>
   )
 }

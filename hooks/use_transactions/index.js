@@ -18,7 +18,7 @@ const initValue = {
 let refreshCount = 0
 
 export const useTransactions = () => {
-  const { get: apiGet } = useApi()
+  const { get: apiGet, token } = useApi()
   const [state, setState] = useState(initValue)
 
   useEffect(() => {
@@ -59,18 +59,31 @@ export const useTransactions = () => {
     state.endDate,
     state.startPos,
     state.pageSize,
+    token,
     refreshCount
   ])
 
+  const numberOfPages =
+    state.data && state.data.length > 0
+      ? Math.ceil(state.totalCount / state.pageSize)
+      : 0
+  const selectedPage = Math.ceil(state.startPos / state.pageSize) + 1
+
   const setRange = (fromDate, toDate) =>
+    !state.isLoading &&
     setState({ ...state, startDate: fromDate, endDate: toDate })
-  const setStartPos = startPos => setState({ ...state, startPos })
+  const setPage = page =>
+    !state.isLoading &&
+    setState({ ...state, startPos: (page - 1) * state.pageSize })
   const refresh = () => refreshCount++
 
   return {
     ...state,
     setRange,
-    setStartPos,
-    refresh
+    numberOfPages,
+    selectedPage,
+    setPage,
+    refresh,
+    token
   }
 }
