@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import moment from 'moment'
+import Router from 'next/router'
 
 import { useApi } from '../use_api'
 
@@ -26,6 +27,11 @@ export const useTransactions = () => {
   useEffect(() => {
     if (!isClient) return
 
+    if (!token) {
+      Router.push('/settings')
+      return
+    }
+
     const loadData = () => {
       let url = `/api/v1/transactions?pagesize=${state.pageSize}`
 
@@ -45,14 +51,19 @@ export const useTransactions = () => {
             loadingCount: prevState.loadingCount - 1
           }))
         )
-        .catch(error =>
+        .catch(error => {
+          if (error && error.statusCode === 401) {
+            Router.push('/settings')
+            return null
+          }
+
           setState(prevState => ({
             ...prevState,
             data: [],
             error,
             loadingCount: prevState.loadingCount - 1
           }))
-        )
+        })
     }
 
     setState(prevState => ({
