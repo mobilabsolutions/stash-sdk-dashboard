@@ -12,6 +12,7 @@ const initValue = {
   endDate: moment(),
   startPos: 0,
   pageSize: 100,
+  status: 'all',
   error: null
 }
 
@@ -36,6 +37,7 @@ export const useTransactions = () => {
     if (state.startPos) url += `&startpos=${state.startPos}`
     if (state.startDate) url += `&fromDate=${state.startDate.toISOString()}`
     if (state.endDate) url += `&toDate=${state.endDate.toISOString()}`
+    if (state.status !== 'all') url += `&status=${state.status.toUpperCase()}`
 
     apiGet(url)
       .then(response => {
@@ -59,6 +61,7 @@ export const useTransactions = () => {
     state.endDate,
     state.startPos,
     state.pageSize,
+    state.status,
     token,
     refreshCount
   ])
@@ -71,10 +74,14 @@ export const useTransactions = () => {
 
   const setRange = (fromDate, toDate) =>
     !state.isLoading &&
-    setState({ ...state, startDate: fromDate, endDate: toDate })
+    setState({ ...state, startDate: fromDate, endDate: toDate, startPos: 0 })
   const setPage = page =>
     !state.isLoading &&
     setState({ ...state, startPos: (page - 1) * state.pageSize })
+
+  const setStatus = status =>
+    !state.isLoading && setState({ ...state, status, startPos: 0 })
+
   const refresh = () => refreshCount++
 
   return {
@@ -83,6 +90,7 @@ export const useTransactions = () => {
     numberOfPages,
     selectedPage,
     setPage,
+    setStatus,
     refresh,
     token
   }

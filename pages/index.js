@@ -14,6 +14,8 @@ export default () => {
     selectedPage,
     numberOfPages,
     setPage,
+    status,
+    setStatus,
     token,
     isLoading
   } = useTransactions()
@@ -29,7 +31,13 @@ export default () => {
 
   return (
     <Page activePath="/">
-      <Filter startDate={startDate} endDate={endDate} setRange={setRange} />
+      <Filter
+        startDate={startDate}
+        endDate={endDate}
+        setRange={setRange}
+        status={status}
+        setStatus={setStatus}
+      />
       <Transactions data={data} isLoading={isLoading} />
       <Pagination
         numberOfPages={numberOfPages}
