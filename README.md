@@ -24,7 +24,7 @@ npm run dev
 
 ## Docker
 
-To run it docker
+To run it in docker
 
 ```bash
 npm run docker
@@ -32,7 +32,7 @@ npm run docker
 
 ## Deployment
 
-still open
+- done through travis script
 
 ## Helpful scripts
 
@@ -50,3 +50,25 @@ to get an overview
 - react
 - styled-components
 - fastify
+
+### other components
+
+- react-dates (date)
+
+## folder structure
+
+- /asserts translation and styles
+
+- /components Atomic design structure of Components
+
+- /hooks react hooks / middleware and business logic
+
+- /pages entry points for the next.js app / check next.js documentation
+
+- /scripts bash scripts for helper and build
+
+- /server fastify backend (upstream, next.js, healthcheck)
+
+- /static static files like fonts / image, css
+
+- /static_utils test helpers

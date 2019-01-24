@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+language: bash
+
+branches:
+  only:
+    - master
+    - /^(\d+\.)?(\d+\.)?\d+(-\w+)?$/
+
+script: sh ./scripts/travis_build.sh
