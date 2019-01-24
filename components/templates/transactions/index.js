@@ -10,7 +10,7 @@ const List = styled.ol`
   margin: 0;
   padding: 0;
   overflow-y: auto;
-  max-height: calc(100% - 205px);
+  max-height: calc(100% - 4px - ${props => props.filterHeight || 0}px);
 `
 
 const Item = styled.li`
@@ -113,7 +113,7 @@ const Amount = styled.p`
   flex: 0 0 4em;
 `
 
-export default ({ data, isLoading }) => {
+export default ({ data, isLoading, filterHeight }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
 
   if (!data || data.length === 0) {
@@ -125,7 +125,7 @@ export default ({ data, isLoading }) => {
   }
 
   return (
-    <List>
+    <List filterHeight={filterHeight}>
       {data.map((row, index) => {
         const timestamp = new Date(row.timestamp)
         const dateString = formatDate(timestamp)

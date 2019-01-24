@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: -52px;
+    bottom: -50px;
     left: -32px;
     z-index: 10;
     height: 52px;

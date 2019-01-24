@@ -10,7 +10,7 @@ const Header = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 12px;
+  padding-left: 24px;
 `
 
 const Nav = styled.nav`

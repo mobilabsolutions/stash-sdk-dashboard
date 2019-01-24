@@ -1,6 +1,6 @@
 import 'react-dates/initialize'
 
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 import styled from 'styled-components'
@@ -52,66 +52,62 @@ const statusOptions = [
   'cancelled'
 ]
 
-export default ({
-  startDate,
-  endDate,
-  setRange,
-  status,
-  setStatus,
-  reason,
-  setReason
-}) => {
-  const { getText } = useLocalization()
-  const [focusedInput, setFocusedInput] = useState(null)
-
-  return (
-    <Wrapper>
-      <ItemWrapper>
-        <Label>{getText('Date Range')}</Label>
-        <DateRangePicker
-          startDate={startDate}
-          startDateId="filter_start_date_id"
-          endDate={endDate}
-          endDateId="filter_end_date_id"
-          onDatesChange={({ startDate, endDate }) =>
-            setRange(startDate, endDate)
-          }
-          focusedInput={focusedInput}
-          onFocusChange={focusedInput => setFocusedInput(focusedInput)}
-          showClearDates
-          noBorder
-          isOutsideRange={value => value.isAfter(moment())}
-          initialVisibleMonth={() => moment().add(-1, 'months')}
-          startDatePlaceholderText={getText('Start Date')}
-          endDatePlaceholderText={getText('End Date')}
-          hideKeyboardShortcutsPanel
-        />
-      </ItemWrapper>
-      <ItemWrapper>
-        <Label>{getText('Status')}</Label>
-        <OptionList>
-          {statusOptions.map(option => (
-            <OptionWrapper key={option}>
-              <Radio
-                label={getText(option)}
-                name="status"
-                value={option}
-                selectedOption={status}
-                onChange={setStatus}
-              />
-            </OptionWrapper>
-          ))}
-        </OptionList>
-      </ItemWrapper>
-      <ItemWrapper>
-        <Label>{getText('Text')}</Label>
-        <Input
-          id="filter_reason"
-          name="reason"
-          value={reason}
-          onChanged={setReason}
-        />
-      </ItemWrapper>
-    </Wrapper>
-  )
-}
+export default forwardRef(
+  (
+    { startDate, endDate, setRange, status, setStatus, reason, setReason },
+    ref
+  ) => {
+    const { getText } = useLocalization()
+    const [focusedInput, setFocusedInput] = useState(null)
+    return (
+      <Wrapper ref={ref}>
+        <ItemWrapper>
+          <Label>{getText('Date Range')}</Label>
+          <DateRangePicker
+            startDate={startDate}
+            startDateId="filter_start_date_id"
+            endDate={endDate}
+            endDateId="filter_end_date_id"
+            onDatesChange={({ startDate, endDate }) =>
+              setRange(startDate, endDate)
+            }
+            focusedInput={focusedInput}
+            onFocusChange={focusedInput => setFocusedInput(focusedInput)}
+            showClearDates
+            noBorder
+            isOutsideRange={value => value.isAfter(moment())}
+            initialVisibleMonth={() => moment().add(-1, 'months')}
+            startDatePlaceholderText={getText('Start Date')}
+            endDatePlaceholderText={getText('End Date')}
+            hideKeyboardShortcutsPanel
+          />
+        </ItemWrapper>
+        <ItemWrapper>
+          <Label>{getText('Status')}</Label>
+          <OptionList>
+            {statusOptions.map(option => (
+              <OptionWrapper key={option}>
+                <Radio
+                  label={getText(option)}
+                  name="status"
+                  value={option}
+                  selectedOption={status}
+                  onChange={setStatus}
+                />
+              </OptionWrapper>
+            ))}
+          </OptionList>
+        </ItemWrapper>
+        <ItemWrapper>
+          <Label>{getText('Text')}</Label>
+          <Input
+            id="filter_reason"
+            name="reason"
+            value={reason}
+            onChanged={setReason}
+          />
+        </ItemWrapper>
+      </Wrapper>
+    )
+  }
+)
