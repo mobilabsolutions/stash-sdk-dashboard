@@ -5,7 +5,7 @@ import { useLocalization } from '../../../hooks'
 
 const List = styled.ol`
   display: block;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   margin: 0;
   padding: 0;

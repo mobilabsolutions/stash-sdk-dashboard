@@ -6,7 +6,7 @@ const Outer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100% - 201px);
+  min-height: 200px;
 `
 
 const Text = styled.p`

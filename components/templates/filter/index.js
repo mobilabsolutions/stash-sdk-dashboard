@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-bottom: solid 1px ${props => props.theme.shade.A800};
   padding: 24px 24px 12px 24px;
+  flex: 0 0 auto;
 `
 
 const ItemWrapper = styled.div`

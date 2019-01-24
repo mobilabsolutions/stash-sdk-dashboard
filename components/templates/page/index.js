@@ -4,13 +4,13 @@ import { Paper } from '../../molecules'
 import { Header, Footer } from '../../organisms'
 
 const Div = styled.div`
-  display: grid;
-  grid-template-rows: 84px 1fr 30px;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 `
 
 const Main = styled.main`
-  height: calc(100vh - 114px);
+  height: calc(100vh - 108px);
 `
 
 export default ({ children, activePath }) => {
