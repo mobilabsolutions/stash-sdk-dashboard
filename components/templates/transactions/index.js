@@ -9,7 +9,7 @@ const List = styled.ol`
   flex-direction: column;
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: calc(100% - 205px);
 `
 

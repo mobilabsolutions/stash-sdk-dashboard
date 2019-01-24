@@ -16,6 +16,7 @@ const ItemWrapper = styled.div`
   flex-direction: row;
   align-items: baseline;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 `
 const Label = styled.label`
   color: ${props => props.theme.shade.A800};

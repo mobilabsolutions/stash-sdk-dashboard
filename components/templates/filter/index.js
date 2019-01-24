@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-bottom: solid 1px ${props => props.theme.shade.A800};
   padding: 24px 24px 12px 24px;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
 `
 
 const ItemWrapper = styled.div`
@@ -21,6 +21,7 @@ const ItemWrapper = styled.div`
   flex-direction: row;
   align-items: baseline;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 `
 const Label = styled.label`
   color: ${props => props.theme.shade.A800};
