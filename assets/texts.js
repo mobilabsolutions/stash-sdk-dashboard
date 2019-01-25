@@ -22,5 +22,11 @@ export default {
   en: { en: 'English' },
   de: { en: 'Deutsch' },
   Token: {},
-  Language: { de: 'Sprache' }
+  Language: { de: 'Sprache' },
+  ID: { de: 'Nr.' },
+  CustomerID: { de: 'Kunden Nr.' },
+  Timestamp: { de: 'Zeitpunkt' },
+  Amount: { de: 'Betrag' },
+  Refund: { de: 'zurückerstatten' },
+  Close: { de: 'schließen' }
 }
