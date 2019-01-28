@@ -10,7 +10,7 @@ const getInitValue = () => {
   return {
     data: [],
     loadingCount: 0,
-    startDate: moment().add(-7, 'days'),
+    startDate: moment().add(-1, 'months'),
     endDate: moment(),
     startPos: 0,
     pageSize: 100,

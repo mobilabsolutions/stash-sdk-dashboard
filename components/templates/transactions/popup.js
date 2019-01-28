@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
-import { PrimaryButton, SecondaryButton } from '../../atoms'
+import { PrimaryButton, SecondaryButton, WarnButton } from '../../atoms'
 import { Popup } from '../../molecules'
 
 const PopupContainer = styled.div`
@@ -51,43 +52,79 @@ const ButtonContainer = styled.div`
 
 export default ({ detail, onClose }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
+  const [inRefund, setInRefund] = useState(false)
+
+  const getContent = () => {
+    if (inRefund) {
+      return (
+        <PopupContainer>
+          <ContentContainer>
+            <Value>
+              {getText(
+                'Do you really want to Refund %{amount} for the Transaction %{id}?',
+                {
+                  id: detail.transactionId,
+                  amount: formatAmount(detail.currency, detail.amount)
+                }
+              )}
+            </Value>
+          </ContentContainer>
+          <ButtonContainer>
+            <SecondaryButton
+              label={getText('Cancel')}
+              onClick={() => {
+                setInRefund(false)
+                onClose()
+              }}
+            />
+            <WarnButton label={getText('Refund')} onClick={onClose} />
+          </ButtonContainer>
+        </PopupContainer>
+      )
+    }
+
+    return (
+      <PopupContainer>
+        <ContentContainer>
+          <ValueContainer>
+            <Label>{getText('ID')}</Label>
+            <Value>{detail.transactionId}</Value>
+          </ValueContainer>
+          <ValueContainer>
+            <Label>{getText('Status')}</Label>
+            <Value>{detail.status}</Value>
+          </ValueContainer>
+          <ValueContainer>
+            <Label>{getText('Text')}</Label>
+            <Value>{detail.reason}</Value>
+          </ValueContainer>
+          <ValueContainer>
+            <Label>{getText('CustomerID')}</Label>
+            <Value>{detail.customerId}</Value>
+          </ValueContainer>
+          <ValueContainer>
+            <Label>{getText('Timestamp')}</Label>
+            <Value>{formatDate(detail.timestamp)}</Value>
+          </ValueContainer>
+          <ValueContainer>
+            <Label>{getText('Amount')}</Label>
+            <Value>{formatAmount(detail.currency, detail.amount)}</Value>
+          </ValueContainer>
+        </ContentContainer>
+        <ButtonContainer>
+          <SecondaryButton
+            label={getText('Refund')}
+            onClick={() => setInRefund(true)}
+          />
+          <PrimaryButton label={getText('Close')} onClick={onClose} />
+        </ButtonContainer>
+      </PopupContainer>
+    )
+  }
 
   return (
     <Popup show={!!detail} onClose={onClose}>
-      {!!detail && (
-        <PopupContainer>
-          <ContentContainer>
-            <ValueContainer>
-              <Label>{getText('ID')}</Label>
-              <Value>{detail.transactionId}</Value>
-            </ValueContainer>
-            <ValueContainer>
-              <Label>{getText('Status')}</Label>
-              <Value>{detail.status}</Value>
-            </ValueContainer>
-            <ValueContainer>
-              <Label>{getText('Text')}</Label>
-              <Value>{detail.reason}</Value>
-            </ValueContainer>
-            <ValueContainer>
-              <Label>{getText('CustomerID')}</Label>
-              <Value>{detail.customerId}</Value>
-            </ValueContainer>
-            <ValueContainer>
-              <Label>{getText('Timestamp')}</Label>
-              <Value>{formatDate(detail.timestamp)}</Value>
-            </ValueContainer>
-            <ValueContainer>
-              <Label>{getText('Amount')}</Label>
-              <Value>{formatAmount(detail.currency, detail.amount)}</Value>
-            </ValueContainer>
-          </ContentContainer>
-          <ButtonContainer>
-            <SecondaryButton label={getText('Refund')} />
-            <PrimaryButton label={getText('Close')} onClick={onClose} />
-          </ButtonContainer>
-        </PopupContainer>
-      )}
+      {!!detail && getContent()}
     </Popup>
   )
 }

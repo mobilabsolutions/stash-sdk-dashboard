@@ -28,5 +28,10 @@ export default {
   Timestamp: { de: 'Zeitpunkt' },
   Amount: { de: 'Betrag' },
   Refund: { de: 'zurückerstatten' },
-  Close: { de: 'schließen' }
+  Close: { de: 'schließen' },
+  Cancel: { de: 'abbrechen' },
+  'Do you really want to Refund %{amount} for the Transaction %{id}?': {
+    de:
+      'Möchten Sie wirklich die Transaktion %{id} über %{amount} zurückerstatten?'
+  }
 }
