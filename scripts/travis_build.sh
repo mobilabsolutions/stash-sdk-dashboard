@@ -54,18 +54,7 @@ else
   fi
 fi
 
-if echo ${gitlabMergeRequestIid} | egrep '[[:digit:]]+'; then
-  tag mr-${gitlabMergeRequestIid}
-  if [ ! -z ${gitlabMergeRequestLastCommit:+X} ]; then
-    tag ${gitlabMergeRequestLastCommit}
-  fi
-fi
-
-if [ ! -z ${gitlabBranch:+X} ]; then
-  tag $(echo ${gitlabBranch} | sed 's/^refs\/tags\///g')
-fi
-
-if [ ! -z ${TRAVIS_TAG:+X} ]; then
+if echo ${TRAVIS_TAG} | egrep '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
   tag ${TRAVIS_TAG}
 fi
 

@@ -8,6 +8,6 @@ language: bash
 branches:
   only:
     - master
-    - /^(\d+\.)?(\d+\.)?\d+(-\w+)?$/
+    - /^v(\d+\.)?(\d+\.)?\d+(-\w+)?$/
 
 script: sh ./scripts/travis_build.sh

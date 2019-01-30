@@ -1,6 +1,6 @@
 {
   "name": "payment-sdk-dashboard-open",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Dashboard for Payment SDK",
   "main": "./server/index.js",
   "scripts": {
@@ -10,9 +10,9 @@
     "test": "npm run lint && npm run jest",
     "docker": "sh ./scripts/start_docker.sh",
     "docker:stop": "docker stop payment-sdk-dashboard_01",
-    "build-and-push": "sh ./scripts/local_build.sh",
-    "patch": "sh ./scripts/patch.sh",
-    "minor": "sh ./scripts/minor.sh",
+    "version:patch": "sh ./scripts/patch.sh",
+    "version:minor": "sh ./scripts/minor.sh",
+    "version:major": "sh ./scripts/major.sh",
     "lint": "eslint .",
     "jest": "NODE_ENV=test jest",
     "jest:watch": "NODE_ENV=test jest --watch",
