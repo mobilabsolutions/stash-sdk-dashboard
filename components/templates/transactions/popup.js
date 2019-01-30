@@ -118,7 +118,7 @@ export default ({ detail, onClose, onRefund, isRefunding }) => {
           </ValueContainer>
         </ContentContainer>
         <ButtonContainer>
-          {detail === 'approved' && (
+          {detail.status === 'approved' && (
             <SecondaryButton
               label={getText('Refund')}
               onClick={() => setInRefund(true)}
