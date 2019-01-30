@@ -68,3 +68,4 @@ if echo ${TRAVIS_TAG} | egrep '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
 fi
 
 push
+deploy
