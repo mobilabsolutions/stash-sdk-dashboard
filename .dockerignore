@@ -2,6 +2,7 @@ node_modules/*
 .next/*
 .dockerignore
 .gitignore
-.eslintrc
+.travis.yml
 Dockerfile
 README.md
+scripts/*
