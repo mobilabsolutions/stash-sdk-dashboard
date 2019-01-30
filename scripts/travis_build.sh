@@ -21,6 +21,15 @@ push() {
   docker push ${NAME}
 }
 
+deploy() {
+  rancher-compose \
+    --file docker-compose.yml \
+    --project-name payment-sdk-dev \
+    --verbose up -d \
+    --force-upgrade --pull \
+    --confirm-upgrade dashboard
+}
+
 build
 
 if [ ! -z ${TRAVIS_BUILD_NUMBER:+X} ]; then

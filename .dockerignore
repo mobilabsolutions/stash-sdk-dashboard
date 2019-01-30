@@ -1,8 +1,10 @@
-node_modules/*
 .next/*
+node_modules/*
+scripts/*
 .dockerignore
 .gitignore
 .travis.yml
 Dockerfile
+docker-compose.yml
+rancher-compose.yml
 README.md
-scripts/*

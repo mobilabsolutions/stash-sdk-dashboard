@@ -5,6 +5,9 @@ services:
 
 language: bash
 
+before_script:
+  - sh ./scripts/install_rancher.sh
+
 branches:
   only:
     - master
