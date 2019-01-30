@@ -4,7 +4,6 @@ if [ ! -z ${DEBUG:+X} ]; then
   set -x;
 fi
 
-docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD} 
 export NAME=hub.mblb.net/payment-sdk-dashboard-open
 
 build() {
@@ -18,7 +17,6 @@ tag() {
 }
 
 push() {
-  docker logout
   docker login -u docker-user -p ${DOCKER_MBLB_PASSWORD} hub.mblb.net
   docker push ${NAME}
 }
