@@ -50,7 +50,7 @@ const ButtonContainer = styled.div`
   }
 `
 
-export default ({ detail, onClose }) => {
+export default ({ detail, onClose, onRefund, isRefunding }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
   const [inRefund, setInRefund] = useState(false)
 
@@ -77,7 +77,13 @@ export default ({ detail, onClose }) => {
                 onClose()
               }}
             />
-            <WarnButton label={getText('Refund')} onClick={onClose} />
+            <WarnButton
+              label={getText('Refund')}
+              onClick={() => {
+                onRefund(detail.transactionId).then(() => onClose())
+              }}
+              disabled={isRefunding}
+            />
           </ButtonContainer>
         </PopupContainer>
       )
@@ -112,10 +118,12 @@ export default ({ detail, onClose }) => {
           </ValueContainer>
         </ContentContainer>
         <ButtonContainer>
-          <SecondaryButton
-            label={getText('Refund')}
-            onClick={() => setInRefund(true)}
-          />
+          {detail === 'approved' && (
+            <SecondaryButton
+              label={getText('Refund')}
+              onClick={() => setInRefund(true)}
+            />
+          )}
           <PrimaryButton label={getText('Close')} onClick={onClose} />
         </ButtonContainer>
       </PopupContainer>

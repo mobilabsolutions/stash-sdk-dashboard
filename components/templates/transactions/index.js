@@ -16,7 +16,7 @@ import {
   Amount
 } from './styled'
 
-export default ({ data, isLoading, filterHeight }) => {
+export default ({ data, isLoading, isRefunding, refund, filterHeight }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
   const [detail, setDetail] = useState(null)
 
@@ -50,7 +50,12 @@ export default ({ data, isLoading, filterHeight }) => {
           </Item>
         )
       })}
-      <Popup detail={detail} onClose={() => setDetail(null)} />
+      <Popup
+        detail={detail}
+        onClose={() => setDetail(null)}
+        isRefunding={isRefunding}
+        onRefund={refund}
+      />
     </List>
   )
 }

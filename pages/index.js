@@ -17,7 +17,9 @@ export default () => {
     setStatus,
     reason,
     setReason,
-    isLoading
+    isLoading,
+    refund,
+    isRefunding
   } = useTransactions()
 
   const filterRef = useRef(null)
@@ -39,6 +41,8 @@ export default () => {
         data={data}
         isLoading={isLoading}
         filterHeight={filterHeight}
+        refund={refund}
+        isRefunding={isRefunding}
       />
       <Pagination
         numberOfPages={numberOfPages}

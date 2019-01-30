@@ -3,7 +3,6 @@ import moment from 'moment'
 import Router from 'next/router'
 
 import { useApi } from '../use_api'
-
 const isClient = typeof window === 'object'
 
 const getInitValue = () => {
@@ -16,13 +15,15 @@ const getInitValue = () => {
     pageSize: 100,
     status: 'all',
     reason: '',
-    error: null
+    error: null,
+    isRefunding: false,
+    refreshCounter: 0
   }
 }
 
 export const useTransactions = () => {
   const [state, setState] = useState(getInitValue())
-  const { get: apiGet, token } = useApi()
+  const { get: apiGet, post: apiPost, token } = useApi()
 
   useEffect(() => {
     if (!isClient) return
@@ -79,7 +80,8 @@ export const useTransactions = () => {
     state.startPos,
     state.pageSize,
     state.status,
-    state.reason
+    state.reason,
+    state.refreshCounter
   ])
 
   const numberOfPages =
@@ -108,6 +110,30 @@ export const useTransactions = () => {
   const setReason = reason =>
     setState(prevState => ({ ...prevState, reason, startPos: 0 }))
 
+  const refund = (transactionId, reason) => {
+    setState(prevState => ({ ...prevState, isRefunding: true }))
+
+    return new Promise((resolve, reject) => {
+      apiPost('/api/v1/payment/refund', { transactionId, reason })
+        .then(result => {
+          setState(prevState => ({
+            ...prevState,
+            isRefunding: false,
+            refreshCounter: prevState.refreshCounter + 1
+          }))
+          resolve(true)
+        })
+        .catch(error => {
+          setState(prevState => ({
+            ...prevState,
+            error,
+            isRefunding: false
+          }))
+          reject(error)
+        })
+    })
+  }
+
   return {
     data: state.data,
     isLoading: state.loadingCount > 0,
@@ -116,12 +142,14 @@ export const useTransactions = () => {
     status: state.status,
     reason: state.reason,
     error: state.error,
+    isRefunding: state.isRefunding,
     setRange,
     numberOfPages,
     selectedPage,
     setPage,
     setStatus,
     setReason,
+    refund,
     token
   }
 }
