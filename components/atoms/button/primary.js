@@ -60,13 +60,24 @@ const Button = styled.button`
   }
 `
 
+/**
+ * Primary Action Button
+ *
+ * @param {object} params
+ * @param {string} params.label
+ * @param {string} params.type
+ * @param {boolean} params.disabled
+ * @param {boolean} params.isFullSize
+ * @param {Function} params.onClick
+ * @param {string} params.className
+ */
 const PrimaryButton = ({
   label,
-  type,
-  disabled,
+  type = 'submit',
+  disabled = false,
   isFullSize = false,
   onClick,
-  className
+  className = ''
 }) => (
   <Button
     type={type}

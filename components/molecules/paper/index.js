@@ -5,6 +5,7 @@ const Border = styled.div`
   padding: 24px;
   background-color: ${props => props.theme.shade.A500};
   height: 100%;
+  margin: 0px;
 `
 
 const Inner = styled.div`
