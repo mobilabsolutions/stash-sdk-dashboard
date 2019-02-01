@@ -5,6 +5,7 @@ exports[`Disabled PrimaryButton Should Render 1`] = `
   className="primary__Button-sc-14r2v89-0 dVzFhI"
   disabled={true}
   onClick={null}
+  type="submit"
 >
   <span>
     Disabled
@@ -15,7 +16,9 @@ exports[`Disabled PrimaryButton Should Render 1`] = `
 exports[`PrimaryButton Should Render 1`] = `
 <button
   className="primary__Button-sc-14r2v89-0 dVzFhI"
+  disabled={false}
   onClick={null}
+  type="submit"
 >
   <span>
     Login
