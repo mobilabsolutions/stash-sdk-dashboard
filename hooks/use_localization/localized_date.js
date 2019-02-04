@@ -1,4 +1,4 @@
-var formatOptions = {
+const formatOptions = {
   weekday: 'long',
   year: 'numeric',
   month: 'long',

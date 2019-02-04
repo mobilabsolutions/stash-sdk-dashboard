@@ -46,7 +46,11 @@ export const useTransactions = () => {
         .then(response =>
           setState(prevState => ({
             ...prevState,
-            data: response.result.transactions,
+            data: response.result.transactions.map(item => ({
+              ...item,
+              amount: item.amount / 100,
+              timestamp: new Date(item.timestamp)
+            })),
             totalCount: response.result.totalCount,
             error: null,
             loadingCount: prevState.loadingCount - 1
