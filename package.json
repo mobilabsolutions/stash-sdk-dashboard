@@ -47,7 +47,7 @@
     "testURL": "http://localhost:3000/"
   },
   "dependencies": {
-    "fastify": "1.13.4",
+    "fastify": "1.14.0",
     "fastify-http-proxy": "1.0.0",
     "isomorphic-fetch": "2.2.1",
     "next": "7.0.2",
