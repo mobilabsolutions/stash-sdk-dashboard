@@ -3,6 +3,6 @@ services:
   dashboard:
     image: hub.mblb.net/payment-sdk-dashboard-open:latest
     labels:
-      service.name: carrier
+      service.name: dashboard
       io.rancher.container.hostname_override: container_name
       io.rancher.container.pull_image: always
