@@ -65,7 +65,9 @@ fi
 
 if echo ${TRAVIS_TAG} | egrep '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
   tag ${TRAVIS_TAG}
+  push
+  deploy
+else
+  push
 fi
 
-push
-deploy
