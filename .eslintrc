@@ -12,7 +12,7 @@
   "globals": {
     "fetch": true
   },
-  "plugins": ["prettier"],
+  "plugins": ["react-hooks", "prettier"],
   "rules": {
     "prettier/prettier": "error"
   }
