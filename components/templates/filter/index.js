@@ -75,7 +75,15 @@ export default forwardRef(
             onFocusChange={focusedInput => setFocusedInput(focusedInput)}
             showClearDates
             noBorder
-            isOutsideRange={value => value.isAfter(moment())}
+            isOutsideRange={value =>
+              value.isAfter(
+                moment()
+                  .hours(23)
+                  .minutes(59)
+                  .seconds(59)
+                  .milliseconds(999)
+              )
+            }
             initialVisibleMonth={() => moment().add(-1, 'months')}
             startDatePlaceholderText={getText('Start Date')}
             endDatePlaceholderText={getText('End Date')}
