@@ -9,8 +9,17 @@ const getInitValue = () => {
   return {
     data: [],
     loadingCount: 0,
-    startDate: moment().add(-1, 'months'),
-    endDate: moment(),
+    startDate: moment()
+      .add(-1, 'months')
+      .hours(0)
+      .minutes(0)
+      .seconds(0)
+      .milliseconds(0),
+    endDate: moment()
+      .hours(23)
+      .minutes(59)
+      .seconds(59)
+      .milliseconds(999),
     startPos: 0,
     pageSize: 100,
     status: 'all',
@@ -97,8 +106,16 @@ export const useTransactions = () => {
   const setRange = (fromDate, toDate) =>
     setState(prevState => ({
       ...prevState,
-      startDate: fromDate,
-      endDate: toDate,
+      startDate: fromDate
+        .hours(0)
+        .minutes(0)
+        .seconds(0)
+        .milliseconds(0),
+      endDate: toDate
+        .hours(23)
+        .minutes(59)
+        .seconds(59)
+        .milliseconds(999),
       startPos: 0
     }))
 
