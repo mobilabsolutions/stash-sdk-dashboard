@@ -62,16 +62,14 @@ const Button = styled.button`
 
 const PrimaryButton = ({
   label,
-  type,
-  disabled,
-  isFullSize = false,
+  type = 'button',
+  disabled = false,
   onClick,
-  className
+  className = ''
 }) => (
   <Button
     type={type}
     disabled={disabled}
-    isFullSize={isFullSize}
     onClick={
       !disabled && onClick
         ? e => {

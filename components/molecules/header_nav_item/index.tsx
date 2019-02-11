@@ -7,7 +7,11 @@ const A = styled.a`
   text-decoration: none;
 `
 
-const H1 = styled.h1`
+type Props = {
+  isActive: boolean
+}
+
+const H1 = styled.h1<Props>`
   color: ${props =>
     props.isActive ? props.theme.primary.A700 : props.theme.shade.A700};
   font-family: ${props => props.theme.fontHeadline};

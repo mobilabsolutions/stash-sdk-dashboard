@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-const Label = styled.label`
+type LabelProps = {
+  label: string
+}
+
+const Label = styled.label<LabelProps>`
   display: block;
   position: relative;
   padding-left: ${props => (props.label ? '35px' : '0px')};

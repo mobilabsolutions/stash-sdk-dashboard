@@ -46,7 +46,11 @@ const Line = styled.span`
   }
 `
 
-const Bar = styled.span`
+type BarProps = {
+  focused: boolean
+}
+
+const Bar = styled.span<BarProps>`
   position: relative;
   display: block;
   width: 300px;
@@ -69,7 +73,7 @@ const Bar = styled.span`
 `
 
 export default ({ id, name, value, type = 'text', onChanged }) => {
-  const [focused, setFocused] = useState()
+  const [focused, setFocused] = useState(false)
 
   return (
     <Wrapper>

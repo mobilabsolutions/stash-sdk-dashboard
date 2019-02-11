@@ -30,7 +30,7 @@ export default ({ data, isLoading, isRefunding, refund, filterHeight }) => {
 
   return (
     <List filterHeight={filterHeight}>
-      {data.map((row, index) => {
+      {data.map(row => {
         return (
           <Item key={row.transactionId} onClick={() => setDetail(row)}>
             <ItemRow>

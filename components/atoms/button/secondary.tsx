@@ -59,7 +59,13 @@ const Button = styled.button`
   }
 `
 
-const SecondaryButton = ({ label, type, disabled, onClick, className }) => (
+const SecondaryButton = ({
+  label,
+  type = 'button',
+  disabled = false,
+  onClick,
+  className = ''
+}) => (
   <Button
     type={type}
     disabled={disabled}
@@ -73,7 +79,7 @@ const SecondaryButton = ({ label, type, disabled, onClick, className }) => (
     }
     className={className}
   >
-    <span disabled={disabled}>{label}</span>
+    <span>{label}</span>
   </Button>
 )
 

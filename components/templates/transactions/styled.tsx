@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const List = styled.ol`
+type ListProps = {
+  filterHeight: number
+}
+
+export const List = styled.ol<ListProps>`
   display: block;
   flex: 0 0 auto;
   flex-direction: column;
@@ -59,7 +63,11 @@ const getStatusBackgroundColor = props => {
   }
 }
 
-export const Status = styled.p`
+type StatusProps = {
+  status: string
+}
+
+export const Status = styled.p<StatusProps>`
   color: ${props => props.theme.shade.A50};
   background-color: ${getStatusBackgroundColor};
   font-family: ${props => props.theme.font};
