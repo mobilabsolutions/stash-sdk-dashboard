@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled PrimaryButton Should Render 1`] = `
+<button
+  className="primary__Button-sc-1lwi4g7-0 jYMRry"
+  disabled={true}
+  onClick={null}
+  type="submit"
+>
+  <span>
+    Disabled
+  </span>
+</button>
+`;
+
+exports[`PrimaryButton Should Render 1`] = `
+<button
+  className="primary__Button-sc-1lwi4g7-0 jYMRry"
+  disabled={false}
+  onClick={null}
+  type="submit"
+>
+  <span>
+    Login
+  </span>
+</button>
+`;

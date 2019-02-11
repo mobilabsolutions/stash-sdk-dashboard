@@ -12,9 +12,9 @@ export const useLocalization = () => {
     locale,
     getText: (id: string, args = null) =>
       localizedText(texts, locale, id, args),
-    formatAmount: (currencyId, value) =>
+    formatAmount: (currencyId: string, value: number) =>
       localizedAmount(currencyId, value, locale),
-    formatNumber: value => localizedNumber(value, locale),
-    formatDate: value => localizedDate(value, locale)
+    formatNumber: (value: number) => localizedNumber(value, locale),
+    formatDate: (value: number) => localizedDate(value, locale)
   }
 }
