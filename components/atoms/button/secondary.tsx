@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const getWidth = props => (props.isFullSize ? '100%' : 'auto')
-
 const Button = styled.button`
   border-radius: 5px;
   border-width: 0;
@@ -42,47 +40,35 @@ const Button = styled.button`
     font-size: 1em;
     padding: 0.75em 1em;
   }
-  background-color: ${props => props.theme.primary.A700};
-  width: ${getWidth};
+  background-color: ${props => props.theme.shade.A0};
+  border: solid 2px ${props => props.theme.primary.A700};
   :hover,
   :focus {
-    background-color: ${props => props.theme.primary.A800};
+    background-color: ${props => props.theme.primary.A25};
   }
   :active {
-    background-color: ${props => props.theme.primary.A900};
+    background-color: ${props => props.theme.primary.A50};
   }
   :disabled {
     background-color: ${props => props.theme.shade.A400};
   }
   > span {
-    color: ${props => props.theme.shade.A25};
+    color: ${props =>
+      props.disabled ? props.theme.shade.A400 : props.theme.primary.A700};
     text-transform: uppercase;
   }
 `
 
-/**
- * Primary Action Button
- *
- * @param {object} params
- * @param {string} params.label
- * @param {string} params.type
- * @param {boolean} params.disabled
- * @param {boolean} params.isFullSize
- * @param {Function} params.onClick
- * @param {string} params.className
- */
-const PrimaryButton = ({
+const SecondaryButton = ({
   label,
-  type = 'submit',
+  type = 'button',
   disabled = false,
-  isFullSize = false,
   onClick,
   className = ''
 }) => (
   <Button
     type={type}
     disabled={disabled}
-    isFullSize={isFullSize}
     onClick={
       !disabled && onClick
         ? e => {
@@ -97,4 +83,4 @@ const PrimaryButton = ({
   </Button>
 )
 
-export default PrimaryButton
+export default SecondaryButton

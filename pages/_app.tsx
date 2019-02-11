@@ -5,8 +5,12 @@ import { ThemeProvider } from 'styled-components'
 import { theme, GlobalStyle } from '../assets/style'
 import { NextContextProvider } from '../hooks/use_next_context'
 
-export default class extends App {
-  static async getInitialProps({ Component, router, ctx }) {
+type Props = {
+  context: object
+}
+
+export default class extends App<Props> {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -15,6 +19,7 @@ export default class extends App {
 
     return {
       pageProps,
+      Component,
       context: {
         pathname: ctx.pathname,
         query: ctx.query,

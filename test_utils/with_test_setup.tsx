@@ -3,17 +3,14 @@ import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../assets/style'
 import { NextContextProvider } from '../hooks/use_next_context'
+import { ReactComponentLike } from 'prop-types'
 
-import Router from 'next/router'
-const mockedRouter = { push: () => {}, prefetch: () => {} }
-Router.router = mockedRouter
-
-const getDisplayName = Component => {
+const getDisplayName = (Component: any) => {
   return Component.displayName || Component.name || 'Component'
 }
 
 export default (
-  WrappedComponent,
+  WrappedComponent: ReactComponentLike,
   { locale = 'en', pathname = '/', query = {}, asPath = '/', cookie = '' } = {}
 ) => {
   const context = {

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TextButton Should Render 1`] = `
-<button
-  className="text_button-grth4y-0 cCjzYt"
->
-  Sample Text
-</button>
-`;

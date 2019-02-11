@@ -34,7 +34,7 @@ export const useNextContext = () => {
 }
 
 const getCookies = req => {
-  const cookieString =
+  const cookieString: string =
     req && !isClient ? req.headers['cookie'] : document.cookie
 
   if (!cookieString) return {}
@@ -53,12 +53,12 @@ const getLocale = req => {
   const locales = req
     ? (req.headers['accept-language'] || 'en')
         .split(',')
-        .map(item => {
+        .map((item: string) => {
           const match = item.match(/([a-z]{2}(-[A-Z]{2})?)/)
           if (match) return match[1]
           return null
         })
-        .filter(item => item !== null)
+        .filter((item: string) => item !== null)
     : navigator.languages
 
   return locales.length > 0 ? locales[0] : 'en'
@@ -66,7 +66,7 @@ const getLocale = req => {
 
 export const NextContextProvider = ({ children, context }) => {
   const [cookies, setStateCookies] = useState(getCookies(context.req))
-  const setCookie = (key, value, expiryDate) => {
+  const setCookie = (key: string, value: string, expiryDate: Date = null) => {
     if (!isClient) return
 
     setStateCookies(prevCookies => ({ ...prevCookies, [key]: value }))
@@ -82,7 +82,7 @@ export const NextContextProvider = ({ children, context }) => {
 
   const locale = cookies['__locale'] || getLocale(context.req)
   moment.locale(locale)
-  const setLocale = locale => {
+  const setLocale = (locale: string) => {
     if (!isClient) return
 
     moment.locale(locale)

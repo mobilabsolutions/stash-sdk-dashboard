@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import styled from 'styled-components'
 
 import { useLocalization } from '../../../hooks'
@@ -6,7 +7,8 @@ import { PrimaryButton, SecondaryButton, WarnButton } from '../../atoms'
 import { Popup } from '../../molecules'
 
 const PopupContainer = styled.div`
-  display.flex;
+  display: flex;
+  flex-direction: column;
 `
 
 const ContentContainer = styled.div`

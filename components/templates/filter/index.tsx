@@ -52,7 +52,7 @@ const statusOptions = [
   'cancelled'
 ]
 
-export default forwardRef(
+export default forwardRef<HTMLDivElement, any>(
   (
     { startDate, endDate, setRange, status, setStatus, reason, setReason },
     ref

@@ -4,6 +4,7 @@ exports[`Down Icon Should Render 1`] = `
 <svg
   className="enable"
   height={20}
+  onClick={[Function]}
   viewBox="0 0 48 48"
   width={20}
   xmlns="http://www.w3.org/2000/svg"
@@ -18,6 +19,7 @@ exports[`UpIcon Should Render 1`] = `
 <svg
   className="enable"
   height={20}
+  onClick={[Function]}
   viewBox="0 0 48 48"
   width={20}
   xmlns="http://www.w3.org/2000/svg"

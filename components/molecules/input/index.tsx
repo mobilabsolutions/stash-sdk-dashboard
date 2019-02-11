@@ -8,10 +8,11 @@ const Wrapper = styled.div`
   margin-left: 8px;
   margin-right: 8px;
 `
+
 const Input = styled.input`
   border-bottom: 1.2px solid ${props => props.theme.primary.A700};
   border: none;
-  color: ${props => props.theme.shade.A700}
+  color: ${props => props.theme.shade.A700};
   display: block;
   font-family: ${props => props.theme.font};
   font-size: 1em;
@@ -45,7 +46,11 @@ const Line = styled.span`
   }
 `
 
-const Bar = styled.span`
+type BarProps = {
+  focused: boolean
+}
+
+const Bar = styled.span<BarProps>`
   position: relative;
   display: block;
   width: 300px;
@@ -67,8 +72,8 @@ const Bar = styled.span`
   }
 `
 
-export default ({ id, name, value, type, onChanged }) => {
-  const [focused, setFocused] = useState()
+export default ({ id, name, value, type = 'text', onChanged }) => {
+  const [focused, setFocused] = useState(false)
 
   return (
     <Wrapper>

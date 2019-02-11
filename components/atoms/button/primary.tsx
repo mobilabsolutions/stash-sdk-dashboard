@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const getWidth = props => (props.isFullSize ? '100%' : 'auto')
+
 const Button = styled.button`
   border-radius: 5px;
   border-width: 0;
@@ -40,26 +42,31 @@ const Button = styled.button`
     font-size: 1em;
     padding: 0.75em 1em;
   }
-  background-color: ${props => props.theme.shade.A0};
-  border: solid 2px ${props => props.theme.primary.A700};
+  background-color: ${props => props.theme.primary.A700};
+  width: ${getWidth};
   :hover,
   :focus {
-    background-color: ${props => props.theme.primary.A25};
+    background-color: ${props => props.theme.primary.A800};
   }
   :active {
-    background-color: ${props => props.theme.primary.A50};
+    background-color: ${props => props.theme.primary.A900};
   }
   :disabled {
     background-color: ${props => props.theme.shade.A400};
   }
   > span {
-    color: ${props =>
-      props.disabled ? props.theme.shade.A400 : props.theme.primary.A700};
+    color: ${props => props.theme.shade.A25};
     text-transform: uppercase;
   }
 `
 
-const SecondaryButton = ({ label, type, disabled, onClick, className }) => (
+const PrimaryButton = ({
+  label,
+  type = 'submit',
+  disabled = false,
+  onClick,
+  className = ''
+}) => (
   <Button
     type={type}
     disabled={disabled}
@@ -73,8 +80,8 @@ const SecondaryButton = ({ label, type, disabled, onClick, className }) => (
     }
     className={className}
   >
-    <span disabled={disabled}>{label}</span>
+    <span>{label}</span>
   </Button>
 )
 
-export default SecondaryButton
+export default PrimaryButton

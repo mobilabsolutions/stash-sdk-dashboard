@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import moment from 'moment'
+import moment, { Moment } from 'moment'
 import Router from 'next/router'
 
 import { useApi } from '../use_api'
@@ -22,6 +22,7 @@ const getInitValue = () => {
       .milliseconds(999),
     startPos: 0,
     pageSize: 100,
+    totalCount: 0,
     status: 'all',
     reason: '',
     error: null,
@@ -42,7 +43,7 @@ export const useTransactions = () => {
       return
     }
 
-    const loadData = () => {
+    const loadData = async () => {
       let url = `/api/v1/transactions?pagesize=${state.pageSize}`
 
       if (state.startPos) url += `&startpos=${state.startPos}`
@@ -51,33 +52,31 @@ export const useTransactions = () => {
       if (state.status !== 'all') url += `&status=${state.status.toUpperCase()}`
       if (state.reason) url += `&reason=${state.reason}`
 
-      return apiGet(url)
-        .then(response =>
-          setState(prevState => ({
-            ...prevState,
-            data: response.result.transactions.map(item => ({
-              ...item,
-              amount: item.amount / 100,
-              timestamp: new Date(item.timestamp)
-            })),
-            totalCount: response.result.totalCount,
-            error: null,
-            loadingCount: prevState.loadingCount - 1
-          }))
-        )
-        .catch(error => {
-          if (error && error.statusCode === 401) {
-            Router.push('/settings')
-            return null
-          }
-
-          setState(prevState => ({
-            ...prevState,
-            data: [],
-            error,
-            loadingCount: prevState.loadingCount - 1
-          }))
-        })
+      try {
+        const response: any = await apiGet(url)
+        return setState(prevState => ({
+          ...prevState,
+          data: response.result.transactions.map(item => ({
+            ...item,
+            amount: item.amount / 100,
+            timestamp: new Date(item.timestamp)
+          })),
+          totalCount: response.result.totalCount,
+          error: null,
+          loadingCount: prevState.loadingCount - 1
+        }))
+      } catch (error) {
+        if (error && error.statusCode === 401) {
+          Router.push('/settings')
+          return null
+        }
+        setState(prevState => ({
+          ...prevState,
+          data: [],
+          error,
+          loadingCount: prevState.loadingCount - 1
+        }))
+      }
     }
 
     setState(prevState => ({
@@ -103,7 +102,7 @@ export const useTransactions = () => {
       : 0
   const selectedPage = Math.ceil(state.startPos / state.pageSize) + 1
 
-  const setRange = (fromDate, toDate) =>
+  const setRange = (fromDate: Moment, toDate: Moment) =>
     setState(prevState => ({
       ...prevState,
       startDate: fromDate
@@ -119,24 +118,24 @@ export const useTransactions = () => {
       startPos: 0
     }))
 
-  const setPage = page =>
+  const setPage = (page: number) =>
     setState(prevState => ({
       ...prevState,
       startPos: (page - 1) * state.pageSize
     }))
 
-  const setStatus = status =>
+  const setStatus = (status: string) =>
     setState(prevState => ({ ...prevState, status, startPos: 0 }))
 
-  const setReason = reason =>
+  const setReason = (reason: string) =>
     setState(prevState => ({ ...prevState, reason, startPos: 0 }))
 
-  const refund = (transactionId, reason) => {
+  const refund = (transactionId: string, reason: string) => {
     setState(prevState => ({ ...prevState, isRefunding: true }))
 
     return new Promise((resolve, reject) => {
       apiPost('/api/v1/payment/refund', { transactionId, reason })
-        .then(result => {
+        .then(() => {
           setState(prevState => ({
             ...prevState,
             isRefunding: false,
