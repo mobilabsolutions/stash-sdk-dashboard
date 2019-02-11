@@ -34,6 +34,12 @@ npm run docker
 
 - done through travis script
 
+## Environment Keys
+
+- PORT (default 3000)
+- API_UPSTREAM (default https://pd.mblb.net)
+- NODE_ENV (production|development|test) do not change, set by package.json scripts
+
 ## Helpful scripts
 
 Just run
