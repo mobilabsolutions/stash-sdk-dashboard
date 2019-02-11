@@ -6,7 +6,7 @@ const BACKEND_HOST =
     : process.env.API_UPSTREAM || 'https://pd.mblb.net'
 
 const apiCall = (token, method, path, content = null) => {
-  const request = {
+  const request: any = {
     method,
     headers: {
       'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const apiCall = (token, method, path, content = null) => {
     fetch(url, request)
       .then(response => {
         if (response.status >= 500) {
-          const error = new Error('Api Server Error')
+          const error: any = new Error('Api Server Error')
           error.statusCode = response.status
           error.statusText = response.statusText
           return reject(error)
@@ -35,7 +35,7 @@ const apiCall = (token, method, path, content = null) => {
           return response
             .json()
             .then(json => {
-              const error = new Error('Api User Error')
+              const error: any = new Error('Api User Error')
               error.statusCode = response.status
               error.statusText = response.statusText
               error.reason = json.reason

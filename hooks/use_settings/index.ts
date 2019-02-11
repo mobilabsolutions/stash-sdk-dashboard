@@ -7,6 +7,6 @@ export const useSettings = () => {
     locale,
     setLocale,
     token: cookies['__token'],
-    setToken: token => setCookie('__token', token)
+    setToken: (token: string) => setCookie('__token', token)
   }
 }

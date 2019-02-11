@@ -6,7 +6,7 @@ import { theme, GlobalStyle } from '../assets/style'
 import { NextContextProvider } from '../hooks/use_next_context'
 
 export default class extends App {
-  static async getInitialProps({ Component, router, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {

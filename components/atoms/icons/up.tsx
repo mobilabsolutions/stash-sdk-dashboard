@@ -1,8 +1,8 @@
 export default ({
   width = 20,
   height = 20,
-  onClick,
-  disable,
+  onClick = () => null,
+  disable = false,
   ...properties
 }) => (
   <svg
@@ -14,6 +14,6 @@ export default ({
     className={disable ? 'disable' : 'enable'}
     {...properties}
   >
-    <path d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z" />
+    <path d="M14.83 30.83L24 21.66l9.17 9.17L36 28 24 16 12 28z" />
   </svg>
 )

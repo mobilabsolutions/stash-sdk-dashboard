@@ -16,7 +16,7 @@ const Inner = styled.div`
   position: relative;
 `
 
-export default ({ isLoading, children }) => (
+export default ({ children }) => (
   <Border>
     <Inner>{children}</Inner>
   </Border>
