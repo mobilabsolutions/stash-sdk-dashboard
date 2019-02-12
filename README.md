@@ -60,6 +60,8 @@ npm run version:minor
 npm run version:major
 ```
 
+Runtime Environment is a kubernetes Cluster
+
 ### Environment Keys
 
 (just needed for Deployment)
@@ -84,6 +86,7 @@ to get an overview
 - [next.js](https://nextjs.org/) (SSR Framework)
 - [react](https://reactjs.org/) (View Lib)
 - [styled-components](https://www.styled-components.com/) (css Lib)
+- [jest](https://jestjs.io/) (Testing Framework)
 - [fastify](https://www.fastify.io/) (Webserver)
 - [docker](https://www.docker.com/) (alpine-node)
 

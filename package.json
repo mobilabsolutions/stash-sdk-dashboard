@@ -49,6 +49,7 @@
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)?$",
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
+      "<rootDir>/dist/",
       "<rootDir>/node_modules/"
     ],
     "moduleFileExtensions": [
