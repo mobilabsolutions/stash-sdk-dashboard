@@ -16,10 +16,10 @@ const Content = styled.div`
 `
 
 export default ({ show, onClose, children }) => {
-  if (!show) return null
-
-  useKeyDown(key => key.code === 'Escape' && onClose())
+  useKeyDown(key => show && key.code === 'Escape' && onClose())
   const overlayRef = useRef(null)
+
+  if (!show) return null
   const handleOverlayClick = event =>
     event.target === overlayRef.current && onClose()
 
