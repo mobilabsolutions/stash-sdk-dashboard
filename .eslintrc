@@ -6,7 +6,6 @@
   "extends": [
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:@typescript-eslint/recommended",
     "standard",
     "standard-jsx",
     "prettier",
