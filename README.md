@@ -98,9 +98,9 @@ to get an overview
 
 - [/asserts](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/assets) translation and styles
 - [/components](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/components) Atomic design structure of Components
-- [/hooks](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/hooks) react hooks / middleware and business logic
+- [/hooks](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/hooks) react hooks, middleware and business logic
 - [/pages](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/pages) entry points for the next.js app / check next.js documentation
 - [/scripts](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/scripts) bash scripts for helper and build
 - [/server](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/server) fastify backend (upstream, next.js, healthcheck)
-- [/static](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/static) static files like fonts / image, css
+- [/static](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/static) static files like fonts, images and css
 - [/test_utils](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/test_utils) test helpers
