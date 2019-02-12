@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: payment-dashboard
+  namespace: ${KUBE_NAMESPACE}
+  labels:
+    app: payment-dashboard
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "${KUBE_INGRESS_STATIC_IP_NAME}"
+spec:
+  backend:
+    serviceName: payment-dashboard
+    servicePort: 80

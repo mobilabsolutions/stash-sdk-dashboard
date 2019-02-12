@@ -5,12 +5,27 @@ services:
 
 language: bash
 
-before_script:
-  - sh ./scripts/install_rancher.sh
+env:
+  - CLUSTER_NAME=main REGION="europe-west3" PROJECT_ID="payment-server-reloaded" REGISTRY_HOSTNAME="eu.gcr.io"
 
 branches:
   only:
-    - master
+    - gcp-migration
     - /^v(\d+\.)?(\d+\.)?\d+(-\w+)?$/
 
-script: sh ./scripts/travis_build.sh
+before_script:
+  - ${TRAVIS_BUILD_DIR}/scripts/install_rancher.sh
+  - ${TRAVIS_BUILD_DIR}/scripts/install_gcloud.sh
+
+script:
+  - ${TRAVIS_BUILD_DIR}/scripts/travis-build.sh
+  - ${TRAVIS_BUILD_DIR}/scripts/travis-gcp-build.sh
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    # deploy to kube dev namespace
+    script: ${TRAVIS_BUILD_DIR}/k8s/gcp-dev-deploy.sh
+    on:
+      branch: gcp-migration
+
