@@ -15,6 +15,8 @@ Current state is just a Prototype
 - Show Detail on "Click"
 - Refund of "approved" Transactions
 
+[Current Version](https://pd.mblb.net)
+
 ## Developer Instructions
 
 ### Requirements
@@ -59,7 +61,7 @@ npm run version:major
 
 ### Environment Keys
 
-(just needed )
+(just needed for Deployment)
 
 - PORT (default 3000)
 - API_UPSTREAM (default https://pd.mblb.net)
