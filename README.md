@@ -14,6 +14,7 @@ Current state is just a Prototype
 - Paging, if too many results
 - Show Detail on "Click"
 - Refund of "approved" Transactions
+- multilingual (currently English / German)
 
 [Current Version](https://pd.mblb.net)
 
