@@ -17,6 +17,7 @@ export const List = styled.ol<ListProps>`
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   padding: 20px;
   :nth-child(even) {
     background-color: ${props => props.theme.shade.A25};
