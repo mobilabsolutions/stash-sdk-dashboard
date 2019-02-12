@@ -5,7 +5,12 @@ const BACKEND_HOST =
     ? ''
     : process.env.API_UPSTREAM || 'https://pd.mblb.net'
 
-const apiCall = (token, method, path, content = null) => {
+const apiCall = (
+  token: string,
+  method: string,
+  path: string,
+  content: object = null
+) => {
   const request: any = {
     method,
     headers: {
@@ -65,11 +70,14 @@ export const useApi = () => {
 
   const token = cookies['__token']
 
-  const get = path => apiCall(token, 'GET', path)
-  const put = (path, content) => apiCall(token, 'PUT', path, content)
-  const patch = (path, content) => apiCall(token, 'PATCH', path, content)
-  const post = (path, content) => apiCall(token, 'POST', path, content)
-  const del = (path, content) => apiCall(token, 'DELETE', path, content)
+  const get = (path: string) => apiCall(token, 'GET', path)
+  const put = (path: string, content: object) =>
+    apiCall(token, 'PUT', path, content)
+  const patch = (path: string, content: object) =>
+    apiCall(token, 'PATCH', path, content)
+  const post = (path: string, content: object) =>
+    apiCall(token, 'POST', path, content)
+  const del = (path: string) => apiCall(token, 'DELETE', path)
 
   return { get, put, patch, post, del, token }
 }

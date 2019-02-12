@@ -15,6 +15,6 @@ export const useLocalization = () => {
     formatAmount: (currencyId: string, value: number) =>
       localizedAmount(currencyId, value, locale),
     formatNumber: (value: number) => localizedNumber(value, locale),
-    formatDate: (value: number) => localizedDate(value, locale)
+    formatDate: (value: Date) => localizedDate(value, locale)
   }
 }

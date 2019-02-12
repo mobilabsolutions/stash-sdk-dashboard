@@ -1,6 +1,10 @@
 const numberFormats = {}
 
-export default (currencyId, value, locale) => {
+export default function localizedAmount(
+  currencyId: string,
+  value: number,
+  locale: string
+) {
   if (!locale) {
     console.warn(`Locale is missing for number: "${value}"`)
     return String(value)

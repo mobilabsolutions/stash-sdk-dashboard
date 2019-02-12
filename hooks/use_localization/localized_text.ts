@@ -1,4 +1,9 @@
-export default (texts, locale, id, args) => {
+export default function localizedText(
+  texts: object,
+  locale: string,
+  id: string,
+  args: object
+) {
   if (!locale) {
     console.warn(`Locale is missing for Text: "${id}"`)
     return id

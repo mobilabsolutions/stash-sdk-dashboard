@@ -10,7 +10,7 @@ const formatOptions = {
 
 const dateFormats = {}
 
-export default (value, locale) => {
+export default function localizedDate(value: Date | string, locale: string) {
   if (!locale) {
     console.warn(`Locale is missing for number: "${value}"`)
     return String(value)

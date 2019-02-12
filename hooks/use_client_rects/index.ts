@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, MutableRefObject } from 'react'
 
-export const useClientRect = ref => {
+export const useClientRect = (ref: MutableRefObject<any>) => {
   const getClientRect = () => {
     if (!ref || !ref.current) return {}
 

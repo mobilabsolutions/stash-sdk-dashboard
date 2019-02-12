@@ -1,7 +1,7 @@
 const formatOptions = { useGrouping: false, maximumFractionDigits: 3 }
 const numberFormats = {}
 
-export default (value, locale) => {
+export default function localizedNumber(value: number, locale: string) {
   if (!locale) {
     console.warn(`Locale is missing for number: "${value}"`)
     return String(value)
