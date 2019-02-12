@@ -1,6 +1,6 @@
 {
   "name": "payment-sdk-dashboard-open",
-  "version": "0.2.12",
+  "version": "0.3.0",
   "description": "Dashboard for Payment SDK",
   "main": "./server/index.js",
   "scripts": {
