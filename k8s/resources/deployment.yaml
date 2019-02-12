@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-dashboard
+  namespace: ${KUBE_NAMESPACE}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-dashboard
+  template:
+    metadata:
+      labels:
+        app: payment-dashboard
+        date: "${KUBE_APPLY_DATE}"
+    spec:
+      containers:
+      - name: payment-dashboard
+        image: eu.gcr.io/payment-server-reloaded/payment-dashboard:${KUBE_DEPLOYMENT_IMAGE_TAG}
+        resources:
+          requests:
+            cpu: ${KUBE_DEPLOYMENT_CPU_REQUEST}
+            memory: ${KUBE_DEPLOYMENT_MEMORY_REQUEST}
+          limits:
+            cpu: ${KUBE_DEPLOYMENT_CPU_LIMIT}
+            memory: ${KUBE_DEPLOYMENT_MEMORY_LIMIT}
+        envFrom:
+        - configMapRef:
+            name: payment-dashboard
+        ports:
+        - containerPort: 3000
+          name: api
+        readinessProbe:
+          httpGet:
+            path: "/healthcheck"
+            port: api
+          initialDelaySeconds: 60
+          periodSeconds: 15
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 5

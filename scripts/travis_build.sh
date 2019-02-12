@@ -21,15 +21,6 @@ push() {
   docker push ${NAME}
 }
 
-deploy() {
-  rancher-compose \
-    --file docker-compose.yml \
-    --project-name payment-sdk-dev \
-    --verbose up -d \
-    --force-upgrade --pull \
-    --confirm-upgrade dashboard
-}
-
 build
 
 if [ ! -z ${TRAVIS_BUILD_NUMBER:+X} ]; then
@@ -66,7 +57,6 @@ fi
 if echo ${TRAVIS_TAG} | egrep '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
   tag ${TRAVIS_TAG}
   push
-  deploy
 else
   push
 fi

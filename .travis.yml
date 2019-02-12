@@ -5,12 +5,28 @@ services:
 
 language: bash
 
-before_script:
-  - sh ./scripts/install_rancher.sh
+env:
+  - CLUSTER_NAME=main REGION="europe-west3" PROJECT_ID="payment-server-reloaded" REGISTRY_HOSTNAME="eu.gcr.io"
 
 branches:
   only:
     - master
     - /^v(\d+\.)?(\d+\.)?\d+(-\w+)?$/
 
-script: sh ./scripts/travis_build.sh
+before_script:
+  - cd ${HOME} && { curl -sL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-207.0.0-linux-x86_64.tar.gz | tar xz; ./google-cloud-sdk/install.sh --quiet; cd -; };
+  - source ${HOME}/google-cloud-sdk/path.bash.inc
+  - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.11.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+
+script:
+  - ${TRAVIS_BUILD_DIR}/scripts/travis_build.sh
+  - ${TRAVIS_BUILD_DIR}/scripts/travis-gcp-build.sh
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    # deploy to kube dev namespace
+    script: ${TRAVIS_BUILD_DIR}/k8s/gcp-dev-deploy.sh
+    on:
+      branch: master
+
