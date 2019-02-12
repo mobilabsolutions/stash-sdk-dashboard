@@ -35,6 +35,7 @@ brew cask install docker
 
 ```bash
 git clone git@github.com:mobilabsolutions/payment-sdk-dashboard-open
+cd payment-sdk-dashboard-open
 npm install
 npm run dev
 ```
