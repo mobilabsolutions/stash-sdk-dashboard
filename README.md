@@ -11,7 +11,7 @@ Current state is just a Prototype
 - Authorization is done via a Token
 - Displays the Transactions
 - Filter by Date, Status, and Text (Reason in the backend)
-- Paging, if to many results
+- Paging, if too many results
 - Show Detail on "Click"
 - Refund of "approved" Transactions
 
