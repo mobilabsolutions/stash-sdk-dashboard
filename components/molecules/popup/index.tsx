@@ -15,8 +15,8 @@ const Content = styled.div`
   position: relative;
 `
 
-export default ({ show, onClose, children }) => {
-  useKeyDown(key => show && key.code === 'Escape' && onClose())
+export default function Popup({ show, onClose, children }) {
+  useKeyDown(key => key.code === 'Escape' && onClose())
   const overlayRef = useRef(null)
 
   if (!show) return null

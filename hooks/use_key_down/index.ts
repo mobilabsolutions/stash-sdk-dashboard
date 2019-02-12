@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
-export const useKeyDown = onKeyPress => {
-  const handleKeyPress = event => onKeyPress(event)
+export const useKeyDown = (onKeyPress: (key: KeyboardEvent) => null) => {
+  const handleKeyPress = (event: KeyboardEvent) => onKeyPress(event)
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress)
