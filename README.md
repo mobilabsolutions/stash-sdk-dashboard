@@ -38,6 +38,23 @@ git clone git@github.com:mobilabsolutions/payment-sdk-dashboard-open
 cd payment-sdk-dashboard-open
 npm install
 npm run dev
+open http://localhost:3000/
+```
+
+### Testing
+
+```bash
+npm run test        #all test (lint, type, jest)
+npm run lint        #run eslint
+npm run typescript  #run type checker
+npm run jest        #run all jest test
+npm run jest:watch  #run all jest test that are effected by a change
+```
+
+### Dependencies
+
+```bash
+npm run updtr       # checks for outdated dependencies, updates them if tests do not fail
 ```
 
 ### Docker
@@ -46,6 +63,7 @@ To run it in docker
 
 ```bash
 npm run docker
+npm run docker:stop # to stop
 ```
 
 ### Deployment
