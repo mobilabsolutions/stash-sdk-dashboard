@@ -10,7 +10,7 @@ gcloud auth activate-service-account --key-file ${KEY_FILE}
 gcloud config set project ${PROJECT_ID}
 gcloud auth configure-docker --quiet
 
-IMAGE_NAME="payment-ws"
+IMAGE_NAME="payment-dashboard"
 BASE_IMAGE=${REGISTRY_HOSTNAME}/${PROJECT_ID}/${IMAGE_NAME}
 INITIAL_IMAGE=${BASE_IMAGE}:commit-${TRAVIS_COMMIT}
 
