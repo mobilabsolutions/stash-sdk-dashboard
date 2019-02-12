@@ -10,7 +10,7 @@ env:
 
 branches:
   only:
-    - gcp-migration
+    - master
     - /^v(\d+\.)?(\d+\.)?\d+(-\w+)?$/
 
 before_script:
@@ -28,5 +28,5 @@ deploy:
     # deploy to kube dev namespace
     script: ${TRAVIS_BUILD_DIR}/k8s/gcp-dev-deploy.sh
     on:
-      branch: gcp-migration
+      branch: master
 
