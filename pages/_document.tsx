@@ -2,6 +2,8 @@ import React from 'react'
 import Document, { Main, NextScript, Head } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+import { globalStyle } from '../assets/style'
+
 type Props = {
   styleTags: any
 }
@@ -39,6 +41,7 @@ export default class extends Document<Props> {
             rel="apple-touch-icon-precomposed"
             href="/static/icons/icon-180x180.png"
           />
+          <style type="text/css" dangerouslySetInnerHTML={globalStyle} />
           <link rel="stylesheet" href="/static/css/datepicker.css" />
           {styleTags}
         </Head>

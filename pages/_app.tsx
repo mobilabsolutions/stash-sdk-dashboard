@@ -2,7 +2,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
-import { theme, GlobalStyle } from '../assets/style'
+import { theme } from '../assets/style'
 import { NextContextProvider } from '../hooks/use_next_context'
 
 type Props = {
@@ -38,7 +38,6 @@ export default class extends App<Props> {
       <>
         <Head>
           <title>Payment Dashboard</title>
-          <GlobalStyle />
         </Head>
         <Container>
           <NextContextProvider context={context}>

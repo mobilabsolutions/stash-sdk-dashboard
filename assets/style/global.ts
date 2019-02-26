@@ -1,6 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-
-export default createGlobalStyle`
+export default {
+  __html: `
   @font-face {
     font-family: 'Raleway';
     src: url('/static/fonts/Raleway-Regular.ttf');
@@ -30,3 +29,4 @@ export default createGlobalStyle`
     font-size: 16px;
   }
 `
+}
