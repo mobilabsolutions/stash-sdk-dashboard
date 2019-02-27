@@ -12,7 +12,7 @@ const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
 const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production'
 const BIND_ADDRESS = IS_DEVELOPMENT ? '127.0.0.1' : '0.0.0.0'
 
-const start = async () => {
+async function main() {
   const nextApp = Next({ dev: IS_DEVELOPMENT })
   const handle = nextApp.getRequestHandler()
 
@@ -67,4 +67,4 @@ const start = async () => {
   }
 }
 
-start()
+main()
