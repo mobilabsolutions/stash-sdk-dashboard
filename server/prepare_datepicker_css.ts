@@ -1,11 +1,11 @@
-const fs = require('fs')
+import * as fs from 'fs'
 
 export default () => {
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     fs.readFile(
       './node_modules/react-dates/lib/css/_datepicker.css',
       'utf8',
-      (error: Error, data: string) => {
+      (error, data) => {
         if (error) return reject(error)
 
         resolve(
