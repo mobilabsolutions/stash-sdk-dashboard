@@ -1,9 +1,9 @@
 import App, { Container } from 'next/app'
 import Head from 'next/head'
-import { ThemeProvider } from 'styled-components'
 
-import { theme } from '../assets/style'
-import { NextContextProvider } from '../hooks/use_next_context'
+import { theme } from 'assets/style'
+import { ThemeProvider } from 'components/styled'
+import { NextContextProvider } from 'hooks/use_next_context'
 
 type Props = {
   context: object

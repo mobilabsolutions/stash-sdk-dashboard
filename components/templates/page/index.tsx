@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 import { Paper } from '../../molecules'
 import { Header, Footer } from '../../organisms'

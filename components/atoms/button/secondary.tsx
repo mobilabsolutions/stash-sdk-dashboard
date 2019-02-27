@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 const Button = styled.button`
   border-radius: 5px;
@@ -40,7 +40,7 @@ const Button = styled.button`
     font-size: 1em;
     padding: 0.75em 1em;
   }
-  background-color: ${props => props.theme.shade.A0};
+  background-color: ${props => props.theme.white};
   border: solid 2px ${props => props.theme.primary.A700};
   :hover,
   :focus {

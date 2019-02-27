@@ -3,7 +3,7 @@ import 'react-dates/initialize'
 import { useState, forwardRef } from 'react'
 import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 import { useLocalization } from '../../../hooks'
 import { Input, Radio } from '../../molecules'

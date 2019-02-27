@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 const Footer = styled.footer`
   display: flex;

@@ -1,8 +1,33 @@
+interface Color {
+  A25: string
+  A50: string
+  A100: string
+  A200: string
+  A300: string
+  A400: string
+  A500: string
+  A600: string
+  A700: string
+  A800: string
+  A900: string
+}
+
+export interface ThemeInterface {
+  font: string
+  fontHeadline: string
+  white: string
+  primary: Color
+  shade: Color
+  blue: Color
+  orange: Color
+  violet: Color
+}
+
 export default {
   font: 'Raleway,Ubuntu,Helvetica,Arial,sans-serif',
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
   white: '#FFF',
-  primary: Object.assign('#08E8DE', {
+  primary: {
     A25: '#F5FEFE',
     A50: '#ECFEFD',
     A100: '#CEFBF9',
@@ -14,8 +39,8 @@ export default {
     A700: '#048B85',
     A800: '#035C58',
     A900: '#012E2C'
-  }),
-  shade: Object.assign('#172935', {
+  },
+  shade: {
     A25: '#F6F7F7',
     A50: '#EDEFF0',
     A100: '#D1D5D7',
@@ -27,8 +52,8 @@ export default {
     A700: '#12202A',
     A800: '#0D181F',
     A900: '#091015'
-  }),
-  blue: Object.assign('#2E7EF2', {
+  },
+  blue: {
     A25: '##F7FAFE',
     A50: '#EFF5FE',
     A100: '#D8E7FD',
@@ -40,8 +65,8 @@ export default {
     A700: '#1F56A7',
     A800: '#194584',
     A900: '#12315E'
-  }),
-  orange: Object.assign('#ED4E39', {
+  },
+  orange: {
     A25: '#FEF8F7',
     A50: '#FEF2F0',
     A100: '#FCDEDA',
@@ -53,8 +78,8 @@ export default {
     A700: '#A33527',
     A800: '#822A1F',
     A900: '#5C1E16'
-  }),
-  violet: Object.assign('#172473', {
+  },
+  violet: {
     A25: '#F5F6FA',
     A50: '#EDEEF5',
     A100: '#D4D6E5',
@@ -66,5 +91,5 @@ export default {
     A700: '#0F184F',
     A800: '#0C133F',
     A900: '#090E2D'
-  })
+  }
 }

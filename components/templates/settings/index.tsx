@@ -1,6 +1,6 @@
 import 'react-dates/initialize'
 
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 import { useLocalization } from '../../../hooks'
 import { Input, Radio } from '../../molecules'

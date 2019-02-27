@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 import { useKeyDown } from '../../../hooks'
 import { Overlay } from '../../atoms'

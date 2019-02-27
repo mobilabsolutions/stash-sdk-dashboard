@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled from 'components/styled'
 
 const A = styled.a`
   cursor: pointer;
