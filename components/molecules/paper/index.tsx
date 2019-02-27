@@ -1,4 +1,4 @@
-import styled from 'components/styled'
+import styled from '../../styled'
 
 const Border = styled.div`
   display: flex;

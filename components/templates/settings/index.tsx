@@ -1,9 +1,8 @@
 import 'react-dates/initialize'
 
-import styled from 'components/styled'
-
 import { useLocalization } from '../../../hooks'
 import { Input, Radio } from '../../molecules'
+import styled from '../../styled'
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,8 +1,8 @@
 import { useRef } from 'react'
-import styled from 'components/styled'
 
 import { useKeyDown } from '../../../hooks'
 import { Overlay } from '../../atoms'
+import styled from '../../styled'
 
 const Content = styled.div`
   background-color: ${props => props.theme.white};

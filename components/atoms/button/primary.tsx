@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'components/styled'
+
+import styled from '../../styled'
 
 const getWidth = props => (props.isFullSize ? '100%' : 'auto')
 

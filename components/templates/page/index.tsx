@@ -1,7 +1,6 @@
-import styled from 'components/styled'
-
 import { Paper } from '../../molecules'
 import { Header, Footer } from '../../organisms'
+import styled from '../../styled'
 
 const Div = styled.div`
   display: flex;

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import styled from 'components/styled'
+
+import styled from '../../styled'
 
 const Wrapper = styled.div`
   position: relative;

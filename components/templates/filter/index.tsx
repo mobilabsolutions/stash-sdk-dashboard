@@ -3,10 +3,10 @@ import 'react-dates/initialize'
 import { useState, forwardRef } from 'react'
 import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
-import styled from 'components/styled'
 
 import { useLocalization } from '../../../hooks'
 import { Input, Radio } from '../../molecules'
+import styled from '../../styled'
 
 const Wrapper = styled.div`
   display: flex;

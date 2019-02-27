@@ -1,6 +1,5 @@
-import styled from 'components/styled'
-
 import { UpIcon, DownIcon } from '../../atoms'
+import styled from '../../styled'
 
 const MAX_PAGES = 5
 const MIDDLE_OFFSET = Math.floor(MAX_PAGES / 2)

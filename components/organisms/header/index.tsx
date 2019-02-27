@@ -1,4 +1,4 @@
-import styled from 'components/styled'
+import styled from '../../styled'
 
 import { useLocalization } from '../../../hooks'
 import { Logo } from '../../atoms'

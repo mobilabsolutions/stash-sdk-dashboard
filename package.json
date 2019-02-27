@@ -52,9 +52,6 @@
       "<rootDir>/dist/",
       "<rootDir>/node_modules/"
     ],
-    "modulePaths": [
-      "<rootDir>"
-    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

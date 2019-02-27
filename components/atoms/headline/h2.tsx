@@ -1,4 +1,4 @@
-import styled from 'components/styled'
+import styled from '../../styled'
 
 export default styled.h2`
   color: ${props => props.theme.shade.A700};
