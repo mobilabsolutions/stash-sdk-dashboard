@@ -1,7 +1,7 @@
 import 'isomorphic-fetch'
 import * as fastify from 'fastify'
 import * as proxy from 'fastify-http-proxy'
-import * as Next from 'next'
+import * as nextJs from 'next'
 
 import prepareDatepickerCss from './prepare_datepicker_css'
 
@@ -13,7 +13,7 @@ const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production'
 const BIND_ADDRESS = IS_DEVELOPMENT ? '127.0.0.1' : '0.0.0.0'
 
 async function main() {
-  const nextApp = Next({ dev: IS_DEVELOPMENT })
+  const nextApp = nextJs({ dev: IS_DEVELOPMENT })
   const handle = nextApp.getRequestHandler()
 
   try {
