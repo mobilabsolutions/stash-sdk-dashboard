@@ -106,15 +106,19 @@ export const useTransactions = () => {
     setState(prevState => ({
       ...prevState,
       startDate: fromDate
-        .hours(0)
-        .minutes(0)
-        .seconds(0)
-        .milliseconds(0),
+        ? fromDate
+            .hours(0)
+            .minutes(0)
+            .seconds(0)
+            .milliseconds(0)
+        : null,
       endDate: toDate
-        .hours(23)
-        .minutes(59)
-        .seconds(59)
-        .milliseconds(999),
+        ? toDate
+            .hours(23)
+            .minutes(59)
+            .seconds(59)
+            .milliseconds(999)
+        : null,
       startPos: 0
     }))
 
