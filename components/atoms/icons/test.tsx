@@ -7,12 +7,14 @@ import { withTestSetup } from '../../../test_utils'
 import Logo from './logo'
 import AccountIcon from './account'
 import KeyIcon from './key'
+import CopyIcon from './copy'
 import DownIcon from './down'
 import UpIcon from './up'
 
 const TestLogo = withTestSetup(Logo)
 const TestAccountIcon = withTestSetup(AccountIcon)
 const TestKeyIcon = withTestSetup(KeyIcon)
+const TestCopyIcon = withTestSetup(CopyIcon)
 const TestDownIcon = withTestSetup(DownIcon)
 const TestUpIcon = withTestSetup(UpIcon)
 
@@ -30,6 +32,12 @@ it('AccountIcon Should Render', () => {
 
 it('KeyIcon Should Render', () => {
   const component = renderer.create(<TestKeyIcon />)
+  const tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
+})
+
+it('CopyIcon Should Render', () => {
+  const component = renderer.create(<TestCopyIcon />)
   const tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })

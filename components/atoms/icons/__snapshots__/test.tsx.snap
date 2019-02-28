@@ -16,6 +16,34 @@ exports[`AccountIcon Should Render 1`] = `
 </svg>
 `;
 
+exports[`CopyIcon Should Render 1`] = `
+<svg
+  className="enable"
+  height={24}
+  onClick={[Function]}
+  viewBox="0 0 24 24"
+  width={24}
+>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    stroke="#D4D4D4"
+    strokeWidth="2"
+  >
+    <rect
+      height="12"
+      rx="2"
+      width="12"
+      x="3"
+      y="4"
+    />
+    <path
+      d="M15.119 8L8 16.32V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-3.881z"
+    />
+  </g>
+</svg>
+`;
+
 exports[`DownIcon Should Render 1`] = `
 <svg
   className="enable"
