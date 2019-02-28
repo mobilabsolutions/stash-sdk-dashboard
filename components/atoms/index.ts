@@ -13,5 +13,7 @@ export { default as Logo } from './logo'
 
 export { default as Overlay } from './overlay'
 
+export { default as AccountIcon } from './icons/account'
+export { default as KeyIcon } from './icons/key'
 export { default as DownIcon } from './icons/down'
 export { default as UpIcon } from './icons/up'
