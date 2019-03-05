@@ -6,19 +6,20 @@ import { HeaderNavItem } from '../../molecules'
 
 const Header = styled.header`
   background-color: ${props => props.theme.white};
-  height: 84px;
+  height: 73px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 24px;
+`
+
+const LogoContainer = styled.div`
+  padding-left: 32px;
+  padding-right: 32px;
 `
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
-  margin-top: 0.5em;
-  margin-left: 1.5em;
-  align-items: baseline;
 `
 
 export default ({ activePath }) => {
@@ -26,19 +27,29 @@ export default ({ activePath }) => {
 
   return (
     <Header>
-      <div>
+      <LogoContainer>
         <Logo />
-      </div>
+      </LogoContainer>
       <Nav>
         <HeaderNavItem
-          label={getText('Transactions')}
+          label={getText('Home')}
           href="/"
           isActive={activePath === '/'}
         />
         <HeaderNavItem
-          label={getText('Settings')}
-          href="/settings"
-          isActive={activePath === '/settings'}
+          label={getText('Transactions')}
+          href="/transactions"
+          isActive={activePath === '/transactions'}
+        />
+        <HeaderNavItem
+          label={getText('Reports')}
+          href="/reports"
+          isActive={activePath === '/reports'}
+        />
+        <HeaderNavItem
+          label={getText('Account')}
+          href="/account"
+          isActive={activePath === '/account'}
         />
       </Nav>
     </Header>

@@ -9,9 +9,9 @@ export { default as H3 } from './headline/h3'
 export { default as H4 } from './headline/h4'
 export { default as H5 } from './headline/h5'
 
-export { default as Logo } from './logo'
-
 export { default as Overlay } from './overlay'
+
+export { default as Logo } from './icons/logo'
 
 export { default as AccountIcon } from './icons/account'
 export { default as KeyIcon } from './icons/key'

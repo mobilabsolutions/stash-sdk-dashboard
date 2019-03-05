@@ -1,4 +1,3 @@
-import { Paper } from '../../molecules'
 import { Header, Footer } from '../../organisms'
 import styled from '../../styled'
 
@@ -11,15 +10,14 @@ const Div = styled.div`
 
 const Main = styled.main`
   height: calc(100vh - 108px);
+  background-color: ${props => props.theme.shade.A25};
 `
 
 export default ({ children, activePath }) => {
   return (
     <Div>
       <Header activePath={activePath} />
-      <Main>
-        <Paper>{children}</Paper>
-      </Main>
+      <Main>{children}</Main>
       <Footer />
     </Div>
   )
