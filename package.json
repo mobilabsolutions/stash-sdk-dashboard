@@ -70,6 +70,7 @@
     "@zeit/next-typescript": "1.1.1",
     "fastify": "2.0.0",
     "fastify-http-proxy": "2.0.3",
+    "formik": "1.5.1",
     "isomorphic-fetch": "2.2.1",
     "next": "8.0.3",
     "react": "16.8.3",
