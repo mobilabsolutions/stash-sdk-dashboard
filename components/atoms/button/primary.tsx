@@ -43,17 +43,17 @@ const Button = styled.button`
     font-size: 1em;
     padding: 0.75em 1em;
   }
-  background-color: ${props => props.theme.primary.A700};
+  background-color: ${props => props.theme.primary.A500};
   width: ${getWidth};
   :hover,
   :focus {
-    background-color: ${props => props.theme.primary.A800};
+    background-color: ${props => props.theme.primary.A600};
   }
   :active {
-    background-color: ${props => props.theme.primary.A900};
+    background-color: ${props => props.theme.primary.A700};
   }
   :disabled {
-    background-color: ${props => props.theme.shade.A400};
+    background-color: ${props => props.theme.shade.A300};
   }
   > span {
     color: ${props => props.theme.shade.A25};
@@ -65,7 +65,7 @@ const PrimaryButton = ({
   label,
   type = 'submit',
   disabled = false,
-  onClick,
+  onClick = null,
   className = ''
 }) => (
   <Button
