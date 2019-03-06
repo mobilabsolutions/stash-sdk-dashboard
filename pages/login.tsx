@@ -1,17 +1,23 @@
-import { useSettings } from '../hooks'
-import { Page, Settings } from '../components/templates'
+import { AccountIcon, KeyIcon } from '../components/atoms'
+import { IconInput } from '../components/molecules'
 
 export default () => {
-  const { locale, setLocale, token, setToken } = useSettings()
-
   return (
-    <Page activePath="/settings">
-      <Settings
-        locale={locale}
-        setLocale={setLocale}
-        token={token}
-        setToken={setToken}
+    <div>
+      <IconInput
+        id="test"
+        name="test"
+        value="dsf"
+        onChanged={value => console.log(value)}
+        icon={<AccountIcon />}
       />
-    </Page>
+      <IconInput
+        id="test"
+        name="test"
+        value="dsf"
+        onChanged={value => console.log(value)}
+        icon={<KeyIcon />}
+      />
+    </div>
   )
 }

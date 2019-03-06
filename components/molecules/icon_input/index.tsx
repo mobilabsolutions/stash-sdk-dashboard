@@ -1,15 +1,15 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, ReactNode } from 'react'
 
 import styled from '../../styled'
 
 const borderColor = ({ focused, theme }) =>
   focused ? theme.primary.A500 : theme.shade.A100
 
-interface WrapperProps {
+interface IsFocused {
   focused: boolean
 }
 
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled.div<IsFocused>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,7 +17,16 @@ const Wrapper = styled.div<WrapperProps>`
   border-radius: 8px;
   border: solid 1px ${borderColor};
   max-width: 300px;
-  background-color: ${props => props.theme.white};
+  transition: all 0.3s ease-in-out;
+  > div {
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    border-right: solid 1px ${borderColor};
+    transition: all 0.3s ease-in-out;
+  }
   > input {
     border: none;
     color: ${props => props.theme.shade.A700};
@@ -42,6 +51,7 @@ interface InputProps {
   type?: string
   placeholder?: string
   onChanged: (value: string) => void
+  icon: ReactNode
 }
 
 export default ({
@@ -50,6 +60,7 @@ export default ({
   value = '',
   type = 'text',
   placeholder = '',
+  icon,
   onChanged
 }: InputProps) => {
   const [focused, setFocused] = useState(false)
@@ -59,6 +70,7 @@ export default ({
 
   return (
     <Wrapper focused={focused} onClick={handleClick}>
+      <div>{icon}</div>
       <input
         id={id}
         name={name}
