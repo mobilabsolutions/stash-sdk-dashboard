@@ -42,5 +42,5 @@ export default {
   Password: {
     de: 'Passwort'
   },
-  'Login to your account': { de: 'ins Konto einloggen' }
+  'Login to your account': { de: 'Loggen Sie sich ein' }
 }
