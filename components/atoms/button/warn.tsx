@@ -6,7 +6,7 @@ const getWidth = props => (props.isFullSize ? '100%' : 'auto')
 const Button = styled.button`
   border-radius: 5px;
   border-width: 0;
-  height: 48px;
+  height: 40px;
   display: block;
   outline: none;
   overflow: hidden;
@@ -39,7 +39,7 @@ const Button = styled.button`
   }
   > span {
     display: block;
-    font-size: 1em;
+    font-size: 14px;
     padding: 0.75em 1em;
   }
   background-color: ${props => props.theme.orange.A700};

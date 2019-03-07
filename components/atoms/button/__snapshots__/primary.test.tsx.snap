@@ -2,7 +2,7 @@
 
 exports[`Disabled PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 bdPnnm"
+  className="primary__Button-sc-1lwi4g7-0 kResov"
   disabled={true}
   onClick={null}
   type="submit"
@@ -15,7 +15,7 @@ exports[`Disabled PrimaryButton Should Render 1`] = `
 
 exports[`PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 bdPnnm"
+  className="primary__Button-sc-1lwi4g7-0 kResov"
   disabled={false}
   onClick={null}
   type="submit"
