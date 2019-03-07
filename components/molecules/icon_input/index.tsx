@@ -46,6 +46,9 @@ const Wrapper = styled.div<IsFocused>`
     :focus {
       outline: none;
     }
+    ::placeholder {
+      color: ${props => props.theme.shade.A100};
+    }
   }
 `
 

@@ -4,7 +4,7 @@ import styled from '../../styled'
 const getWidth = props => (props.isFullSize ? '100%' : 'auto')
 
 const Button = styled.button`
-  border-radius: 5px;
+  border-radius: 20px;
   border-width: 0;
   height: 40px;
   display: block;

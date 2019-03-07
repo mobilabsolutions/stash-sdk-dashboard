@@ -3,7 +3,7 @@ import React from 'react'
 import styled from '../../styled'
 
 const Button = styled.button`
-  border-radius: 5px;
+  border-radius: 20px;
   border-width: 0;
   height: 40px;
   display: block;

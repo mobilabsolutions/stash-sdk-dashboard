@@ -35,5 +35,12 @@ export default {
   'Do you really want to Refund %{amount} for the Transaction %{id}?': {
     de:
       'Möchten Sie wirklich die Transaktion %{id} über %{amount} zurückerstatten?'
-  }
+  },
+  Username: {
+    de: 'Benutzername'
+  },
+  Password: {
+    de: 'Passwort'
+  },
+  'Login to your account': { de: 'ins Konto einloggen' }
 }
