@@ -42,5 +42,6 @@ export default {
   Password: {
     de: 'Passwort'
   },
-  'Login to your account': { de: 'Loggen Sie sich ein' }
+  'Login to your account': { de: 'Loggen Sie sich ein' },
+  'Forgot password?': { de: 'Passwort vergessen?' }
 }

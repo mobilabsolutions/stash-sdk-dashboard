@@ -3,6 +3,7 @@ import { Formik, Field } from 'formik'
 import { useLogin, useLocalization } from '../../../hooks'
 import {
   PrimaryButton,
+  Link,
   AccountIcon,
   KeyIcon,
   Illustration,
@@ -51,6 +52,12 @@ const FormWrapper = styled.div`
   width: 300px;
   > div {
     padding-bottom: 8px;
+  }
+  .link {
+    margin-top: -8px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
   }
   > h1 {
     padding-left: 8px;
@@ -131,7 +138,15 @@ export default function LoginForm({ username = '', password = '' }) {
                   )}
                 />
               </div>
-              <PrimaryButton label="Login" isFullSize />
+              <div className="link">
+                <Link
+                  href="/forgot-password"
+                  label={getText('Forgot password?')}
+                />
+              </div>
+              <div>
+                <PrimaryButton label="Login" isFullSize />
+              </div>
             </FormWrapper>
           </Form>
           <ImageWrapper>
