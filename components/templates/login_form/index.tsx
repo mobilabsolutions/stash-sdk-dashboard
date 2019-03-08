@@ -9,7 +9,7 @@ import {
   Illustration,
   Logo
 } from '../../atoms'
-import { IconInput } from '../../molecules'
+import { IconInput, IconPasswordInput } from '../../molecules'
 import styled from '../../styled'
 
 const Wrapper = styled.div`
@@ -128,11 +128,10 @@ export default function LoginForm({ username = '', password = '' }) {
                 <Field
                   name="password"
                   render={({ field, form }) => (
-                    <IconInput
+                    <IconPasswordInput
                       field={field}
                       form={form}
                       icon={<KeyIcon />}
-                      type="password"
                       placeholder={getText('Password')}
                     />
                   )}
