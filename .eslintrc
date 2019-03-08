@@ -19,7 +19,6 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "error",
-    "@typescript-eslint/no-var-requires": "off"
+    "prettier/prettier": "error"
   }
 }
