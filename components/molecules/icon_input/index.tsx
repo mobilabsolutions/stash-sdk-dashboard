@@ -49,6 +49,9 @@ const Wrapper = styled.div<IsFocused>`
     ::placeholder {
       color: ${props => props.theme.shade.A100};
     }
+    ::selection {
+      background-color: ${props => props.theme.primary.A100};
+    }
   }
 `
 

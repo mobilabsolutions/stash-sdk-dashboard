@@ -24,13 +24,18 @@ const Wrapper = styled.div<WrapperProps>`
     display: block;
     font-family: ${props => props.theme.font};
     font-size: 14px;
-    border-radius: 8px;
     margin-left: 16px;
     margin-right: 16px;
     box-shadow: none;
     width: 100%;
     :focus {
       outline: none;
+    }
+    ::placeholder {
+      color: ${props => props.theme.shade.A100};
+    }
+    ::selection {
+      background-color: ${props => props.theme.primary.A100};
     }
   }
 `

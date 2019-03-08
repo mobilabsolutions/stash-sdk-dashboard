@@ -56,7 +56,6 @@ const Button = styled.button`
   > span {
     color: ${props =>
       props.disabled ? props.theme.shade.A400 : props.theme.primary.A700};
-    text-transform: uppercase;
   }
 `
 

@@ -61,7 +61,6 @@ const Button = styled.button<StyledButtonProps>`
   }
   > span {
     color: ${props => props.theme.shade.A25};
-    text-transform: uppercase;
   }
 `
 
