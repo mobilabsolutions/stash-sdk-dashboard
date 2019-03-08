@@ -76,7 +76,7 @@ const FormWrapper = styled.div`
     padding-left: 8px;
     padding-bottom: 30px;
     color: ${props => props.theme.shade.A200};
-    font-family: ${props => props.theme.fontHeadline};
+    font-family: ${props => props.theme.font};
     font-size: 16px;
     font-weight: bold;
     letter-spacing: normal;
