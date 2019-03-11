@@ -7,6 +7,7 @@ import prepareDatepickerCss from './prepare_datepicker_css'
 import token from './token'
 
 process.env.TZ = 'UTC'
+// const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
 
 const PORT = parseInt(process.env.PORT, 10) || 3000
 // const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
@@ -23,9 +24,7 @@ async function main() {
 
     const server = fastify()
 
-    server.register(token, {
-      prefix: '/api/v1/token'
-    })
+    server.register(token, { prefix: '/api/v1/token' })
 
     /*
     // add Proxy
@@ -35,7 +34,8 @@ async function main() {
       rewritePrefix: '/api/v1',
       http2: false
     })
-*/
+    */
+
     // add request logging
     server.use((req, _, next) => {
       if (!IS_DEVELOPMENT) {
