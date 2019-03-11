@@ -1,4 +1,5 @@
 import { Formik, Field } from 'formik'
+import Router from 'next/router'
 
 import { useApi, useLocalization } from '../../../hooks'
 import {
@@ -96,7 +97,7 @@ export default function LoginForm({ username = '', password = '' }) {
         console.log('Submit Login', values, actions)
         login(values.username, values.password)
           .then(() => {
-            console.log('Login')
+            Router.push('/')
           })
           .catch(error => {
             console.log(error)

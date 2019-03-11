@@ -39,7 +39,7 @@ export const useTransactions = () => {
     if (!isClient) return
 
     if (!token) {
-      Router.push('/settings')
+      Router.push('/login')
       return
     }
 
@@ -67,7 +67,7 @@ export const useTransactions = () => {
         }))
       } catch (error) {
         if (error && error.statusCode === 401) {
-          Router.push('/settings')
+          Router.push('/login')
           return null
         }
         setState(prevState => ({
@@ -93,7 +93,9 @@ export const useTransactions = () => {
     state.pageSize,
     state.status,
     state.reason,
-    state.refreshCounter
+    state.refreshCounter,
+    token,
+    apiGet
   ])
 
   const numberOfPages =
