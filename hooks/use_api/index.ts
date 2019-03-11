@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useNextContext } from '../use_next_context'
 
 const BACKEND_HOST =
@@ -99,37 +100,58 @@ export const useApi = () => {
   const token = cookies['__token']
   const refreshToken = cookies['__refreshToken']
 
-  const refresh = () =>
-    apiCall(refreshToken, null, 'POST', '/api/v1/token/refresh', null).then(
-      ({ result: { refreshToken, accessToken } }) => {
-        setCookie('__token', accessToken)
-        setCookie('__refreshToken', refreshToken)
+  const refresh = useCallback(
+    () =>
+      apiCall(refreshToken, null, 'POST', '/api/v1/token/refresh', null).then(
+        ({ result: { refreshToken, accessToken } }) => {
+          setCookie('__token', accessToken)
+          setCookie('__refreshToken', refreshToken)
 
-        return accessToken
-      }
-    )
+          return accessToken
+        }
+      ),
+    [refreshToken, setCookie]
+  )
 
-  const get = (path: string) => apiCall(token, refresh, 'GET', path)
-  const put = (path: string, content: object) =>
-    apiCall(token, refresh, 'PUT', path, content)
-  const patch = (path: string, content: object) =>
-    apiCall(token, refresh, 'PATCH', path, content)
-  const post = (path: string, content: object) =>
-    apiCall(token, refresh, 'POST', path, content)
-  const del = (path: string) => apiCall(token, refresh, 'DELETE', path)
+  const get = useCallback(
+    (path: string) => apiCall(token, refresh, 'GET', path),
+    [refresh, token]
+  )
+  const put = useCallback(
+    (path: string, content: object) =>
+      apiCall(token, refresh, 'PUT', path, content),
+    [refresh, token]
+  )
+  const patch = useCallback(
+    (path: string, content: object) =>
+      apiCall(token, refresh, 'PATCH', path, content),
+    [refresh, token]
+  )
+  const post = useCallback(
+    (path: string, content: object) =>
+      apiCall(token, refresh, 'POST', path, content),
+    [refresh, token]
+  )
+  const del = useCallback(
+    (path: string) => apiCall(token, refresh, 'DELETE', path),
+    [refresh, token]
+  )
 
-  const login = (username: string, password: string) =>
-    apiCall(null, null, 'POST', '/api/v1/token', { username, password }).then(
-      ({ result: { refreshToken, accessToken } }) => {
-        setCookie('__token', accessToken)
-        setCookie('__refreshToken', refreshToken)
-      }
-    )
+  const login = useCallback(
+    (username: string, password: string) =>
+      apiCall(null, null, 'POST', '/api/v1/token', { username, password }).then(
+        ({ result: { refreshToken, accessToken } }) => {
+          setCookie('__token', accessToken)
+          setCookie('__refreshToken', refreshToken)
+        }
+      ),
+    [setCookie]
+  )
 
-  const logout = () => {
+  const logout = useCallback(() => {
     setCookie('__token', null)
     setCookie('__refreshToken', null)
-  }
+  }, [setCookie])
 
-  return { get, put, patch, post, del, token, login, logout }
+  return { get, put, patch, post, del, token, login, logout, refresh }
 }

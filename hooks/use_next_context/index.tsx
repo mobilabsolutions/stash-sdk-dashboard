@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useCallback } from 'react'
 
 import moment from 'moment'
 import 'moment/locale/en-gb'
@@ -66,28 +66,34 @@ const getLocale = req => {
 
 export const NextContextProvider = ({ children, context }) => {
   const [cookies, setStateCookies] = useState(getCookies(context.req))
-  const setCookie = (key: string, value: string, expiryDate: Date = null) => {
-    if (!isClient) return
+  const setCookie = useCallback(
+    (key: string, value: string, expiryDate: Date = null) => {
+      if (!isClient) return
 
-    setStateCookies(prevCookies => ({ ...prevCookies, [key]: value }))
+      setStateCookies(prevCookies => ({ ...prevCookies, [key]: value }))
 
-    if (expiryDate) {
-      document.cookie = `${encodeURI(key)}=${encodeURI(
-        value
-      )}; expires=${expiryDate}`
-    } else {
-      document.cookie = `${encodeURI(key)}=${encodeURI(value)}`
-    }
-  }
+      if (expiryDate) {
+        document.cookie = `${encodeURI(key)}=${encodeURI(
+          value
+        )}; expires=${expiryDate}`
+      } else {
+        document.cookie = `${encodeURI(key)}=${encodeURI(value)}`
+      }
+    },
+    []
+  )
 
   const locale = cookies['__locale'] || getLocale(context.req)
   moment.locale(locale)
-  const setLocale = (locale: string) => {
-    if (!isClient) return
+  const setLocale = useCallback(
+    (locale: string) => {
+      if (!isClient) return
 
-    moment.locale(locale)
-    setCookie('__locale', locale)
-  }
+      moment.locale(locale)
+      setCookie('__locale', locale)
+    },
+    [setCookie]
+  )
 
   const providerValue = {
     ...context,

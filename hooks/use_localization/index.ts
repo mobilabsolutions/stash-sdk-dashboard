@@ -1,3 +1,5 @@
+import { useCallback } from 'react'
+
 import texts from '../../assets/texts'
 import { useNextContext } from '../use_next_context'
 import localizedAmount from './localized_amount'
@@ -10,11 +12,21 @@ export const useLocalization = () => {
 
   return {
     locale,
-    getText: (id: string, args = null) =>
-      localizedText(texts, locale, id, args),
-    formatAmount: (currencyId: string, value: number) =>
-      localizedAmount(currencyId, value, locale),
-    formatNumber: (value: number) => localizedNumber(value, locale),
-    formatDate: (value: Date) => localizedDate(value, locale)
+    getText: useCallback(
+      (id: string, args = null) => localizedText(texts, locale, id, args),
+      [locale]
+    ),
+    formatAmount: useCallback(
+      (currencyId: string, value: number) =>
+        localizedAmount(currencyId, value, locale),
+      [locale]
+    ),
+    formatNumber: useCallback(
+      (value: number) => localizedNumber(value, locale),
+      [locale]
+    ),
+    formatDate: useCallback((value: Date) => localizedDate(value, locale), [
+      locale
+    ])
   }
 }
