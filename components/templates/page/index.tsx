@@ -9,7 +9,7 @@ const Div = styled.div`
 `
 
 const Main = styled.main`
-  height: calc(100vh - 108px);
+  height: calc(100vh - 97px);
   background-color: ${props => props.theme.shade.A25};
 `
 
