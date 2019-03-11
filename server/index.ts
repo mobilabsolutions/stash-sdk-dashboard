@@ -1,16 +1,15 @@
 import 'isomorphic-fetch'
 import * as fastify from 'fastify'
-import * as proxy from 'fastify-http-proxy'
+// import * as proxy from 'fastify-http-proxy'
 import * as nextJs from 'next'
 
 import prepareDatepickerCss from './prepare_datepicker_css'
+import token from './token'
 
 process.env.TZ = 'UTC'
 
 const PORT = parseInt(process.env.PORT, 10) || 3000
-const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
-const KEYCLOAK_UPSTREAM =
-  process.env.KEYCLOAK_UPSTREAM || 'http://localhost:9090'
+// const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
 const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production'
 const BIND_ADDRESS = IS_DEVELOPMENT ? '127.0.0.1' : '0.0.0.0'
 
@@ -24,6 +23,11 @@ async function main() {
 
     const server = fastify()
 
+    server.register(token, {
+      prefix: '/api/v1/token'
+    })
+
+    /*
     // add Proxy
     server.register(proxy, {
       upstream: API_UPSTREAM,
@@ -31,14 +35,7 @@ async function main() {
       rewritePrefix: '/api/v1',
       http2: false
     })
-
-    server.register(proxy, {
-      upstream: KEYCLOAK_UPSTREAM,
-      prefix: '/auth',
-      rewritePrefix: '/auth',
-      http2: false
-    })
-
+*/
     // add request logging
     server.use((req, _, next) => {
       if (!IS_DEVELOPMENT) {

@@ -54,6 +54,10 @@ const apiCall = (
             })
         }
 
+        if (response.status == 204) {
+          return resolve({ result: null, statusCode: response.status })
+        }
+
         response
           .json()
           .then(json =>
@@ -66,7 +70,7 @@ const apiCall = (
 }
 
 export const useApi = () => {
-  const { cookies } = useNextContext()
+  const { cookies, setCookie } = useNextContext()
 
   const token = cookies['__token']
 
@@ -79,5 +83,12 @@ export const useApi = () => {
     apiCall(token, 'POST', path, content)
   const del = (path: string) => apiCall(token, 'DELETE', path)
 
-  return { get, put, patch, post, del, token }
+  const login = (username: string, password: string) =>
+    apiCall(null, 'POST', '/api/v1/token', { username, password }).then(
+      ({ result: { token } }) => setCookie('__token', token)
+    )
+
+  const logout = () => setCookie('__token', null)
+
+  return { get, put, patch, post, del, token, login, logout }
 }

@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik'
 
-import { useLogin, useLocalization } from '../../../hooks'
+import { useApi, useLocalization } from '../../../hooks'
 import {
   PrimaryButton,
   Link,
@@ -86,7 +86,7 @@ const FormWrapper = styled.div`
 `
 
 export default function LoginForm({ username = '', password = '' }) {
-  const { login } = useLogin()
+  const { login } = useApi()
   const { getText } = useLocalization()
 
   return (
