@@ -66,8 +66,8 @@ export default function userPlugin(
         }
       }
     },
-    (request, reply) => {
-      const result = changePassword(
+    async (request, reply) => {
+      const result = await changePassword(
         parseInt(request.params.id, 10),
         request.body.oldPassword,
         request.body.newPassword
