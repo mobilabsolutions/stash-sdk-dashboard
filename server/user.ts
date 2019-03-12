@@ -2,7 +2,7 @@ import { FastifyInstance, FastifyError } from 'fastify'
 import { NotFound } from 'http-errors'
 
 import { verifyToken } from './token'
-import { findUserById, updateUser, changePassword } from './data/user'
+import { getUserById, updateUser, changePassword } from './data/user'
 
 export default function userPlugin(
   fastify: FastifyInstance,
@@ -20,12 +20,11 @@ export default function userPlugin(
       }
     },
     async (request, reply) => {
-      const user = await findUserById(parseInt(request.params.id, 10))
+      const user = await getUserById(parseInt(request.params.id, 10))
       if (!user) {
         throw new NotFound('User not found.')
       }
 
-      console.log(user)
       reply.send(user)
     }
   )

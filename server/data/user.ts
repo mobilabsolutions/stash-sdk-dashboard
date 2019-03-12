@@ -13,7 +13,7 @@ const users = [
   }
 ]
 
-export async function findUserById(userId: number) {
+export async function getUserById(userId: number) {
   const user = users.find(item => item.id === userId)
   if (!user) return null
 

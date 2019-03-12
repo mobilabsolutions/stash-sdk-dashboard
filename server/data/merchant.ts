@@ -45,7 +45,7 @@ const merchants = [
   }
 ]
 
-export async function findMerchantById(merchantId: string) {
+export async function getMerchantById(merchantId: string) {
   const merchant = merchants.find(item => item.id === merchantId)
   if (!merchant) return null
 
