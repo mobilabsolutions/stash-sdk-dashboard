@@ -34,7 +34,7 @@ export function verifyToken(
       done(new Unauthorized('Token is not valid'))
     }
 
-    request.params.tokenData = payload
+    request.params.token = payload
 
     done()
   })

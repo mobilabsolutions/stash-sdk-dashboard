@@ -24,18 +24,21 @@ const merchants = [
     ],
     keys: [
       {
+        id: 1,
         key: '1234567890',
         keyType: 'PUBLIC',
         name: 'mobile SDK',
         createdAt: '2019-03-12T14:26:02.754Z'
       },
       {
+        id: 2,
         key: '0987654321',
         keyType: 'PRIVATE',
         name: 'my Backend',
         createdAt: '2019-03-12T14:26:02.754Z'
       },
       {
+        id: 3,
         key: '0987654321',
         keyType: 'PRIVATE',
         name: 'other Backend',
@@ -53,4 +56,21 @@ export async function getMerchantById(merchantId: string) {
   delete result.psp
   delete result.keys
   return result
+}
+
+export async function updateMerchant(merchantId: string, updateData: object) {
+  const merchant = merchants.find(item => item.id === merchantId)
+  if (!merchant) return false
+
+  Object.keys(updateData).forEach(key => {
+    if (updateData[key]) merchant[key] = updateData[key]
+  })
+  return true
+}
+
+export async function getMerchantKeys(merchantId: string) {
+  const merchant = merchants.find(item => item.id === merchantId)
+  if (!merchant) return null
+
+  return merchant.keys
 }
