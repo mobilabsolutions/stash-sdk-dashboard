@@ -7,11 +7,11 @@ import {
   DefaultHeaders
 } from 'fastify'
 import { IncomingMessage } from 'http'
-
 import * as jwt from 'jsonwebtoken'
-import { Unauthorized } from 'http-errors'
+import { Unauthorized, NotFound, BadRequest } from 'http-errors'
 
 import { JWT_SECRET } from './env'
+import { findUser } from './data/user'
 
 export function verifyToken(
   request: FastifyRequest<
@@ -45,17 +45,21 @@ export default function tokenPlugin(
   _: any,
   next: (err?: FastifyError) => void
 ) {
-  fastify.post('/', (request, reply) => {
+  fastify.post('/', async (request, reply) => {
     const { username, password } = request.body
 
-    if (username !== password) {
-      reply.status(404).send()
-      return
+    const user = await findUser(username, password)
+    if (!user) {
+      throw new NotFound('User not found.')
     }
 
     const accessToken = jwt.sign(
       {
-        data: { user: username, merchantId: 1 },
+        data: {
+          username: user.username,
+          merchantId: user.merchantId,
+          userId: user.id
+        },
         iat: Math.floor(Date.now() / 1000) + 60 * 5 // 5 min
       },
       JWT_SECRET
@@ -75,21 +79,18 @@ export default function tokenPlugin(
   fastify.post('/refresh', (request, reply) => {
     const authHeader = request.headers.authorization
     if (!authHeader || authHeader.length <= 7) {
-      reply.status(401).send()
-      return
+      throw new Unauthorized('No Token')
     }
 
     const tokenString = authHeader.slice(7)
 
     jwt.verify(tokenString, JWT_SECRET, (error: Error, payload: any) => {
       if (error) {
-        reply.status(401).send()
-        return
+        throw new Unauthorized('No Token')
       }
 
       if (!payload.accessToken) {
-        reply.status(400).send()
-        return
+        throw new BadRequest('Not a Refresh token')
       }
 
       const oldToken: any = jwt.decode(payload.accessToken)
