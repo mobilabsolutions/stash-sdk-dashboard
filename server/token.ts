@@ -1,7 +1,46 @@
-import { FastifyInstance, FastifyError } from 'fastify'
+import {
+  FastifyInstance,
+  FastifyError,
+  FastifyRequest,
+  FastifyReply,
+  DefaultQuery,
+  DefaultParams,
+  DefaultHeaders
+} from 'fastify'
+import { IncomingMessage, OutgoingMessage } from 'http'
+
 import * as jwt from 'jsonwebtoken'
 
 import { JWT_SECRET } from './env'
+
+export function verifyToken(
+  request: FastifyRequest<
+    IncomingMessage,
+    DefaultQuery,
+    DefaultParams,
+    DefaultHeaders,
+    any
+  >,
+  reply: FastifyReply<OutgoingMessage>,
+  done: (error?: Error) => void
+) {
+  const token = request.cookies['__token']
+  if (!token) {
+    reply.status(401)
+    return done(new Error('No Token'))
+  }
+
+  jwt.verify(token, JWT_SECRET, (error: Error, payload: any) => {
+    if (error) {
+      reply.status(401)
+      done(error)
+    }
+
+    request.params.tokenData = payload
+
+    done()
+  })
+}
 
 export default function tokenPlugin(
   fastify: FastifyInstance,
