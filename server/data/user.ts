@@ -9,7 +9,7 @@ const users = [
     lastname: 'Stock',
     email: 'christoph@mobilabsolutions.com',
     locale: 'de-DE',
-    merchantId: 1
+    merchantId: 'mobilab'
   }
 ]
 
@@ -33,11 +33,13 @@ export async function findUser(username: string, password: string) {
   return match ? user : null
 }
 
-export function updateUser(userId: number, updateData: object) {
+export async function updateUser(userId: number, updateData: object) {
   const user = users.find(item => item.id === userId)
   if (!user) return false
 
-  Object.assign(user, updateData)
+  Object.keys(updateData).forEach(key => {
+    if (updateData[key]) user[key] = updateData[key]
+  })
   return true
 }
 

@@ -19,12 +19,13 @@ export default function userPlugin(
         }
       }
     },
-    (request, reply) => {
-      const user = findUserById(parseInt(request.params.id, 10))
+    async (request, reply) => {
+      const user = await findUserById(parseInt(request.params.id, 10))
       if (!user) {
         throw new NotFound('User not found.')
       }
 
+      console.log(user)
       reply.send(user)
     }
   )
@@ -44,8 +45,11 @@ export default function userPlugin(
         }
       }
     },
-    (request, reply) => {
-      const result = updateUser(parseInt(request.params.id, 10), request.body)
+    async (request, reply) => {
+      const result = await updateUser(
+        parseInt(request.params.id, 10),
+        request.body
+      )
 
       if (!result) reply.status(400).send()
       else reply.status(204).send()
