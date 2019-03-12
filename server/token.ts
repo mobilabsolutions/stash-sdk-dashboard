@@ -1,11 +1,7 @@
 import { FastifyInstance, FastifyError } from 'fastify'
 import * as jwt from 'jsonwebtoken'
-// import * as fastifyPlugin from 'fastify-plugin'
 
-// spell-checker: disable
-const JWT_SECRET =
-  process.env.JWT_SECRET || 'pqriNWfgFqmdtoB{ydysuaP[wKgebF6tPUTdTa'
-// spell-checker: enable
+import { JWT_SECRET } from './env'
 
 export default function tokenPlugin(
   fastify: FastifyInstance,

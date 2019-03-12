@@ -6,13 +6,9 @@ import * as nextJs from 'next'
 import prepareDatepickerCss from './prepare_datepicker_css'
 import token from './token'
 
-process.env.TZ = 'UTC'
-// const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
+import { PORT, IS_DEVELOPMENT, BIND_ADDRESS } from './env'
 
-const PORT = parseInt(process.env.PORT, 10) || 3000
-// const API_UPSTREAM = process.env.API_UPSTREAM || 'https://pd.mblb.net'
-const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production'
-const BIND_ADDRESS = IS_DEVELOPMENT ? '127.0.0.1' : '0.0.0.0'
+process.env.TZ = 'UTC'
 
 const server = fastify({ logger: true })
 
