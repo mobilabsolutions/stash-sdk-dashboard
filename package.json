@@ -4,7 +4,7 @@
   "description": "Dashboard for Payment SDK",
   "main": "./server/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon",
+    "dev": "NODE_ENV=development nodemon | pino-pretty -t",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node ./dist/index.js",
     "test": "npm run lint && npm run typescript && npm run jest",
@@ -106,6 +106,7 @@
     "eslint-plugin-standard": "4.0.0",
     "jest": "24.4.0",
     "nodemon": "1.18.10",
+    "pino-pretty": "2.5.0",
     "prettier": "1.16.4",
     "react-test-renderer": "16.8.4",
     "ts-node": "8.0.3",

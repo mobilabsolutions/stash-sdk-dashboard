@@ -14,15 +14,15 @@ const PORT = parseInt(process.env.PORT, 10) || 3000
 const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production'
 const BIND_ADDRESS = IS_DEVELOPMENT ? '127.0.0.1' : '0.0.0.0'
 
+const server = fastify({ logger: true })
+
 async function main() {
-  const nextApp = nextJs({ dev: IS_DEVELOPMENT })
+  const nextApp = nextJs({ dev: IS_DEVELOPMENT, quiet: !IS_DEVELOPMENT })
   const handle = nextApp.getRequestHandler()
 
   try {
     await nextApp.prepare()
     const datepickerCss = await prepareDatepickerCss()
-
-    const server = fastify()
 
     server.register(token, { prefix: '/api/v1/token' })
 
@@ -36,21 +36,6 @@ async function main() {
     })
     */
 
-    // add request logging
-    server.use((req, _, next) => {
-      if (!IS_DEVELOPMENT) {
-        if (req.url !== '/healthcheck') {
-          console.log(new Date(), req.method, req.url)
-        }
-      } else {
-        if (!req.url.startsWith('/_next')) {
-          console.log(new Date(), req.method, req.url)
-        }
-      }
-
-      next()
-    })
-
     // Add health check endpoint
     server.get('/healthcheck', (_, reply) => {
       reply.send({ uptime: process.uptime() })
@@ -62,13 +47,15 @@ async function main() {
     })
 
     // add next.js
-    server.get('/*', (req, reply) => handle(req.req, reply.res))
+    server.get('/*', (req, reply) => {
+      handle(req.req, reply.res)
+    })
 
     // start server
     await server.listen(PORT, BIND_ADDRESS)
-    console.log(`> Ready on http://localhost:${PORT}`)
+    server.log.info({ url: `http://localhost:${PORT}` }, 'Server is ready')
   } catch (error) {
-    console.error('Server init error', error)
+    server.log.error(error, 'Server init error')
     process.exit(1)
   }
 }
