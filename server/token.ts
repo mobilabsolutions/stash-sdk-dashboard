@@ -2,14 +2,14 @@ import {
   FastifyInstance,
   FastifyError,
   FastifyRequest,
-  FastifyReply,
   DefaultQuery,
   DefaultParams,
   DefaultHeaders
 } from 'fastify'
-import { IncomingMessage, OutgoingMessage } from 'http'
+import { IncomingMessage } from 'http'
 
 import * as jwt from 'jsonwebtoken'
+import { Unauthorized } from 'http-errors'
 
 import { JWT_SECRET } from './env'
 
@@ -21,19 +21,17 @@ export function verifyToken(
     DefaultHeaders,
     any
   >,
-  reply: FastifyReply<OutgoingMessage>,
+  _: any,
   done: (error?: Error) => void
 ) {
   const token = request.cookies['__token']
   if (!token) {
-    reply.status(401)
-    return done(new Error('No Token'))
+    return done(new Unauthorized('No Token'))
   }
 
   jwt.verify(token, JWT_SECRET, (error: Error, payload: any) => {
     if (error) {
-      reply.status(401)
-      done(error)
+      done(new Unauthorized('Token is not valid'))
     }
 
     request.params.tokenData = payload
