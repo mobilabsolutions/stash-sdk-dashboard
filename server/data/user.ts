@@ -17,9 +17,9 @@ export async function findUserById(userId: number) {
   const user = users.find(item => item.id === userId)
   if (!user) return null
 
-  const returnUser = { ...user }
-  delete returnUser.password
-  return returnUser
+  const result = { ...user }
+  delete result.password
+  return result
 }
 
 export async function findUser(username: string, password: string) {

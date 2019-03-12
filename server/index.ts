@@ -6,6 +6,7 @@ import * as nextJs from 'next'
 
 import prepareDatepickerCss from './prepare_datepicker_css'
 import token from './token'
+import merchant from './merchant'
 import user from './user'
 
 import { PORT, IS_DEVELOPMENT, BIND_ADDRESS } from './env'
@@ -24,6 +25,7 @@ async function main() {
 
     server.register(cookie)
     server.register(token, { prefix: '/api/v1/token' })
+    server.register(merchant, { prefix: '/api/v1/merchant' })
     server.register(user, { prefix: '/api/v1/user' })
 
     /*

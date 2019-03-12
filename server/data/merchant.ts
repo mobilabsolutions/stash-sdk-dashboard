@@ -44,3 +44,13 @@ const merchants = [
     ]
   }
 ]
+
+export async function findMerchantById(merchantId: string) {
+  const merchant = merchants.find(item => item.id === merchantId)
+  if (!merchant) return null
+
+  const result = { ...merchant }
+  delete result.psp
+  delete result.keys
+  return result
+}
