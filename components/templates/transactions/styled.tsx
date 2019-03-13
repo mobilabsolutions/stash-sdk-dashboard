@@ -57,7 +57,7 @@ const getStatusBackgroundColor = props => {
     case 'refunded':
       return props.theme.violet.A800
     case 'error':
-      return props.theme.orange.A800
+      return props.theme.red.A800
 
     default:
       return props.theme.primary.A800

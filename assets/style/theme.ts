@@ -18,78 +18,50 @@ export interface ThemeInterface {
   white: string
   primary: Color
   shade: Color
-  blue: Color
-  orange: Color
-  violet: Color
+  red: Color
 }
 
 export default {
   font: 'Raleway,Ubuntu,Helvetica,Arial,sans-serif',
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
-  white: '#FFF',
+  white: '#fff',
   primary: {
-    A25: '#F5FEFE',
-    A50: '#ECFEFD',
-    A100: '#CEFBF9',
-    A200: '#9DF6F2',
-    A300: '#6BF2EC',
-    A400: '#3AEDE5',
-    A500: '#08E8DE',
-    A600: '#07D0C7',
-    A700: '#048B85',
-    A800: '#035C58',
-    A900: '#012E2C'
+    A25: '#f5fefe',
+    A50: '#ecfefd',
+    A100: '#cefbf9',
+    A200: '#9df6f2',
+    A300: '#6bf2ec',
+    A400: '#3aede5',
+    A500: '#08e8de',
+    A600: '#07d0c7',
+    A700: '#048b85',
+    A800: '#035c58',
+    A900: '#012e2c'
   },
   shade: {
-    A25: '#F6F7F7',
-    A50: '#EDEFF0',
-    A100: '#D1D5D7',
-    A200: '#A3AAAF',
-    A300: '#747F86',
-    A400: '#46545E',
-    A500: '#22333F',
+    A25: '#f6f7f7',
+    A50: '#edeff0',
+    A100: '#d1d5d7',
+    A200: '#a3aaaf',
+    A300: '#747f86',
+    A400: '#46545e',
+    A500: '#22333f',
     A600: '#172935',
-    A700: '#12202A',
-    A800: '#0D181F',
+    A700: '#12202a',
+    A800: '#0d181f',
     A900: '#091015'
   },
-  blue: {
-    A25: '##F7FAFE',
-    A50: '#EFF5FE',
-    A100: '#D8E7FD',
-    A200: '#B7D2FB',
-    A300: '#8EBAF8',
-    A400: '#609DF6',
-    A500: '#2E7EF2',
-    A600: '#276BCD',
-    A700: '#1F56A7',
-    A800: '#194584',
-    A900: '#12315E'
-  },
-  orange: {
-    A25: '#FEF8F7',
-    A50: '#FEF2F0',
-    A100: '#FCDEDA',
-    A200: '#F9C2BA',
-    A300: '#F6A094',
-    A400: '#F27969',
-    A500: '#ED4E39',
-    A600: '#C94230',
-    A700: '#A33527',
-    A800: '#822A1F',
-    A900: '#5C1E16'
-  },
-  violet: {
-    A25: '#F5F6FA',
-    A50: '#EDEEF5',
-    A100: '#D4D6E5',
-    A200: '#AFB3CF',
-    A300: '#8289B4',
-    A400: '#4F5995',
-    A500: '#172473',
-    A600: '#131E61',
-    A700: '#0F184F',
-    A800: '#0C133F',
-    A900: '#090E2D'
+  red: {
+    A25: '#fff1f1',
+    A50: '#ffe3e3',
+    A100: '#ddbdbd',
+    A200: '#dd9b9b',
+    A300: '#f86a6a',
+    A400: '#ef4e4e',
+    A500: '#e12d39',
+    A600: '#cf1124',
+    A700: '#ab091e',
+    A800: '#8a041a',
+    A900: '#610316'
   }
 }

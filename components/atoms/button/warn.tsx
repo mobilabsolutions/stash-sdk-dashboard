@@ -42,14 +42,14 @@ const Button = styled.button`
     font-size: 14px;
     padding: 0.75em 1em;
   }
-  background-color: ${props => props.theme.orange.A700};
+  background-color: ${props => props.theme.red.A700};
   width: ${getWidth};
   :hover,
   :focus {
-    background-color: ${props => props.theme.orange.A800};
+    background-color: ${props => props.theme.red.A800};
   }
   :active {
-    background-color: ${props => props.theme.orange.A900};
+    background-color: ${props => props.theme.red.A900};
   }
   :disabled {
     background-color: ${props => props.theme.shade.A400};

@@ -3,11 +3,7 @@ import { useState, useRef } from 'react'
 import styled from '../../styled'
 
 const borderColor = ({ focused, hasErrors, theme }) =>
-  hasErrors
-    ? theme.orange.A700
-    : focused
-    ? theme.primary.A500
-    : theme.shade.A100
+  hasErrors ? theme.red.A700 : focused ? theme.primary.A500 : theme.shade.A100
 
 interface IsFocused {
   focused: boolean
