@@ -2,6 +2,8 @@
 
 import { testRender } from '../../../test_utils'
 
+import Title from './title'
+
 import H1 from './h1'
 import H2 from './h2'
 import H3 from './h3'
@@ -18,6 +20,8 @@ import PlusBody from './body_plus'
 import SmallBody from './body_small'
 
 import Warning from './warning'
+
+it('Title Should render', () => testRender(Title))
 
 it('H1 Should render', () => testRender(H1))
 it('H2 Should render', () => testRender(H2))

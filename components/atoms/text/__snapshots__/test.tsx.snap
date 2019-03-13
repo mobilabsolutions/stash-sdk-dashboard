@@ -72,6 +72,12 @@ exports[`SmallBody Should render 1`] = `
 />
 `;
 
+exports[`Title Should render 1`] = `
+<title
+  className="title-lfui3j-0 kZhQXb"
+/>
+`;
+
 exports[`Warning Should render 1`] = `
 <span
   className="warning-sc-1gapla4-0 hUzoGX"
