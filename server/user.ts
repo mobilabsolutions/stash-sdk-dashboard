@@ -20,7 +20,7 @@ export default function userPlugin(
       }
     },
     async (request, reply) => {
-      const user = await getUserById(parseInt(request.params.id, 10))
+      const user = await getUserById(request.params.id)
       if (!user) {
         throw new NotFound('User not found.')
       }
@@ -45,10 +45,7 @@ export default function userPlugin(
       }
     },
     async (request, reply) => {
-      const result = await updateUser(
-        parseInt(request.params.id, 10),
-        request.body
-      )
+      const result = await updateUser(request.params.id, request.body)
 
       if (!result) reply.status(400).send()
       else reply.status(204).send()
@@ -71,7 +68,7 @@ export default function userPlugin(
     },
     async (request, reply) => {
       const result = await changePassword(
-        parseInt(request.params.id, 10),
+        request.params.id,
         request.body.oldPassword,
         request.body.newPassword
       )

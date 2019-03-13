@@ -2,8 +2,7 @@ import * as bcrypt from 'bcrypt'
 
 const users = [
   {
-    id: 1,
-    username: 'cst',
+    username: 'christoph@mobilabsolutions.com',
     password: '$2b$10$AoJGHTiWWEIEDupFQe3jhe42vW5QNbGYwo4W4ePmC6PVeiUeB1bZq',
     firstname: 'Christoph',
     lastname: 'Stock',
@@ -13,8 +12,8 @@ const users = [
   }
 ]
 
-export async function getUserById(userId: number) {
-  const user = users.find(item => item.id === userId)
+export async function getUserById(userId: string) {
+  const user = users.find(item => item.username === userId)
   if (!user) return null
 
   const result = { ...user }
@@ -33,8 +32,8 @@ export async function findUser(username: string, password: string) {
   return match ? user : null
 }
 
-export async function updateUser(userId: number, updateData: object) {
-  const user = users.find(item => item.id === userId)
+export async function updateUser(userId: string, updateData: object) {
+  const user = users.find(item => item.username === userId)
   if (!user) return false
 
   Object.keys(updateData).forEach(key => {
@@ -44,11 +43,11 @@ export async function updateUser(userId: number, updateData: object) {
 }
 
 export async function changePassword(
-  userId: number,
+  userId: string,
   oldPassword: string,
   newPassword: string
 ) {
-  const user = users.find(item => item.id === userId)
+  const user = users.find(item => item.username === userId)
   if (!user) return false
 
   const match = await bcrypt.compare(oldPassword, user.password)

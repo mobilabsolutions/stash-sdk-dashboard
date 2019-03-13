@@ -56,9 +56,8 @@ export default function tokenPlugin(
     const accessToken = jwt.sign(
       {
         data: {
-          username: user.username,
-          merchantId: user.merchantId,
-          userId: user.id
+          userId: user.username,
+          merchantId: user.merchantId
         },
         iat: Math.floor(Date.now() / 1000) + 60 * 5 // 5 min
       },

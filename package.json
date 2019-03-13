@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development nodemon | pino-pretty -t",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node ./dist/index.js",
-    "test": "npm run lint && npm run typescript && npm run jest",
+    "test": "npm run lint && npm run typescript && npm run jest && npm audit",
     "docker": "sh ./scripts/start_docker.sh",
     "docker:stop": "docker stop payment-sdk-dashboard_01",
     "backend": "sh ./scripts/start_backend.sh",
