@@ -8,5 +8,5 @@ export default styled.h4`
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: ${props => props.theme.shade.A700};
+  color: ${props => props.theme.shade.A200};
 `

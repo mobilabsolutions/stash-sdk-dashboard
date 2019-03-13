@@ -14,7 +14,7 @@ export { default as DownIcon } from './icons/down'
 export { default as UpIcon } from './icons/up'
 export { default as VisibilityIcon } from './icons/visibility'
 
-export { default as Title } from './text/Title'
+export { default as Title } from './text/title'
 export { default as H1 } from './text/h1'
 export { default as H2 } from './text/h2'
 export { default as H3 } from './text/h3'

@@ -50,7 +50,7 @@ exports[`H3 Should render 1`] = `
 
 exports[`H4 Should render 1`] = `
 <h4
-  className="h4-sc-1tkem18-0 iTCWyM"
+  className="h4-sc-1tkem18-0 iOcsze"
 />
 `;
 

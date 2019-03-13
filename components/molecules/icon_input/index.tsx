@@ -55,6 +55,7 @@ export default ({
   field: { name, value, onChange, onBlur },
   form: { touched, errors },
   icon,
+  className,
   ...props
 }) => {
   const [focused, setFocused] = useState(false)
@@ -64,7 +65,12 @@ export default ({
   const hasErrors = touched[name] && errors[name]
 
   return (
-    <Wrapper focused={focused} hasErrors={hasErrors} onClick={handleClick}>
+    <Wrapper
+      focused={focused}
+      hasErrors={hasErrors}
+      onClick={handleClick}
+      className={className}
+    >
       <div>{icon}</div>
       <input
         {...props}
