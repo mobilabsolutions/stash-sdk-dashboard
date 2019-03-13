@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActiveH1 Should render 1`] = `
+<h1
+  className="h1_active-fbufqz-0 ePsaNj"
+/>
+`;
+
+exports[`ActiveH2 Should render 1`] = `
+<h2
+  className="h2_active-sc-1r3712n-0 dZGoKP"
+/>
+`;
+
+exports[`ActiveH3 Should render 1`] = `
+<h3
+  className="h3_active-x7etx6-0 ciInsy"
+/>
+`;
+
+exports[`ActiveH4 Should render 1`] = `
+<h4
+  className="h4_active-tx568s-0 hcblIJ"
+/>
+`;
+
+exports[`Body Should render 1`] = `
+<span
+  className="body-otgu5j-0 fWtemn"
+/>
+`;
+
+exports[`H1 Should render 1`] = `
+<h1
+  className="h1-sc-1ivb2ca-0 hnQWsF"
+/>
+`;
+
+exports[`H2 Should render 1`] = `
+<h2
+  className="h2-m2oto9-0 exTpbo"
+/>
+`;
+
+exports[`H3 Should render 1`] = `
+<h3
+  className="h3-sc-1przhcr-0 gUiuDg"
+/>
+`;
+
+exports[`H4 Should render 1`] = `
+<h4
+  className="h4-sc-1tkem18-0 iTCWyM"
+/>
+`;
+
+exports[`LargeBody Should render 1`] = `
+<span
+  className="body_large-sc-10mlfdu-0 jlXjHV"
+/>
+`;
+
+exports[`PlusBody Should render 1`] = `
+<span
+  className="body_plus-sc-1agi60b-0 hHOuqG"
+/>
+`;
+
+exports[`SmallBody Should render 1`] = `
+<span
+  className="body_small-y3hyj7-0 hDqUfH"
+/>
+`;
+
+exports[`Warning Should render 1`] = `
+<span
+  className="warning-sc-1gapla4-0 hUzoGX"
+/>
+`;

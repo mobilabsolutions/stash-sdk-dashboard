@@ -1,17 +1,7 @@
 /* eslint-env jest */
 
-import React from 'react'
-import renderer from 'react-test-renderer'
-
-import { withTestSetup } from '../../../test_utils'
+import { testRender } from '../../../test_utils'
 import Link from './index'
 
-const TestLink = withTestSetup(Link)
-
-it('Link Should Render', () => {
-  const component = renderer.create(
-    <TestLink label="Login" href="https://google.com" />
-  )
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+it('Link Should Render', () =>
+  testRender(Link, { lable: 'Login', href: 'https://google.com' }))

@@ -6,8 +6,6 @@ exports[`Link Should Render 1`] = `
   href="https://google.com"
   onClick={[Function]}
 >
-  <span>
-    Login
-  </span>
+  <span />
 </a>
 `;

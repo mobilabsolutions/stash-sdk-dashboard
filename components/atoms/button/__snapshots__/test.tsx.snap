@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled PrimaryButton Should Render 1`] = `
+<button
+  className="primary__Button-sc-1lwi4g7-0 kjqxho"
+  disabled={true}
+  onClick={null}
+  type="submit"
+>
+  <span />
+</button>
+`;
+
+exports[`Disabled PrimaryButton Should Render 2`] = `
+<button
+  className="secondary__Button-j7mjyk-0 iLEulF"
+  disabled={true}
+  onClick={null}
+  type="button"
+>
+  <span />
+</button>
+`;
+
+exports[`Disabled WarnButton Should Render 1`] = `
+<button
+  className="warn__Button-sc-5cg2rp-0 igPCTW"
+  disabled={true}
+  onClick={null}
+  type="submit"
+>
+  <span />
+</button>
+`;
+
+exports[`Full size PrimaryButton Should Render 1`] = `
+<button
+  className="primary__Button-sc-1lwi4g7-0 fgtZMe"
+  disabled={false}
+  onClick={null}
+  type="submit"
+>
+  <span />
+</button>
+`;
+
+exports[`PrimaryButton Should Render 1`] = `
+<button
+  className="primary__Button-sc-1lwi4g7-0 kjqxho"
+  disabled={false}
+  onClick={null}
+  type="submit"
+>
+  <span />
+</button>
+`;
+
+exports[`SecondaryButton Should Render 1`] = `
+<button
+  className="secondary__Button-j7mjyk-0 gxdnVF"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  <span />
+</button>
+`;
+
+exports[`WarnButton Should Render 1`] = `
+<button
+  className="warn__Button-sc-5cg2rp-0 igPCTW"
+  disabled={false}
+  onClick={null}
+  type="submit"
+>
+  <span />
+</button>
+`;

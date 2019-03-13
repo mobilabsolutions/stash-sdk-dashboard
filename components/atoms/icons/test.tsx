@@ -1,55 +1,21 @@
 /* eslint-env jest */
 
-import React from 'react'
-import renderer from 'react-test-renderer'
+import { testRender } from '../../../test_utils'
 
-import { withTestSetup } from '../../../test_utils'
-import Logo from './logo'
 import AccountIcon from './account'
-import KeyIcon from './key'
 import CopyIcon from './copy'
 import DownIcon from './down'
+import Illustration from './illustration'
+import KeyIcon from './key'
+import Logo from './logo'
 import UpIcon from './up'
+import VisibilityIcon from './visibility'
 
-const TestLogo = withTestSetup(Logo)
-const TestAccountIcon = withTestSetup(AccountIcon)
-const TestKeyIcon = withTestSetup(KeyIcon)
-const TestCopyIcon = withTestSetup(CopyIcon)
-const TestDownIcon = withTestSetup(DownIcon)
-const TestUpIcon = withTestSetup(UpIcon)
-
-it('Logo Should Render', () => {
-  const component = renderer.create(<TestLogo />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-it('AccountIcon Should Render', () => {
-  const component = renderer.create(<TestAccountIcon />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-it('KeyIcon Should Render', () => {
-  const component = renderer.create(<TestKeyIcon />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-it('CopyIcon Should Render', () => {
-  const component = renderer.create(<TestCopyIcon />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-it('UpIconIcon Should Render', () => {
-  const component = renderer.create(<TestUpIcon />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-it('DownIcon Should Render', () => {
-  const component = renderer.create(<TestDownIcon />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+it('Logo Should Render', () => testRender(Logo))
+it('Illustration Should Render', () => testRender(Illustration))
+it('AccountIcon Should Render', () => testRender(AccountIcon))
+it('KeyIcon Should Render', () => testRender(KeyIcon))
+it('CopyIcon Should Render', () => testRender(CopyIcon))
+it('DownIcon Should Render', () => testRender(DownIcon))
+it('UpIcon Should Render', () => testRender(UpIcon))
+it('VisibilityIcon Should Render', () => testRender(VisibilityIcon))
