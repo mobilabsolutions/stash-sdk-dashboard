@@ -2,7 +2,7 @@
 
 exports[`Link Should Render 1`] = `
 <a
-  className="link__A-sc-1qbu0ar-0 dGCHtZ"
+  className="link__A-sc-1qbu0ar-0 ilHpoF"
   href="https://google.com"
   onClick={[Function]}
 >
