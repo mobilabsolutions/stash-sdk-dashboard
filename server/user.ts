@@ -21,9 +21,7 @@ export default function userPlugin(
     },
     async (request, reply) => {
       const user = await getUserById(request.params.id)
-      if (!user) {
-        throw new NotFound('User not found.')
-      }
+      if (!user) throw new NotFound('User not found.')
 
       reply.send(user)
     }
