@@ -1,5 +1,3 @@
-import React from 'react'
-
 import styled from '../../styled'
 
 const getWidth = props => (props.isFullSize ? '100%' : 'auto')
@@ -64,28 +62,28 @@ const Button = styled.button<StyledButtonProps>`
   }
 `
 
-const PrimaryButton = ({
+export default function PrimaryButton({
   label,
   isFullSize = false,
   type = 'submit',
   disabled = false,
   onClick = null
-}) => (
-  <Button
-    isFullSize={isFullSize}
-    type={type}
-    disabled={disabled}
-    onClick={
-      !disabled && onClick
-        ? e => {
-            e.stopPropagation()
-            onClick()
-          }
-        : null
-    }
-  >
-    <span>{label}</span>
-  </Button>
-)
-
-export default PrimaryButton
+}) {
+  return (
+    <Button
+      isFullSize={isFullSize}
+      type={type}
+      disabled={disabled}
+      onClick={
+        !disabled && onClick
+          ? e => {
+              e.stopPropagation()
+              onClick()
+            }
+          : null
+      }
+    >
+      <span>{label}</span>
+    </Button>
+  )
+}

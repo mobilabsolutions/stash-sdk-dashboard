@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Should Render 1`] = `
+<a
+  className="link__A-sc-1qbu0ar-0 dGCHtZ"
+  href="https://google.com"
+  onClick={[Function]}
+>
+  <span>
+    Login
+  </span>
+</a>
+`;

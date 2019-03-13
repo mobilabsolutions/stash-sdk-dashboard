@@ -21,10 +21,12 @@ const A = styled.a`
   }
 `
 
-export default ({ label, href }) => (
-  <Link href={href}>
-    <A href={href}>
-      <span>{label}</span>
-    </A>
-  </Link>
-)
+export default function HyperLink({ label, href }) {
+  return (
+    <Link href={href}>
+      <A href={href}>
+        <span>{label}</span>
+      </A>
+    </Link>
+  )
+}

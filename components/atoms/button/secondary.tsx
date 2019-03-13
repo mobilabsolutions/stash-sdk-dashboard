@@ -1,5 +1,3 @@
-import React from 'react'
-
 import styled from '../../styled'
 
 const Button = styled.button`
@@ -59,26 +57,26 @@ const Button = styled.button`
   }
 `
 
-const SecondaryButton = ({
+export default function SecondaryButton({
   label,
   type = 'button',
   disabled = false,
   onClick
-}) => (
-  <Button
-    type={type}
-    disabled={disabled}
-    onClick={
-      !disabled && onClick
-        ? e => {
-            e.stopPropagation()
-            onClick()
-          }
-        : null
-    }
-  >
-    <span>{label}</span>
-  </Button>
-)
-
-export default SecondaryButton
+}) {
+  return (
+    <Button
+      type={type}
+      disabled={disabled}
+      onClick={
+        !disabled && onClick
+          ? e => {
+              e.stopPropagation()
+              onClick()
+            }
+          : null
+      }
+    >
+      <span>{label}</span>
+    </Button>
+  )
+}

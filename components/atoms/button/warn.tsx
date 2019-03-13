@@ -59,21 +59,26 @@ const Button = styled.button`
   }
 `
 
-const WarnButton = ({ label, type = 'submit', disabled = false, onClick }) => (
-  <Button
-    type={type}
-    disabled={disabled}
-    onClick={
-      !disabled && onClick
-        ? e => {
-            e.stopPropagation()
-            onClick()
-          }
-        : null
-    }
-  >
-    <span>{label}</span>
-  </Button>
-)
-
-export default WarnButton
+export default function WarnButton({
+  label,
+  type = 'submit',
+  disabled = false,
+  onClick
+}) {
+  return (
+    <Button
+      type={type}
+      disabled={disabled}
+      onClick={
+        !disabled && onClick
+          ? e => {
+              e.stopPropagation()
+              onClick()
+            }
+          : null
+      }
+    >
+      <span>{label}</span>
+    </Button>
+  )
+}
