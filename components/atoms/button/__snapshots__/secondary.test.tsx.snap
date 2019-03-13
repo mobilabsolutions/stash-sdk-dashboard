@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled SecondaryButton Should Render 1`] = `
+<button
+  className="secondary__Button-j7mjyk-0 iLEulF"
+  disabled={true}
+  onClick={null}
+  type="button"
+>
+  <span>
+    Disabled
+  </span>
+</button>
+`;
+
+exports[`SecondaryButton Should Render 1`] = `
+<button
+  className="secondary__Button-j7mjyk-0 gxdnVF"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  <span>
+    Login
+  </span>
+</button>
+`;

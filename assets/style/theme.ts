@@ -54,8 +54,8 @@ export default {
   red: {
     A25: '#fff1f1',
     A50: '#ffe3e3',
-    A100: '#ddbdbd',
-    A200: '#dd9b9b',
+    A100: '#ffbdbd',
+    A200: '#ff9b9b',
     A300: '#f86a6a',
     A400: '#ef4e4e',
     A500: '#e12d39',

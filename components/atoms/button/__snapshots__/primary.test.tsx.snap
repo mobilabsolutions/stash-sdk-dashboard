@@ -2,7 +2,7 @@
 
 exports[`Disabled PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 kUxHGQ"
+  className="primary__Button-sc-1lwi4g7-0 kjqxho"
   disabled={true}
   onClick={null}
   type="submit"
@@ -13,9 +13,22 @@ exports[`Disabled PrimaryButton Should Render 1`] = `
 </button>
 `;
 
+exports[`Full Size PrimaryButton Should Render 1`] = `
+<button
+  className="primary__Button-sc-1lwi4g7-0 fgtZMe"
+  disabled={false}
+  onClick={null}
+  type="submit"
+>
+  <span>
+    Login
+  </span>
+</button>
+`;
+
 exports[`PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 kUxHGQ"
+  className="primary__Button-sc-1lwi4g7-0 kjqxho"
   disabled={false}
   onClick={null}
   type="submit"

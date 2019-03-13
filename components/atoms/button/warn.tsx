@@ -59,13 +59,7 @@ const Button = styled.button`
   }
 `
 
-const PrimaryButton = ({
-  label,
-  type = 'button',
-  disabled = false,
-  onClick,
-  className = ''
-}) => (
+const WarnButton = ({ label, type = 'submit', disabled = false, onClick }) => (
   <Button
     type={type}
     disabled={disabled}
@@ -77,10 +71,9 @@ const PrimaryButton = ({
           }
         : null
     }
-    className={className}
   >
     <span>{label}</span>
   </Button>
 )
 
-export default PrimaryButton
+export default WarnButton

@@ -63,8 +63,7 @@ const SecondaryButton = ({
   label,
   type = 'button',
   disabled = false,
-  onClick,
-  className = ''
+  onClick
 }) => (
   <Button
     type={type}
@@ -77,7 +76,6 @@ const SecondaryButton = ({
           }
         : null
     }
-    className={className}
   >
     <span>{label}</span>
   </Button>

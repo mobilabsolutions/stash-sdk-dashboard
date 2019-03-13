@@ -69,8 +69,7 @@ const PrimaryButton = ({
   isFullSize = false,
   type = 'submit',
   disabled = false,
-  onClick = null,
-  className = ''
+  onClick = null
 }) => (
   <Button
     isFullSize={isFullSize}
@@ -84,7 +83,6 @@ const PrimaryButton = ({
           }
         : null
     }
-    className={className}
   >
     <span>{label}</span>
   </Button>

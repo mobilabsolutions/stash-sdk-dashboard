@@ -1,7 +1,6 @@
 export { default as PrimaryButton } from './button/primary'
 export { default as SecondaryButton } from './button/secondary'
 export { default as WarnButton } from './button/warn'
-export { default as TextButton } from './button/text_button'
 
 export { default as Link } from './link'
 export { default as Overlay } from './overlay'
