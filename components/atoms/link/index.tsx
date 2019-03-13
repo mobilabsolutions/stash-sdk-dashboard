@@ -4,7 +4,6 @@ import styled from '../../styled'
 
 const A = styled.a`
   cursor: pointer;
-  margin: 1em;
   text-decoration: none;
   > span {
     color: ${props => props.theme.shade.A200};

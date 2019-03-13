@@ -53,9 +53,12 @@ const FormWrapper = styled.div`
   justify-self: center;
   align-self: center;
   width: 300px;
+  .button {
+    display: flex;
+    margin-top: 24px;
+  }
   .link {
-    margin-top: -8px;
-    padding: 0px;
+    margin-top: 16px;
     display: flex;
     justify-content: center;
   }
@@ -111,14 +114,14 @@ export default function LoginForm({ username = '', password = '' }) {
                   />
                 )}
               />
+              <div className="button">
+                <PrimaryButton label="Login" isFullSize />
+              </div>
               <div className="link">
                 <Link
                   href="/forgot-password"
                   label={getText('Forgot password?')}
                 />
-              </div>
-              <div>
-                <PrimaryButton label="Login" isFullSize />
               </div>
             </FormWrapper>
           </Form>

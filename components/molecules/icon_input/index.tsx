@@ -20,6 +20,8 @@ const Wrapper = styled.div<IsFocused>`
   max-width: 300px;
   transition: all 0.3s ease-in-out;
   background-color: ${props => props.theme.white};
+  margin-top: 4px;
+  margin-bottom: 16px;
   > div {
     padding-left: 16px;
     padding-right: 16px;
