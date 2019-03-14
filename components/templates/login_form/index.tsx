@@ -125,7 +125,11 @@ export default function LoginForm({ email = '', password = '' }) {
                 )}
               />
               <div className="button">
-                <PrimaryButton label="Login" isFullSize />
+                <PrimaryButton
+                  label="Login"
+                  isFullSize
+                  disabled={!props.isValid}
+                />
               </div>
               <div className="link">
                 <Link

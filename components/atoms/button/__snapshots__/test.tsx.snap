@@ -2,7 +2,7 @@
 
 exports[`Disabled PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 hfsxpp"
+  className="primary__Button-sc-1lwi4g7-0 hmcZQn"
   disabled={true}
   onClick={null}
   type="submit"
@@ -24,7 +24,7 @@ exports[`Disabled PrimaryButton Should Render 2`] = `
 
 exports[`Disabled WarnButton Should Render 1`] = `
 <button
-  className="warn__Button-sc-5cg2rp-0 igPCTW"
+  className="warn__Button-sc-5cg2rp-0 gxotsG"
   disabled={true}
   onClick={null}
   type="submit"
@@ -35,7 +35,7 @@ exports[`Disabled WarnButton Should Render 1`] = `
 
 exports[`Full size PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 cUFDFH"
+  className="primary__Button-sc-1lwi4g7-0 fPlfTR"
   disabled={false}
   onClick={null}
   type="submit"
@@ -46,7 +46,7 @@ exports[`Full size PrimaryButton Should Render 1`] = `
 
 exports[`PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 hfsxpp"
+  className="primary__Button-sc-1lwi4g7-0 hmcZQn"
   disabled={false}
   onClick={null}
   type="submit"
@@ -68,7 +68,7 @@ exports[`SecondaryButton Should Render 1`] = `
 
 exports[`WarnButton Should Render 1`] = `
 <button
-  className="warn__Button-sc-5cg2rp-0 igPCTW"
+  className="warn__Button-sc-5cg2rp-0 gxotsG"
   disabled={false}
   onClick={null}
   type="submit"

@@ -55,7 +55,7 @@ const Button = styled.button<StyledButtonProps>`
     background-color: ${props => props.theme.primary.A800};
   }
   :disabled {
-    background-color: ${props => props.theme.shade.A300};
+    background-color: ${props => props.theme.shade.A200};
   }
   > span {
     color: ${props => props.theme.shade.A25};

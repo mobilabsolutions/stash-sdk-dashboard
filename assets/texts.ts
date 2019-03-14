@@ -46,5 +46,6 @@ export default {
     de: 'Passwort'
   },
   'Login to your account': { de: 'Loggen Sie sich ein' },
-  'Forgot password?': { de: 'Passwort vergessen?' }
+  'Forgot password?': { de: 'Passwort vergessen?' },
+  'Field is required.': { de: 'Eingabe erforderlich.' }
 }
