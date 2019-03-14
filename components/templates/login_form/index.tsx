@@ -20,39 +20,39 @@ const Wrapper = styled.div`
   flex-direction: row;
   width: 100%;
   height: 100vh;
-`
-
-const ImageWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  padding-top: calc(200px);
-  height: 100%;
-  background-color: ${props => props.theme.shade.A25};
-  @media (max-width: 700px) {
-    display: none;
+  .illustration {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding-top: calc(200px);
+    height: 100%;
+    background-color: ${props => props.theme.shade.A25};
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 `
-
 const Form = styled.form`
   display: flex;
   flex: 1;
   flex-direction: column;
   height: 100%;
-`
-
-const LogoWrapper = styled.div`
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-bottom: 120px;
+  .logo {
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 120px;
+  }
 `
 
 const FormWrapper = styled.div`
   justify-self: center;
   align-self: center;
   width: 300px;
+  .title {
+    padding-left: 8px;
+  }
   .button {
     display: flex;
     margin-top: 24px;
@@ -84,12 +84,14 @@ export default function LoginForm({ username = '', password = '' }) {
       render={props => (
         <Wrapper>
           <Form onSubmit={props.handleSubmit}>
-            <LogoWrapper>
+            <div className="logo">
               <Logo />
-            </LogoWrapper>
+            </div>
             <FormWrapper>
-              <H2>{getText('Welcome')}</H2>
-              <H4>{getText('Login to your account')}</H4>
+              <div className="title">
+                <H2>{getText('Welcome')}</H2>
+                <H4>{getText('Login to your account')}</H4>
+              </div>
               <Field
                 name="username"
                 render={({ field, form }) => (
@@ -125,9 +127,9 @@ export default function LoginForm({ username = '', password = '' }) {
               </div>
             </FormWrapper>
           </Form>
-          <ImageWrapper>
+          <div className="illustration">
             <Illustration />
-          </ImageWrapper>
+          </div>
         </Wrapper>
       )}
     />
