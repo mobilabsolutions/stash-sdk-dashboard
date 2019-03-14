@@ -1,5 +1,5 @@
 export default function VisibilityIcon({
-  width = 22,
+  width = 24,
   height = 16,
   onClick = () => null,
   disable = false

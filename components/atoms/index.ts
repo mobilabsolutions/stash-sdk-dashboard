@@ -13,6 +13,7 @@ export { default as KeyIcon } from './icons/key'
 export { default as DownIcon } from './icons/down'
 export { default as UpIcon } from './icons/up'
 export { default as VisibilityIcon } from './icons/visibility'
+export { default as InvisibilityIcon } from './icons/invisibility'
 
 export { default as Title } from './text/title'
 export { default as H1 } from './text/h1'

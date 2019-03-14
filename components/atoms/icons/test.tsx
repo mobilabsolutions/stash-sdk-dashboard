@@ -10,6 +10,7 @@ import KeyIcon from './key'
 import Logo from './logo'
 import UpIcon from './up'
 import VisibilityIcon from './visibility'
+import InvisibilityIcon from './invisibility'
 
 it('Logo Should Render', () => testRender(Logo))
 it('Illustration Should Render', () => testRender(Illustration))
@@ -19,3 +20,4 @@ it('CopyIcon Should Render', () => testRender(CopyIcon))
 it('DownIcon Should Render', () => testRender(DownIcon))
 it('UpIcon Should Render', () => testRender(UpIcon))
 it('VisibilityIcon Should Render', () => testRender(VisibilityIcon))
+it('InvisibilityIcon Should Render', () => testRender(InvisibilityIcon))

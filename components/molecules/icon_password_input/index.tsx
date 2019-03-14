@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 
-import { VisibilityIcon } from '../../atoms'
+import { VisibilityIcon, InvisibilityIcon } from '../../atoms'
 import styled from '../../styled'
 
 const borderColor = ({ focused, hasErrors, theme }) =>
@@ -91,7 +91,11 @@ export default ({
         value={value}
       />
       <div className="visibility">
-        <VisibilityIcon onClick={() => setVisible(!visible)} />
+        {visible ? (
+          <InvisibilityIcon onClick={() => setVisible(false)} />
+        ) : (
+          <VisibilityIcon onClick={() => setVisible(true)} />
+        )}
       </div>
     </Wrapper>
   )
