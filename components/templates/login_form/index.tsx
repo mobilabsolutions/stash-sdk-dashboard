@@ -89,8 +89,7 @@ export default function LoginForm({ email = '', password = '' }) {
             actions.setSubmitting(false)
             Router.push('/')
           })
-          .catch(error => {
-            console.log('Login Failed', error)
+          .catch(() => {
             actions.setSubmitting(false)
             passwordField.current && passwordField.current.focus()
 
