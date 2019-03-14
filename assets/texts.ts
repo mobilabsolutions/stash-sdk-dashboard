@@ -36,6 +36,9 @@ export default {
     de:
       'Möchten Sie wirklich die Transaktion %{id} über %{amount} zurückerstatten?'
   },
+  Email: {
+    de: 'E-mail'
+  },
   Username: {
     de: 'Benutzername'
   },

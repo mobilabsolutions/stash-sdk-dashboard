@@ -42,17 +42,17 @@ const Button = styled.button`
     font-size: 14px;
     padding: 0.75em 1em;
   }
-  background-color: ${props => props.theme.red.A700};
+  background-color: ${props => props.theme.red.A400};
   width: ${getWidth};
   :hover,
   :focus {
-    background-color: ${props => props.theme.red.A800};
+    background-color: ${props => props.theme.red.A500};
   }
   :active {
-    background-color: ${props => props.theme.red.A900};
+    background-color: ${props => props.theme.red.A600};
   }
   :disabled {
-    background-color: ${props => props.theme.shade.A400};
+    background-color: ${props => props.theme.shade.A300};
   }
   > span {
     color: ${props => props.theme.shade.A25};

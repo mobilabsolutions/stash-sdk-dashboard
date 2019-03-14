@@ -4,7 +4,7 @@ import { VisibilityIcon, InvisibilityIcon } from '../../atoms'
 import styled from '../../styled'
 
 const borderColor = ({ focused, hasErrors, theme }) =>
-  hasErrors ? theme.red.A700 : focused ? theme.primary.A600 : theme.shade.A100
+  hasErrors ? theme.red.A400 : focused ? theme.primary.A600 : theme.shade.A100
 
 interface IsFocused {
   focused: boolean

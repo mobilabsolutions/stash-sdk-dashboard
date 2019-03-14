@@ -64,16 +64,24 @@ const FormWrapper = styled.div`
   }
 `
 
-export default function LoginForm({ username = '', password = '' }) {
+export default function LoginForm({ email = '', password = '' }) {
   const { login } = useApi()
   const { getText } = useLocalization()
 
   return (
     <Formik
-      initialValues={{ username, password }}
+      initialValues={{ email, password }}
+      validate={values => {
+        let errors: any = {}
+
+        if (!values.email) errors.email = getText('Field is required.')
+        if (!values.password) errors.password = getText('Field is required.')
+
+        return errors
+      }}
       onSubmit={(values, actions) => {
         console.log('Submit Login', values, actions)
-        login(values.username, values.password)
+        login(values.email, values.password)
           .then(() => {
             Router.push('/')
           })
@@ -93,14 +101,14 @@ export default function LoginForm({ username = '', password = '' }) {
                 <H4>{getText('Login to your account')}</H4>
               </div>
               <Field
-                name="username"
+                name="email"
                 render={({ field, form }) => (
                   <IconInput
                     field={field}
                     className="field"
                     form={form}
                     icon={<AccountIcon />}
-                    placeholder={getText('Username')}
+                    placeholder={getText('Email')}
                   />
                 )}
               />
