@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 
-import { Pagination } from '../components/molecules'
-import { Page } from '../components/organisms'
+import { Pagination, Page } from '../components/organisms'
 import { Filter, Transactions } from '../components/templates'
 import { useTokenCheck, useTransactions, useClientRect } from '../hooks'
 
