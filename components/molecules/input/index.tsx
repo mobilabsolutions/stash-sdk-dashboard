@@ -3,7 +3,7 @@ import { useState, useRef } from 'react'
 import styled from '../../styled'
 
 const borderColor = ({ focused, theme }) =>
-  focused ? theme.primary.A500 : theme.shade.A100
+  focused ? theme.primary.A600 : theme.shade.A100
 
 interface WrapperProps {
   focused: boolean

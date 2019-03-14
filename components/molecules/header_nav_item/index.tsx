@@ -14,7 +14,7 @@ type Props = {
 
 const H1 = styled.h1<Props>`
   color: ${props =>
-    props.isActive ? props.theme.primary.A500 : props.theme.shade.A300};
+    props.isActive ? props.theme.primary.A600 : props.theme.shade.A300};
   font-family: ${props => props.theme.fontHeadline};
   font-size: 16px;
   font-weight: bold;

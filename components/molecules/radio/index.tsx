@@ -30,7 +30,7 @@ const Label = styled.label<LabelProps>`
     border-radius: 50%;
   }
   :hover input ~ span {
-    border: solid 2px ${props => props.theme.primary.A500};
+    border: solid 2px ${props => props.theme.primary.A600};
   }
   span:after {
     content: '';
@@ -46,7 +46,7 @@ const Label = styled.label<LabelProps>`
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: ${props => props.theme.primary.A500};
+    background: ${props => props.theme.primary.A600};
   }
 `
 
