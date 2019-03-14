@@ -4,7 +4,6 @@ import {
   Input,
   InputFieldWrapper,
   InputWrapper,
-  InputIconWrapper,
   InputErrorMessage
 } from '../../atoms'
 
@@ -12,7 +11,6 @@ function TextInput(
   {
     field: { name, value, onChange, onBlur },
     form: { touched, errors },
-    icon,
     placeholder = '',
     className = '',
     autoFocus = false
@@ -20,11 +18,11 @@ function TextInput(
   inputRef: any
 ) {
   const [focused, setFocused] = useState(autoFocus)
-  const handleClick = () => inputRef && inputRef.current.focus()
-  const hasErrors = touched[name] && errors[name]
   const localRef = useRef()
 
   const ref = inputRef || localRef
+  const hasErrors = touched[name] && errors[name]
+  const handleClick = () => inputRef && inputRef.current.focus()
 
   return (
     <InputFieldWrapper>
@@ -34,9 +32,6 @@ function TextInput(
         onClick={handleClick}
         className={className}
       >
-        <InputIconWrapper focused={focused} hasErrors={hasErrors}>
-          {icon}
-        </InputIconWrapper>
         <Input
           ref={ref}
           name={name}

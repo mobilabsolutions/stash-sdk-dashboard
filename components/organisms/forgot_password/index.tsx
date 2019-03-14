@@ -2,8 +2,8 @@ import { forwardRef } from 'react'
 import { Field, FormikProps } from 'formik'
 
 import { useLocalization } from '../../../hooks'
-import { PrimaryButton, Link, AccountIcon, KeyIcon, H2, H4 } from '../../atoms'
-import { IconInput, IconPasswordInput } from '../../molecules'
+import { PrimaryButton, H2, H4 } from '../../atoms'
+import { Input } from '../../molecules'
 import styled from '../../styled'
 import AnonymousForm from '../anonymous_form'
 
@@ -18,60 +18,43 @@ const Wrapper = styled.div`
     display: flex;
     margin-top: 24px;
   }
-  > .link {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-  }
 `
 
-interface LoginFormProps {
+interface ForgotPasswordProps {
   email: string
-  password: string
 }
 
-function LoginForm(props: FormikProps<LoginFormProps>, passwordField: any) {
+function LoginForm(props: FormikProps<ForgotPasswordProps>, emailField: any) {
   const { getText } = useLocalization()
   return (
     <AnonymousForm handleSubmit={props.handleSubmit}>
       <Wrapper>
         <div className="title">
-          <H2>{getText('Welcome')}</H2>
-          <H4>{getText('Login to your account')}</H4>
+          <H2>{getText('Please enter your email address')}</H2>
+          <H4>
+            {getText(
+              'You will receive in few minutes an email with a link to reset your password.'
+            )}
+          </H4>
         </div>
         <Field
           name="email"
           render={({ field, form }) => (
-            <IconInput
+            <Input
+              ref={emailField}
               field={field}
               form={form}
-              icon={<AccountIcon />}
               placeholder={getText('Email')}
               autoFocus
             />
           )}
         />
-        <Field
-          name="password"
-          render={({ field, form }) => (
-            <IconPasswordInput
-              ref={passwordField}
-              field={field}
-              form={form}
-              icon={<KeyIcon />}
-              placeholder={getText('Password')}
-            />
-          )}
-        />
         <div className="button">
           <PrimaryButton
-            label={getText('Login')}
+            label={getText('Reset Password')}
             isFullSize
             disabled={!props.isValid}
           />
-        </div>
-        <div className="link">
-          <Link href="/forgot-password" label={getText('Forgot password?')} />
         </div>
       </Wrapper>
     </AnonymousForm>
