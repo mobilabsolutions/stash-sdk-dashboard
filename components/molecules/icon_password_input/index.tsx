@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { forwardRef, useState, useRef } from 'react'
 
 import { VisibilityIcon, InvisibilityIcon } from '../../atoms'
 import styled from '../../styled'
@@ -61,17 +61,21 @@ const Wrapper = styled.div<IsFocused>`
   }
 `
 
-export default ({
-  field: { name, value, onChange, onBlur },
-  form: { touched, errors },
-  icon,
-  ...props
-}) => {
+function IconPasswordInput(
+  {
+    field: { name, value, onChange, onBlur },
+    form: { touched, errors },
+    icon,
+    ...props
+  },
+  inputRef: any
+) {
   const [focused, setFocused] = useState(false)
   const [visible, setVisible] = useState(false)
-  const inputRef = useRef(null)
+  const localRef = useRef()
 
-  const handleClick = () => inputRef && inputRef.current.focus()
+  const ref = inputRef || localRef
+  const handleClick = () => ref && ref.current && ref.current.focus()
   const hasErrors = touched[name] && errors[name]
 
   return (
@@ -81,7 +85,7 @@ export default ({
         {...props}
         type={visible ? 'text' : 'password'}
         name={name}
-        ref={inputRef}
+        ref={ref}
         onFocus={() => setFocused(true)}
         onBlur={event => {
           setFocused(false)
@@ -100,3 +104,5 @@ export default ({
     </Wrapper>
   )
 }
+
+export default forwardRef(IconPasswordInput)

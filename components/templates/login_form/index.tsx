@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Formik, Field } from 'formik'
 import Router from 'next/router'
 
@@ -67,6 +68,7 @@ const FormWrapper = styled.div`
 export default function LoginForm({ email = '', password = '' }) {
   const { login } = useApi()
   const { getText } = useLocalization()
+  const passwordField = useRef(undefined)
 
   return (
     <Formik
@@ -80,13 +82,20 @@ export default function LoginForm({ email = '', password = '' }) {
         return errors
       }}
       onSubmit={(values, actions) => {
-        console.log('Submit Login', values, actions)
+        actions.setSubmitting(true)
         login(values.email, values.password)
           .then(() => {
+            actions.setSubmitting(false)
             Router.push('/')
           })
           .catch(error => {
-            console.log(error)
+            console.log('Login Failed', error)
+            actions.setSubmitting(false)
+            passwordField.current && passwordField.current.focus()
+            actions.setFieldError(
+              'password',
+              getText('Login failed. Email or Password is Invalid.')
+            )
           })
       }}
       render={props => (
@@ -116,6 +125,7 @@ export default function LoginForm({ email = '', password = '' }) {
                 name="password"
                 render={({ field, form }) => (
                   <IconPasswordInput
+                    ref={passwordField}
                     field={field}
                     className="field"
                     form={form}
@@ -128,7 +138,7 @@ export default function LoginForm({ email = '', password = '' }) {
                 <PrimaryButton
                   label="Login"
                   isFullSize
-                  disabled={!props.isValid}
+                  disabled={!props.isValid || props.isSubmitting}
                 />
               </div>
               <div className="link">

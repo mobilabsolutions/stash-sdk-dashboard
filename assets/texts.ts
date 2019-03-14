@@ -47,5 +47,6 @@ export default {
   },
   'Login to your account': { de: 'Loggen Sie sich ein' },
   'Forgot password?': { de: 'Passwort vergessen?' },
-  'Field is required.': { de: 'Eingabe erforderlich.' }
+  'Field is required.': { de: 'Eingabe erforderlich.' },
+  'Login failed. Email or Password is Invalid.': { de: 'Login fehlgeschlagen.' }
 }
