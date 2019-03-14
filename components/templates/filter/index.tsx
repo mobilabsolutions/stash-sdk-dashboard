@@ -5,7 +5,7 @@ import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 
 import { useLocalization } from '../../../hooks'
-import { Input, Radio } from '../../molecules'
+import { Radio } from '../../molecules'
 import styled from '../../styled'
 
 const Wrapper = styled.div`
@@ -53,10 +53,7 @@ const statusOptions = [
 ]
 
 export default forwardRef<HTMLDivElement, any>(
-  (
-    { startDate, endDate, setRange, status, setStatus, reason, setReason },
-    ref
-  ) => {
+  ({ startDate, endDate, setRange, status, setStatus }, ref) => {
     const { getText } = useLocalization()
     const [focusedInput, setFocusedInput] = useState(null)
     return (
@@ -108,12 +105,6 @@ export default forwardRef<HTMLDivElement, any>(
         </ItemWrapper>
         <ItemWrapper>
           <Label>{getText('Text')}</Label>
-          <Input
-            id="filter_reason"
-            name="reason"
-            value={reason}
-            onChanged={setReason}
-          />
         </ItemWrapper>
       </Wrapper>
     )

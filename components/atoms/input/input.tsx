@@ -1,0 +1,61 @@
+import { forwardRef, FocusEventHandler, ChangeEventHandler } from 'react'
+import styled from '../../styled'
+
+const HtmlInput = styled.input`
+  border: none;
+  color: ${props => props.theme.shade.A700};
+  display: block;
+  font-family: ${props => props.theme.font};
+  font-size: 14px;
+  margin-left: 16px;
+  margin-right: 16px;
+  box-shadow: none;
+  width: 100%;
+  :focus {
+    outline: none;
+  }
+  ::placeholder {
+    color: ${props => props.theme.shade.A100};
+  }
+  ::selection {
+    background-color: ${props => props.theme.primary.A100};
+  }
+`
+
+type InputProps = {
+  name: string
+  value: string
+  type: string
+  placeholder: string
+  onChange: ChangeEventHandler
+  onBlur: FocusEventHandler
+  onFocus: FocusEventHandler
+}
+
+function Input(
+  {
+    name,
+    value,
+    onChange,
+    type = 'text',
+    placeholder = '',
+    onBlur = null,
+    onFocus = null
+  }: InputProps,
+  inputRef: any
+) {
+  return (
+    <HtmlInput
+      ref={inputRef}
+      name={name}
+      value={value}
+      type={type}
+      placeholder={placeholder}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onChange={onChange}
+    />
+  )
+}
+
+export default forwardRef(Input)

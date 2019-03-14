@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   width: 100%;
   height: 100vh;
-  .illustration {
+  > .illustration {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -40,7 +40,7 @@ const Form = styled.form`
   flex: 1;
   flex-direction: column;
   height: 100%;
-  .logo {
+  > .logo {
     padding-top: 40px;
     padding-left: 40px;
     padding-bottom: 120px;
@@ -51,14 +51,14 @@ const FormWrapper = styled.div`
   justify-self: center;
   align-self: center;
   width: 300px;
-  .title {
+  > .title {
     padding-left: 8px;
   }
-  .button {
+  > .button {
     display: flex;
     margin-top: 24px;
   }
-  .link {
+  > .link {
     margin-top: 16px;
     display: flex;
     justify-content: center;
@@ -92,6 +92,7 @@ export default function LoginForm({ email = '', password = '' }) {
             console.log('Login Failed', error)
             actions.setSubmitting(false)
             passwordField.current && passwordField.current.focus()
+
             actions.setFieldError(
               'password',
               getText('Login failed. Email or Password is Invalid.')
@@ -138,7 +139,7 @@ export default function LoginForm({ email = '', password = '' }) {
                 <PrimaryButton
                   label="Login"
                   isFullSize
-                  disabled={!props.isValid || props.isSubmitting}
+                  disabled={!props.isValid}
                 />
               </div>
               <div className="link">

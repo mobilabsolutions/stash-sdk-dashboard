@@ -1,91 +1,58 @@
-import { useState, useRef } from 'react'
+import { forwardRef, useState, useRef } from 'react'
 
-import styled from '../../styled'
+import {
+  Input,
+  InputFieldWrapper,
+  InputWrapper,
+  InputIconWrapper,
+  InputErrorMessage
+} from '../../atoms'
 
-const borderColor = ({ focused, hasErrors, theme }) =>
-  hasErrors ? theme.red.A400 : focused ? theme.primary.A600 : theme.shade.A100
-
-interface IsFocused {
-  focused: boolean
-  hasErrors: boolean
-}
-
-const Wrapper = styled.div<IsFocused>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 42px;
-  border-radius: 8px;
-  border: solid 1px ${borderColor};
-  max-width: 300px;
-  transition: all 0.3s ease-in-out;
-  background-color: ${props => props.theme.white};
-  margin-top: 4px;
-  margin-bottom: 16px;
-  > div {
-    padding-left: 16px;
-    padding-right: 16px;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    border-right: solid 1px ${borderColor};
-    transition: all 0.3s ease-in-out;
-  }
-  > input {
-    border: none;
-    color: ${props => props.theme.shade.A700};
-    display: block;
-    font-family: ${props => props.theme.font};
-    font-size: 14px;
-    margin-left: 16px;
-    margin-right: 16px;
-    box-shadow: none;
-    width: 100%;
-    :focus {
-      outline: none;
-    }
-    ::placeholder {
-      color: ${props => props.theme.shade.A100};
-    }
-    ::selection {
-      background-color: ${props => props.theme.primary.A100};
-    }
-  }
-`
-
-export default ({
-  field: { name, value, onChange, onBlur },
-  form: { touched, errors },
-  icon,
-  className,
-  ...props
-}) => {
+function IconInput(
+  {
+    field: { name, value, onChange, onBlur },
+    form: { touched, errors },
+    icon,
+    placeholder,
+    className
+  },
+  inputRef: any
+) {
   const [focused, setFocused] = useState(false)
-  const inputRef = useRef(null)
-
   const handleClick = () => inputRef && inputRef.current.focus()
   const hasErrors = touched[name] && errors[name]
+  const localRef = useRef()
+
+  const ref = inputRef || localRef
 
   return (
-    <Wrapper
-      focused={focused}
-      hasErrors={hasErrors}
-      onClick={handleClick}
-      className={className}
-    >
-      <div>{icon}</div>
-      <input
-        {...props}
-        name={name}
-        ref={inputRef}
-        onFocus={() => setFocused(true)}
-        onBlur={event => {
-          setFocused(false)
-          onBlur(event)
-        }}
-        onChange={onChange}
-        value={value}
-      />
-    </Wrapper>
+    <InputFieldWrapper>
+      <InputWrapper
+        focused={focused}
+        hasErrors={hasErrors}
+        onClick={handleClick}
+        className={className}
+      >
+        <InputIconWrapper focused={focused} hasErrors={hasErrors}>
+          {icon}
+        </InputIconWrapper>
+        <Input
+          ref={ref}
+          name={name}
+          value={value}
+          type="text"
+          placeholder={placeholder}
+          onFocus={() => setFocused(true)}
+          onBlur={event => {
+            setFocused(false)
+            onBlur(event)
+          }}
+          onChange={onChange}
+        />
+      </InputWrapper>
+      {hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
+    </InputFieldWrapper>
   )
 }
+
+export default forwardRef(IconInput)

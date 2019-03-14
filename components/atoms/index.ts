@@ -15,6 +15,13 @@ export { default as UpIcon } from './icons/up'
 export { default as VisibilityIcon } from './icons/visibility'
 export { default as InvisibilityIcon } from './icons/invisibility'
 
+export { default as Input } from './input/input'
+export { default as InputFieldWrapper } from './input/field_wrapper'
+export { default as InputWrapper } from './input/input_wrapper'
+export { default as InputIconWrapper } from './input/icon_wrapper'
+export { default as InputVisibilityIcon } from './input/visibility_icon'
+export { default as InputErrorMessage } from './input/error_message'
+
 export { default as Title } from './text/title'
 export { default as H1 } from './text/h1'
 export { default as H2 } from './text/h2'

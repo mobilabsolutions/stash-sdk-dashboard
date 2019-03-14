@@ -1,7 +1,7 @@
 import 'react-dates/initialize'
 
 import { useLocalization } from '../../../hooks'
-import { Input, Radio } from '../../molecules'
+import { Radio } from '../../molecules'
 import styled from '../../styled'
 
 const Wrapper = styled.div`
@@ -38,7 +38,7 @@ const OptionWrapper = styled.div`
 
 const langageOptions = ['en', 'de']
 
-export default ({ locale, setLocale, token, setToken }) => {
+export default ({ locale, setLocale }) => {
   const { getText } = useLocalization()
 
   return (
@@ -61,7 +61,6 @@ export default ({ locale, setLocale, token, setToken }) => {
       </ItemWrapper>
       <ItemWrapper>
         <Label>{getText('Token')}</Label>
-        <Input id="token" name="token" value={token} onChanged={setToken} />
       </ItemWrapper>
     </Wrapper>
   )

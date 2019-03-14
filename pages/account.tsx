@@ -2,16 +2,11 @@ import { useSettings } from '../hooks'
 import { Page, Settings } from '../components/templates'
 
 export default () => {
-  const { locale, setLocale, token, setToken } = useSettings()
+  const { locale, setLocale } = useSettings()
 
   return (
     <Page activePath="/account">
-      <Settings
-        locale={locale}
-        setLocale={setLocale}
-        token={token}
-        setToken={setToken}
-      />
+      <Settings locale={locale} setLocale={setLocale} />
     </Page>
   )
 }

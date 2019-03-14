@@ -1,80 +1,58 @@
-import { useState, useRef } from 'react'
+import { forwardRef, useState, useRef } from 'react'
 
-import styled from '../../styled'
+import {
+  Input,
+  InputFieldWrapper,
+  InputWrapper,
+  InputIconWrapper,
+  InputErrorMessage
+} from '../../atoms'
 
-const borderColor = ({ focused, theme }) =>
-  focused ? theme.primary.A600 : theme.shade.A100
-
-interface WrapperProps {
-  focused: boolean
-}
-
-const Wrapper = styled.div<WrapperProps>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 42px;
-  border-radius: 8px;
-  border: solid 1px ${borderColor};
-  max-width: 300px;
-  background-color: ${props => props.theme.white};
-  > input {
-    border: none;
-    color: ${props => props.theme.shade.A700};
-    display: block;
-    font-family: ${props => props.theme.font};
-    font-size: 14px;
-    margin-left: 16px;
-    margin-right: 16px;
-    box-shadow: none;
-    width: 100%;
-    :focus {
-      outline: none;
-    }
-    ::placeholder {
-      color: ${props => props.theme.shade.A100};
-    }
-    ::selection {
-      background-color: ${props => props.theme.primary.A100};
-    }
-  }
-`
-
-interface InputProps {
-  id: string
-  name: string
-  value?: string
-  type?: string
-  placeholder?: string
-  onChanged: (value: string) => void
-}
-
-export default ({
-  id,
-  name,
-  value = '',
-  type = 'text',
-  placeholder = '',
-  onChanged
-}: InputProps) => {
+function TextInput(
+  {
+    field: { name, value, onChange, onBlur },
+    form: { touched, errors },
+    icon,
+    placeholder,
+    className
+  },
+  inputRef: any
+) {
   const [focused, setFocused] = useState(false)
-  const inputRef = useRef(null)
-
   const handleClick = () => inputRef && inputRef.current.focus()
+  const hasErrors = touched[name] && errors[name]
+  const localRef = useRef()
+
+  const ref = inputRef || localRef
 
   return (
-    <Wrapper focused={focused} onClick={handleClick}>
-      <input
-        id={id}
-        name={name}
-        ref={inputRef}
-        placeholder={placeholder}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        onChange={event => onChanged(event.target.value)}
-        value={value}
-        type={type}
-      />
-    </Wrapper>
+    <InputFieldWrapper>
+      <InputWrapper
+        focused={focused}
+        hasErrors={hasErrors}
+        onClick={handleClick}
+        className={className}
+      >
+        <InputIconWrapper focused={focused} hasErrors={hasErrors}>
+          {icon}
+        </InputIconWrapper>
+        <Input
+          ref={ref}
+          name={name}
+          value={value}
+          type="text"
+          placeholder={placeholder}
+          onFocus={() => setFocused(true)}
+          onBlur={event => {
+            setFocused(false)
+            onBlur(event)
+          }}
+          onChange={onChange}
+        />
+      </InputWrapper>
+      {hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
+    </InputFieldWrapper>
   )
 }
+
+export default forwardRef(TextInput)
