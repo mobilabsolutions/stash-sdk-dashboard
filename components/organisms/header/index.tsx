@@ -4,7 +4,7 @@ import { useLocalization } from '../../../hooks'
 import { Logo } from '../../atoms'
 import { HeaderNavItem } from '../../molecules'
 
-const Header = styled.header`
+const HtmlHeader = styled.header`
   background-color: ${props => props.theme.white};
   height: 73px;
   display: flex;
@@ -22,11 +22,11 @@ const Nav = styled.nav`
   flex-direction: row;
 `
 
-export default ({ activePath }) => {
+export default function Header({ activePath }) {
   const { getText } = useLocalization()
 
   return (
-    <Header>
+    <HtmlHeader>
       <LogoContainer>
         <Logo />
       </LogoContainer>
@@ -52,6 +52,6 @@ export default ({ activePath }) => {
           isActive={activePath === '/account'}
         />
       </Nav>
-    </Header>
+    </HtmlHeader>
   )
 }

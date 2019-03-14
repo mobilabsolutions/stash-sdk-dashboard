@@ -2,7 +2,7 @@ import styled from '../../styled'
 
 const year = new Date().getFullYear()
 
-const Footer = styled.footer`
+const HtmlFooter = styled.footer`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,19 +11,23 @@ const Footer = styled.footer`
 `
 
 const Span = styled.span`
-  color: ${props => props.theme.shade.A500};
   font-family: ${props => props.theme.fontHeadline};
-  font-size: 0.8em;
-  line-height: 1.29;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: ${props => props.theme.shade.A200};
   margin-right: 24px;
   margin-bottom: 8px;
   display: block;
 `
 
-export default () => {
+export default function Footer() {
   return (
-    <Footer>
+    <HtmlFooter>
       <Span>© MobiLab Solutions GmbH, {year}</Span>
-    </Footer>
+    </HtmlFooter>
   )
 }

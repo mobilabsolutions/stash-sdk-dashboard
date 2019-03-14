@@ -1,4 +1,4 @@
-import { Page } from '../components/templates'
+import { Page } from '../components/organisms'
 
 import { useTokenCheck } from '../hooks'
 

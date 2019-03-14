@@ -1,4 +1,4 @@
-import { Header, Footer } from '../../organisms'
+import { Header, Footer } from '..'
 import styled from '../../styled'
 
 const Div = styled.div`
@@ -13,7 +13,7 @@ const Main = styled.main`
   background-color: ${props => props.theme.shade.A25};
 `
 
-export default ({ children, activePath }) => {
+export default function Page({ children, activePath }) {
   return (
     <Div>
       <Header activePath={activePath} />

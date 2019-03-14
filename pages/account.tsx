@@ -1,5 +1,6 @@
 import { useSettings } from '../hooks'
-import { Page, Settings } from '../components/templates'
+import { Page } from '../components/organisms'
+import { Settings } from '../components/templates'
 
 export default () => {
   const { locale, setLocale } = useSettings()
