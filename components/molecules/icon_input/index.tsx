@@ -13,17 +13,19 @@ function IconInput(
     field: { name, value, onChange, onBlur },
     form: { touched, errors },
     icon,
-    placeholder,
-    className
+    placeholder = '',
+    className = '',
+    autoFocus = false
   },
   inputRef: any
 ) {
-  const [focused, setFocused] = useState(false)
-  const handleClick = () => inputRef && inputRef.current.focus()
-  const hasErrors = touched[name] && errors[name]
+  const [focused, setFocused] = useState(autoFocus)
   const localRef = useRef()
 
   const ref = inputRef || localRef
+
+  const handleClick = () => inputRef && inputRef.current.focus()
+  const hasErrors = touched[name] && errors[name]
 
   return (
     <InputFieldWrapper>
@@ -48,6 +50,7 @@ function IconInput(
             onBlur(event)
           }}
           onChange={onChange}
+          autoFocus={autoFocus}
         />
       </InputWrapper>
       {hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}

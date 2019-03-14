@@ -30,6 +30,7 @@ type InputProps = {
   onChange: ChangeEventHandler
   onBlur: FocusEventHandler
   onFocus: FocusEventHandler
+  autoFocus: boolean
 }
 
 function Input(
@@ -40,7 +41,8 @@ function Input(
     type = 'text',
     placeholder = '',
     onBlur = null,
-    onFocus = null
+    onFocus = null,
+    autoFocus = false
   }: InputProps,
   inputRef: any
 ) {
@@ -54,6 +56,7 @@ function Input(
       onFocus={onFocus}
       onBlur={onBlur}
       onChange={onChange}
+      autoFocus={autoFocus}
     />
   )
 }

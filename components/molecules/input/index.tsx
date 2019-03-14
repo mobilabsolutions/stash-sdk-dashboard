@@ -13,12 +13,13 @@ function TextInput(
     field: { name, value, onChange, onBlur },
     form: { touched, errors },
     icon,
-    placeholder,
-    className
+    placeholder = '',
+    className = '',
+    autoFocus = false
   },
   inputRef: any
 ) {
-  const [focused, setFocused] = useState(false)
+  const [focused, setFocused] = useState(autoFocus)
   const handleClick = () => inputRef && inputRef.current.focus()
   const hasErrors = touched[name] && errors[name]
   const localRef = useRef()
@@ -48,6 +49,7 @@ function TextInput(
             onBlur(event)
           }}
           onChange={onChange}
+          autoFocus={autoFocus}
         />
       </InputWrapper>
       {hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}

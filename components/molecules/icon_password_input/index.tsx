@@ -14,12 +14,13 @@ function IconPasswordInput(
     field: { name, value, onChange, onBlur },
     form: { touched, errors },
     icon,
-    placeholder,
-    className
+    placeholder = '',
+    className = '',
+    autoFocus = false
   },
   inputRef: any
 ) {
-  const [focused, setFocused] = useState(false)
+  const [focused, setFocused] = useState(autoFocus)
   const [visible, setVisible] = useState(false)
   const localRef = useRef()
 
@@ -50,6 +51,7 @@ function IconPasswordInput(
             onBlur(event)
           }}
           onChange={onChange}
+          autoFocus={autoFocus}
         />
         <InputVisibilityIcon visible={visible} setVisible={setVisible} />
       </InputWrapper>
