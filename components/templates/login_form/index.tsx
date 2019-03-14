@@ -81,6 +81,7 @@ export default function LoginForm({ email = '', password = '' }) {
 
         return errors
       }}
+      validateOnBlur={false}
       onSubmit={(values, actions) => {
         actions.setSubmitting(true)
         login(values.email, values.password)
