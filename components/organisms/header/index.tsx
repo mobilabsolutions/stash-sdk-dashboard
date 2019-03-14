@@ -2,7 +2,7 @@ import styled from '../../styled'
 
 import { useLocalization } from '../../../hooks'
 import { Logo } from '../../atoms'
-import { HeaderNavItem } from '../../molecules'
+import HeaderNavItem from './nav_item'
 
 const HtmlHeader = styled.header`
   background-color: ${props => props.theme.white};

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { CenteredText } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 
 import Popup from './popup'
+import CenteredText from './centered_text'
 import {
   List,
   Item,
