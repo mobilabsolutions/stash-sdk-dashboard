@@ -39,7 +39,7 @@ export default function LoginForm({ email = '', password = '' }) {
             )
           })
       }}
-      render={props => <Login {...props} />}
+      render={props => <Login {...props} ref={passwordField} />}
     />
   )
 }
