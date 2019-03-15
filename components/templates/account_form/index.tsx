@@ -4,7 +4,7 @@ import { PspType } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import { PspConfiguration } from '../../organisms'
 
-export default function LoginForm() {
+export default function AccountForm() {
   return (
     <Formik
       initialValues={{ type: PspType.BS_PAYONE }}
