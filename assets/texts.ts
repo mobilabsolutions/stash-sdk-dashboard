@@ -65,5 +65,7 @@ export default {
   'Check your Email and follow the instructions.': {
     de: 'Überprüfen Sie Ihre E-Mail und befolgen Sie die Anweisungen.'
   },
-  'PSP Configuration': {}
+  'PSP Configuration': {},
+  BsPayOne: { en: 'BS PAYONE' },
+  BrainTree: { en: 'Braintree / Paypal' }
 }
