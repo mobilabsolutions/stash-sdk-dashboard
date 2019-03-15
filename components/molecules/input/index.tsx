@@ -18,7 +18,7 @@ function TextInput(
   inputRef: any
 ) {
   const [focused, setFocused] = useState(autoFocus)
-  const localRef = useRef()
+  const localRef = useRef(undefined)
 
   const ref = inputRef || localRef
   const hasErrors = touched[name] && errors[name]

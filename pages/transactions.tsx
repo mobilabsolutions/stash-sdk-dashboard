@@ -24,7 +24,7 @@ export default () => {
     isRefunding
   } = useTransactions()
 
-  const filterRef = useRef(null)
+  const filterRef = useRef(undefined)
   const { height: filterHeight } = useClientRect(filterRef)
 
   return (

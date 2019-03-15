@@ -22,7 +22,7 @@ function IconPasswordInput(
 ) {
   const [focused, setFocused] = useState(autoFocus)
   const [visible, setVisible] = useState(false)
-  const localRef = useRef()
+  const localRef = useRef(undefined)
 
   const ref = inputRef || localRef
   const handleClick = () => ref && ref.current && ref.current.focus()

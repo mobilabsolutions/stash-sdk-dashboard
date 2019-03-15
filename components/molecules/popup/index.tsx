@@ -17,7 +17,7 @@ const Content = styled.div`
 
 export default function Popup({ show, onClose, children }) {
   useKeyDown(key => key.code === 'Escape' && onClose())
-  const overlayRef = useRef(null)
+  const overlayRef = useRef(undefined)
 
   if (!show) return null
   const handleOverlayClick = event =>
