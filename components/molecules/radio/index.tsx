@@ -21,7 +21,7 @@ const Label = styled.label<LabelProps>`
   }
   span {
     position: absolute;
-    top: ${props => (props.label ? '0' : '-13px')};
+    top: ${props => (props.label ? '-2px' : '-13px')};
     left: 0;
     height: 24px;
     width: 24px;

@@ -1,6 +1,7 @@
 import { Formik } from 'formik'
 
 // import { useLocalization } from '../../../hooks'
+import { PspType } from '../../types'
 import { PspConfiguration } from '../../organisms'
 
 export default function LoginForm() {
@@ -8,7 +9,7 @@ export default function LoginForm() {
 
   return (
     <Formik
-      initialValues={{}}
+      initialValues={{ type: PspType.BsPayOne }}
       validate={_ => {
         let errors: any = {}
 

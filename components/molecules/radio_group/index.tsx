@@ -6,11 +6,10 @@ const OptionList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 8px;
 `
 
 const OptionWrapper = styled.div`
-  margin: 8px 24px 0 0px;
+  margin: 0px 24px 0 0px;
 `
 
 export default function RadioGroup({
@@ -24,7 +23,7 @@ export default function RadioGroup({
     <InputFieldWrapper>
       <OptionList>
         {items.map(option => (
-          <OptionWrapper key={option}>
+          <OptionWrapper key={option.value}>
             <Radio
               label={option.label}
               name={name}

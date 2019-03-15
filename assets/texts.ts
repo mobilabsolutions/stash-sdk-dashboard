@@ -64,5 +64,6 @@ export default {
   'Email has been send': { de: 'E-Mails wurde gesendet' },
   'Check your Email and follow the instructions.': {
     de: 'Überprüfen Sie Ihre E-Mail und befolgen Sie die Anweisungen.'
-  }
+  },
+  'PSP Configuration': {}
 }
