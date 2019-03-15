@@ -5,4 +5,7 @@ export enum PspType {
 
 export interface PspConfig {
   type: PspType
+  bsAccountId?: string
+  bsPortalId?: string
+  bsKey?: string
 }

@@ -1,12 +1,15 @@
 import { Formik } from 'formik'
 
-// import { useLocalization } from '../../../hooks'
 import { PspType } from '../../types'
 import { PspConfiguration } from '../../organisms'
+import styled from '../../styled'
+
+const ScrollContainer = styled.div`
+  overflow-x: auto;
+  height: 100%;
+`
 
 export default function LoginForm() {
-  //  const { getText } = useLocalization()
-
   return (
     <Formik
       initialValues={{ type: PspType.BS_PAYONE }}
@@ -20,7 +23,11 @@ export default function LoginForm() {
         actions.setSubmitting(true)
         actions.setSubmitting(false)
       }}
-      render={props => <PspConfiguration {...props} />}
+      render={props => (
+        <ScrollContainer>
+          <PspConfiguration {...props} />
+        </ScrollContainer>
+      )}
     />
   )
 }

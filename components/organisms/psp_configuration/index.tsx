@@ -2,8 +2,8 @@ import { Field, FormikProps } from 'formik'
 
 import { useLocalization } from '../../../hooks'
 import { PspConfig, PspType } from '../../types'
-import { H2, H4 } from '../../atoms'
-import { RadioGroup } from '../../molecules'
+import { H3, AccountIcon, KeyIcon } from '../../atoms'
+import { IconInput, RadioGroup } from '../../molecules'
 import PageForm from '../page_form'
 
 export default function PspConfiguration(props: FormikProps<PspConfig>) {
@@ -23,11 +23,56 @@ export default function PspConfiguration(props: FormikProps<PspConfig>) {
       <Field
         name="type"
         render={({ field, form }) => (
-          <RadioGroup field={field} form={form} items={pspTypes} />
+          <>
+            <H3>{getText('PSP')}</H3>
+            <RadioGroup field={field} form={form} items={pspTypes} />
+          </>
         )}
       />
-      <H2>{getText('Welcome')}</H2>
-      <H4>{getText('Login to your account')}</H4>
+      <Field
+        name="bsAccountId"
+        render={({ field, form }) => (
+          <>
+            <H3>{getText('Account Id')}</H3>
+            <IconInput
+              field={field}
+              form={form}
+              icon={<AccountIcon />}
+              placeholder={getText('Account Id')}
+              autoFocus
+            />
+          </>
+        )}
+      />
+      <Field
+        name="bsPortalId"
+        render={({ field, form }) => (
+          <>
+            <H3>{getText('Portal Id')}</H3>
+            <IconInput
+              field={field}
+              form={form}
+              icon={<AccountIcon />}
+              placeholder={getText('Portal Id')}
+              autoFocus
+            />
+          </>
+        )}
+      />
+      <Field
+        name="bsKey"
+        render={({ field, form }) => (
+          <>
+            <H3>{getText('Portal Id')}</H3>
+            <IconInput
+              field={field}
+              form={form}
+              icon={<KeyIcon />}
+              placeholder={getText('Key')}
+            />
+          </>
+        )}
+      />
     </PageForm>
   )
 }

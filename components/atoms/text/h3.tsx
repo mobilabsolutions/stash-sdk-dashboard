@@ -9,4 +9,6 @@ export default styled.h3`
   line-height: normal;
   letter-spacing: normal;
   color: ${props => props.theme.shade.A700};
+  margin-top: 4px;
+  margin-bottom: 4px;
 `

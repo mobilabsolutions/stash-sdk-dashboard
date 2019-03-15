@@ -44,7 +44,7 @@ exports[`H2 Should render 1`] = `
 
 exports[`H3 Should render 1`] = `
 <h3
-  className="h3-sc-1przhcr-0 gUiuDg"
+  className="h3-sc-1przhcr-0 dOBfbm"
 />
 `;
 
