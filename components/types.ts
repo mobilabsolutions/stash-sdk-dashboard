@@ -1,6 +1,6 @@
 export enum PspType {
-  BsPayOne = 'BS_PAYONE',
-  BrainTree = 'BRAINTREE'
+  BS_PAYONE = 'BS_PAYONE',
+  BRAINTREE = 'BRAINTREE'
 }
 
 export interface PspConfig {

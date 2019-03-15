@@ -66,6 +66,6 @@ export default {
     de: 'Überprüfen Sie Ihre E-Mail und befolgen Sie die Anweisungen.'
   },
   'PSP Configuration': {},
-  BsPayOne: { en: 'BS PAYONE' },
-  BrainTree: { en: 'Braintree / Paypal' }
+  BS_PAYONE: { en: 'BS PAYONE' },
+  BRAINTREE: { en: 'Braintree / Paypal' }
 }

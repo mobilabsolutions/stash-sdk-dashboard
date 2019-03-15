@@ -9,7 +9,7 @@ export default function LoginForm() {
 
   return (
     <Formik
-      initialValues={{ type: PspType.BsPayOne }}
+      initialValues={{ type: PspType.BS_PAYONE }}
       validate={_ => {
         let errors: any = {}
 

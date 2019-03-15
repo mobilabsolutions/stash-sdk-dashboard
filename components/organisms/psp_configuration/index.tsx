@@ -8,10 +8,12 @@ import PageForm from '../page_form'
 
 export default function PspConfiguration(props: FormikProps<PspConfig>) {
   const { getText } = useLocalization()
-  const pspTypes = Object.keys(PspType).map(key => ({
-    value: key,
-    label: getText(key)
-  }))
+  const pspTypes = Object.values(PspType)
+    .filter(value => value !== PspType.BRAINTREE)
+    .map(value => ({
+      value,
+      label: getText(value)
+    }))
 
   return (
     <PageForm
