@@ -1,13 +1,8 @@
 import { Formik } from 'formik'
 
 import { PspType } from '../../types'
+import { VerticalScrollContainer } from '../../atoms'
 import { PspConfiguration } from '../../organisms'
-import styled from '../../styled'
-
-const ScrollContainer = styled.div`
-  overflow-x: auto;
-  height: 100%;
-`
 
 export default function LoginForm() {
   return (
@@ -24,9 +19,9 @@ export default function LoginForm() {
         actions.setSubmitting(false)
       }}
       render={props => (
-        <ScrollContainer>
+        <VerticalScrollContainer>
           <PspConfiguration {...props} />
-        </ScrollContainer>
+        </VerticalScrollContainer>
       )}
     />
   )
