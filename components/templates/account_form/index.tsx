@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 // import { useLocalization } from '../../../hooks'
 import { PspConfiguration } from '../../organisms'
 
-export default function LoginForm({}) {
+export default function LoginForm() {
   //  const { getText } = useLocalization()
 
   return (
