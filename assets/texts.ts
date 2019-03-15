@@ -48,5 +48,21 @@ export default {
   'Login to your account': { de: 'Loggen Sie sich ein' },
   'Forgot password?': { de: 'Passwort vergessen?' },
   'Field is required.': { de: 'Eingabe erforderlich.' },
-  'Login failed. Email or Password is Invalid.': { de: 'Login fehlgeschlagen.' }
+  'Login failed. Email or Password is Invalid.': {
+    de: 'Login fehlgeschlagen.'
+  },
+  'Please enter your email address': {
+    de: 'Geben Sie bitte Ihre Email-Adresse ein'
+  },
+  'You will receive in few minutes an email with a link to reset your password.': {
+    de:
+      'Sie erhalten in wenigen Minuten eine E-Mail mit einem Link zum Zurücksetzen Ihres Passworts.'
+  },
+  'Reset Password': {
+    de: 'Passwort zurücksetzen'
+  },
+  'Email has been send': { de: 'E-Mails wurde gesendet' },
+  'Check your Email and follow the instructions.': {
+    de: 'Überprüfen Sie Ihre E-Mail und befolgen Sie die Anweisungen.'
+  }
 }

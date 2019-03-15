@@ -4,6 +4,7 @@ export { default as Footer } from './footer'
 
 export { default as Login } from './login'
 export { default as ForgotPassword } from './forgot_password'
+export { default as ForgotPasswordConfirmed } from './forgot_password/confirmed'
 
 export { default as Pagination } from './pagination'
 export { default as Filter } from './filter'

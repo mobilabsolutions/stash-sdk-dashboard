@@ -24,7 +24,10 @@ interface ForgotPasswordProps {
   email: string
 }
 
-function LoginForm(props: FormikProps<ForgotPasswordProps>, emailField: any) {
+function ForgotPassword(
+  props: FormikProps<ForgotPasswordProps>,
+  emailField: any
+) {
   const { getText } = useLocalization()
   return (
     <AnonymousForm handleSubmit={props.handleSubmit}>
@@ -61,4 +64,4 @@ function LoginForm(props: FormikProps<ForgotPasswordProps>, emailField: any) {
   )
 }
 
-export default forwardRef(LoginForm)
+export default forwardRef(ForgotPassword)

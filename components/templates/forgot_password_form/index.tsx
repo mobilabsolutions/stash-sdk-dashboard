@@ -1,12 +1,16 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 import { Formik } from 'formik'
 
 import { useLocalization } from '../../../hooks'
-import { ForgotPassword } from '../../organisms'
+import { ForgotPassword, ForgotPasswordConfirmed } from '../../organisms'
 
 export default function LoginForm({ email = '' }) {
   const { getText } = useLocalization()
-  const emailField = useRef(undefined)
+  const [send, setSend] = useState(false)
+
+  if (send) {
+    return <ForgotPasswordConfirmed />
+  }
 
   return (
     <Formik
@@ -22,9 +26,10 @@ export default function LoginForm({ email = '' }) {
       onSubmit={(values, actions) => {
         actions.setSubmitting(true)
         console.log(values)
+        setSend(true)
         actions.setSubmitting(false)
       }}
-      render={props => <ForgotPassword {...props} ref={emailField} />}
+      render={props => <ForgotPassword {...props} />}
     />
   )
 }
