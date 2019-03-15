@@ -58,7 +58,7 @@ export default ({ name, value, label, selectedOption, onChange }) => (
       name={name}
       value={value}
       checked={selectedOption === value}
-      onChange={() => onChange(value)}
+      onChange={onChange}
     />
     <span />
   </Label>

@@ -29,13 +29,8 @@ function IconPasswordInput(
   const hasErrors = touched[name] && errors[name]
 
   return (
-    <InputFieldWrapper>
-      <InputWrapper
-        focused={focused}
-        hasErrors={hasErrors}
-        onClick={handleClick}
-        className={className}
-      >
+    <InputFieldWrapper onClick={handleClick} className={className}>
+      <InputWrapper focused={focused} hasErrors={hasErrors}>
         <InputIconWrapper focused={focused} hasErrors={hasErrors}>
           {icon}
         </InputIconWrapper>
@@ -55,7 +50,7 @@ function IconPasswordInput(
         />
         <InputVisibilityIcon visible={visible} setVisible={setVisible} />
       </InputWrapper>
-      {hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
+      {!!hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
     </InputFieldWrapper>
   )
 }

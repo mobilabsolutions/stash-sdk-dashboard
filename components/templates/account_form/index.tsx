@@ -59,9 +59,6 @@ export default ({ locale, setLocale }) => {
           ))}
         </OptionList>
       </ItemWrapper>
-      <ItemWrapper>
-        <Label>{getText('Token')}</Label>
-      </ItemWrapper>
     </Wrapper>
   )
 }

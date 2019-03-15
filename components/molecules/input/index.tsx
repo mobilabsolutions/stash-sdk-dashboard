@@ -25,13 +25,8 @@ function TextInput(
   const handleClick = () => inputRef && inputRef.current.focus()
 
   return (
-    <InputFieldWrapper>
-      <InputWrapper
-        focused={focused}
-        hasErrors={hasErrors}
-        onClick={handleClick}
-        className={className}
-      >
+    <InputFieldWrapper onClick={handleClick} className={className}>
+      <InputWrapper focused={focused} hasErrors={hasErrors}>
         <Input
           ref={ref}
           name={name}
@@ -47,7 +42,7 @@ function TextInput(
           autoFocus={autoFocus}
         />
       </InputWrapper>
-      {hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
+      {!!hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
     </InputFieldWrapper>
   )
 }
