@@ -1,3 +1,5 @@
-export default function LoginPage() {
-  return <div>Forgot Password Page</div>
+import { ForgotPasswordForm } from '../components/templates'
+
+export default function ForgotPasswordPage() {
+  return <ForgotPasswordForm />
 }
