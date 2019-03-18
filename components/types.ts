@@ -12,3 +12,9 @@ export interface PspConfig {
   paypalPublicKey?: string
   paypalPrivateKey?: string
 }
+
+export interface ChangePasswordProps {
+  oldPassword?: string
+  newPassword?: string
+  newPasswordRetype?: string
+}

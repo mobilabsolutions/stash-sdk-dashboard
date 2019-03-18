@@ -3,7 +3,11 @@ import { Formik } from 'formik'
 import { useLocalization } from '../../../hooks'
 import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
-import { PspConfiguration, PaypalConfiguration } from '../../organisms'
+import {
+  ChangePassword,
+  PspConfiguration,
+  PaypalConfiguration
+} from '../../organisms'
 
 export default function AccountForm() {
   const { getText } = useLocalization()
@@ -23,6 +27,33 @@ export default function AccountForm() {
 
   return (
     <VerticalScrollContainer>
+      <Formik
+        initialValues={{
+          oldPassword: '',
+          newPassword: '',
+          newPasswordRetype: ''
+        }}
+        validate={values => {
+          let errors: any = {}
+
+          if (!values.oldPassword)
+            errors.oldPassword = getText('Field is required.')
+          if (!values.newPassword)
+            errors.newPassword = getText('Field is required.')
+          if (!values.newPasswordRetype)
+            errors.newPasswordRetype = getText('Field is required.')
+          else if (values.newPasswordRetype !== values.newPassword)
+            errors.newPasswordRetype = getText('Passwords do not match.')
+
+          return errors
+        }}
+        validateOnBlur={false}
+        onSubmit={(_, actions) => {
+          actions.setSubmitting(true)
+          actions.setSubmitting(false)
+        }}
+        render={props => <ChangePassword {...props} />}
+      />
       <Formik
         initialValues={initialPspValues}
         validate={values => {

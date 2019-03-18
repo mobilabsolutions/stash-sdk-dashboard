@@ -76,5 +76,9 @@ export default {
   Key: { de: 'Schlüssel' },
   Save: { de: 'Speichern' },
   'Public Key': { de: 'öffentlicher Schlüssel' },
-  'Private Key': { de: 'privater Schlüssel' }
+  'Private Key': { de: 'privater Schlüssel' },
+  'Old Password': { de: 'Altes Password' },
+  'New Password': { de: 'Neues Password' },
+  'Confirm new Password': { de: 'Neues Password bestätigen' },
+  'Passwords do not match.': { de: 'Passwörter stimmen nicht überein.' }
 }
