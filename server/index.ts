@@ -1,15 +1,11 @@
 import 'isomorphic-fetch'
 import * as fastify from 'fastify'
-import * as cookie from 'fastify-cookie'
-// import * as proxy from 'fastify-http-proxy'
+import * as proxy from 'fastify-http-proxy'
 import * as nextJs from 'next'
 
 import prepareDatepickerCss from './prepare_datepicker_css'
-import token from './token'
-import merchant from './merchant'
-import user from './user'
 
-import { PORT, IS_DEVELOPMENT, BIND_ADDRESS } from './env'
+import { PORT, API_UPSTREAM, IS_DEVELOPMENT, BIND_ADDRESS } from './env'
 
 process.env.TZ = 'UTC'
 
@@ -23,12 +19,6 @@ async function main() {
     await nextApp.prepare()
     const datepickerCss = await prepareDatepickerCss()
 
-    server.register(cookie)
-    server.register(token, { prefix: '/api/v1/token' })
-    server.register(merchant, { prefix: '/api/v1/merchant' })
-    server.register(user, { prefix: '/api/v1/user' })
-
-    /*
     // add Proxy
     server.register(proxy, {
       upstream: API_UPSTREAM,
@@ -36,7 +26,6 @@ async function main() {
       rewritePrefix: '/api/v1',
       http2: false
     })
-    */
 
     // Add health check endpoint
     server.get('/healthcheck', (_, reply) => {
