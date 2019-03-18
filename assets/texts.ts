@@ -66,6 +66,7 @@ export default {
     de: 'Überprüfen Sie Ihre E-Mail und befolgen Sie die Anweisungen.'
   },
   'PSP Configuration': { de: 'PSP Konfiguration' },
+  'Paypal Configuration': { de: 'Paypal Konfiguration' },
   PSP: {},
   BS_PAYONE: { en: 'Bs PayOne' },
   ADYEN: { en: 'Adyen' },
@@ -73,5 +74,7 @@ export default {
   'Account Id': { de: 'Konto Nr.' },
   'Portal Id': { de: 'Portal Nr.' },
   Key: { de: 'Schlüssel' },
-  Save: { de: 'Speichern' }
+  Save: { de: 'Speichern' },
+  'Public Key': { de: 'öffentlicher Schlüssel' },
+  'Private Key': { de: 'privater Schlüssel' }
 }

@@ -6,6 +6,7 @@ const OptionList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 2px;
 `
 
 const OptionWrapper = styled.div`
