@@ -39,7 +39,6 @@ export default function PspConfiguration(props: FormikProps<PspConfig>) {
               form={form}
               icon={<AccountIcon />}
               placeholder={getText('Account Id')}
-              autoFocus
             />
           </>
         )}
@@ -54,7 +53,6 @@ export default function PspConfiguration(props: FormikProps<PspConfig>) {
               form={form}
               icon={<AccountIcon />}
               placeholder={getText('Portal Id')}
-              autoFocus
             />
           </>
         )}
