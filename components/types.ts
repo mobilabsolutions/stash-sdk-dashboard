@@ -9,4 +9,6 @@ export interface PspConfig {
   bsAccountId?: string
   bsPortalId?: string
   bsKey?: string
+  paypalPublicKey?: string
+  paypalPrivateKey?: string
 }
