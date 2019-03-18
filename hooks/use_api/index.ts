@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
-import { useNextContext } from '../use_next_context'
+import { useSessionStorage } from '../use_session_storage'
 
 const BACKEND_HOST =
   typeof window !== 'undefined'
     ? ''
-    : process.env.API_UPSTREAM || 'https://pd.mblb.net'
+    : process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
 
 const apiCall = (
   token: string,
@@ -94,23 +94,55 @@ const apiCall = (
   return processApiCall(request)
 }
 
-export const useApi = () => {
-  const { cookies, setCookie } = useNextContext()
+const oauthApi = (path: string, body: Object) => {
+  const formData = new FormData()
+  Object.keys(body).forEach(key => {
+    formData.append(key, body[key])
+  })
 
-  const token = cookies['__token']
-  const refreshToken = cookies['__refreshToken']
+  const request: any = {
+    method: 'POST',
+    headers: {
+      Authorization:
+        'Basic cGF5bWVudC1kYXNoYm9hcmQtY2xpZW50OkJ3YnJDRlJaOWQ2RWZjZlhnZTRS'
+    },
+    credentials: 'include',
+    body: formData
+  }
+
+  return new Promise((resolve, reject) => {
+    const url = `${BACKEND_HOST}${path}`
+    fetch(url, request)
+      .then(response => {
+        if (response.status >= 400) {
+          const error: any = new Error('Authorization Error')
+          error.statusCode = response.status
+          reject(error)
+        }
+
+        return response.json()
+      })
+      .then(result => resolve(result))
+      .catch(error => reject(error))
+  })
+}
+
+export const useApi = () => {
+  const [token, setToken] = useSessionStorage('token', '')
+  const [refreshToken, setRefreshToken] = useSessionStorage('refreshToken', '')
 
   const refresh = useCallback(
     () =>
-      apiCall(refreshToken, null, 'POST', '/api/v1/token/refresh', null).then(
-        ({ result: { refreshToken, accessToken } }) => {
-          setCookie('__token', accessToken)
-          setCookie('__refreshToken', refreshToken)
-
-          return accessToken
-        }
-      ),
-    [refreshToken, setCookie]
+      oauthApi('/api/v1/oauth/token', {
+        grant_type: 'password',
+        client_id: 'payment-dashboard-client',
+        refresh_token: refreshToken
+      }).then(({ access_token, refresh_token }) => {
+        setToken(access_token)
+        setRefreshToken(refresh_token)
+        return access_token
+      }),
+    [refreshToken, setRefreshToken, setToken]
   )
 
   const get = useCallback(
@@ -139,19 +171,24 @@ export const useApi = () => {
 
   const login = useCallback(
     (username: string, password: string) =>
-      apiCall(null, null, 'POST', '/api/v1/token', { username, password }).then(
-        ({ result: { refreshToken, accessToken } }) => {
-          setCookie('__token', accessToken)
-          setCookie('__refreshToken', refreshToken)
-        }
-      ),
-    [setCookie]
+      oauthApi('/api/v1/oauth/token', {
+        grant_type: 'password',
+        client_id: 'payment-dashboard-client',
+        username,
+        password
+      }).then(({ access_token, refresh_token }) => {
+        setToken(access_token)
+        setRefreshToken(refresh_token)
+
+        return true
+      }),
+    [setRefreshToken, setToken]
   )
 
   const logout = useCallback(() => {
-    setCookie('__token', null)
-    setCookie('__refreshToken', null)
-  }, [setCookie])
+    setToken(null)
+    setRefreshToken(null)
+  }, [setRefreshToken, setToken])
 
   return { get, put, patch, post, del, token, login, logout, refresh }
 }
