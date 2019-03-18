@@ -16,7 +16,7 @@ const Form = styled.form`
   padding: 16px;
 `
 
-export default function PageForm({ title, handleSubmit, children }) {
+export default function PageForm({ title, handleSubmit = null, children }) {
   return (
     <Wrapper>
       <H2>{title}</H2>

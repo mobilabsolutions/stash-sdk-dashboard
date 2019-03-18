@@ -18,3 +18,18 @@ export interface ChangePasswordProps {
   newPassword?: string
   newPasswordRetype?: string
 }
+
+interface PrivateKey {
+  id: string
+  name: string
+}
+
+interface PublicKey {
+  id: string
+  key: string
+}
+
+export interface KeysConfig {
+  private: PrivateKey[]
+  public: PublicKey[]
+}
