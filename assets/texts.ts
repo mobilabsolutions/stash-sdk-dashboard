@@ -80,5 +80,6 @@ export default {
   'Old Password': { de: 'Altes Password' },
   'New Password': { de: 'Neues Password' },
   'Confirm new Password': { de: 'Neues Password bestätigen' },
-  'Passwords do not match.': { de: 'Passwörter stimmen nicht überein.' }
+  'Passwords do not match.': { de: 'Passwörter stimmen nicht überein.' },
+  'Update Password': { de: 'Passwort aktualisieren' }
 }
