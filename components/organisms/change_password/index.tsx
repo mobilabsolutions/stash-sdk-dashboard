@@ -2,7 +2,7 @@ import { Field, FormikProps } from 'formik'
 
 import { useLocalization } from '../../../hooks'
 import { ChangePasswordProps } from '../../types'
-import { H3, AccountIcon, KeyIcon, PrimaryButton } from '../../atoms'
+import { H3, KeyIcon, PrimaryButton } from '../../atoms'
 import { IconPasswordInput } from '../../molecules'
 import PageForm from '../page_form'
 import styled from '../../styled'
