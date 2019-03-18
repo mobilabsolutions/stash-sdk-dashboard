@@ -61,7 +61,7 @@ export default function PspConfiguration(props: FormikProps<PspConfig>) {
         name="bsKey"
         render={({ field, form }) => (
           <>
-            <H3>{getText('Portal Id')}</H3>
+            <H3>{getText('Key')}</H3>
             <IconInput
               field={field}
               form={form}

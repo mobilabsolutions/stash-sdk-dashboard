@@ -1,5 +1,6 @@
 export enum PspType {
   BS_PAYONE = 'BS_PAYONE',
+  ADYEN = 'ADYEN',
   BRAINTREE = 'BRAINTREE'
 }
 

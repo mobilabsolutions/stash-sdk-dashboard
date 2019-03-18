@@ -65,7 +65,12 @@ export default {
   'Check your Email and follow the instructions.': {
     de: 'Überprüfen Sie Ihre E-Mail und befolgen Sie die Anweisungen.'
   },
-  'PSP Configuration': {},
-  BS_PAYONE: { en: 'BS PAYONE' },
-  BRAINTREE: { en: 'Braintree / Paypal' }
+  'PSP Configuration': { de: 'PSP Konfiguration' },
+  PSP: {},
+  BS_PAYONE: { en: 'Bs PayOne' },
+  ADYEN: { en: 'Adyen' },
+  BRAINTREE: { en: 'Braintree / Paypal' },
+  'Account Id': { de: 'Konto Nr.' },
+  'Portal Id': { de: 'Portal Nr.' },
+  Key: { de: 'Schlüssel' }
 }
