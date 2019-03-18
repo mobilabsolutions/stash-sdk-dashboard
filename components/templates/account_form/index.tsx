@@ -1,15 +1,29 @@
 import { Formik } from 'formik'
 
-import { PspType } from '../../types'
+import { useLocalization } from '../../../hooks'
+import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import { PspConfiguration } from '../../organisms'
 
 export default function AccountForm() {
+  const { getText } = useLocalization()
+
+  const initialValues: PspConfig = { type: PspType.BS_PAYONE }
+
   return (
     <Formik
-      initialValues={{ type: PspType.BS_PAYONE }}
-      validate={_ => {
+      initialValues={initialValues}
+      validate={values => {
         let errors: any = {}
+
+        if (!values.type) errors.type = getText('Field is required.')
+        if (values.type === PspType.BS_PAYONE) {
+          if (!values.bsAccountId)
+            errors.bsAccountId = getText('Field is required.')
+          if (!values.bsPortalId)
+            errors.bsPortalId = getText('Field is required.')
+          if (!values.bsKey) errors.bsKey = getText('Field is required.')
+        }
 
         return errors
       }}

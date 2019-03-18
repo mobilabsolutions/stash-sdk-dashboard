@@ -72,5 +72,6 @@ export default {
   BRAINTREE: { en: 'Braintree / Paypal' },
   'Account Id': { de: 'Konto Nr.' },
   'Portal Id': { de: 'Portal Nr.' },
-  Key: { de: 'Schlüssel' }
+  Key: { de: 'Schlüssel' },
+  Save: { de: 'Speichern' }
 }
