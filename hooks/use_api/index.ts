@@ -8,26 +8,19 @@ const BACKEND_HOST =
 
 const apiCall = (
   token: string,
-  refresh: () => Promise<void>,
+  refresh: () => Promise<string>,
   method: string,
   path: string,
   content: object = null
 ) => {
-  const request: any = token
-    ? {
-        method,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        credentials: 'include'
-      }
-    : {
-        method,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+  const request: any = {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    },
+    credentials: 'include'
+  }
 
   if (content) {
     request.body = JSON.stringify(content)
@@ -128,13 +121,22 @@ const oauthApi = (path: string, body: Object) => {
 }
 
 export const useApi = () => {
-  const [token, setToken] = useSessionStorage('token', '')
-  const [refreshToken, setRefreshToken] = useSessionStorage('refreshToken', '')
+  const [token, setToken] = useSessionStorage('access_token', '')
+  const [refreshToken, setRefreshToken] = useSessionStorage('refresh_token', '')
+  const [userId, setUserId] = useSessionStorage('user_id', '')
+  const [merchantId, setMerchantId] = useSessionStorage('merchant_id', '')
+
+  const parseJwt = useCallback((jwtRaw: string) => {
+    const parts = jwtRaw.split('.')
+    if (parts.length !== 3) return null
+
+    return JSON.parse(atob(parts[1]))
+  }, [])
 
   const refresh = useCallback(
     () =>
       oauthApi('/api/v1/oauth/token', {
-        grant_type: 'password',
+        grant_type: 'refresh_token',
         client_id: 'payment-dashboard-client',
         refresh_token: refreshToken
       }).then(({ access_token, refresh_token }) => {
@@ -180,15 +182,34 @@ export const useApi = () => {
         setToken(access_token)
         setRefreshToken(refresh_token)
 
+        const payload = parseJwt(access_token)
+        setUserId(payload.user_name)
+        if (payload.authorities.length === 1)
+          setMerchantId(payload.authorities[0])
+
         return true
       }),
-    [setRefreshToken, setToken]
+    [parseJwt, setMerchantId, setRefreshToken, setToken, setUserId]
   )
 
   const logout = useCallback(() => {
     setToken(null)
     setRefreshToken(null)
-  }, [setRefreshToken, setToken])
+    setUserId(null)
+    setMerchantId(null)
+  }, [setMerchantId, setRefreshToken, setToken, setUserId])
 
-  return { get, put, patch, post, del, token, login, logout, refresh }
+  return {
+    get,
+    put,
+    patch,
+    post,
+    del,
+    token,
+    login,
+    logout,
+    refresh,
+    userId,
+    merchantId
+  }
 }

@@ -26,7 +26,6 @@ export const useSessionStorage = <T>(
 
   useEffect(() => {
     try {
-      console.log('set Storage', key, state)
       const serializedState = JSON.stringify(state)
       sessionStorage.setItem(key, serializedState)
     } catch {}
