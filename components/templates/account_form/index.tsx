@@ -1,6 +1,6 @@
 import { Formik } from 'formik'
 
-import { useLocalization, useKeys } from '../../../hooks'
+import { useLocalization, useKeys, usePassword } from '../../../hooks'
 import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import {
@@ -12,6 +12,8 @@ import {
 export default function AccountForm() {
   const { getText } = useLocalization()
   const keyData = useKeys()
+  const { changePassword } = usePassword()
+
   console.log('KeyData', keyData)
 
   const initialPspValues: PspConfig = {
@@ -27,14 +29,16 @@ export default function AccountForm() {
     paypalPrivateKey: ''
   }
 
+  const initChangePasswordValues = {
+    oldPassword: '',
+    newPassword: '',
+    newPasswordRetype: ''
+  }
+
   return (
     <VerticalScrollContainer>
       <Formik
-        initialValues={{
-          oldPassword: '',
-          newPassword: '',
-          newPasswordRetype: ''
-        }}
+        initialValues={initChangePasswordValues}
         validate={values => {
           let errors: any = {}
 
@@ -50,9 +54,18 @@ export default function AccountForm() {
           return errors
         }}
         validateOnBlur={false}
-        onSubmit={(_, actions) => {
+        onSubmit={(values, actions) => {
           actions.setSubmitting(true)
-          actions.setSubmitting(false)
+          changePassword(values.oldPassword, values.newPassword)
+            .then(() => {
+              actions.setValues(initChangePasswordValues)
+              actions.setTouched({})
+              actions.setSubmitting(false)
+            })
+            .catch(() => {
+              actions.setFieldError('password', getText('Password is Invalid.'))
+              actions.setSubmitting(false)
+            })
         }}
         render={props => <ChangePassword {...props} />}
       />
