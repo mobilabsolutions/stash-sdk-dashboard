@@ -2,29 +2,29 @@ import { useEffect, useState } from 'react'
 
 import { useApi } from '../use_api'
 
+const initialState = {
+  data: [],
+  isLoading: false,
+  error: null
+}
+
 export const useKeys = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [data, setData] = useState([])
+  const [state, setState] = useState(initialState)
   const { get, merchantId } = useApi()
 
   useEffect(() => {
-    setIsLoading(true)
+    setState(prevState => ({ ...prevState, isLoading: true }))
     get(`/api/v1/merchant/${encodeURIComponent(merchantId)}/api-key`)
-      .then((response: any) => {
-        setIsLoading(false)
-        setError(null)
-
-        if (response.result && response.result.data)
-          setData(response.result.data)
-        else setData([])
-      })
-      .catch(error => {
-        setIsLoading(false)
-        setData([])
-        setError(error)
-      })
+      .then((response: any) =>
+        setState({
+          data:
+            response.result && response.result.data ? response.result.data : [],
+          isLoading: false,
+          error: null
+        })
+      )
+      .catch((error: any) => setState({ data: [], isLoading: false, error }))
   }, [get, merchantId])
 
-  return { isLoading, error, data }
+  return { ...state }
 }
