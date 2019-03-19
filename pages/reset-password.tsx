@@ -1,5 +1,11 @@
-import { ForgotPasswordForm } from '../components/templates'
+import { ResetPasswordForm } from '../components/templates'
 
-export default function ForgotPasswordPage() {
-  return <ForgotPasswordForm />
+function ResetPasswordPage({ token }) {
+  return <ResetPasswordForm token={token} />
 }
+
+ResetPasswordPage.getInitialProps = ({ query }) => {
+  return { token: query.token }
+}
+
+export default ResetPasswordPage

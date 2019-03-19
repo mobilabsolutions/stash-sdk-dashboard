@@ -5,6 +5,8 @@ export { default as Footer } from './footer'
 export { default as Login } from './login'
 export { default as ForgotPassword } from './forgot_password'
 export { default as ForgotPasswordConfirmed } from './forgot_password/confirmed'
+export { default as ResetPassword } from './reset_password'
+export { default as ResetPasswordConfirmed } from './reset_password/confirmed'
 
 export { default as ChangePassword } from './change_password'
 export { default as PspConfiguration } from './psp_configuration'
