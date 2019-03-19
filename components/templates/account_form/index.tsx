@@ -1,6 +1,6 @@
 import { Formik } from 'formik'
 
-import { useLocalization } from '../../../hooks'
+import { useLocalization, useKeys } from '../../../hooks'
 import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import {
@@ -11,6 +11,8 @@ import {
 
 export default function AccountForm() {
   const { getText } = useLocalization()
+  const keyData = useKeys()
+  console.log('KeyData', keyData)
 
   const initialPspValues: PspConfig = {
     type: PspType.BS_PAYONE,
