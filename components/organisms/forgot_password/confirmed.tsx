@@ -1,4 +1,4 @@
-import { Illustration, Logo, H2, H4 } from '../../atoms'
+import { IllustrationPassword, Logo, H2, H4 } from '../../atoms'
 import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
 
@@ -56,7 +56,7 @@ export default function ForgotPasswordConfirmed() {
         </ContentWrapper>
       </LeftWrapper>
       <div className="illustration">
-        <Illustration />
+        <IllustrationPassword />
       </div>
     </Wrapper>
   )

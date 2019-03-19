@@ -10,6 +10,7 @@ export {
 
 export { default as Logo } from './icons/logo'
 export { default as Illustration } from './icons/illustration'
+export { default as IllustrationPassword } from './icons/illustration_password'
 
 export { default as AccountIcon } from './icons/account'
 export { default as KeyIcon } from './icons/key'

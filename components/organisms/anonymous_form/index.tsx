@@ -32,7 +32,11 @@ const Form = styled.form`
   }
 `
 
-export default function AnonymousForm({ handleSubmit, children }) {
+export default function AnonymousForm({
+  handleSubmit,
+  illustration = null,
+  children
+}) {
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit}>
@@ -41,9 +45,7 @@ export default function AnonymousForm({ handleSubmit, children }) {
         </div>
         {children}
       </Form>
-      <div className="illustration">
-        <Illustration />
-      </div>
+      <div className="illustration">{illustration || <Illustration />}</div>
     </Wrapper>
   )
 }

@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { Field, FormikProps } from 'formik'
 
 import { useLocalization } from '../../../hooks'
-import { PrimaryButton, H2, H4 } from '../../atoms'
+import { PrimaryButton, H2, H4, IllustrationPassword } from '../../atoms'
 import { Input } from '../../molecules'
 import styled from '../../styled'
 import AnonymousForm from '../anonymous_form'
@@ -30,7 +30,10 @@ function ForgotPassword(
 ) {
   const { getText } = useLocalization()
   return (
-    <AnonymousForm handleSubmit={props.handleSubmit}>
+    <AnonymousForm
+      handleSubmit={props.handleSubmit}
+      illustration={<IllustrationPassword />}
+    >
       <Wrapper>
         <div className="title">
           <H2>{getText('Please enter your email address')}</H2>

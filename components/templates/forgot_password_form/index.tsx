@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import { useLocalization } from '../../../hooks'
 import { ForgotPassword, ForgotPasswordConfirmed } from '../../organisms'
 
-export default function LoginForm({ email = '' }) {
+export default function ForgotPasswordForm({ email = '' }) {
   const { getText } = useLocalization()
   const [send, setSend] = useState(false)
 
