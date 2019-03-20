@@ -87,5 +87,6 @@ export default {
   'Please enter your new Password.': {
     de: 'Bitte geb Dein neues Passwort ein'
   },
-  'Public Keys': { de: 'Öffentlicher Schlüssel' }
+  'Public Keys': { de: 'Öffentlicher Schlüssel' },
+  'Create a new Public Key': { de: 'Erzeuge neuen öffentlichen Schlüssel ' }
 }

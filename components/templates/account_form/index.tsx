@@ -78,7 +78,11 @@ export default function AccountForm() {
         }}
         render={props => <ChangePassword {...props} />}
       />
-      <KeysConfiguration keys={keyData.data} />
+      <KeysConfiguration
+        keys={keyData.data}
+        onDelete={keyEntry => console.log(keyEntry)}
+        onCreate={(type, name) => console.log(type, name)}
+      />
       <Formik
         initialValues={initialPspValues}
         validate={values => {

@@ -5,6 +5,9 @@ const Svg = styled.svg`
   :hover {
     fill: ${props => props.theme.red.A600};
   }
+  :active {
+    fill: ${props => props.theme.red.A700};
+  }
 `
 
 export default function DeleteIcon({
