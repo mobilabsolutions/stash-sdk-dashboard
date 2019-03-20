@@ -13,6 +13,8 @@ export { default as Illustration } from './icons/illustration'
 export { default as IllustrationPassword } from './icons/illustration_password'
 
 export { default as AccountIcon } from './icons/account'
+export { default as CopyIcon } from './icons/copy'
+export { default as DeleteIcon } from './icons/delete'
 export { default as KeyIcon } from './icons/key'
 export { default as DownIcon } from './icons/down'
 export { default as UpIcon } from './icons/up'

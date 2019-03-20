@@ -18,7 +18,7 @@ export const usePsp = () => {
       .then((response: any) =>
         setState({
           data:
-            response.result && response.result.data ? response.result.data : [],
+            response.result && response.result.psp ? response.result.psp : [],
           isLoading: false,
           error: null
         })

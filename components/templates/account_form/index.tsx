@@ -11,6 +11,7 @@ import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import {
   ChangePassword,
+  KeysConfiguration,
   PspConfiguration,
   PaypalConfiguration
 } from '../../organisms'
@@ -77,6 +78,7 @@ export default function AccountForm() {
         }}
         render={props => <ChangePassword {...props} />}
       />
+      <KeysConfiguration keys={keyData.data} />
       <Formik
         initialValues={initialPspValues}
         validate={values => {

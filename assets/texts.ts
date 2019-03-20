@@ -74,6 +74,7 @@ export default {
   'Account Id': { de: 'Konto Nr.' },
   'Portal Id': { de: 'Portal Nr.' },
   Key: { de: 'Schlüssel' },
+  Keys: { de: 'Schlüssel' },
   Save: { de: 'Speichern' },
   'Public Key': { de: 'öffentlicher Schlüssel' },
   'Private Key': { de: 'privater Schlüssel' },
@@ -83,5 +84,8 @@ export default {
   'Passwords do not match.': { de: 'Passwörter stimmen nicht überein.' },
   'Update Password': { de: 'Passwort aktualisieren' },
   'Reset your Password': { de: 'Passwort zurücksetzen' },
-  'Please enter your new Password.': { de: 'Bitte geb Dein neues Passwort ein' }
+  'Please enter your new Password.': {
+    de: 'Bitte geb Dein neues Passwort ein'
+  },
+  'Public Keys': { de: 'Öffentlicher Schlüssel' }
 }

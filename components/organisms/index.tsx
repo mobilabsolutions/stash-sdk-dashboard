@@ -9,6 +9,7 @@ export { default as ResetPassword } from './reset_password'
 export { default as ResetPasswordConfirmed } from './reset_password/confirmed'
 
 export { default as ChangePassword } from './change_password'
+export { default as KeysConfiguration } from './keys_configuration'
 export { default as PspConfiguration } from './psp_configuration'
 export { default as PaypalConfiguration } from './paypal_configuration'
 

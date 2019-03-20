@@ -116,10 +116,10 @@ to get an overview
 ### folder structure
 
 - [/asserts](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/assets) translation and styles
-- [/components](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/components) Atomic design structure of Components
-- [/hooks](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/hooks) react hooks, middleware and business logic
+- [/components](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/components) Home of [Atomic design structure](http://atomicdesign.bradfrost.com/table-of-contents/) of Components
+- [/hooks](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/hooks) react [hooks](https://reactjs.org/docs/hooks-intro.html), middleware and business logic
 - [/k8s](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/k8s) Kubernetes configs and scripts
-- [/pages](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/pages) entry points for the next.js app / check next.js documentation
+- [/pages](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/pages) entry points for the [next.js](https://nextjs.org/) app / check next.js documentation
 - [/scripts](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/scripts) bash scripts for helper and build
 - [/server](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/server) fastify backend (upstream, next.js, healthcheck)
 - [/static](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/static) static files like fonts, images and css
