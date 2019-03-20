@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { theme } from '../assets/style'
 import { ThemeProvider } from '../components/styled'
 import { NextContextProvider } from '../hooks/use_next_context'
+import { ToastProvider } from '../hooks/use_toast'
 
 type Props = {
   context: object
@@ -42,7 +43,9 @@ export default class extends App<Props> {
         <Container>
           <NextContextProvider context={context}>
             <ThemeProvider theme={theme}>
-              <Component {...pageProps} />
+              <ToastProvider>
+                <Component {...pageProps} />
+              </ToastProvider>
             </ThemeProvider>
           </NextContextProvider>
         </Container>

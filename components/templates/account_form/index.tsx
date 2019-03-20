@@ -1,6 +1,6 @@
 import { Formik } from 'formik'
 
-import { useLocalization, useKeys, usePassword } from '../../../hooks'
+import { useLocalization, useKeys, usePassword, useToast } from '../../../hooks'
 import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import {
@@ -13,7 +13,7 @@ export default function AccountForm() {
   const { getText } = useLocalization()
   const keyData = useKeys()
   const { changePassword } = usePassword()
-
+  const { success } = useToast()
   console.log('KeyData', keyData)
 
   const initialPspValues: PspConfig = {
@@ -61,6 +61,7 @@ export default function AccountForm() {
               actions.setValues(initChangePasswordValues)
               actions.setTouched({})
               actions.setSubmitting(false)
+              success('Hallo')
             })
             .catch(() => {
               actions.setFieldError('password', getText('Password is Invalid.'))
