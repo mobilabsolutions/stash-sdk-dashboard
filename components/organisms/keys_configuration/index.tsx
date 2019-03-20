@@ -15,14 +15,22 @@ const KeysWrapper = styled.div`
   margin-bottom: 16px;
 `
 
-const PublicKeyWrapper = styled.div`
-  margin-top: 4px;
-  margin-bottom: 4px;
+const KeyWrapper = styled.div`
+  margin-top: 8px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   > span {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    display: block;
+    min-width: 250px;
+  }
+  .key {
+    min-width: 265px;
+  }
+  .name {
+    min-width: 288px;
   }
   > svg:not(:first-child) {
     cursor: pointer;
@@ -65,21 +73,25 @@ export default function KeysConfiguration({
   const { getText } = useLocalization()
 
   const publicKeys = keys.filter(item => item.type === 'PUBLIC')
-  // const privateKeys = keys.filter(item => item.type === 'PRIVATE')
+  const privateKeys = keys.filter(item => item.type === 'PRIVATE')
 
   return (
     <PageForm title={getText('Keys')}>
       <div>
         <H3>{getText('Public Keys')}</H3>
         <KeysWrapper>
-          {publicKeys.map(keyEntity => (
-            <PublicKeyWrapper key={keyEntity.id}>
-              <KeyIcon />
-              <Body>{keyEntity.key}</Body>
-              <CopyIcon onClick={() => copyToClipboard(keyEntity.key)} />
-              <DeleteIcon onClick={() => onDelete(keyEntity)} />
-            </PublicKeyWrapper>
-          ))}
+          {publicKeys.length === 0 ? (
+            <Body>{getText('there is no public key generated yet')}</Body>
+          ) : (
+            publicKeys.map(keyEntity => (
+              <KeyWrapper key={keyEntity.id}>
+                <KeyIcon />
+                <Body className="key">{keyEntity.key}</Body>
+                <CopyIcon onClick={() => copyToClipboard(keyEntity.key)} />
+                <DeleteIcon onClick={() => onDelete(keyEntity)} />
+              </KeyWrapper>
+            ))
+          )}
         </KeysWrapper>
         <PrimaryButton
           type="button"
@@ -87,7 +99,39 @@ export default function KeysConfiguration({
           onClick={() => onCreate('PUBLIC')}
         />
       </div>
-      <div />
+      <div style={{ marginTop: '32px' }}>
+        <H3>{getText('Private Keys')}</H3>
+        <KeysWrapper>
+          {privateKeys.length === 0 ? (
+            <Body>{getText('there is no private key generated yet')}</Body>
+          ) : (
+            privateKeys.map(keyEntity => (
+              <KeyWrapper key={keyEntity.id}>
+                <KeyIcon />
+                <Body className={keyEntity.key ? 'key' : 'name'}>
+                  {keyEntity.key || keyEntity.name}
+                </Body>
+                {keyEntity.key && (
+                  <CopyIcon onClick={() => copyToClipboard(keyEntity.key)} />
+                )}
+                <DeleteIcon onClick={() => onDelete(keyEntity)} />
+                {keyEntity.key && (
+                  <Body>
+                    {getText(
+                      'Copy this key now because it cannot be recovered in the future.'
+                    )}
+                  </Body>
+                )}
+              </KeyWrapper>
+            ))
+          )}
+        </KeysWrapper>
+        <PrimaryButton
+          type="button"
+          label={getText('Create a new Private Key')}
+          onClick={() => onCreate('PRIVATE')}
+        />
+      </div>
     </PageForm>
   )
 }

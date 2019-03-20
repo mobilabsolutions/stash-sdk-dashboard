@@ -18,11 +18,11 @@ import {
 
 export default function AccountForm() {
   const { getText } = useLocalization()
-  const keyData = useKeys()
+  const { data: keys, create: createKey, remove: removeKey } = useKeys()
   const pspData = usePsp()
   const { changePassword } = usePassword()
   const { success } = useToast()
-  console.log('data', { keyData, pspData })
+  console.log('data', { pspData })
 
   const initialPspValues: PspConfig = {
     type: PspType.BS_PAYONE,
@@ -79,9 +79,9 @@ export default function AccountForm() {
         render={props => <ChangePassword {...props} />}
       />
       <KeysConfiguration
-        keys={keyData.data}
-        onDelete={keyEntry => console.log(keyEntry)}
-        onCreate={(type, name) => console.log(type, name)}
+        keys={keys}
+        onDelete={keyEntry => removeKey(keyEntry.id)}
+        onCreate={(type, name) => createKey(type, name)}
       />
       <Formik
         initialValues={initialPspValues}

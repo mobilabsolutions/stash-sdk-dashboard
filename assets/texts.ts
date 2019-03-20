@@ -88,5 +88,16 @@ export default {
     de: 'Bitte geb Dein neues Passwort ein'
   },
   'Public Keys': { de: 'Öffentlicher Schlüssel' },
-  'Create a new Public Key': { de: 'Erzeuge neuen öffentlichen Schlüssel ' }
+  'Create a new Public Key': { de: 'Erzeuge neuen öffentlichen Schlüssel ' },
+  'Private Keys': { de: 'Privater Schlüssel' },
+  'Create a new Private Key': { de: 'Erzeuge neuen privaten Schlüssel ' },
+  'there is no private key generated yet': {
+    de: 'Es wurde noch kein privater Schlüssel erzeugt'
+  },
+  'there is no public key generated yet': {
+    de: 'Es wurde noch kein öffentlicher Schlüssel erzeugt'
+  },
+  'Copy this key now because it cannot be recovered in the future.': {
+    de: 'Kopier diesen Schlüssel jetzt, er wird nicht mehr angezeigt'
+  }
 }
