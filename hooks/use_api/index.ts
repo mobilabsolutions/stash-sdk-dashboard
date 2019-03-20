@@ -1,4 +1,6 @@
 import { useCallback } from 'react'
+import Router from 'next/router'
+
 import { useSessionStorage } from '../use_session_storage'
 
 const BACKEND_HOST =
@@ -41,17 +43,25 @@ const apiCall = (
           }
 
           if (response.status === 401 && !didRefresh) {
-            return refresh().then(accessToken => {
-              didRefresh = true
-              return processApiCall({
-                method,
-                headers: {
-                  'Content-Type': 'application/json',
-                  Authorization: `Bearer ${accessToken}`
-                },
-                credentials: 'include'
+            return refresh()
+              .then(accessToken => {
+                didRefresh = true
+                return processApiCall({
+                  method,
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`
+                  },
+                  credentials: 'include'
+                })
               })
-            })
+              .catch(error => {
+                if (error.statusCode && error.statusCode === 401) {
+                  Router.push('/login')
+                  return
+                }
+                throw error
+              })
           }
           if (response.status >= 400) {
             return response
