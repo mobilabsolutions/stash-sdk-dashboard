@@ -32,8 +32,9 @@ export default function ForgotPasswordForm({
         return errors
       }}
       validateOnBlur={false}
-      onSubmit={(_, actions) => {
+      onSubmit={(values, actions) => {
         actions.setSubmitting(true)
+        console.log(token, values)
         setSend(true)
         actions.setSubmitting(false)
       }}
