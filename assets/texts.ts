@@ -105,5 +105,8 @@ export default {
   },
   'Email not valid.': {
     de: 'E-mail ist nicht gültig'
-  }
+  },
+  'Configuration changed.': { de: 'Konfiguration geändert' },
+  'Password changed.': { de: 'Password geändert' },
+  'Save failed.': { de: 'Speichern fehlgeschlagen' }
 }

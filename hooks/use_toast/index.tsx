@@ -1,44 +1,85 @@
 import React, { useContext, useState, useCallback } from 'react'
 
 import styled, { keyframes } from '../../components/styled'
+import { useInterval } from '../use_interval'
 
 const fadeInUp = keyframes`
-  from {
+  0% {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
   }
-  to {
+  10% {
     opacity: 1;
     transform: none;
+  }
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
 `
 
 const ToastContainer = styled.div`
   position: absolute;
   overflow: hidden;
-  z-index: 999999999999;
-  max-height: calc(100vh - 10px);
+  z-index: 999;
+  width: 100vw;
+  max-height: 100vh;
   text-align: right;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  bottom: 100px;
+  bottom: 0px;
 `
 
-const Toast = styled.div`
+interface TostProps {
+  type: string
+  time: number
+}
+
+const getBackgroundColor = props => {
+  switch (props.type) {
+    case 'success':
+      return props.theme.green.A100
+    default:
+      return props.theme.red.A100
+  }
+}
+
+const getFontColor = props => {
+  switch (props.type) {
+    case 'success':
+      return props.theme.green.A800
+    default:
+      return props.theme.red.A800
+  }
+}
+
+const Toast = styled.div<TostProps>`
   font-family: ${props => props.theme.font};
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 5px 15px;
+  background-color: ${getBackgroundColor};
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 ${props => props.theme.shade.A50};
+  padding: 8px 16px 8px 16px;
+  margin: 8px;
   white-space: pre-line;
   min-height: 50px;
   margin-bottom: 15px;
   border-radius: 5px;
   animation-name: ${fadeInUp};
-  animation-duration: 1s;
+  animation-duration: ${props => props.time}s;
   animation-fill-mode: both;
   transform: translateX(-50%);
+  > span {
+    display: block;
+    color: ${getFontColor};
+  }
 `
 
 const toastContext = React.createContext(null)
@@ -46,17 +87,29 @@ toastContext.displayName = 'NextContext'
 
 export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([])
+  useInterval(() => {
+    setToasts(prevToasts =>
+      prevToasts.filter(toast => toast.valid + 500 > Date.now())
+    )
+  }, 10000)
 
-  const success = useCallback((message: string, timer: number) => {
-    console.log(message)
+  const success = useCallback((message: string, time = 5) => {
     setToasts(prevToasts => [
       ...prevToasts,
-      { message, type: 'success', valid: Date.now() + timer }
+      { message, type: 'success', time, valid: Date.now() + time * 1000 }
+    ])
+  }, [])
+
+  const error = useCallback((message: string, time = 5) => {
+    setToasts(prevToasts => [
+      ...prevToasts,
+      { message, type: 'error', time, valid: Date.now() + time * 1000 }
     ])
   }, [])
 
   const providerValue = {
     toasts,
+    error,
     success
   }
 
@@ -65,7 +118,9 @@ export const ToastProvider = ({ children }) => {
       {children}
       <ToastContainer>
         {toasts.map((toast, index) => (
-          <Toast key={index}>{toast.message}</Toast>
+          <Toast key={index} type={toast.type} time={toast.time}>
+            <span>{toast.message}</span>
+          </Toast>
         ))}
       </ToastContainer>
     </toastContext.Provider>
@@ -73,7 +128,7 @@ export const ToastProvider = ({ children }) => {
 }
 
 export const useToast = () => {
-  const { success } = useContext(toastContext)
+  const { success, error } = useContext(toastContext)
 
-  return { success }
+  return { success, error }
 }

@@ -28,9 +28,8 @@ export default function ResetPasswordForm({ email = '' }) {
         return errors
       }}
       validateOnBlur={false}
-      onSubmit={(values, actions) => {
+      onSubmit={(_, actions) => {
         actions.setSubmitting(true)
-        console.log(values)
         setSend(true)
         actions.setSubmitting(false)
       }}

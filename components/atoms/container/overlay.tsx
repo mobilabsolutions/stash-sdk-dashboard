@@ -7,7 +7,7 @@ export default styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 30;
+  z-index: 1000;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;

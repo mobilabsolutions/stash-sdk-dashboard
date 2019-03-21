@@ -26,7 +26,7 @@ export default function AccountForm() {
   } = useKeys()
   const { isLoading: pspsAreLoading, data: psps, save: savePsp } = usePsp()
   const { changePassword } = usePassword()
-  const { success } = useToast()
+  const { success: toastSuccess, error: toastError } = useToast()
 
   if (pspsAreLoading || keysAreLoading) return <div />
 
@@ -101,8 +101,8 @@ export default function AccountForm() {
             .then(() => {
               actions.setValues(initChangePasswordValues)
               actions.setTouched({})
+              toastSuccess(getText('Password changed.'))
               actions.setSubmitting(false)
-              success('Hallo')
             })
             .catch(() => {
               actions.setFieldError('password', getText('Password is Invalid.'))
@@ -154,8 +154,15 @@ export default function AccountForm() {
           }
 
           savePsp(apiPsp)
-            .then(() => actions.setSubmitting(false))
-            .catch(() => actions.setSubmitting(false))
+            .then(() => {
+              toastSuccess(getText('Configuration changed.'))
+              actions.resetForm(values)
+              actions.setSubmitting(false)
+            })
+            .catch(() => {
+              toastError(getText('Save failed.'))
+              actions.setSubmitting(false)
+            })
         }}
         render={props => <PspConfiguration {...props} />}
       />
@@ -185,8 +192,15 @@ export default function AccountForm() {
           }
 
           savePsp(apiPsp)
-            .then(() => actions.setSubmitting(false))
-            .catch(() => actions.setSubmitting(false))
+            .then(() => {
+              toastSuccess(getText('Configuration changed.'))
+              actions.resetForm(values)
+              actions.setSubmitting(false)
+            })
+            .catch(() => {
+              toastError(getText('Save failed.'))
+              actions.setSubmitting(false)
+            })
         }}
         render={props => <PaypalConfiguration {...props} />}
       />
