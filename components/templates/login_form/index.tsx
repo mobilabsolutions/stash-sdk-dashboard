@@ -17,6 +17,12 @@ export default function LoginForm({ email = '', password = '' }) {
         let errors: any = {}
 
         if (!values.email) errors.email = getText('Field is required.')
+        if (
+          values.email.indexOf('@') === -1 ||
+          values.email.indexOf('.') === -1
+        )
+          errors.email = getText('Email not valid.')
+
         if (!values.password) errors.password = getText('Field is required.')
 
         return errors

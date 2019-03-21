@@ -102,5 +102,8 @@ export default {
   },
   'Send me an email': {
     de: 'Schick mir die E-mail'
+  },
+  'Email not valid.': {
+    de: 'E-mail ist nicht gültig'
   }
 }

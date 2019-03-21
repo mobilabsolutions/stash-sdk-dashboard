@@ -19,6 +19,11 @@ export default function ResetPasswordForm({ email = '' }) {
         let errors: any = {}
 
         if (!values.email) errors.email = getText('Field is required.')
+        if (
+          values.email.indexOf('@') === -1 ||
+          values.email.indexOf('.') === -1
+        )
+          errors.email = getText('Email not valid.')
 
         return errors
       }}
