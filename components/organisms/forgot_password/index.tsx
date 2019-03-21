@@ -57,7 +57,7 @@ function ForgotPassword(
         />
         <div className="button">
           <PrimaryButton
-            label={getText('Reset Password')}
+            label={getText('Send me an email')}
             isFullSize
             disabled={!props.isValid}
           />

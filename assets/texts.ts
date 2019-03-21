@@ -99,5 +99,8 @@ export default {
   },
   'Copy this key now because it cannot be recovered in the future.': {
     de: 'Kopier diesen Schlüssel jetzt, er wird nicht mehr angezeigt'
+  },
+  'Send me an email': {
+    de: 'Schick mir die E-mail'
   }
 }
