@@ -100,6 +100,38 @@ export default function PspConfiguration(props: FormikProps<PspConfig>) {
               />
             </FieldWrapper>
           )}
+          {props.values.type === PspType.ADYEN && (
+            <FieldWrapper>
+              <Field
+                name="adyenUsername"
+                render={({ field, form }) => (
+                  <>
+                    <H3>{getText('Username')}</H3>
+                    <IconInput
+                      field={field}
+                      form={form}
+                      icon={<KeyIcon />}
+                      placeholder={getText('Username')}
+                    />
+                  </>
+                )}
+              />
+              <Field
+                name="adyenPassword"
+                render={({ field, form }) => (
+                  <>
+                    <H3>{getText('Password')}</H3>
+                    <IconInput
+                      field={field}
+                      form={form}
+                      icon={<AccountIcon />}
+                      placeholder={getText('Password')}
+                    />
+                  </>
+                )}
+              />
+            </FieldWrapper>
+          )}
         </div>
         <div className="right">
           <PrimaryButton

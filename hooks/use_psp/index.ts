@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { useApi } from '../use_api'
 
 const initialState = {
   data: [],
-  isLoading: false,
+  isLoading: true,
   error: null
 }
 
 export const usePsp = () => {
   const [state, setState] = useState(initialState)
-  const { get, merchantId } = useApi()
+  const { get, post, merchantId } = useApi()
 
   useEffect(() => {
     setState(prevState => ({ ...prevState, isLoading: true }))
@@ -26,5 +26,17 @@ export const usePsp = () => {
       .catch((error: any) => setState({ data: [], isLoading: false, error }))
   }, [get, merchantId])
 
-  return { ...state }
+  const save = useCallback(
+    pspConfig => {
+      return post(
+        `/api/v1/merchant/${encodeURIComponent(merchantId)}/psp`,
+        pspConfig
+      ).then(() => {
+        return true
+      })
+    },
+    [merchantId, post]
+  )
+
+  return { ...state, save }
 }

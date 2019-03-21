@@ -4,7 +4,7 @@ import { useApi } from '../use_api'
 
 const initialState = {
   data: [],
-  isLoading: false,
+  isLoading: true,
   error: null
 }
 

@@ -18,24 +18,57 @@ import {
 
 export default function AccountForm() {
   const { getText } = useLocalization()
-  const { data: keys, create: createKey, remove: removeKey } = useKeys()
-  const pspData = usePsp()
+  const {
+    isLoading: keysAreLoading,
+    data: keys,
+    create: createKey,
+    remove: removeKey
+  } = useKeys()
+  const { isLoading: pspsAreLoading, data: psps, save: savePsp } = usePsp()
   const { changePassword } = usePassword()
   const { success } = useToast()
-  console.log('data', { pspData })
 
-  const initialPspValues: PspConfig = {
-    type: PspType.BS_PAYONE,
-    bsAccountId: '',
-    bsPortalId: '',
-    bsKey: ''
-  }
+  if (pspsAreLoading || keysAreLoading) return <div />
 
-  const initialPaypalValues: PspConfig = {
-    type: PspType.BRAINTREE,
-    paypalPublicKey: '',
-    paypalPrivateKey: ''
-  }
+  const initialPspValues: PspConfig = psps
+    .filter(item => item.type !== PspType.BRAINTREE)
+    .reduce(
+      (result, item) => {
+        if (item.default) {
+          result.type = item.type
+        }
+        if (item.type === PspType.BS_PAYONE) {
+          result.bsAccountId = item.accountId
+          result.bsPortalId = item.portalId
+          result.bsKey = item.key
+        } else if (item.type === PspType.ADYEN) {
+          result.adyenUsername = item.username
+          result.adyenPassword = item.password
+        }
+        return result
+      },
+      {
+        type: PspType.BS_PAYONE,
+        bsAccountId: '',
+        bsPortalId: '',
+        bsKey: '',
+        adyenUsername: '',
+        adyenPassword: ''
+      }
+    )
+
+  const paypalPsp = psps.find(item => item.type === PspType.BRAINTREE)
+  const initialPaypalValues: PspConfig = paypalPsp
+    ? {
+        type: PspType.BRAINTREE,
+        paypalPublicKey: paypalPsp.publicKey,
+        paypalPrivateKey: paypalPsp.privateKey
+      }
+    : {
+        type: PspType.BRAINTREE,
+        paypalPublicKey: '',
+        paypalPrivateKey: ''
+      }
 
   const initChangePasswordValues = {
     oldPassword: '',
@@ -100,9 +133,29 @@ export default function AccountForm() {
           return errors
         }}
         validateOnBlur={false}
-        onSubmit={(_, actions) => {
+        onSubmit={(values, actions) => {
           actions.setSubmitting(true)
-          actions.setSubmitting(false)
+
+          const apiPsp: any = {
+            pspId: values.type,
+            pspConfig:
+              values.type === PspType.BS_PAYONE
+                ? {
+                    default: true,
+                    accountId: values.bsAccountId,
+                    portalId: values.bsPortalId,
+                    key: values.bsKey
+                  }
+                : {
+                    default: true,
+                    username: values.adyenUsername,
+                    password: values.adyenPassword
+                  }
+          }
+
+          savePsp(apiPsp)
+            .then(() => actions.setSubmitting(false))
+            .catch(() => actions.setSubmitting(false))
         }}
         render={props => <PspConfiguration {...props} />}
       />
@@ -119,9 +172,21 @@ export default function AccountForm() {
           return errors
         }}
         validateOnBlur={false}
-        onSubmit={(_, actions) => {
+        onSubmit={(values, actions) => {
           actions.setSubmitting(true)
-          actions.setSubmitting(false)
+
+          const apiPsp: any = {
+            pspId: values.type,
+            pspConfig: {
+              default: false,
+              publicKey: values.paypalPublicKey,
+              privateKey: values.paypalPrivateKey
+            }
+          }
+
+          savePsp(apiPsp)
+            .then(() => actions.setSubmitting(false))
+            .catch(() => actions.setSubmitting(false))
         }}
         render={props => <PaypalConfiguration {...props} />}
       />

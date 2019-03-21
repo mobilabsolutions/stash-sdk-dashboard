@@ -9,6 +9,8 @@ export interface PspConfig {
   bsAccountId?: string
   bsPortalId?: string
   bsKey?: string
+  adyenUsername?: string
+  adyenPassword?: string
   paypalPublicKey?: string
   paypalPrivateKey?: string
 }
