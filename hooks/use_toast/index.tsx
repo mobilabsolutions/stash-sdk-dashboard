@@ -88,10 +88,11 @@ toastContext.displayName = 'NextContext'
 export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([])
   useInterval(() => {
-    setToasts(prevToasts =>
-      prevToasts.filter(toast => toast.valid + 500 > Date.now())
-    )
-  }, 10000)
+    if (toasts.length > 0)
+      setToasts(prevToasts =>
+        prevToasts.filter(toast => toast.valid + 50 > Date.now())
+      )
+  }, 1000)
 
   const success = useCallback((message: string, time = 5) => {
     setToasts(prevToasts => [
