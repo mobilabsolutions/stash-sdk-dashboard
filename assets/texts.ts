@@ -68,7 +68,7 @@ export default {
   'PSP Configuration': { de: 'PSP Konfiguration' },
   'Paypal Configuration': { de: 'Paypal Konfiguration' },
   PSP: {},
-  BS_PAYONE: { en: 'Bs PayOne' },
+  BS_PAYONE: { en: 'BS PayOne' },
   ADYEN: { en: 'Adyen' },
   BRAINTREE: { en: 'Braintree / Paypal' },
   'Account Id': { de: 'Konto Nr.' },
