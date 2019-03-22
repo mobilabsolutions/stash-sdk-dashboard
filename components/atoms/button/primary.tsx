@@ -59,6 +59,7 @@ const Button = styled.button<StyledButtonProps>`
   }
   > span {
     color: ${props => props.theme.shade.A25};
+    white-space: nowrap;
   }
 `
 

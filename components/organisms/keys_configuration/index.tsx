@@ -16,13 +16,13 @@ const KeysWrapper = styled.div`
 `
 
 const KeyWrapper = styled.div`
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   > span {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 24px;
+    margin-right: 24px;
     display: block;
     min-width: 250px;
   }

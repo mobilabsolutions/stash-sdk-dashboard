@@ -20,7 +20,6 @@ const LeftRight = styled.div`
   > .right {
     display: flex;
     flex: 0;
-    min-width: 200px;
     flex-direction: column;
     padding-top: 12px;
   }
