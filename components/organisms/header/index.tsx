@@ -1,7 +1,9 @@
+import Router from 'next/router'
+
 import styled from '../../styled'
 
-import { useLocalization } from '../../../hooks'
-import { Logo } from '../../atoms'
+import { useLocalization, useApi } from '../../../hooks'
+import { Logo, LogoutIcon } from '../../atoms'
 import HeaderNavItem from './nav_item'
 
 const HtmlHeader = styled.header`
@@ -10,6 +12,13 @@ const HtmlHeader = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
+  > .icons {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 36px;
+  }
 `
 
 const LogoContainer = styled.div`
@@ -24,6 +33,7 @@ const Nav = styled.nav`
 
 export default function Header({ activePath }) {
   const { getText } = useLocalization()
+  const { logout } = useApi()
 
   return (
     <HtmlHeader>
@@ -52,6 +62,14 @@ export default function Header({ activePath }) {
           isActive={activePath === '/account'}
         />
       </Nav>
+      <div className="icons">
+        <LogoutIcon
+          onClick={() => {
+            logout()
+            Router.push('/login')
+          }}
+        />
+      </div>
     </HtmlHeader>
   )
 }
