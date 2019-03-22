@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Formik } from 'formik'
 
 import {
@@ -9,6 +10,7 @@ import {
 } from '../../../hooks'
 import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
+import { Popup } from '../../molecules'
 import {
   ChangePassword,
   KeysConfiguration,
@@ -17,6 +19,7 @@ import {
 } from '../../organisms'
 
 export default function AccountForm() {
+  const [deleteKey, setDeleteKey] = useState(undefined)
   const { getText } = useLocalization()
   const {
     isLoading: keysAreLoading,

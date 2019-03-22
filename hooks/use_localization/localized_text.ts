@@ -26,6 +26,7 @@ export default function localizedText(
 
   let text = localizedText || id
   if (args) {
+    console.log(args)
     for (let key of Object.keys(args)) {
       text = text.split(`%{${key}}`).join(args[key])
     }

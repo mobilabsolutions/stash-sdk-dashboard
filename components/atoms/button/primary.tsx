@@ -43,7 +43,7 @@ const Button = styled.button<StyledButtonProps>`
   > span {
     display: block;
     font-size: 14px;
-    padding: 0.75em 1em;
+    padding: 0.75em 1.5em;
   }
   background-color: ${props => props.theme.primary.A600};
   width: ${getWidth};

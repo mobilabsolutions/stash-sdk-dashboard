@@ -109,5 +109,8 @@ export default {
   'Configuration changed.': { de: 'Konfiguration geändert' },
   'Password changed.': { de: 'Password geändert' },
   'Save failed.': { de: 'Speichern fehlgeschlagen' },
-  'Key Copied': { de: 'Schlüssel kopiert' }
+  'Key Copied': { de: 'Schlüssel kopiert' },
+  'Are you sure you want to remove the key %{key}?': {
+    de: 'Möchten Sie den Schlüssel %{key} wirklich entfernen?'
+  }
 }

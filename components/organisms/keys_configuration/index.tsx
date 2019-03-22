@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import styled from '../../styled'
 import {
   H3,
@@ -5,8 +7,11 @@ import {
   CopyIcon,
   DeleteIcon,
   Body,
-  PrimaryButton
+  PrimaryButton,
+  WarnButton,
+  SecondaryButton
 } from '../../atoms'
+import { Popup } from '../../molecules'
 import { useLocalization, useToast } from '../../../hooks'
 import PageForm from '../page_form'
 
@@ -40,6 +45,24 @@ const KeyWrapper = styled.div`
   }
 `
 
+const PopupWrapper = styled.div`
+  padding: 16px;
+  > .buttons {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  > .buttons > button {
+    margin-left: 16px;
+  }
+  > h3 {
+    display: block;
+    max-width: 350px;
+  }
+`
+
 const copyToClipboard = (text: string) => {
   const tempElement = document.createElement('textarea')
   tempElement.value = text
@@ -70,6 +93,7 @@ export default function KeysConfiguration({
   onDelete,
   onCreate
 }: KeysConfigurationProps) {
+  const [deleteKey, setDeleteKey] = useState(undefined)
   const { getText } = useLocalization()
   const { success: toastSuccess } = useToast()
 
@@ -94,7 +118,7 @@ export default function KeysConfiguration({
                     toastSuccess(getText('Key Copied'))
                   }}
                 />
-                <DeleteIcon onClick={() => onDelete(keyEntity)} />
+                <DeleteIcon onClick={() => setDeleteKey(keyEntity)} />
               </KeyWrapper>
             ))
           )}
@@ -120,7 +144,7 @@ export default function KeysConfiguration({
                 {keyEntity.key && (
                   <CopyIcon onClick={() => copyToClipboard(keyEntity.key)} />
                 )}
-                <DeleteIcon onClick={() => onDelete(keyEntity)} />
+                <DeleteIcon onClick={() => setDeleteKey(keyEntity)} />
                 {keyEntity.key && (
                   <Body>
                     {getText(
@@ -138,6 +162,28 @@ export default function KeysConfiguration({
           onClick={() => onCreate('PRIVATE')}
         />
       </div>
+      <Popup show={!!deleteKey} onClose={() => setDeleteKey(undefined)}>
+        <PopupWrapper>
+          <H3>
+            {getText('Are you sure you want to remove the key %{key}?', {
+              key: deleteKey ? deleteKey.key || deleteKey.name : ''
+            })}
+          </H3>
+          <div className="buttons">
+            <SecondaryButton
+              label={getText('Cancel')}
+              onClick={() => setDeleteKey(undefined)}
+            />
+            <WarnButton
+              label={getText('Delete')}
+              onClick={() => {
+                onDelete(deleteKey)
+                setDeleteKey(undefined)
+              }}
+            />
+          </div>
+        </PopupWrapper>
+      </Popup>
     </PageForm>
   )
 }

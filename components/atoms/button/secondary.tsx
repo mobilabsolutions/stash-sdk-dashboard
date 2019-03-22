@@ -37,23 +37,23 @@ const Button = styled.button`
   > span {
     display: block;
     font-size: 14px;
-    padding: 0.75em 1em;
+    padding: 0.75em 1.5em;
   }
   background-color: ${props => props.theme.white};
-  border: solid 2px ${props => props.theme.primary.A700};
+  border: solid 1px ${props => props.theme.shade.A200};
   :hover,
   :focus {
-    background-color: ${props => props.theme.primary.A25};
+    background-color: ${props => props.theme.shade.A25};
   }
   :active {
-    background-color: ${props => props.theme.primary.A50};
+    background-color: ${props => props.theme.shade.A50};
   }
   :disabled {
     background-color: ${props => props.theme.shade.A400};
   }
   > span {
     color: ${props =>
-      props.disabled ? props.theme.shade.A400 : props.theme.primary.A700};
+      props.disabled ? props.theme.shade.A50 : props.theme.shade.A200};
   }
 `
 
