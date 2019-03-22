@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Formik, Field } from 'formik'
 
 import styled from '../../styled'
 import {
@@ -11,7 +12,7 @@ import {
   WarnButton,
   SecondaryButton
 } from '../../atoms'
-import { Popup } from '../../molecules'
+import { Popup, Input } from '../../molecules'
 import { useLocalization, useToast } from '../../../hooks'
 import PageForm from '../page_form'
 
@@ -48,11 +49,13 @@ const KeyWrapper = styled.div`
 const PopupWrapper = styled.div`
   padding: 16px;
   > .buttons {
-    padding-top: 32px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+  }
+  > .extra-padding {
+    padding-top: 32px;
   }
   > .buttons > button {
     margin-left: 16px;
@@ -94,6 +97,7 @@ export default function KeysConfiguration({
   onCreate
 }: KeysConfigurationProps) {
   const [deleteKey, setDeleteKey] = useState(undefined)
+  const [isCreating, setIsCreating] = useState(false)
   const { getText } = useLocalization()
   const { success: toastSuccess } = useToast()
 
@@ -159,7 +163,7 @@ export default function KeysConfiguration({
         <PrimaryButton
           type="button"
           label={getText('Create a new Private Key')}
-          onClick={() => onCreate('PRIVATE')}
+          onClick={() => setIsCreating(true)}
         />
       </div>
       <Popup show={!!deleteKey} onClose={() => setDeleteKey(undefined)}>
@@ -169,13 +173,14 @@ export default function KeysConfiguration({
               key: deleteKey ? deleteKey.key || deleteKey.name : ''
             })}
           </H3>
-          <div className="buttons">
+          <div className="buttons extra-padding">
             <SecondaryButton
               label={getText('Cancel')}
               onClick={() => setDeleteKey(undefined)}
             />
             <WarnButton
               label={getText('Delete')}
+              type="button"
               onClick={() => {
                 onDelete(deleteKey)
                 setDeleteKey(undefined)
@@ -183,6 +188,54 @@ export default function KeysConfiguration({
             />
           </div>
         </PopupWrapper>
+      </Popup>
+      <Popup show={isCreating} onClose={() => setIsCreating(false)}>
+        <Formik
+          initialValues={{ name: '' }}
+          validate={values => {
+            let errors: any = {}
+
+            if (!values.name) errors.name = getText('Field is required.')
+
+            return errors
+          }}
+          onSubmit={(values, actions) => {
+            actions.setSubmitting(true)
+            onCreate('PRIVATE', values.name)
+            actions.resetForm({ name: '' })
+            actions.setSubmitting(false)
+            setIsCreating(false)
+          }}
+          render={props => (
+            <PopupWrapper>
+              <Field
+                name="name"
+                render={({ field, form }) => (
+                  <>
+                    <H3>{getText('Name')}</H3>
+                    <Input
+                      field={field}
+                      form={form}
+                      placeholder={getText('Name')}
+                    />
+                  </>
+                )}
+              />
+              <div className="buttons">
+                <SecondaryButton
+                  label={getText('Cancel')}
+                  onClick={() => setIsCreating(false)}
+                />
+                <PrimaryButton
+                  label={getText('Create')}
+                  type="button"
+                  disabled={!props.isValid}
+                  onClick={() => props.submitForm()}
+                />
+              </div>
+            </PopupWrapper>
+          )}
+        />
       </Popup>
     </PageForm>
   )

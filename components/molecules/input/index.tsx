@@ -7,7 +7,7 @@ import {
   InputErrorMessage
 } from '../../atoms'
 
-function TextInput(
+function TheInput(
   {
     field: { name, value, onChange, onBlur },
     form: { touched, errors },
@@ -21,8 +21,9 @@ function TextInput(
   const localRef = useRef(undefined)
 
   const ref = inputRef || localRef
-  const hasErrors = touched[name] && errors[name]
+
   const handleClick = () => inputRef && inputRef.current.focus()
+  const hasErrors = touched[name] && errors[name]
 
   return (
     <InputFieldWrapper onClick={handleClick} className={className}>
@@ -47,4 +48,4 @@ function TextInput(
   )
 }
 
-export default forwardRef(TextInput)
+export default forwardRef(TheInput)

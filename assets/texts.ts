@@ -112,5 +112,8 @@ export default {
   'Key Copied': { de: 'Schlüssel kopiert' },
   'Are you sure you want to remove the key %{key}?': {
     de: 'Möchten Sie den Schlüssel %{key} wirklich entfernen?'
-  }
+  },
+  Delete: { de: 'Löschen' },
+  Create: { de: 'Anlegen' },
+  Name: { de: 'Name' }
 }
