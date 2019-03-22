@@ -7,7 +7,7 @@ import {
   Body,
   PrimaryButton
 } from '../../atoms'
-import { useLocalization } from '../../../hooks'
+import { useLocalization, useToast } from '../../../hooks'
 import PageForm from '../page_form'
 
 const KeysWrapper = styled.div`
@@ -71,6 +71,7 @@ export default function KeysConfiguration({
   onCreate
 }: KeysConfigurationProps) {
   const { getText } = useLocalization()
+  const { success: toastSuccess } = useToast()
 
   const publicKeys = keys.filter(item => item.type === 'PUBLIC')
   const privateKeys = keys.filter(item => item.type === 'PRIVATE')
@@ -87,7 +88,12 @@ export default function KeysConfiguration({
               <KeyWrapper key={keyEntity.id}>
                 <KeyIcon />
                 <Body className="key">{keyEntity.key}</Body>
-                <CopyIcon onClick={() => copyToClipboard(keyEntity.key)} />
+                <CopyIcon
+                  onClick={() => {
+                    copyToClipboard(keyEntity.key)
+                    toastSuccess(getText('Key Copied'))
+                  }}
+                />
                 <DeleteIcon onClick={() => onDelete(keyEntity)} />
               </KeyWrapper>
             ))

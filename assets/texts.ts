@@ -108,5 +108,6 @@ export default {
   },
   'Configuration changed.': { de: 'Konfiguration geändert' },
   'Password changed.': { de: 'Password geändert' },
-  'Save failed.': { de: 'Speichern fehlgeschlagen' }
+  'Save failed.': { de: 'Speichern fehlgeschlagen' },
+  'Key Copied': { de: 'Schlüssel kopiert' }
 }
