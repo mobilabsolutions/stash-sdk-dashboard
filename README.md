@@ -16,7 +16,7 @@ Current state is just a Prototype
 - Refund of "approved" Transactions
 - multilingual (currently English / German)
 
-[Current Version](https://pdd.mblb.net)
+[Current Version](https://payment-dev.mblb.net)
 
 ## Developer Instructions
 
