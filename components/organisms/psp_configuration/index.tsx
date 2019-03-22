@@ -23,7 +23,8 @@ const LeftRight = styled.div`
   }
   > .right {
     display: flex;
-    flex: 1;
+    flex: 0;
+    min-width: 130px;
     flex-direction: column;
     padding-top: 12px;
   }
