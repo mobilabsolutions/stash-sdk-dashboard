@@ -15,13 +15,14 @@ import {
 import { Popup, Input } from '../../molecules'
 import { useLocalization, useToast } from '../../../hooks'
 import PageForm from '../page_form'
+import copyToClipboard from './copy_to_clipboard'
 
 const KeysWrapper = styled.div`
   margin-top: 16px;
   margin-bottom: 16px;
 `
 
-const KeyWrapper = styled.div`
+const PublicKeyWrapper = styled.div`
   margin-top: 16px;
   margin-bottom: 16px;
   display: flex;
@@ -30,13 +31,7 @@ const KeyWrapper = styled.div`
     margin-left: 24px;
     margin-right: 24px;
     display: block;
-    min-width: 250px;
-  }
-  .key {
     min-width: 265px;
-  }
-  .name {
-    min-width: 288px;
   }
   > svg:not(:first-child) {
     cursor: pointer;
@@ -66,17 +61,38 @@ const PopupWrapper = styled.div`
   }
 `
 
-const copyToClipboard = (text: string) => {
-  const tempElement = document.createElement('textarea')
-  tempElement.value = text
-  tempElement.setAttribute('readonly', '')
-  tempElement.style.position = 'absolute'
-  tempElement.style.left = '-9999px'
-  document.body.appendChild(tempElement)
-  tempElement.select()
-  document.execCommand('copy')
-  document.body.removeChild(tempElement)
-}
+const PrivateKeyWrapper = styled.div`
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  .name,
+  .key {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .name > span,
+  .key > span {
+    margin-left: 24px;
+    margin-right: 24px;
+    display: block;
+    min-width: 265px;
+  }
+  .name > svg,
+  .key > svg {
+    cursor: pointer;
+    margin-left: 24px;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .instruction {
+    display: block;
+    margin-left: 24px;
+  }
+`
 
 interface KeyEntity {
   id: number
@@ -113,9 +129,9 @@ export default function KeysConfiguration({
             <Body>{getText('there is no public key generated yet')}</Body>
           ) : (
             publicKeys.map(keyEntity => (
-              <KeyWrapper key={keyEntity.id}>
+              <PublicKeyWrapper key={keyEntity.id}>
                 <KeyIcon />
-                <Body className="key">{keyEntity.key}</Body>
+                <Body>{keyEntity.key}</Body>
                 <CopyIcon
                   onClick={() => {
                     copyToClipboard(keyEntity.key)
@@ -123,7 +139,7 @@ export default function KeysConfiguration({
                   }}
                 />
                 <DeleteIcon onClick={() => setDeleteKey(keyEntity)} />
-              </KeyWrapper>
+              </PublicKeyWrapper>
             ))
           )}
         </KeysWrapper>
@@ -140,23 +156,30 @@ export default function KeysConfiguration({
             <Body>{getText('there is no private key generated yet')}</Body>
           ) : (
             privateKeys.map(keyEntity => (
-              <KeyWrapper key={keyEntity.id}>
+              <PrivateKeyWrapper key={keyEntity.id}>
                 <KeyIcon />
-                <Body className={keyEntity.key ? 'key' : 'name'}>
-                  {keyEntity.key || keyEntity.name}
-                </Body>
+                <div className="wrapper">
+                  <div className="name">
+                    <Body>{keyEntity.name}</Body>
+                    <DeleteIcon onClick={() => setDeleteKey(keyEntity)} />
+                  </div>
+                  {keyEntity.key && (
+                    <div className="key">
+                      <Body>{keyEntity.key}</Body>
+                      <CopyIcon
+                        onClick={() => copyToClipboard(keyEntity.key)}
+                      />
+                    </div>
+                  )}
+                </div>
                 {keyEntity.key && (
-                  <CopyIcon onClick={() => copyToClipboard(keyEntity.key)} />
-                )}
-                <DeleteIcon onClick={() => setDeleteKey(keyEntity)} />
-                {keyEntity.key && (
-                  <Body>
+                  <Body className="instruction">
                     {getText(
                       'Copy this key now because it cannot be recovered in the future.'
                     )}
                   </Body>
                 )}
-              </KeyWrapper>
+              </PrivateKeyWrapper>
             ))
           )}
         </KeysWrapper>
