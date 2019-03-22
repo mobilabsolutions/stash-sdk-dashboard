@@ -1,13 +1,18 @@
 import styled from '../../styled'
 
 const Svg = styled.svg`
-  cursor: pointer;
-  fill: ${props => props.theme.shade.A300};
+  .enable {
+    cursor: ${props => (props.onClick ? 'pointer' : 'default')};
+    fill: ${props => props.theme.shade.A300};
+  }
   :hover {
     fill: ${props => props.theme.primary.A600};
   }
   :active {
     fill: ${props => props.theme.primary.A700};
+  }
+  .disable {
+    fill: ${props => props.theme.shade.A100};
   }
 `
 
