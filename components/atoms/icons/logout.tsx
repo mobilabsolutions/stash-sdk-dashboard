@@ -13,6 +13,7 @@ const Svg = styled.svg`
   }
   .disable {
     fill: ${props => props.theme.shade.A100};
+    cursor: not-allowed;
   }
 `
 
