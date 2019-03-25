@@ -16,8 +16,8 @@ import { useLocalization, useToast } from '../../../hooks'
 import PageForm from '../page_form'
 import copyToClipboard from './copy_to_clipboard'
 import {
-  PrivateKeyWrapper,
-  PublicKeyWrapper,
+  SecretKeyWrapper,
+  PublishableKeyWrapper,
   PopupWrapper,
   KeysWrapper
 } from './styled'
@@ -45,19 +45,19 @@ export default function KeysConfiguration({
   const { getText } = useLocalization()
   const { success: toastSuccess } = useToast()
 
-  const publicKeys = keys.filter(item => item.type === 'PUBLIC')
-  const privateKeys = keys.filter(item => item.type === 'PRIVATE')
+  const publishableKeys = keys.filter(item => item.type === 'PUBLISHABLE')
+  const secretKeys = keys.filter(item => item.type === 'SECRET')
 
   return (
     <PageForm title={getText('Keys')}>
       <div>
-        <H3>{getText('Public Keys')}</H3>
+        <H3>{getText('Publishable Keys')}</H3>
         <KeysWrapper>
-          {publicKeys.length === 0 ? (
-            <Body>{getText('there is no public key generated yet')}</Body>
+          {publishableKeys.length === 0 ? (
+            <Body>{getText('there is no publishable key generated yet')}</Body>
           ) : (
-            publicKeys.map(keyEntity => (
-              <PublicKeyWrapper key={keyEntity.id}>
+            publishableKeys.map(keyEntity => (
+              <PublishableKeyWrapper key={keyEntity.id}>
                 <KeyIcon />
                 <Body>{keyEntity.key}</Body>
                 <CopyIcon
@@ -67,24 +67,24 @@ export default function KeysConfiguration({
                   }}
                 />
                 <DeleteIcon onClick={() => setDeleteKey(keyEntity)} />
-              </PublicKeyWrapper>
+              </PublishableKeyWrapper>
             ))
           )}
         </KeysWrapper>
         <PrimaryButton
           type="button"
-          label={getText('Create a new Public Key')}
-          onClick={() => onCreate('PUBLIC')}
+          label={getText('Create a new publishable Key')}
+          onClick={() => onCreate('PUBLISHABLE')}
         />
       </div>
       <div style={{ marginTop: '32px' }}>
-        <H3>{getText('Private Keys')}</H3>
+        <H3>{getText('Secret Keys')}</H3>
         <KeysWrapper>
-          {privateKeys.length === 0 ? (
-            <Body>{getText('there is no private key generated yet')}</Body>
+          {secretKeys.length === 0 ? (
+            <Body>{getText('there is no secret key generated yet')}</Body>
           ) : (
-            privateKeys.map(keyEntity => (
-              <PrivateKeyWrapper key={keyEntity.id}>
+            secretKeys.map(keyEntity => (
+              <SecretKeyWrapper key={keyEntity.id}>
                 <KeyIcon />
                 <div className="wrapper">
                   <div className="name">
@@ -107,13 +107,13 @@ export default function KeysConfiguration({
                     )}
                   </Body>
                 )}
-              </PrivateKeyWrapper>
+              </SecretKeyWrapper>
             ))
           )}
         </KeysWrapper>
         <PrimaryButton
           type="button"
-          label={getText('Create a new Private Key')}
+          label={getText('Create a new secret Key')}
           onClick={() => setIsCreating(true)}
         />
       </div>
@@ -152,7 +152,7 @@ export default function KeysConfiguration({
           }}
           onSubmit={(values, actions) => {
             actions.setSubmitting(true)
-            onCreate('PRIVATE', values.name)
+            onCreate('SECRET', values.name)
             actions.resetForm({ name: '' })
             actions.setSubmitting(false)
             setIsCreating(false)

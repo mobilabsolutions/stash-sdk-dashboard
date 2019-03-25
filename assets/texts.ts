@@ -76,8 +76,8 @@ export default {
   Key: { de: 'Schlüssel' },
   Keys: { de: 'Schlüssel' },
   Save: { de: 'Speichern' },
-  'Public Key': { de: 'öffentlicher Schlüssel' },
-  'Private Key': { de: 'privater Schlüssel' },
+  'Publishable Key': { de: 'öffentlicher Schlüssel' },
+  'Secret Key': { de: 'privater Schlüssel' },
   'Old Password': { de: 'Altes Password' },
   'New Password': { de: 'Neues Password' },
   'Confirm new Password': { de: 'Neues Password bestätigen' },
@@ -87,14 +87,16 @@ export default {
   'Please enter your new Password.': {
     de: 'Bitte geb Dein neues Passwort ein'
   },
-  'Public Keys': { de: 'Öffentlicher Schlüssel' },
-  'Create a new Public Key': { de: 'Erzeuge neuen öffentlichen Schlüssel ' },
-  'Private Keys': { de: 'Privater Schlüssel' },
-  'Create a new Private Key': { de: 'Erzeuge neuen privaten Schlüssel ' },
-  'there is no private key generated yet': {
+  'Publishable Keys': { de: 'Öffentlicher Schlüssel' },
+  'Create a new publishable Key': {
+    de: 'Erzeuge neuen öffentlichen Schlüssel '
+  },
+  'Secret Keys': { de: 'Privater Schlüssel' },
+  'Create a new secret Key': { de: 'Erzeuge neuen privaten Schlüssel ' },
+  'there is no secret key generated yet': {
     de: 'Es wurde noch kein privater Schlüssel erzeugt'
   },
-  'there is no public key generated yet': {
+  'there is no publishable key generated yet': {
     de: 'Es wurde noch kein öffentlicher Schlüssel erzeugt'
   },
   'Copy this key now because it cannot be recovered in the future.': {

@@ -5,7 +5,7 @@ export const KeysWrapper = styled.div`
   margin-bottom: 16px;
 `
 
-export const PublicKeyWrapper = styled.div`
+export const PublishableKeyWrapper = styled.div`
   margin-top: 16px;
   margin-bottom: 16px;
   display: flex;
@@ -44,7 +44,7 @@ export const PopupWrapper = styled.div`
   }
 `
 
-export const PrivateKeyWrapper = styled.div`
+export const SecretKeyWrapper = styled.div`
   margin-top: 16px;
   margin-bottom: 16px;
   display: flex;

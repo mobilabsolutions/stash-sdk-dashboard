@@ -39,12 +39,12 @@ export default function PaypalConfiguration(props: FormikProps<PspConfig>) {
             name="paypalPublicKey"
             render={({ field, form }) => (
               <>
-                <H3>{getText('Public Key')}</H3>
+                <H3>{getText('Publishable Key')}</H3>
                 <IconInput
                   field={field}
                   form={form}
                   icon={<AccountIcon />}
-                  placeholder={getText('Public Key')}
+                  placeholder={getText('Publishable Key')}
                 />
               </>
             )}
@@ -53,12 +53,12 @@ export default function PaypalConfiguration(props: FormikProps<PspConfig>) {
             name="paypalPrivateKey"
             render={({ field, form }) => (
               <>
-                <H3>{getText('Private Key')}</H3>
+                <H3>{getText('Secret Key')}</H3>
                 <IconInput
                   field={field}
                   form={form}
                   icon={<KeyIcon />}
-                  placeholder={getText('Private Key')}
+                  placeholder={getText('Secret Key')}
                 />
               </>
             )}
