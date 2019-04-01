@@ -9,7 +9,7 @@ RUN npm ci
 
 COPY . /usr/src/app
 
-RUN npm test
+RUN npm run test:ci
 RUN npm run build
 
 ENTRYPOINT ["npm", "start"]

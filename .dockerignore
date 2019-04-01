@@ -1,5 +1,6 @@
 .git/*
 .next/*
+.dist/*
 dist/*
 node_modules/*
 scripts/*
