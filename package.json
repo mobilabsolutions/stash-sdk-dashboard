@@ -22,7 +22,7 @@
     "jest:watch": "NODE_ENV=test jest --watch",
     "jest:update": "NODE_ENV=test jest -u",
     "updtr": "updtr --save-exact",
-    "clean": "rm -rf .next && rm -rf dist"
+    "clean": "rm -rf .next && rm -rf .dist"
   },
   "repository": {
     "type": "git",
