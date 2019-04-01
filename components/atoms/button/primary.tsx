@@ -63,13 +63,21 @@ const Button = styled.button<StyledButtonProps>`
   }
 `
 
+interface ButtonProps {
+  label: string
+  isFullSize?: boolean
+  type?: 'submit' | 'reset' | 'button'
+  disabled?: boolean
+  onClick?: () => void
+}
+
 export default function PrimaryButton({
   label,
   isFullSize = false,
   type = 'submit',
   disabled = false,
-  onClick = null
-}) {
+  onClick
+}: ButtonProps) {
   return (
     <Button
       isFullSize={isFullSize}

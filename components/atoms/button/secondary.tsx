@@ -57,12 +57,19 @@ const Button = styled.button`
   }
 `
 
+interface ButtonProps {
+  label: string
+  type?: 'submit' | 'reset' | 'button'
+  disabled?: boolean
+  onClick?: () => void
+}
+
 export default function SecondaryButton({
   label,
   type = 'button',
   disabled = false,
   onClick
-}) {
+}: ButtonProps) {
   return (
     <Button
       type={type}

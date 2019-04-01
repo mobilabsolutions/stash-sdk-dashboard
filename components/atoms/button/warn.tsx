@@ -59,12 +59,19 @@ const Button = styled.button`
   }
 `
 
+interface ButtonProps {
+  label: string
+  type?: 'submit' | 'reset' | 'button'
+  disabled?: boolean
+  onClick?: () => void
+}
+
 export default function WarnButton({
   label,
   type = 'submit',
   disabled = false,
   onClick
-}) {
+}: ButtonProps) {
   return (
     <Button
       type={type}
