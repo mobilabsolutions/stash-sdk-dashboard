@@ -22,7 +22,8 @@
     "jest:watch": "NODE_ENV=test jest --watch",
     "jest:update": "NODE_ENV=test jest -u",
     "updtr": "updtr --save-exact",
-    "clean": "rm -rf .next && rm -rf .dist"
+    "clean": "rm -rf .next && rm -rf .dist",
+    "clean:install": "rm -rf node_modules/ && rm package-lock.json && npm install"
   },
   "repository": {
     "type": "git",
