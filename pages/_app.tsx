@@ -20,7 +20,6 @@ export default class extends App<Props> {
 
     return {
       pageProps,
-      Component,
       context: {
         pathname: ctx.pathname,
         query: ctx.query,
