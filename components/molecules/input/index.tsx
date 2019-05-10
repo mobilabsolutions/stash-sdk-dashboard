@@ -4,6 +4,7 @@ import {
   Input,
   InputFieldWrapper,
   InputWrapper,
+  H3,
   InputErrorMessage
 } from '../../atoms'
 
@@ -13,6 +14,7 @@ function TheInput(
     form: { touched, errors },
     placeholder = '',
     className = '',
+    title = '',
     autoFocus = false
   },
   inputRef: any
@@ -27,6 +29,7 @@ function TheInput(
 
   return (
     <InputFieldWrapper onClick={handleClick} className={className}>
+      {!!title && <H3>{title}</H3>}
       <InputWrapper focused={focused} hasErrors={hasErrors}>
         <Input
           ref={ref}
