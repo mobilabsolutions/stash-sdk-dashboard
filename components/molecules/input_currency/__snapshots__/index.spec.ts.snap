@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Should Render 1`] = `
+<div
+  className="field_wrapper-n32k2e-0 irXinp"
+  onClick={[Function]}
+>
+  <div
+    className="input_wrapper-sc-15hmhfy-0 duFQAu"
+  >
+    <input
+      autoFocus={false}
+      className="input_currency__HtmlInput-obstnl-0 diptxO"
+      disabled={false}
+      name="test"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseUp={[Function]}
+      placeholder=""
+      type="text"
+      value="€12,345.00"
+    />
+  </div>
+</div>
+`;
