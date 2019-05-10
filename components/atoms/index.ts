@@ -21,6 +21,8 @@ export { default as DownIcon } from './icons/down'
 export { default as UpIcon } from './icons/up'
 export { default as VisibilityIcon } from './icons/visibility'
 export { default as InvisibilityIcon } from './icons/invisibility'
+export { default as More } from './icons/more'
+export { default as Close } from './icons/close'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
