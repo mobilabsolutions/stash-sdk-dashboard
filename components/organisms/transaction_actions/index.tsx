@@ -35,6 +35,7 @@ export default function TransactionActions({ status, onClick }) {
     <Popover
       isOpen={show}
       position={'top'}
+      align={'end'}
       onClickOutside={() => setShow(false)}
       content={({ position, targetRect, popoverRect }) => (
         <div>
@@ -43,6 +44,10 @@ export default function TransactionActions({ status, onClick }) {
             targetRect={targetRect}
             popoverRect={popoverRect}
             arrowColor={'white'}
+            arrowStyle={{
+              bottom: '1px',
+              boxShadow: '0 4px 10px 0 #ededed'
+            }}
             arrowSize={10}
           >
             <ActionContainer>
