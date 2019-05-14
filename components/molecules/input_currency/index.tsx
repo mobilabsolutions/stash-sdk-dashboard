@@ -62,7 +62,7 @@ function TheInput(
       <InputWrapper focused={focused} hasErrors={hasErrors}>
         <NumberFormat
           ref={ref}
-          customInput={HtmlInput}
+          customInput={p => <HtmlInput {...p} />}
           name={name}
           defaultValue={value}
           type="text"
