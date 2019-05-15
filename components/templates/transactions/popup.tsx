@@ -25,7 +25,7 @@ export default ({
     }
   }
 
-  if (action === 'capture') {
+  if (action === 'refund') {
     return (
       <ActionPopup show={show} onClose={onClose} header={getHeader(action)}>
         <RefundForm
