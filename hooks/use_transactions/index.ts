@@ -9,7 +9,7 @@ const isClient = typeof window === 'object'
 const getInitValue = () => {
   return {
     data: [],
-    loadingCount: 0,
+    isLoading: false,
     startDate: moment()
       .add(-1, 'months')
       .hours(0)
@@ -74,7 +74,7 @@ export const useTransactions = () => {
           ),
           totalCount: response.result.totalCount,
           error: null,
-          loadingCount: prevState.loadingCount - 1
+          isLoading: false
         }))
       } catch (error) {
         if (error && error.statusCode === 401) {
@@ -85,14 +85,14 @@ export const useTransactions = () => {
           ...prevState,
           data: [],
           error,
-          loadingCount: prevState.loadingCount - 1
+          isLoading: false
         }))
       }
     }
 
     setState(prevState => ({
       ...prevState,
-      loadingCount: prevState.loadingCount + 1,
+      isLoading: true,
       error: null
     }))
 
@@ -182,7 +182,7 @@ export const useTransactions = () => {
 
   return {
     data: state.data,
-    isLoading: state.loadingCount > 0,
+    isLoading: state.isLoading,
     startDate: state.startDate,
     endDate: state.endDate,
     status: state.status,
