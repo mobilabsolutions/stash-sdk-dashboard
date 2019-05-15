@@ -1,7 +1,6 @@
 const formatOptions = {
-  weekday: 'long',
   year: 'numeric',
-  month: 'long',
+  month: 'numeric',
   day: 'numeric',
   hour: 'numeric',
   minute: 'numeric',
