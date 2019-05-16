@@ -37,7 +37,6 @@ const actionCreator = (getUrl: Function) =>
               isLoading: false
             }))
             typeof onError === 'function' && onError(error, params)
-            reject(error)
           })
       })
     }
@@ -49,19 +48,21 @@ const actionCreator = (getUrl: Function) =>
 
 export function useRefund(onSuccess?: Function, onError?: Function) {
   return actionCreator(
-    (params: Params) => `/authorization/${params.transactionId}/refund`
+    (params: Params) => `/api/v1/authorization/${params.transactionId}/refund`
   )(onSuccess, onError)
 }
 
 export function useCapture(onSuccess?: Function, onError?: Function) {
   return actionCreator(
-    (params: Params) => `/authorization/${params.transactionId}/capture`
+    (params: Params) =>
+      `/api/v1/preauthorization/${params.transactionId}/capture`
   )(onSuccess, onError)
 }
 
 export function useReverse(onSuccess?: Function, onError?: Function) {
   return actionCreator(
-    (params: Params) => `/authorization/${params.transactionId}/reverse`
+    (params: Params) =>
+      `/api/v1/preauthorization/${params.transactionId}/reverse`
   )(onSuccess, onError)
 }
 
