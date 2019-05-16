@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Close({ width = 20, height = 20, ...props }) {
+export default function Warn({ width = 20, height = 20, ...props }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

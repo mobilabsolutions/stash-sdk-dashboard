@@ -1,6 +1,7 @@
 export { default as PrimaryButton } from './button/primary'
 export { default as SecondaryButton } from './button/secondary'
 export { default as WarnButton } from './button/warn'
+export { default as LoadingButton } from './button/loading'
 
 export { default as Link } from './link'
 export { default as Overlay } from './container/overlay'
@@ -37,6 +38,8 @@ export { default as Sepa } from './icons/sepa'
 export { default as UnionPay } from './icons/unionpay'
 export { default as Visa } from './icons/visa'
 export { default as Warn } from './icons/warn'
+export { default as Loading } from './icons/loading'
+export { default as Alert } from './icons/alert'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
