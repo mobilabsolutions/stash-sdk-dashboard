@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, Formik, Form } from 'formik'
-import { PrimaryButton, SecondaryButton } from '../../atoms'
+import { SecondaryButton, LoadingButton } from '../../atoms'
 import { Radio, Input, InputCurrency } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import styled from '../../styled'
@@ -47,6 +47,7 @@ const ContentContainer = styled.div`
 export default function RefundForm({
   onCancel,
   initialRefund,
+  isLoading = false,
   onSubmit,
   children,
   currencyId
@@ -61,7 +62,11 @@ export default function RefundForm({
       validate={values => {
         let errors = {}
         if (values.refund > initialRefund)
-          Object.assign(errors, { refund: getText('Error') })
+          Object.assign(errors, {
+            refund: getText('Amount limit is %{amount}', {
+              amount: initialRefund
+            })
+          })
         if (new RegExp('/^[a-z0-9]+$/i').test(values.reason))
           Object.assign(errors, { reason: getText('Error') })
         return errors
@@ -114,8 +119,13 @@ export default function RefundForm({
             {children}
           </ContentContainer>
           <ButtonContainer>
-            <SecondaryButton label={getText('Cancel')} onClick={onCancel} />
-            <PrimaryButton
+            <SecondaryButton
+              label={getText('Cancel')}
+              onClick={onCancel}
+              disabled={isLoading}
+            />
+            <LoadingButton
+              isLoading={isLoading}
               label={getText('Refund the Transaction')}
               disabled={!isValid}
             />
