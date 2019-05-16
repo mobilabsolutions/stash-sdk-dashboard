@@ -54,6 +54,7 @@ export function WarnPopup({
   children,
   onAction,
   header,
+  PrimaryButtonEl = PrimaryButton,
   action
 }) {
   const { getText } = useLocalization()
@@ -63,9 +64,8 @@ export function WarnPopup({
       {!!children && <ContentContainer>{children}</ContentContainer>}
       <ButtonContainer>
         <SecondaryButton label={getText('Cancel')} onClick={onClose} />
-        {typeof onAction === 'function' && (
-          <PrimaryButton label={action} onClick={onAction} />
-        )}
+        {typeof onAction === 'function' &&
+          PrimaryButtonEl({ label: action, onClick: onAction })}
       </ButtonContainer>
     </ActionPopup>
   )
