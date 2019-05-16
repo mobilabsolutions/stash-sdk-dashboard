@@ -97,6 +97,7 @@ export default ({
         ofText={getText('of')}
         rowsText={getText('rows')}
         sortable={false}
+        resizable={false}
         showPageSizeOptions={false}
         onPageChange={setPage}
         page={selectedPage}
