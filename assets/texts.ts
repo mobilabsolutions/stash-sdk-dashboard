@@ -133,12 +133,22 @@ export default {
   Partial: {},
   Full: {},
   'Refund the Transaction': {},
+  'Capture the Transaction': { de: 'Erfassen Sie die Transaktion' },
   Description: {},
   'Are you sure you want to capture this transaction?': {},
   capture: { en: 'Capture' },
   'Are you sure you want to reverse the transaction?': {},
   reverse: { en: 'Reverse' },
   'Amount limit is %{amount}': { de: 'Betragslimit ist %{amount}' },
+  'Capture unsuccessful. Please try again.': {
+    de: 'Erfassen nicht erfolgreich. Bitte versuche es erneut.'
+  },
+  'Reverse unsuccessful. Please try again.': {
+    de: 'Reverse nicht erfolgreich. Bitte versuche es erneut.'
+  },
+  'Refund unsuccessful. Please try again.': {
+    de: 'Refund nicht erfolgreich. Bitte versuche es erneut.'
+  },
   'Refund take 5-10 days to appear on a customer´s statement.': {
     de:
       'Es dauert 5-10 Tage, bis die Rückerstattung auf der Kundenabrechnung erscheint.'

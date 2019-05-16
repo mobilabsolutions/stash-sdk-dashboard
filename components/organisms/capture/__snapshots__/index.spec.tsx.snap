@@ -1,0 +1,466 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaptureForm Should Render 1`] = `
+<form
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="capture__ContentContainer-sc-1mcywcy-1 eplURn"
+  >
+    <div
+      className="field_wrapper-n32k2e-0 irXinp"
+      onClick={[Function]}
+    >
+      <h3
+        className="h3-sc-1przhcr-0 bqBPGG"
+      >
+        Description
+      </h3>
+      <div
+        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+      >
+        <input
+          autoFocus={false}
+          className="input__HtmlInput-rcagn3-0 konMqF"
+          name="reason"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          placeholder="Description"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="capture__ButtonContainer-sc-1mcywcy-0 bzXJLs"
+  >
+    <button
+      className="secondary__Button-j7mjyk-0 kgyVVR"
+      disabled={false}
+      onClick={null}
+      type="button"
+    >
+      <span>
+        Cancel
+      </span>
+    </button>
+    <button
+      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+      disabled={false}
+      label="Capture the Transaction"
+      onClick={null}
+      type="submit"
+    >
+      <span>
+        Capture the Transaction
+      </span>
+    </button>
+  </div>
+</form>
+`;
+
+exports[`CaptureForm Should use loading status 1`] = `
+<form
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="capture__ContentContainer-sc-1mcywcy-1 eplURn"
+  >
+    <div
+      className="field_wrapper-n32k2e-0 irXinp"
+      onClick={[Function]}
+    >
+      <h3
+        className="h3-sc-1przhcr-0 bqBPGG"
+      >
+        Description
+      </h3>
+      <div
+        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+      >
+        <input
+          autoFocus={false}
+          className="input__HtmlInput-rcagn3-0 konMqF"
+          name="reason"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          placeholder="Description"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="capture__ButtonContainer-sc-1mcywcy-0 bzXJLs"
+  >
+    <button
+      className="secondary__Button-j7mjyk-0 hSUMXm"
+      disabled={true}
+      onClick={null}
+      type="button"
+    >
+      <span>
+        Cancel
+      </span>
+    </button>
+    <button
+      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
+      disabled={true}
+      label="Capture the Transaction"
+      onClick={null}
+      type="submit"
+    >
+      <svg
+        height={24}
+        preserveAspectRatio="xMidYMid"
+        viewBox="0 0 100 100"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          transform="rotate(0 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.9375s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(22.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.875s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(45 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.8125s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(67.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.75s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(90 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.6875s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(112.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.625s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(135 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.5625s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(157.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.5s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(180 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.4375s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(202.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.375s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(225 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.3125s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(247.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.25s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(270 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.1875s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(292.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.125s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(315 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="-0.0625s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+        <g
+          transform="rotate(337.5 50 50)"
+        >
+          <rect
+            fill="#ffffff"
+            height="14"
+            rx="2"
+            ry="2"
+            width="6"
+            x="47"
+            y="18"
+          >
+            <animate
+              attributeName="opacity"
+              begin="0s"
+              dur="1s"
+              repeatCount="indefinite"
+              values="1;0"
+            />
+          </rect>
+        </g>
+      </svg>
+    </button>
+  </div>
+</form>
+`;

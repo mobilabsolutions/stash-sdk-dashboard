@@ -1,6 +1,6 @@
 import { useLocalization } from '../../../hooks'
 import { WarnPopup, ActionPopup } from '../../molecules'
-import { RefundForm } from '../../organisms'
+import { RefundForm, CaptureForm } from '../../organisms'
 import { Warn, LoadingButton, Alert } from '../../atoms'
 import styled from '../../styled'
 
@@ -69,6 +69,25 @@ export default ({
             </span>
           </div>
         </RefundForm>
+      </ActionPopup>
+    )
+  }
+
+  if (action === 'capture') {
+    return (
+      <ActionPopup show={show} onClose={onClose} header={getHeader(action)}>
+        {hasError && (
+          <ErrorMessage>
+            {getText('Capture unsuccessful. Please try again.')}
+          </ErrorMessage>
+        )}
+        <CaptureForm
+          onCancel={onClose}
+          isLoading={isLoading}
+          onSubmit={values => {
+            onAction(action, values)
+          }}
+        />
       </ActionPopup>
     )
   }
