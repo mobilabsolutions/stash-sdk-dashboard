@@ -1,6 +1,7 @@
 import { useLocalization } from '../../../hooks'
 import { WarnPopup, ActionPopup } from '../../molecules'
 import { RefundForm } from '../../organisms'
+import { Warn } from '../../atoms'
 
 export default ({
   onClose,
@@ -35,7 +36,16 @@ export default ({
           onSubmit={values => {
             onAction(action, values)
           }}
-        />
+        >
+          <div style={{ display: 'flex' }}>
+            <Warn />
+            <span style={{ padding: '0px 5px' }}>
+              {getText(
+                'Refund take 5-10 days to appear on a costumer´s statement.'
+              )}
+            </span>
+          </div>
+        </RefundForm>
       </ActionPopup>
     )
   }

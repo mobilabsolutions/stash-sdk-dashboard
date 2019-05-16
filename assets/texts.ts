@@ -137,5 +137,9 @@ export default {
   'Are you sure you want to capture this transaction?': {},
   capture: { en: 'Capture' },
   'Are you sure you want to reverse the transaction?': {},
-  reverse: { en: 'Reverse' }
+  reverse: { en: 'Reverse' },
+  'Refund take 5-10 days to appear on a customer´s statement.': {
+    de:
+      'Es dauert 5-10 Tage, bis die Rückerstattung auf der Kundenabrechnung erscheint.'
+  }
 }

@@ -48,6 +48,7 @@ export default function RefundForm({
   onCancel,
   initialRefund,
   onSubmit,
+  children,
   currencyId
 }) {
   const { getText } = useLocalization()
@@ -110,6 +111,7 @@ export default function RefundForm({
                 />
               )}
             />
+            {children}
           </ContentContainer>
           <ButtonContainer>
             <SecondaryButton label={getText('Cancel')} onClick={onCancel} />
