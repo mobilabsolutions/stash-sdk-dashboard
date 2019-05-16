@@ -4,6 +4,7 @@ import { testRender } from '../../../test_utils'
 import PrimaryButton from './primary'
 import SecondaryButton from './secondary'
 import WarnButton from './warn'
+import LoadingButton from './loading'
 
 it('PrimaryButton Should Render', () =>
   testRender(PrimaryButton, { lable: 'Login' }))
@@ -25,3 +26,9 @@ it('WarnButton Should Render', () =>
 
 it('Disabled WarnButton Should Render', () =>
   testRender(WarnButton, { lable: 'Cancel', disabled: true }))
+
+it('LoadingButton with loading state Should Render', () =>
+  testRender(LoadingButton, { label: 'Accept', isLoading: true }))
+
+it('LoadingButton with not loading state Should Render', () =>
+  testRender(LoadingButton, { label: 'Accept', isLoading: false }))

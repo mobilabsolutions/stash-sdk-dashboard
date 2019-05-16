@@ -6,7 +6,7 @@ interface StyledButtonProps {
   isFullSize: boolean
 }
 
-const Button = styled.button<StyledButtonProps>`
+export const Button = styled.button<StyledButtonProps>`
   border-radius: 20px;
   border-width: 0;
   height: 40px;
