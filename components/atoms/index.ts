@@ -36,6 +36,7 @@ export { default as PayPal } from './icons/paypal'
 export { default as Sepa } from './icons/sepa'
 export { default as UnionPay } from './icons/unionpay'
 export { default as Visa } from './icons/visa'
+export { default as Warn } from './icons/warn'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
