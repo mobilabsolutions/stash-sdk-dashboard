@@ -1,8 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`"localizedAmount" should return all properties for a currency 1`] = `
+Object {
+  "decimal": ",",
+  "group": ".",
+  "symbol": "€",
+  "symbolAtEnd": true,
+  "value": "12.345,00 €",
+}
+`;
+
+exports[`"localizedAmount" should return all properties for a currency 2`] = `
+Object {
+  "decimal": ".",
+  "group": ",",
+  "symbol": "€",
+  "symbolAtEnd": false,
+  "value": "€12,345.00",
+}
+`;
+
+exports[`Should "formatAmount" in "de" 1`] = `
+<span>
+  12.345,00 €
+</span>
+`;
+
+exports[`Should "formatAmount" in "en" 1`] = `
+<span>
+  €12,345.00
+</span>
+`;
+
 exports[`Should "formatNumber" in "de" 1`] = `
 <span>
-  123.45
+  123,45
 </span>
 `;
 

@@ -15,3 +15,6 @@ export { default as PaypalConfiguration } from './paypal_configuration'
 
 export { default as Pagination } from './pagination'
 export { default as Filter } from './filter'
+export { default as TransactionActions } from './transaction_actions'
+export { default as RefundForm } from './refund'
+export { default as PaymentMethod } from './payment_method'

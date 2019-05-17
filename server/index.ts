@@ -11,6 +11,24 @@ process.env.TZ = 'UTC'
 
 const server = fastify({ logger: true })
 
+function polyfillIntl() {
+  const areIntlLocalesSupported = require('intl-locales-supported')
+  const localesMyAppSupports = ['en', 'de']
+
+  if (global.Intl) {
+    if (!areIntlLocalesSupported(localesMyAppSupports)) {
+      const IntlPolyfill = require('intl')
+      Intl.NumberFormat = IntlPolyfill.NumberFormat
+      Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat
+    }
+  } else {
+    // No `Intl`, so use and load the polyfill.
+    global.Intl = require('intl')
+  }
+}
+
+polyfillIntl()
+
 async function main() {
   const nextApp = nextJs({ dev: IS_DEVELOPMENT, quiet: !IS_DEVELOPMENT })
   const handle = nextApp.getRequestHandler()

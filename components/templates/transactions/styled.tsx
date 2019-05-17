@@ -44,23 +44,35 @@ export const TransactionId = styled.p`
   flex: 1 1 25%;
 `
 
-const getStatusBackgroundColor = props => {
+const getStatusColor = props => {
   switch (props.status) {
-    case 'bs_initiated':
-      return props.theme.primary.A700
-    case 'approved':
-      return props.theme.primary.A800
-    case 'declined':
-      return props.theme.shade.A800
-    case 'cancelled':
-      return props.theme.shade.A700
+    case 'captured':
+    case 'pre-Authorised':
+    case 'authorised':
+      return '#00be41'
+    case 'fail':
+      return props.theme.red.A400
+    case 'reversed':
     case 'refunded':
-      return props.theme.violet.A800
-    case 'error':
-      return props.theme.red.A800
-
+      return '#f7981c'
     default:
       return props.theme.primary.A800
+  }
+}
+
+const getStatusBackgroundColor = ({ status, theme }) => {
+  switch (status) {
+    case 'captured':
+    case 'pre-Authorised':
+    case 'authorised':
+      return '#5edb8926'
+    case 'fail':
+      return '#ff9b9b26'
+    case 'reversed':
+    case 'refunded':
+      return '#f7981c26'
+    default:
+      return theme.primary.A800
   }
 }
 
@@ -68,18 +80,19 @@ type StatusProps = {
   status: string
 }
 
-export const Status = styled.p<StatusProps>`
-  color: ${props => props.theme.shade.A50};
+export const Status = styled.div<StatusProps>`
+  color: ${getStatusColor};
   background-color: ${getStatusBackgroundColor};
   font-family: ${props => props.theme.font};
   font-size: 1em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align: center;
   font-weight: bold;
   padding: 8px;
-  border-radius: 16px;
+  border-radius: 18px;
   justify-self: flex-start;
-  margin: 0px 8px 0px 8px;
+  margin: auto;
+  max-width: 130px;
   flex: 0 0 10em;
 `
 
@@ -87,6 +100,7 @@ export const Timestamp = styled.p`
   color: ${props => props.theme.shade.A700};
   font-family: ${props => props.theme.font};
   font-size: 1em;
+  text-align: center;
   margin: 0px 2em 0px 1em;
   flex: 0 0 18em;
 `
@@ -113,7 +127,7 @@ export const Amount = styled.p`
   font-family: ${props => props.theme.font};
   font-size: 1.2em;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   font-variant-numeric: tabular-nums;
   margin: 0px;
   flex: 0 0 4em;

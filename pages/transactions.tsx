@@ -1,8 +1,9 @@
 import { useRef } from 'react'
 
-import { Pagination, Page, Filter } from '../components/organisms'
+import { Page, Filter } from '../components/organisms'
 import { Transactions } from '../components/templates'
 import { useTokenCheck, useTransactions, useClientRect } from '../hooks'
+import { VerticalScrollContainer } from '../components/atoms'
 
 export default () => {
   useTokenCheck()
@@ -20,8 +21,9 @@ export default () => {
     reason,
     setReason,
     isLoading,
-    refund,
-    isRefunding
+    reverse,
+    capture,
+    refund
   } = useTransactions()
 
   const filterRef = useRef(undefined)
@@ -29,28 +31,29 @@ export default () => {
 
   return (
     <Page activePath="/transactions">
-      <Filter
-        ref={filterRef}
-        startDate={startDate}
-        endDate={endDate}
-        setRange={setRange}
-        status={status}
-        setStatus={setStatus}
-        reason={reason}
-        setReason={setReason}
-      />
-      <Transactions
-        data={data}
-        isLoading={isLoading}
-        filterHeight={filterHeight}
-        refund={refund}
-        isRefunding={isRefunding}
-      />
-      <Pagination
-        numberOfPages={numberOfPages}
-        selectedPage={selectedPage}
-        onSelectPage={setPage}
-      />
+      <VerticalScrollContainer>
+        <Filter
+          ref={filterRef}
+          startDate={startDate}
+          endDate={endDate}
+          setRange={setRange}
+          status={status}
+          setStatus={setStatus}
+          reason={reason}
+          setReason={setReason}
+        />
+        <Transactions
+          data={data}
+          isLoading={isLoading}
+          refund={refund}
+          reverse={reverse}
+          filterHeight={filterHeight}
+          capture={capture}
+          numberOfPages={numberOfPages}
+          setPage={setPage}
+          selectedPage={selectedPage}
+        />
+      </VerticalScrollContainer>
     </Page>
   )
 }
