@@ -5,6 +5,9 @@ import {
   CreditCard,
   Visa,
   AmericanExpress,
+  Klarna,
+  ApplePay,
+  GooglePay,
   Amex,
   CarteBleue,
   DinerClub,
@@ -12,6 +15,8 @@ import {
   JCB,
   Maestro,
   MasterCard,
+  Dinners,
+  DK,
   UnionPay
 } from '../../atoms'
 
@@ -19,6 +24,10 @@ function getCreditCard(ccType: string) {
   switch (ccType) {
     case 'VISA':
       return Visa
+    case 'DK':
+      return DK
+    case 'DINNERS':
+      return Dinners
     case 'AMERICANEXPRESS':
       return AmericanExpress
     case 'AMEX':
@@ -53,8 +62,11 @@ function getIcon(paymentMethod: string, ccType: string) {
     case 'PAY_PAL':
       return PayPal
     case 'GOOGLE_PAY':
+      return GooglePay
     case 'APPLE_PAY':
+      return ApplePay
     case 'KLARNA':
+      return Klarna
     default:
       return CreditCard
   }
@@ -75,7 +87,7 @@ export default function PaymentMethod(props: Props) {
   const Icon = getIcon(props.paymentMethod, props.ccType)
   return (
     <div>
-      <Icon width={30} height={20} />
+      <Icon width={40} height={30} />
     </div>
   )
 }
