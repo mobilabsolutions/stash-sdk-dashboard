@@ -19,7 +19,7 @@ const actionCreator = (getUrl: Function) =>
     const action = (params: Params) => {
       setState(prevState => ({ ...prevState, isLoading: true }))
 
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         apiPost(getUrl(params), params)
           .then(response => {
             setState(prevState => ({

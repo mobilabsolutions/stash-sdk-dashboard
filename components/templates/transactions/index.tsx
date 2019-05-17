@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
@@ -61,16 +61,9 @@ export default ({
     setSelected(null)
   }
 
-  //Close action popup when the action is finished
-  useEffect(() => {
-    !refund.isLoading && !refund.error && onClose()
-  }, [refund.isLoading])
-  useEffect(() => {
-    !capture.isLoading && !refund.error && onClose()
-  }, [capture.isLoading])
-  useEffect(() => {
-    !reverse.isLoading && !refund.error && onClose()
-  }, [reverse.isLoading])
+  const isActionLoading = () =>
+    refund.isLoading || capture.isLoading || reverse.isLoading
+  const isActionError = () => refund.error || capture.error || reverse.error
 
   if (!data || data.length === 0) {
     return isLoading ? (
@@ -177,6 +170,8 @@ export default ({
       />
       <Popup
         onClose={onClose}
+        isLoading={isActionLoading()}
+        hasError={isActionError()}
         onAction={(
           action: string,
           values: { reason: any; refundType: string; refund: any }
