@@ -15,6 +15,8 @@ import {
   JCB,
   Maestro,
   MasterCard,
+  Dinners,
+  DK,
   UnionPay
 } from '../../atoms'
 
@@ -22,6 +24,10 @@ function getCreditCard(ccType: string) {
   switch (ccType) {
     case 'VISA':
       return Visa
+    case 'DK':
+      return DK
+    case 'DINNERS':
+      return Dinners
     case 'AMERICANEXPRESS':
       return AmericanExpress
     case 'AMEX':
