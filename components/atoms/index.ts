@@ -40,6 +40,7 @@ export { default as Visa } from './icons/visa'
 export { default as Warn } from './icons/warn'
 export { default as Loading } from './icons/loading'
 export { default as Alert } from './icons/alert'
+export { default as Check } from './icons/check'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
