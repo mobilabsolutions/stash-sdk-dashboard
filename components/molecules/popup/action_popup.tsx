@@ -53,6 +53,7 @@ export function WarnPopup({
   onClose,
   children,
   onAction,
+  secondaryBtn = true,
   header,
   PrimaryButtonEl = PrimaryButton,
   action
@@ -63,7 +64,9 @@ export function WarnPopup({
     <ActionPopup show={show} onClose={onClose} header={header}>
       {!!children && <ContentContainer>{children}</ContentContainer>}
       <ButtonContainer>
-        <SecondaryButton label={getText('Cancel')} onClick={onClose} />
+        {secondaryBtn && (
+          <SecondaryButton label={getText('Cancel')} onClick={onClose} />
+        )}
         {typeof onAction === 'function' &&
           PrimaryButtonEl({ label: action, onClick: onAction })}
       </ButtonContainer>
