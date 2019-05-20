@@ -87,7 +87,6 @@ export const Status = styled.div<StatusProps>`
   font-size: 1em;
   text-transform: capitalize;
   text-align: center;
-  font-weight: bold;
   padding: 8px;
   border-radius: 18px;
   justify-self: flex-start;
@@ -126,7 +125,6 @@ export const CustomerId = styled.p`
   font-size: 1em;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-weight: bold;
   margin: 0px;
   flex: 1 1 50%;
 `
@@ -135,7 +133,6 @@ export const Amount = styled.p`
   color: ${props => props.theme.shade.A800};
   font-family: ${props => props.theme.font};
   font-size: 1.2em;
-  font-weight: bold;
   font-variant-numeric: tabular-nums;
   margin: 0px;
   flex: 0 0 4em;
