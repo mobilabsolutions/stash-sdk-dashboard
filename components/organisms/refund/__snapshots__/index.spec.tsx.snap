@@ -99,7 +99,7 @@ exports[`RefundForm Should Render 1`] = `
     </div>
   </div>
   <div
-    className="refund__ButtonContainer-a7ak7z-2 kZSyEK"
+    className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
   >
     <button
       className="secondary__Button-j7mjyk-0 kgyVVR"
@@ -225,7 +225,7 @@ exports[`RefundForm Should use loading status 1`] = `
     </div>
   </div>
   <div
-    className="refund__ButtonContainer-a7ak7z-2 kZSyEK"
+    className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
   >
     <button
       className="secondary__Button-j7mjyk-0 hSUMXm"

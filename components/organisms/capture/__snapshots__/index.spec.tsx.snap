@@ -35,7 +35,7 @@ exports[`CaptureForm Should Render 1`] = `
     </div>
   </div>
   <div
-    className="capture__ButtonContainer-sc-1mcywcy-0 bzXJLs"
+    className="capture__ButtonContainer-sc-1mcywcy-0 fLRrRO"
   >
     <button
       className="secondary__Button-j7mjyk-0 kgyVVR"
@@ -97,7 +97,7 @@ exports[`CaptureForm Should use loading status 1`] = `
     </div>
   </div>
   <div
-    className="capture__ButtonContainer-sc-1mcywcy-0 bzXJLs"
+    className="capture__ButtonContainer-sc-1mcywcy-0 fLRrRO"
   >
     <button
       className="secondary__Button-j7mjyk-0 hSUMXm"

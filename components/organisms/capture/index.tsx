@@ -6,7 +6,6 @@ import { useLocalization } from '../../../hooks'
 import styled from '../../styled'
 
 const ButtonContainer = styled.div`
-  background-color: ${props => props.theme.shade.A25};
   display: flex;
   flex-direction: row;
   padding: 12px 24px 12px 24px;
