@@ -111,8 +111,13 @@ export const Reason = styled.p`
   font-size: 1em;
   text-overflow: ellipsis;
   overflow: hidden;
+  display: -webkit-box;
+  line-height: 19px; /* fallback */
+  max-height: 38px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  white-space: initial;
   margin: 0px;
-  flex: 1 1 75%;
 `
 
 export const CustomerId = styled.p`
