@@ -4,6 +4,11 @@ export default {
     font-family: 'Raleway';
     src: url('/static/fonts/Raleway-Regular.ttf');
   }
+  @font-face {
+    font-family: 'Raleway';
+    src: url('/static/fonts/Raleway-Bold.ttf');
+    font-weight: bold;
+  }
 
   @font-face {
     font-family: 'Ubuntu';

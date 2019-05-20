@@ -87,11 +87,9 @@ export const Status = styled.div<StatusProps>`
   font-size: 1em;
   text-transform: capitalize;
   text-align: center;
-  font-weight: bold;
   padding: 8px;
   border-radius: 18px;
   justify-self: flex-start;
-  margin: auto;
   max-width: 130px;
   flex: 0 0 10em;
 `
@@ -100,8 +98,9 @@ export const Timestamp = styled.p`
   color: ${props => props.theme.shade.A700};
   font-family: ${props => props.theme.font};
   font-size: 1em;
-  text-align: center;
-  margin: 0px 2em 0px 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: auto;
   flex: 0 0 18em;
 `
 
@@ -109,15 +108,23 @@ export const Reason = styled.p`
   color: ${props => props.theme.shade.A500};
   font-family: ${props => props.theme.font};
   font-size: 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-height: 19px; /* fallback */
+  max-height: 38px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  white-space: initial;
   margin: 0px;
-  flex: 1 1 75%;
 `
 
 export const CustomerId = styled.p`
   color: ${props => props.theme.shade.A700};
   font-family: ${props => props.theme.font};
   font-size: 1em;
-  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 0px;
   flex: 1 1 50%;
 `
@@ -126,8 +133,6 @@ export const Amount = styled.p`
   color: ${props => props.theme.shade.A800};
   font-family: ${props => props.theme.font};
   font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
   font-variant-numeric: tabular-nums;
   margin: 0px;
   flex: 0 0 4em;
