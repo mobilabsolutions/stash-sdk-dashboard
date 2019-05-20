@@ -5,17 +5,25 @@ import CenteredText from './centered_text'
 import Popup from './popup'
 import { Status, Timestamp, Reason, CustomerId, Amount } from './styled'
 import 'react-table/react-table.css'
+import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
 import { TransactionActions, PaymentMethod } from '../../organisms'
 const global_columns_def = {
   ...ReactTableDefaults.column,
   style: {
-    textAlign: 'center'
+    borderRight: 'none',
+    margin: 'auto',
+    paddingLeft: '12px'
   },
   headerStyle: {
-    ontSize: '16px',
+    fontSize: '16px',
     fontWeight: 'bold',
-    padding: '12px 5px',
+    paddingLeft: '12px',
+    paddingTop: '12px',
+    paddingBottom: '5px',
+    margin: 'auto',
+    textAlign: 'left',
+    borderRight: 'none',
     fontStyle: 'normal',
     fontStretch: 'normal',
     lineHeight: 1.31,
@@ -88,7 +96,7 @@ export default ({
         pages={numberOfPages}
         loading={isLoading}
         defaultPageSize={100}
-        minRows={20}
+        minRows={data.length}
         previousText={getText('Previous')}
         nextText={getText('Next')}
         loadingText={getText('Loading Data')}
@@ -144,6 +152,10 @@ export default ({
           {
             Header: 'Payment Method',
             accessor: 'paymentMethod',
+            style: {
+              textAlign: 'center',
+              borderRight: 'none'
+            },
             Cell: row => (
               <PaymentMethod
                 paymentMethod={row.value}
@@ -159,6 +171,7 @@ export default ({
           {
             Header: ' ',
             maxWidth: 50,
+            resizable: false,
             Cell: row => (
               <TransactionActions
                 status={getActionStatus(
