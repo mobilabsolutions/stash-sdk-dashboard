@@ -1,8 +1,9 @@
 import { useLocalization } from '../../../hooks'
 import { WarnPopup, ActionPopup } from '../../molecules'
 import { RefundForm, CaptureForm } from '../../organisms'
-import { Warn, LoadingButton, Alert } from '../../atoms'
+import { Warn, LoadingButton, Alert, Check } from '../../atoms'
 import styled from '../../styled'
+import { useState, useEffect } from 'react'
 
 const ErrorContainer = styled.div`
   display: flex;
@@ -18,6 +19,26 @@ const ErrorMessage = ({ children }) => {
   )
 }
 
+const SuccessContainer = styled.div`
+  margin: auto;
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  text-align: center;
+`
+
+const SmallContainer = styled.span`
+  font-size: 12px;
+  color: #a3aaaf;
+`
+
+const SuccessMessage = ({ children }) => (
+  <SuccessContainer>
+    <Check style={{ margin: 'auto' }} />
+    {children}
+  </SuccessContainer>
+)
+
 export default ({
   onClose,
   action,
@@ -30,6 +51,12 @@ export default ({
 }) => {
   const { getText } = useLocalization()
 
+  const [success, setSuccess] = useState(false)
+
+  useEffect(() => {
+    !isLoading && setSuccess(false)
+  }, [isLoading])
+
   const getHeader = _action => {
     switch (_action) {
       case 'reverse':
@@ -41,6 +68,43 @@ export default ({
       default:
         return ''
     }
+  }
+
+  const getSuccess = _action => {
+    switch (_action) {
+      case 'reverse':
+        return getText('Reverse Successful.')
+      case 'capture':
+        return getText('Capture Successful.')
+      case 'refund':
+        return getText('Refund Successful.')
+      default:
+        return ''
+    }
+  }
+
+  if (success) {
+    return (
+      <WarnPopup
+        show={show}
+        secondaryBtn={false}
+        onClose={onClose}
+        onAction={onClose}
+        header={getHeader(action)}
+        action={getText('Go to Dashboard')}
+      >
+        <SuccessMessage>
+          <span style={{ padding: 14 }}>{getSuccess(action)}</span>
+          {action === 'refund' && (
+            <SmallContainer>
+              {getText(
+                'Refund take 5-10 days to appear on a costumer´s statement.'
+              )}
+            </SmallContainer>
+          )}
+        </SuccessMessage>
+      </WarnPopup>
+    )
   }
 
   if (action === 'refund') {
