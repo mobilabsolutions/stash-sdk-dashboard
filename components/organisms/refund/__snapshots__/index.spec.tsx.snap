@@ -9,7 +9,7 @@ exports[`RefundForm Should Render 1`] = `
     className="refund__ContentContainer-a7ak7z-3 jIBzWt"
   >
     <div
-      className="refund__FormItemContainer-a7ak7z-1 jqFZJC"
+      className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
     >
       <span
         className="refund__Value-a7ak7z-0 hWqYlJ"
@@ -47,54 +47,100 @@ exports[`RefundForm Should Render 1`] = `
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
     >
-      <h3
-        className="h3-sc-1przhcr-0 bqBPGG"
-      >
-        Refund
-      </h3>
       <div
-        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+        style={
+          Object {
+            "minWidth": 100,
+          }
+        }
       >
-        <input
-          autoFocus={false}
-          className="input_currency__HtmlInput-obstnl-0 diptxO"
-          disabled={true}
-          name="refund"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseUp={[Function]}
-          placeholder="Refund"
-          type="text"
-          value="€12,345.00"
-        />
+        <h3
+          className="h3-sc-1przhcr-0 bqBPGG"
+        >
+          Refund
+        </h3>
+      </div>
+      <div
+        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+      >
+        <div
+          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          style={
+            Object {
+              "marginLeft": "16px",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            autoFocus={false}
+            className="input_currency__HtmlInput-obstnl-0 diptxO"
+            disabled={true}
+            name="refund"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseUp={[Function]}
+            placeholder="Refund"
+            type="text"
+            value="€12,345.00"
+          />
+        </div>
       </div>
     </div>
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
     >
-      <h3
-        className="h3-sc-1przhcr-0 bqBPGG"
-      >
-        Description
-      </h3>
       <div
-        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+        style={
+          Object {
+            "minWidth": 100,
+          }
+        }
       >
-        <input
-          autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 konMqF"
-          name="reason"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Description"
-          type="text"
-          value=""
-        />
+        <h3
+          className="h3-sc-1przhcr-0 bqBPGG"
+        >
+          Description
+        </h3>
+      </div>
+      <div
+        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+      >
+        <div
+          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          style={
+            Object {
+              "marginLeft": "16px",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            autoFocus={false}
+            className="input__HtmlInput-rcagn3-0 konMqF"
+            name="reason"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Description"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -135,7 +181,7 @@ exports[`RefundForm Should use loading status 1`] = `
     className="refund__ContentContainer-a7ak7z-3 jIBzWt"
   >
     <div
-      className="refund__FormItemContainer-a7ak7z-1 jqFZJC"
+      className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
     >
       <span
         className="refund__Value-a7ak7z-0 hWqYlJ"
@@ -173,54 +219,100 @@ exports[`RefundForm Should use loading status 1`] = `
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
     >
-      <h3
-        className="h3-sc-1przhcr-0 bqBPGG"
-      >
-        Refund
-      </h3>
       <div
-        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+        style={
+          Object {
+            "minWidth": 100,
+          }
+        }
       >
-        <input
-          autoFocus={false}
-          className="input_currency__HtmlInput-obstnl-0 diptxO"
-          disabled={true}
-          name="refund"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseUp={[Function]}
-          placeholder="Refund"
-          type="text"
-          value="€12,345.00"
-        />
+        <h3
+          className="h3-sc-1przhcr-0 bqBPGG"
+        >
+          Refund
+        </h3>
+      </div>
+      <div
+        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+      >
+        <div
+          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          style={
+            Object {
+              "marginLeft": "16px",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            autoFocus={false}
+            className="input_currency__HtmlInput-obstnl-0 diptxO"
+            disabled={true}
+            name="refund"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseUp={[Function]}
+            placeholder="Refund"
+            type="text"
+            value="€12,345.00"
+          />
+        </div>
       </div>
     </div>
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
     >
-      <h3
-        className="h3-sc-1przhcr-0 bqBPGG"
-      >
-        Description
-      </h3>
       <div
-        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+        style={
+          Object {
+            "minWidth": 100,
+          }
+        }
       >
-        <input
-          autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 konMqF"
-          name="reason"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Description"
-          type="text"
-          value=""
-        />
+        <h3
+          className="h3-sc-1przhcr-0 bqBPGG"
+        >
+          Description
+        </h3>
+      </div>
+      <div
+        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+      >
+        <div
+          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          style={
+            Object {
+              "marginLeft": "16px",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            autoFocus={false}
+            className="input__HtmlInput-rcagn3-0 konMqF"
+            name="reason"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Description"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>

@@ -23,8 +23,7 @@ const FormItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 8px;
-  padding: 5px;
+  padding: 5px 5px 5px 0px;
   margin-bottom: 16px;
 `
 
@@ -97,6 +96,9 @@ export default function RefundForm({
                 <InputCurrency
                   field={field}
                   form={form}
+                  containerStyle={{ flexDirection: 'row' }}
+                  inputStyle={{ marginLeft: '16px', width: '100%' }}
+                  labelStyle={{ minWidth: 100 }}
                   disabled={values.refundType === 'full'}
                   currencyId={currencyId}
                   title={getText('Refund')}
@@ -110,6 +112,9 @@ export default function RefundForm({
                 <Input
                   field={field}
                   form={form}
+                  containerStyle={{ flexDirection: 'row' }}
+                  labelStyle={{ minWidth: 100 }}
+                  inputStyle={{ marginLeft: '16px', width: '100%' }}
                   title={getText('Description')}
                   placeholder={getText('Description')}
                 />
