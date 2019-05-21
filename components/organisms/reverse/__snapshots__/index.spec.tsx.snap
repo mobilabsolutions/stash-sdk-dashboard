@@ -6,36 +6,46 @@ exports[`CaptureForm Should Render 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="capture__ContentContainer-sc-1mcywcy-1 eplURn"
+    className="reverse__ContentContainer-sc-15boa02-1 HdgZS"
   >
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
+      style={Object {}}
     >
-      <h3
-        className="h3-sc-1przhcr-0 bqBPGG"
-      >
-        Description
-      </h3>
       <div
-        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+        style={Object {}}
       >
-        <input
-          autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 konMqF"
-          name="reason"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Description"
-          type="text"
-          value=""
-        />
+        <h3
+          className="h3-sc-1przhcr-0 bqBPGG"
+        >
+          Description
+        </h3>
+      </div>
+      <div
+        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+      >
+        <div
+          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          style={Object {}}
+        >
+          <input
+            autoFocus={false}
+            className="input__HtmlInput-rcagn3-0 konMqF"
+            name="reason"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Description"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="capture__ButtonContainer-sc-1mcywcy-0 fLRrRO"
+    className="reverse__ButtonContainer-sc-15boa02-0 eWusaQ"
   >
     <button
       className="secondary__Button-j7mjyk-0 kgyVVR"
@@ -50,12 +60,12 @@ exports[`CaptureForm Should Render 1`] = `
     <button
       className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
       disabled={false}
-      label="Capture the Transaction"
+      label="Reverse the Transaction"
       onClick={null}
       type="submit"
     >
       <span>
-        Capture the Transaction
+        Reverse the Transaction
       </span>
     </button>
   </div>
@@ -68,36 +78,46 @@ exports[`CaptureForm Should use loading status 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="capture__ContentContainer-sc-1mcywcy-1 eplURn"
+    className="reverse__ContentContainer-sc-15boa02-1 HdgZS"
   >
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
+      style={Object {}}
     >
-      <h3
-        className="h3-sc-1przhcr-0 bqBPGG"
-      >
-        Description
-      </h3>
       <div
-        className="input_wrapper-sc-15hmhfy-0 duFQAu"
+        style={Object {}}
       >
-        <input
-          autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 konMqF"
-          name="reason"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Description"
-          type="text"
-          value=""
-        />
+        <h3
+          className="h3-sc-1przhcr-0 bqBPGG"
+        >
+          Description
+        </h3>
+      </div>
+      <div
+        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+      >
+        <div
+          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          style={Object {}}
+        >
+          <input
+            autoFocus={false}
+            className="input__HtmlInput-rcagn3-0 konMqF"
+            name="reason"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Description"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="capture__ButtonContainer-sc-1mcywcy-0 fLRrRO"
+    className="reverse__ButtonContainer-sc-15boa02-0 eWusaQ"
   >
     <button
       className="secondary__Button-j7mjyk-0 hSUMXm"
@@ -112,7 +132,7 @@ exports[`CaptureForm Should use loading status 1`] = `
     <button
       className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
       disabled={true}
-      label="Capture the Transaction"
+      label="Reverse the Transaction"
       onClick={null}
       type="submit"
     >

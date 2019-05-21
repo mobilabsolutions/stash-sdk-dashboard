@@ -20,7 +20,7 @@ const ContentContainer = styled.div`
   padding: 32px;
 `
 
-export default function CaptureForm({
+export default function ReverseForm({
   onCancel,
   isLoading = false,
   onSubmit,
@@ -48,6 +48,9 @@ export default function CaptureForm({
                 <Input
                   field={field}
                   form={form}
+                  containerStyle={{ flexDirection: 'row' }}
+                  inputStyle={{ marginLeft: '16px', width: '100%' }}
+                  labelStyle={{ minWidth: 100 }}
                   title={getText('Description')}
                   placeholder={getText('Description')}
                 />
@@ -63,7 +66,7 @@ export default function CaptureForm({
             />
             <LoadingButton
               isLoading={isLoading}
-              label={getText('Capture the Transaction')}
+              label={getText('Reverse the Transaction')}
               disabled={!isValid}
             />
           </ButtonContainer>

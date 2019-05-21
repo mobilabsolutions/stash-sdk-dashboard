@@ -1,6 +1,6 @@
 import { useLocalization } from '../../../hooks'
 import { WarnPopup, ActionPopup } from '../../molecules'
-import { RefundForm, CaptureForm } from '../../organisms'
+import { RefundForm, ReverseForm } from '../../organisms'
 import { Warn, LoadingButton, Alert, Check } from '../../atoms'
 import styled from '../../styled'
 import { useState, useEffect } from 'react'
@@ -137,15 +137,15 @@ export default ({
     )
   }
 
-  if (action === 'capture') {
+  if (action === 'reverse') {
     return (
       <ActionPopup show={show} onClose={onClose} header={getHeader(action)}>
         {hasError && (
           <ErrorMessage>
-            {getText('Capture unsuccessful. Please try again.')}
+            {getText('Reverse unsuccessful. Please try again.')}
           </ErrorMessage>
         )}
-        <CaptureForm
+        <ReverseForm
           onCancel={onClose}
           isLoading={isLoading}
           onSubmit={values => {
@@ -177,7 +177,7 @@ export default ({
     >
       {hasError && (
         <ErrorMessage>
-          {getText('Reverse unsuccessful. Please try again.')}
+          {getText('Capture unsuccessful. Please try again.')}
         </ErrorMessage>
       )}
     </WarnPopup>
