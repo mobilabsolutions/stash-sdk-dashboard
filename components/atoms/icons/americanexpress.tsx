@@ -10,7 +10,7 @@ export default function Amex({ width = 60, height = 40, ...props }) {
       viewBox="0 0 60 40"
     >
       <defs>
-        <path id="a" d="M0 0h60v40H0z" />
+        <path id="aexpress" d="M0 0h60v40H0z" />
       </defs>
       <g fill="none" fillRule="evenodd">
         <g fillRule="nonzero">
