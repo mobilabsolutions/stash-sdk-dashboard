@@ -55,11 +55,22 @@ export default function RefundForm({
   return (
     <Formik
       initialValues={{ refund: initialRefund, reason: '', refundType: 'full' }}
-      onSubmit={onSubmit}
+      onSubmit={(values: {
+        refund: string
+        reason: string
+        refundType: string
+      }) => {
+        let numberRefund = parseFloat(values.refund)
+        let returnValues = {
+          ...values,
+          refund: values.refundType === 'full' ? initialRefund : numberRefund
+        }
+        onSubmit(returnValues)
+      }}
       isInitialValid
       validate={values => {
         let errors = {}
-        if (values.refund > initialRefund)
+        if (values.refundType === 'partial' && values.refund > initialRefund)
           Object.assign(errors, {
             refund: getText('Amount limit is %{amount}', {
               amount: initialRefund
