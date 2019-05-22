@@ -28,7 +28,7 @@ function TheInput(
     title = '',
     containerStyle = {},
     inputStyle = {},
-    labelStyle={},
+    labelStyle = {},
     children = InputChildren,
     disabled = false,
     autoFocus = false
@@ -42,16 +42,13 @@ function TheInput(
 
   const handleClick = () => inputRef && inputRef.current.focus()
   const hasErrors = touched[name] && errors[name]
-
   return (
     <InputFieldWrapper
       onClick={handleClick}
       className={className}
       style={containerStyle}
     >
-      <div style={labelStyle}>
-        {!!title && <H3>{title}</H3>}
-      </div>
+      <div style={labelStyle}>{!!title && <H3>{title}</H3>}</div>
       <InputErrorWrapper>
         <InputWrapper
           style={inputStyle}

@@ -11,10 +11,18 @@ exports[`CaptureForm Should Render 1`] = `
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
     >
       <div
-        style={Object {}}
+        style={
+          Object {
+            "minWidth": 100,
+          }
+        }
       >
         <h3
           className="h3-sc-1przhcr-0 bqBPGG"
@@ -27,11 +35,16 @@ exports[`CaptureForm Should Render 1`] = `
       >
         <div
           className="input_wrapper-sc-15hmhfy-0 duFQAu"
-          style={Object {}}
+          style={
+            Object {
+              "marginLeft": "16px",
+              "width": "100%",
+            }
+          }
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 konMqF"
+            className="input__HtmlInput-rcagn3-0 feOJUN"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
@@ -83,10 +96,18 @@ exports[`CaptureForm Should use loading status 1`] = `
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
     >
       <div
-        style={Object {}}
+        style={
+          Object {
+            "minWidth": 100,
+          }
+        }
       >
         <h3
           className="h3-sc-1przhcr-0 bqBPGG"
@@ -99,11 +120,16 @@ exports[`CaptureForm Should use loading status 1`] = `
       >
         <div
           className="input_wrapper-sc-15hmhfy-0 duFQAu"
-          style={Object {}}
+          style={
+            Object {
+              "marginLeft": "16px",
+              "width": "100%",
+            }
+          }
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 konMqF"
+            className="input__HtmlInput-rcagn3-0 feOJUN"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
