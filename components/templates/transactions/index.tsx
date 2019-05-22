@@ -30,7 +30,7 @@ const getActionStatus = (status: string, action: string): string => {
       const mapping = {
         PREAUTH: 'pre-Authorised',
         AUTH: 'authorised',
-        REVERSAL: 'peversed',
+        REVERSAL: 'reversed',
         REFUND: 'refunded',
         CAPTURE: 'captured'
       }
