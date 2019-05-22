@@ -18,7 +18,7 @@ exports[`Input Should Render 1`] = `
     >
       <input
         autoFocus={false}
-        className="input_currency__HtmlInput-obstnl-0 diptxO"
+        className="input_currency__HtmlInput-obstnl-0 dxBBBe"
         disabled={false}
         name="test"
         onBlur={[Function]}

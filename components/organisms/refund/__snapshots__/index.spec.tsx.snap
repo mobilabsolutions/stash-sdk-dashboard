@@ -80,7 +80,7 @@ exports[`RefundForm Should Render 1`] = `
         >
           <input
             autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 diptxO"
+            className="input_currency__HtmlInput-obstnl-0 dxBBBe"
             disabled={true}
             name="refund"
             onBlur={[Function]}
@@ -131,7 +131,7 @@ exports[`RefundForm Should Render 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 konMqF"
+            className="input__HtmlInput-rcagn3-0 feOJUN"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
@@ -252,7 +252,7 @@ exports[`RefundForm Should use loading status 1`] = `
         >
           <input
             autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 diptxO"
+            className="input_currency__HtmlInput-obstnl-0 dxBBBe"
             disabled={true}
             name="refund"
             onBlur={[Function]}
@@ -303,7 +303,7 @@ exports[`RefundForm Should use loading status 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 konMqF"
+            className="input__HtmlInput-rcagn3-0 feOJUN"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
