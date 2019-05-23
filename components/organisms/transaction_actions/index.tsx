@@ -5,6 +5,7 @@ import { Action, ActionContainer, MoreIcon } from './styled'
 
 function getActions(status: string): Array<{ type: string }> {
   switch (status) {
+    case 'authorised':
     case 'captured':
       return [
         {
