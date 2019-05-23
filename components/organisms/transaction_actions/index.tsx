@@ -11,7 +11,7 @@ function getActions(status: string): Array<{ type: string }> {
           type: 'refund'
         }
       ]
-    case 'authorised':
+    case 'pre-Authorised':
       return [
         {
           type: 'capture'
