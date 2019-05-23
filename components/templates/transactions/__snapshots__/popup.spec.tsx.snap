@@ -1,0 +1,917 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopUp Should Render capture form 1`] = `
+<div
+  className="overlay-sc-1up1mft-0 MmcNI"
+  onClick={[Function]}
+>
+  <div
+    className="popup__Content-br7oqf-0 dLDWKT"
+  >
+    <div
+      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+    >
+      <div
+        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+      >
+        <span
+          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+        >
+          Are you sure you want to capture this transaction?
+        </span>
+        <div
+          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+        >
+          <svg
+            height={24}
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.707 11.293l5.657-5.657-5.657 5.657zM12 12zm-.707.707l-5.657 5.657 5.657-5.657zM13.414 12l5.657 5.657a1 1 0 0 1-1.414 1.414L12 13.414l-5.657 5.657a1 1 0 1 1-1.414-1.414L10.586 12 4.929 6.343A1 1 0 0 1 6.343 4.93L12 10.586l5.657-5.657a1 1 0 0 1 1.414 1.414L13.414 12zm-.707.707l5.657 5.657-5.657-5.657zm-1.414-1.414L5.636 5.636l5.657 5.657z"
+              fill="#a3aaaf"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="action_popup__ButtonContainer-sc-6dvik9-2 eMWAaF"
+      >
+        <button
+          className="secondary__Button-j7mjyk-0 kgyVVR"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Cancel
+          </span>
+        </button>
+        <button
+          className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+          disabled={false}
+          label="Capture"
+          onClick={[Function]}
+          type="submit"
+        >
+          <span>
+            Capture
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PopUp Should Render loading state 1`] = `
+<div
+  className="overlay-sc-1up1mft-0 MmcNI"
+  onClick={[Function]}
+>
+  <div
+    className="popup__Content-br7oqf-0 dLDWKT"
+  >
+    <div
+      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+    >
+      <div
+        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+      >
+        <span
+          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+        >
+          Are you sure you want to reverse the transaction?
+        </span>
+        <div
+          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+        >
+          <svg
+            height={24}
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.707 11.293l5.657-5.657-5.657 5.657zM12 12zm-.707.707l-5.657 5.657 5.657-5.657zM13.414 12l5.657 5.657a1 1 0 0 1-1.414 1.414L12 13.414l-5.657 5.657a1 1 0 1 1-1.414-1.414L10.586 12 4.929 6.343A1 1 0 0 1 6.343 4.93L12 10.586l5.657-5.657a1 1 0 0 1 1.414 1.414L13.414 12zm-.707.707l5.657 5.657-5.657-5.657zm-1.414-1.414L5.636 5.636l5.657 5.657z"
+              fill="#a3aaaf"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <form
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="reverse__ContentContainer-sc-15boa02-1 HdgZS"
+        >
+          <div
+            className="field_wrapper-n32k2e-0 irXinp"
+            onClick={[Function]}
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "minWidth": 100,
+                }
+              }
+            >
+              <h3
+                className="h3-sc-1przhcr-0 bqBPGG"
+              >
+                Description
+              </h3>
+            </div>
+            <div
+              className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+            >
+              <div
+                className="input_wrapper-sc-15hmhfy-0 duFQAu"
+                style={
+                  Object {
+                    "marginLeft": "16px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={false}
+                  className="input__HtmlInput-rcagn3-0 feOJUN"
+                  name="reason"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Description"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="reverse__ButtonContainer-sc-15boa02-0 eWusaQ"
+        >
+          <button
+            className="secondary__Button-j7mjyk-0 hSUMXm"
+            disabled={true}
+            onClick={null}
+            type="button"
+          >
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
+            disabled={true}
+            label="Reverse the Transaction"
+            onClick={null}
+            type="submit"
+          >
+            <svg
+              height={24}
+              preserveAspectRatio="xMidYMid"
+              viewBox="0 0 100 100"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                transform="rotate(0 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.9375s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(22.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.875s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(45 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.8125s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(67.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.75s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(90 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.6875s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(112.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.625s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(135 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.5625s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(157.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.5s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(180 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.4375s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(202.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.375s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(225 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.3125s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(247.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.25s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(270 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.1875s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(292.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.125s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(315 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="-0.0625s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+              <g
+                transform="rotate(337.5 50 50)"
+              >
+                <rect
+                  fill="#ffffff"
+                  height="14"
+                  rx="2"
+                  ry="2"
+                  width="6"
+                  x="47"
+                  y="18"
+                >
+                  <animate
+                    attributeName="opacity"
+                    begin="0s"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    values="1;0"
+                  />
+                </rect>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PopUp Should Render refund form 1`] = `
+<div
+  className="overlay-sc-1up1mft-0 MmcNI"
+  onClick={[Function]}
+>
+  <div
+    className="popup__Content-br7oqf-0 dLDWKT"
+  >
+    <div
+      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+    >
+      <div
+        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+      >
+        <span
+          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+        >
+          Refund Payment
+        </span>
+        <div
+          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+        >
+          <svg
+            height={24}
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.707 11.293l5.657-5.657-5.657 5.657zM12 12zm-.707.707l-5.657 5.657 5.657-5.657zM13.414 12l5.657 5.657a1 1 0 0 1-1.414 1.414L12 13.414l-5.657 5.657a1 1 0 1 1-1.414-1.414L10.586 12 4.929 6.343A1 1 0 0 1 6.343 4.93L12 10.586l5.657-5.657a1 1 0 0 1 1.414 1.414L13.414 12zm-.707.707l5.657 5.657-5.657-5.657zm-1.414-1.414L5.636 5.636l5.657 5.657z"
+              fill="#a3aaaf"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <form
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="refund__ContentContainer-a7ak7z-3 jIBzWt"
+        >
+          <div
+            className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
+          >
+            <span
+              className="refund__Value-a7ak7z-0 hWqYlJ"
+            >
+              <label
+                className="radio__Label-sc-1hx8hak-0 cDnVOc"
+                label="Partial"
+              >
+                Partial
+                <input
+                  checked={false}
+                  name="refundType"
+                  onChange={[Function]}
+                  type="radio"
+                  value="partial"
+                />
+                <span />
+              </label>
+              <label
+                className="radio__Label-sc-1hx8hak-0 cDnVOc"
+                label="Full"
+              >
+                Full
+                <input
+                  checked={true}
+                  name="refundType"
+                  onChange={[Function]}
+                  type="radio"
+                  value="full"
+                />
+                <span />
+              </label>
+            </span>
+          </div>
+          <div
+            className="field_wrapper-n32k2e-0 irXinp"
+            onClick={[Function]}
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "minWidth": 100,
+                }
+              }
+            >
+              <h3
+                className="h3-sc-1przhcr-0 bqBPGG"
+              >
+                Refund
+              </h3>
+            </div>
+            <div
+              className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+            >
+              <div
+                className="input_wrapper-sc-15hmhfy-0 duFQAu"
+                style={
+                  Object {
+                    "marginLeft": "16px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={false}
+                  className="input_currency__HtmlInput-obstnl-0 dxBBBe"
+                  disabled={true}
+                  name="refund"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseUp={[Function]}
+                  placeholder="Refund"
+                  type="text"
+                  value="€300.00"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="field_wrapper-n32k2e-0 irXinp"
+            onClick={[Function]}
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "minWidth": 100,
+                }
+              }
+            >
+              <h3
+                className="h3-sc-1przhcr-0 bqBPGG"
+              >
+                Description
+              </h3>
+            </div>
+            <div
+              className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+            >
+              <div
+                className="input_wrapper-sc-15hmhfy-0 duFQAu"
+                style={
+                  Object {
+                    "marginLeft": "16px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={false}
+                  className="input__HtmlInput-rcagn3-0 feOJUN"
+                  name="reason"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Description"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <svg
+              height={20}
+              viewBox="0 0 20 20"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <circle
+                  cx="10"
+                  cy="10"
+                  id="a"
+                  r="8.75"
+                />
+                <path
+                  d="M9.3 5h1.406v6.875H9.3V5zm.7 10.625a.937.937 0 1 1 0-1.875.937.937 0 0 1 0 1.875z"
+                  id="b"
+                />
+              </defs>
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <use
+                  fill="#F7981C"
+                  xlinkHref="#a"
+                />
+                <use
+                  fill="#FFF"
+                  xlinkHref="#b"
+                />
+              </g>
+            </svg>
+            <span
+              style={
+                Object {
+                  "padding": "0px 5px",
+                }
+              }
+            >
+              Refund take 5-10 days to appear on a costumer´s statement.
+            </span>
+          </div>
+        </div>
+        <div
+          className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
+        >
+          <button
+            className="secondary__Button-j7mjyk-0 kgyVVR"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+            disabled={false}
+            label="Refund the Transaction"
+            onClick={null}
+            type="submit"
+          >
+            <span>
+              Refund the Transaction
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PopUp Should Render reverse form 1`] = `
+<div
+  className="overlay-sc-1up1mft-0 MmcNI"
+  onClick={[Function]}
+>
+  <div
+    className="popup__Content-br7oqf-0 dLDWKT"
+  >
+    <div
+      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+    >
+      <div
+        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+      >
+        <span
+          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+        >
+          Are you sure you want to reverse the transaction?
+        </span>
+        <div
+          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+        >
+          <svg
+            height={24}
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.707 11.293l5.657-5.657-5.657 5.657zM12 12zm-.707.707l-5.657 5.657 5.657-5.657zM13.414 12l5.657 5.657a1 1 0 0 1-1.414 1.414L12 13.414l-5.657 5.657a1 1 0 1 1-1.414-1.414L10.586 12 4.929 6.343A1 1 0 0 1 6.343 4.93L12 10.586l5.657-5.657a1 1 0 0 1 1.414 1.414L13.414 12zm-.707.707l5.657 5.657-5.657-5.657zm-1.414-1.414L5.636 5.636l5.657 5.657z"
+              fill="#a3aaaf"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <form
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="reverse__ContentContainer-sc-15boa02-1 HdgZS"
+        >
+          <div
+            className="field_wrapper-n32k2e-0 irXinp"
+            onClick={[Function]}
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "minWidth": 100,
+                }
+              }
+            >
+              <h3
+                className="h3-sc-1przhcr-0 bqBPGG"
+              >
+                Description
+              </h3>
+            </div>
+            <div
+              className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+            >
+              <div
+                className="input_wrapper-sc-15hmhfy-0 duFQAu"
+                style={
+                  Object {
+                    "marginLeft": "16px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={false}
+                  className="input__HtmlInput-rcagn3-0 feOJUN"
+                  name="reason"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Description"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="reverse__ButtonContainer-sc-15boa02-0 eWusaQ"
+        >
+          <button
+            className="secondary__Button-j7mjyk-0 kgyVVR"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+            disabled={false}
+            label="Reverse the Transaction"
+            onClick={null}
+            type="submit"
+          >
+            <span>
+              Reverse the Transaction
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

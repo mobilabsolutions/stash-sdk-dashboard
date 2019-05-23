@@ -3,7 +3,7 @@ import { WarnPopup, ActionPopup } from '../../molecules'
 import { RefundForm, ReverseForm } from '../../organisms'
 import { Warn, LoadingButton, Alert, Check } from '../../atoms'
 import styled from '../../styled'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const ErrorContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const ErrorContainer = styled.div`
 `
 const ErrorMessage = ({ children }) => {
   return (
-    <ErrorContainer>
+    <ErrorContainer data-testid="error-container">
       <Alert />
       <span style={{ padding: '0px 24px' }}>{children}</span>
     </ErrorContainer>
@@ -33,11 +33,19 @@ const SmallContainer = styled.span`
 `
 
 const SuccessMessage = ({ children }) => (
-  <SuccessContainer>
+  <SuccessContainer data-testid="success-message">
     <Check style={{ margin: 'auto' }} />
     {children}
   </SuccessContainer>
 )
+
+function usePrevious(value) {
+  const ref = useRef()
+  useEffect(() => {
+    ref.current = value
+  })
+  return ref.current
+}
 
 export default ({
   onClose,
@@ -53,9 +61,16 @@ export default ({
 
   const [success, setSuccess] = useState(false)
 
+  const prevLoading = usePrevious(isLoading)
+
   useEffect(() => {
-    !isLoading && setSuccess(false)
-  }, [isLoading])
+    prevLoading !== undefined &&
+      prevLoading !== isLoading &&
+      !isLoading &&
+      !hasError &&
+      setSuccess(true)
+    !show && setSuccess(false)
+  }, [isLoading, show])
 
   const getHeader = _action => {
     switch (_action) {
