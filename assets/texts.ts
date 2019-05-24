@@ -128,11 +128,17 @@ export default {
   'pre-Authorised': { en: 'Pre-Authorised' },
   fail: { en: 'Fail' },
   captured: { en: 'Captured' },
+  reversed: { en: 'Reversed' },
   authorised: { en: 'Authorised' },
   'Refund Payment': {},
   Partial: {},
   Full: {},
+  'Go to Dashboard': { de: 'Gehe zum Dashboard' },
+  'Capture Successful.': {},
+  'Reverse Successful.': {},
+  'Refund Successful.': {},
   'Refund the Transaction': {},
+  'Reverse the Transaction': {},
   'Capture the Transaction': { de: 'Erfassen Sie die Transaktion' },
   Description: {},
   'Are you sure you want to capture this transaction?': {},
@@ -149,7 +155,7 @@ export default {
   'Refund unsuccessful. Please try again.': {
     de: 'Refund nicht erfolgreich. Bitte versuche es erneut.'
   },
-  'Refund take 5-10 days to appear on a customer´s statement.': {
+  'Refund take 5-10 days to appear on a costumer´s statement.': {
     de:
       'Es dauert 5-10 Tage, bis die Rückerstattung auf der Kundenabrechnung erscheint.'
   }
