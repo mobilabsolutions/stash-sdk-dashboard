@@ -106,6 +106,7 @@ export default ({
         onClose={onClose}
         onAction={onClose}
         header={getHeader(action)}
+        buttonStyle={{ margin: 'auto' }}
         action={getText('Go to Dashboard')}
       >
         <SuccessMessage>
