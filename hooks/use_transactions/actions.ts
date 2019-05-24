@@ -10,7 +10,7 @@ export interface Params {
 
 const actionCreator = (getUrl: Function) =>
   function(onSuccess?: Function, onError?: Function) {
-    const { post: apiPost } = useApi()
+    const { put: apiPut } = useApi()
     const [state, setState] = useState({
       error: null,
       isLoading: false
@@ -20,7 +20,7 @@ const actionCreator = (getUrl: Function) =>
       setState(prevState => ({ ...prevState, isLoading: true }))
 
       return new Promise(resolve => {
-        apiPost(getUrl(params), params)
+        apiPut(getUrl(params), params)
           .then(response => {
             setState(prevState => ({
               ...prevState,
