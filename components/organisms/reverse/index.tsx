@@ -52,6 +52,7 @@ export default function ReverseForm({
                   inputStyle={{ marginLeft: '16px', width: '100%' }}
                   labelStyle={{ minWidth: 100 }}
                   title={getText('Description')}
+                  autoFocus
                   placeholder={getText('Description')}
                 />
               )}

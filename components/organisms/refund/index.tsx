@@ -127,6 +127,7 @@ export default function RefundForm({
                   labelStyle={{ minWidth: 100 }}
                   inputStyle={{ marginLeft: '16px', width: '100%' }}
                   title={getText('Description')}
+                  autoFocus
                   placeholder={getText('Description')}
                 />
               )}

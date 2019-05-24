@@ -121,7 +121,7 @@ exports[`RefundForm Should Render 1`] = `
         className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
       >
         <div
-          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          className="input_wrapper-sc-15hmhfy-0 mahog"
           style={
             Object {
               "marginLeft": "16px",
@@ -130,7 +130,7 @@ exports[`RefundForm Should Render 1`] = `
           }
         >
           <input
-            autoFocus={false}
+            autoFocus={true}
             className="input__HtmlInput-rcagn3-0 feOJUN"
             name="reason"
             onBlur={[Function]}
@@ -293,7 +293,7 @@ exports[`RefundForm Should use loading status 1`] = `
         className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
       >
         <div
-          className="input_wrapper-sc-15hmhfy-0 duFQAu"
+          className="input_wrapper-sc-15hmhfy-0 mahog"
           style={
             Object {
               "marginLeft": "16px",
@@ -302,7 +302,7 @@ exports[`RefundForm Should use loading status 1`] = `
           }
         >
           <input
-            autoFocus={false}
+            autoFocus={true}
             className="input__HtmlInput-rcagn3-0 feOJUN"
             name="reason"
             onBlur={[Function]}
