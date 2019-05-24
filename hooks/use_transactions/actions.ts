@@ -15,7 +15,7 @@ const actionCreator = (getUrl: Function) =>
       error: null,
       isLoading: false
     })
-
+    const setError = (error: boolean) => setState(prev => ({ ...prev, error }))
     const action = (params: Params) => {
       setState(prevState => ({ ...prevState, isLoading: true }))
 
@@ -42,6 +42,7 @@ const actionCreator = (getUrl: Function) =>
     }
     return {
       action,
+      setError,
       ...state
     }
   }
