@@ -68,6 +68,7 @@ interface ButtonProps {
   isFullSize?: boolean
   type?: 'submit' | 'reset' | 'button'
   disabled?: boolean
+  style?: object
   onClick?: () => void
 }
 
@@ -76,12 +77,14 @@ export default function PrimaryButton({
   isFullSize = false,
   type = 'submit',
   disabled = false,
+  style = {},
   onClick
 }: ButtonProps) {
   return (
     <Button
       isFullSize={isFullSize}
       type={type}
+      style={style}
       disabled={disabled}
       onClick={
         !disabled && onClick
