@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionActions Should Render actions for "authorised" status 1`] = `
+<body>
+  <div>
+    <svg
+      class="styled__MoreIcon-sc-1xo71m-2 hxBxJm"
+      data-testid="more-icon"
+      height="24"
+      viewBox="0 0 512 512"
+      width="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M255.8 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38zM102 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38zM410 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"
+        fill="#a3aaaf"
+      />
+    </svg>
+  </div>
+  <div
+    class="react-tiny-popover-container"
+    style="overflow: hidden; position: absolute; top: 6px; left: 6px; opacity: 1; transition: opacity 0.35s;"
+  >
+    <div>
+      <div
+        style="padding: 0px 0px 0px 10px;"
+      >
+        <div
+          style="position: absolute; bottom: 1px; box-shadow: 0 4px 10px 0 #ededed; border-top: 10px solid transparent; border-bottom: 10px solid transparent; top: -20px; border-right: 10px solid white; left: 0px;"
+        />
+        <div
+          class="styled__ActionContainer-sc-1xo71m-1 hwLVsY"
+        >
+          <div
+            class="styled__Action-sc-1xo71m-0 drzTcw"
+          >
+            Refund
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TransactionActions Should Render actions for "captured" status 1`] = `
+<body>
+  <div>
+    <svg
+      class="styled__MoreIcon-sc-1xo71m-2 hxBxJm"
+      data-testid="more-icon"
+      height="24"
+      viewBox="0 0 512 512"
+      width="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M255.8 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38zM102 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38zM410 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"
+        fill="#a3aaaf"
+      />
+    </svg>
+  </div>
+  <div
+    class="react-tiny-popover-container"
+    style="overflow: hidden; position: absolute; top: 6px; left: 6px; opacity: 1; transition: opacity 0.35s;"
+  >
+    <div>
+      <div
+        style="padding: 0px 0px 0px 10px;"
+      >
+        <div
+          style="position: absolute; bottom: 1px; box-shadow: 0 4px 10px 0 #ededed; border-top: 10px solid transparent; border-bottom: 10px solid transparent; top: -20px; border-right: 10px solid white; left: 0px;"
+        />
+        <div
+          class="styled__ActionContainer-sc-1xo71m-1 hwLVsY"
+        >
+          <div
+            class="styled__Action-sc-1xo71m-0 drzTcw"
+          >
+            Refund
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TransactionActions Should Render actions for "pre-Authorised" status 1`] = `
+<body>
+  <div>
+    <svg
+      class="styled__MoreIcon-sc-1xo71m-2 hxBxJm"
+      data-testid="more-icon"
+      height="24"
+      viewBox="0 0 512 512"
+      width="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M255.8 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38zM102 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38zM410 218c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"
+        fill="#a3aaaf"
+      />
+    </svg>
+  </div>
+  <div
+    class="react-tiny-popover-container"
+    style="overflow: hidden; position: absolute; top: 6px; left: 6px; opacity: 1; transition: opacity 0.35s;"
+  >
+    <div>
+      <div
+        style="padding: 0px 0px 0px 10px;"
+      >
+        <div
+          style="position: absolute; bottom: 1px; box-shadow: 0 4px 10px 0 #ededed; border-top: 10px solid transparent; border-bottom: 10px solid transparent; top: -20px; border-right: 10px solid white; left: 0px;"
+        />
+        <div
+          class="styled__ActionContainer-sc-1xo71m-1 hwLVsY"
+        >
+          <div
+            class="styled__Action-sc-1xo71m-0 drzTcw"
+          >
+            Capture
+          </div>
+          <div
+            class="styled__Action-sc-1xo71m-0 drzTcw"
+          >
+            Reverse
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

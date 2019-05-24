@@ -68,7 +68,12 @@ export default function TransactionActions({ status, onClick }) {
         </div>
       )}
     >
-      <MoreIcon height={24} width={32} onClick={() => setShow(!show)} />
+      <MoreIcon
+        height={24}
+        width={32}
+        onClick={() => setShow(!show)}
+        data-testid="more-icon"
+      />
     </Popover>
   )
 }
