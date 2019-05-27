@@ -88,6 +88,7 @@ export const Status = styled.div<StatusProps>`
   text-transform: capitalize;
   text-align: center;
   padding: 8px;
+  margin: auto;
   border-radius: 18px;
   justify-self: flex-start;
   max-width: 130px;

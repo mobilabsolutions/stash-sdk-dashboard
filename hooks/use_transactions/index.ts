@@ -190,6 +190,7 @@ export const useTransactions = () => {
     error: state.error,
     setRange,
     modifyData,
+    totalCount: state.totalCount,
     reverse,
     capture,
     numberOfPages,

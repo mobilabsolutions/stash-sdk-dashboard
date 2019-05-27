@@ -22,6 +22,7 @@ export default () => {
     setReason,
     isLoading,
     reverse,
+    totalCount,
     capture,
     refund
   } = useTransactions()
@@ -51,6 +52,7 @@ export default () => {
           capture={capture}
           numberOfPages={numberOfPages}
           setPage={setPage}
+          totalCount={totalCount}
           selectedPage={selectedPage}
         />
       </VerticalScrollContainer>
