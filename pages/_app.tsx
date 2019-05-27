@@ -5,7 +5,8 @@ import { theme } from '../assets/style'
 import { ThemeProvider } from '../components/styled'
 import { NextContextProvider } from '../hooks/use_next_context'
 import { ToastProvider } from '../hooks/use_toast'
-
+import { ThemeProvider as NewTheme } from '@zendeskgarden/react-theming'
+import '@zendeskgarden/react-pagination/dist/styles.css'
 type Props = {
   context: object
 }
@@ -42,9 +43,11 @@ export default class extends App<Props> {
         <Container>
           <NextContextProvider context={context}>
             <ThemeProvider theme={theme}>
-              <ToastProvider>
-                <Component {...pageProps} />
-              </ToastProvider>
+              <NewTheme>
+                <ToastProvider>
+                  <Component {...pageProps} />
+                </ToastProvider>
+              </NewTheme>
             </ThemeProvider>
           </NextContextProvider>
         </Container>

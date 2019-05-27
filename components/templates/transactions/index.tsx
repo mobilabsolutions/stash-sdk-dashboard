@@ -65,6 +65,8 @@ export default ({
   capture,
   filterHeight,
   totalCount,
+  pageSize,
+  resetPageSizeTo,
   reverse
 }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
@@ -105,7 +107,8 @@ export default ({
         manual
         pages={numberOfPages}
         loading={isLoading}
-        defaultPageSize={10}
+        onPageSizeChange={resetPageSizeTo}
+        pageSize={pageSize}
         minRows={data.length}
         previousText={getText('Previous')}
         nextText={getText('Next')}

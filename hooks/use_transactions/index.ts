@@ -180,6 +180,14 @@ export const useTransactions = () => {
     modifyData(transactionId, { ...response })
   })
 
+  const resetPageSizeTo = (pageSize = 100) => {
+    setState(prev => ({
+      ...prev,
+      pageSize,
+      startPos: 0
+    }))
+  }
+
   return {
     data: state.data,
     isLoading: state.isLoading,
@@ -188,6 +196,8 @@ export const useTransactions = () => {
     status: state.status,
     reason: state.reason,
     error: state.error,
+    pageSize: state.pageSize,
+    resetPageSizeTo,
     setRange,
     modifyData,
     totalCount: state.totalCount,
