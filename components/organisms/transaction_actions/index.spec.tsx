@@ -1,5 +1,4 @@
-import { testRender, deepRender } from '../../../test_utils'
-// import { shallow, mount } from 'enzyme'
+import { deepRender } from '../../../test_utils'
 import TransactionActions from '../transaction_actions'
 import { fireEvent, getByText } from 'react-testing-library'
 
