@@ -191,7 +191,7 @@ export default ({
             Cell: row => (
               <PaymentMethod
                 paymentMethod={row.value}
-                ccType={row.original.ccType}
+                title={getText(row.value)}
               />
             )
           },

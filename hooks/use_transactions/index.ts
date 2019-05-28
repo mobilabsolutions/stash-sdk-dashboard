@@ -7,7 +7,7 @@ import { useRefund, useReverse, useCapture, Params } from './actions'
 const isClient = typeof window === 'object'
 
 interface Transaction {
-  action: 'AUTHORIZED'
+  action: 'AUTH' | 'PREAUTH' | 'REVERSAL' | 'REFUND' | 'CAPTURE'
   amount: number
   createdDate: string
   currencyId: string
