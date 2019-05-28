@@ -4,12 +4,13 @@ import Router from 'next/router'
 
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture, Params } from './actions'
+import { statusToAction } from '../../assets/utils'
 const isClient = typeof window === 'object'
 
 interface Transaction {
   action: 'AUTH' | 'PREAUTH' | 'REVERSAL' | 'REFUND' | 'CAPTURE'
   amount: number
-  createdDate: string
+  createdDate: string | number | Date
   currencyId: string
   customerId: string
   paymentMethod: string
@@ -27,7 +28,28 @@ interface TransactionReponse {
   transactions: Array<Transaction>
 }
 
-const getInitValue = () => {
+interface State {
+  data: Array<Transaction>
+  isLoading: boolean
+  startDate: moment.Moment
+  endDate: moment.Moment
+  startPos: number
+  pageSize: number
+  totalCount: number
+  status:
+    | 'all'
+    | 'authorised'
+    | 'peversed'
+    | 'refunded'
+    | 'captured'
+    | 'fail'
+    | 'pre-Authorised'
+  reason: string
+  error: any
+  refreshCounter: number
+}
+
+function getInitValue(): State {
   return {
     data: [],
     isLoading: false,
@@ -48,7 +70,6 @@ const getInitValue = () => {
     status: 'all',
     reason: '',
     error: null,
-    isRefunding: false,
     refreshCounter: 0
   }
 }
@@ -77,26 +98,31 @@ export const useTransactions = () => {
         )}`
       if (state.endDate)
         url += `&createdAtEnd=${state.endDate.format('YYYY-MM-DD HH:mm:ss')}`
-      if (state.status !== 'all') url += `&status=${state.status.toUpperCase()}`
+
+      //--------------- Filter ACTION and STATUS
+      if (state.status !== 'all') {
+        const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
+        url += `&status=${status}`
+        url +=
+          state.status === 'fail'
+            ? ''
+            : `&action=${statusToAction[state.status]}`
+      }
+      ////---------------
       if (state.reason) url += `&reason=${state.reason}`
 
       try {
         const response: { result: TransactionReponse } = await apiGet(url)
         return setState(prevState => ({
           ...prevState,
-          data: response.result.transactions.map(
-            (item: {
-              amount: number
-              createdDate: string | number | Date
-            }) => ({
-              ...item,
-              amount: item.amount / 100,
-              timestamp: moment(
-                item.createdDate,
-                moment.defaultFormatUtc
-              ).toDate()
-            })
-          ),
+          data: response.result.transactions.map((item: Transaction) => ({
+            ...item,
+            amount: item.amount / 100,
+            timestamp: moment(
+              item.createdDate,
+              moment.defaultFormatUtc
+            ).toDate()
+          })),
           totalCount: response.result.metadata.totalCount,
           error: null,
           isLoading: false
@@ -166,7 +192,7 @@ export const useTransactions = () => {
       startPos: page * state.pageSize
     }))
 
-  const setStatus = (status: string) =>
+  const setStatus = (status: any) =>
     setState(prevState => ({ ...prevState, status, startPos: 0 }))
 
   const setReason = (reason: string) =>
