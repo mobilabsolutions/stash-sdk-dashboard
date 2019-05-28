@@ -71,8 +71,12 @@ export const useTransactions = () => {
       )}/transactions?limit=${state.pageSize}`
 
       url += `&offset=${state.startPos}`
-      if (state.startDate) url += `&fromDate=${state.startDate.toISOString()}`
-      if (state.endDate) url += `&toDate=${state.endDate.toISOString()}`
+      if (state.startDate)
+        url += `&createdAtStart=${state.startDate.format(
+          'YYYY-MM-DD HH:mm:ss'
+        )}`
+      if (state.endDate)
+        url += `&createdAtEnd=${state.endDate.format('YYYY-MM-DD HH:mm:ss')}`
       if (state.status !== 'all') url += `&status=${state.status.toUpperCase()}`
       if (state.reason) url += `&reason=${state.reason}`
 
