@@ -7,6 +7,7 @@ import moment from 'moment'
 import { useLocalization } from '../../../hooks'
 import { Radio } from '../../molecules'
 import styled from '../../styled'
+import { statusToAction } from '../../../assets/utils'
 
 const Wrapper = styled.div`
   display: flex;
@@ -44,12 +45,7 @@ const OptionWrapper = styled.div`
 
 const statusOptions = [
   'all',
-  'bs_initiated',
-  'approved',
-  'declined',
-  'refunded',
-  'rejected',
-  'cancelled'
+  ...Object.entries(statusToAction).map(act => act[0])
 ]
 
 export default forwardRef<HTMLDivElement, any>(
@@ -97,7 +93,9 @@ export default forwardRef<HTMLDivElement, any>(
                   name="status"
                   value={option}
                   selectedOption={status}
-                  onChange={setStatus}
+                  onChange={() => {
+                    setStatus(option)
+                  }}
                 />
               </OptionWrapper>
             ))}
