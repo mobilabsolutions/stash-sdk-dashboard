@@ -1,0 +1,444 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Should Render 1`] = `
+<div
+  className="pagination__Container-sc-1rsyx79-3 eAPZDg"
+>
+  <div
+    className="pagination__Item-sc-1rsyx79-4 gPKaPf"
+  >
+    <span
+      className="pagination__InfoContainer-sc-1rsyx79-2 Fzdxr"
+    >
+      1
+      -
+      100
+       
+      of
+       
+      1000
+    </span>
+  </div>
+  <div
+    className="pagination__Item-sc-1rsyx79-4 gPKaPf"
+  >
+    <ul
+      aria-activedescendant={null}
+      aria-label="Pagination navigation"
+      className="PaginationView-h27uhl-0 index__c-pagination___26uF7 jFbgdy"
+      data-garden-id="pagination.pagination_view"
+      data-garden-version="4.4.6"
+      id="garden-pagination-0--container"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        className="Page-sc-1t0i55e-0 PreviousPage-sc-82aant-0 index__c-pagination__page--previous___12lkz dxqhpK"
+        data-garden-id="pagination.previous_page"
+        data-garden-version="4.4.6"
+        data-test-id="previous"
+        hidden={true}
+      />
+      <li
+        aria-label="Current page, Page 1"
+        aria-selected={true}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR index__is-current___2owUB klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-1"
+        onClick={[Function]}
+        role="option"
+      >
+        1
+      </li>
+      <li
+        aria-label="Page 2"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-2"
+        onClick={[Function]}
+        role="option"
+      >
+        2
+      </li>
+      <li
+        aria-label="Page 3"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-3"
+        onClick={[Function]}
+        role="option"
+      >
+        3
+      </li>
+      <li
+        aria-label="Page 4"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-4"
+        onClick={[Function]}
+        role="option"
+      >
+        4
+      </li>
+      <li
+        aria-label="Page 5"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-5"
+        onClick={[Function]}
+        role="option"
+      >
+        5
+      </li>
+      <li
+        aria-label="Page 6"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-6"
+        onClick={[Function]}
+        role="option"
+      >
+        6
+      </li>
+      <li
+        aria-label="Page 7"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-7"
+        onClick={[Function]}
+        role="option"
+      >
+        7
+      </li>
+      <li
+        className="Page-sc-1t0i55e-0 Gap-sc-9l7n13-0 index__c-pagination__page--gap___2U4pa iDYswY"
+        data-garden-id="pagination.gap"
+        data-garden-version="4.4.6"
+        data-test-id="gap"
+      />
+      <li
+        aria-label="Page 10"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-0--item-10"
+        onClick={[Function]}
+        role="option"
+      >
+        10
+      </li>
+      <li
+        aria-label="Next page"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 NextPage-sc-1hsgss-0 index__c-pagination__page--next___2M-1a bcsflZ"
+        data-garden-id="pagination.next_page"
+        data-garden-version="4.4.6"
+        data-test-id="next"
+        id="garden-pagination-0--item-next"
+        onClick={[Function]}
+        role="option"
+      />
+    </ul>
+  </div>
+  <div
+    className="pagination__Item-sc-1rsyx79-4 gPKaPf"
+    style={
+      Object {
+        "textAlign": "right",
+      }
+    }
+  >
+    <span
+      className="select-wrap -pageSizeOptions"
+    >
+      <label
+        className="pagination__Label-sc-1rsyx79-0 eBDjSI"
+        htmlFor="page-size"
+      >
+        rows per page
+        :
+      </label>
+      <select
+        aria-label="rows per page"
+        className="pagination__Select-sc-1rsyx79-1 kDWWTx"
+        name="page-size"
+        onChange={[Function]}
+        value={100}
+      >
+        <option
+          value={50}
+        >
+          50
+        </option>
+        <option
+          value={20}
+        >
+          20
+        </option>
+        <option
+          value={100}
+        >
+          100
+        </option>
+      </select>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pagination Should Render final page properly 1`] = `
+<div
+  className="pagination__Container-sc-1rsyx79-3 eAPZDg"
+>
+  <div
+    className="pagination__Item-sc-1rsyx79-4 gPKaPf"
+  >
+    <span
+      className="pagination__InfoContainer-sc-1rsyx79-2 Fzdxr"
+    >
+      901
+      -
+      970
+       
+      of
+       
+      970
+    </span>
+  </div>
+  <div
+    className="pagination__Item-sc-1rsyx79-4 gPKaPf"
+  >
+    <ul
+      aria-activedescendant={null}
+      aria-label="Pagination navigation"
+      className="PaginationView-h27uhl-0 index__c-pagination___26uF7 jFbgdy"
+      data-garden-id="pagination.pagination_view"
+      data-garden-version="4.4.6"
+      id="garden-pagination-3--container"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        aria-label="Previous page"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 PreviousPage-sc-82aant-0 index__c-pagination__page--previous___12lkz dxqhpK"
+        data-garden-id="pagination.previous_page"
+        data-garden-version="4.4.6"
+        data-test-id="previous"
+        id="garden-pagination-3--item-previous"
+        onClick={[Function]}
+        role="option"
+      />
+      <li
+        aria-label="Page 1"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-1"
+        onClick={[Function]}
+        role="option"
+      >
+        1
+      </li>
+      <li
+        aria-label="Page 2"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-2"
+        onClick={[Function]}
+        role="option"
+      >
+        2
+      </li>
+      <li
+        aria-label="Page 3"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-3"
+        onClick={[Function]}
+        role="option"
+      >
+        3
+      </li>
+      <li
+        aria-label="Page 4"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-4"
+        onClick={[Function]}
+        role="option"
+      >
+        4
+      </li>
+      <li
+        aria-label="Page 5"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-5"
+        onClick={[Function]}
+        role="option"
+      >
+        5
+      </li>
+      <li
+        aria-label="Page 6"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-6"
+        onClick={[Function]}
+        role="option"
+      >
+        6
+      </li>
+      <li
+        aria-label="Page 7"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-7"
+        onClick={[Function]}
+        role="option"
+      >
+        7
+      </li>
+      <li
+        aria-label="Page 8"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-8"
+        onClick={[Function]}
+        role="option"
+      >
+        8
+      </li>
+      <li
+        aria-label="Page 9"
+        aria-selected={false}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-9"
+        onClick={[Function]}
+        role="option"
+      >
+        9
+      </li>
+      <li
+        aria-label="Current page, Page 10"
+        aria-selected={true}
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR index__is-current___2owUB klgIDC"
+        data-garden-id="pagination.page"
+        data-garden-version="4.4.6"
+        data-test-id="page"
+        id="garden-pagination-3--item-10"
+        onClick={[Function]}
+        role="option"
+      >
+        10
+      </li>
+      <li
+        className="Page-sc-1t0i55e-0 NextPage-sc-1hsgss-0 index__c-pagination__page--next___2M-1a bcsflZ"
+        data-garden-id="pagination.next_page"
+        data-garden-version="4.4.6"
+        hidden={true}
+      />
+    </ul>
+  </div>
+  <div
+    className="pagination__Item-sc-1rsyx79-4 gPKaPf"
+    style={
+      Object {
+        "textAlign": "right",
+      }
+    }
+  >
+    <span
+      className="select-wrap -pageSizeOptions"
+    >
+      <label
+        className="pagination__Label-sc-1rsyx79-0 eBDjSI"
+        htmlFor="page-size"
+      >
+        rows per page
+        :
+      </label>
+      <select
+        aria-label="rows per page"
+        className="pagination__Select-sc-1rsyx79-1 kDWWTx"
+        name="page-size"
+        onChange={[Function]}
+        value={100}
+      >
+        <option
+          value={50}
+        >
+          50
+        </option>
+        <option
+          value={20}
+        >
+          20
+        </option>
+        <option
+          value={100}
+        >
+          100
+        </option>
+      </select>
+    </span>
+  </div>
+</div>
+`;

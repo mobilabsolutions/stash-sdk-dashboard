@@ -6,6 +6,27 @@ import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture, Params } from './actions'
 const isClient = typeof window === 'object'
 
+interface Transaction {
+  action: 'AUTHORIZED'
+  amount: number
+  createdDate: string
+  currencyId: string
+  customerId: string
+  paymentMethod: string
+  reason: string
+  status: 'SUCCESS' | 'FAIL'
+  transactionId: string
+}
+interface TransactionReponse {
+  metadata: {
+    limit: 0
+    offset: 0
+    pageCount: 0
+    totalCount: 0
+  }
+  transactions: Array<Transaction>
+}
+
 const getInitValue = () => {
   return {
     data: [],
@@ -56,7 +77,7 @@ export const useTransactions = () => {
       if (state.reason) url += `&reason=${state.reason}`
 
       try {
-        const response: any = await apiGet(url)
+        const response: { result: TransactionReponse } = await apiGet(url)
         return setState(prevState => ({
           ...prevState,
           data: response.result.transactions.map(
@@ -72,7 +93,7 @@ export const useTransactions = () => {
               ).toDate()
             })
           ),
-          totalCount: response.result.totalCount,
+          totalCount: response.result.metadata.totalCount,
           error: null,
           isLoading: false
         }))
@@ -180,6 +201,14 @@ export const useTransactions = () => {
     modifyData(transactionId, { ...response })
   })
 
+  const resetPageSizeTo = (pageSize = 100) => {
+    setState(prev => ({
+      ...prev,
+      pageSize,
+      startPos: 0
+    }))
+  }
+
   return {
     data: state.data,
     isLoading: state.isLoading,
@@ -188,8 +217,11 @@ export const useTransactions = () => {
     status: state.status,
     reason: state.reason,
     error: state.error,
+    pageSize: state.pageSize,
+    resetPageSizeTo,
     setRange,
     modifyData,
+    totalCount: state.totalCount,
     reverse,
     capture,
     numberOfPages,

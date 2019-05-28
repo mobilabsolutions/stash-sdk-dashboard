@@ -75,6 +75,8 @@
   "dependencies": {
     "@zeit/next-css": "1.0.1",
     "@zeit/next-typescript": "1.1.1",
+    "@zendeskgarden/react-pagination": "4.4.6",
+    "@zendeskgarden/react-theming": "3.2.1",
     "fastify": "2.3.0",
     "fastify-http-proxy": "2.2.0",
     "formik": "1.5.4",

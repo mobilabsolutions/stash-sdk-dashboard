@@ -1,116 +1,126 @@
-import { UpIcon, DownIcon } from '../../atoms'
+import React from 'react'
+import { Pagination } from '@zendeskgarden/react-pagination'
 import styled from '../../styled'
 
-const MAX_PAGES = 5
-const MIDDLE_OFFSET = Math.floor(MAX_PAGES / 2)
+const transformPageProps = (pageType, props) => {
+  props['data-test-id'] = pageType
+  return props
+}
 
-const Wrapper = styled.div`
-  user-select: none;
-  ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: -50px;
-    left: -32px;
-    z-index: 10;
-    height: 52px;
-    margin: 0px;
-  }
-  ul > li {
-    width: 36px;
-    height: 36px;
-    border-radius: 5px;
-    margin-left: 4px;
-    margin-right: 4px;
-    line-height: 36px;
-    font-family: ${props => props.theme.fontHeadline};
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    color: ${props => props.theme.shade.A100};
-    cursor: pointer;
-  }
-  ul > li.number:hover,
-  ul > li.selectedPage,
-  ul > li.arrow:hover {
-    color: ${props => props.theme.shade.A500};
-    background-color: ${props => props.theme.shade.A50};
-    fill: ${props => props.theme.shade.A500};
-  }
-  ul > li.number:hover,
-  ul > li.arrow:hover {
-    background-color: ${props => props.theme.shade.A100};
-  }
-  ul > li.arrow:hover {
-  }
-  li.arrow {
-    transform: rotate(90deg);
-    fill: ${props => props.theme.shade.A100};
-  }
-  li.arrowHidden {
-    visibility: hidden;
-  }
-  li.noArrow {
-    display: none;
-  }
+const Label = styled.label`
+  padding-right: 10px;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: ${props => props.theme.shade.A200};
+`
+const Select = styled.select`
+  width: 60px;
+  height: 32px;
+  border-radius: 4px;
+  border: solid 1px #ededed;
 `
 
-export default ({ selectedPage, numberOfPages, onSelectPage }) => {
-  if (numberOfPages <= 1) return null
+const PageSizeOptions = ({
+  pageSize,
+  pageSizeOptions,
+  rowsSelectorText,
+  onPageSizeChange
+}) => (
+  <span className="select-wrap -pageSizeOptions">
+    <Label htmlFor="page-size">{rowsSelectorText}:</Label>
+    <Select
+      name="page-size"
+      aria-label={rowsSelectorText}
+      onChange={e => onPageSizeChange(Number(e.target.value))}
+      value={pageSize}
+    >
+      {pageSizeOptions.map((option, i) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <option key={i} value={option}>
+          {option}
+        </option>
+      ))}
+    </Select>
+  </span>
+)
 
-  const pageNumbers = Array.from(
-    { length: Math.min(numberOfPages, MAX_PAGES) },
-    (_, index) =>
-      index +
-      (selectedPage <= MIDDLE_OFFSET
-        ? 1
-        : selectedPage + MIDDLE_OFFSET >= numberOfPages
-        ? numberOfPages - Math.min(numberOfPages, MAX_PAGES) + 1
-        : selectedPage - MIDDLE_OFFSET)
-  )
+interface PropsType {
+  PreviousComponent: any
+  NextComponent: any
+  renderPageJump: any
+  renderCurrentPage: any
+  pages: number
+  page: 0
+  renderPageSizeOptions: any
+  showPageSizeOptions: boolean
+  pageSizeOptions: Array<any>
+  pageSize: number
+  showPageJump: boolean
+  style: any
+  canPrevious: boolean
+  canNext: boolean
+  onPageSizeChange: Function
+  onPageChange: Function
+  pageJumpText: string
+  previousText: string
+  nextText: string
+  className: string
+  ofText: 'of'
+  totalCount: 0
+  rowsSelectorText: string
+  rowsText: string
+  pageText: string
+  renderTotalPagesCount: any
+}
 
-  const classNameDown =
-    numberOfPages < MAX_PAGES
-      ? 'noArrow'
-      : selectedPage === 1
-      ? 'arrowHidden'
-      : 'arrow'
+const InfoContainer = styled.span`
+  padding-left: 16px;
+  font-size: 14px;
+  color: ${props => props.theme.shade.A200};
+`
 
-  const classNameUp =
-    numberOfPages < MAX_PAGES
-      ? 'noArrow'
-      : selectedPage === numberOfPages
-      ? 'arrowHidden'
-      : 'arrow'
+const Container = styled.div`
+  display: flex;
+  border-top: solid 1px #ededed;
+  padding-top: 16px;
+`
+const Item = styled.div`
+  flex-direction: column;
+  width: 33%;
+`
 
+export default (props: PropsType) => {
+  const setPage = currentPage => {
+    props.onPageChange(currentPage - 1)
+  }
+  const initial = props.page * props.pageSize + 1
+  const final =
+    initial + props.pageSize - 1 > props.totalCount
+      ? props.totalCount
+      : initial + props.pageSize - 1
   return (
-    <Wrapper>
-      <ul>
-        <li
-          className={classNameDown}
-          onClick={() => onSelectPage(selectedPage - 1)}
-        >
-          <DownIcon />
-        </li>
-        {pageNumbers.map(number => (
-          <li
-            className={selectedPage === number ? 'selectedPage' : 'number'}
-            key={number}
-            onClick={() => {
-              onSelectPage(number)
-            }}
-          >
-            {number}
-          </li>
-        ))}
-        <li
-          className={classNameUp}
-          onClick={() => onSelectPage(selectedPage + 1)}
-        >
-          <UpIcon />
-        </li>
-      </ul>
-    </Wrapper>
+    <Container>
+      <Item>
+        <InfoContainer>
+          {initial}-{final} {props.ofText} {props.totalCount}
+        </InfoContainer>
+      </Item>
+      <Item>
+        <Pagination
+          totalPages={props.pages}
+          currentPage={props.page + 1}
+          transformPageProps={transformPageProps}
+          onChange={setPage}
+        />
+      </Item>
+      <Item style={{ textAlign: 'right' }}>
+        <PageSizeOptions
+          pageSize={props.pageSize}
+          pageSizeOptions={props.pageSizeOptions}
+          rowsSelectorText={props.rowsSelectorText}
+          onPageSizeChange={props.onPageSizeChange}
+        />
+      </Item>
+    </Container>
   )
 }
