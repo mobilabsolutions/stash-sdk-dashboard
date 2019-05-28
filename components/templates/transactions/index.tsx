@@ -7,29 +7,35 @@ import { Status, Timestamp, Reason, CustomerId, Amount } from './styled'
 import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
-import { TransactionActions, PaymentMethod } from '../../organisms'
+import { TransactionActions, PaymentMethod, Pagination } from '../../organisms'
+
+const headerStyle = {
+  fontSize: '16px',
+  fontWeight: 'bold',
+  paddingLeft: '12px',
+  paddingTop: '12px',
+  paddingBottom: '5px',
+  margin: 'auto',
+  textAlign: 'center',
+  borderRight: 'none',
+  fontStyle: 'normal',
+  fontStretch: 'normal',
+  lineHeight: 1.31,
+  letterSpacing: 'normal',
+  color: '#a3aaaf'
+}
+
+const cellStyles = {
+  borderRight: 'none',
+  margin: 'auto',
+  textAlign: 'center',
+  paddingLeft: '12px'
+}
+
 const global_columns_def = {
   ...ReactTableDefaults.column,
-  style: {
-    borderRight: 'none',
-    margin: 'auto',
-    paddingLeft: '12px'
-  },
-  headerStyle: {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    paddingLeft: '12px',
-    paddingTop: '12px',
-    paddingBottom: '5px',
-    margin: 'auto',
-    textAlign: 'left',
-    borderRight: 'none',
-    fontStyle: 'normal',
-    fontStretch: 'normal',
-    lineHeight: 1.31,
-    letterSpacing: 'normal',
-    color: '#a3aaaf'
-  }
+  style: cellStyles,
+  headerStyle
 }
 
 const getActionStatus = (status: string, action: string): string => {
@@ -58,6 +64,9 @@ export default ({
   refund,
   capture,
   filterHeight,
+  totalCount,
+  pageSize,
+  resetPageSizeTo,
   reverse
 }) => {
   const { getText, formatDate, formatAmount } = useLocalization()
@@ -91,11 +100,15 @@ export default ({
   return (
     <>
       <ReactTable
+        PaginationComponent={props => (
+          <Pagination {...props} totalCount={totalCount} />
+        )}
         data={data}
         manual
         pages={numberOfPages}
         loading={isLoading}
-        defaultPageSize={100}
+        onPageSizeChange={resetPageSizeTo}
+        pageSize={pageSize}
         minRows={data.length}
         previousText={getText('Previous')}
         nextText={getText('Next')}
@@ -105,7 +118,6 @@ export default ({
         ofText={getText('of')}
         rowsText={getText('rows')}
         sortable={false}
-        showPageSizeOptions={false}
         onPageChange={setPage}
         page={selectedPage}
         className=""
@@ -125,6 +137,14 @@ export default ({
           {
             Header: 'Amount',
             accessor: 'amount',
+            headerStyle: {
+              ...headerStyle,
+              textAlign: 'right'
+            },
+            style: {
+              ...cellStyles,
+              textAlign: 'right'
+            },
             Cell: row => (
               <Amount>
                 {formatAmount(row.original.currencyId, row.value).value}
@@ -142,20 +162,32 @@ export default ({
           {
             Header: 'Description',
             accessor: 'reason',
+            headerStyle: {
+              ...headerStyle,
+              textAlign: 'left'
+            },
+            style: {
+              ...cellStyles,
+              textAlign: 'left'
+            },
             Cell: row => <Reason>{row.value}</Reason>
           },
           {
             Header: 'Customer Id',
             accessor: 'customerId',
+            headerStyle: {
+              ...headerStyle,
+              textAlign: 'left'
+            },
+            style: {
+              ...cellStyles,
+              textAlign: 'left'
+            },
             Cell: row => <CustomerId>{row.value}</CustomerId>
           },
           {
             Header: 'Payment Method',
             accessor: 'paymentMethod',
-            style: {
-              textAlign: 'center',
-              borderRight: 'none'
-            },
             Cell: row => (
               <PaymentMethod
                 paymentMethod={row.value}
@@ -166,11 +198,19 @@ export default ({
           {
             Header: 'Date',
             accessor: 'timestamp',
+            headerStyle: {
+              ...headerStyle,
+              textAlign: 'right'
+            },
+            style: {
+              ...cellStyles,
+              textAlign: 'right'
+            },
             Cell: row => <Timestamp>{formatDate(row.value)}</Timestamp>
           },
           {
             Header: ' ',
-            maxWidth: 50,
+            maxWidth: 96,
             resizable: false,
             Cell: row => (
               <TransactionActions
