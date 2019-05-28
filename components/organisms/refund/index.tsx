@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, Formik, Form } from 'formik'
-import { PrimaryButton, SecondaryButton } from '../../atoms'
+import { SecondaryButton, LoadingButton } from '../../atoms'
 import { Radio, Input, InputCurrency } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import styled from '../../styled'
@@ -23,13 +23,11 @@ const FormItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 8px;
-  padding: 5px;
+  padding: 5px 5px 5px 0px;
   margin-bottom: 16px;
 `
 
 const ButtonContainer = styled.div`
-  background-color: ${props => props.theme.shade.A25};
   display: flex;
   flex-direction: row;
   padding: 12px 24px 12px 24px;
@@ -47,7 +45,9 @@ const ContentContainer = styled.div`
 export default function RefundForm({
   onCancel,
   initialRefund,
+  isLoading = false,
   onSubmit,
+  children,
   currencyId
 }) {
   const { getText } = useLocalization()
@@ -55,12 +55,27 @@ export default function RefundForm({
   return (
     <Formik
       initialValues={{ refund: initialRefund, reason: '', refundType: 'full' }}
-      onSubmit={onSubmit}
+      onSubmit={(values: {
+        refund: string
+        reason: string
+        refundType: string
+      }) => {
+        let numberRefund = parseFloat(values.refund)
+        let returnValues = {
+          ...values,
+          refund: values.refundType === 'full' ? initialRefund : numberRefund
+        }
+        onSubmit(returnValues)
+      }}
       isInitialValid
       validate={values => {
         let errors = {}
-        if (values.refund > initialRefund)
-          Object.assign(errors, { refund: getText('Error') })
+        if (values.refundType === 'partial' && values.refund > initialRefund)
+          Object.assign(errors, {
+            refund: getText('Amount limit is %{amount}', {
+              amount: initialRefund
+            })
+          })
         if (new RegExp('/^[a-z0-9]+$/i').test(values.reason))
           Object.assign(errors, { reason: getText('Error') })
         return errors
@@ -92,6 +107,9 @@ export default function RefundForm({
                 <InputCurrency
                   field={field}
                   form={form}
+                  containerStyle={{ flexDirection: 'row' }}
+                  inputStyle={{ marginLeft: '16px', width: '100%' }}
+                  labelStyle={{ minWidth: 100 }}
                   disabled={values.refundType === 'full'}
                   currencyId={currencyId}
                   title={getText('Refund')}
@@ -105,15 +123,25 @@ export default function RefundForm({
                 <Input
                   field={field}
                   form={form}
+                  containerStyle={{ flexDirection: 'row' }}
+                  labelStyle={{ minWidth: 100 }}
+                  inputStyle={{ marginLeft: '16px', width: '100%' }}
                   title={getText('Description')}
+                  autoFocus
                   placeholder={getText('Description')}
                 />
               )}
             />
+            {children}
           </ContentContainer>
           <ButtonContainer>
-            <SecondaryButton label={getText('Cancel')} onClick={onCancel} />
-            <PrimaryButton
+            <SecondaryButton
+              label={getText('Cancel')}
+              onClick={onCancel}
+              disabled={isLoading}
+            />
+            <LoadingButton
+              isLoading={isLoading}
               label={getText('Refund the Transaction')}
               disabled={!isValid}
             />

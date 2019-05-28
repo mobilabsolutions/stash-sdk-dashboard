@@ -128,11 +128,18 @@ export default {
   'pre-Authorised': { en: 'Pre-Authorised' },
   fail: { en: 'Fail' },
   captured: { en: 'Captured' },
+  reversed: { en: 'Reversed' },
   authorised: { en: 'Authorised' },
   'Refund Payment': {},
   Partial: {},
   Full: {},
+  'Go to Dashboard': { de: 'Gehe zum Dashboard' },
+  'Capture Successful.': {},
+  'Reverse Successful.': {},
+  'Refund Successful.': {},
   'Refund the Transaction': {},
+  'Reverse the Transaction': {},
+  'Capture the Transaction': { de: 'Erfassen Sie die Transaktion' },
   Description: {},
   'Are you sure you want to capture this transaction?': {},
   capture: { en: 'Capture' },
@@ -155,5 +162,19 @@ export default {
   MASTERCARD: { en: 'MASTER CARD', de: 'MASTER CARD' },
   UNIONPAY: {},
   APPLE_PAY: { en: 'APPLE PAL', de: 'APPLE PAL' },
-  reverse: { en: 'Reverse' }
+  reverse: { en: 'Reverse' },
+  'Amount limit is %{amount}': { de: 'Betragslimit ist %{amount}' },
+  'Capture unsuccessful. Please try again.': {
+    de: 'Erfassen nicht erfolgreich. Bitte versuche es erneut.'
+  },
+  'Reverse unsuccessful. Please try again.': {
+    de: 'Reverse nicht erfolgreich. Bitte versuche es erneut.'
+  },
+  'Refund unsuccessful. Please try again.': {
+    de: 'Refund nicht erfolgreich. Bitte versuche es erneut.'
+  },
+  'Refund take 5-10 days to appear on a costumer´s statement.': {
+    de:
+      'Es dauert 5-10 Tage, bis die Rückerstattung auf der Kundenabrechnung erscheint.'
+  }
 }

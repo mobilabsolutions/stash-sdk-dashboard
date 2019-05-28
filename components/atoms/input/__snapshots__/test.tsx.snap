@@ -3,7 +3,7 @@
 exports[`Input Should Render 1`] = `
 <input
   autoFocus={false}
-  className="input__HtmlInput-rcagn3-0 konMqF"
+  className="input__HtmlInput-rcagn3-0 feOJUN"
   onBlur={null}
   onFocus={null}
   placeholder=""

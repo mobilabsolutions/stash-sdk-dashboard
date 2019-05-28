@@ -1,6 +1,7 @@
 export { default as PrimaryButton } from './button/primary'
 export { default as SecondaryButton } from './button/secondary'
 export { default as WarnButton } from './button/warn'
+export { default as LoadingButton } from './button/loading'
 
 export { default as Link } from './link'
 export { default as Overlay } from './container/overlay'
@@ -41,6 +42,10 @@ export { default as ApplePay } from './icons/applepay'
 export { default as GooglePay } from './icons/googlepay'
 export { default as Dinners } from './icons/dinners'
 export { default as DK } from './icons/dk'
+export { default as Warn } from './icons/warn'
+export { default as Loading } from './icons/loading'
+export { default as Alert } from './icons/alert'
+export { default as Check } from './icons/check'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'

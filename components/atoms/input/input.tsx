@@ -11,6 +11,9 @@ const HtmlInput = styled.input`
   margin-right: 16px;
   box-shadow: none;
   width: 100%;
+  :disabled {
+    color: ${props => props.theme.shade.A300};
+  }
   :focus {
     outline: none;
   }

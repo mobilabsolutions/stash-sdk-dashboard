@@ -16,7 +16,6 @@ const ContentContainer = styled.div`
 `
 
 const ButtonContainer = styled.div`
-  background-color: ${props => props.theme.shade.A25};
   display: flex;
   flex-direction: row;
   padding: 12px 24px 12px 24px;
@@ -53,7 +52,10 @@ export function WarnPopup({
   onClose,
   children,
   onAction,
+  secondaryBtn = true,
   header,
+  PrimaryButtonEl = PrimaryButton,
+  buttonStyle = {},
   action
 }) {
   const { getText } = useLocalization()
@@ -62,10 +64,15 @@ export function WarnPopup({
     <ActionPopup show={show} onClose={onClose} header={header}>
       {!!children && <ContentContainer>{children}</ContentContainer>}
       <ButtonContainer>
-        <SecondaryButton label={getText('Cancel')} onClick={onClose} />
-        {typeof onAction === 'function' && (
-          <PrimaryButton label={action} onClick={onAction} />
+        {secondaryBtn && (
+          <SecondaryButton label={getText('Cancel')} onClick={onClose} />
         )}
+        {typeof onAction === 'function' &&
+          PrimaryButtonEl({
+            label: action,
+            onClick: onAction,
+            style: buttonStyle
+          })}
       </ButtonContainer>
     </ActionPopup>
   )
