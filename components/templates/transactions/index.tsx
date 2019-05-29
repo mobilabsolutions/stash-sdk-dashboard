@@ -1,5 +1,4 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
 import Popup from './popup'
@@ -72,6 +71,12 @@ export default ({
   const { getText, formatDate, formatAmount } = useLocalization()
   const [action, setAction] = useState(null)
   const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    // Workaround for scrolling issue
+    document.getElementsByClassName('rt-tbody')[0] &&
+      (document.getElementsByClassName('rt-tbody')[0].scrollTop = 0)
+  }, [isLoading])
 
   const onClose = () => {
     isActionError(action) && clearError(action)
