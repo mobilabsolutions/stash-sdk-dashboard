@@ -5,23 +5,26 @@ import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 
 import { useLocalization } from '../../../hooks'
-import { Radio } from '../../molecules'
+import { Select } from '../../molecules'
 import styled from '../../styled'
 import { statusToAction } from '../../../assets/utils'
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  border-bottom: solid 1px ${props => props.theme.shade.A800};
-  padding: 24px 24px 12px 24px;
+  flex-direction: row;
+  margin: 12px 48px;
+  padding: 16px;
   flex: 1 1 auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 ${props => props.theme.shade.A50};
+  background-color: #ffffff;
 `
 
 const ItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  margin-bottom: 12px;
+  padding-right: 8px;
   flex-wrap: wrap;
 `
 const Label = styled.label`
@@ -32,30 +35,17 @@ const Label = styled.label`
   width: 10em;
 `
 
-const OptionList = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 8px;
-`
-
-const OptionWrapper = styled.div`
-  margin: 8px 24px 0 0px;
-`
-
-const statusOptions = [
-  'all',
-  ...Object.entries(statusToAction).map(act => act[0])
-]
-
 export default forwardRef<HTMLDivElement, any>(
-  ({ startDate, endDate, setRange, status, setStatus }, ref) => {
+  ({ startDate, endDate, setRange, status, setStatus, text, setText }, ref) => {
     const { getText } = useLocalization()
+    const statusOptions = Object.entries(statusToAction).map(act => ({
+      value: act[0],
+      label: getText(act[0])
+    }))
     const [focusedInput, setFocusedInput] = useState(null)
     return (
       <Wrapper ref={ref}>
         <ItemWrapper>
-          <Label>{getText('Date Range')}</Label>
           <DateRangePicker
             startDate={startDate}
             startDateId="filter_start_date_id"
@@ -66,7 +56,6 @@ export default forwardRef<HTMLDivElement, any>(
             }
             focusedInput={focusedInput}
             onFocusChange={focusedInput => setFocusedInput(focusedInput)}
-            showClearDates
             noBorder
             isOutsideRange={value =>
               value.isAfter(
@@ -84,22 +73,14 @@ export default forwardRef<HTMLDivElement, any>(
           />
         </ItemWrapper>
         <ItemWrapper>
-          <Label>{getText('Status')}</Label>
-          <OptionList>
-            {statusOptions.map(option => (
-              <OptionWrapper key={option}>
-                <Radio
-                  label={getText(option)}
-                  name="status"
-                  value={option}
-                  selectedOption={status}
-                  onChange={() => {
-                    setStatus(option)
-                  }}
-                />
-              </OptionWrapper>
-            ))}
-          </OptionList>
+          <Select
+            options={statusOptions}
+            value={!!status ? { label: getText(status), value: status } : null}
+            placeholder={getText('Payment Method')}
+            onChange={({ value }) => {
+              setStatus(value)
+            }}
+          />
         </ItemWrapper>
         <ItemWrapper>
           <Label>{getText('Text')}</Label>

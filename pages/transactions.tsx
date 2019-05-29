@@ -20,8 +20,8 @@ export default () => {
     setPage,
     status,
     setStatus,
-    reason,
-    setReason,
+    text,
+    setText,
     isLoading,
     reverse,
     totalCount,
@@ -42,8 +42,8 @@ export default () => {
           setRange={setRange}
           status={status}
           setStatus={setStatus}
-          reason={reason}
-          setReason={setReason}
+          text={text}
+          setText={setText}
         />
         <Transactions
           data={data}

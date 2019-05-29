@@ -37,14 +37,14 @@ interface State {
   pageSize: number
   totalCount: number
   status:
-    | 'all'
+    | ''
     | 'authorised'
     | 'peversed'
     | 'refunded'
     | 'captured'
     | 'fail'
     | 'pre-Authorised'
-  reason: string
+  text: string
   error: any
   refreshCounter: number
 }
@@ -67,8 +67,8 @@ function getInitValue(): State {
     startPos: 0,
     pageSize: 100,
     totalCount: 0,
-    status: 'all',
-    reason: '',
+    status: '',
+    text: '',
     error: null,
     refreshCounter: 0
   }
@@ -92,6 +92,7 @@ export const useTransactions = () => {
       )}/transactions?limit=${state.pageSize}`
 
       url += `&offset=${state.startPos}`
+      //--------------- Filter DATES
       if (state.startDate)
         url += `&createdAtStart=${state.startDate.format(
           'YYYY-MM-DD HH:mm:ss'
@@ -99,8 +100,9 @@ export const useTransactions = () => {
       if (state.endDate)
         url += `&createdAtEnd=${state.endDate.format('YYYY-MM-DD HH:mm:ss')}`
 
+      ////---------------
       //--------------- Filter ACTION and STATUS
-      if (state.status !== 'all') {
+      if (!!state.status) {
         const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
         url += `&status=${status}`
         url +=
@@ -109,7 +111,7 @@ export const useTransactions = () => {
             : `&action=${statusToAction[state.status]}`
       }
       ////---------------
-      if (state.reason) url += `&reason=${state.reason}`
+      if (state.text) url += `&text=${state.text}`
 
       try {
         const response: { result: TransactionReponse } = await apiGet(url)
@@ -154,7 +156,7 @@ export const useTransactions = () => {
     state.startPos,
     state.pageSize,
     state.status,
-    state.reason,
+    state.text,
     state.refreshCounter,
     token,
     apiGet
@@ -195,8 +197,8 @@ export const useTransactions = () => {
   const setStatus = (status: any) =>
     setState(prevState => ({ ...prevState, status, startPos: 0 }))
 
-  const setReason = (reason: string) =>
-    setState(prevState => ({ ...prevState, reason, startPos: 0 }))
+  const setText = (text: string) =>
+    setState(prevState => ({ ...prevState, text, startPos: 0 }))
 
   const modifyData = (transactionId: string, modification: any) =>
     setState(prevState => ({
@@ -245,7 +247,7 @@ export const useTransactions = () => {
     startDate: state.startDate,
     endDate: state.endDate,
     status: state.status,
-    reason: state.reason,
+    text: state.text,
     error: state.error,
     pageSize: state.pageSize,
     resetPageSizeTo,
@@ -258,7 +260,7 @@ export const useTransactions = () => {
     selectedPage,
     setPage,
     setStatus,
-    setReason,
+    setText,
     refund,
     token
   }
