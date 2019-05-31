@@ -27,6 +27,13 @@ const ItemWrapper = styled.div`
   padding-right: 8px;
   flex-wrap: wrap;
 `
+const ClearBtn = styled.button`
+  margin: auto;
+  font-size: 14px;
+  border: none;
+  background-color: #ffffff;
+  line-height: 0.93;
+`
 
 export default forwardRef<HTMLDivElement, any>(
   (
@@ -38,6 +45,8 @@ export default forwardRef<HTMLDivElement, any>(
       setStatus,
       paymentMethod,
       setText,
+      text,
+      clearFilters,
       setPaymentMethod
     },
     ref
@@ -52,6 +61,8 @@ export default forwardRef<HTMLDivElement, any>(
       label: getText(pay.name)
     }))
     const [focusedInput, setFocusedInput] = useState(null)
+    const isFiltered =
+      !!startDate || !!endDate || !!paymentMethod || !!status || !!text
     return (
       <Wrapper ref={ref}>
         <ItemWrapper>
@@ -111,6 +122,13 @@ export default forwardRef<HTMLDivElement, any>(
             placeholder={getText('Search Payments…')}
           />
         </ItemWrapper>
+        {isFiltered && (
+          <ItemWrapper>
+            <ClearBtn onClick={clearFilters}>
+              {getText('Clear Filters')}
+            </ClearBtn>
+          </ItemWrapper>
+        )}
       </Wrapper>
     )
   }

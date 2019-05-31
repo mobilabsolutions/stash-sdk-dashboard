@@ -220,6 +220,17 @@ export const useTransactions = () => {
       )
     }))
 
+  const clearFilters = () =>
+    setState(prevState => ({
+      ...prevState,
+      status: '',
+      text: '',
+      paymentMethod: '',
+      startPos: 0,
+      startDate: null,
+      endDate: null
+    }))
+
   interface ActionResponse {
     action: string
     additionalInfo: string
@@ -252,6 +263,7 @@ export const useTransactions = () => {
   }
 
   return {
+    clearFilters,
     data: state.data,
     isLoading: state.isLoading,
     startDate: state.startDate,

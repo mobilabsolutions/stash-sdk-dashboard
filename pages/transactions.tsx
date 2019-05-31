@@ -25,6 +25,7 @@ export default () => {
     isLoading,
     reverse,
     totalCount,
+    clearFilters,
     paymentMethod,
     setPaymentMethod,
     capture,
@@ -41,6 +42,7 @@ export default () => {
           ref={filterRef}
           startDate={startDate}
           endDate={endDate}
+          clearFilters={clearFilters}
           setRange={setRange}
           paymentMethod={paymentMethod}
           setPaymentMethod={setPaymentMethod}
