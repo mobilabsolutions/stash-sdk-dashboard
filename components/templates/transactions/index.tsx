@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
 import Popup from './popup'
@@ -44,7 +43,7 @@ const getActionStatus = (status: string, action: string): string => {
       const mapping = {
         PREAUTH: 'pre-Authorised',
         AUTH: 'authorised',
-        REVERSAL: 'peversed',
+        REVERSAL: 'reversed',
         REFUND: 'refunded',
         CAPTURE: 'captured'
       }
@@ -73,21 +72,41 @@ export default ({
   const [action, setAction] = useState(null)
   const [selected, setSelected] = useState(null)
 
+  useEffect(() => {
+    // Workaround for scrolling issue
+    document.getElementsByClassName('rt-tbody')[0] &&
+      (document.getElementsByClassName('rt-tbody')[0].scrollTop = 0)
+  }, [isLoading])
+
   const onClose = () => {
+    isActionError(action) && clearError(action)
     setAction(null)
     setSelected(null)
   }
-
-  //Close action popup when the action is finished
-  useEffect(() => {
-    !refund.isLoading && !refund.error && onClose()
-  }, [refund.isLoading])
-  useEffect(() => {
-    !capture.isLoading && !refund.error && onClose()
-  }, [capture.isLoading])
-  useEffect(() => {
-    !reverse.isLoading && !refund.error && onClose()
-  }, [reverse.isLoading])
+  const clearError = _action => {
+    const map = {
+      refund: refund.setError,
+      capture: capture.setError,
+      reverse: reverse.setError
+    }
+    typeof map[_action] === 'function' && map[_action]()
+  }
+  const isActionLoading = _action => {
+    const map = {
+      refund: refund.isLoading,
+      capture: capture.isLoading,
+      reverse: reverse.isLoading
+    }
+    return map[_action]
+  }
+  const isActionError = _action => {
+    const map = {
+      refund: refund.error,
+      capture: capture.error,
+      reverse: reverse.error
+    }
+    return map[_action]
+  }
 
   if (!data || data.length === 0) {
     return isLoading ? (
@@ -118,6 +137,7 @@ export default ({
         ofText={getText('of')}
         rowsText={getText('rows')}
         sortable={false}
+        resizable={false}
         onPageChange={setPage}
         page={selectedPage}
         className=""
@@ -191,7 +211,7 @@ export default ({
             Cell: row => (
               <PaymentMethod
                 paymentMethod={row.value}
-                ccType={row.original.ccType}
+                title={getText(row.value)}
               />
             )
           },
@@ -229,6 +249,8 @@ export default ({
       />
       <Popup
         onClose={onClose}
+        isLoading={isActionLoading(action)}
+        hasError={isActionError(action)}
         onAction={(
           action: string,
           values: { reason: any; refundType: string; refund: any }

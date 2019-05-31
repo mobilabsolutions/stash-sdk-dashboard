@@ -11,5 +11,5 @@ export default styled.span`
   color: ${props => props.theme.red.A500};
   display: block;
   margin-top: 2px;
-  margin-left: 8px;
+  margin-left: 16px;
 `

@@ -1,11 +1,5 @@
-import { forwardRef, useState, useRef } from 'react'
 import NumberFormat from 'react-number-format'
-import {
-  InputFieldWrapper,
-  InputWrapper,
-  H3,
-  InputErrorMessage
-} from '../../atoms'
+import Input from '../input'
 import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
 
@@ -19,6 +13,9 @@ const HtmlInput = styled.input`
   margin-right: 16px;
   box-shadow: none;
   width: 100%;
+  :disabled {
+    color: ${props => props.theme.shade.A300};
+  }
   :focus {
     outline: none;
   }
@@ -30,49 +27,33 @@ const HtmlInput = styled.input`
   }
 `
 
-function TheInput(
-  {
-    field: { name, value, onChange, onBlur },
-    form: { touched, errors },
-    placeholder = '',
-    title = '',
-    className = '',
-    disabled = false,
-    autoFocus = false,
-    currencyId
-  },
-  inputRef: any
-) {
-  const [focused, setFocused] = useState(autoFocus)
-  const localRef = useRef(undefined)
+export default function InputCurrency(props) {
   const { formatAmount } = useLocalization()
   const { symbol, symbolAtEnd, decimal, group } = formatAmount(
-    currencyId,
-    value
+    props.currencyId,
+    props.value
   )
-
-  const ref = inputRef || localRef
-
-  const handleClick = () => inputRef && inputRef.current.focus()
-  const hasErrors = touched[name] && errors[name]
-
   return (
-    <InputFieldWrapper onClick={handleClick} className={className}>
-      {!!title && <H3>{title}</H3>}
-      <InputWrapper focused={focused} hasErrors={hasErrors}>
+    <Input {...props}>
+      {({
+        name,
+        placeholder,
+        disabled,
+        value,
+        onFocus,
+        onBlur,
+        onChange,
+        autoFocus
+      }) => (
         <NumberFormat
-          ref={ref}
-          customInput={p => <HtmlInput {...p} />}
+          customInput={HtmlInput}
           name={name}
           defaultValue={value}
           type="text"
           placeholder={placeholder}
           disabled={disabled}
-          onFocus={() => setFocused(true)}
-          onBlur={event => {
-            setFocused(false)
-            onBlur(event)
-          }}
+          onFocus={onFocus}
+          onBlur={onBlur}
           thousandSeparator={group}
           decimalSeparator={decimal}
           decimalScale={2}
@@ -84,10 +65,7 @@ function TheInput(
           prefix={!symbolAtEnd ? symbol : ''}
           autoFocus={autoFocus}
         />
-      </InputWrapper>
-      {!!hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
-    </InputFieldWrapper>
+      )}
+    </Input>
   )
 }
-
-export default forwardRef(TheInput)

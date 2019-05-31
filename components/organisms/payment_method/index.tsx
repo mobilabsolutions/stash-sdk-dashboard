@@ -26,7 +26,7 @@ function getCreditCard(ccType: string) {
       return Visa
     case 'DK':
       return DK
-    case 'DINNERS':
+    case 'DINERS':
       return Dinners
     case 'AMERICANEXPRESS':
       return AmericanExpress
@@ -42,7 +42,7 @@ function getCreditCard(ccType: string) {
       return JCB
     case 'MAESTRO':
       return Maestro
-    case 'MASTERDCARD':
+    case 'MASTERCARD':
       return MasterCard
     case 'UNIONPAY':
       return UnionPay
@@ -53,10 +53,8 @@ function getCreditCard(ccType: string) {
   }
 }
 
-function getIcon(paymentMethod: string, ccType: string) {
+function getIcon(paymentMethod: string) {
   switch (paymentMethod) {
-    case 'CC':
-      return getCreditCard(ccType)
     case 'SEPA':
       return Sepa
     case 'PAY_PAL':
@@ -67,26 +65,21 @@ function getIcon(paymentMethod: string, ccType: string) {
       return ApplePay
     case 'KLARNA':
       return Klarna
+    case 'CC':
     default:
-      return CreditCard
+      return getCreditCard(paymentMethod)
   }
 }
 
 interface Props {
-  paymentMethod:
-    | 'CC'
-    | 'SEPA'
-    | 'PAY_PAL'
-    | 'GOOGLE_PAY'
-    | 'APPLE_PAY'
-    | 'KLARNA'
-  ccType: string // VISA + 15 more
+  paymentMethod: string
+  title: string
 }
 
 export default function PaymentMethod(props: Props) {
-  const Icon = getIcon(props.paymentMethod, props.ccType)
+  const Icon = getIcon(props.paymentMethod)
   return (
-    <div>
+    <div title={props.title}>
       <Icon width={40} height={30} />
     </div>
   )

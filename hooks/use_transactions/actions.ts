@@ -10,17 +10,17 @@ export interface Params {
 
 const actionCreator = (getUrl: Function) =>
   function(onSuccess?: Function, onError?: Function) {
-    const { post: apiPost } = useApi()
+    const { put: apiPut } = useApi()
     const [state, setState] = useState({
       error: null,
       isLoading: false
     })
-
+    const setError = (error: boolean) => setState(prev => ({ ...prev, error }))
     const action = (params: Params) => {
       setState(prevState => ({ ...prevState, isLoading: true }))
 
-      return new Promise((resolve, reject) => {
-        apiPost(getUrl(params), params)
+      return new Promise(resolve => {
+        apiPut(getUrl(params), params)
           .then(response => {
             setState(prevState => ({
               ...prevState,
@@ -37,31 +37,33 @@ const actionCreator = (getUrl: Function) =>
               isLoading: false
             }))
             typeof onError === 'function' && onError(error, params)
-            reject(error)
           })
       })
     }
     return {
       action,
+      setError,
       ...state
     }
   }
 
 export function useRefund(onSuccess?: Function, onError?: Function) {
   return actionCreator(
-    (params: Params) => `/authorization/${params.transactionId}/refund`
+    (params: Params) => `/api/v1/authorization/${params.transactionId}/refund`
   )(onSuccess, onError)
 }
 
 export function useCapture(onSuccess?: Function, onError?: Function) {
   return actionCreator(
-    (params: Params) => `/authorization/${params.transactionId}/capture`
+    (params: Params) =>
+      `/api/v1/preauthorization/${params.transactionId}/capture`
   )(onSuccess, onError)
 }
 
 export function useReverse(onSuccess?: Function, onError?: Function) {
   return actionCreator(
-    (params: Params) => `/authorization/${params.transactionId}/reverse`
+    (params: Params) =>
+      `/api/v1/preauthorization/${params.transactionId}/reverse`
   )(onSuccess, onError)
 }
 

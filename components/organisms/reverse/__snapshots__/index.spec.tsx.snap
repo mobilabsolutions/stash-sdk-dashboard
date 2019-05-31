@@ -1,100 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RefundForm Should Render 1`] = `
+exports[`CaptureForm Should Render 1`] = `
 <form
   onReset={[Function]}
   onSubmit={[Function]}
 >
   <div
-    className="refund__ContentContainer-a7ak7z-3 jIBzWt"
+    className="reverse__ContentContainer-sc-15boa02-1 HdgZS"
   >
-    <div
-      className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
-    >
-      <span
-        className="refund__Value-a7ak7z-0 hWqYlJ"
-      >
-        <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
-          label="Partial"
-        >
-          Partial
-          <input
-            checked={false}
-            name="refundType"
-            onChange={[Function]}
-            type="radio"
-            value="partial"
-          />
-          <span />
-        </label>
-        <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
-          label="Full"
-        >
-          Full
-          <input
-            checked={true}
-            name="refundType"
-            onChange={[Function]}
-            type="radio"
-            value="full"
-          />
-          <span />
-        </label>
-      </span>
-    </div>
-    <div
-      className="field_wrapper-n32k2e-0 irXinp"
-      onClick={[Function]}
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "minWidth": 100,
-          }
-        }
-      >
-        <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
-        >
-          Refund
-        </h3>
-      </div>
-      <div
-        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
-      >
-        <div
-          className="input_wrapper-sc-15hmhfy-0 duFQAu"
-          style={
-            Object {
-              "marginLeft": "16px",
-              "width": "100%",
-            }
-          }
-        >
-          <input
-            autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 dxBBBe"
-            disabled={true}
-            name="refund"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseUp={[Function]}
-            placeholder="Refund"
-            type="text"
-            value="€12,345.00"
-          />
-        </div>
-      </div>
-    </div>
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
@@ -145,7 +58,7 @@ exports[`RefundForm Should Render 1`] = `
     </div>
   </div>
   <div
-    className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
+    className="reverse__ButtonContainer-sc-15boa02-0 eWusaQ"
   >
     <button
       className="secondary__Button-j7mjyk-0 kgyVVR"
@@ -160,113 +73,26 @@ exports[`RefundForm Should Render 1`] = `
     <button
       className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
       disabled={false}
-      label="Refund the Transaction"
+      label="Reverse the Transaction"
       onClick={null}
       type="submit"
     >
       <span>
-        Refund the Transaction
+        Reverse the Transaction
       </span>
     </button>
   </div>
 </form>
 `;
 
-exports[`RefundForm Should use loading status 1`] = `
+exports[`CaptureForm Should use loading status 1`] = `
 <form
   onReset={[Function]}
   onSubmit={[Function]}
 >
   <div
-    className="refund__ContentContainer-a7ak7z-3 jIBzWt"
+    className="reverse__ContentContainer-sc-15boa02-1 HdgZS"
   >
-    <div
-      className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
-    >
-      <span
-        className="refund__Value-a7ak7z-0 hWqYlJ"
-      >
-        <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
-          label="Partial"
-        >
-          Partial
-          <input
-            checked={false}
-            name="refundType"
-            onChange={[Function]}
-            type="radio"
-            value="partial"
-          />
-          <span />
-        </label>
-        <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
-          label="Full"
-        >
-          Full
-          <input
-            checked={true}
-            name="refundType"
-            onChange={[Function]}
-            type="radio"
-            value="full"
-          />
-          <span />
-        </label>
-      </span>
-    </div>
-    <div
-      className="field_wrapper-n32k2e-0 irXinp"
-      onClick={[Function]}
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "minWidth": 100,
-          }
-        }
-      >
-        <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
-        >
-          Refund
-        </h3>
-      </div>
-      <div
-        className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
-      >
-        <div
-          className="input_wrapper-sc-15hmhfy-0 duFQAu"
-          style={
-            Object {
-              "marginLeft": "16px",
-              "width": "100%",
-            }
-          }
-        >
-          <input
-            autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 dxBBBe"
-            disabled={true}
-            name="refund"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseUp={[Function]}
-            placeholder="Refund"
-            type="text"
-            value="€12,345.00"
-          />
-        </div>
-      </div>
-    </div>
     <div
       className="field_wrapper-n32k2e-0 irXinp"
       onClick={[Function]}
@@ -317,7 +143,7 @@ exports[`RefundForm Should use loading status 1`] = `
     </div>
   </div>
   <div
-    className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
+    className="reverse__ButtonContainer-sc-15boa02-0 eWusaQ"
   >
     <button
       className="secondary__Button-j7mjyk-0 hSUMXm"
@@ -332,7 +158,7 @@ exports[`RefundForm Should use loading status 1`] = `
     <button
       className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
       disabled={true}
-      label="Refund the Transaction"
+      label="Reverse the Transaction"
       onClick={null}
       type="submit"
     >

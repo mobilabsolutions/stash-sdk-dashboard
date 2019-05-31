@@ -4,24 +4,33 @@ exports[`Input Should Render 1`] = `
 <div
   className="field_wrapper-n32k2e-0 irXinp"
   onClick={[Function]}
+  style={Object {}}
 >
   <div
-    className="input_wrapper-sc-15hmhfy-0 duFQAu"
+    style={Object {}}
+  />
+  <div
+    className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
   >
-    <input
-      autoFocus={false}
-      className="input_currency__HtmlInput-obstnl-0 diptxO"
-      disabled={false}
-      name="test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onMouseUp={[Function]}
-      placeholder=""
-      type="text"
-      value="€12,345.00"
-    />
+    <div
+      className="input_wrapper-sc-15hmhfy-0 duFQAu"
+      style={Object {}}
+    >
+      <input
+        autoFocus={false}
+        className="input_currency__HtmlInput-obstnl-0 dxBBBe"
+        disabled={false}
+        name="test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseUp={[Function]}
+        placeholder=""
+        type="text"
+        value="€12,345.00"
+      />
+    </div>
   </div>
 </div>
 `;

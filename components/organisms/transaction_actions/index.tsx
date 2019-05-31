@@ -5,13 +5,14 @@ import { Action, ActionContainer, MoreIcon } from './styled'
 
 function getActions(status: string): Array<{ type: string }> {
   switch (status) {
+    case 'authorised':
     case 'captured':
       return [
         {
           type: 'refund'
         }
       ]
-    case 'authorised':
+    case 'pre-Authorised':
       return [
         {
           type: 'capture'
@@ -67,7 +68,12 @@ export default function TransactionActions({ status, onClick }) {
         </div>
       )}
     >
-      <MoreIcon height={24} width={32} onClick={() => setShow(!show)} />
+      <MoreIcon
+        height={24}
+        width={32}
+        onClick={() => setShow(!show)}
+        data-testid="more-icon"
+      />
     </Popover>
   )
 }

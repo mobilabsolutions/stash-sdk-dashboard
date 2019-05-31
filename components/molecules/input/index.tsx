@@ -7,6 +7,17 @@ import {
   H3,
   InputErrorMessage
 } from '../../atoms'
+import styled from '../../styled'
+
+const InputChildren = props => {
+  return <Input {...props} />
+}
+
+const InputErrorWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
 
 function TheInput(
   {
@@ -15,6 +26,11 @@ function TheInput(
     placeholder = '',
     className = '',
     title = '',
+    containerStyle = {},
+    inputStyle = {},
+    labelStyle = {},
+    children = InputChildren,
+    disabled = false,
     autoFocus = false
   },
   inputRef: any
@@ -26,27 +42,37 @@ function TheInput(
 
   const handleClick = () => inputRef && inputRef.current.focus()
   const hasErrors = touched[name] && errors[name]
-
   return (
-    <InputFieldWrapper onClick={handleClick} className={className}>
-      {!!title && <H3>{title}</H3>}
-      <InputWrapper focused={focused} hasErrors={hasErrors}>
-        <Input
-          ref={ref}
-          name={name}
-          value={value}
-          type="text"
-          placeholder={placeholder}
-          onFocus={() => setFocused(true)}
-          onBlur={event => {
-            setFocused(false)
-            onBlur(event)
-          }}
-          onChange={onChange}
-          autoFocus={autoFocus}
-        />
-      </InputWrapper>
-      {!!hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
+    <InputFieldWrapper
+      onClick={handleClick}
+      className={className}
+      style={containerStyle}
+    >
+      <div style={labelStyle}>{!!title && <H3>{title}</H3>}</div>
+      <InputErrorWrapper>
+        <InputWrapper
+          style={inputStyle}
+          focused={focused}
+          hasErrors={hasErrors}
+        >
+          {children({
+            ref,
+            name,
+            value,
+            disabled,
+            type: 'text',
+            placeholder,
+            onFocus: () => setFocused(true),
+            onBlur: event => {
+              setFocused(false)
+              onBlur(event)
+            },
+            onChange: onChange,
+            autoFocus: autoFocus
+          })}
+        </InputWrapper>
+        {!!hasErrors && <InputErrorMessage>{errors[name]}</InputErrorMessage>}
+      </InputErrorWrapper>
     </InputFieldWrapper>
   )
 }
