@@ -41,6 +41,7 @@ export { default as ApplePay } from './icons/applepay'
 export { default as GooglePay } from './icons/googlepay'
 export { default as Dinners } from './icons/dinners'
 export { default as DK } from './icons/dk'
+export { default as Magnify } from './icons/magnify'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
