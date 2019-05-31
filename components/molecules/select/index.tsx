@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactSelect from 'react-select'
+import Theme from '../../../assets/style/theme'
 
 const global = {
-  color: '#a3aaaf',
+  color: Theme.shade.A200,
   fontSize: '14px'
 }
 
@@ -22,23 +23,23 @@ const styles = {
     ...p,
     ...global,
     textTransform: 'capitalize',
-    color: '#12202a',
+    color: Theme.shade.A700,
     fontWeight: 'bold'
   }),
   input: customProvider,
   control: (propv, { isFocused }) => ({
     ...propv,
-    backgroundColor: '#f6f7f7',
-    borderColor: isFocused ? '#07d0c7' : '#edeff0',
-    boxShadow: isFocused ? '0 0 0 1px #07d0c7' : propv.boxShadow
+    backgroundColor: Theme.shade.A25,
+    borderColor: isFocused ? Theme.primary.A600 : Theme.shade.A50,
+    boxShadow: isFocused ? `0 0 0 1px ${Theme.primary.A600}` : propv.boxShadow
   }),
   option: (prov, { isSelected }) => ({
     ...prov,
     ...global,
-    borderBottom: '1px solid #edeff0',
+    borderBottom: `1px solid ${Theme.shade.A25}`,
     textTransform: 'capitalize',
-    backgroundColor: isSelected ? '#ecfefd' : prov.backgroundColor,
-    color: isSelected ? '#07d0c7' : '#a3aaaf',
+    backgroundColor: isSelected ? Theme.primary.A50 : prov.backgroundColor,
+    color: isSelected ? Theme.primary.A600 : Theme.shade.A200,
     fontweight: 500
   })
 }
