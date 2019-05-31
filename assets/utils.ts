@@ -3,6 +3,7 @@ export const statusToAction = {
   authorised: 'AUTH',
   reversed: 'REVERSAL',
   refunded: 'REFUND',
+  fail: 'FAIL',
   captured: 'CAPTURE'
 }
 
@@ -19,3 +20,74 @@ function reverse(
 }
 
 export const actionTOAtatus = reverse(statusToAction)
+
+export const paymentMethods = [
+  {
+    name: 'SEPA',
+    type: 'PM'
+  },
+  {
+    name: 'PAY_PAL',
+    type: 'PM'
+  },
+  {
+    name: 'GOOGLE_PAY',
+    type: 'PM'
+  },
+  {
+    name: 'APPLE_PAY',
+    type: 'PM'
+  },
+  {
+    name: 'KLARNA',
+    type: 'PM'
+  },
+  {
+    name: 'VISA',
+    type: 'CC'
+  },
+  {
+    name: 'UNIONPAY',
+    type: 'CC'
+  },
+  {
+    name: 'MASTERCARD',
+    type: 'CC'
+  },
+  {
+    name: 'MAESTRO',
+    type: 'CC'
+  },
+  {
+    name: 'JCB',
+    type: 'CC'
+  },
+  {
+    name: 'DISCOVER',
+    type: 'CC'
+  },
+  {
+    name: 'DINERCLUB',
+    type: 'CC'
+  },
+  {
+    name: 'CARTEBLEUE',
+    type: 'CC'
+  },
+  {
+    name: 'AMEX',
+    type: 'CC'
+  },
+  {
+    name: 'AMERICANEXPRESS',
+    type: 'CC'
+  },
+  {
+    name: 'DK',
+    type: 'CC'
+  },
+  {
+    name: 'DINERS',
+    type: 'CC'
+  }
+]

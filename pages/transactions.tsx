@@ -25,6 +25,8 @@ export default () => {
     isLoading,
     reverse,
     totalCount,
+    paymentMethod,
+    setPaymentMethod,
     capture,
     refund
   } = useTransactions()
@@ -40,6 +42,8 @@ export default () => {
           startDate={startDate}
           endDate={endDate}
           setRange={setRange}
+          paymentMethod={paymentMethod}
+          setPaymentMethod={setPaymentMethod}
           status={status}
           setStatus={setStatus}
           text={text}

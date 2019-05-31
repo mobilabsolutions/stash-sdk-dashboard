@@ -7,7 +7,7 @@ import moment from 'moment'
 import { useLocalization } from '../../../hooks'
 import { Select, InputSearch } from '../../molecules'
 import styled from '../../styled'
-import { statusToAction } from '../../../assets/utils'
+import { statusToAction, paymentMethods } from '../../../assets/utils'
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,20 +27,29 @@ const ItemWrapper = styled.div`
   padding-right: 8px;
   flex-wrap: wrap;
 `
-const Label = styled.label`
-  color: ${props => props.theme.shade.A800};
-  font-family: ${props => props.theme.font};
-  font-size: 1em;
-  font-weight: bold;
-  width: 10em;
-`
 
 export default forwardRef<HTMLDivElement, any>(
-  ({ startDate, endDate, setRange, status, setStatus, text, setText }, ref) => {
+  (
+    {
+      startDate,
+      endDate,
+      setRange,
+      status,
+      setStatus,
+      paymentMethod,
+      setText,
+      setPaymentMethod
+    },
+    ref
+  ) => {
     const { getText } = useLocalization()
     const statusOptions = Object.entries(statusToAction).map(act => ({
       value: act[0],
       label: getText(act[0])
+    }))
+    const paymetOptions = paymentMethods.map(pay => ({
+      value: pay.name,
+      label: getText(pay.name)
     }))
     const [focusedInput, setFocusedInput] = useState(null)
     return (
@@ -70,6 +79,20 @@ export default forwardRef<HTMLDivElement, any>(
             startDatePlaceholderText={getText('Start Date')}
             endDatePlaceholderText={getText('End Date')}
             hideKeyboardShortcutsPanel
+          />
+        </ItemWrapper>
+        <ItemWrapper>
+          <Select
+            options={paymetOptions}
+            value={
+              !!paymentMethod
+                ? { label: getText(paymentMethod), value: paymentMethod }
+                : null
+            }
+            placeholder={getText('Payment Method')}
+            onChange={({ value }) => {
+              setPaymentMethod(value)
+            }}
           />
         </ItemWrapper>
         <ItemWrapper>

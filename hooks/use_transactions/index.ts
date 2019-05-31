@@ -45,6 +45,7 @@ interface State {
     | 'fail'
     | 'pre-Authorised'
   text: string
+  paymentMethod: string
   error: any
   refreshCounter: number
 }
@@ -68,6 +69,7 @@ function getInitValue(): State {
     pageSize: 100,
     totalCount: 0,
     status: '',
+    paymentMethod: '',
     text: '',
     error: null,
     refreshCounter: 0
@@ -111,6 +113,10 @@ export const useTransactions = () => {
             : `&action=${statusToAction[state.status]}`
       }
       ////---------------
+      if (!!state.paymentMethod) {
+        url += `&paymentMethod=${state.paymentMethod}`
+      }
+
       if (state.text) url += `&text=${state.text}`
 
       try {
@@ -158,6 +164,7 @@ export const useTransactions = () => {
     state.status,
     state.text,
     state.refreshCounter,
+    state.paymentMethod,
     token,
     apiGet
   ])
@@ -199,6 +206,9 @@ export const useTransactions = () => {
 
   const setText = (text: string) =>
     setState(prevState => ({ ...prevState, text, startPos: 0 }))
+
+  const setPaymentMethod = (paymentMethod: string) =>
+    setState(prevState => ({ ...prevState, paymentMethod, startPos: 0 }))
 
   const modifyData = (transactionId: string, modification: any) =>
     setState(prevState => ({
@@ -247,6 +257,7 @@ export const useTransactions = () => {
     startDate: state.startDate,
     endDate: state.endDate,
     status: state.status,
+    paymentMethod: state.paymentMethod,
     text: state.text,
     error: state.error,
     pageSize: state.pageSize,
@@ -259,6 +270,7 @@ export const useTransactions = () => {
     numberOfPages,
     selectedPage,
     setPage,
+    setPaymentMethod,
     setStatus,
     setText,
     refund,
