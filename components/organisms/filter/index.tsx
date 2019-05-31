@@ -5,7 +5,7 @@ import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 
 import { useLocalization } from '../../../hooks'
-import { Select } from '../../molecules'
+import { Select, InputSearch } from '../../molecules'
 import styled from '../../styled'
 import { statusToAction } from '../../../assets/utils'
 
@@ -76,14 +76,17 @@ export default forwardRef<HTMLDivElement, any>(
           <Select
             options={statusOptions}
             value={!!status ? { label: getText(status), value: status } : null}
-            placeholder={getText('Payment Method')}
+            placeholder={getText('Status')}
             onChange={({ value }) => {
               setStatus(value)
             }}
           />
         </ItemWrapper>
         <ItemWrapper>
-          <Label>{getText('Text')}</Label>
+          <InputSearch
+            field={{ onChange: setText, name: 'search-text' }}
+            placeholder={getText('Search Payments…')}
+          />
         </ItemWrapper>
       </Wrapper>
     )
