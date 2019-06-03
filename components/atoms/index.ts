@@ -1,6 +1,7 @@
 export { default as PrimaryButton } from './button/primary'
 export { default as SecondaryButton } from './button/secondary'
 export { default as WarnButton } from './button/warn'
+export { default as FlatButton } from './button/flat'
 
 export { default as Link } from './link'
 export { default as Overlay } from './container/overlay'
@@ -42,6 +43,9 @@ export { default as GooglePay } from './icons/googlepay'
 export { default as Dinners } from './icons/dinners'
 export { default as DK } from './icons/dk'
 export { default as Magnify } from './icons/magnify'
+export { default as Settings } from './icons/settings'
+export { default as ArrowDown } from './icons/min_arrow_down'
+export { default as ArrowUp } from './icons/min_arrow_up'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
