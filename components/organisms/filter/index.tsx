@@ -86,6 +86,8 @@ export default forwardRef<HTMLDivElement, any>(
                   .milliseconds(999)
               )
             }
+            showClearDates
+            readOnly
             initialVisibleMonth={() => moment().add(-1, 'months')}
             startDatePlaceholderText={getText('Start Date')}
             endDatePlaceholderText={getText('End Date')}

@@ -22,5 +22,21 @@
   border-radius: 4px;
   background-color: #f6f7f7;
   padding: 5px 11px 5px;
-  color: #a3aaaf;
+  color: #12202a;
+}
+.DateInput_input ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+.DateRangePickerInput_clearDates_default:focus,
+.DateRangePickerInput_clearDates_default:hover {
+  background: unset;
+  border-radius: unset;
+}
+
+.DateInput_input__focused {
+  border-bottom: 1px solid #07d0c7;
+  border-radius: unset;
 }

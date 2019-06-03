@@ -18,6 +18,7 @@ const Select = styled.select`
   height: 32px;
   border-radius: 4px;
   border: solid 1px #ededed;
+  background-color: #ffffff;
 `
 
 const PageSizeOptions = ({
