@@ -8,10 +8,11 @@ import { useLocalization } from '../../../hooks'
 import { Select, InputSearch } from '../../molecules'
 import styled from '../../styled'
 import { statusToAction, paymentMethods } from '../../../assets/utils'
+import { FlatButton } from '../../atoms'
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: block;
+  height: 68px;
   margin: 12px 48px;
   padding: 16px;
   flex: 1 1 auto;
@@ -21,18 +22,17 @@ const Wrapper = styled.div`
 `
 
 const ItemWrapper = styled.div`
+  float: left;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   padding-right: 8px;
   flex-wrap: wrap;
 `
-const ClearBtn = styled.button`
+const ClearBtn = styled(FlatButton)`
   margin: auto;
+  padding: 8px;
   font-size: 14px;
-  border: none;
-  background-color: #ffffff;
-  line-height: 0.93;
 `
 
 export default forwardRef<HTMLDivElement, any>(
@@ -123,7 +123,7 @@ export default forwardRef<HTMLDivElement, any>(
           />
         </ItemWrapper>
         {isFiltered && (
-          <ItemWrapper>
+          <ItemWrapper style={{ float: 'right', height: '100%' }}>
             <ClearBtn onClick={clearFilters}>
               {getText('Clear Filters')}
             </ClearBtn>
