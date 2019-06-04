@@ -1,11 +1,10 @@
 import 'react-dates/initialize'
 
 import { useState, forwardRef } from 'react'
-import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 
 import { useLocalization } from '../../../hooks'
-import { Select, InputSearch } from '../../molecules'
+import { Select, InputSearch, DatePicker } from '../../molecules'
 import styled from '../../styled'
 import { statusToAction, paymentMethods } from '../../../assets/utils'
 import { FlatButton } from '../../atoms'
@@ -66,10 +65,10 @@ export default forwardRef<HTMLDivElement, any>(
     return (
       <Wrapper ref={ref}>
         <ItemWrapper>
-          <DateRangePicker
-            startDate={startDate}
+          <DatePicker
+            initialFromDate={startDate}
             startDateId="filter_start_date_id"
-            endDate={endDate}
+            initialToDate={endDate}
             endDateId="filter_end_date_id"
             onDatesChange={({ startDate, endDate }) =>
               setRange(startDate, endDate)
