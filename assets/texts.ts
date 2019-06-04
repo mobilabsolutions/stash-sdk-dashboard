@@ -176,5 +176,10 @@ export default {
   'Refund take 5-10 days to appear on a costumer´s statement.': {
     de:
       'Es dauert 5-10 Tage, bis die Rückerstattung auf der Kundenabrechnung erscheint.'
-  }
+  },
+  Filter: {},
+  'Payment Method': {},
+  'Search Payments…': {},
+  'Clear Filters': {},
+  'Transactions Overview': {}
 }
