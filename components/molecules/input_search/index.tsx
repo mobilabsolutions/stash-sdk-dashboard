@@ -43,7 +43,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
 
 function TheInput(
   {
-    field: { name, onChange },
+    field: { name, onChange, value },
     placeholder = 'Insert text',
     title = '',
     initialValue = '',
@@ -57,12 +57,16 @@ function TheInput(
 
   const ref = inputRef || localRef
 
-  const [value, setValue] = useState(initialValue)
+  const [_value, setValue] = useState(initialValue)
 
-  const debouncedSearchTerm = useDebounce(value, 500)
+  const debouncedSearchTerm = useDebounce(_value, 500)
   useEffect(() => {
     onChange(debouncedSearchTerm)
   }, [debouncedSearchTerm])
+
+  useEffect(() => {
+    value !== _value && setValue(value)
+  }, [value])
 
   function _onChange(ev: ChangeEvent<HTMLInputElement>) {
     setValue(ev.target.value)
@@ -78,7 +82,7 @@ function TheInput(
       <HtmlInput
         ref={ref}
         name={name}
-        value={value}
+        value={_value}
         disabled={disabled}
         title={title}
         type="text"
