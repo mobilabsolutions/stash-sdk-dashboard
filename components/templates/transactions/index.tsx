@@ -7,6 +7,7 @@ import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
 import { TransactionActions, PaymentMethod, Pagination } from '../../organisms'
+import { actionTOAtatus } from '../../../assets/utils'
 
 const headerStyle = {
   fontSize: '16px',
@@ -40,14 +41,7 @@ const global_columns_def = {
 const getActionStatus = (status: string, action: string): string => {
   switch (status) {
     case 'SUCCESS':
-      const mapping = {
-        PREAUTH: 'pre-Authorised',
-        AUTH: 'authorised',
-        REVERSAL: 'reversed',
-        REFUND: 'refunded',
-        CAPTURE: 'captured'
-      }
-      return !!mapping[action] ? mapping[action] : 'fail'
+      return !!actionTOAtatus[action] ? actionTOAtatus[action] : 'fail'
     case 'FAIL':
     default:
       return 'fail'

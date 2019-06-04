@@ -2,3 +2,41 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: none;
 }
+
+.DateInput {
+  width: 100px;
+  border-radius: 4px;
+}
+
+.DateRangePickerInput {
+  border-radius: 4px;
+  border: solid 1px #edeff0;
+  background-color: #f6f7f7;
+}
+
+.DateRangePickerInput:hover {
+  border: solid 1px #b3b3b4;
+}
+
+.DateInput_input {
+  border-radius: 4px;
+  background-color: #f6f7f7;
+  padding: 5px 11px 5px;
+  color: #12202a;
+}
+.DateInput_input ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+.DateRangePickerInput_clearDates_default:focus,
+.DateRangePickerInput_clearDates_default:hover {
+  background: unset;
+  border-radius: unset;
+}
+
+.DateInput_input__focused {
+  border-bottom: 1px solid #07d0c7;
+  border-radius: unset;
+}

@@ -24,6 +24,7 @@ export default () => {
             .replace('#82888a', '#747F86')
             .replace('#757575', '#46545E')
             .replace('#484848', '#22333F')
+            .replace('font-size: 19px;', 'font-size: 14px;')
         )
       }
     )

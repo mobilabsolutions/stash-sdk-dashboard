@@ -1,76 +1,80 @@
 import 'react-dates/initialize'
 
 import { useState, forwardRef } from 'react'
-import { DateRangePicker } from 'react-dates'
 import moment from 'moment'
 
 import { useLocalization } from '../../../hooks'
-import { Radio } from '../../molecules'
+import { Select, InputSearch, DatePicker } from '../../molecules'
 import styled from '../../styled'
+import { statusToAction, paymentMethods } from '../../../assets/utils'
+import { FlatButton } from '../../atoms'
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-bottom: solid 1px ${props => props.theme.shade.A800};
-  padding: 24px 24px 12px 24px;
+  display: block;
+  height: 68px;
+  margin: 12px 48px;
+  padding: 16px;
   flex: 1 1 auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 ${props => props.theme.shade.A50};
+  background-color: #ffffff;
 `
 
 const ItemWrapper = styled.div`
+  float: left;
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  margin-bottom: 12px;
+  padding-right: 8px;
   flex-wrap: wrap;
 `
-const Label = styled.label`
-  color: ${props => props.theme.shade.A800};
-  font-family: ${props => props.theme.font};
-  font-size: 1em;
-  font-weight: bold;
-  width: 10em;
+const ClearBtn = styled(FlatButton)`
+  margin: auto;
+  padding: 8px;
+  font-size: 14px;
 `
-
-const OptionList = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 8px;
-`
-
-const OptionWrapper = styled.div`
-  margin: 8px 24px 0 0px;
-`
-
-const statusOptions = [
-  'all',
-  'bs_initiated',
-  'approved',
-  'declined',
-  'refunded',
-  'rejected',
-  'cancelled'
-]
 
 export default forwardRef<HTMLDivElement, any>(
-  ({ startDate, endDate, setRange, status, setStatus }, ref) => {
+  (
+    {
+      startDate,
+      endDate,
+      setRange,
+      status,
+      setStatus,
+      paymentMethod,
+      setText,
+      text,
+      clearFilters,
+      setPaymentMethod
+    },
+    ref
+  ) => {
     const { getText } = useLocalization()
+    const statusOptions = Object.entries(statusToAction).map(act => ({
+      value: act[0],
+      label: getText(act[0])
+    }))
+    const paymetOptions = paymentMethods.map(pay => ({
+      value: pay.name,
+      label: getText(pay.name)
+    }))
     const [focusedInput, setFocusedInput] = useState(null)
+    const isFiltered =
+      !!startDate || !!endDate || !!paymentMethod || !!status || !!text
     return (
       <Wrapper ref={ref}>
         <ItemWrapper>
-          <Label>{getText('Date Range')}</Label>
-          <DateRangePicker
-            startDate={startDate}
+          <DatePicker
+            initialFromDate={startDate}
             startDateId="filter_start_date_id"
-            endDate={endDate}
+            initialToDate={endDate}
             endDateId="filter_end_date_id"
             onDatesChange={({ startDate, endDate }) =>
               setRange(startDate, endDate)
             }
             focusedInput={focusedInput}
             onFocusChange={focusedInput => setFocusedInput(focusedInput)}
-            showClearDates
             noBorder
             isOutsideRange={value =>
               value.isAfter(
@@ -81,6 +85,8 @@ export default forwardRef<HTMLDivElement, any>(
                   .milliseconds(999)
               )
             }
+            showClearDates
+            readOnly
             initialVisibleMonth={() => moment().add(-1, 'months')}
             startDatePlaceholderText={getText('Start Date')}
             endDatePlaceholderText={getText('End Date')}
@@ -88,24 +94,42 @@ export default forwardRef<HTMLDivElement, any>(
           />
         </ItemWrapper>
         <ItemWrapper>
-          <Label>{getText('Status')}</Label>
-          <OptionList>
-            {statusOptions.map(option => (
-              <OptionWrapper key={option}>
-                <Radio
-                  label={getText(option)}
-                  name="status"
-                  value={option}
-                  selectedOption={status}
-                  onChange={setStatus}
-                />
-              </OptionWrapper>
-            ))}
-          </OptionList>
+          <Select
+            options={paymetOptions}
+            value={
+              !!paymentMethod
+                ? { label: getText(paymentMethod), value: paymentMethod }
+                : null
+            }
+            placeholder={getText('Payment Method')}
+            onChange={({ value }) => {
+              setPaymentMethod(value)
+            }}
+          />
         </ItemWrapper>
         <ItemWrapper>
-          <Label>{getText('Text')}</Label>
+          <Select
+            options={statusOptions}
+            value={!!status ? { label: getText(status), value: status } : null}
+            placeholder={getText('Status')}
+            onChange={({ value }) => {
+              setStatus(value)
+            }}
+          />
         </ItemWrapper>
+        <ItemWrapper>
+          <InputSearch
+            field={{ onChange: setText, name: 'search-text' }}
+            placeholder={getText('Search Payments…')}
+          />
+        </ItemWrapper>
+        {isFiltered && (
+          <ItemWrapper style={{ float: 'right', height: '100%' }}>
+            <ClearBtn onClick={clearFilters}>
+              {getText('Clear Filters')}
+            </ClearBtn>
+          </ItemWrapper>
+        )}
       </Wrapper>
     )
   }
