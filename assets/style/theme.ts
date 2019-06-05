@@ -15,6 +15,7 @@ interface Color {
 export interface ThemeInterface {
   font: string
   fontHeadline: string
+  fontTransactions: string
   white: string
   primary: Color
   shade: Color
@@ -25,6 +26,7 @@ export interface ThemeInterface {
 export default {
   font: 'Raleway,Ubuntu,Helvetica,Arial,sans-serif',
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
+  fontTransactions: 'Lato,Raleway,Helvetica,Arial,sans-serif',
   white: '#fff',
   primary: {
     A25: '#f5fefe',

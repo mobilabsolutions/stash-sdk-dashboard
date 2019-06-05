@@ -37,7 +37,6 @@ export const ItemRow = styled.div`
 
 export const TransactionId = styled.p`
   color: ${props => props.theme.shade.A800};
-  font-family: ${props => props.theme.font};
   font-size: 1.2em;
   font-weight: bold;
   margin: 0px;
@@ -80,11 +79,10 @@ type StatusProps = {
   status: string
 }
 
-export const Status = styled.div<StatusProps>`
+export const Status = styled.span<StatusProps>`
   color: ${getStatusColor};
   background-color: ${getStatusBackgroundColor};
-  font-family: ${props => props.theme.font};
-  font-size: 1em;
+  font-size: 14px;
   text-transform: capitalize;
   text-align: center;
   padding: 8px;
@@ -97,7 +95,6 @@ export const Status = styled.div<StatusProps>`
 
 export const Timestamp = styled.p`
   color: ${props => props.theme.shade.A700};
-  font-family: ${props => props.theme.font};
   font-size: 1em;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -107,7 +104,6 @@ export const Timestamp = styled.p`
 
 export const Reason = styled.p`
   color: ${props => props.theme.shade.A500};
-  font-family: ${props => props.theme.font};
   font-size: 1em;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -122,7 +118,6 @@ export const Reason = styled.p`
 
 export const CustomerId = styled.p`
   color: ${props => props.theme.shade.A700};
-  font-family: ${props => props.theme.font};
   font-size: 1em;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -132,8 +127,9 @@ export const CustomerId = styled.p`
 
 export const Amount = styled.p`
   color: ${props => props.theme.shade.A800};
-  font-family: ${props => props.theme.font};
-  font-size: 1.2em;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.38;
   font-variant-numeric: tabular-nums;
   margin: 0px;
   flex: 0 0 4em;
