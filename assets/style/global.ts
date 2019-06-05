@@ -1,9 +1,21 @@
 export default {
   __html: `
   @font-face {
+    font-family: 'Lato';
+    src: url('/static/fonts/Lato-Bold.ttf');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('/static/fonts/Lato-Regular.ttf');
+  }
+
+  @font-face {
     font-family: 'Raleway';
     src: url('/static/fonts/Raleway-Regular.ttf');
   }
+
   @font-face {
     font-family: 'Raleway';
     src: url('/static/fonts/Raleway-Bold.ttf');
