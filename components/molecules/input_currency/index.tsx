@@ -48,7 +48,7 @@ export default function InputCurrency(props) {
         <NumberFormat
           customInput={HtmlInput}
           name={name}
-          defaultValue={value}
+          value={value}
           type="text"
           placeholder={placeholder}
           disabled={disabled}
@@ -58,9 +58,13 @@ export default function InputCurrency(props) {
           decimalSeparator={decimal}
           decimalScale={2}
           fixedDecimalScale
-          onValueChange={valueObj =>
-            onChange({ target: { value: valueObj.value, name } })
-          }
+          onChange={ev => {
+            const value = (ev.target.value || '0')
+              .replace(symbol, '')
+              .replace(group, '')
+              .replace(decimal, '.')
+            onChange({ target: { value: Number(value), name } })
+          }}
           suffix={symbolAtEnd ? symbol : ''}
           prefix={!symbolAtEnd ? symbol : ''}
           autoFocus={autoFocus}
