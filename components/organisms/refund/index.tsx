@@ -105,7 +105,11 @@ export default function RefundForm({
               name="refund"
               render={({ field, form }) => (
                 <InputCurrency
-                  field={field}
+                  field={{
+                    ...field,
+                    value:
+                      values.refundType === 'full' ? initialRefund : field.value
+                  }}
                   form={form}
                   containerStyle={{ flexDirection: 'row' }}
                   inputStyle={{ marginLeft: '16px', width: '100%' }}
