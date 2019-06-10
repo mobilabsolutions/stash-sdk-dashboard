@@ -19,7 +19,7 @@ function reverse(
   }, {})
 }
 
-export const actionTOAtatus = reverse(statusToAction)
+export const actionToStatus = reverse(statusToAction)
 
 export const paymentMethods = [
   {

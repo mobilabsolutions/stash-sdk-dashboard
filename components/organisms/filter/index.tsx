@@ -6,7 +6,7 @@ import moment from 'moment'
 import { useLocalization } from '../../../hooks'
 import { Select, InputSearch, DatePicker } from '../../molecules'
 import styled from '../../styled'
-import { statusToAction, paymentMethods } from '../../../assets/utils'
+import { statusToAction, paymentMethods } from '../../../assets/payment.static'
 import { FlatButton } from '../../atoms'
 
 const Wrapper = styled.div`

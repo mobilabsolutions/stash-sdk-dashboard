@@ -4,7 +4,7 @@ import Router from 'next/router'
 
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture, Params } from './actions'
-import { statusToAction } from '../../assets/utils'
+import { statusToAction } from '../../assets/payment.static'
 const isClient = typeof window === 'object'
 
 interface Transaction {
