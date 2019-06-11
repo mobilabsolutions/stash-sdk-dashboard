@@ -239,20 +239,37 @@ export const useTransactions = () => {
     id: string
     status: string
   }
-  const refund = useRefund((response: ActionResponse, p: Params) => {
-    const { transactionId } = p
-    modifyData(transactionId, { ...response })
-  })
+  const refund = useRefund(
+    (response: { result: ActionResponse }, p: Params) => {
+      const { transactionId, reason } = p
+      modifyData(transactionId, {
+        ...response.result,
+        reason,
+        amount: response.result.amount / 100
+      })
+    }
+  )
 
-  const reverse = useReverse((response: ActionResponse, p: Params) => {
-    const { transactionId } = p
-    modifyData(transactionId, { ...response })
-  })
+  const reverse = useReverse(
+    (response: { result: ActionResponse }, p: Params) => {
+      const { transactionId, reason } = p
+      modifyData(transactionId, {
+        ...response.result,
+        reason,
+        amount: response.result.amount / 100
+      })
+    }
+  )
 
-  const capture = useCapture((response: ActionResponse, p: Params) => {
-    const { transactionId } = p
-    modifyData(transactionId, { ...response })
-  })
+  const capture = useCapture(
+    (response: { result: ActionResponse }, p: Params) => {
+      const { transactionId } = p
+      modifyData(transactionId, {
+        ...response.result,
+        amount: response.result.amount / 100
+      })
+    }
+  )
 
   const resetPageSizeTo = (pageSize = 100) => {
     setState(prev => ({

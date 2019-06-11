@@ -263,7 +263,7 @@ export default ({
               return refund.action({
                 transactionId: selected.transactionId,
                 reason: values.reason,
-                refund:
+                amount:
                   values.refundType == 'full' ? selected.amount : values.refund,
                 currency: selected.currencyId
               })
