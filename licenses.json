@@ -1,0 +1,210 @@
+{
+  "@types/enzyme@3.9.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/jest@24.0.13": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/next@8.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/node@12.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/react-test-renderer@16.8.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/react@16.8.17": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/styled-components@4.1.15": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@typescript-eslint/eslint-plugin@1.9.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/typescript-eslint/typescript-eslint"
+  },
+  "@typescript-eslint/parser@1.9.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/typescript-eslint/typescript-eslint"
+  },
+  "@zeit/next-css@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/next-plugins"
+  },
+  "@zeit/next-typescript@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/next-plugins"
+  },
+  "@zendeskgarden/react-pagination@4.4.6": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/zendeskgarden/react-components"
+  },
+  "@zendeskgarden/react-theming@3.2.1": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/zendeskgarden/react-components"
+  },
+  "babel-eslint@10.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel-eslint"
+  },
+  "babel-jest@24.8.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/jest"
+  },
+  "enzyme-adapter-react-16@1.13.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/airbnb/enzyme"
+  },
+  "enzyme@3.9.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/airbnb/enzyme"
+  },
+  "eslint-config-prettier@4.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/prettier/eslint-config-prettier"
+  },
+  "eslint-config-standard-jsx@6.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/standard/eslint-config-standard-jsx"
+  },
+  "eslint-config-standard@12.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/standard/eslint-config-standard"
+  },
+  "eslint-plugin-import@2.17.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/benmosher/eslint-plugin-import"
+  },
+  "eslint-plugin-node@9.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mysticatea/eslint-plugin-node"
+  },
+  "eslint-plugin-prettier@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/prettier/eslint-plugin-prettier"
+  },
+  "eslint-plugin-promise@4.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/xjamundx/eslint-plugin-promise"
+  },
+  "eslint-plugin-react-hooks@1.6.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react"
+  },
+  "eslint-plugin-react@7.13.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/yannickcr/eslint-plugin-react"
+  },
+  "eslint-plugin-standard@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/standard/eslint-plugin-standard"
+  },
+  "eslint@5.16.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/eslint/eslint"
+  },
+  "fastify-http-proxy@2.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/fastify/fastify-http-proxy"
+  },
+  "fastify@2.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/fastify/fastify"
+  },
+  "formik@1.5.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaredpalmer/formik"
+  },
+  "intl-locales-supported@1.0.0": {
+    "licenses": "BSD*",
+    "repository": "https://github.com/yahoo/intl-locales-supported"
+  },
+  "intl@1.2.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/andyearnshaw/Intl.js"
+  },
+  "isomorphic-fetch@2.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/matthew-andrews/isomorphic-fetch"
+  },
+  "jest@24.8.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/jest"
+  },
+  "moment@2.24.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/moment/moment"
+  },
+  "next@8.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/next.js"
+  },
+  "nodemon@1.19.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remy/nodemon"
+  },
+  "pino-pretty@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pinojs/pino-pretty"
+  },
+  "prettier@1.17.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/prettier/prettier"
+  },
+  "prop-types@15.7.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/prop-types"
+  },
+  "react-dates@20.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/airbnb/react-dates"
+  },
+  "react-dom@16.8.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react"
+  },
+  "react-number-format@4.0.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/s-yadav/react-number-format"
+  },
+  "react-select@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/JedWatson/react-select"
+  },
+  "react-table@6.10.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/react-tools/react-table"
+  },
+  "react-test-renderer@16.8.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react"
+  },
+  "react-tiny-popover@3.4.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexkatz/react-tiny-popover"
+  },
+  "react@16.8.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react"
+  },
+  "styled-components@4.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/styled-components/styled-components"
+  },
+  "ts-node@8.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/TypeStrong/ts-node"
+  },
+  "typescript@3.4.5": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/Microsoft/TypeScript"
+  }
+}
