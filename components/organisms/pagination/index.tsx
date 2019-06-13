@@ -17,7 +17,20 @@ const Select = styled.select`
   width: 60px;
   height: 32px;
   border-radius: 4px;
+  appearance: none;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding-left: 8px;
   border: solid 1px #ededed;
+  background-color: #ffffff;
+  /* New select icon */
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 15px) calc(1em - 4px),
+    calc(100% - 10px) calc(1em - 4px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
 `
 
 const PageSizeOptions = ({

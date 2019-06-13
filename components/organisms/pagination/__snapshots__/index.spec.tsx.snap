@@ -186,7 +186,7 @@ exports[`Pagination Should Render 1`] = `
       </label>
       <select
         aria-label="rows per page"
-        className="pagination__Select-sc-1rsyx79-1 kDWWTx"
+        className="pagination__Select-sc-1rsyx79-1 hOKUxZ"
         name="page-size"
         onChange={[Function]}
         value={100}
@@ -417,7 +417,7 @@ exports[`Pagination Should Render final page properly 1`] = `
       </label>
       <select
         aria-label="rows per page"
-        className="pagination__Select-sc-1rsyx79-1 kDWWTx"
+        className="pagination__Select-sc-1rsyx79-1 hOKUxZ"
         name="page-size"
         onChange={[Function]}
         value={100}

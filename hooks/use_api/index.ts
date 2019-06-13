@@ -13,11 +13,13 @@ const apiCall = (
   refresh: () => Promise<string>,
   method: string,
   path: string,
-  content: object = null
+  content: object = null,
+  headers = {}
 ) => {
   const request: any = {
     method,
     headers: {
+      ...headers,
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     },
@@ -162,18 +164,18 @@ export const useApi = () => {
     [refresh, token]
   )
   const put = useCallback(
-    (path: string, content: object) =>
-      apiCall(token, refresh, 'PUT', path, content),
+    (path: string, content: object, headers: object = {}) =>
+      apiCall(token, refresh, 'PUT', path, content, headers),
     [refresh, token]
   )
   const patch = useCallback(
-    (path: string, content: object) =>
-      apiCall(token, refresh, 'PATCH', path, content),
+    (path: string, content: object, headers: object = {}) =>
+      apiCall(token, refresh, 'PATCH', path, content, headers),
     [refresh, token]
   )
   const post = useCallback(
-    (path: string, content: object) =>
-      apiCall(token, refresh, 'POST', path, content),
+    (path: string, content: object, headers: object = {}) =>
+      apiCall(token, refresh, 'POST', path, content, headers),
     [refresh, token]
   )
   const del = useCallback(
