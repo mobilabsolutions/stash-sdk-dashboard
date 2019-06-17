@@ -15,7 +15,7 @@ const Checkmark = styled.span`
 `
 const Checkmark_stem = styled.span`
   position: absolute;
-  width: 3px;
+  width: 1px;
   height: 9px;
   background-color: ${props => props.theme.primary.A600};
   left: 11px;
@@ -24,10 +24,10 @@ const Checkmark_stem = styled.span`
 const Checkmark_kick = styled.span`
   position: absolute;
   width: 3px;
-  height: 3px;
+  height: 1px;
   background-color: ${props => props.theme.primary.A600};
   left: 8px;
-  top: 12px;
+  top: 14px;
 `
 const Check = () => (
   <Checkmark>
@@ -65,8 +65,7 @@ const styles = {
     ...p,
     ...global,
     textTransform: 'capitalize',
-    color: Theme.shade.A700,
-    fontWeight: 'bold'
+    color: Theme.shade.A700
   }),
   input: customProvider,
   control: (propv, { isFocused }) => ({
@@ -88,8 +87,7 @@ const styles = {
       : isFocused
       ? Theme.shade.A25
       : prov.backgroundColor,
-    color: isSelected ? Theme.primary.A600 : Theme.shade.A200,
-    fontweight: 500
+    color: isSelected ? Theme.primary.A600 : Theme.shade.A200
   })
 }
 
