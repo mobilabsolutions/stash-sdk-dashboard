@@ -34,6 +34,8 @@ const ClearBtn = styled(FlatButton)`
   font-size: 14px;
 `
 
+const usedPaymentMethods = paymentMethods.filter(p => p.used)
+
 export default forwardRef<HTMLDivElement, any>(
   (
     {
@@ -55,7 +57,7 @@ export default forwardRef<HTMLDivElement, any>(
       value: act[0],
       label: getText(act[0])
     }))
-    const paymetOptions = paymentMethods.map(pay => ({
+    const paymetOptions = usedPaymentMethods.map(pay => ({
       value: pay.name,
       label: getText(pay.name)
     }))

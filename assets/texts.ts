@@ -144,7 +144,7 @@ export default {
   'Are you sure you want to capture this transaction?': {},
   capture: { en: 'Capture' },
   'Are you sure you want to reverse the transaction?': {},
-  PAY_PAL: { en: 'PAY PAL', de: 'PAY PAL' },
+  PAY_PAL: { en: 'PayPal', de: 'PayPal' },
   GOOGLE_PAY: { en: 'GOOGLE PAL', de: 'GOOGLE PAL' },
   SEPA: {},
   KLARNA: {},
