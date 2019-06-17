@@ -54,17 +54,8 @@ function getInitValue(): State {
   return {
     data: [],
     isLoading: false,
-    startDate: moment()
-      .add(-1, 'months')
-      .hours(0)
-      .minutes(0)
-      .seconds(0)
-      .milliseconds(0),
-    endDate: moment()
-      .hours(23)
-      .minutes(59)
-      .seconds(59)
-      .milliseconds(999),
+    startDate: null,
+    endDate: null,
     startPos: 0,
     pageSize: 100,
     totalCount: 0,
