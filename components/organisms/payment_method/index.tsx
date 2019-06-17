@@ -42,7 +42,7 @@ function getCreditCard(ccType: string) {
       return JCB
     case 'MAESTRO':
       return Maestro
-    case 'MASTERCARD':
+    case 'MASTER_CARD':
       return MasterCard
     case 'UNIONPAY':
       return UnionPay

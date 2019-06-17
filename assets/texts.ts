@@ -159,7 +159,7 @@ export default {
   DISCOVER: {},
   JCB: {},
   MAESTRO: {},
-  MASTERCARD: { en: 'MASTER CARD', de: 'MASTER CARD' },
+  MASTER_CARD: { en: 'MASTER CARD', de: 'MASTER CARD' },
   UNIONPAY: {},
   APPLE_PAY: { en: 'APPLE PAL', de: 'APPLE PAL' },
   reverse: { en: 'Reverse' },
