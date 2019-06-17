@@ -181,5 +181,7 @@ export default {
   'Payment Method': {},
   'Search Payments…': {},
   'Clear Filters': {},
-  'Transactions Overview': {}
+  'Transactions Overview': {},
+  'From Date': { de: 'Ab Datum' },
+  'Until Date': { de: 'Miteinander ausgehen' }
 }

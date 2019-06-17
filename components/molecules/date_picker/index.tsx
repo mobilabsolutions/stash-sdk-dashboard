@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { DateRangePicker } from 'react-dates'
+import { useLocalization } from '../../../hooks'
 
 export default function DatePicker({
   initialFromDate,
@@ -11,6 +12,7 @@ export default function DatePicker({
     fromDate: initialFromDate,
     toDate: initialToDate
   })
+  const { getText } = useLocalization()
 
   const onClear = () => {
     onDatesChange({ startDate: null, endDate: null })
@@ -31,6 +33,8 @@ export default function DatePicker({
       {...props}
       startDate={range.fromDate}
       endDate={range.toDate}
+      startDatePlaceholderText={getText('From Date')}
+      endDatePlaceholderText={getText('Until Date')}
       onDatesChange={({ startDate, endDate }) => {
         _setRange({ fromDate: startDate, toDate: endDate })
         //When clear cross is pressed
