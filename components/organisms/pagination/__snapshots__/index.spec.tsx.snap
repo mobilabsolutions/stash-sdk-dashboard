@@ -25,9 +25,9 @@ exports[`Pagination Should Render 1`] = `
     <ul
       aria-activedescendant={null}
       aria-label="Pagination navigation"
-      className="PaginationView-h27uhl-0 index__c-pagination___26uF7 jFbgdy"
+      className="PaginationView-h27uhl-0 index__c-pagination___1RpuK jFbgdy"
       data-garden-id="pagination.pagination_view"
-      data-garden-version="4.4.6"
+      data-garden-version="6.0.1"
       id="garden-pagination-0--container"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -37,18 +37,18 @@ exports[`Pagination Should Render 1`] = `
       tabIndex={0}
     >
       <li
-        className="Page-sc-1t0i55e-0 PreviousPage-sc-82aant-0 index__c-pagination__page--previous___12lkz dxqhpK"
+        className="Page-sc-1t0i55e-0 PreviousPage-sc-82aant-0 index__c-pagination__page___1i3hO index__is-hidden___KJ2_J index__c-pagination__page--previous___23JF1 dxqhpK"
         data-garden-id="pagination.previous_page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="previous"
         hidden={true}
       />
       <li
         aria-label="Current page, Page 1"
         aria-selected={true}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR index__is-current___2owUB klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO index__is-current___3TGnj klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-1"
         onClick={[Function]}
@@ -59,9 +59,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Page 2"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-2"
         onClick={[Function]}
@@ -72,9 +72,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Page 3"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-3"
         onClick={[Function]}
@@ -85,9 +85,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Page 4"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-4"
         onClick={[Function]}
@@ -98,9 +98,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Page 5"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-5"
         onClick={[Function]}
@@ -111,9 +111,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Page 6"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-6"
         onClick={[Function]}
@@ -124,9 +124,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Page 7"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-7"
         onClick={[Function]}
@@ -135,17 +135,17 @@ exports[`Pagination Should Render 1`] = `
         7
       </li>
       <li
-        className="Page-sc-1t0i55e-0 Gap-sc-9l7n13-0 index__c-pagination__page--gap___2U4pa iDYswY"
+        className="Page-sc-1t0i55e-0 Gap-sc-9l7n13-0 index__c-pagination__page___1i3hO index__c-pagination__page--gap___2jbnj iDYswY"
         data-garden-id="pagination.gap"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="gap"
       />
       <li
         aria-label="Page 10"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-0--item-10"
         onClick={[Function]}
@@ -156,9 +156,9 @@ exports[`Pagination Should Render 1`] = `
       <li
         aria-label="Next page"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 NextPage-sc-1hsgss-0 index__c-pagination__page--next___2M-1a bcsflZ"
+        className="Page-sc-1t0i55e-0 NextPage-sc-1hsgss-0 index__c-pagination__page___1i3hO index__c-pagination__page--next___2Ehxv bcsflZ"
         data-garden-id="pagination.next_page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="next"
         id="garden-pagination-0--item-next"
         onClick={[Function]}
@@ -237,9 +237,9 @@ exports[`Pagination Should Render final page properly 1`] = `
     <ul
       aria-activedescendant={null}
       aria-label="Pagination navigation"
-      className="PaginationView-h27uhl-0 index__c-pagination___26uF7 jFbgdy"
+      className="PaginationView-h27uhl-0 index__c-pagination___1RpuK jFbgdy"
       data-garden-id="pagination.pagination_view"
-      data-garden-version="4.4.6"
+      data-garden-version="6.0.1"
       id="garden-pagination-3--container"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -251,9 +251,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Previous page"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 PreviousPage-sc-82aant-0 index__c-pagination__page--previous___12lkz dxqhpK"
+        className="Page-sc-1t0i55e-0 PreviousPage-sc-82aant-0 index__c-pagination__page___1i3hO index__c-pagination__page--previous___23JF1 dxqhpK"
         data-garden-id="pagination.previous_page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="previous"
         id="garden-pagination-3--item-previous"
         onClick={[Function]}
@@ -262,9 +262,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 1"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-1"
         onClick={[Function]}
@@ -275,9 +275,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 2"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-2"
         onClick={[Function]}
@@ -288,9 +288,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 3"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-3"
         onClick={[Function]}
@@ -301,9 +301,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 4"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-4"
         onClick={[Function]}
@@ -314,9 +314,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 5"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-5"
         onClick={[Function]}
@@ -327,9 +327,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 6"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-6"
         onClick={[Function]}
@@ -340,9 +340,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 7"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-7"
         onClick={[Function]}
@@ -353,9 +353,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 8"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-8"
         onClick={[Function]}
@@ -366,9 +366,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Page 9"
         aria-selected={false}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-9"
         onClick={[Function]}
@@ -379,9 +379,9 @@ exports[`Pagination Should Render final page properly 1`] = `
       <li
         aria-label="Current page, Page 10"
         aria-selected={true}
-        className="Page-sc-1t0i55e-0 index__c-pagination__page___BlPcR index__is-current___2owUB klgIDC"
+        className="Page-sc-1t0i55e-0 index__c-pagination__page___1i3hO index__is-current___3TGnj klgIDC"
         data-garden-id="pagination.page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         data-test-id="page"
         id="garden-pagination-3--item-10"
         onClick={[Function]}
@@ -390,9 +390,9 @@ exports[`Pagination Should Render final page properly 1`] = `
         10
       </li>
       <li
-        className="Page-sc-1t0i55e-0 NextPage-sc-1hsgss-0 index__c-pagination__page--next___2M-1a bcsflZ"
+        className="Page-sc-1t0i55e-0 NextPage-sc-1hsgss-0 index__c-pagination__page___1i3hO index__is-hidden___KJ2_J index__c-pagination__page--next___2Ehxv bcsflZ"
         data-garden-id="pagination.next_page"
-        data-garden-version="4.4.6"
+        data-garden-version="6.0.1"
         hidden={true}
       />
     </ul>
