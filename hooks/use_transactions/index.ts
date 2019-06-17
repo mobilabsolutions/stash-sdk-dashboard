@@ -96,11 +96,8 @@ export const useTransactions = () => {
       url += `&offset=${state.startPos}`
       //--------------- Filter DATES
       if (state.startDate)
-        url += `&createdAtStart=${state.startDate.format(
-          'YYYY-MM-DD HH:mm:ss'
-        )}`
-      if (state.endDate)
-        url += `&createdAtEnd=${state.endDate.format('YYYY-MM-DD HH:mm:ss')}`
+        url += `&createdAtStart=${state.startDate.utc().format()}`
+      if (state.endDate) url += `&createdAtEnd=${state.endDate.utc().format()}`
 
       ////---------------
       //--------------- Filter ACTION and STATUS
