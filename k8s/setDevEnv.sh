@@ -15,7 +15,6 @@ export KUBE_DEPLOYMENT_IMAGE_TAG=commit-${TRAVIS_COMMIT}
 # configmap variables
 export KUBE_CONFIGMAP_API_UPSTREAM="payment-sdk-backend"
 export KUBE_CONFIGMAP_PORT="3000 default"
-export KUBE_CONFIGMAP_NODE_ENV="development"
 
 # service variables
 
