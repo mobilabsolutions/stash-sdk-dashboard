@@ -144,7 +144,7 @@ export default {
   'Are you sure you want to capture this transaction?': {},
   capture: { en: 'Capture' },
   'Are you sure you want to reverse the transaction?': {},
-  PAY_PAL: { en: 'PAY PAL', de: 'PAY PAL' },
+  PAY_PAL: { en: 'PayPal', de: 'PayPal' },
   GOOGLE_PAY: { en: 'GOOGLE PAL', de: 'GOOGLE PAL' },
   SEPA: {},
   KLARNA: {},
@@ -159,7 +159,7 @@ export default {
   DISCOVER: {},
   JCB: {},
   MAESTRO: {},
-  MASTERCARD: { en: 'MASTER CARD', de: 'MASTER CARD' },
+  MASTER_CARD: { en: 'MASTER CARD', de: 'MASTER CARD' },
   UNIONPAY: {},
   APPLE_PAY: { en: 'APPLE PAL', de: 'APPLE PAL' },
   reverse: { en: 'Reverse' },
@@ -181,5 +181,7 @@ export default {
   'Payment Method': {},
   'Search Payments…': {},
   'Clear Filters': {},
-  'Transactions Overview': {}
+  'Transactions Overview': {},
+  'From Date': { de: 'Ab Datum' },
+  'Until Date': { de: 'Miteinander ausgehen' }
 }

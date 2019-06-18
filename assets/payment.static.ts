@@ -23,13 +23,21 @@ export const actionToStatus = reverse(statusToAction)
 
 export const paymentMethods = [
   {
-    name: 'SEPA',
-    type: 'PM'
+    name: 'CC',
+    used: true,
+    type: 'CC'
   },
   {
     name: 'PAY_PAL',
+    used: true,
     type: 'PM'
   },
+  {
+    name: 'SEPA',
+    used: true,
+    type: 'PM'
+  },
+
   {
     name: 'GOOGLE_PAY',
     type: 'PM'
@@ -51,7 +59,7 @@ export const paymentMethods = [
     type: 'CC'
   },
   {
-    name: 'MASTERCARD',
+    name: 'MASTER_CARD',
     type: 'CC'
   },
   {

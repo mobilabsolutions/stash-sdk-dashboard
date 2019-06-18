@@ -34,6 +34,8 @@ const ClearBtn = styled(FlatButton)`
   font-size: 14px;
 `
 
+const usedPaymentMethods = paymentMethods.filter(p => p.used)
+
 export default forwardRef<HTMLDivElement, any>(
   (
     {
@@ -51,14 +53,24 @@ export default forwardRef<HTMLDivElement, any>(
     ref
   ) => {
     const { getText } = useLocalization()
-    const statusOptions = Object.entries(statusToAction).map(act => ({
-      value: act[0],
-      label: getText(act[0])
-    }))
-    const paymetOptions = paymentMethods.map(pay => ({
-      value: pay.name,
-      label: getText(pay.name)
-    }))
+    const allOption = {
+      value: 'all',
+      label: getText('all')
+    }
+    const statusOptions = [
+      allOption,
+      ...Object.entries(statusToAction).map(act => ({
+        value: act[0],
+        label: getText(act[0])
+      }))
+    ]
+    const paymetOptions = [
+      allOption,
+      ...usedPaymentMethods.map(pay => ({
+        value: pay.name,
+        label: getText(pay.name)
+      }))
+    ]
     const [focusedInput, setFocusedInput] = useState(null)
     const isFiltered =
       !!startDate || !!endDate || !!paymentMethod || !!status || !!text

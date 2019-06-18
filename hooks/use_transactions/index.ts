@@ -38,6 +38,7 @@ interface State {
   totalCount: number
   status:
     | ''
+    | 'all'
     | 'authorised'
     | 'peversed'
     | 'refunded'
@@ -54,17 +55,8 @@ function getInitValue(): State {
   return {
     data: [],
     isLoading: false,
-    startDate: moment()
-      .add(-1, 'months')
-      .hours(0)
-      .minutes(0)
-      .seconds(0)
-      .milliseconds(0),
-    endDate: moment()
-      .hours(23)
-      .minutes(59)
-      .seconds(59)
-      .milliseconds(999),
+    startDate: null,
+    endDate: null,
     startPos: 0,
     pageSize: 100,
     totalCount: 0,
@@ -101,7 +93,7 @@ export const useTransactions = () => {
 
       ////---------------
       //--------------- Filter ACTION and STATUS
-      if (!!state.status) {
+      if (!!state.status && state.status !== 'all') {
         const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
         url += `&status=${status}`
         url +=
@@ -110,7 +102,7 @@ export const useTransactions = () => {
             : `&action=${statusToAction[state.status]}`
       }
       ////---------------
-      if (!!state.paymentMethod) {
+      if (!!state.paymentMethod && state.paymentMethod !== 'all') {
         url += `&paymentMethod=${state.paymentMethod}`
       }
 

@@ -1,0 +1,734 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Selects should not use "" value 1`] = `
+<div
+  className="filter__Wrapper-sc-1wuq206-0 iZMnFi"
+>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className="DateRangePicker DateRangePicker_1"
+    >
+      <div>
+        <div
+          className="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__showClearDates DateRangePickerInput__showClearDates_2"
+        >
+          <div
+            className="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-filter_start_date_id"
+              aria-label="From Date"
+              autoComplete="off"
+              className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
+              disabled={false}
+              id="filter_start_date_id"
+              name="filter_start_date_id"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="From Date"
+              readOnly={true}
+              required={false}
+              type="text"
+              value=""
+            />
+            <p
+              className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-filter_start_date_id"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            className="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
+            role="presentation"
+          >
+            <svg
+              className="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+              focusable="false"
+              viewBox="0 0 1000 1000"
+            >
+              <path
+                d="M694.4 242.4l249.1 249.1c11 11 11 21 0 32L694.4 772.7c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210.1-210.1H67.1c-13 0-23-10-23-23s10-23 23-23h805.4L662.4 274.5c-21-21.1 11-53.1 32-32.1z"
+              />
+            </svg>
+          </div>
+          <div
+            className="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-filter_end_date_id"
+              aria-label="Until Date"
+              autoComplete="off"
+              className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
+              disabled={false}
+              id="filter_end_date_id"
+              name="filter_end_date_id"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Until Date"
+              readOnly={true}
+              required={false}
+              type="text"
+              value=""
+            />
+            <p
+              className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-filter_end_date_id"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
+          </div>
+          <button
+            aria-label="Clear Dates"
+            className="DateRangePickerInput_clearDates DateRangePickerInput_clearDates_1 DateRangePickerInput_clearDates_default DateRangePickerInput_clearDates_default_2 DateRangePickerInput_clearDates__hide DateRangePickerInput_clearDates__hide_3"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              className="DateRangePickerInput_clearDates_svg DateRangePickerInput_clearDates_svg_1"
+              focusable="false"
+              viewBox="0 0 12 12"
+            >
+              <path
+                d="M11.53.47a.75.75 0 0 0-1.061 0l-4.47 4.47L1.529.47A.75.75 0 1 0 .468 1.531l4.47 4.47-4.47 4.47a.75.75 0 1 0 1.061 1.061l4.47-4.47 4.47 4.47a.75.75 0 1 0 1.061-1.061l-4.47-4.47 4.47-4.47a.75.75 0 0 0 0-1.061z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className=" css-chbh3k-container"
+      onKeyDown={[Function]}
+    >
+      <div
+        className=" css-vr5vfp-control"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+      >
+        <div
+          className=" css-1hwfws3"
+        >
+          <div
+            className=" css-1y2mitp-placeholder"
+          >
+            Payment Method
+          </div>
+          <div
+            className="css-pe2t16"
+          >
+            <div
+              className=""
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <input
+                aria-autocomplete="list"
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect="off"
+                disabled={false}
+                id="react-select-2-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                spellCheck="false"
+                style={
+                  Object {
+                    "background": 0,
+                    "border": 0,
+                    "boxSizing": "content-box",
+                    "color": "inherit",
+                    "fontSize": "inherit",
+                    "label": "input",
+                    "opacity": 1,
+                    "outline": 0,
+                    "padding": 0,
+                    "width": "1px",
+                  }
+                }
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className=" css-1wy0on6"
+        >
+          <span />
+          <div
+            aria-hidden="true"
+            className=" css-tlfecz-indicatorContainer"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="css-19bqh2r"
+              focusable="false"
+              height={20}
+              viewBox="0 0 20 20"
+              width={20}
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className=" css-chbh3k-container"
+      onKeyDown={[Function]}
+    >
+      <div
+        className=" css-vr5vfp-control"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+      >
+        <div
+          className=" css-1hwfws3"
+        >
+          <div
+            className=" css-1y2mitp-placeholder"
+          >
+            Status
+          </div>
+          <div
+            className="css-pe2t16"
+          >
+            <div
+              className=""
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <input
+                aria-autocomplete="list"
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect="off"
+                disabled={false}
+                id="react-select-3-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                spellCheck="false"
+                style={
+                  Object {
+                    "background": 0,
+                    "border": 0,
+                    "boxSizing": "content-box",
+                    "color": "inherit",
+                    "fontSize": "inherit",
+                    "label": "input",
+                    "opacity": 1,
+                    "outline": 0,
+                    "padding": 0,
+                    "width": "1px",
+                  }
+                }
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className=" css-1wy0on6"
+        >
+          <span />
+          <div
+            aria-hidden="true"
+            className=" css-tlfecz-indicatorContainer"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="css-19bqh2r"
+              focusable="false"
+              height={20}
+              viewBox="0 0 20 20"
+              width={20}
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className="input_search__InputWrapper-sc-1voy22s-1 dJveMv"
+    >
+      <svg
+        height={24}
+        style={
+          Object {
+            "margin": "auto",
+            "paddingLeft": "8px",
+          }
+        }
+        viewBox="0 0 15 15"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.44 9.18c.68 0 1.307-.17 1.88-.51A3.774 3.774 0 0 0 8.68 7.3c.333-.573.5-1.2.5-1.88 0-.68-.167-1.307-.5-1.88a3.697 3.697 0 0 0-1.36-1.36c-.573-.333-1.2-.5-1.88-.5-.68 0-1.307.167-1.88.5a3.774 3.774 0 0 0-1.37 1.36c-.34.573-.51 1.2-.51 1.88 0 .68.17 1.307.51 1.88.34.573.797 1.03 1.37 1.37.573.34 1.2.51 1.88.51zm5 0l4.14 4.14-1.26 1.26-4.14-4.16v-.66l-.24-.22a4.946 4.946 0 0 1-1.61.95c-.607.22-1.237.33-1.89.33-.987 0-1.897-.24-2.73-.72A5.34 5.34 0 0 1 .74 8.16 5.315 5.315 0 0 1 0 5.42c0-.987.243-1.897.73-2.73A5.346 5.346 0 0 1 2.71.72 5.374 5.374 0 0 1 5.44 0c.987 0 1.9.247 2.74.74a5.286 5.286 0 0 1 1.93 1.96c.473.827.71 1.733.71 2.72 0 .667-.11 1.303-.33 1.91a4.946 4.946 0 0 1-.95 1.61l.22.24h.68z"
+          fill="#A3AAAF"
+          fillRule="nonzero"
+        />
+      </svg>
+      <input
+        autoFocus={false}
+        className="input_search__HtmlInput-sc-1voy22s-0 dBCtVY"
+        disabled={false}
+        name="search-text"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Search Payments…"
+        title=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Filter Selects should use "all" value 1`] = `
+<div
+  className="filter__Wrapper-sc-1wuq206-0 iZMnFi"
+>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className="DateRangePicker DateRangePicker_1"
+    >
+      <div>
+        <div
+          className="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__showClearDates DateRangePickerInput__showClearDates_2"
+        >
+          <div
+            className="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-filter_start_date_id"
+              aria-label="From Date"
+              autoComplete="off"
+              className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
+              disabled={false}
+              id="filter_start_date_id"
+              name="filter_start_date_id"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="From Date"
+              readOnly={true}
+              required={false}
+              type="text"
+              value=""
+            />
+            <p
+              className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-filter_start_date_id"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            className="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
+            role="presentation"
+          >
+            <svg
+              className="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+              focusable="false"
+              viewBox="0 0 1000 1000"
+            >
+              <path
+                d="M694.4 242.4l249.1 249.1c11 11 11 21 0 32L694.4 772.7c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210.1-210.1H67.1c-13 0-23-10-23-23s10-23 23-23h805.4L662.4 274.5c-21-21.1 11-53.1 32-32.1z"
+              />
+            </svg>
+          </div>
+          <div
+            className="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-filter_end_date_id"
+              aria-label="Until Date"
+              autoComplete="off"
+              className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
+              disabled={false}
+              id="filter_end_date_id"
+              name="filter_end_date_id"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Until Date"
+              readOnly={true}
+              required={false}
+              type="text"
+              value=""
+            />
+            <p
+              className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-filter_end_date_id"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
+          </div>
+          <button
+            aria-label="Clear Dates"
+            className="DateRangePickerInput_clearDates DateRangePickerInput_clearDates_1 DateRangePickerInput_clearDates_default DateRangePickerInput_clearDates_default_2 DateRangePickerInput_clearDates__hide DateRangePickerInput_clearDates__hide_3"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              className="DateRangePickerInput_clearDates_svg DateRangePickerInput_clearDates_svg_1"
+              focusable="false"
+              viewBox="0 0 12 12"
+            >
+              <path
+                d="M11.53.47a.75.75 0 0 0-1.061 0l-4.47 4.47L1.529.47A.75.75 0 1 0 .468 1.531l4.47 4.47-4.47 4.47a.75.75 0 1 0 1.061 1.061l4.47-4.47 4.47 4.47a.75.75 0 1 0 1.061-1.061l-4.47-4.47 4.47-4.47a.75.75 0 0 0 0-1.061z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className=" css-chbh3k-container"
+      onKeyDown={[Function]}
+    >
+      <div
+        className=" css-vr5vfp-control"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+      >
+        <div
+          className=" css-1hwfws3"
+        >
+          <div
+            className=" css-1nzxrjy-singleValue"
+          >
+            all
+          </div>
+          <div
+            className="css-pe2t16"
+          >
+            <div
+              className=""
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <input
+                aria-autocomplete="list"
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect="off"
+                disabled={false}
+                id="react-select-4-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                spellCheck="false"
+                style={
+                  Object {
+                    "background": 0,
+                    "border": 0,
+                    "boxSizing": "content-box",
+                    "color": "inherit",
+                    "fontSize": "inherit",
+                    "label": "input",
+                    "opacity": 1,
+                    "outline": 0,
+                    "padding": 0,
+                    "width": "1px",
+                  }
+                }
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className=" css-1wy0on6"
+        >
+          <span />
+          <div
+            aria-hidden="true"
+            className=" css-tlfecz-indicatorContainer"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="css-19bqh2r"
+              focusable="false"
+              height={20}
+              viewBox="0 0 20 20"
+              width={20}
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className=" css-chbh3k-container"
+      onKeyDown={[Function]}
+    >
+      <div
+        className=" css-vr5vfp-control"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+      >
+        <div
+          className=" css-1hwfws3"
+        >
+          <div
+            className=" css-1nzxrjy-singleValue"
+          >
+            all
+          </div>
+          <div
+            className="css-pe2t16"
+          >
+            <div
+              className=""
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <input
+                aria-autocomplete="list"
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect="off"
+                disabled={false}
+                id="react-select-5-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                spellCheck="false"
+                style={
+                  Object {
+                    "background": 0,
+                    "border": 0,
+                    "boxSizing": "content-box",
+                    "color": "inherit",
+                    "fontSize": "inherit",
+                    "label": "input",
+                    "opacity": 1,
+                    "outline": 0,
+                    "padding": 0,
+                    "width": "1px",
+                  }
+                }
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className=" css-1wy0on6"
+        >
+          <span />
+          <div
+            aria-hidden="true"
+            className=" css-tlfecz-indicatorContainer"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="css-19bqh2r"
+              focusable="false"
+              height={20}
+              viewBox="0 0 20 20"
+              width={20}
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+  >
+    <div
+      className="input_search__InputWrapper-sc-1voy22s-1 dJveMv"
+    >
+      <svg
+        height={24}
+        style={
+          Object {
+            "margin": "auto",
+            "paddingLeft": "8px",
+          }
+        }
+        viewBox="0 0 15 15"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.44 9.18c.68 0 1.307-.17 1.88-.51A3.774 3.774 0 0 0 8.68 7.3c.333-.573.5-1.2.5-1.88 0-.68-.167-1.307-.5-1.88a3.697 3.697 0 0 0-1.36-1.36c-.573-.333-1.2-.5-1.88-.5-.68 0-1.307.167-1.88.5a3.774 3.774 0 0 0-1.37 1.36c-.34.573-.51 1.2-.51 1.88 0 .68.17 1.307.51 1.88.34.573.797 1.03 1.37 1.37.573.34 1.2.51 1.88.51zm5 0l4.14 4.14-1.26 1.26-4.14-4.16v-.66l-.24-.22a4.946 4.946 0 0 1-1.61.95c-.607.22-1.237.33-1.89.33-.987 0-1.897-.24-2.73-.72A5.34 5.34 0 0 1 .74 8.16 5.315 5.315 0 0 1 0 5.42c0-.987.243-1.897.73-2.73A5.346 5.346 0 0 1 2.71.72 5.374 5.374 0 0 1 5.44 0c.987 0 1.9.247 2.74.74a5.286 5.286 0 0 1 1.93 1.96c.473.827.71 1.733.71 2.72 0 .667-.11 1.303-.33 1.91a4.946 4.946 0 0 1-.95 1.61l.22.24h.68z"
+          fill="#A3AAAF"
+          fillRule="nonzero"
+        />
+      </svg>
+      <input
+        autoFocus={false}
+        className="input_search__HtmlInput-sc-1voy22s-0 dBCtVY"
+        disabled={false}
+        name="search-text"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Search Payments…"
+        title=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
+    style={
+      Object {
+        "float": "right",
+        "height": "100%",
+      }
+    }
+  >
+    <button
+      className="filter__ClearBtn-sc-1wuq206-2 fBFzZF flat__Button-sc-182ug78-0 ukxCH"
+    >
+      Clear Filters
+    </button>
+  </div>
+</div>
+`;
