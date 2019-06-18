@@ -188,9 +188,7 @@ exports[`Filter Selects should not use "" value 1`] = `
         <div
           className=" css-1wy0on6"
         >
-          <span
-            className=" css-1okebmr-indicatorSeparator"
-          />
+          <span />
           <div
             aria-hidden="true"
             className=" css-tlfecz-indicatorContainer"
@@ -295,9 +293,7 @@ exports[`Filter Selects should not use "" value 1`] = `
         <div
           className=" css-1wy0on6"
         >
-          <span
-            className=" css-1okebmr-indicatorSeparator"
-          />
+          <span />
           <div
             aria-hidden="true"
             className=" css-tlfecz-indicatorContainer"
@@ -551,9 +547,7 @@ exports[`Filter Selects should use "all" value 1`] = `
         <div
           className=" css-1wy0on6"
         >
-          <span
-            className=" css-1okebmr-indicatorSeparator"
-          />
+          <span />
           <div
             aria-hidden="true"
             className=" css-tlfecz-indicatorContainer"
@@ -658,9 +652,7 @@ exports[`Filter Selects should use "all" value 1`] = `
         <div
           className=" css-1wy0on6"
         >
-          <span
-            className=" css-1okebmr-indicatorSeparator"
-          />
+          <span />
           <div
             aria-hidden="true"
             className=" css-tlfecz-indicatorContainer"

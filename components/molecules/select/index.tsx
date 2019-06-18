@@ -44,6 +44,9 @@ const Option = props => {
     </components.Option>
   )
 }
+
+const IndicatorSeparator = () => <span></span>
+
 const global = {
   color: Theme.shade.A200,
   fontSize: '14px'
@@ -92,5 +95,11 @@ const styles = {
 }
 
 export default function Select(props) {
-  return <ReactSelect {...props} styles={styles} components={{ Option }} />
+  return (
+    <ReactSelect
+      {...props}
+      styles={styles}
+      components={{ Option, IndicatorSeparator }}
+    />
+  )
 }
