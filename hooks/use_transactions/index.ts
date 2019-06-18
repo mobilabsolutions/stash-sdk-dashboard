@@ -38,6 +38,7 @@ interface State {
   totalCount: number
   status:
     | ''
+    | 'all'
     | 'authorised'
     | 'peversed'
     | 'refunded'
@@ -92,7 +93,7 @@ export const useTransactions = () => {
 
       ////---------------
       //--------------- Filter ACTION and STATUS
-      if (!!state.status) {
+      if (!!state.status && state.status !== 'all') {
         const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
         url += `&status=${status}`
         url +=
@@ -101,7 +102,7 @@ export const useTransactions = () => {
             : `&action=${statusToAction[state.status]}`
       }
       ////---------------
-      if (!!state.paymentMethod) {
+      if (!!state.paymentMethod && state.paymentMethod !== 'all') {
         url += `&paymentMethod=${state.paymentMethod}`
       }
 
