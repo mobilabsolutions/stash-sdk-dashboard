@@ -5,17 +5,18 @@ import Router from 'next/router'
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture, Params } from './actions'
 import { statusToAction } from '../../assets/payment.static'
+import { TransactionAction, TransactionStatus } from '../types'
 const isClient = typeof window === 'object'
 
 interface Transaction {
-  action: 'AUTH' | 'PREAUTH' | 'REVERSAL' | 'REFUND' | 'CAPTURE'
+  action: TransactionAction
   amount: number
   createdDate: string | number | Date
   currencyId: string
   customerId: string
   paymentMethod: string
   reason: string
-  status: 'SUCCESS' | 'FAIL'
+  status: TransactionStatus
   transactionId: string
 }
 interface TransactionReponse {
