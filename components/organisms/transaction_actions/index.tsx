@@ -2,34 +2,12 @@ import Popover, { ArrowContainer } from 'react-tiny-popover'
 import { useLocalization } from '../../../hooks'
 import { useState } from 'react'
 import { Action, ActionContainer, MoreIcon } from './styled'
-
-function getActions(status: string): Array<{ type: string }> {
-  switch (status) {
-    case 'authorised':
-    case 'captured':
-      return [
-        {
-          type: 'refund'
-        }
-      ]
-    case 'pre-Authorised':
-      return [
-        {
-          type: 'capture'
-        },
-        {
-          type: 'reverse'
-        }
-      ]
-    default:
-      return []
-  }
-}
+import { getActionsByStatus } from '../../../assets/payment.static'
 
 export default function TransactionActions({ status, onClick }) {
   const { getText } = useLocalization()
   const [show, setShow] = useState(false)
-  const actions = getActions(status)
+  const actions = getActionsByStatus(status)
   if (!actions.length) return <div />
 
   return (
