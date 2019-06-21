@@ -2,7 +2,7 @@
 set -euox pipefail
 IFS=$'\n\t'
 
-source ./k8s/setDevEnv.sh
+source ./k8s/setDemoEnv.sh
 
 gcloud container clusters get-credentials ${CLUSTER_NAME} --region ${REGION} --project ${PROJECT_ID}
 
