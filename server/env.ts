@@ -8,3 +8,16 @@ export const API_UPSTREAM =
 export const JWT_SECRET =
   process.env.JWT_SECRET || 'pqriNWfgFqmdtoB{ydysuaP[wKgebF6tPUTdTa'
 // spell-checker: enable
+
+// SDK evironment variables
+const SDK_ENV_CONFIGS = {
+  production: {
+    PspTestMode: false
+  },
+  development: {
+    PspTestMode: true
+  }
+}
+
+export const SDK_CONFIG =
+  SDK_ENV_CONFIGS[process.env.SDK_ENV] || SDK_ENV_CONFIGS.development

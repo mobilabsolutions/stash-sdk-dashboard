@@ -88,6 +88,7 @@ Runtime Environment is a kubernetes Cluster see: [Google Cloud](https://console.
 - PORT (default 3000)
 - API_UPSTREAM (default https://pd.mblb.net)
 - NODE_ENV (production|development|test) do not change, set by package.json scripts
+- SDK_ENV (production|development)
 
 ### Helpful scripts
 

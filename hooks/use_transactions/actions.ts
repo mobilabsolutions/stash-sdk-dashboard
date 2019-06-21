@@ -1,9 +1,7 @@
 import { useApi } from '../use_api'
 import { useState } from 'react'
-import { IS_DEVELOPMENT } from '../../server/env'
+import { SDK_CONFIG } from '../../server/env'
 import uuidv1 from 'uuid/v1'
-
-const PspTestMode = IS_DEVELOPMENT
 
 function toInt(num?: any) {
   const conversion = Number(num) * 100
@@ -33,7 +31,7 @@ const actionCreator = (getUrl: Function) =>
           getUrl({ ...params, merchantId }),
           { ...params, amount },
           {
-            'PSP-Test-Mode': PspTestMode,
+            'PSP-Test-Mode': SDK_CONFIG.PspTestMode,
             'Idempotent-Key': uuidv1()
           }
         )
@@ -66,27 +64,21 @@ const actionCreator = (getUrl: Function) =>
 export function useRefund(onSuccess?: Function, onError?: Function) {
   return actionCreator(
     (params: Params) =>
-      `/api/v1/merchant/${params.merchantId}/authorization/${
-        params.transactionId
-      }/refund`
+      `/api/v1/merchant/${params.merchantId}/authorization/${params.transactionId}/refund`
   )(onSuccess, onError)
 }
 
 export function useCapture(onSuccess?: Function, onError?: Function) {
   return actionCreator(
     (params: Params) =>
-      `/api/v1/merchant/${params.merchantId}/preauthorization/${
-        params.transactionId
-      }/capture`
+      `/api/v1/merchant/${params.merchantId}/preauthorization/${params.transactionId}/capture`
   )(onSuccess, onError)
 }
 
 export function useReverse(onSuccess?: Function, onError?: Function) {
   return actionCreator(
     (params: Params) =>
-      `/api/v1/merchant/${params.merchantId}/preauthorization/${
-        params.transactionId
-      }/reverse`
+      `/api/v1/merchant/${params.merchantId}/preauthorization/${params.transactionId}/reverse`
   )(onSuccess, onError)
 }
 
