@@ -2,12 +2,23 @@ import { useState, useEffect } from 'react'
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
 import Popup from './popup'
-import { Status, Timestamp, Reason, CustomerId, Amount } from './styled'
+import { Timestamp, Reason, CustomerId, Amount } from './styled'
 import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
 import { TransactionActions, PaymentMethod, Pagination } from '../../organisms'
-import { actionToStatus } from '../../../assets/payment.static'
+import { getMappedStatus } from '../../../assets/payment.static'
+import Link from 'next/link'
+import { Status } from '../../molecules'
+
+const CustomTrGroupComponent = ({ rowinfo, ...props }) => (
+  <Link
+    as={`/transaction/${rowinfo.original.transactionId}`}
+    href={`/transaction?transactionId=${rowinfo.original.transactionId}`}
+  >
+    <ReactTableDefaults.TrGroupComponent {...props} />
+  </Link>
+)
 
 const headerStyle = {
   fontSize: '16px',
@@ -36,16 +47,6 @@ const global_columns_def = {
   ...ReactTableDefaults.column,
   style: cellStyles,
   headerStyle
-}
-
-const getActionStatus = (status: string, action: string): string => {
-  switch (status) {
-    case 'SUCCESS':
-      return !!actionToStatus[action] ? actionToStatus[action] : 'fail'
-    case 'FAIL':
-    default:
-      return 'fail'
-  }
 }
 
 export default ({
@@ -116,6 +117,8 @@ export default ({
         PaginationComponent={props => (
           <Pagination {...props} totalCount={totalCount} />
         )}
+        getTrGroupProps={(_state, rowInfo) => ({ rowinfo: rowInfo })}
+        TrGroupComponent={CustomTrGroupComponent}
         data={data}
         manual
         pages={numberOfPages}
@@ -134,7 +137,7 @@ export default ({
         resizable={false}
         onPageChange={setPage}
         page={selectedPage}
-        className=""
+        className="-highlight"
         style={{
           flex: '0 0 auto',
           border: 'none',
@@ -169,7 +172,7 @@ export default ({
             Header: 'Status',
             accessor: 'status',
             Cell: row => {
-              const status = getActionStatus(row.value, row.original.action)
+              const status = getMappedStatus(row.value, row.original.action)
               return <Status status={status}>{getText(status)}</Status>
             }
           },
@@ -228,7 +231,7 @@ export default ({
             resizable: false,
             Cell: row => (
               <TransactionActions
-                status={getActionStatus(
+                status={getMappedStatus(
                   row.original.status,
                   row.original.action
                 )}

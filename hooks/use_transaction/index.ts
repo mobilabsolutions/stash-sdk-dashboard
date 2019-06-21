@@ -19,14 +19,22 @@ interface ActionResponse {
   status: string
 }
 
-const initialState = {
-  details: {},
-  isLoading: false,
-  error: false
+interface TransactionState {
+  details?: TransactionDetails
+  isLoading: boolean
+  error: boolean
+}
+
+function getInitial(): TransactionState {
+  return {
+    details: null,
+    isLoading: false,
+    error: false
+  }
 }
 
 export const useTransaction = transactionId => {
-  const [state, setState] = useState(initialState)
+  const [state, setState] = useState(getInitial())
   const { get: apiGet, token, merchantId } = useApi()
 
   useEffect(() => {
@@ -62,7 +70,7 @@ export const useTransaction = transactionId => {
         }
         setState(prevState => ({
           ...prevState,
-          details: {},
+          details: null,
           error,
           isLoading: false
         }))

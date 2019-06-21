@@ -18,14 +18,15 @@ const Title = styled(H2)`
 
 interface Props {
   title?: string
+  wrapperStyle?: any
   children: any
 }
 export function DetailView(props: Props, reference: any) {
-  const { title } = props
+  const { title, wrapperStyle = {} } = props
   return (
     <div ref={reference}>
       <Title>{title}</Title>
-      <ContentWrapper>{props.children}</ContentWrapper>
+      <ContentWrapper style={wrapperStyle}>{props.children}</ContentWrapper>
     </div>
   )
 }
