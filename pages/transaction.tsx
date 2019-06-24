@@ -5,7 +5,10 @@ import { useTransaction, useLocalization } from '../hooks'
 import { VerticalScrollContainer, BackButton } from '../components/atoms'
 import styled from '../components/styled'
 import Link from 'next/link'
-import { TransactionEssentials } from '../components/organisms'
+import {
+  TransactionEssentials,
+  TransactionDetails as TransactionDetailCmp
+} from '../components/organisms'
 
 interface DetailProps {
   router: RouterProps
@@ -46,6 +49,19 @@ const TransactionDetails = ({ router }: DetailProps) => {
               action={details.action}
               date={details.createdDate}
               extra={details.paymentInfo.extra}
+            />
+          </DetailItem>
+        )}
+        {details && (
+          <DetailItem>
+            <TransactionDetailCmp
+              transactionId={details.transactionId}
+              action={details.action}
+              status={details.status}
+              amount={details.amount}
+              currency={details.currencyId}
+              description={details.reason}
+              createdDate={details.createdDate}
             />
           </DetailItem>
         )}
