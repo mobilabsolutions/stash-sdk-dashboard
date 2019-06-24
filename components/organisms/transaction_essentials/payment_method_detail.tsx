@@ -9,7 +9,7 @@ import {
 import { PayPal, Sepa } from '../../atoms'
 import { PaymentMethod as PM } from '../../organisms'
 import styled from '../../styled'
-import NumberFormat from 'react-number-format'
+import { Iban } from '../../molecules'
 
 interface PMProps {
   paymentMethod: PaymentMethod
@@ -78,11 +78,7 @@ const SepaDetail = (p: { sepaConfig?: SepaConfig }) => {
   const { iban = '' } = p.sepaConfig
   return (
     <PMDetail icon={() => <Sepa width={20} height={20} />}>
-      <NumberFormat
-        displayType="text"
-        format="#### #### #### ##### ##"
-        value={iban}
-      />
+      <Iban value={iban} />
     </PMDetail>
   )
 }
