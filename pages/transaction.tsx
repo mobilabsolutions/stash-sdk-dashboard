@@ -15,6 +15,11 @@ const CustomScrollContainer = styled(VerticalScrollContainer)`
   max-width: 920px;
   margin: auto;
   padding-top: 40px;
+  font-family: ${props => props.theme.fontTransactions};
+`
+
+const DetailItem = styled.div`
+  padding-top: 24px;
 `
 
 const TransactionDetails = ({ router }: DetailProps) => {
@@ -29,7 +34,7 @@ const TransactionDetails = ({ router }: DetailProps) => {
           <BackButton>{getText('Back to transactions overview')}</BackButton>
         </Link>
         {details && (
-          <div>
+          <DetailItem>
             <TransactionEssentials
               amount={details.amount}
               currency={details.currencyId}
@@ -38,7 +43,7 @@ const TransactionDetails = ({ router }: DetailProps) => {
               date={details.createdDate}
               extra={details.paymentInfo.extra}
             />
-          </div>
+          </DetailItem>
         )}
       </CustomScrollContainer>
     </Page>
