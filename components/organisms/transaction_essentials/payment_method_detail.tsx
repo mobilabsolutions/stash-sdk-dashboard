@@ -7,6 +7,7 @@ import {
   SepaConfig
 } from '../../../hooks/types'
 import { PayPal, Sepa } from '../../atoms'
+import { PaymentMethod as PM } from '../../organisms'
 import styled from '../../styled'
 import NumberFormat from 'react-number-format'
 
@@ -41,22 +42,50 @@ const PMDetail = ({ children, icon }) => (
 const PayPalDetail = (p: {
   payPalConfig?: PayPalConfig
   personalData?: PersonalData
-}) => (
-  <PMDetail icon={() => <PayPal width={20} height={20} />}>
-    {!!p.personalData.email && p.personalData.email}
-    {/* reu@dewfwerg.com */}
-  </PMDetail>
-)
-const CCDetail = (p: { ccConfig?: CCConfig }) => <div></div>
-const SepaDetail = (p: { sepaConfig?: SepaConfig }) => (
-  <PMDetail icon={() => <Sepa width={20} height={20} />}>
-    <NumberFormat
-      displayType="text"
-      format="#### #### #### ##### ##"
-      value={p.sepaConfig.iban}
-    />
-  </PMDetail>
-)
+}) => {
+  const { email = '' } = p.personalData || {}
+  return (
+    <PMDetail icon={() => <PayPal width={20} height={20} />}>
+      {!!email && email}
+      {/* reu@dewfwerg.com */}
+    </PMDetail>
+  )
+}
+
+const CCDATA = styled.span`
+  padding-right: 16px;
+`
+const CCDetail = (p: { ccConfig?: CCConfig }) => {
+  const { ccType = '', ccMask = '', ccExpiry = '' } = p.ccConfig || {}
+  return (
+    <PMDetail
+      icon={() => (
+        <PM width={20} height={20} paymentMethod={ccType} title={ccType} />
+      )}
+    >
+      {!!ccMask || !!ccExpiry ? (
+        <>
+          <CCDATA>{ccMask}</CCDATA>
+          <CCDATA>{ccExpiry}</CCDATA>
+        </>
+      ) : (
+        <span>No data provided</span>
+      )}
+    </PMDetail>
+  )
+}
+const SepaDetail = (p: { sepaConfig?: SepaConfig }) => {
+  const { iban = '' } = p.sepaConfig
+  return (
+    <PMDetail icon={() => <Sepa width={20} height={20} />}>
+      <NumberFormat
+        displayType="text"
+        format="#### #### #### ##### ##"
+        value={iban}
+      />
+    </PMDetail>
+  )
+}
 
 export default function PaymentMethodDetail(props: PMProps) {
   const { paymentMethod } = props
