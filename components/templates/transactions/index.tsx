@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
-import Popup from './popup'
 import { Timestamp, Reason, CustomerId, Amount } from './styled'
 import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
-import { TransactionActions, PaymentMethod, Pagination } from '../../organisms'
+import {
+  TransactionActions,
+  PaymentMethod,
+  Pagination,
+  TransactionActionsPopup
+} from '../../organisms'
 import { getMappedStatus } from '../../../assets/payment.static'
 import Link from 'next/link'
 import { Status } from '../../molecules'
@@ -244,7 +248,7 @@ export default ({
           }
         ]}
       />
-      <Popup
+      <TransactionActionsPopup
         onClose={onClose}
         isLoading={isActionLoading(action)}
         hasError={isActionError(action)}
