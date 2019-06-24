@@ -1,14 +1,15 @@
 import React from 'react'
-import { Page } from '../components/organisms'
+import {
+  Page,
+  PaymentMethodDetails,
+  TransactionEssentials,
+  TransactionDetails as TransactionDetailCmp
+} from '../components/organisms'
 import { withRouter, RouterProps } from 'next/router'
 import { useTransaction, useLocalization } from '../hooks'
 import { VerticalScrollContainer, BackButton } from '../components/atoms'
 import styled from '../components/styled'
 import Link from 'next/link'
-import {
-  TransactionEssentials,
-  TransactionDetails as TransactionDetailCmp
-} from '../components/organisms'
 
 interface DetailProps {
   router: RouterProps
@@ -62,6 +63,18 @@ const TransactionDetails = ({ router }: DetailProps) => {
               currency={details.currencyId}
               description={details.reason}
               createdDate={details.createdDate}
+            />
+          </DetailItem>
+        )}
+        {details && (
+          <DetailItem>
+            <PaymentMethodDetails
+              paymentMethod={details.paymentMethod}
+              ccConfig={details.paymentInfo.extra.ccConfig}
+              payPalConfig={details.paymentInfo.extra.payPalConfig}
+              personalData={details.paymentInfo.extra.personalData}
+              sepaConfig={details.paymentInfo.extra.sepaConfig}
+              aliasId={details.aliasId}
             />
           </DetailItem>
         )}
