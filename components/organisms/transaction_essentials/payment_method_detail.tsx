@@ -8,6 +8,7 @@ import {
 } from '../../../hooks/types'
 import { PayPal, Sepa } from '../../atoms'
 import styled from '../../styled'
+import NumberFormat from 'react-number-format'
 
 interface PMProps {
   paymentMethod: PaymentMethod
@@ -49,7 +50,11 @@ const PayPalDetail = (p: {
 const CCDetail = (p: { ccConfig?: CCConfig }) => <div></div>
 const SepaDetail = (p: { sepaConfig?: SepaConfig }) => (
   <PMDetail icon={() => <Sepa width={20} height={20} />}>
-    {p.sepaConfig.iban}
+    <NumberFormat
+      displayType="text"
+      format="#### #### #### ##### ##"
+      value={p.sepaConfig.iban}
+    />
   </PMDetail>
 )
 
