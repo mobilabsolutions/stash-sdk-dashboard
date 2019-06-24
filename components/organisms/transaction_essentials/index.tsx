@@ -10,6 +10,7 @@ import {
 import moment from 'moment'
 import { Extra } from '../../../hooks/types'
 import PaymentMethodDetail from './payment_method_detail'
+import NumberFormat from 'react-number-format'
 
 const Wrapper = styled.div`
   display: block;
@@ -35,6 +36,7 @@ interface EssentilasProps {
 const Amount = styled(H1)`
   margin: 0;
   padding-right: 16px;
+  font-family: inherit;
   float: left;
 `
 const CustomStatus = styled(Status)`
@@ -91,12 +93,24 @@ export default function TransactionEssentials(props: EssentilasProps) {
     : ''
 
   return (
-    <DetailView title={getText('Details')} wrapperStyle={{ height: '160px' }}>
+    <DetailView
+      title={getText('Transaction')}
+      wrapperStyle={{ height: '160px' }}
+    >
       <Wrapper>
         <PartWrapper>
-          <Amount>
-            {amount} {currency}
-          </Amount>
+          <NumberFormat
+            displayType="text"
+            renderText={val => (
+              <>
+                <Amount>{val}</Amount>
+                <Amount style={{ fontWeight: 'normal' }}>{currency}</Amount>
+              </>
+            )}
+            value={amount}
+            decimalScale={2}
+            fixedDecimalScale
+          ></NumberFormat>
           <CustomStatus status={_status}>{getText(_status)}</CustomStatus>
         </PartWrapper>
         <PartWrapper>
