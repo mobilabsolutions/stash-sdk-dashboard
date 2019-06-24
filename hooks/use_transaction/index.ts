@@ -61,7 +61,10 @@ export const useTransaction = transactionId => {
           ...prev,
           isLoading: false,
           error: false,
-          details: response.result
+          details: {
+            ...response.result,
+            amount: (response.result.amount || 0) / 100
+          }
         }))
       } catch (error) {
         if (error && error.statusCode === 401) {

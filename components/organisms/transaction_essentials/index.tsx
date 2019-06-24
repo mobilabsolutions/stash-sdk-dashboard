@@ -2,15 +2,15 @@ import React from 'react'
 import { DetailView, Status } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import styled from '../../styled'
-import { H1, FlatButton } from '../../atoms'
+import { H1 } from '../../atoms'
 import {
-  getMappedStatus,
-  getActionsByStatus
+  getMappedStatus
 } from '../../../assets/payment.static'
 import moment from 'moment'
 import { Extra } from '../../../hooks/types'
 import PaymentMethodDetail from './payment_method_detail'
 import NumberFormat from 'react-number-format'
+import Actions from './actions'
 
 const Wrapper = styled.div`
   display: block;
@@ -21,16 +21,23 @@ const PartWrapper = styled.div`
   float: left;
   width: 50%;
 `
-const ActionContainer = styled.div`
-  float: right;
-`
+interface ActionControl {
+  isLoading: boolean
+  error: any
+  action: Function
+  setError: Function
+}
 interface EssentilasProps {
   amount: number
   currency: string
   status: string
   action: string
+  transactionId: string
   date: string | Date | number
   extra: Extra
+  refund: ActionControl
+  reverse: ActionControl
+  capture: ActionControl
 }
 
 const Amount = styled(H1)`
@@ -44,13 +51,6 @@ const CustomStatus = styled(Status)`
   position: absolute;
 `
 
-const ActBtn = styled(FlatButton)`
-  border: none;
-  background-color: ${p => p.theme.shade.A25};
-  padding: 7px 27px;
-  border-radius: 16.5px;
-  margin-left: 16px;
-`
 const ItemWrapper = styled.div`
   display: block;
   float: left;
@@ -81,9 +81,19 @@ const DetailItem = ({ name = '', children }) => (
 
 export default function TransactionEssentials(props: EssentilasProps) {
   const { getText } = useLocalization()
-  const { amount, currency, action, status, date, extra } = props
+  const {
+    amount,
+    currency,
+    action,
+    status,
+    date,
+    extra,
+    refund,
+    capture,
+    reverse,
+    transactionId
+  } = props
   const _status = getMappedStatus(status, action)
-  const actions = getActionsByStatus(_status)
   const _date = moment(date, moment.defaultFormatUtc).format('MMM D, h:mm A')
   const customer = extra.personalData
   const fullName = !!customer
@@ -114,13 +124,16 @@ export default function TransactionEssentials(props: EssentilasProps) {
           <CustomStatus status={_status}>{getText(_status)}</CustomStatus>
         </PartWrapper>
         <PartWrapper>
-          <ActionContainer>
-            {actions.map((act, i) => (
-              <ActBtn key={`${i}-${act.type}`} label={act.type}>
-                {getText(act.type)}
-              </ActBtn>
-            ))}
-          </ActionContainer>
+          <Actions
+            action={action}
+            status={status}
+            refund={refund}
+            capture={capture}
+            reverse={reverse}
+            transactionId={transactionId}
+            currency={currency}
+            amount={amount}
+          />
         </PartWrapper>
         <DetailList>
           <DetailItem name={getText('Date')}>

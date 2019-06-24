@@ -26,7 +26,7 @@ const TransactionDetails = ({ router }: DetailProps) => {
   const { transactionId } = router.query
   const { getText } = useLocalization()
 
-  const { details } = useTransaction(transactionId)
+  const { details, refund, reverse, capture } = useTransaction(transactionId)
   return (
     <Page activePath={'transactions'}>
       <CustomScrollContainer>
@@ -36,6 +36,10 @@ const TransactionDetails = ({ router }: DetailProps) => {
         {details && (
           <DetailItem>
             <TransactionEssentials
+              refund={refund}
+              reverse={reverse}
+              capture={capture}
+              transactionId={details.transactionId}
               amount={details.amount}
               currency={details.currencyId}
               status={details.status}
