@@ -74,13 +74,17 @@ function getIcon(paymentMethod: string) {
 interface Props {
   paymentMethod: string
   title: string
+  width?: number
+  height?: number
+  iconStyle?: any
 }
 
 export default function PaymentMethod(props: Props) {
   const Icon = getIcon(props.paymentMethod)
+  const { width = 40, height = 30, iconStyle = {} } = props
   return (
     <div title={props.title}>
-      <Icon width={40} height={30} />
+      <Icon width={width} height={height} style={iconStyle} />
     </div>
   )
 }
