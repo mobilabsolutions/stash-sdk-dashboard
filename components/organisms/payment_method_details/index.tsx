@@ -37,7 +37,17 @@ const TileTD = styled.td`
 
 const getDetailItems = (
   pm: PaymentMethod,
-  personalData: PersonalData,
+  personalData: PersonalData = {
+    city: '',
+    country: '',
+    customerIP: '',
+    customerReference: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    street: '',
+    zip: null
+  },
   sepaConfig: SepaConfig = { iban: null, bic: null },
   ccConfig: CCConfig = {
     ccExpiry: null,
@@ -78,6 +88,10 @@ const getDetailItems = (
       {
         title: 'Name',
         render: ccConfig.ccHolderName
+      },
+      {
+        title: 'Number',
+        render: ccConfig.ccMask
       },
       {
         title: 'Alias',
