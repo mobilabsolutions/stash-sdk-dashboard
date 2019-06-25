@@ -3,9 +3,7 @@ import { DetailView, Status } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import styled from '../../styled'
 import { H1 } from '../../atoms'
-import {
-  getMappedStatus
-} from '../../../assets/payment.static'
+import { getMappedStatus } from '../../../assets/payment.static'
 import moment from 'moment'
 import { Extra } from '../../../hooks/types'
 import PaymentMethodDetail from './payment_method_detail'
@@ -19,6 +17,7 @@ const Wrapper = styled.div`
 const PartWrapper = styled.div`
   display: block;
   float: left;
+  position: relative;
   width: 50%;
 `
 interface ActionControl {
