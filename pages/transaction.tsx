@@ -3,7 +3,8 @@ import {
   Page,
   PaymentMethodDetails,
   TransactionEssentials,
-  TransactionDetails as TransactionDetailCmp
+  TransactionDetails as TransactionDetailCmp,
+  TransactionTimeline
 } from '../components/organisms'
 import { withRouter, RouterProps } from 'next/router'
 import { useTransaction, useLocalization } from '../hooks'
@@ -51,6 +52,11 @@ const TransactionDetails = ({ router }: DetailProps) => {
               date={details.createdDate}
               extra={details.paymentInfo.extra}
             />
+          </DetailItem>
+        )}
+        {details && (
+          <DetailItem>
+            <TransactionTimeline timeline={details.timelineInfo} />
           </DetailItem>
         )}
         {details && (
