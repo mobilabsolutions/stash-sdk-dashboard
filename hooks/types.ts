@@ -79,7 +79,7 @@ export interface PspConfig {
 export interface TimeAction {
   action: TransactionAction
   amount: number
-  createdDate: Date
+  createdDate: string
   reason: string
   status: TransactionStatus
 }
@@ -88,7 +88,7 @@ export interface TransactionDetails {
   action: TransactionAction
   aliasId: string
   amount: number
-  createdDate: Date
+  createdDate: string
   currencyId: string
   merchantCustomerId: string
   merchantId: string

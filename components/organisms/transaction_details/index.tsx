@@ -3,6 +3,7 @@ import { DetailView, TextCurrency } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import styled from '../../styled'
 import { getMappedStatus } from '../../../assets/payment.static'
+import moment from 'moment'
 
 interface DetailProps {
   transactionId: string
@@ -10,7 +11,7 @@ interface DetailProps {
   currency: string
   action: string
   status: string
-  createdDate: Date
+  createdDate: string
   description: string
 }
 
@@ -23,7 +24,7 @@ export default function TransactionDetail(prop: DetailProps) {
   const { getText, formatDate } = useLocalization()
   const { transactionId, description, createdDate, action, status } = prop
   const _status = getMappedStatus(status, action)
-
+  const timestamp = moment(createdDate, moment.defaultFormatUtc).toDate()
   return (
     <DetailView
       title={getText('Transaction Details')}
@@ -43,7 +44,7 @@ export default function TransactionDetail(prop: DetailProps) {
           </tr>
           <tr>
             <TileTD>{getText('Date')}</TileTD>
-            <td>{formatDate(createdDate)}</td>
+            <td>{formatDate(timestamp)}</td>
           </tr>
           <tr>
             <TileTD>{getText('Status')}</TileTD>
