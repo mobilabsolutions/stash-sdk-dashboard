@@ -76,6 +76,14 @@ export interface PspConfig {
   urlPrefix: string
 }
 
+export interface TimeAction {
+  action: TransactionAction
+  amount: number
+  createdDate: Date
+  reason: string
+  status: TransactionStatus
+}
+
 export interface TransactionDetails {
   action: TransactionAction
   aliasId: string
@@ -93,14 +101,6 @@ export interface TransactionDetails {
   pspTestMode: true
   reason: string
   status: TransactionStatus
-  timelineInfo: [
-    {
-      action: TransactionAction
-      amount: number
-      createdDate: string
-      reason: string
-      status: TransactionStatus
-    }
-  ]
+  timelineInfo: Array<TimeAction>
   transactionId: string
 }
