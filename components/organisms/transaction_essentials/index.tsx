@@ -118,6 +118,7 @@ export default function TransactionEssentials(props: EssentilasProps) {
             )}
             value={amount}
             decimalScale={2}
+            thousandSeparator={','}
             fixedDecimalScale
           ></NumberFormat>
           <CustomStatus status={_status}>{getText(_status)}</CustomStatus>
