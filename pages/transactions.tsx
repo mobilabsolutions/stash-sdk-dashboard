@@ -41,8 +41,10 @@ export default () => {
   const filterRef = useRef(undefined)
   const { height: filterHeight } = useClientRect(filterRef)
   const { height: headerHeight } = useClientRect(headerRef)
-
-  const [showFilter, setShowFilter] = useState(false)
+  function isFiltered() {
+    return !!startDate || !!endDate || !!status || !!text || !!paymentMethod
+  }
+  const [showFilter, setShowFilter] = useState(isFiltered())
   const toggleFilter = () => setShowFilter(!showFilter)
   const upperHeight =
     (showFilter ? filterHeight + headerHeight : headerHeight) + 65
