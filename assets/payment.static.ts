@@ -21,6 +21,39 @@ function reverse(
 
 export const actionToStatus = reverse(statusToAction)
 
+export const getMappedStatus = (status: string, action: string): string => {
+  switch (status) {
+    case 'SUCCESS':
+      return !!actionToStatus[action] ? actionToStatus[action] : 'fail'
+    case 'FAIL':
+    default:
+      return 'fail'
+  }
+}
+
+export function getActionsByStatus(status: string): Array<{ type: string }> {
+  switch (status) {
+    case 'authorised':
+    case 'captured':
+      return [
+        {
+          type: 'refund'
+        }
+      ]
+    case 'pre-Authorised':
+      return [
+        {
+          type: 'capture'
+        },
+        {
+          type: 'reverse'
+        }
+      ]
+    default:
+      return []
+  }
+}
+
 export const paymentMethods = [
   {
     name: 'CC',

@@ -126,7 +126,7 @@ export default {
   rows: { de: 'Name' },
   refund: { en: 'Refund' },
   'pre-Authorised': { en: 'Pre-Authorised' },
-  fail: { en: 'Fail' },
+  fail: { en: 'Failed' },
   captured: { en: 'Captured' },
   reversed: { en: 'Reversed' },
   authorised: { en: 'Authorised' },
@@ -183,5 +183,17 @@ export default {
   'Clear Filters': {},
   'Transactions Overview': {},
   'From Date': { de: 'Ab Datum' },
-  'Until Date': { de: 'Miteinander ausgehen' }
+  'Until Date': { de: 'Miteinander ausgehen' },
+  'Back to transactions overview': { de: 'Zurück zur Transaktionsübersicht' },
+  Transaction: { de: 'Transaktion' },
+  Date: { de: 'Datum' },
+  Customer: { de: 'Kunde' },
+  Timeline: { de: 'Zeitleiste' },
+  Payment: { de: 'Zahlung' },
+  'Transaction Details': { de: 'Transaktionsdetails' },
+  Number: { de: 'Numer' },
+  Alias: { de: 'Alias' },
+  Expires: { de: 'Läuft ab' },
+  'Billing Address': { de: 'Rechnungsadresse' },
+  IBAN: {}
 }

@@ -1,21 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import moment, { Moment } from 'moment'
 import Router from 'next/router'
+import { useStoredState } from '..'
 
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture, Params } from './actions'
 import { statusToAction } from '../../assets/payment.static'
+import { TransactionAction, TransactionStatus } from '../types'
 const isClient = typeof window === 'object'
 
 interface Transaction {
-  action: 'AUTH' | 'PREAUTH' | 'REVERSAL' | 'REFUND' | 'CAPTURE'
+  action: TransactionAction
   amount: number
   createdDate: string | number | Date
   currencyId: string
   customerId: string
   paymentMethod: string
   reason: string
-  status: 'SUCCESS' | 'FAIL'
+  status: TransactionStatus
   transactionId: string
 }
 interface TransactionReponse {
@@ -69,7 +71,37 @@ function getInitValue(): State {
 }
 
 export const useTransactions = () => {
-  const [state, setState] = useState(getInitValue())
+  const [state, setState] = useStoredState(
+    'transactions-state',
+    getInitValue(),
+    ({
+      isLoading,
+      startDate,
+      endDate,
+      startPos,
+      pageSize,
+      totalCount,
+      status,
+      paymentMethod,
+      text
+    }) => ({
+      isLoading,
+      startDate,
+      endDate,
+      startPos,
+      pageSize,
+      totalCount,
+      status,
+      paymentMethod,
+      text
+    }),
+    (state, { startDate = null, endDate = null, ...rest }) => ({
+      ...state,
+      startDate: startDate ? moment(startDate, moment.defaultFormatUtc) : null,
+      endDate: endDate ? moment(endDate, moment.defaultFormatUtc) : null,
+      ...rest
+    })
+  )
   const { get: apiGet, token, merchantId } = useApi()
 
   useEffect(() => {

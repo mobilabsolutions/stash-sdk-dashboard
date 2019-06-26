@@ -55,6 +55,13 @@ async function main() {
       reply.type('text/css').send(datepickerCss)
     })
 
+    //
+    server.get('/transaction/:id', (req, res) => {
+      const actualPage = '/transaction'
+      const queryParams = { transactionId: req.params.id }
+      nextApp.render(req.req, res.res, actualPage, queryParams)
+    })
+
     // add next.js
     server.get('/*', (req, reply) => {
       handle(req.req, reply.res)

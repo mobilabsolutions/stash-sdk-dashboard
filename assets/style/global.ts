@@ -12,6 +12,11 @@ export default {
   }
 
   @font-face {
+    font-family: 'Lato';
+    src: url('/static/fonts/Lato-Light.ttf');
+  }
+
+  @font-face {
     font-family: 'Raleway';
     src: url('/static/fonts/Raleway-Regular.ttf');
   }

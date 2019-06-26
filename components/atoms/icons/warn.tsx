@@ -1,6 +1,11 @@
 import React from 'react'
 
-export default function Warn({ width = 20, height = 20, ...props }) {
+export default function Warn({
+  width = 20,
+  height = 20,
+  fill = '#F7981C',
+  ...props
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +22,7 @@ export default function Warn({ width = 20, height = 20, ...props }) {
         />
       </defs>
       <g fill="none" fillRule="evenodd">
-        <use fill="#F7981C" xlinkHref="#a" />
+        <use fill={fill} xlinkHref="#a" />
         <use fill="#FFF" xlinkHref="#b" />
       </g>
     </svg>
