@@ -61,7 +61,7 @@ function TheInput(
 
   const debouncedSearchTerm = useDebounce(_value, 500)
   useEffect(() => {
-    onChange(debouncedSearchTerm)
+    debouncedSearchTerm !== _value && onChange(debouncedSearchTerm)
   }, [debouncedSearchTerm])
 
   useEffect(() => {
