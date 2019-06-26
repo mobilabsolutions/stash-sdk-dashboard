@@ -9,6 +9,7 @@ import styled from '../components/styled'
 const CustomVerticalScrollContainer = styled(VerticalScrollContainer)`
   font-family: ${props => props.theme.fontTransactions};
 `
+const FILTER_HEIGHT = 68
 
 export default () => {
   useTokenCheck()
@@ -38,8 +39,6 @@ export default () => {
   } = useTransactions()
 
   const headerRef = useRef(undefined)
-  const filterRef = useRef(undefined)
-  const { height: filterHeight } = useClientRect(filterRef)
   const { height: headerHeight } = useClientRect(headerRef)
   function isFiltered() {
     return !!startDate || !!endDate || !!status || !!text || !!paymentMethod
@@ -47,7 +46,7 @@ export default () => {
   const [showFilter, setShowFilter] = useState(isFiltered())
   const toggleFilter = () => setShowFilter(!showFilter)
   const upperHeight =
-    (showFilter ? filterHeight + headerHeight : headerHeight) + 65
+    (showFilter ? FILTER_HEIGHT + headerHeight : headerHeight) + 65
   return (
     <Page activePath="/transactions">
       <CustomVerticalScrollContainer>
@@ -58,7 +57,6 @@ export default () => {
         >
           {showFilter && (
             <Filter
-              ref={filterRef}
               startDate={startDate}
               endDate={endDate}
               clearFilters={clearFilters}
