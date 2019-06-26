@@ -158,6 +158,7 @@ export default ({
           {
             Header: 'Amount',
             accessor: 'amount',
+            maxWidth: 140,
             headerStyle: {
               ...headerStyle,
               textAlign: 'right'
@@ -167,7 +168,9 @@ export default ({
               textAlign: 'right'
             },
             Cell: row => (
-              <Amount>
+              <Amount
+                title={formatAmount(row.original.currencyId, row.value).value}
+              >
                 {formatAmount(row.original.currencyId, row.value).value}
               </Amount>
             )
