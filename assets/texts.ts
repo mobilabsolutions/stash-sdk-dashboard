@@ -126,7 +126,7 @@ export default {
   rows: { de: 'Name' },
   refund: { en: 'Refund' },
   'pre-Authorised': { en: 'Pre-Authorised' },
-  fail: { en: 'Fail' },
+  fail: { en: 'Failed' },
   captured: { en: 'Captured' },
   reversed: { en: 'Reversed' },
   authorised: { en: 'Authorised' },
