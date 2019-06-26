@@ -33,7 +33,7 @@ const TransactionDetails = ({ router }: DetailProps) => {
 
   const { details, refund, reverse, capture } = useTransaction(transactionId)
   return (
-    <Page activePath={'transactions'}>
+    <Page activePath={'/transactions'}>
       <CustomScrollContainer>
         <Link href="/transactions">
           <BackButton>{getText('Back to transactions overview')}</BackButton>
