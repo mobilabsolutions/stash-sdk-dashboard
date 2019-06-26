@@ -122,7 +122,7 @@ export default function PaymentMethodDetails(props: PMProps) {
   return (
     <DetailView
       title={getText('Payment Method')}
-      wrapperStyle={{ height: '185px' }}
+      wrapperStyle={{ height: '100%' }}
     >
       <table>
         <tbody>
