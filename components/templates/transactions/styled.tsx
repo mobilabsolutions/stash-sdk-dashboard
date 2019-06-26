@@ -82,5 +82,6 @@ export const Amount = styled.p`
   line-height: 1.38;
   font-variant-numeric: tabular-nums;
   margin: 0px;
+  overflow: hidden;
   flex: 0 0 4em;
 `
