@@ -4,8 +4,13 @@ import styled from '../../styled'
 
 const CustomFlatButton = styled(FlatButton)`
   margin: auto;
-  padding: 8px;
   font-size: 16px;
+  background-color: transparent;
+  border: 8px solid transparent;
+  > svg {
+    margin-right: 8px;
+    transform: translate(0px, 2px);
+  }
 `
 
 export default function BackButton({ children, ...rest }) {

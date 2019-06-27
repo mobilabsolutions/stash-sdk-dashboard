@@ -725,7 +725,7 @@ exports[`Filter Selects should use "all" value 1`] = `
     }
   >
     <button
-      className="filter__ClearBtn-sc-1wuq206-2 fBFzZF flat__Button-sc-182ug78-0 ukxCH"
+      className="filter__ClearBtn-sc-1wuq206-2 fBFzZF flat__Button-sc-182ug78-0 jscbCh"
     >
       Clear Filters
     </button>
