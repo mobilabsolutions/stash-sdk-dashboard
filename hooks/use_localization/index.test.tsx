@@ -36,4 +36,6 @@ it('Should "formatAmount" in "de"', () =>
 it('"localizedAmount" should return all properties for a currency', () => {
   expect(localizedAmount('EUR', 12345, 'de')).toMatchSnapshot()
   expect(localizedAmount('EUR', 12345, 'en')).toMatchSnapshot()
+  expect(localizedAmount('CAD', 12345, 'en')).toMatchSnapshot()
+  expect(localizedAmount('CAD', 12345, 'de')).toMatchSnapshot()
 })

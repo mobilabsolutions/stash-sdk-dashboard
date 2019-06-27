@@ -1,5 +1,36 @@
 const numberFormats = {}
 
+// Source: https://github.com/tc39/proposal-intl-formatToParts/blob/master/locale-data/json/en-US.json
+// TODO: Add support for more locales [de]
+const currencies = {
+  AUD: 'A$',
+  BRL: 'R$',
+  CAD: 'CA$',
+  CNY: 'CN¥',
+  EUR: '€',
+  GBP: '£',
+  HKD: 'HK$',
+  ILS: '₪',
+  INR: '₹',
+  JPY: '¥',
+  KRW: '₩',
+  MXN: 'MX$',
+  NZD: 'NZ$',
+  TWD: 'NT$',
+  USD: '$',
+  VND: '₫',
+  XAF: 'FCFA',
+  XCD: 'EC$',
+  XOF: 'CFA',
+  XPF: 'CFPF'
+}
+
+function resolveSymbol(formateAmount: string): string {
+  return isNaN(parseInt(formateAmount[0]))
+    ? formateAmount[0]
+    : formateAmount[formateAmount.length - 1]
+}
+
 export default function localizedAmount(
   currencyId: string,
   value: number,
@@ -35,9 +66,9 @@ export default function localizedAmount(
     }
     numberFormats[key] = new Intl.NumberFormat(locale, formatOptions)
     const formated = numberFormats[key].format(1000)
-    numberFormats[key].symbol = isNaN(parseInt(formated[0]))
-      ? formated[0]
-      : formated[formated.length - 1]
+    numberFormats[key].symbol = currencies[currencyId]
+      ? currencies[currencyId]
+      : resolveSymbol(formated)
     numberFormats[key].symbolAtEnd = !isNaN(parseInt(formated[0]))
     const numberOnly = formated.replace(numberFormats[key].symbol, '').trim()
     numberFormats[key].group = numberOnly[1]
