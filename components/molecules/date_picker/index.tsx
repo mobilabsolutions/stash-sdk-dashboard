@@ -33,8 +33,8 @@ export default function DatePicker({
       {...props}
       startDate={range.fromDate}
       endDate={range.toDate}
-      startDatePlaceholderText={getText('From Date')}
-      endDatePlaceholderText={getText('Until Date')}
+      startDatePlaceholderText={getText('From')}
+      endDatePlaceholderText={getText('To')}
       onDatesChange={({ startDate, endDate }) => {
         _setRange({ fromDate: startDate, toDate: endDate })
         //When clear cross is pressed
