@@ -40,9 +40,10 @@ const Status = styled.span<StatusProps>`
   color: ${getStatusColor};
   background-color: ${getStatusBackgroundColor};
   font-size: 14px;
+  font-weight: bold;
   text-transform: capitalize;
   text-align: center;
-  padding: 8px;
+  padding: 4px 8px;
   margin: auto;
   border-radius: 18px;
   justify-self: flex-start;
