@@ -195,5 +195,6 @@ export default {
   Alias: { de: 'Alias' },
   Expires: { de: 'Läuft ab' },
   'Billing Address': { de: 'Rechnungsadresse' },
+  'but not yet captured': { de: 'aber noch nicht erfasst' },
   IBAN: {}
 }
