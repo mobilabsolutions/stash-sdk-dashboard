@@ -19,7 +19,7 @@ exports[`Filter Selects should not use "" value 1`] = `
           >
             <input
               aria-describedby="DateInput__screen-reader-message-filter_start_date_id"
-              aria-label="From Date"
+              aria-label="From"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
@@ -28,7 +28,7 @@ exports[`Filter Selects should not use "" value 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              placeholder="From Date"
+              placeholder="From"
               readOnly={true}
               required={false}
               type="text"
@@ -62,7 +62,7 @@ exports[`Filter Selects should not use "" value 1`] = `
           >
             <input
               aria-describedby="DateInput__screen-reader-message-filter_end_date_id"
-              aria-label="Until Date"
+              aria-label="To"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
@@ -71,7 +71,7 @@ exports[`Filter Selects should not use "" value 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              placeholder="Until Date"
+              placeholder="To"
               readOnly={true}
               required={false}
               type="text"
@@ -378,7 +378,7 @@ exports[`Filter Selects should use "all" value 1`] = `
           >
             <input
               aria-describedby="DateInput__screen-reader-message-filter_start_date_id"
-              aria-label="From Date"
+              aria-label="From"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
@@ -387,7 +387,7 @@ exports[`Filter Selects should use "all" value 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              placeholder="From Date"
+              placeholder="From"
               readOnly={true}
               required={false}
               type="text"
@@ -421,7 +421,7 @@ exports[`Filter Selects should use "all" value 1`] = `
           >
             <input
               aria-describedby="DateInput__screen-reader-message-filter_end_date_id"
-              aria-label="Until Date"
+              aria-label="To"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
@@ -430,7 +430,7 @@ exports[`Filter Selects should use "all" value 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              placeholder="Until Date"
+              placeholder="To"
               readOnly={true}
               required={false}
               type="text"
