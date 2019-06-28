@@ -46,8 +46,9 @@ const Amount = styled(H1)`
   float: left;
 `
 const CustomStatus = styled(Status)`
-  font-weight: bold;
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 `
 
 const ItemWrapper = styled.div`
