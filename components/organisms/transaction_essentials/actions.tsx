@@ -96,6 +96,7 @@ export default function Actions(props: ActionProps) {
         onClose={onClose}
         isLoading={isActionLoading(_action)}
         hasError={isActionError(_action)}
+        successActionText={getText('Back to Details')}
         onAction={(
           action: string,
           values: { reason: any; refundType: string; refund: any }

@@ -55,6 +55,7 @@ export default ({
   show,
   currencyId,
   initialRefund,
+  successActionText = '',
   onAction
 }) => {
   const { getText } = useLocalization()
@@ -107,7 +108,9 @@ export default ({
         onAction={onClose}
         header={getHeader(action)}
         buttonStyle={{ margin: 'auto' }}
-        action={getText('Go to Dashboard')}
+        action={
+          !!successActionText ? successActionText : getText('Go to Dashboard')
+        }
       >
         <SuccessMessage>
           <span style={{ padding: 14 }}>{getSuccess(action)}</span>
