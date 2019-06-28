@@ -39,11 +39,6 @@ const Info = ({ action, status }) => {
 const DateCmp = styled.span`
   padding-left: 8px;
 `
-function sortByDate(arr: Array<TimeAction>) {
-  return arr.sort(function(a, b) {
-    return new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
-  })
-}
 
 export default function TransactionTimeline(p: TimeProps) {
   const { getText } = useLocalization()
@@ -52,7 +47,7 @@ export default function TransactionTimeline(p: TimeProps) {
     <DetailView title={getText('Timeline')}>
       <table>
         <tbody>
-          {sortByDate(timeline).map((act, i) => (
+          {timeline.map((act, i) => (
             <tr key={i}>
               <TimeActionItem>
                 {shouldShouwWarn(i) && (
