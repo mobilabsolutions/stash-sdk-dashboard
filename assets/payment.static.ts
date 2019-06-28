@@ -1,3 +1,5 @@
+import { theme } from './style'
+
 export const statusToAction = {
   'pre-Authorised': 'PREAUTH',
   authorised: 'AUTH',
@@ -28,6 +30,38 @@ export const getMappedStatus = (status: string, action: string): string => {
     case 'FAIL':
     default:
       return 'fail'
+  }
+}
+
+export const getStatusColor = (status: string) => {
+  switch (status) {
+    case 'captured':
+    case 'pre-Authorised':
+    case 'authorised':
+      return '#00be41'
+    case 'fail':
+      return theme.red.A400
+    case 'reversed':
+    case 'refunded':
+      return '#f7981c'
+    default:
+      return theme.primary.A800
+  }
+}
+
+export const getStatusBackgroundColor = (status: string) => {
+  switch (status) {
+    case 'captured':
+    case 'pre-Authorised':
+    case 'authorised':
+      return '#5edb8926'
+    case 'fail':
+      return '#ff9b9b26'
+    case 'reversed':
+    case 'refunded':
+      return '#f7981c26'
+    default:
+      return theme.primary.A800
   }
 }
 

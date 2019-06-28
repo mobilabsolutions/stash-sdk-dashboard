@@ -1,44 +1,16 @@
 import styled from '../../styled'
-
-const getStatusColor = props => {
-  switch (props.status) {
-    case 'captured':
-    case 'pre-Authorised':
-    case 'authorised':
-      return '#00be41'
-    case 'fail':
-      return props.theme.red.A400
-    case 'reversed':
-    case 'refunded':
-      return '#f7981c'
-    default:
-      return props.theme.primary.A800
-  }
-}
-
-const getStatusBackgroundColor = ({ status, theme }) => {
-  switch (status) {
-    case 'captured':
-    case 'pre-Authorised':
-    case 'authorised':
-      return '#5edb8926'
-    case 'fail':
-      return '#ff9b9b26'
-    case 'reversed':
-    case 'refunded':
-      return '#f7981c26'
-    default:
-      return theme.primary.A800
-  }
-}
+import {
+  getStatusColor,
+  getStatusBackgroundColor
+} from '../../../assets/payment.static'
 
 type StatusProps = {
   status: string
 }
 
 const Status = styled.span<StatusProps>`
-  color: ${getStatusColor};
-  background-color: ${getStatusBackgroundColor};
+  color: ${props => getStatusColor(props.status)};
+  background-color: ${props => getStatusBackgroundColor(props.status)};
   font-size: 14px;
   font-weight: bold;
   text-transform: capitalize;
