@@ -3,7 +3,7 @@ import { DetailView } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import { TimeAction } from '../../../hooks/types'
 import styled from '../../styled'
-import { getMappedStatus } from '../../../assets/payment.static'
+import { getMappedStatus, getStatusColor } from '../../../assets/payment.static'
 import { Warn } from '../../atoms'
 import moment from 'moment'
 
@@ -12,20 +12,26 @@ interface TimeProps {
 }
 
 const TimeActionItem = styled.td`
-  padding: 0px 3px 16px 0px;
+  padding: 0px 16px 16px 0px;
+  > svg {
+    transform: translateY(3px);
+  }
 `
-function shouldWarn(action, status, pos) {
-  return pos == 0 && action == 'PREAUTH' && status == 'SUCCESS'
+function shouldExplain(action: string, status: string) {
+  return action == 'PREAUTH' && status == 'SUCCESS'
 }
-const Info = ({ action, status, pos }) => {
+function shouldShouwWarn(p: number) {
+  return p === 0
+}
+
+const Info = ({ action, status }) => {
   const { getText } = useLocalization()
   const _status = getMappedStatus(status, action)
   return (
     <b>
       {getText('Payment')}{' '}
       <span style={{ textTransform: 'lowercase' }}>{getText(_status)}</span>
-      {shouldWarn(action, status, pos) &&
-        `, ${getText('but not yet captured')}`}
+      {shouldExplain(action, status) && `, ${getText('but not yet captured')}`}
       {'  '}
     </b>
   )
@@ -49,12 +55,16 @@ export default function TransactionTimeline(p: TimeProps) {
           {sortByDate(timeline).map((act, i) => (
             <tr key={i}>
               <TimeActionItem>
-                {shouldWarn(act.action, act.status, i) && (
-                  <Warn fill="#00be41" />
+                {shouldShouwWarn(i) && (
+                  <Warn
+                    fill={getStatusColor(
+                      getMappedStatus(act.status, act.action)
+                    )}
+                  />
                 )}
               </TimeActionItem>
               <TimeActionItem>
-                <Info action={act.action} status={act.status} pos={i} />
+                <Info action={act.action} status={act.status} />
                 <DateCmp>
                   {moment(act.createdDate, moment.defaultFormatUtc).format(
                     'MMM D, h:mm A'
