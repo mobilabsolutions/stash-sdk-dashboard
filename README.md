@@ -113,6 +113,10 @@ to get an overview
 ### other components
 
 - [react-dates](https://github.com/airbnb/react-dates) (Date Range Picker)
+- [react-table](https://github.com/react-tools/react-table) (Lightweight, fast and extendable datagrids)
+- [formik](https://github.com/jaredpalmer/formik) (Assistant for building forms in React)
+- [react-select](https://github.com/JedWatson/react-select) (Select control for React.)
+- [react-number-format](https://github.com/s-yadav/react-number-format) (React component to format number in an input or as a text, useful for currency formats)
 
 ### folder structure
 
