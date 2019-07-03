@@ -10,10 +10,12 @@ Current state is just a Prototype
 
 - Authorization is done via a Token
 - Displays the Transactions
-- Filter by Date, Status, and Text (Reason in the backend)
+- Filter by Date, Status, Payment Method and Text (Reason in the backend)
 - Paging, if too many results
-- Show Detail on "Click"
-- Refund of "approved" Transactions
+- Display a detailed view of Transactions on "Click"
+- Refund of "authorised" abd "captured" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
+- Capture of "pre-Authorised" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
+- Reverse of "pre-Authorised" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
 - multilingual (currently English / German)
 
 [Current Version](https://payment-dev.mblb.net)
