@@ -10,10 +10,12 @@ Current state is just a Prototype
 
 - Authorization is done via a Token
 - Displays the Transactions
-- Filter by Date, Status, and Text (Reason in the backend)
+- Filter by Date, Status, Payment Method and Text (Reason in the backend)
 - Paging, if too many results
-- Show Detail on "Click"
-- Refund of "approved" Transactions
+- Display a detailed view of Transactions on "Click"
+- Refund of "authorised" abd "captured" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
+- Capture of "pre-Authorised" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
+- Reverse of "pre-Authorised" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
 - multilingual (currently English / German)
 
 [Current Version](https://payment-dev.mblb.net)
@@ -113,6 +115,10 @@ to get an overview
 ### other components
 
 - [react-dates](https://github.com/airbnb/react-dates) (Date Range Picker)
+- [react-table](https://github.com/react-tools/react-table) (Lightweight, fast and extendable datagrids)
+- [formik](https://github.com/jaredpalmer/formik) (Assistant for building forms in React)
+- [react-select](https://github.com/JedWatson/react-select) (Select control for React.)
+- [react-number-format](https://github.com/s-yadav/react-number-format) (React component to format number in an input or as a text, useful for currency formats)
 
 ### folder structure
 
