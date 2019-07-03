@@ -13,7 +13,7 @@ Current state is just a Prototype
 - Filter by Date, Status, Payment Method and Text (Reason in the backend)
 - Paging, if too many results
 - Display a detailed view of Transactions on "Click"
-- Refund of "authorised" abd "captured" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
+- Refund of "authorised" and "captured" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
 - Capture of "pre-Authorised" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
 - Reverse of "pre-Authorised" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
 - multilingual (currently English / German)
