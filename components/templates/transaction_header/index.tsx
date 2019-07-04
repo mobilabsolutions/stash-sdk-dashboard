@@ -2,7 +2,13 @@ import React, { forwardRef } from 'react'
 import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
 
-import { FlatButton, ArrowDown, ArrowUp, Settings } from '../../atoms'
+import {
+  FlatButton,
+  ArrowDown,
+  ArrowUp,
+  Settings,
+  ArrowBack
+} from '../../atoms'
 
 const Header = styled.div`
   margin: 32px 48px;
@@ -22,11 +28,11 @@ const HeaderBtn = styled(FlatButton)`
   margin-left: 16px;
   display: flex;
   font-size: 14px;
-  padding: 8px;
+  padding: 11px;
   > svg {
     margin: auto;
   }
-  > div {
+  > span {
     margin: auto;
     font-size: 14px;
   }
@@ -37,8 +43,12 @@ const BtnContainer = styled.div`
   float: right;
 `
 
+const Export = () => (
+  <ArrowBack style={{ marginRight: '8px', transform: 'rotate(135deg)' }} />
+)
+
 export function TransactionHeader(
-  { toggleFilter, showFilter, children },
+  { toggleFilter, showFilter, children, downloadCSV },
   headerRef
 ) {
   const { getText } = useLocalization()
@@ -47,9 +57,15 @@ export function TransactionHeader(
       <Header ref={headerRef}>
         <H4>{getText('Transactions Overview')}</H4>
         <BtnContainer>
+          <HeaderBtn onClick={downloadCSV}>
+            <Export />
+            <span>{getText('Export')}</span>
+          </HeaderBtn>
+        </BtnContainer>
+        <BtnContainer>
           <HeaderBtn onClick={toggleFilter}>
-            <Settings style={{ marginRight: '8px' }} />
-            <div>{getText('Filter')}</div>
+            <Settings width={21} height={18} style={{ marginRight: '8px' }} />
+            <span>{getText('Filter')}</span>
             {showFilter ? (
               <ArrowUp style={{ marginLeft: '8px' }} />
             ) : (
