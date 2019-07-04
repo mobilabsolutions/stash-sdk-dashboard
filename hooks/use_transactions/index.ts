@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import moment, { Moment } from 'moment'
 import Router from 'next/router'
+import FileSaver from 'file-saver'
 import { useStoredState } from '..'
 
 import { useApi } from '../use_api'
@@ -70,6 +71,34 @@ function getInitValue(): State {
   }
 }
 
+function getUrlWithFilter(ep: string, merchantId: string, state: State) {
+  let url = `/api/v1/merchant/${encodeURIComponent(merchantId)}/${ep}?limit=${
+    state.pageSize
+  }`
+
+  url += `&offset=${state.startPos}`
+  //--------------- Filter DATES
+  if (state.startDate)
+    url += `&createdAtStart=${state.startDate.utc().format()}`
+  if (state.endDate) url += `&createdAtEnd=${state.endDate.utc().format()}`
+
+  ////---------------
+  //--------------- Filter ACTION and STATUS
+  if (!!state.status && state.status !== 'all') {
+    const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
+    url += `&status=${status}`
+    url +=
+      state.status === 'fail' ? '' : `&action=${statusToAction[state.status]}`
+  }
+  ////---------------
+  if (!!state.paymentMethod && state.paymentMethod !== 'all') {
+    url += `&paymentMethod=${state.paymentMethod}`
+  }
+
+  if (state.text) url += `&text=${state.text}`
+  return url
+}
+
 export const useTransactions = () => {
   const [state, setState] = useStoredState(
     'transactions-state',
@@ -102,7 +131,7 @@ export const useTransactions = () => {
       ...rest
     })
   )
-  const { get: apiGet, token, merchantId } = useApi()
+  const { get: apiGet, getRaw, token, merchantId } = useApi()
 
   useEffect(() => {
     if (!isClient) return
@@ -113,32 +142,7 @@ export const useTransactions = () => {
     }
 
     const loadData = async () => {
-      let url = `/api/v1/merchant/${encodeURIComponent(
-        merchantId
-      )}/transactions?limit=${state.pageSize}`
-
-      url += `&offset=${state.startPos}`
-      //--------------- Filter DATES
-      if (state.startDate)
-        url += `&createdAtStart=${state.startDate.utc().format()}`
-      if (state.endDate) url += `&createdAtEnd=${state.endDate.utc().format()}`
-
-      ////---------------
-      //--------------- Filter ACTION and STATUS
-      if (!!state.status && state.status !== 'all') {
-        const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
-        url += `&status=${status}`
-        url +=
-          state.status === 'fail'
-            ? ''
-            : `&action=${statusToAction[state.status]}`
-      }
-      ////---------------
-      if (!!state.paymentMethod && state.paymentMethod !== 'all') {
-        url += `&paymentMethod=${state.paymentMethod}`
-      }
-
-      if (state.text) url += `&text=${state.text}`
+      const url = getUrlWithFilter('transactions', merchantId, state)
 
       try {
         const response: { result: TransactionReponse } = await apiGet(url)
@@ -300,6 +304,16 @@ export const useTransactions = () => {
     }))
   }
 
+  async function downloadCSV() {
+    const url = getUrlWithFilter('transactions/csv', merchantId, state)
+    const FILE_NAME = 'transaction_list.csv'
+    const type = 'text/csv;charset=ISO-8859-1'
+    const { result } = await getRaw(url)
+    const text = await result.text()
+    var blob = new Blob([text], { type })
+    FileSaver.saveAs(blob, FILE_NAME)
+  }
+
   return {
     clearFilters,
     data: state.data,
@@ -324,6 +338,7 @@ export const useTransactions = () => {
     setStatus,
     setText,
     refund,
-    token
+    token,
+    downloadCSV
   }
 }
