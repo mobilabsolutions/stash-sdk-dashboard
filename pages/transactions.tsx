@@ -35,6 +35,7 @@ export default () => {
     paymentMethod,
     setPaymentMethod,
     capture,
+    downloadCSV,
     refund
   } = useTransactions()
 
@@ -53,6 +54,7 @@ export default () => {
         <TransactionHeader
           toggleFilter={toggleFilter}
           showFilter={showFilter}
+          downloadCSV={downloadCSV}
           ref={headerRef}
         >
           {showFilter && (
