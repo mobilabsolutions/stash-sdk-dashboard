@@ -14,7 +14,8 @@ const apiCall = (
   method: string,
   path: string,
   content: object = null,
-  headers = {}
+  headers = {},
+  getRaw = false
 ) => {
   const request: any = {
     method,
@@ -85,6 +86,10 @@ const apiCall = (
 
           if (response.status == 204) {
             return resolve({ result: null, statusCode: response.status })
+          }
+
+          if (getRaw) {
+            return resolve({ result: response, statusCode: response.status })
           }
 
           response
@@ -159,6 +164,11 @@ export const useApi = () => {
     [refreshToken, setRefreshToken, setToken]
   )
 
+  const getRaw = useCallback(
+    (path: string) => apiCall(token, refresh, 'GET', path, undefined, {}, true),
+    [refresh, token]
+  )
+
   const get = useCallback(
     (path: string) => apiCall(token, refresh, 'GET', path),
     [refresh, token]
@@ -213,6 +223,7 @@ export const useApi = () => {
 
   return {
     get,
+    getRaw,
     put,
     patch,
     post,

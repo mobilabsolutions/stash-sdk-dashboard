@@ -81,6 +81,7 @@
     "@zendeskgarden/react-theming": "6.0.1",
     "fastify": "2.5.0",
     "fastify-http-proxy": "2.2.0",
+    "file-saver": "2.0.2",
     "formik": "1.5.7",
     "intl": "1.2.5",
     "intl-locales-supported": "1.1.0",
