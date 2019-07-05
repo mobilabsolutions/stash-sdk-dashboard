@@ -9,7 +9,7 @@ import {
 import { PayPal, Sepa } from '../../atoms'
 import { PaymentMethod as PM } from '../../organisms'
 import styled from '../../styled'
-import { Iban } from '../../molecules'
+import { Iban, CreditCardMask } from '../../molecules'
 
 interface PMProps {
   paymentMethod: PaymentMethod
@@ -65,7 +65,7 @@ const CCDetail = (p: { ccConfig?: CCConfig }) => {
     >
       {!!ccMask || !!ccExpiry ? (
         <>
-          <CCDATA>{ccMask}</CCDATA>
+          <CreditCardMask>{ccMask}</CreditCardMask>
           <CCDATA>{ccExpiry}</CCDATA>
         </>
       ) : (
