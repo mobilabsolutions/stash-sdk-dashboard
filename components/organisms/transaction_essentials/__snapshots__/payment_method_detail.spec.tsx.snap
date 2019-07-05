@@ -53,7 +53,7 @@ exports[`Payment Method should show Credit Cards details 1`] = `
     className="payment_method_detail__FLeftText-sc-1x0zhjy-0 gTezeC"
   >
     <span
-      className="payment_method_detail__CCDATA-sc-1x0zhjy-2 fXChlu"
+      className="cc_mask__CCMASK-sc-1r1lxhx-0 jrdsrW"
     >
       3344
     </span>

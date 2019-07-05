@@ -7,7 +7,7 @@ import {
   SepaConfig
 } from '../../../hooks/types'
 import { useLocalization } from '../../../hooks'
-import { DetailView, Iban } from '../../molecules'
+import { DetailView, Iban, CreditCardMask } from '../../molecules'
 import styled from '../../styled'
 
 interface PMProps {
@@ -91,7 +91,7 @@ const getDetailItems = (
       },
       {
         title: 'Number',
-        render: ccConfig.ccMask
+        render: () => <CreditCardMask>{ccConfig.ccMask}</CreditCardMask>
       },
       {
         title: 'Alias',
