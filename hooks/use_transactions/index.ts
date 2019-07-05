@@ -305,7 +305,10 @@ export const useTransactions = () => {
   }
 
   async function downloadCSV() {
-    const url = getUrlWithFilter('transactions/csv', merchantId, state)
+    const url = getUrlWithFilter('transactions/csv', merchantId, {
+      ...state,
+      pageSize: state.totalCount
+    })
     const FILE_NAME = 'transaction_list.csv'
     const type = 'text/csv;charset=ISO-8859-1'
     const { result } = await getRaw(url)
