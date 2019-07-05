@@ -1,12 +1,13 @@
 import React from 'react'
-import NumberFormat from 'react-number-format'
+
+function formatIBAN(value: string) {
+  const formated = value
+    .split('')
+    .map((char, i) => (i % 4 == 0 ? ` ${char}` : char))
+    .join('')
+  return formated
+}
 
 export default function Iban({ value }) {
-  return (
-    <NumberFormat
-      displayType="text"
-      format="#### #### #### ##### ##"
-      value={value}
-    />
-  )
+  return <span>{formatIBAN(value)}</span>
 }

@@ -138,7 +138,7 @@ exports[`Payment Method should show SEPA details 1`] = `
     className="payment_method_detail__FLeftText-sc-1x0zhjy-0 gTezeC"
   >
     <span>
-      7551 2108 0012 45126 19
+       7551 2108 0012 4512 619
     </span>
   </span>
 </div>

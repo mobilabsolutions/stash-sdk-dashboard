@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IBAN formater should format 16 size 1`] = `
+<span>
+   BE71 0961 2345 6769
+</span>
+`;
+
+exports[`IBAN formater should format 22 size 1`] = `
+<span>
+   DE75 5121 0800 1245 1261 99
+</span>
+`;
