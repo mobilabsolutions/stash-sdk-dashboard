@@ -196,5 +196,6 @@ export default {
   Expires: { de: 'Läuft ab' },
   'Billing Address': { de: 'Rechnungsadresse' },
   'but not yet captured': { de: 'aber noch nicht erfasst' },
+  Export: { de: 'Export' },
   IBAN: {}
 }
