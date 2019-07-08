@@ -1,6 +1,5 @@
 import { Header, Footer } from '..'
 import styled from '../../styled'
-import { Loading } from '../../molecules'
 
 const Div = styled.div`
   display: flex;
@@ -17,8 +16,7 @@ const Main = styled.main`
 export default function Page({ children, activePath, isLoading = false }) {
   return (
     <Div>
-      <Header activePath={activePath} />
-      {isLoading && <Loading />}
+      <Header activePath={activePath} isLoading={isLoading} />
       <Main>{children}</Main>
       <Footer />
     </Div>
