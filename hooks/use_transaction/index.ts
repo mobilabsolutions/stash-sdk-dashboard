@@ -51,6 +51,10 @@ export const useTransaction = transactionId => {
     }
 
     const loadData = async () => {
+      setState({
+        isLoading: true,
+        error: false
+      })
       let url = `/api/v1/merchant/${encodeURIComponent(
         merchantId
       )}/transactions/${transactionId}`
