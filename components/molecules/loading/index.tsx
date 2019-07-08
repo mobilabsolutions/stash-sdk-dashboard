@@ -12,7 +12,7 @@ export default styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #07d0c7;
+  background-color: ${p => p.theme.primary.A600};
   ::before {
     display: block;
     position: absolute;
@@ -22,10 +22,10 @@ export default styled.div`
     height: 2px;
     background-image: linear-gradient(
       to right,
-      #07d0c7,
+      ${p => p.theme.primary.A600},
       #ffffff,
       #ffffff,
-      #07d0c7
+      ${p => p.theme.primary.A600}
     );
     animation: ${Animation} 1s linear infinite;
   }
