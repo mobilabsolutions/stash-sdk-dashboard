@@ -1,5 +1,6 @@
 import { Header, Footer } from '..'
 import styled from '../../styled'
+import { Loading } from '../../molecules'
 
 const Div = styled.div`
   display: flex;
@@ -13,10 +14,11 @@ const Main = styled.main`
   background-color: ${props => props.theme.shade.A25};
 `
 
-export default function Page({ children, activePath }) {
+export default function Page({ children, activePath, isLoading = false }) {
   return (
     <Div>
       <Header activePath={activePath} />
+      {isLoading && <Loading />}
       <Main>{children}</Main>
       <Footer />
     </Div>
