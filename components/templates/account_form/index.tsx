@@ -15,18 +15,26 @@ import {
   PspConfiguration,
   PaypalConfiguration
 } from '../../organisms'
+import { useEffect } from 'react'
 
-export default function AccountForm() {
+export default function AccountForm({ setIsLoading }) {
   const { getText } = useLocalization()
   const {
     isLoading: keysAreLoading,
     data: keys,
     create: createKey,
-    remove: removeKey
+    isCreating: keysAreCreating,
+    remove: removeKey,
+    isDeleting: keysAreDeleting
   } = useKeys()
   const { isLoading: pspsAreLoading, data: psps, save: savePsp } = usePsp()
   const { changePassword } = usePassword()
   const { success: toastSuccess, error: toastError } = useToast()
+  useEffect(() => {
+    setIsLoading(
+      pspsAreLoading || keysAreLoading || keysAreCreating || keysAreDeleting
+    )
+  }, [pspsAreLoading, keysAreLoading, keysAreCreating, keysAreDeleting])
 
   if (pspsAreLoading || keysAreLoading) return <div />
 
@@ -97,6 +105,7 @@ export default function AccountForm() {
         validateOnBlur={false}
         onSubmit={(values, actions) => {
           actions.setSubmitting(true)
+          setIsLoading(true)
           changePassword(values.oldPassword, values.newPassword)
             .then(() => {
               actions.setValues(initChangePasswordValues)
@@ -105,9 +114,13 @@ export default function AccountForm() {
               actions.setSubmitting(false)
             })
             .catch(() => {
-              actions.setFieldError('password', getText('Password is Invalid.'))
+              actions.setFieldError(
+                'oldPassword',
+                getText('Password is Invalid.')
+              )
               actions.setSubmitting(false)
             })
+            .finally(() => setIsLoading(false))
         }}
         render={props => <ChangePassword {...props} />}
       />
