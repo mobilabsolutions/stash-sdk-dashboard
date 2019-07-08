@@ -2,12 +2,9 @@ import { keyframes } from 'styled-components'
 import styled from '../../styled'
 
 const Animation = keyframes`
-    from {left: -200px; width: 70%;}
-    50% {width: 85%;}
-    70% {width: 90%;}
+    from {left: -500px}
     80% { left: 50%;}
-    95% {left: 120%;}
-    to {left: 100%;}
+    100% {left: 120%;}
 `
 
 export default styled.div`
@@ -20,9 +17,9 @@ export default styled.div`
     display: block;
     position: absolute;
     content: '';
-    left: -200px;
-    width: 200px;
-    height: 4px;
+    left: -500px;
+    width: 70%;
+    height: 2px;
     background-image: linear-gradient(
       to right,
       #07d0c7,
