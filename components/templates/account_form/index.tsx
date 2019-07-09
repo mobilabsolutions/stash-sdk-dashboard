@@ -36,7 +36,7 @@ export default function AccountForm({ setIsLoading }) {
     )
   }, [pspsAreLoading, keysAreLoading, keysAreCreating, keysAreDeleting])
 
-  if (pspsAreLoading || keysAreLoading) return <div />
+  if (pspsAreLoading || keysAreLoading) return null
 
   const initialPspValues: PspConfig = psps
     .filter(item => item.type !== PspType.BRAINTREE)
@@ -111,14 +111,12 @@ export default function AccountForm({ setIsLoading }) {
               actions.setValues(initChangePasswordValues)
               actions.setTouched({})
               toastSuccess(getText('Password changed.'))
-              actions.setSubmitting(false)
             })
             .catch(() => {
               actions.setFieldError(
                 'oldPassword',
                 getText('Password is Invalid.')
               )
-              actions.setSubmitting(false)
             })
             .finally(() => setIsLoading(false))
         }}
