@@ -5,6 +5,7 @@ import styled from '../../styled'
 import { useLocalization, useApi } from '../../../hooks'
 import { Logo, LogoutIcon } from '../../atoms'
 import HeaderNavItem from './nav_item'
+import { Loading } from '../../molecules'
 
 const HtmlHeader = styled.header`
   background-color: ${props => props.theme.white};
@@ -30,8 +31,13 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: row;
 `
+const LoadingContainer = styled.div`
+  position: absolute;
+  top: 71px;
+  width: 100%;
+`
 
-export default function Header({ activePath }) {
+export default function Header({ activePath, isLoading = false }) {
   const { getText } = useLocalization()
   const { logout } = useApi()
 
@@ -70,6 +76,7 @@ export default function Header({ activePath }) {
           }}
         />
       </div>
+      <LoadingContainer>{isLoading && <Loading />}</LoadingContainer>
     </HtmlHeader>
   )
 }

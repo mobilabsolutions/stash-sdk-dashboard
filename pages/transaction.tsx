@@ -31,9 +31,11 @@ const TransactionDetails = ({ router }: DetailProps) => {
   const { transactionId } = router.query
   const { getText } = useLocalization()
 
-  const { details, refund, reverse, capture } = useTransaction(transactionId)
+  const { details, refund, reverse, capture, isLoading } = useTransaction(
+    transactionId
+  )
   return (
-    <Page activePath={'/transactions'}>
+    <Page activePath={'/transactions'} isLoading={isLoading}>
       <CustomScrollContainer>
         <Link href="/transactions">
           <BackButton>{getText('Back to transactions overview')}</BackButton>

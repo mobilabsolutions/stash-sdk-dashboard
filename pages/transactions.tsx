@@ -35,7 +35,7 @@ export default () => {
     paymentMethod,
     setPaymentMethod,
     capture,
-    downloadCSV,
+    exportCSV,
     refund
   } = useTransactions()
 
@@ -48,13 +48,17 @@ export default () => {
   const toggleFilter = () => setShowFilter(!showFilter)
   const upperHeight =
     (showFilter ? FILTER_HEIGHT + headerHeight : headerHeight) + 65
+
   return (
-    <Page activePath="/transactions">
+    <Page
+      activePath="/transactions"
+      isLoading={isLoading || exportCSV.downloading}
+    >
       <CustomVerticalScrollContainer>
         <TransactionHeader
           toggleFilter={toggleFilter}
           showFilter={showFilter}
-          downloadCSV={downloadCSV}
+          downloadCSV={exportCSV.download}
           ref={headerRef}
         >
           {showFilter && (

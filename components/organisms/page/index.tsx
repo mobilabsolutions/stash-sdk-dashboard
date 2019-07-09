@@ -13,10 +13,10 @@ const Main = styled.main`
   background-color: ${props => props.theme.shade.A25};
 `
 
-export default function Page({ children, activePath }) {
+export default function Page({ children, activePath, isLoading = false }) {
   return (
     <Div>
-      <Header activePath={activePath} />
+      <Header activePath={activePath} isLoading={isLoading} />
       <Main>{children}</Main>
       <Footer />
     </Div>
