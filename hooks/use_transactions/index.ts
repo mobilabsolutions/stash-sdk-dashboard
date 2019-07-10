@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import moment, { Moment } from 'moment'
 import Router from 'next/router'
-import FileSaver from 'file-saver'
-import { useStoredState } from '..'
+import { useStoredState, useDownloadcsv } from '..'
 
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture } from './actions'
@@ -131,7 +130,7 @@ export const useTransactions = () => {
       ...rest
     })
   )
-  const { get: apiGet, getRaw, token, merchantId } = useApi()
+  const { get: apiGet, token, merchantId } = useApi()
 
   const loadData = async () => {
     setState(prevState => ({
@@ -255,18 +254,12 @@ export const useTransactions = () => {
     }))
   }
 
-  async function downloadCSV() {
-    const url = getUrlWithFilter('transactions/csv', merchantId, {
-      ...state,
-      pageSize: state.totalCount
-    })
-    const FILE_NAME = 'transaction_list.csv'
-    const type = 'text/csv;charset=ISO-8859-1'
-    const { result } = await getRaw(url)
-    const text = await result.text()
-    var blob = new Blob([text], { type })
-    FileSaver.saveAs(blob, FILE_NAME)
-  }
+  const url = getUrlWithFilter('transactions/csv', merchantId, {
+    ...state,
+    pageSize: state.totalCount
+  })
+  const FILE_NAME = 'transaction_list.csv'
+  const exportCSV = useDownloadcsv(url, FILE_NAME)
 
   return {
     clearFilters,
@@ -292,6 +285,6 @@ export const useTransactions = () => {
     setText,
     refund,
     token,
-    downloadCSV
+    exportCSV
   }
 }

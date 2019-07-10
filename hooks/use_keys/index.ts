@@ -5,6 +5,8 @@ import { useApi } from '../use_api'
 const initialState = {
   data: [],
   isLoading: true,
+  isCreating: false,
+  isDeleting: false,
   error: null
 }
 
@@ -16,18 +18,23 @@ export const useKeys = () => {
     setState(prevState => ({ ...prevState, isLoading: true }))
     get(`/api/v1/merchant/${encodeURIComponent(merchantId)}/api-key`)
       .then((response: any) =>
-        setState({
+        setState(prev => ({
+          ...prev,
           data:
             response.result && response.result.data ? response.result.data : [],
           isLoading: false,
           error: null
-        })
+        }))
       )
-      .catch((error: any) => setState({ data: [], isLoading: false, error }))
+      .catch((error: any) =>
+        setState(prev => ({ ...prev, data: [], isLoading: false, error }))
+      )
   }, [get, merchantId])
 
   const create = useCallback(
     (type: string, name?: string) => {
+      setState(prev => ({ ...prev, isCreating: true }))
+
       post(`/api/v1/merchant/${encodeURIComponent(merchantId)}/api-key`, {
         type,
         name
@@ -35,6 +42,7 @@ export const useKeys = () => {
         if (response && response.result) {
           setState(prevState => ({
             ...prevState,
+            isCreating: false,
             data: [
               ...prevState.data,
               {
@@ -52,11 +60,13 @@ export const useKeys = () => {
 
   const remove = useCallback(
     (id: number) => {
+      setState(prev => ({ ...prev, isDeleting: true }))
       del(
         `/api/v1/merchant/${encodeURIComponent(merchantId)}/api-key/${id}`
       ).then(() => {
         setState(prevState => ({
           ...prevState,
+          isDeleting: false,
           data: prevState.data.filter(item => item.id !== id)
         }))
       })

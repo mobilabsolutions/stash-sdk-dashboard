@@ -126,7 +126,7 @@ export const paymentMethods = [
     type: 'CC'
   },
   {
-    name: 'MASTER_CARD',
+    name: 'MASTERCARD',
     type: 'CC'
   },
   {
