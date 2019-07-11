@@ -152,10 +152,6 @@ export const useTransactions = () => {
         isLoading: false
       }))
     } catch (error) {
-      if (error && error.statusCode === 401) {
-        Router.push('/login')
-        return null
-      }
       setState(prevState => ({
         ...prevState,
         data: [],
