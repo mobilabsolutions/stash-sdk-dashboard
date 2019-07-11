@@ -3,8 +3,7 @@ import React, { useContext, useState, useCallback } from 'react'
 import moment from 'moment'
 import 'moment/locale/en-gb'
 import 'moment/locale/de'
-
-const isClient = typeof window === 'object'
+import { isClient } from '../../assets/payment.static'
 
 const nextContext = React.createContext(null)
 nextContext.displayName = 'NextContext'

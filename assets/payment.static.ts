@@ -65,6 +65,8 @@ export const getStatusBackgroundColor = (status: string) => {
   }
 }
 
+export const isClient = typeof window === 'object'
+
 export function getActionsByStatus(status: string): Array<{ type: string }> {
   switch (status) {
     case 'authorised':

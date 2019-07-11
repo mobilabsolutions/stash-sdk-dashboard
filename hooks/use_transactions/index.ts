@@ -5,9 +5,8 @@ import { useStoredState, useDownloadcsv } from '..'
 
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture } from './actions'
-import { statusToAction } from '../../assets/payment.static'
+import { statusToAction, isClient } from '../../assets/payment.static'
 import { TransactionAction, TransactionStatus } from '../types'
-const isClient = typeof window === 'object'
 
 interface Transaction {
   action: TransactionAction
@@ -20,7 +19,7 @@ interface Transaction {
   status: TransactionStatus
   transactionId: string
 }
-interface TransactionReponse {
+interface TransactionResponse {
   metadata: {
     limit: 0
     offset: 0
@@ -140,7 +139,7 @@ export const useTransactions = () => {
     }))
     const url = getUrlWithFilter('transactions', merchantId, state)
     try {
-      const response: { result: TransactionReponse } = await apiGet(url)
+      const response: { result: TransactionResponse } = await apiGet(url)
       return setState(prevState => ({
         ...prevState,
         data: response.result.transactions.map((item: Transaction) => ({

@@ -2,11 +2,11 @@ import { useCallback } from 'react'
 import Router from 'next/router'
 
 import { useSessionStorage } from '../use_session_storage'
+import { isClient } from '../../assets/payment.static'
 
-const BACKEND_HOST =
-  typeof window !== 'undefined'
-    ? ''
-    : process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
+const BACKEND_HOST = isClient
+  ? ''
+  : process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
 
 const apiCall = (
   token: string,
