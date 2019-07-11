@@ -2,8 +2,7 @@ import { useEffect } from 'react'
 import Router from 'next/router'
 
 import { useApi } from '../use_api'
-
-const isClient = typeof window === 'object'
+import { isClient } from '../../assets/payment.static'
 
 export function useTokenCheck() {
   const { token } = useApi()

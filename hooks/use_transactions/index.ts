@@ -4,10 +4,9 @@ import Router from 'next/router'
 import { useStoredState, useDownloadcsv } from '..'
 
 import { useApi } from '../use_api'
-import { useRefund, useReverse, useCapture, Params } from './actions'
-import { statusToAction } from '../../assets/payment.static'
+import { useRefund, useReverse, useCapture } from './actions'
+import { statusToAction, isClient } from '../../assets/payment.static'
 import { TransactionAction, TransactionStatus } from '../types'
-const isClient = typeof window === 'object'
 
 interface Transaction {
   action: TransactionAction
@@ -20,7 +19,7 @@ interface Transaction {
   status: TransactionStatus
   transactionId: string
 }
-interface TransactionReponse {
+interface TransactionResponse {
   metadata: {
     limit: 0
     offset: 0
@@ -132,6 +131,36 @@ export const useTransactions = () => {
   )
   const { get: apiGet, token, merchantId } = useApi()
 
+  const loadData = async () => {
+    setState(prevState => ({
+      ...prevState,
+      isLoading: true,
+      error: null
+    }))
+    const url = getUrlWithFilter('transactions', merchantId, state)
+    try {
+      const response: { result: TransactionResponse } = await apiGet(url)
+      return setState(prevState => ({
+        ...prevState,
+        data: response.result.transactions.map((item: Transaction) => ({
+          ...item,
+          amount: item.amount / 100,
+          timestamp: moment(item.createdDate, moment.defaultFormatUtc).toDate()
+        })),
+        totalCount: response.result.metadata.totalCount,
+        error: null,
+        isLoading: false
+      }))
+    } catch (error) {
+      setState(prevState => ({
+        ...prevState,
+        data: [],
+        error,
+        isLoading: false
+      }))
+    }
+  }
+
   useEffect(() => {
     if (!isClient) return
 
@@ -139,45 +168,6 @@ export const useTransactions = () => {
       Router.push('/login')
       return
     }
-
-    const loadData = async () => {
-      const url = getUrlWithFilter('transactions', merchantId, state)
-
-      try {
-        const response: { result: TransactionReponse } = await apiGet(url)
-        return setState(prevState => ({
-          ...prevState,
-          data: response.result.transactions.map((item: Transaction) => ({
-            ...item,
-            amount: item.amount / 100,
-            timestamp: moment(
-              item.createdDate,
-              moment.defaultFormatUtc
-            ).toDate()
-          })),
-          totalCount: response.result.metadata.totalCount,
-          error: null,
-          isLoading: false
-        }))
-      } catch (error) {
-        if (error && error.statusCode === 401) {
-          Router.push('/login')
-          return null
-        }
-        setState(prevState => ({
-          ...prevState,
-          data: [],
-          error,
-          isLoading: false
-        }))
-      }
-    }
-
-    setState(prevState => ({
-      ...prevState,
-      isLoading: true,
-      error: null
-    }))
 
     loadData()
   }, [
@@ -234,16 +224,6 @@ export const useTransactions = () => {
   const setPaymentMethod = (paymentMethod: string) =>
     setState(prevState => ({ ...prevState, paymentMethod, startPos: 0 }))
 
-  const modifyData = (transactionId: string, modification: any) =>
-    setState(prevState => ({
-      ...prevState,
-      data: state.data.map(transaction =>
-        transaction.transactionId == transactionId
-          ? { ...transaction, ...modification }
-          : transaction
-      )
-    }))
-
   const clearFilters = () =>
     setState(prevState => ({
       ...prevState,
@@ -255,45 +235,11 @@ export const useTransactions = () => {
       endDate: null
     }))
 
-  interface ActionResponse {
-    action: string
-    additionalInfo: string
-    amount: number
-    currency: string
-    id: string
-    status: string
-  }
-  const refund = useRefund(
-    (response: { result: ActionResponse }, p: Params) => {
-      const { transactionId, reason } = p
-      modifyData(transactionId, {
-        ...response.result,
-        reason,
-        amount: response.result.amount / 100
-      })
-    }
-  )
+  const refund = useRefund(loadData)
 
-  const reverse = useReverse(
-    (response: { result: ActionResponse }, p: Params) => {
-      const { transactionId, reason } = p
-      modifyData(transactionId, {
-        ...response.result,
-        reason,
-        amount: response.result.amount / 100
-      })
-    }
-  )
+  const reverse = useReverse(loadData)
 
-  const capture = useCapture(
-    (response: { result: ActionResponse }, p: Params) => {
-      const { transactionId } = p
-      modifyData(transactionId, {
-        ...response.result,
-        amount: response.result.amount / 100
-      })
-    }
-  )
+  const capture = useCapture(loadData)
 
   const resetPageSizeTo = (pageSize = 100) => {
     setState(prev => ({
@@ -323,7 +269,6 @@ export const useTransactions = () => {
     pageSize: state.pageSize,
     resetPageSizeTo,
     setRange,
-    modifyData,
     totalCount: state.totalCount,
     reverse,
     capture,
