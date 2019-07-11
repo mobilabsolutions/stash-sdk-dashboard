@@ -27,6 +27,11 @@ export const useTransaction = transactionId => {
     let url = `/api/v1/merchant/${encodeURIComponent(
       merchantId
     )}/transactions/${transactionId}`
+    setState(prevState => ({
+      ...prevState,
+      error: false,
+      isLoading: true
+    }))
 
     try {
       const response: { result: TransactionDetails } = await apiGet(url)
