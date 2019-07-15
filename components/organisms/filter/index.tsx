@@ -59,10 +59,12 @@ export default forwardRef<HTMLDivElement, any>(
     }
     const statusOptions = [
       allOption,
-      ...Object.entries(statusToAction).map(act => ({
-        value: act[0],
-        label: getText(act[0])
-      }))
+      ...Object.entries(statusToAction)
+        .filter(act => act[0] !== 'additional')
+        .map(act => ({
+          value: act[0],
+          label: getText(act[0])
+        }))
     ]
     const paymetOptions = [
       allOption,

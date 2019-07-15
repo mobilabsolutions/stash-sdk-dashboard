@@ -1,12 +1,17 @@
 import { theme } from './style'
+import { TransactionAction, TransactionStatus } from '../hooks/types'
 
 export const statusToAction = {
-  'pre-Authorised': 'PREAUTH',
-  authorised: 'AUTH',
-  reversed: 'REVERSAL',
-  refunded: 'REFUND',
-  fail: 'FAIL',
-  captured: 'CAPTURE'
+  'pre-Authorised': TransactionAction.PREAUTH,
+  authorised: TransactionAction.AUTH,
+  reversed: TransactionAction.REVERSAL,
+  refunded: TransactionAction.REFUND,
+  fail: TransactionStatus.FAIL,
+  chargeback: TransactionAction.CHARGEBACK,
+  'chargeback-reversal': TransactionAction['CHANRGEBACK-REVERSAL'],
+  additional: TransactionAction.ADDITIONAL,
+  pending: TransactionStatus.PENDING,
+  captured: TransactionAction.CAPTURE
 }
 
 function reverse(
@@ -27,6 +32,8 @@ export const getMappedStatus = (status: string, action: string): string => {
   switch (status) {
     case 'SUCCESS':
       return !!actionToStatus[action] ? actionToStatus[action] : 'fail'
+    case 'PENDING':
+      return 'pending'
     case 'FAIL':
     default:
       return 'fail'
@@ -44,6 +51,8 @@ export const getStatusColor = (status: string) => {
     case 'reversed':
     case 'refunded':
       return '#f7981c'
+    case 'pending':
+      return theme.shade.A300
     default:
       return theme.primary.A800
   }
@@ -60,6 +69,8 @@ export const getStatusBackgroundColor = (status: string) => {
     case 'reversed':
     case 'refunded':
       return '#f7981c26'
+    case 'pending':
+      return theme.shade.A50
     default:
       return theme.primary.A800
   }
