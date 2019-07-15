@@ -198,5 +198,19 @@ export default {
   'Billing Address': { de: 'Rechnungsadresse' },
   'but not yet captured': { de: 'aber noch nicht erfasst' },
   Export: { de: 'Export' },
+  AUTH: { en: 'Authorisation', de: 'Authorisation' },
+  PREAUTH: { en: 'Pre-Authorisation', de: 'Pre-authorisation' },
+  CAPTURE: { en: 'Capture', de: 'Capture' },
+  REFUND: { en: 'Refund', de: 'Refund' },
+  REVERSAL: { en: 'Reversal', de: 'Reversal' },
+  CHARGEBACK: { en: 'Chargeback', de: 'Chargeback' },
+  'CHANRGEBACK-REVERSAL': {
+    en: 'Chargeback-reversal',
+    de: 'Chargeback-reversal'
+  },
+  SUCCESS: { en: 'Success' },
+  FAIL: { en: 'Fail' },
+  PENDING: { en: 'Pending' },
+  ADDITIONAL: { en: 'Additional', de: 'Additional' },
   IBAN: {}
 }

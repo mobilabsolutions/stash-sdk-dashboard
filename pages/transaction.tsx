@@ -57,7 +57,10 @@ const TransactionDetails = ({ router }: DetailProps) => {
               />
             </DetailItem>
             <DetailItem>
-              <TransactionTimeline timeline={details.timelineInfo} />
+              <TransactionTimeline
+                timeline={details.timelineInfo}
+                currencyId={details.currencyId}
+              />
             </DetailItem>
             <DetailItem>
               <TransactionDetailCmp
