@@ -76,7 +76,9 @@ export default function Header({ activePath, isLoading = false }) {
           }}
         />
       </div>
-      <LoadingContainer>{isLoading && <Loading />}</LoadingContainer>
+      <LoadingContainer>
+        <Loading isLoading={isLoading} />
+      </LoadingContainer>
     </HtmlHeader>
   )
 }

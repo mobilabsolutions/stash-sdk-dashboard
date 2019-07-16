@@ -1,5 +1,6 @@
 import { keyframes } from 'styled-components'
 import styled from '../../styled'
+import { useDebounce } from '../../../hooks'
 
 const Animation = keyframes`
     from {left: -500px}
@@ -7,7 +8,7 @@ const Animation = keyframes`
     100% {left: 120%;}
 `
 
-export default styled.div`
+const LoadingBar = styled.div`
   height: 2px;
   width: 100%;
   position: relative;
@@ -30,3 +31,8 @@ export default styled.div`
     animation: ${Animation} 1s linear infinite;
   }
 `
+
+export default function Loading({ isLoading = false }) {
+  const debouncedFlag = useDebounce(isLoading, 500)
+  return debouncedFlag ? <LoadingBar /> : null
+}
