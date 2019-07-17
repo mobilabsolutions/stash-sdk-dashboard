@@ -53,6 +53,7 @@ export { default as Settings } from './icons/settings'
 export { default as ArrowDown } from './icons/min_arrow_down'
 export { default as ArrowUp } from './icons/min_arrow_up'
 export { default as ArrowBack } from './icons/arrow_back'
+export { default as Add } from './icons/add'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
