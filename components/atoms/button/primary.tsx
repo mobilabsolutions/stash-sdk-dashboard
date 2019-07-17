@@ -65,6 +65,7 @@ export const Button = styled.button<StyledButtonProps>`
 
 interface ButtonProps {
   label: string
+  children?: any
   isFullSize?: boolean
   type?: 'submit' | 'reset' | 'button'
   disabled?: boolean
@@ -78,6 +79,7 @@ export default function PrimaryButton({
   type = 'submit',
   disabled = false,
   style = {},
+  children,
   onClick
 }: ButtonProps) {
   return (
@@ -95,7 +97,7 @@ export default function PrimaryButton({
           : null
       }
     >
-      <span>{label}</span>
+      {children ? children : <span>{label}</span>}
     </Button>
   )
 }
