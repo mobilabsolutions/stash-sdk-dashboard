@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab Should Render only active tab 1`] = `
+<div
+  className="tabs__Container-sc-12d1d6a-2 eyFFwE"
+>
+  <div
+    className="tabs__TabSection-sc-12d1d6a-1 iSVFeh"
+  >
+    <span
+      className="tabs__Tab-sc-12d1d6a-0 fdeaHf"
+      data-testid="tab-0"
+      onClick={[Function]}
+    >
+      Tab 1
+    </span>
+    <span
+      className="tabs__Tab-sc-12d1d6a-0 fYbykR"
+      data-testid="tab-1"
+      onClick={[Function]}
+    >
+      Tab 2
+    </span>
+    <span
+      className="tabs__Tab-sc-12d1d6a-0 fYbykR"
+      data-testid="tab-2"
+      onClick={[Function]}
+    >
+      Tab 3
+    </span>
+  </div>
+  <div
+    data-testid="tab-content"
+  >
+    <div>
+      Tab 1 Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tab Should change tab on click event: Active tab content should be "Tab 1" 1`] = `
+<div>
+  Tab 1 Content
+</div>
+`;
+
+exports[`Tab Should change tab on click event: Active tab content should be now "Tab 3" 1`] = `
+<div>
+  Tab 3 content
+</div>
+`;
