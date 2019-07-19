@@ -2,7 +2,8 @@ import React from 'react'
 import styled from '../../styled'
 
 interface Tab {
-  title: string
+  title: string | Function
+  titleStyle?: any
   render: Function
 }
 
@@ -39,14 +40,15 @@ export default function TabPanel(props: Props) {
   return (
     <Container>
       <TabSection>
-        {tabs.map((tab, i) => (
+        {tabs.map(({ title, titleStyle }, i) => (
           <Tab
             key={i}
             active={active === i}
+            style={titleStyle}
             onClick={() => setActive(i)}
             data-testid={`tab-${i}`}
           >
-            {tab.title}
+            {typeof title == 'function' ? title() : title}
           </Tab>
         ))}
       </TabSection>

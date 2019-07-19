@@ -15,7 +15,8 @@ const Container = () => {
       render: () => <div>Tab 2 Content</div>
     },
     {
-      title: 'Tab 3',
+      title: () => <span>Tab 3</span>,
+      titleStyle: { borderTop: '1px solid red' },
       render: () => <div>Tab 3 content</div>
     }
   ]
