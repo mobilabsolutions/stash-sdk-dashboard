@@ -37,7 +37,7 @@ export enum StateStatus {
   fail = 'fail',
   pending = 'pending',
   chargeback = 'chargeback',
-  'chargeback-reversal' = 'chargeback-reversal',
+  'chargeback_reversed' = 'chargeback_reversed',
   'pre-Authorised' = 'pre-Authorised'
 }
 interface State {

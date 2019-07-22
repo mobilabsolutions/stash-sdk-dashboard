@@ -8,7 +8,7 @@ export const statusToAction = {
   refunded: TransactionAction.REFUND,
   fail: TransactionStatus.FAIL,
   chargeback: TransactionAction.CHARGEBACK,
-  'chargeback-reversal': TransactionAction['CHARGEBACK-REVERSAL'],
+  chargeback_reversed: TransactionAction['CHARGEBACK_REVERSED'],
   additional: TransactionAction.ADDITIONAL,
   pending: TransactionStatus.PENDING,
   captured: TransactionAction.CAPTURE
@@ -46,6 +46,9 @@ export const getStatusColor = (status: string) => {
     case 'pre-Authorised':
     case 'authorised':
     case 'reversed':
+    case 'chargeback_reversed':
+    case 'chargeback':
+    case 'additional':
     case 'refunded':
       return '#00be41'
     case 'fail':
@@ -63,6 +66,9 @@ export const getStatusBackgroundColor = (status: string) => {
     case 'pre-Authorised':
     case 'authorised':
     case 'reversed':
+    case 'chargeback_reversed':
+    case 'chargeback':
+    case 'additional':
     case 'refunded':
       return '#5edb8926'
     case 'fail':
