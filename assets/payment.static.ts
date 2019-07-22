@@ -45,16 +45,15 @@ export const getStatusColor = (status: string) => {
     case 'captured':
     case 'pre-Authorised':
     case 'authorised':
+    case 'reversed':
+    case 'refunded':
       return '#00be41'
     case 'fail':
       return theme.red.A400
-    case 'reversed':
-    case 'refunded':
-      return '#f7981c'
     case 'pending':
-      return theme.shade.A300
+      return '#f7981c'
     default:
-      return theme.primary.A800
+      return theme.shade.A50
   }
 }
 
@@ -63,16 +62,15 @@ export const getStatusBackgroundColor = (status: string) => {
     case 'captured':
     case 'pre-Authorised':
     case 'authorised':
+    case 'reversed':
+    case 'refunded':
       return '#5edb8926'
     case 'fail':
       return '#ff9b9b26'
-    case 'reversed':
-    case 'refunded':
-      return '#f7981c26'
     case 'pending':
-      return theme.shade.A50
+      return '#f7981c26'
     default:
-      return theme.primary.A800
+      return theme.shade.A50
   }
 }
 
