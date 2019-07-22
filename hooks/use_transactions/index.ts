@@ -101,7 +101,7 @@ function getUrlWithFilter(ep: string, merchantId: string, state: State) {
     const status = getStatusFromState(state)
     url += `&status=${status}`
     const action = getActionFromState(state)
-    url += action
+    url += action ? `&action=${action}` : ''
   }
   ////---------------
   if (!!state.paymentMethod && state.paymentMethod !== 'all') {
