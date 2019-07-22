@@ -207,7 +207,7 @@ export default {
   REFUND: { en: 'Refund', de: 'Refund' },
   REVERSAL: { en: 'Reversal', de: 'Reversal' },
   CHARGEBACK: { en: 'Chargeback', de: 'Chargeback' },
-  'CHANRGEBACK-REVERSAL': {
+  'CHARGEBACK-REVERSAL': {
     en: 'Chargeback-reversal',
     de: 'Chargeback-reversal'
   },

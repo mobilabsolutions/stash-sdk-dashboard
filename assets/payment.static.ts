@@ -8,7 +8,7 @@ export const statusToAction = {
   refunded: TransactionAction.REFUND,
   fail: TransactionStatus.FAIL,
   chargeback: TransactionAction.CHARGEBACK,
-  'chargeback-reversal': TransactionAction['CHANRGEBACK-REVERSAL'],
+  'chargeback-reversal': TransactionAction['CHARGEBACK-REVERSAL'],
   additional: TransactionAction.ADDITIONAL,
   pending: TransactionStatus.PENDING,
   captured: TransactionAction.CAPTURE
