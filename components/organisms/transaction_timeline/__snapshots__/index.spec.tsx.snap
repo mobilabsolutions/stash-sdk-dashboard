@@ -15,38 +15,44 @@ exports[`TransactionTimeline Should Render 1`] = `
       <tbody>
         <tr>
           <td
-            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 fIFaIv"
+            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 bxHiTk"
           >
             <span>
               6/26/2019, 2:49:18 PM
-               
-              Refund
-               
-              Success
-               -
-               
-              No se - 
-              <span>
-                € 34.70
+              <span
+                className="item-details"
+              >
+                 - 
+                Refund
+                 
+                Success
+                 - 
+                No se - 
+                <span>
+                  € 34.70
+                </span>
               </span>
             </span>
           </td>
         </tr>
         <tr>
           <td
-            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 fIFaIv"
+            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 bxHiTk"
           >
             <span>
               6/21/2019, 5:18:16 PM
-               
-              Authorisation
-               
-              Success
-               -
-               
-              Test Payment - 
-              <span>
-                € 34.70
+              <span
+                className="item-details"
+              >
+                 - 
+                Authorisation
+                 
+                Success
+                 - 
+                Test Payment - 
+                <span>
+                  € 34.70
+                </span>
               </span>
             </span>
           </td>
@@ -72,38 +78,44 @@ exports[`TransactionTimeline Should ommit empty reasons 1`] = `
       <tbody>
         <tr>
           <td
-            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 fIFaIv"
+            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 bxHiTk"
           >
             <span>
               6/26/2019, 2:49:18 PM
-               
-              Refund
-               
-              Success
-               -
-               
-              
-              <span>
-                € 34.70
+              <span
+                className="item-details"
+              >
+                 - 
+                Refund
+                 
+                Success
+                 - 
+                
+                <span>
+                  € 34.70
+                </span>
               </span>
             </span>
           </td>
         </tr>
         <tr>
           <td
-            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 fIFaIv"
+            className="transaction_timeline__TimeActionItem-sc-1qjudet-0 bxHiTk"
           >
             <span>
               6/21/2019, 5:18:16 PM
-               
-              Authorisation
-               
-              Success
-               -
-               
-              Test Payment - 
-              <span>
-                € 34.70
+              <span
+                className="item-details"
+              >
+                 - 
+                Authorisation
+                 
+                Success
+                 - 
+                Test Payment - 
+                <span>
+                  € 34.70
+                </span>
               </span>
             </span>
           </td>

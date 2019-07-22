@@ -15,6 +15,9 @@ const TimeActionItem = styled.td`
   > svg {
     transform: translateY(3px);
   }
+  .item-details {
+    font-weight: bold;
+  }
 `
 
 const Info = ({ action, status, reason, amount, createdDate, currencyId }) => {
@@ -23,9 +26,12 @@ const Info = ({ action, status, reason, amount, createdDate, currencyId }) => {
   const { getText, formatDate } = useLocalization()
   return (
     <span>
-      {formatDate(timestamp)} {getText(action)} {getText(status)} -{' '}
-      {reason ? `${reason} - ` : ''}
-      <TextCurrency currencyId={currencyId} value={amount / 100} />
+      {formatDate(timestamp)}
+      <span className="item-details">
+        {' - '}
+        {getText(action)} {getText(status)} - {reason ? `${reason} - ` : ''}
+        <TextCurrency currencyId={currencyId} value={amount / 100} />
+      </span>
     </span>
   )
 }
