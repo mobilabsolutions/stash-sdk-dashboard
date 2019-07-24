@@ -70,7 +70,7 @@ export default {
   PSP: {},
   BS_PAYONE: { en: 'BS PayOne' },
   ADYEN: { en: 'Adyen' },
-  BRAINTREE: { en: 'Braintree / Paypal' },
+  BRAINTREE: { en: 'Braintree' },
   'Account Id': { de: 'Konto Nr.' },
   'Portal Id': { de: 'Portal Nr.' },
   Key: { de: 'Schlüssel' },
@@ -212,5 +212,36 @@ export default {
   FAIL: { en: 'Fail' },
   PENDING: { en: 'Pending' },
   ADDITIONAL: { en: 'Additional', de: 'Additional' },
-  IBAN: {}
+  IBAN: {},
+  Currency: { de: 'Währung' },
+  Locale: { de: 'Gebietsschema' },
+  Country: { de: 'Land' },
+  'Production URL Prefix': { de: 'Produktions-URL-Präfix' },
+  'Public Key': { de: 'Öffentlicher Schlüssel' },
+  'Sandbox Public Key': { de: 'Öffentlicher Sandbox-Schlüssel' },
+  'Merchant ID': { de: 'Händler-ID' },
+  'Sandbox Merchant ID': { de: 'Sandbox-Händler-ID' },
+  Sandbox: { de: 'Sandkasten' },
+  Production: { de: 'Produktion' },
+  Adyen: { de: 'Adyen' },
+  Braintree: {},
+  'BS Payone': {},
+  'Add a new PSP configuration': {
+    de: 'Füge eine neue PSP-Konfiguration hinzu'
+  },
+  'Private Key': { de: 'Privat Schlüssel' },
+  'Sandbox Private Key': { de: 'Privater Sandbox-Schlüssel' },
+  'Portal ID': { de: 'Portal-ID' },
+  'Account ID': { de: 'Konto-ID' },
+  'Select a PSP': { de: 'Wähle eine PSP' },
+  'New PSP configuration added.': { de: 'Neue PSP-Konfiguration hinzugefügt.' },
+  'PSP configuration updated.': { de: 'PSP-Konfiguration aktualisiert.' },
+  'An error occurred trying to update the PSP. Try again.': {
+    de:
+      'Beim Aktualisieren der PSP ist ein Fehler aufgetreten. Versuchen Sie es nochmal.'
+  },
+  'An error occurred trying to create the PSP. Try again.': {
+    de:
+      'Beim Erstellen der PSP ist ein Fehler aufgetreten. Versuchen Sie es nochmal.'
+  }
 }
