@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PspCreateForm should render just the button first 1`] = `
+Array [
+  <div
+    className="psp_create_form__Container-sc-11to5vc-0 kWdnas"
+  >
+    <button
+      className="primary__Button-sc-1lwi4g7-0 iUXqht"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+      type="button"
+    >
+      <span
+        className="add-plus"
+      >
+        <svg
+          height={16}
+          viewBox="0 0 16 16"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 7h6a1 1 0 0 1 0 2H9v6a1 1 0 0 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 2 0v6z"
+            fill="#FFF"
+            fillRule="evenodd"
+          />
+        </svg>
+        Add a new PSP configuration
+      </span>
+    </button>
+  </div>,
+  <div
+    className="use_toast__ToastContainer-sc-1wws89f-0 glXDBM"
+  />,
+]
+`;
+
+exports[`PspCreateForm should render: the "select" and "cancel" button after click "+" 1`] = `
+<div>
+  <div
+    class="psp_create_form__Container-sc-11to5vc-0 kWdnas"
+  >
+    <div
+      class="select-cancel-container"
+    >
+      <div
+        class="psp-select css-chbh3k-container"
+      >
+        <div
+          class=" css-vr5vfp-control"
+        >
+          <div
+            class=" css-1hwfws3"
+          >
+            <div
+              class=" css-1y2mitp-placeholder"
+            >
+              Select a PSP
+            </div>
+            <div
+              class="css-pe2t16"
+            >
+              <div
+                class=""
+                style="display: inline-block;"
+              >
+                <input
+                  aria-autocomplete="list"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
+                  id="react-select-2-input"
+                  spellcheck="false"
+                  style="box-sizing: content-box; width: 2px; border: 0px; font-size: inherit; opacity: 1; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class=" css-1wy0on6"
+          >
+            <span />
+            <div
+              aria-hidden="true"
+              class=" css-tlfecz-indicatorContainer"
+            >
+              <svg
+                aria-hidden="true"
+                class="css-19bqh2r"
+                focusable="false"
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+              >
+                <path
+                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="secondary__Button-j7mjyk-0 kgyVVR"
+        type="button"
+      >
+        <span>
+          Cancel
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="use_toast__ToastContainer-sc-1wws89f-0 glXDBM"
+  />
+</div>
+`;
+
+exports[`PspCreateForm should render: the form for the creation of the selected PSP 1`] = `
+<div>
+  <div
+    class="psp_create_form__Container-sc-11to5vc-0 kWdnas"
+  >
+    <div
+      class="select-cancel-container"
+    >
+      <div
+        class="psp-select css-chbh3k-container"
+      >
+        <div
+          class=" css-vr5vfp-control"
+        >
+          <div
+            class=" css-1hwfws3"
+          >
+            <div
+              class=" css-1nzxrjy-singleValue"
+            >
+              BS PayOne
+            </div>
+            <div
+              class="css-pe2t16"
+            >
+              <div
+                class=""
+                style="display: inline-block;"
+              >
+                <input
+                  aria-autocomplete="list"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
+                  id="react-select-2-input"
+                  spellcheck="false"
+                  style="box-sizing: content-box; width: 2px; border: 0px; font-size: inherit; opacity: 0; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class=" css-1wy0on6"
+          >
+            <span />
+            <div
+              aria-hidden="true"
+              class=" css-tlfecz-indicatorContainer"
+            >
+              <svg
+                aria-hidden="true"
+                class="css-19bqh2r"
+                focusable="false"
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+              >
+                <path
+                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="psp-create-form"
+    >
+      <div>
+        <h3
+          class="h3-sc-1przhcr-0 bqBPGG"
+        >
+          BS Payone
+        </h3>
+        <form
+          class="psp_form__Form-u54q1b-0 QkbWZ"
+        >
+          <h3
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+          >
+            Merchant ID
+          </h3>
+          <div
+            class="field_wrapper-n32k2e-0 irXinp"
+          >
+            <div
+              class="input_wrapper-sc-15hmhfy-0 duFQAu"
+            >
+              <div
+                class="icon_wrapper-sc-1jgazwq-0 VoEeG"
+              >
+                <svg
+                  class="enable"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"
+                    fill="#D6D9DB"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <input
+                class="input__HtmlInput-rcagn3-0 feOJUN"
+                name="merchantId"
+                placeholder="Merchant ID"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <h3
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+          >
+            Portal ID
+          </h3>
+          <div
+            class="field_wrapper-n32k2e-0 irXinp"
+          >
+            <div
+              class="input_wrapper-sc-15hmhfy-0 duFQAu"
+            >
+              <div
+                class="icon_wrapper-sc-1jgazwq-0 VoEeG"
+              >
+                <svg
+                  class="enable"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"
+                    fill="#D6D9DB"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <input
+                class="input__HtmlInput-rcagn3-0 feOJUN"
+                name="portalId"
+                placeholder="Portal ID"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <h3
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+          >
+            Key
+          </h3>
+          <div
+            class="field_wrapper-n32k2e-0 irXinp"
+          >
+            <div
+              class="input_wrapper-sc-15hmhfy-0 duFQAu"
+            >
+              <div
+                class="icon_wrapper-sc-1jgazwq-0 VoEeG"
+              >
+                <svg
+                  class="enable"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M13.65 11A5.99 5.99 0 0 0 8 7c-3.31 0-6 2.69-6 6s2.69 6 6 6a5.99 5.99 0 0 0 5.65-4H18v4h4v-4h2v-4H13.65zM8 15c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+                    fill="#D6D9DB"
+                    fill-rule="evenodd"
+                    transform="rotate(-45 7.879 15.121)"
+                  />
+                </svg>
+              </div>
+              <input
+                class="input__HtmlInput-rcagn3-0 feOJUN"
+                name="key"
+                placeholder="Key"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <h3
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+          >
+            Account ID
+          </h3>
+          <div
+            class="field_wrapper-n32k2e-0 irXinp"
+          >
+            <div
+              class="input_wrapper-sc-15hmhfy-0 duFQAu"
+            >
+              <div
+                class="icon_wrapper-sc-1jgazwq-0 VoEeG"
+              >
+                <svg
+                  class="enable"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"
+                    fill="#D6D9DB"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <input
+                class="input__HtmlInput-rcagn3-0 feOJUN"
+                name="accountId"
+                placeholder="Account ID"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="bspayone__ButtonContainer-sc-9o178t-1 ganFfz"
+          >
+            <button
+              class="secondary__Button-j7mjyk-0 kgyVVR"
+              type="button"
+            >
+              <span>
+                Cancel
+              </span>
+            </button>
+            <button
+              class="primary__Button-sc-1lwi4g7-0 iUXqht"
+              disabled=""
+              type="submit"
+            >
+              <span>
+                Save
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="use_toast__ToastContainer-sc-1wws89f-0 glXDBM"
+  />
+</div>
+`;
