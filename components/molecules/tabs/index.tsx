@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from '../../styled'
 
 interface Tab {
@@ -10,7 +10,8 @@ interface Tab {
 interface Props {
   tabs: Array<Tab>
   active: number
-  setActive: Function
+  setActive: (tab: number) => void
+  onTabChanged?: (tab: number) => void
 }
 
 const Tab = styled.span<{ active: boolean }>`
@@ -36,7 +37,10 @@ const Container = styled.div`
 `
 
 export default function TabPanel(props: Props) {
-  const { tabs = [], active, setActive } = props
+  const { tabs = [], active, setActive, onTabChanged } = props
+  useEffect(() => {
+    typeof onTabChanged == 'function' && onTabChanged(active)
+  }, [active])
   return (
     <Container>
       <TabSection>

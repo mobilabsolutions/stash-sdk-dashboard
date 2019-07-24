@@ -3,7 +3,7 @@ import TabPanel from './index'
 import { useState } from 'react'
 import { fireEvent } from 'react-testing-library'
 
-const Container = () => {
+const Container = ({ onTabChanged }) => {
   const [active, setActive] = useState(0)
   const tabs = [
     {
@@ -20,13 +20,23 @@ const Container = () => {
       render: () => <div>Tab 3 content</div>
     }
   ]
-  return <TabPanel active={active} setActive={setActive} tabs={tabs} />
+  return (
+    <TabPanel
+      active={active}
+      setActive={setActive}
+      tabs={tabs}
+      onTabChanged={onTabChanged}
+    />
+  )
 }
 
 it('Tab Should Render only active tab', () => testRender(Container, {}))
 
 it('Tab Should change tab on click event', () => {
-  const { getByTestId } = deepRender(Container, {})
+  const onTabChanged = jest.fn()
+  const { getByTestId } = deepRender(Container, {
+    onTabChanged
+  })
   expect(getByTestId('tab-content').firstChild).toMatchSnapshot(
     'Active tab content should be "Tab 1"'
   )
@@ -40,4 +50,5 @@ it('Tab Should change tab on click event', () => {
   expect(getByTestId('tab-content').firstChild).toMatchSnapshot(
     'Active tab content should be now "Tab 3"'
   )
+  expect(onTabChanged).toBeCalledWith(2) //Should fire event whe tab was changed
 })
