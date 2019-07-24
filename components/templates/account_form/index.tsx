@@ -7,13 +7,11 @@ import {
   usePsp,
   useToast
 } from '../../../hooks'
-import { PspType, PspConfig } from '../../types'
 import { VerticalScrollContainer } from '../../atoms'
 import {
   ChangePassword,
   KeysConfiguration,
-  PspConfiguration,
-  PaypalConfiguration
+  PspConfiguration
 } from '../../organisms'
 import { useEffect } from 'react'
 
@@ -27,61 +25,45 @@ export default function AccountForm({ setIsLoading }) {
     remove: removeKey,
     isDeleting: keysAreDeleting
   } = useKeys()
-  const { isLoading: pspsAreLoading, data: psps, save: savePsp } = usePsp()
+  const {
+    isLoading: pspsAreLoading,
+    data: psps,
+    save: savePsp,
+    update: updatePsp,
+    remove: deletePsp
+  } = usePsp()
   const { changePassword } = usePassword()
-  const { success: toastSuccess, error: toastError } = useToast()
+  const { success: toastSuccess } = useToast()
   useEffect(() => {
     setIsLoading(
       pspsAreLoading || keysAreLoading || keysAreCreating || keysAreDeleting
     )
   }, [pspsAreLoading, keysAreLoading, keysAreCreating, keysAreDeleting])
 
-  if (pspsAreLoading || keysAreLoading) return null
-
-  const initialPspValues: PspConfig = psps
-    .filter(item => item.type !== PspType.BRAINTREE)
-    .reduce(
-      (result, item) => {
-        if (item.default) {
-          result.type = item.type
-        }
-        if (item.type === PspType.BS_PAYONE) {
-          result.bsAccountId = item.accountId
-          result.bsPortalId = item.portalId
-          result.bsKey = item.key
-        } else if (item.type === PspType.ADYEN) {
-          result.adyenUsername = item.username
-          result.adyenPassword = item.password
-        }
-        return result
-      },
-      {
-        type: PspType.BS_PAYONE,
-        bsAccountId: '',
-        bsPortalId: '',
-        bsKey: '',
-        adyenUsername: '',
-        adyenPassword: ''
-      }
-    )
-
-  const paypalPsp = psps.find(item => item.type === PspType.BRAINTREE)
-  const initialPaypalValues: PspConfig = paypalPsp
-    ? {
-        type: PspType.BRAINTREE,
-        paypalPublicKey: paypalPsp.publicKey,
-        paypalPrivateKey: paypalPsp.privateKey
-      }
-    : {
-        type: PspType.BRAINTREE,
-        paypalPublicKey: '',
-        paypalPrivateKey: ''
-      }
+  if (pspsAreLoading && keysAreLoading) return null
 
   const initChangePasswordValues = {
     oldPassword: '',
     newPassword: '',
     newPasswordRetype: ''
+  }
+
+  const withLoading = (pr: (...p: any[]) => Promise<{ result: any }>) => (
+    ...p: any[]
+  ) => {
+    setIsLoading(true)
+    return new Promise<{ result: any }>((resolve, reject) => {
+      pr(...p)
+        .then((result: any) => {
+          resolve(result)
+        })
+        .catch(err => {
+          reject(err)
+        })
+        .finally(() => {
+          setIsLoading(false)
+        })
+    })
   }
 
   return (
@@ -127,93 +109,11 @@ export default function AccountForm({ setIsLoading }) {
         onDelete={keyEntry => removeKey(keyEntry.id)}
         onCreate={(type, name) => createKey(type, name)}
       />
-      <Formik
-        initialValues={initialPspValues}
-        validate={values => {
-          let errors: any = {}
-
-          if (!values.type) errors.type = getText('Field is required.')
-          if (values.type === PspType.BS_PAYONE) {
-            if (!values.bsAccountId)
-              errors.bsAccountId = getText('Field is required.')
-            if (!values.bsPortalId)
-              errors.bsPortalId = getText('Field is required.')
-            if (!values.bsKey) errors.bsKey = getText('Field is required.')
-          }
-
-          return errors
-        }}
-        validateOnBlur={false}
-        onSubmit={(values, actions) => {
-          actions.setSubmitting(true)
-
-          const apiPsp: any = {
-            pspId: values.type,
-            pspConfig:
-              values.type === PspType.BS_PAYONE
-                ? {
-                    default: true,
-                    accountId: values.bsAccountId,
-                    portalId: values.bsPortalId,
-                    key: values.bsKey
-                  }
-                : {
-                    default: true,
-                    username: values.adyenUsername,
-                    password: values.adyenPassword
-                  }
-          }
-
-          savePsp(apiPsp)
-            .then(() => {
-              toastSuccess(getText('Configuration changed.'))
-              actions.resetForm(values)
-              actions.setSubmitting(false)
-            })
-            .catch(() => {
-              toastError(getText('Save failed.'))
-              actions.setSubmitting(false)
-            })
-        }}
-        render={props => <PspConfiguration {...props} />}
-      />
-      <Formik
-        initialValues={initialPaypalValues}
-        validate={values => {
-          let errors: any = {}
-
-          if (!values.paypalPublicKey)
-            errors.paypalPublicKey = getText('Field is required.')
-          if (!values.paypalPrivateKey)
-            errors.paypalPrivateKey = getText('Field is required.')
-
-          return errors
-        }}
-        validateOnBlur={false}
-        onSubmit={(values, actions) => {
-          actions.setSubmitting(true)
-
-          const apiPsp: any = {
-            pspId: values.type,
-            pspConfig: {
-              default: false,
-              publicKey: values.paypalPublicKey,
-              privateKey: values.paypalPrivateKey
-            }
-          }
-
-          savePsp(apiPsp)
-            .then(() => {
-              toastSuccess(getText('Configuration changed.'))
-              actions.resetForm(values)
-              actions.setSubmitting(false)
-            })
-            .catch(() => {
-              toastError(getText('Save failed.'))
-              actions.setSubmitting(false)
-            })
-        }}
-        render={props => <PaypalConfiguration {...props} />}
+      <PspConfiguration
+        pspList={psps}
+        onCreatePsp={savePsp}
+        onUpdatePsp={withLoading(updatePsp)}
+        onDeletePsp={deletePsp}
       />
     </VerticalScrollContainer>
   )

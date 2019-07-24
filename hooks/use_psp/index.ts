@@ -1,18 +1,27 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { useApi } from '../use_api'
+import { PSP } from '../../types/psp'
 
-const initialState = {
-  data: [],
-  isLoading: true,
-  error: null
+interface State {
+  data: Array<PSP>
+  isLoading: boolean
+  error: any
+}
+
+function initialPsPState(): State {
+  return {
+    data: [],
+    isLoading: true,
+    error: null
+  }
 }
 
 export const usePsp = () => {
-  const [state, setState] = useState(initialState)
-  const { get, post, merchantId } = useApi()
+  const [state, setState] = useState(initialPsPState())
+  const { get, post, merchantId, put, del } = useApi()
 
-  useEffect(() => {
+  const loadPsps = () => {
     setState(prevState => ({ ...prevState, isLoading: true }))
     get(`/api/v1/merchant/${encodeURIComponent(merchantId)}/psp`)
       .then((response: any) =>
@@ -24,19 +33,48 @@ export const usePsp = () => {
         })
       )
       .catch((error: any) => setState({ data: [], isLoading: false, error }))
-  }, [get, merchantId])
+  }
+
+  useEffect(loadPsps, [get, merchantId])
 
   const save = useCallback(
-    pspConfig => {
-      return post(
-        `/api/v1/merchant/${encodeURIComponent(merchantId)}/psp`,
+    (pspId, pspConfig) => {
+      return post(`/api/v1/merchant/${encodeURIComponent(merchantId)}/psp`, {
+        pspId,
         pspConfig
-      ).then(() => {
-        return true
+      }).then(() => {
+        loadPsps()
       })
     },
     [merchantId, post]
   )
 
-  return { ...state, save }
+  const update = useCallback(
+    (pspId, pspConfig) => {
+      return put(
+        `/api/v1/merchant/${encodeURIComponent(
+          merchantId
+        )}/psp/${encodeURIComponent(pspId)}`,
+        pspConfig
+      ).then(() => {
+        loadPsps()
+      })
+    },
+    [merchantId, post]
+  )
+
+  const remove = useCallback(
+    pspId => {
+      return del(
+        `/api/v1/merchant/${encodeURIComponent(
+          merchantId
+        )}/psp/${encodeURIComponent(pspId)}`
+      ).then(() => {
+        loadPsps()
+      })
+    },
+    [merchantId, post]
+  )
+
+  return { ...state, save, update, remove }
 }
