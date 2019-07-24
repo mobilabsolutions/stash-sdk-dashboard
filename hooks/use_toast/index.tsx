@@ -70,7 +70,7 @@ const Toast = styled.div<TostProps>`
   padding: 8px 16px 8px 16px;
   margin: 8px;
   white-space: pre-line;
-  min-height: 50px;
+  min-height: 40px;
   margin-bottom: 15px;
   border-radius: 5px;
   animation-name: ${fadeInUp};
@@ -94,6 +94,10 @@ export const ToastProvider = ({ children }) => {
         prevToasts.filter(toast => toast.valid + 50 > Date.now())
       )
   }, 1000)
+
+  const closeToast = (index: number) => {
+    setToasts(prevToasts => prevToasts.filter((_t, i) => i !== index))
+  }
 
   const success = useCallback((message: ReactComponentLike, time = 5) => {
     setToasts(prevToasts => [
@@ -132,7 +136,7 @@ export const ToastProvider = ({ children }) => {
               {typeof toast.message == 'string' ? (
                 <span>{toast.message}</span>
               ) : (
-                <toast.message />
+                <toast.message onClose={() => closeToast(index)} />
               )}
             </Toast>
           )
