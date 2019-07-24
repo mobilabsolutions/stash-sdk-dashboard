@@ -52,18 +52,20 @@ export default function AccountForm({ setIsLoading }) {
     ...p: any[]
   ) => {
     setIsLoading(true)
-    return new Promise<{ result: any }>((resolve, reject) => {
-      pr(...p)
-        .then((result: any) => {
-          resolve(result)
-        })
-        .catch(err => {
-          reject(err)
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-    })
+    return new Promise<{ result: any; statusCode: number }>(
+      (resolve, reject) => {
+        pr(...p)
+          .then((result: any) => {
+            resolve(result)
+          })
+          .catch(err => {
+            reject(err)
+          })
+          .finally(() => {
+            setIsLoading(false)
+          })
+      }
+    )
   }
 
   return (
@@ -111,9 +113,9 @@ export default function AccountForm({ setIsLoading }) {
       />
       <PspConfiguration
         pspList={psps}
-        onCreatePsp={savePsp}
+        onCreatePsp={withLoading(savePsp)}
         onUpdatePsp={withLoading(updatePsp)}
-        onDeletePsp={deletePsp}
+        onDeletePsp={withLoading(deletePsp)}
       />
     </VerticalScrollContainer>
   )
