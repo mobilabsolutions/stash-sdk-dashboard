@@ -16,6 +16,15 @@ const Form = styled.form`
   padding: 16px;
 `
 
+export const PageTitleSection = ({ title, children }) => {
+  return (
+    <Wrapper>
+      <H2>{title}</H2>
+      {children}
+    </Wrapper>
+  )
+}
+
 export default function PageForm({ title, handleSubmit = null, children }) {
   return (
     <Wrapper>
