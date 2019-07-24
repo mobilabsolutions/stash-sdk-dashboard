@@ -1,12 +1,17 @@
 import { theme } from './style'
+import { TransactionAction, TransactionStatus } from '../hooks/types'
 
 export const statusToAction = {
-  'pre-Authorised': 'PREAUTH',
-  authorised: 'AUTH',
-  reversed: 'REVERSAL',
-  refunded: 'REFUND',
-  fail: 'FAIL',
-  captured: 'CAPTURE'
+  'pre-Authorised': TransactionAction.PREAUTH,
+  authorised: TransactionAction.AUTH,
+  reversed: TransactionAction.REVERSAL,
+  refunded: TransactionAction.REFUND,
+  fail: TransactionStatus.FAIL,
+  chargeback: TransactionAction.CHARGEBACK,
+  chargeback_reversed: TransactionAction['CHARGEBACK_REVERSED'],
+  additional: TransactionAction.ADDITIONAL,
+  pending: TransactionStatus.PENDING,
+  captured: TransactionAction.CAPTURE
 }
 
 function reverse(
@@ -27,6 +32,8 @@ export const getMappedStatus = (status: string, action: string): string => {
   switch (status) {
     case 'SUCCESS':
       return !!actionToStatus[action] ? actionToStatus[action] : 'fail'
+    case 'PENDING':
+      return 'pending'
     case 'FAIL':
     default:
       return 'fail'
@@ -38,14 +45,18 @@ export const getStatusColor = (status: string) => {
     case 'captured':
     case 'pre-Authorised':
     case 'authorised':
+    case 'reversed':
+    case 'chargeback_reversed':
+    case 'chargeback':
+    case 'additional':
+    case 'refunded':
       return '#00be41'
     case 'fail':
       return theme.red.A400
-    case 'reversed':
-    case 'refunded':
+    case 'pending':
       return '#f7981c'
     default:
-      return theme.primary.A800
+      return theme.shade.A50
   }
 }
 
@@ -54,14 +65,18 @@ export const getStatusBackgroundColor = (status: string) => {
     case 'captured':
     case 'pre-Authorised':
     case 'authorised':
+    case 'reversed':
+    case 'chargeback_reversed':
+    case 'chargeback':
+    case 'additional':
+    case 'refunded':
       return '#5edb8926'
     case 'fail':
       return '#ff9b9b26'
-    case 'reversed':
-    case 'refunded':
+    case 'pending':
       return '#f7981c26'
     default:
-      return theme.primary.A800
+      return theme.shade.A50
   }
 }
 

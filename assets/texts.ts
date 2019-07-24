@@ -129,6 +129,9 @@ export default {
   fail: { en: 'Failed' },
   captured: { en: 'Captured' },
   reversed: { en: 'Reversed' },
+  pending: { en: 'Pending' },
+  chargeback: { en: 'Chargeback' },
+  chargeback_reversed: { en: 'Chargeback-Reversal' },
   authorised: { en: 'Authorised' },
   'Refund Payment': {},
   Partial: {},
@@ -204,9 +207,9 @@ export default {
   REFUND: { en: 'Refund', de: 'Refund' },
   REVERSAL: { en: 'Reversal', de: 'Reversal' },
   CHARGEBACK: { en: 'Chargeback', de: 'Chargeback' },
-  'CHANRGEBACK-REVERSAL': {
-    en: 'Chargeback-reversal',
-    de: 'Chargeback-reversal'
+  CHARGEBACK_REVERSED: {
+    en: 'Chargeback-Reversal',
+    de: 'Chargeback-Reversal'
   },
   SUCCESS: { en: 'Success' },
   FAIL: { en: 'Fail' },

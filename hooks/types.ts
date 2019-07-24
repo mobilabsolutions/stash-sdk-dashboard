@@ -50,11 +50,15 @@ export enum TransactionAction {
   PREAUTH = 'PREAUTH',
   REVERSAL = 'REVERSAL',
   REFUND = 'REFUND',
+  ADDITIONAL = 'ADDITIONAL',
+  CHARGEBACK = 'CHARGEBACK',
+  'CHARGEBACK_REVERSED' = 'CHARGEBACK_REVERSED',
   CAPTURE = 'CAPTURE'
 }
 
 export enum TransactionStatus {
   SUCCESS = 'SUCCESS',
+  PENDING = 'PENDING',
   FAIL = 'FAIL'
 }
 

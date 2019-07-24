@@ -6,7 +6,7 @@ import { useStoredState, useDownloadcsv } from '..'
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture } from './actions'
 import { statusToAction, isClient } from '../../assets/payment.static'
-import { TransactionAction, TransactionStatus } from '../types'
+import { TransactionAction, TransactionStatus, PaymentMethod } from '../types'
 
 interface Transaction {
   action: TransactionAction
@@ -28,7 +28,18 @@ interface TransactionResponse {
   }
   transactions: Array<Transaction>
 }
-
+export enum StateStatus {
+  all = 'all',
+  authorised = 'authorised',
+  reversed = 'reversed',
+  refunded = 'refunded',
+  captured = 'captured',
+  fail = 'fail',
+  pending = 'pending',
+  chargeback = 'chargeback',
+  'chargeback_reversed' = 'chargeback_reversed',
+  'pre-Authorised' = 'pre-Authorised'
+}
 interface State {
   data: Array<Transaction>
   isLoading: boolean
@@ -37,19 +48,23 @@ interface State {
   startPos: number
   pageSize: number
   totalCount: number
-  status:
-    | ''
-    | 'all'
-    | 'authorised'
-    | 'peversed'
-    | 'refunded'
-    | 'captured'
-    | 'fail'
-    | 'pre-Authorised'
+  status: StateStatus | ''
   text: string
-  paymentMethod: string
+  paymentMethod: PaymentMethod | 'all' | ''
   error: any
   refreshCounter: number
+}
+
+function getStatusFromState(state: State): TransactionStatus {
+  if (state.status === 'pending') return TransactionStatus.PENDING
+  if (state.status === 'fail') return TransactionStatus.FAIL
+  return TransactionStatus.SUCCESS
+}
+
+function getActionFromState(state: State): TransactionAction | '' {
+  return state.status === 'fail' || state.status === 'pending'
+    ? ''
+    : statusToAction[state.status]
 }
 
 function getInitValue(): State {
@@ -83,10 +98,10 @@ function getUrlWithFilter(ep: string, merchantId: string, state: State) {
   ////---------------
   //--------------- Filter ACTION and STATUS
   if (!!state.status && state.status !== 'all') {
-    const status = state.status === 'fail' ? 'FAIL' : 'SUCCESS'
+    const status = getStatusFromState(state)
     url += `&status=${status}`
-    url +=
-      state.status === 'fail' ? '' : `&action=${statusToAction[state.status]}`
+    const action = getActionFromState(state)
+    url += action ? `&action=${action}` : ''
   }
   ////---------------
   if (!!state.paymentMethod && state.paymentMethod !== 'all') {
@@ -215,13 +230,13 @@ export const useTransactions = () => {
       startPos: page * state.pageSize
     }))
 
-  const setStatus = (status: any) =>
+  const setStatus = (status: StateStatus) =>
     setState(prevState => ({ ...prevState, status, startPos: 0 }))
 
   const setText = (text: string) =>
     setState(prevState => ({ ...prevState, text, startPos: 0 }))
 
-  const setPaymentMethod = (paymentMethod: string) =>
+  const setPaymentMethod = (paymentMethod: PaymentMethod) =>
     setState(prevState => ({ ...prevState, paymentMethod, startPos: 0 }))
 
   const clearFilters = () =>
