@@ -2,6 +2,7 @@ import React, { useContext, useState, useCallback } from 'react'
 
 import styled, { keyframes } from '../../components/styled'
 import { useInterval } from '../use_interval'
+import { ReactComponentLike } from 'prop-types'
 
 const fadeInUp = keyframes`
   0% {
@@ -54,7 +55,7 @@ const getFontColor = props => {
     case 'success':
       return props.theme.green.A800
     default:
-      return props.theme.red.A800
+      return '#e7faee'
   }
 }
 
@@ -69,7 +70,7 @@ const Toast = styled.div<TostProps>`
   padding: 8px 16px 8px 16px;
   margin: 8px;
   white-space: pre-line;
-  min-height: 50px;
+  min-height: 40px;
   margin-bottom: 15px;
   border-radius: 5px;
   animation-name: ${fadeInUp};
@@ -94,14 +95,18 @@ export const ToastProvider = ({ children }) => {
       )
   }, 1000)
 
-  const success = useCallback((message: string, time = 5) => {
+  const closeToast = (index: number) => {
+    setToasts(prevToasts => prevToasts.filter((_t, i) => i !== index))
+  }
+
+  const success = useCallback((message: ReactComponentLike, time = 5) => {
     setToasts(prevToasts => [
       ...prevToasts,
       { message, type: 'success', time, valid: Date.now() + time * 1000 }
     ])
   }, [])
 
-  const error = useCallback((message: string, time = 5) => {
+  const error = useCallback((message: ReactComponentLike, time = 5) => {
     setToasts(prevToasts => [
       ...prevToasts,
       { message, type: 'error', time, valid: Date.now() + time * 1000 }
@@ -118,17 +123,33 @@ export const ToastProvider = ({ children }) => {
     <toastContext.Provider value={providerValue}>
       {children}
       <ToastContainer>
-        {toasts.map((toast, index) => (
-          <Toast key={index} type={toast.type} time={toast.time}>
-            <span>{toast.message}</span>
-          </Toast>
-        ))}
+        {toasts.map(
+          (
+            toast: {
+              type: string
+              time: number
+              message: ReactComponentLike
+            },
+            index
+          ) => (
+            <Toast key={index} type={toast.type} time={toast.time}>
+              {typeof toast.message == 'string' ? (
+                <span>{toast.message}</span>
+              ) : (
+                <toast.message onClose={() => closeToast(index)} />
+              )}
+            </Toast>
+          )
+        )}
       </ToastContainer>
     </toastContext.Provider>
   )
 }
 
-export const useToast = () => {
+export const useToast: () => {
+  success: (message: ReactComponentLike, time?: number) => void
+  error: (message: ReactComponentLike, time?: number) => void
+} = () => {
   const { success, error } = useContext(toastContext)
 
   return { success, error }

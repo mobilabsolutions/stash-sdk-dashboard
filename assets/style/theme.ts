@@ -21,6 +21,7 @@ export interface ThemeInterface {
   shade: Color
   red: Color
   green: Color
+  blue: Color
 }
 
 export default {
@@ -79,5 +80,18 @@ export default {
     A700: '#147D64',
     A800: '#0C6B58',
     A900: '#014D40'
+  },
+  blue: {
+    A25: '#f7fafe',
+    A50: '#eff5fe',
+    A100: '#d8e7fd',
+    A200: '#b7d2fb',
+    A300: '#8ebaf8',
+    A400: '#609df6',
+    A500: '#2e7ef2',
+    A600: '#276bcd',
+    A700: '#1f56a7',
+    A800: '#194584',
+    A900: '#12315e'
   }
 }
