@@ -65,7 +65,7 @@ export default function PspCreateForm(props: Props) {
       ))
     }
   )
-  const onClancel = () => {
+  const onCancel = () => {
     setState({
       isCreatingForm: false,
       pspToCreate: null
@@ -113,10 +113,7 @@ export default function PspCreateForm(props: Props) {
                 }}
               />
               {!state.pspToCreate && (
-                <SecondaryButton
-                  label={getText('Cancel')}
-                  onClick={onClancel}
-                />
+                <SecondaryButton label={getText('Cancel')} onClick={onCancel} />
               )}
             </div>
           )}
@@ -131,7 +128,7 @@ export default function PspCreateForm(props: Props) {
             isUpdate={isCreating}
             updateError={createError}
             onUpdatePsp={createPsp}
-            onCancel={onClancel}
+            onCancel={onCancel}
           />
         </div>
       )}
