@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import { theme } from '../assets/style'
 
 export default () => {
   return new Promise<string>((resolve, reject) => {
@@ -10,20 +11,20 @@ export default () => {
 
         resolve(
           data
-            .replace('#b2f1ec', '#CEFBF9')
-            .replace('#80e8e0', '#9DF6F2')
-            .replace('#66e2da', '#6BF2EC')
-            .replace('#33dacd', '#08E8DE')
-            .replace('#00a699', '#07D0C7')
-            .replace('#008489', '#048B85')
-            .replace('#007a87', '#035C58')
-            .replace('#f2f2f2', '#F6F7F7')
-            .replace('#e4e7e7', '#EDEFF0')
-            .replace('#dbdbdb', '#D1D5D7')
-            .replace('#cacccd', '#A3AAAF')
-            .replace('#82888a', '#747F86')
-            .replace('#757575', '#46545E')
-            .replace('#484848', '#22333F')
+            .replace(/#b2f1ec/g, theme.primary.A100)
+            .replace(/#80e8e0/g, theme.primary.A200)
+            .replace(/#66e2da/g, theme.primary.A300)
+            .replace(/#33dacd/g, theme.primary.A500)
+            .replace(/#00a699/g, theme.primary.A500)
+            .replace(/#008489/g, theme.primary.A700)
+            .replace(/#007a87/g, theme.primary.A800)
+            .replace(/#f2f2f2/g, theme.shade.A25)
+            .replace(/#e4e7e7/g, theme.shade.A50)
+            .replace(/#dbdbdb/g, theme.shade.A100)
+            .replace(/#cacccd/g, theme.shade.A200)
+            .replace(/#82888a/g, theme.shade.A300)
+            .replace(/#757575/g, theme.shade.A400)
+            .replace(/#484848/g, theme.shade.A500)
             .replace('font-size: 19px;', 'font-size: 14px;')
         )
       }
