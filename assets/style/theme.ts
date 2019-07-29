@@ -33,7 +33,7 @@ export interface ThemeInterface {
   shade: Color
   red: Color
   green: Color
-  blue: Color
+  mobilab: Color
   spacing: Spacing
 }
 
@@ -53,7 +53,7 @@ export default {
     xxxlarge: '72px',
     xxxxlarge: '144px'
   },
-  primary: {
+  mobilab: {
     A25: '#f5fefe',
     A50: '#ecfefd',
     A100: '#cefbf9',
@@ -105,7 +105,7 @@ export default {
     A800: '#0C6B58',
     A900: '#014D40'
   },
-  blue: {
+  primary: {
     A25: '#f7fafe',
     A50: '#eff5fe',
     A100: '#d8e7fd',

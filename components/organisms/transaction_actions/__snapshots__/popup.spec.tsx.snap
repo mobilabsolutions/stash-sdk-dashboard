@@ -51,7 +51,7 @@ exports[`PopUp Should Render capture form 1`] = `
           </span>
         </button>
         <button
-          className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+          className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
           disabled={false}
           label="Capture"
           onClick={[Function]}
@@ -137,7 +137,7 @@ exports[`PopUp Should Render loading state 1`] = `
               className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
             >
               <div
-                className="input_wrapper-sc-15hmhfy-0 mahog"
+                className="input_wrapper-sc-15hmhfy-0 hwqBS"
                 style={
                   Object {
                     "marginLeft": "16px",
@@ -147,7 +147,7 @@ exports[`PopUp Should Render loading state 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="input__HtmlInput-rcagn3-0 feOJUN"
+                  className="input__HtmlInput-rcagn3-0 iMczqN"
                   name="reason"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -174,7 +174,7 @@ exports[`PopUp Should Render loading state 1`] = `
             </span>
           </button>
           <button
-            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ffbUOi"
             disabled={true}
             label="Reverse the Transaction"
             onClick={null}
@@ -583,7 +583,7 @@ exports[`PopUp Should Render refund form 1`] = `
               className="refund__Value-a7ak7z-0 iETVAo"
             >
               <label
-                className="radio__Label-sc-1hx8hak-0 cDnVOc"
+                className="radio__Label-sc-1hx8hak-0 kZePut"
                 label="Partial"
               >
                 Partial
@@ -597,7 +597,7 @@ exports[`PopUp Should Render refund form 1`] = `
                 <span />
               </label>
               <label
-                className="radio__Label-sc-1hx8hak-0 cDnVOc"
+                className="radio__Label-sc-1hx8hak-0 kZePut"
                 label="Full"
               >
                 Full
@@ -648,7 +648,7 @@ exports[`PopUp Should Render refund form 1`] = `
               >
                 <input
                   autoFocus={false}
-                  className="input_currency__HtmlInput-obstnl-0 dxBBBe"
+                  className="input_currency__HtmlInput-obstnl-0 cVRLQV"
                   disabled={true}
                   name="refund"
                   onBlur={[Function]}
@@ -689,7 +689,7 @@ exports[`PopUp Should Render refund form 1`] = `
               className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
             >
               <div
-                className="input_wrapper-sc-15hmhfy-0 mahog"
+                className="input_wrapper-sc-15hmhfy-0 hwqBS"
                 style={
                   Object {
                     "marginLeft": "16px",
@@ -699,7 +699,7 @@ exports[`PopUp Should Render refund form 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="input__HtmlInput-rcagn3-0 feOJUN"
+                  className="input__HtmlInput-rcagn3-0 iMczqN"
                   name="reason"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -775,7 +775,7 @@ exports[`PopUp Should Render refund form 1`] = `
             </span>
           </button>
           <button
-            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
             disabled={false}
             label="Refund the Transaction"
             onClick={null}
@@ -862,7 +862,7 @@ exports[`PopUp Should Render reverse form 1`] = `
               className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
             >
               <div
-                className="input_wrapper-sc-15hmhfy-0 mahog"
+                className="input_wrapper-sc-15hmhfy-0 hwqBS"
                 style={
                   Object {
                     "marginLeft": "16px",
@@ -872,7 +872,7 @@ exports[`PopUp Should Render reverse form 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="input__HtmlInput-rcagn3-0 feOJUN"
+                  className="input__HtmlInput-rcagn3-0 iMczqN"
                   name="reason"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -899,7 +899,7 @@ exports[`PopUp Should Render reverse form 1`] = `
             </span>
           </button>
           <button
-            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
             disabled={false}
             label="Reverse the Transaction"
             onClick={null}

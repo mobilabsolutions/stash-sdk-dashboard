@@ -66,7 +66,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="merchantId"
               onBlur={[Function]}
               onChange={[Function]}
@@ -109,7 +109,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="publicKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -142,7 +142,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
             >
               <input
                 autoFocus={false}
-                className="input__HtmlInput-rcagn3-0 feOJUN"
+                className="input__HtmlInput-rcagn3-0 iMczqN"
                 name="urlPrefix"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -178,7 +178,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="country"
             onBlur={[Function]}
             onChange={[Function]}
@@ -212,7 +212,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="locale"
             onBlur={[Function]}
             onChange={[Function]}
@@ -246,7 +246,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="currency"
             onBlur={[Function]}
             onChange={[Function]}
@@ -262,7 +262,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
       className="adyen__ButtonContainer-sc-1klwv2m-1 exjyaQ"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 iUXqht"
+        className="primary__Button-sc-1lwi4g7-0 dvjQji"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -343,7 +343,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="merchantId"
               onBlur={[Function]}
               onChange={[Function]}
@@ -386,7 +386,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="publicKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -419,7 +419,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
             >
               <input
                 autoFocus={false}
-                className="input__HtmlInput-rcagn3-0 feOJUN"
+                className="input__HtmlInput-rcagn3-0 iMczqN"
                 name="urlPrefix"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -455,7 +455,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="country"
             onBlur={[Function]}
             onChange={[Function]}
@@ -489,7 +489,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="locale"
             onBlur={[Function]}
             onChange={[Function]}
@@ -523,7 +523,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="currency"
             onBlur={[Function]}
             onChange={[Function]}
@@ -539,7 +539,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
       className="adyen__ButtonContainer-sc-1klwv2m-1 exjyaQ"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 iUXqht"
+        className="primary__Button-sc-1lwi4g7-0 dvjQji"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -620,7 +620,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="sandboxMerchantId"
               onBlur={[Function]}
               onChange={[Function]}
@@ -663,7 +663,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="sandboxPublicKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -698,7 +698,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="country"
             onBlur={[Function]}
             onChange={[Function]}
@@ -732,7 +732,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="locale"
             onBlur={[Function]}
             onChange={[Function]}
@@ -766,7 +766,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
         >
           <input
             autoFocus={false}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="currency"
             onBlur={[Function]}
             onChange={[Function]}
@@ -782,7 +782,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
       className="adyen__ButtonContainer-sc-1klwv2m-1 exjyaQ"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 iUXqht"
+        className="primary__Button-sc-1lwi4g7-0 dvjQji"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -863,7 +863,7 @@ exports[`PspForm should render BRAINTREE fields for production 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="merchantId"
               onBlur={[Function]}
               onChange={[Function]}
@@ -906,7 +906,7 @@ exports[`PspForm should render BRAINTREE fields for production 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="publicKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -949,7 +949,7 @@ exports[`PspForm should render BRAINTREE fields for production 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="privateKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -966,7 +966,7 @@ exports[`PspForm should render BRAINTREE fields for production 1`] = `
       className="braintree__ButtonContainer-sc-1fma5i9-1 hHWccx"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 iUXqht"
+        className="primary__Button-sc-1lwi4g7-0 dvjQji"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -1047,7 +1047,7 @@ exports[`PspForm should render BRAINTREE fields for sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="sandboxMerchantId"
               onBlur={[Function]}
               onChange={[Function]}
@@ -1090,7 +1090,7 @@ exports[`PspForm should render BRAINTREE fields for sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="sandboxPublicKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -1133,7 +1133,7 @@ exports[`PspForm should render BRAINTREE fields for sandbox 1`] = `
             </div>
             <input
               autoFocus={false}
-              className="input__HtmlInput-rcagn3-0 feOJUN"
+              className="input__HtmlInput-rcagn3-0 iMczqN"
               name="sandboxPrivateKey"
               onBlur={[Function]}
               onChange={[Function]}
@@ -1150,7 +1150,7 @@ exports[`PspForm should render BRAINTREE fields for sandbox 1`] = `
       className="braintree__ButtonContainer-sc-1fma5i9-1 hHWccx"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 iUXqht"
+        className="primary__Button-sc-1lwi4g7-0 dvjQji"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -1207,7 +1207,7 @@ exports[`PspForm should render BS_PAYONE fields 1`] = `
         </div>
         <input
           autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 feOJUN"
+          className="input__HtmlInput-rcagn3-0 iMczqN"
           name="merchantId"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1249,7 +1249,7 @@ exports[`PspForm should render BS_PAYONE fields 1`] = `
         </div>
         <input
           autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 feOJUN"
+          className="input__HtmlInput-rcagn3-0 iMczqN"
           name="portalId"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1292,7 +1292,7 @@ exports[`PspForm should render BS_PAYONE fields 1`] = `
         </div>
         <input
           autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 feOJUN"
+          className="input__HtmlInput-rcagn3-0 iMczqN"
           name="key"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1334,7 +1334,7 @@ exports[`PspForm should render BS_PAYONE fields 1`] = `
         </div>
         <input
           autoFocus={false}
-          className="input__HtmlInput-rcagn3-0 feOJUN"
+          className="input__HtmlInput-rcagn3-0 iMczqN"
           name="accountId"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1349,7 +1349,7 @@ exports[`PspForm should render BS_PAYONE fields 1`] = `
       className="bspayone__ButtonContainer-sc-9o178t-1 kpJOqC"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 iUXqht"
+        className="primary__Button-sc-1lwi4g7-0 dvjQji"
         disabled={true}
         onClick={null}
         style={Object {}}
