@@ -262,7 +262,7 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
       className="adyen__ButtonContainer-sc-1klwv2m-1 exjyaQ"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 dvjQji"
+        className="primary__Button-sc-1lwi4g7-0 kLABFK"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -539,7 +539,7 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
       className="adyen__ButtonContainer-sc-1klwv2m-1 exjyaQ"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 dvjQji"
+        className="primary__Button-sc-1lwi4g7-0 kLABFK"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -782,7 +782,7 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
       className="adyen__ButtonContainer-sc-1klwv2m-1 exjyaQ"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 dvjQji"
+        className="primary__Button-sc-1lwi4g7-0 kLABFK"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -966,7 +966,7 @@ exports[`PspForm should render BRAINTREE fields for production 1`] = `
       className="braintree__ButtonContainer-sc-1fma5i9-1 hHWccx"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 dvjQji"
+        className="primary__Button-sc-1lwi4g7-0 kLABFK"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -1150,7 +1150,7 @@ exports[`PspForm should render BRAINTREE fields for sandbox 1`] = `
       className="braintree__ButtonContainer-sc-1fma5i9-1 hHWccx"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 dvjQji"
+        className="primary__Button-sc-1lwi4g7-0 kLABFK"
         disabled={true}
         onClick={null}
         style={Object {}}
@@ -1349,7 +1349,7 @@ exports[`PspForm should render BS_PAYONE fields 1`] = `
       className="bspayone__ButtonContainer-sc-9o178t-1 kpJOqC"
     >
       <button
-        className="primary__Button-sc-1lwi4g7-0 dvjQji"
+        className="primary__Button-sc-1lwi4g7-0 kLABFK"
         disabled={true}
         onClick={null}
         style={Object {}}

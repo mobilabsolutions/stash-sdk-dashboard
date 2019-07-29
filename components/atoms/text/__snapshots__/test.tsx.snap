@@ -2,25 +2,25 @@
 
 exports[`ActiveH1 Should render 1`] = `
 <h1
-  className="h1_active-fbufqz-0 ebIXgM"
+  className="h1_active-fbufqz-0 gFKkAx"
 />
 `;
 
 exports[`ActiveH2 Should render 1`] = `
 <h2
-  className="h2_active-sc-1r3712n-0 bHzNju"
+  className="h2_active-sc-1r3712n-0 gzoUbG"
 />
 `;
 
 exports[`ActiveH3 Should render 1`] = `
 <h3
-  className="h3_active-x7etx6-0 dizoVX"
+  className="h3_active-x7etx6-0 jFMuZM"
 />
 `;
 
 exports[`ActiveH4 Should render 1`] = `
 <h4
-  className="h4_active-tx568s-0 cLWFep"
+  className="h4_active-tx568s-0 beCDsK"
 />
 `;
 

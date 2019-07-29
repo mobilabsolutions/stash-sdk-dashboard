@@ -51,7 +51,7 @@ exports[`PopUp Should Render capture form 1`] = `
           </span>
         </button>
         <button
-          className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
+          className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 cBPFLb"
           disabled={false}
           label="Capture"
           onClick={[Function]}
@@ -137,7 +137,7 @@ exports[`PopUp Should Render loading state 1`] = `
               className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
             >
               <div
-                className="input_wrapper-sc-15hmhfy-0 hwqBS"
+                className="input_wrapper-sc-15hmhfy-0 kUPUFH"
                 style={
                   Object {
                     "marginLeft": "16px",
@@ -174,7 +174,7 @@ exports[`PopUp Should Render loading state 1`] = `
             </span>
           </button>
           <button
-            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ffbUOi"
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 lnGBXS"
             disabled={true}
             label="Reverse the Transaction"
             onClick={null}
@@ -583,7 +583,7 @@ exports[`PopUp Should Render refund form 1`] = `
               className="refund__Value-a7ak7z-0 iETVAo"
             >
               <label
-                className="radio__Label-sc-1hx8hak-0 kZePut"
+                className="radio__Label-sc-1hx8hak-0 dnPjqz"
                 label="Partial"
               >
                 Partial
@@ -597,7 +597,7 @@ exports[`PopUp Should Render refund form 1`] = `
                 <span />
               </label>
               <label
-                className="radio__Label-sc-1hx8hak-0 kZePut"
+                className="radio__Label-sc-1hx8hak-0 dnPjqz"
                 label="Full"
               >
                 Full
@@ -689,7 +689,7 @@ exports[`PopUp Should Render refund form 1`] = `
               className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
             >
               <div
-                className="input_wrapper-sc-15hmhfy-0 hwqBS"
+                className="input_wrapper-sc-15hmhfy-0 kUPUFH"
                 style={
                   Object {
                     "marginLeft": "16px",
@@ -775,7 +775,7 @@ exports[`PopUp Should Render refund form 1`] = `
             </span>
           </button>
           <button
-            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 cBPFLb"
             disabled={false}
             label="Refund the Transaction"
             onClick={null}
@@ -862,7 +862,7 @@ exports[`PopUp Should Render reverse form 1`] = `
               className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
             >
               <div
-                className="input_wrapper-sc-15hmhfy-0 hwqBS"
+                className="input_wrapper-sc-15hmhfy-0 kUPUFH"
                 style={
                   Object {
                     "marginLeft": "16px",
@@ -899,7 +899,7 @@ exports[`PopUp Should Render reverse form 1`] = `
             </span>
           </button>
           <button
-            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
+            className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 cBPFLb"
             disabled={false}
             label="Reverse the Transaction"
             onClick={null}

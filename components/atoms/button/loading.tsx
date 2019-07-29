@@ -16,7 +16,7 @@ const ExtendedButton = styled(Button)<ButtonProps>`
   min-width: 150px;
   :disabled {
     background-color: ${props =>
-      props.isLoading ? props.theme.primary.A600 : props.theme.shade.A200};
+      props.isLoading ? props.theme.primary.A500 : props.theme.shade.A200};
   }
 `
 

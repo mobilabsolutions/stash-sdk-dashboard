@@ -33,11 +33,11 @@ const InputWrapper = styled.div<InputWrapperProps>`
   min-height: 38px;
   border: solid 1px
     ${props =>
-      props.focused ? props.theme.primary.A600 : props.theme.shade.A50};
+      props.focused ? props.theme.primary.A500 : props.theme.shade.A50};
   background-color: ${props => props.theme.shade.A25};
   :hover {
     border-color: ${props =>
-      props.focused ? props.theme.primary.A600 : props.theme.shade.A200};
+      props.focused ? props.theme.primary.A500 : props.theme.shade.A200};
   }
 `
 

@@ -17,7 +17,7 @@ const Checkmark_stem = styled.span`
   position: absolute;
   width: 1px;
   height: 9px;
-  background-color: ${props => props.theme.primary.A600};
+  background-color: ${props => props.theme.primary.A500};
   left: 11px;
   top: 6px;
 `
@@ -25,7 +25,7 @@ const Checkmark_kick = styled.span`
   position: absolute;
   width: 3px;
   height: 1px;
-  background-color: ${props => props.theme.primary.A600};
+  background-color: ${props => props.theme.primary.A500};
   left: 8px;
   top: 14px;
 `
@@ -74,9 +74,9 @@ const styles = {
   control: (propv, { isFocused }) => ({
     ...propv,
     backgroundColor: Theme.shade.A25,
-    borderColor: isFocused ? Theme.primary.A600 : Theme.shade.A50,
+    borderColor: isFocused ? Theme.primary.A500 : Theme.shade.A50,
     '&:hover': {
-      borderColor: isFocused ? Theme.primary.A600 : Theme.shade.A200
+      borderColor: isFocused ? Theme.primary.A500 : Theme.shade.A200
     },
     boxShadow: 'unset'
   }),
@@ -90,7 +90,7 @@ const styles = {
       : isFocused
       ? Theme.shade.A25
       : prov.backgroundColor,
-    color: isSelected ? Theme.primary.A600 : Theme.shade.A200
+    color: isSelected ? Theme.primary.A500 : Theme.shade.A200
   })
 }
 

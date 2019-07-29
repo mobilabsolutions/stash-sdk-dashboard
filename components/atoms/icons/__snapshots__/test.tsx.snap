@@ -18,7 +18,7 @@ exports[`AccountIcon Should Render 1`] = `
 
 exports[`CopyIcon Should Render 1`] = `
 <svg
-  className="enable copy__Svg-sc-9gkwvr-0 iSyLIE"
+  className="enable copy__Svg-sc-9gkwvr-0 ijKBfV"
   height={24}
   onClick={[Function]}
   viewBox="0 0 24 24"

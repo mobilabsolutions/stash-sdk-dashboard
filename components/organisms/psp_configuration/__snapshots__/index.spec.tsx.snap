@@ -6,7 +6,7 @@ Array [
     className="psp_create_form__Container-sc-11to5vc-0 kWdnas"
   >
     <button
-      className="primary__Button-sc-1lwi4g7-0 dvjQji"
+      className="primary__Button-sc-1lwi4g7-0 kLABFK"
       disabled={false}
       onClick={[Function]}
       style={Object {}}
@@ -365,7 +365,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
               </span>
             </button>
             <button
-              class="primary__Button-sc-1lwi4g7-0 dvjQji"
+              class="primary__Button-sc-1lwi4g7-0 kLABFK"
               disabled=""
               type="submit"
             >

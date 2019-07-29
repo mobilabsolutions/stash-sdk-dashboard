@@ -13,7 +13,7 @@ const LoadingBar = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: ${p => p.theme.primary.A600};
+  background-color: ${p => p.theme.primary.A500};
   ::before {
     display: block;
     position: absolute;
@@ -23,10 +23,10 @@ const LoadingBar = styled.div`
     height: 2px;
     background-image: linear-gradient(
       to right,
-      ${p => p.theme.primary.A600},
+      ${p => p.theme.primary.A500},
       #ffffff,
       #ffffff,
-      ${p => p.theme.primary.A600}
+      ${p => p.theme.primary.A500}
     );
     animation: ${Animation} 1s linear infinite;
   }

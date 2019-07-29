@@ -15,7 +15,7 @@ exports[`RefundForm Should Render 1`] = `
         className="refund__Value-a7ak7z-0 iETVAo"
       >
         <label
-          className="radio__Label-sc-1hx8hak-0 kZePut"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Partial"
         >
           Partial
@@ -29,7 +29,7 @@ exports[`RefundForm Should Render 1`] = `
           <span />
         </label>
         <label
-          className="radio__Label-sc-1hx8hak-0 kZePut"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Full"
         >
           Full
@@ -121,7 +121,7 @@ exports[`RefundForm Should Render 1`] = `
         className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
       >
         <div
-          className="input_wrapper-sc-15hmhfy-0 hwqBS"
+          className="input_wrapper-sc-15hmhfy-0 kUPUFH"
           style={
             Object {
               "marginLeft": "16px",
@@ -158,7 +158,7 @@ exports[`RefundForm Should Render 1`] = `
       </span>
     </button>
     <button
-      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 dvYQJY"
+      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 cBPFLb"
       disabled={false}
       label="Refund the Transaction"
       onClick={null}
@@ -187,7 +187,7 @@ exports[`RefundForm Should use loading status 1`] = `
         className="refund__Value-a7ak7z-0 iETVAo"
       >
         <label
-          className="radio__Label-sc-1hx8hak-0 kZePut"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Partial"
         >
           Partial
@@ -201,7 +201,7 @@ exports[`RefundForm Should use loading status 1`] = `
           <span />
         </label>
         <label
-          className="radio__Label-sc-1hx8hak-0 kZePut"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Full"
         >
           Full
@@ -293,7 +293,7 @@ exports[`RefundForm Should use loading status 1`] = `
         className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
       >
         <div
-          className="input_wrapper-sc-15hmhfy-0 hwqBS"
+          className="input_wrapper-sc-15hmhfy-0 kUPUFH"
           style={
             Object {
               "marginLeft": "16px",
@@ -330,7 +330,7 @@ exports[`RefundForm Should use loading status 1`] = `
       </span>
     </button>
     <button
-      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ffbUOi"
+      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 lnGBXS"
       disabled={true}
       label="Refund the Transaction"
       onClick={null}

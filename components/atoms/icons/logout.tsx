@@ -6,7 +6,7 @@ const Svg = styled.svg`
     fill: ${props => props.theme.shade.A300};
   }
   :hover {
-    fill: ${props => props.theme.primary.A600};
+    fill: ${props => props.theme.primary.A500};
   }
   :active {
     fill: ${props => props.theme.primary.A700};

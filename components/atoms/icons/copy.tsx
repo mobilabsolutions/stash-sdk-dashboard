@@ -3,7 +3,7 @@ import styled from '../../styled'
 const Svg = styled.svg`
   fill: #d4d4d4;
   :hover {
-    fill: ${props => props.theme.primary.A600};
+    fill: ${props => props.theme.primary.A500};
   }
   :active {
     fill: ${props => props.theme.primary.A700};

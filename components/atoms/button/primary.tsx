@@ -45,7 +45,7 @@ export const Button = styled.button<StyledButtonProps>`
     font-size: 14px;
     padding: 0.75em 1.5em;
   }
-  background-color: ${props => props.theme.primary.A600};
+  background-color: ${props => props.theme.primary.A500};
   width: ${getWidth};
   :hover,
   :focus {
