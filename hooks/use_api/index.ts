@@ -8,16 +8,24 @@ const BACKEND_HOST = isClient
   ? ''
   : process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
 
+enum Method {
+  GET = 'GET',
+  POST = 'POST',
+  DELETE = 'DELETE',
+  PUT = 'PUT',
+  PATCH = 'PATCH'
+}
+
 const apiCall = (
   token: string,
   refresh: () => Promise<string>,
-  method: string,
+  method: Method,
   path: string,
   content: object = null,
   headers = {},
   getRaw = false
 ) => {
-  const request: any = {
+  const request: RequestInit = {
     method,
     headers: {
       ...headers,
@@ -34,7 +42,7 @@ const apiCall = (
   const url = `${BACKEND_HOST}${path}`
   let didRefresh = false
 
-  const processApiCall = (request: any) => {
+  const processApiCall = (request: RequestInit) => {
     return new Promise((resolve, reject) => {
       return fetch(url, request)
         .then(response => {
@@ -52,9 +60,11 @@ const apiCall = (
                 return processApiCall({
                   method,
                   headers: {
+                    ...headers,
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${accessToken}`
                   },
+                  body: !!content ? JSON.stringify(content) : null,
                   credentials: 'include'
                 })
               })
@@ -165,31 +175,32 @@ export const useApi = () => {
   )
 
   const getRaw = useCallback(
-    (path: string) => apiCall(token, refresh, 'GET', path, undefined, {}, true),
+    (path: string) =>
+      apiCall(token, refresh, Method.GET, path, undefined, {}, true),
     [refresh, token]
   )
 
   const get = useCallback(
-    (path: string) => apiCall(token, refresh, 'GET', path),
+    (path: string) => apiCall(token, refresh, Method.GET, path),
     [refresh, token]
   )
   const put = useCallback(
     (path: string, content: object, headers: object = {}) =>
-      apiCall(token, refresh, 'PUT', path, content, headers),
+      apiCall(token, refresh, Method.PUT, path, content, headers),
     [refresh, token]
   )
   const patch = useCallback(
     (path: string, content: object, headers: object = {}) =>
-      apiCall(token, refresh, 'PATCH', path, content, headers),
+      apiCall(token, refresh, Method.PATCH, path, content, headers),
     [refresh, token]
   )
   const post = useCallback(
     (path: string, content: object, headers: object = {}) =>
-      apiCall(token, refresh, 'POST', path, content, headers),
+      apiCall(token, refresh, Method.POST, path, content, headers),
     [refresh, token]
   )
   const del = useCallback(
-    (path: string) => apiCall(token, refresh, 'DELETE', path),
+    (path: string) => apiCall(token, refresh, Method.DELETE, path),
     [refresh, token]
   )
 
