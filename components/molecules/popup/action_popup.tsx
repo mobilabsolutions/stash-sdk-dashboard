@@ -23,7 +23,7 @@ const ButtonContainer = styled.div`
   justify-content: flex-end;
   border-radius: 5px;
   > button {
-    margin-left: 12px;
+    margin-left: ${p => p.theme.spacing.small};
   }
 `
 const HeaderContainer = styled.div`

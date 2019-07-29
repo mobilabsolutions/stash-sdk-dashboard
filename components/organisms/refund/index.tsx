@@ -15,7 +15,7 @@ const Value = styled.span`
   display: flex;
   flex: 0 0 60%;
   > label {
-    margin-right: 18px;
+    margin-right: ${p => p.theme.spacing.small};
   }
 `
 
@@ -24,22 +24,24 @@ const FormItemContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   padding: 5px 5px 5px 0px;
-  margin-bottom: 16px;
+  margin-bottom: ${p => p.theme.spacing.small};
 `
 
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 12px 24px 12px 24px;
+  padding-right: ${p => p.theme.spacing.medium};
+  padding-left: ${p => p.theme.spacing.medium};
+  padding-bottom: ${p => p.theme.spacing.medium};
   align-items: center;
   justify-content: flex-end;
   border-radius: 5px;
   > button {
-    margin-left: 12px;
+    margin-left: ${p => p.theme.spacing.small};
   }
 `
 const ContentContainer = styled.div`
-  padding: 32px;
+  padding: ${p => p.theme.spacing.medium};
 `
 
 export default function RefundForm({

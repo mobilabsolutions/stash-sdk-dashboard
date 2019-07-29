@@ -6,16 +6,16 @@ exports[`RefundForm Should Render 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="refund__ContentContainer-a7ak7z-3 jIBzWt"
+    className="refund__ContentContainer-a7ak7z-3 icpIBn"
   >
     <div
       className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
     >
       <span
-        className="refund__Value-a7ak7z-0 hWqYlJ"
+        className="refund__Value-a7ak7z-0 iETVAo"
       >
         <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Partial"
         >
           Partial
@@ -29,7 +29,7 @@ exports[`RefundForm Should Render 1`] = `
           <span />
         </label>
         <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Full"
         >
           Full
@@ -80,7 +80,7 @@ exports[`RefundForm Should Render 1`] = `
         >
           <input
             autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 dxBBBe"
+            className="input_currency__HtmlInput-obstnl-0 cVRLQV"
             disabled={true}
             name="refund"
             onBlur={[Function]}
@@ -121,7 +121,7 @@ exports[`RefundForm Should Render 1`] = `
         className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
       >
         <div
-          className="input_wrapper-sc-15hmhfy-0 mahog"
+          className="input_wrapper-sc-15hmhfy-0 kUPUFH"
           style={
             Object {
               "marginLeft": "16px",
@@ -131,7 +131,7 @@ exports[`RefundForm Should Render 1`] = `
         >
           <input
             autoFocus={true}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
@@ -145,7 +145,7 @@ exports[`RefundForm Should Render 1`] = `
     </div>
   </div>
   <div
-    className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
+    className="refund__ButtonContainer-a7ak7z-2 ldTkQC"
   >
     <button
       className="secondary__Button-j7mjyk-0 kgyVVR"
@@ -158,7 +158,7 @@ exports[`RefundForm Should Render 1`] = `
       </span>
     </button>
     <button
-      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 cBPFLb"
       disabled={false}
       label="Refund the Transaction"
       onClick={null}
@@ -178,16 +178,16 @@ exports[`RefundForm Should use loading status 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="refund__ContentContainer-a7ak7z-3 jIBzWt"
+    className="refund__ContentContainer-a7ak7z-3 icpIBn"
   >
     <div
       className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
     >
       <span
-        className="refund__Value-a7ak7z-0 hWqYlJ"
+        className="refund__Value-a7ak7z-0 iETVAo"
       >
         <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Partial"
         >
           Partial
@@ -201,7 +201,7 @@ exports[`RefundForm Should use loading status 1`] = `
           <span />
         </label>
         <label
-          className="radio__Label-sc-1hx8hak-0 cDnVOc"
+          className="radio__Label-sc-1hx8hak-0 dnPjqz"
           label="Full"
         >
           Full
@@ -252,7 +252,7 @@ exports[`RefundForm Should use loading status 1`] = `
         >
           <input
             autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 dxBBBe"
+            className="input_currency__HtmlInput-obstnl-0 cVRLQV"
             disabled={true}
             name="refund"
             onBlur={[Function]}
@@ -293,7 +293,7 @@ exports[`RefundForm Should use loading status 1`] = `
         className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
       >
         <div
-          className="input_wrapper-sc-15hmhfy-0 mahog"
+          className="input_wrapper-sc-15hmhfy-0 kUPUFH"
           style={
             Object {
               "marginLeft": "16px",
@@ -303,7 +303,7 @@ exports[`RefundForm Should use loading status 1`] = `
         >
           <input
             autoFocus={true}
-            className="input__HtmlInput-rcagn3-0 feOJUN"
+            className="input__HtmlInput-rcagn3-0 iMczqN"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
@@ -317,7 +317,7 @@ exports[`RefundForm Should use loading status 1`] = `
     </div>
   </div>
   <div
-    className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
+    className="refund__ButtonContainer-a7ak7z-2 ldTkQC"
   >
     <button
       className="secondary__Button-j7mjyk-0 hSUMXm"
@@ -330,7 +330,7 @@ exports[`RefundForm Should use loading status 1`] = `
       </span>
     </button>
     <button
-      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
+      className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 lnGBXS"
       disabled={true}
       label="Refund the Transaction"
       onClick={null}

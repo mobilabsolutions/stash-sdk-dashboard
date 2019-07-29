@@ -11,7 +11,7 @@ import {
 } from '../../atoms'
 
 const Header = styled.div`
-  margin: 32px 48px;
+  margin: ${p => p.theme.spacing.large} ${p => p.theme.spacing.xxlarge};
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -25,7 +25,7 @@ const H4 = styled.span`
 `
 
 const HeaderBtn = styled(FlatButton)`
-  margin-left: 16px;
+  margin-left: ${p => p.theme.spacing.small};
   display: flex;
   font-size: 14px;
   padding: 11px;

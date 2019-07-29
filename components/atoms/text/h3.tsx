@@ -10,5 +10,5 @@ export default styled.h3`
   letter-spacing: normal;
   color: ${props => props.theme.shade.A700};
   margin-top: 4px;
-  margin-bottom: 8px;
+  margin-bottom: ${p => p.theme.spacing.xsmall};
 `

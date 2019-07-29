@@ -3,7 +3,7 @@
 exports[`Input Should Render 1`] = `
 <input
   autoFocus={false}
-  className="input__HtmlInput-rcagn3-0 feOJUN"
+  className="input__HtmlInput-rcagn3-0 iMczqN"
   onBlur={null}
   onFocus={null}
   placeholder=""
@@ -13,7 +13,7 @@ exports[`Input Should Render 1`] = `
 
 exports[`VisibilityIcon Should Render 1`] = `
 <div
-  className="visibility_icon__Wrapper-sc-1dur5xf-0 ejUawY"
+  className="visibility_icon__Wrapper-sc-1dur5xf-0 gvfdVz"
 >
   <svg
     className="enable"

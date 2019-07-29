@@ -12,6 +12,18 @@ interface Color {
   A900: string
 }
 
+interface Spacing {
+  xxsmall: string
+  xsmall: string
+  small: string
+  medium: string
+  large: string
+  xlarge: string
+  xxlarge: string
+  xxxlarge: string
+  xxxxlarge: string
+}
+
 export interface ThemeInterface {
   font: string
   fontHeadline: string
@@ -21,7 +33,8 @@ export interface ThemeInterface {
   shade: Color
   red: Color
   green: Color
-  blue: Color
+  mobilab: Color
+  spacing: Spacing
 }
 
 export default {
@@ -29,7 +42,18 @@ export default {
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
   fontTransactions: 'Lato,Raleway,Helvetica,Arial,sans-serif',
   white: '#fff',
-  primary: {
+  spacing: {
+    xxsmall: '4px',
+    xsmall: '8px',
+    small: '16px',
+    medium: '24px',
+    large: '32px',
+    xlarge: '40px',
+    xxlarge: '48px',
+    xxxlarge: '72px',
+    xxxxlarge: '144px'
+  },
+  mobilab: {
     A25: '#f5fefe',
     A50: '#ecfefd',
     A100: '#cefbf9',
@@ -81,7 +105,7 @@ export default {
     A800: '#0C6B58',
     A900: '#014D40'
   },
-  blue: {
+  primary: {
     A25: '#f7fafe',
     A50: '#eff5fe',
     A100: '#d8e7fd',

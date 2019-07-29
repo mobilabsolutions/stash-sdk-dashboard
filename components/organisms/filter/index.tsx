@@ -12,8 +12,8 @@ import { FlatButton } from '../../atoms'
 const Wrapper = styled.div`
   display: block;
   height: 68px;
-  margin: 12px 48px;
-  padding: 16px;
+  margin: ${p => p.theme.spacing.small} ${p => p.theme.spacing.xxlarge};
+  padding: ${p => p.theme.spacing.small};
   flex: 1 1 auto;
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 ${props => props.theme.shade.A50};

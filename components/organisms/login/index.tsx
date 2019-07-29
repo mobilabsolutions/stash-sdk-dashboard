@@ -12,14 +12,14 @@ const Wrapper = styled.div`
   align-self: center;
   width: 300px;
   > .title {
-    padding-left: 8px;
+    padding-left: ${p => p.theme.spacing.xsmall};
   }
   > .button {
     display: flex;
-    margin-top: 24px;
+    margin-top: ${p => p.theme.spacing.medium};
   }
   > .link {
-    margin-top: 16px;
+    margin-top: ${p => p.theme.spacing.small};
     display: flex;
     justify-content: center;
   }

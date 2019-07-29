@@ -22,7 +22,7 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   button {
-    margin-right: 12px;
+    margin-right: ${p => p.theme.spacing.small};
   }
 `
 

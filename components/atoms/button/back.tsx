@@ -8,7 +8,7 @@ const CustomFlatButton = styled(FlatButton)`
   background-color: transparent;
   border: 8px solid transparent;
   > svg {
-    margin-right: 8px;
+    margin-right: ${p => p.theme.spacing.xsmall};
     transform: translate(0px, 2px);
   }
 `

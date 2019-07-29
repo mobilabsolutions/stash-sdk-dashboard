@@ -8,5 +8,5 @@ export default styled.h2`
   font-stretch: normal;
   line-height: 1.13;
   letter-spacing: normal;
-  color: ${props => props.theme.primary.A600};
+  color: ${props => props.theme.primary.A500};
 `

@@ -2,7 +2,7 @@
 
 exports[`Disabled PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 iUXqht"
+  className="primary__Button-sc-1lwi4g7-0 kLABFK"
   disabled={true}
   onClick={null}
   style={Object {}}
@@ -36,7 +36,7 @@ exports[`Disabled WarnButton Should Render 1`] = `
 
 exports[`Full size PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 bHiHKa"
+  className="primary__Button-sc-1lwi4g7-0 inRAIZ"
   disabled={false}
   onClick={null}
   style={Object {}}
@@ -48,7 +48,7 @@ exports[`Full size PrimaryButton Should Render 1`] = `
 
 exports[`LoadingButton with loading state Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 jkYHBQ"
+  className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 lnGBXS"
   disabled={true}
   label="Accept"
   onClick={null}
@@ -403,7 +403,7 @@ exports[`LoadingButton with loading state Should Render 1`] = `
 
 exports[`LoadingButton with not loading state Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 ibcFWR"
+  className="primary__Button-sc-1lwi4g7-0 loading__ExtendedButton-h7d8sr-0 cBPFLb"
   disabled={false}
   label="Accept"
   onClick={null}
@@ -417,7 +417,7 @@ exports[`LoadingButton with not loading state Should Render 1`] = `
 
 exports[`PrimaryButton Should Render 1`] = `
 <button
-  className="primary__Button-sc-1lwi4g7-0 iUXqht"
+  className="primary__Button-sc-1lwi4g7-0 kLABFK"
   disabled={false}
   onClick={null}
   style={Object {}}

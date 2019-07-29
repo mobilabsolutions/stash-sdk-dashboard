@@ -30,7 +30,7 @@ export const Item = styled.li`
 export const ItemRow = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 8px;
+  margin: ${p => p.theme.spacing.xsmall};
   align-items: baseline;
   flex-wrap: wrap;
 `

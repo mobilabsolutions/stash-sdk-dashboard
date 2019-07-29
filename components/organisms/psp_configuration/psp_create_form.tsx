@@ -9,20 +9,20 @@ import PspForm from '../psp_form'
 import styled from '../../styled'
 
 const Container = styled.div`
-  margin: 16px 0px;
+  margin: ${p => p.theme.spacing.small} 0px;
   .psp-create-form {
-    padding-top: 24px;
+    padding-top: ${p => p.theme.spacing.medium};
   }
   .psp-select {
     max-width: 300px;
-    margin-right: 16px;
+    margin-right: ${p => p.theme.spacing.small};
   }
   .select-cancel-container {
     display: flex;
     flex-direction: row;
   }
   .add-plus > svg {
-    margin-right: 8px;
+    margin-right: ${p => p.theme.spacing.xsmall};
     transform: translate(-5px, 1px);
   }
 `

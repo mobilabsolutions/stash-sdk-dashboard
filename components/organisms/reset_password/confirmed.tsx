@@ -27,12 +27,12 @@ const LeftWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   > .logo {
-    padding-top: 40px;
-    padding-left: 40px;
-    padding-bottom: 120px;
+    padding-top: ${p => p.theme.spacing.xlarge};
+    padding-left: ${p => p.theme.spacing.xlarge};
+    padding-bottom: ${p => p.theme.spacing.xxxxlarge};
   }
   > .link {
-    margin-top: 16px;
+    margin-top: ${p => p.theme.spacing.small};
     display: flex;
     justify-content: center;
   }

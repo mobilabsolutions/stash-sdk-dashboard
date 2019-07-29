@@ -9,8 +9,8 @@ const HtmlInput = styled.input`
   display: block;
   font-family: ${props => props.theme.font};
   font-size: 14px;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: ${p => p.theme.spacing.small};
+  margin-right: ${p => p.theme.spacing.small};
   box-shadow: none;
   width: 100%;
   :disabled {
