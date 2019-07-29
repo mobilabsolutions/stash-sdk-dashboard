@@ -10,8 +10,8 @@ const ContentWrapper = styled.div`
   background-color: #ffffff;
 `
 const Title = styled(H2)`
-  margin-block-start: 8px;
-  margin-block-end: 8px;
+  margin-block-start: ${p => p.theme.spacing.xsmall};
+  margin-block-end: ${p => p.theme.spacing.xsmall};
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 `

@@ -12,6 +12,18 @@ interface Color {
   A900: string
 }
 
+interface Spacing {
+  xxsmall: string
+  xsmall: string
+  small: string
+  medium: string
+  large: string
+  xlarge: string
+  xxlarge: string
+  xxxlarge: string
+  xxxxlarge: string
+}
+
 export interface ThemeInterface {
   font: string
   fontHeadline: string
@@ -22,6 +34,7 @@ export interface ThemeInterface {
   red: Color
   green: Color
   blue: Color
+  spacing: Spacing
 }
 
 export default {
@@ -29,6 +42,17 @@ export default {
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
   fontTransactions: 'Lato,Raleway,Helvetica,Arial,sans-serif',
   white: '#fff',
+  spacing: {
+    xxsmall: '4px',
+    xsmall: '8px',
+    small: '16px',
+    medium: '24px',
+    large: '32px',
+    xlarge: '40px',
+    xxlarge: '48px',
+    xxxlarge: '72px',
+    xxxxlarge: '144px'
+  },
   primary: {
     A25: '#f5fefe',
     A50: '#ecfefd',

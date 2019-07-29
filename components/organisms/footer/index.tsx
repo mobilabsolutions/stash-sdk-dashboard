@@ -19,8 +19,8 @@ const Span = styled.span`
   line-height: normal;
   letter-spacing: normal;
   color: ${props => props.theme.shade.A200};
-  margin-right: 24px;
-  margin-bottom: 8px;
+  margin-right: ${p => p.theme.spacing.medium};
+  margin-bottom: ${p => p.theme.spacing.xsmall};
   display: block;
 `
 

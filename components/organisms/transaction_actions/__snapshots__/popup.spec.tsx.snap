@@ -38,7 +38,7 @@ exports[`PopUp Should Render capture form 1`] = `
         </div>
       </div>
       <div
-        className="action_popup__ButtonContainer-sc-6dvik9-2 eMWAaF"
+        className="action_popup__ButtonContainer-sc-6dvik9-2 cvPyeC"
       >
         <button
           className="secondary__Button-j7mjyk-0 kgyVVR"
@@ -574,13 +574,13 @@ exports[`PopUp Should Render refund form 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="refund__ContentContainer-a7ak7z-3 jIBzWt"
+          className="refund__ContentContainer-a7ak7z-3 icpIBn"
         >
           <div
             className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
           >
             <span
-              className="refund__Value-a7ak7z-0 hWqYlJ"
+              className="refund__Value-a7ak7z-0 iETVAo"
             >
               <label
                 className="radio__Label-sc-1hx8hak-0 cDnVOc"
@@ -762,7 +762,7 @@ exports[`PopUp Should Render refund form 1`] = `
           </div>
         </div>
         <div
-          className="refund__ButtonContainer-a7ak7z-2 fgEpEj"
+          className="refund__ButtonContainer-a7ak7z-2 ldTkQC"
         >
           <button
             className="secondary__Button-j7mjyk-0 kgyVVR"

@@ -3,7 +3,7 @@ import { VisibilityIcon, InvisibilityIcon } from '../index'
 
 const Wrapper = styled.div`
   display: flex;
-  margin-right: 12px;
+  margin-right: ${p => p.theme.spacing.xsmall};
   align-self: center;
   align-items: center;
   cursor: pointer;

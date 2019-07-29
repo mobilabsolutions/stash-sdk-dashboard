@@ -17,7 +17,7 @@ interface Props {
 const Tab = styled.span<{ active: boolean }>`
   border-bottom: 4px solid
     ${p => (p.active ? p.theme.blue.A500 : p.theme.blue.A50)};
-  margin-right: 16px;
+  margin-right: ${p => p.theme.spacing.small};
   min-width: 100px;
   text-align: center;
   text-transform: uppercase;

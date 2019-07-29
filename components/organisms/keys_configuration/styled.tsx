@@ -1,18 +1,18 @@
 import styled from '../../styled'
 
 export const KeysWrapper = styled.div`
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: ${p => p.theme.spacing.small};
+  margin-bottom: ${p => p.theme.spacing.small};
 `
 
 export const PublishableKeyWrapper = styled.div`
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: ${p => p.theme.spacing.small};
+  margin-bottom: ${p => p.theme.spacing.small};
   display: flex;
   align-items: center;
   > span {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: ${p => p.theme.spacing.medium};
+    margin-right: ${p => p.theme.spacing.medium};
     display: block;
     min-width: 265px;
   }
@@ -20,12 +20,12 @@ export const PublishableKeyWrapper = styled.div`
     cursor: pointer;
   }
   > svg:last-child {
-    margin-left: 24px;
+    margin-left: ${p => p.theme.spacing.medium};
   }
 `
 
 export const PopupWrapper = styled.div`
-  padding: 16px;
+  padding: ${p => p.theme.spacing.small};
   > .buttons {
     display: flex;
     flex-direction: row;
@@ -33,10 +33,10 @@ export const PopupWrapper = styled.div`
     align-items: center;
   }
   > .extra-padding {
-    padding-top: 32px;
+    padding-top: ${p => p.theme.spacing.large};
   }
   > .buttons > button {
-    margin-left: 16px;
+    margin-left: ${p => p.theme.spacing.small};
   }
   > h3 {
     display: block;
@@ -45,8 +45,8 @@ export const PopupWrapper = styled.div`
 `
 
 export const SecretKeyWrapper = styled.div`
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: ${p => p.theme.spacing.small};
+  margin-bottom: ${p => p.theme.spacing.small};
   display: flex;
   align-items: center;
   .name,
@@ -57,15 +57,15 @@ export const SecretKeyWrapper = styled.div`
   }
   .name > span,
   .key > span {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: ${p => p.theme.spacing.medium};
+    margin-right: ${p => p.theme.spacing.medium};
     display: block;
     min-width: 265px;
   }
   .name > svg,
   .key > svg {
     cursor: pointer;
-    margin-left: 24px;
+    margin-left: ${p => p.theme.spacing.medium};
   }
   .wrapper {
     display: flex;
@@ -73,6 +73,6 @@ export const SecretKeyWrapper = styled.div`
   }
   .instruction {
     display: block;
-    margin-left: 24px;
+    margin-left: ${p => p.theme.spacing.medium};
   }
 `

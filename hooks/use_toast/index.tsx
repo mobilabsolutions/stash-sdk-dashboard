@@ -68,10 +68,10 @@ const Toast = styled.div<TostProps>`
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 ${props => props.theme.shade.A50};
   padding: 8px 16px 8px 16px;
-  margin: 8px;
+  margin: ${p => p.theme.spacing.xsmall};
   white-space: pre-line;
   min-height: 40px;
-  margin-bottom: 15px;
+  margin-bottom: ${p => p.theme.spacing.small};
   border-radius: 5px;
   animation-name: ${fadeInUp};
   animation-duration: ${props => props.time}s;

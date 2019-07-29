@@ -14,9 +14,9 @@ const ActionContainer = styled.div`
 const ActBtn = styled(FlatButton)`
   border: none;
   background-color: ${p => p.theme.shade.A25};
-  padding: 7px 27px;
+  padding: ${p => p.theme.spacing.xsmall} ${p => p.theme.spacing.medium};
   border-radius: 16.5px;
-  margin-left: 16px;
+  margin-left: ${p => p.theme.spacing.small};
 `
 
 interface ActionControl {

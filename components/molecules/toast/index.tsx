@@ -7,10 +7,10 @@ const ToastContent = styled.span`
     transform: translateY(2px);
   }
   .check-icon {
-    margin-right: 11px;
+    margin-right: ${p => p.theme.spacing.xsmall};
   }
   .close-icon {
-    margin-left: 16px;
+    margin-left: ${p => p.theme.spacing.small};
     cursor: pointer;
   }
 `

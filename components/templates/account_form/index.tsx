@@ -14,6 +14,13 @@ import {
   PspConfiguration
 } from '../../organisms'
 import { useEffect } from 'react'
+import styled from '../../styled'
+
+const CustomScrollContainer = styled(VerticalScrollContainer)`
+  max-width: 920px;
+  margin-right: auto;
+  margin-left: auto;
+`
 
 export default function AccountForm({ setIsLoading }) {
   const { getText } = useLocalization()
@@ -69,7 +76,7 @@ export default function AccountForm({ setIsLoading }) {
   }
 
   return (
-    <VerticalScrollContainer>
+    <CustomScrollContainer>
       <Formik
         initialValues={initChangePasswordValues}
         validate={values => {
@@ -117,6 +124,6 @@ export default function AccountForm({ setIsLoading }) {
         onUpdatePsp={withLoading(updatePsp)}
         onDeletePsp={withLoading(deletePsp)}
       />
-    </VerticalScrollContainer>
+    </CustomScrollContainer>
   )
 }

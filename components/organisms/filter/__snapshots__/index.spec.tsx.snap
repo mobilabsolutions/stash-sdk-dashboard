@@ -2,7 +2,7 @@
 
 exports[`Filter Selects should not use "" value 1`] = `
 <div
-  className="filter__Wrapper-sc-1wuq206-0 iZMnFi"
+  className="filter__Wrapper-sc-1wuq206-0 iLlCwk"
 >
   <div
     className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
@@ -361,7 +361,7 @@ exports[`Filter Selects should not use "" value 1`] = `
 
 exports[`Filter Selects should use "all" value 1`] = `
 <div
-  className="filter__Wrapper-sc-1wuq206-0 iZMnFi"
+  className="filter__Wrapper-sc-1wuq206-0 iLlCwk"
 >
   <div
     className="filter__ItemWrapper-sc-1wuq206-1 kjgTNB"
