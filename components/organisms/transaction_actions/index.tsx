@@ -49,8 +49,7 @@ export default function TransactionActions({ status, onClick }) {
       <MoreIcon
         height={24}
         width={32}
-        onClick={e => {
-          e.stopPropagation()
+        onClick={() => {
           setShow(!show)
         }}
         data-testid="more-icon"

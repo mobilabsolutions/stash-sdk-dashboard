@@ -85,12 +85,17 @@ const styles = {
     ...global,
     borderBottom: `1px solid ${Theme.shade.A25}`,
     textTransform: 'capitalize',
+    fontWeight: isSelected ? 'bold' : 'normal',
     backgroundColor: isSelected
       ? Theme.primary.A50
       : isFocused
       ? Theme.shade.A25
       : prov.backgroundColor,
-    color: isSelected ? Theme.primary.A500 : Theme.shade.A200
+    color: isSelected
+      ? Theme.primary.A500
+      : isFocused
+      ? Theme.shade.A400
+      : Theme.shade.A200
   })
 }
 

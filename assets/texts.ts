@@ -246,5 +246,7 @@ export default {
   'An error occurred trying to create the PSP. Try again.': {
     de:
       'Beim Erstellen der PSP ist ein Fehler aufgetreten. Versuchen Sie es nochmal.'
-  }
+  },
+  'Transaction ID': { de: 'Transaktions-ID' },
+  'Customer ID': { de: 'Kundennummer' }
 }
