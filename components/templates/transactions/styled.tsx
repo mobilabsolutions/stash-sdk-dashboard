@@ -85,3 +85,20 @@ export const Amount = styled.p`
   overflow: hidden;
   flex: 0 0 4em;
 `
+export const IdLink = styled.span`
+  :hover {
+    text-decoration: underline;
+  }
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-height: 19px; /* fallback */
+  max-height: 38px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  white-space: initial;
+  margin: 0px;
+  word-wrap: break-word;
+  color: ${p => p.theme.primary.A500};
+  cursor: pointer;
+`

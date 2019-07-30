@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
-import { Timestamp, Reason, CustomerId, Amount } from './styled'
+import { Timestamp, Reason, CustomerId, Amount, IdLink } from './styled'
 import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
@@ -14,15 +14,6 @@ import {
 import { getMappedStatus } from '../../../assets/payment.static'
 import Link from 'next/link'
 import { Status } from '../../molecules'
-
-const CustomTrGroupComponent = ({ rowinfo, ...props }) => (
-  <Link
-    as={`/transaction/${rowinfo.original.transactionId}`}
-    href={`/transaction?transactionId=${rowinfo.original.transactionId}`}
-  >
-    <ReactTableDefaults.TrGroupComponent {...props} />
-  </Link>
-)
 
 const headerStyle = {
   fontSize: '16px',
@@ -122,7 +113,6 @@ export default ({
           <Pagination {...props} totalCount={totalCount} />
         )}
         getTrGroupProps={(_state, rowInfo) => ({ rowinfo: rowInfo })}
-        TrGroupComponent={CustomTrGroupComponent}
         data={data}
         manual
         pages={numberOfPages}
@@ -156,7 +146,7 @@ export default ({
         column={global_columns_def}
         columns={[
           {
-            Header: 'Amount',
+            Header: getText('Amount'),
             accessor: 'amount',
             maxWidth: 140,
             headerStyle: {
@@ -176,7 +166,33 @@ export default ({
             )
           },
           {
-            Header: 'Status',
+            Header: getText('Transaction ID'),
+            accessor: 'transactionId',
+            headerStyle: {
+              ...headerStyle,
+              paddingLeft: '32px',
+              textAlign: 'left'
+            },
+            maxWidth: 280,
+            style: {
+              ...cellStyles,
+              paddingLeft: '32px',
+              textAlign: 'left'
+            },
+            Cell: row => {
+              return (
+                <Link
+                  as={`/transaction/${row.value}`}
+                  href={`/transaction?transactionId=${row.value}`}
+                >
+                  <IdLink>{row.value}</IdLink>
+                </Link>
+              )
+            }
+          },
+          {
+            Header: getText('Status'),
+            maxWidth: 180,
             accessor: 'status',
             Cell: row => {
               const status = getMappedStatus(row.value, row.original.action)
@@ -184,7 +200,7 @@ export default ({
             }
           },
           {
-            Header: 'Description',
+            Header: getText('Description'),
             accessor: 'reason',
             headerStyle: {
               ...headerStyle,
@@ -197,7 +213,7 @@ export default ({
             Cell: row => <Reason>{row.value}</Reason>
           },
           {
-            Header: 'Customer Id',
+            Header: getText('Customer ID'),
             accessor: 'customerId',
             headerStyle: {
               ...headerStyle,
@@ -210,7 +226,8 @@ export default ({
             Cell: row => <CustomerId>{row.value}</CustomerId>
           },
           {
-            Header: 'Payment Method',
+            Header: getText('Payment Method'),
+            maxWidth: 140,
             accessor: 'paymentMethod',
             Cell: row => (
               <PaymentMethod
@@ -220,7 +237,7 @@ export default ({
             )
           },
           {
-            Header: 'Date',
+            Header: getText('Date'),
             accessor: 'timestamp',
             headerStyle: {
               ...headerStyle,
