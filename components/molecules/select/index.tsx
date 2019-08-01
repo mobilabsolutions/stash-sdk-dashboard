@@ -1,46 +1,26 @@
 import React from 'react'
 import ReactSelect, { components } from 'react-select'
 import Theme from '../../../assets/style/theme'
-import styled from '../../styled'
-
-const Checkmark = styled.span`
-  text-align: right;
-  bottom: 5px;
-  display: block;
-  margin: auto;
-  float: right;
-  width: 22px;
-  height: 22px;
-  transform: rotate(45deg);
-`
-const Checkmark_stem = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 9px;
-  background-color: ${props => props.theme.primary.A500};
-  left: 11px;
-  top: 6px;
-`
-const Checkmark_kick = styled.span`
-  position: absolute;
-  width: 3px;
-  height: 1px;
-  background-color: ${props => props.theme.primary.A500};
-  left: 8px;
-  top: 14px;
-`
-const Check = () => (
-  <Checkmark>
-    <Checkmark_stem />
-    <Checkmark_kick />
-  </Checkmark>
-)
+import { Check } from '../../atoms'
 
 const Option = props => {
   return (
     <components.Option {...props}>
       {props.children}
-      {props.isSelected && <Check />}
+      {props.isSelected && (
+        <Check
+          width={22}
+          height={22}
+          circleColor="transparent"
+          checkStroke={Theme.primary.A500}
+          style={{
+            transform: 'translateY(-4px)',
+            display: 'block',
+            margin: 'auto',
+            float: 'right'
+          }}
+        />
+      )}
     </components.Option>
   )
 }
