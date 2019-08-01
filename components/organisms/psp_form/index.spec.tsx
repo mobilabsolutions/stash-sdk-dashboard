@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { fireEvent, act } from 'react-testing-library'
 import { cleanup } from 'react-testing-library'
 
-const Container = ({ psp, onUpdatePsp, onCancel }) => {
+const Container = ({ psp, onUpdatePsp, onCancel, onDeletePsp }) => {
   const [isUpdate, setIsUpdate] = useState(false)
   const _onUpdatePsp = (...p: any[]) => {
     // https://reactjs.org/docs/test-utils.html#act
@@ -19,6 +19,7 @@ const Container = ({ psp, onUpdatePsp, onCancel }) => {
       onUpdatePsp={_onUpdatePsp}
       isUpdate={isUpdate}
       onCancel={onCancel}
+      onDeletePsp={onDeletePsp}
       updateError={false}
     />
   )
@@ -123,6 +124,21 @@ describe('PspForm', () => {
       onCancel: () => {}
     })
     getByText(/Cancel/i)
+  })
+
+  test('should render Delete button if necessary', () => {
+    const { getByText } = deepRender(Container, {
+      psp: {
+        type: 'BS_PAYONE',
+        accountId: '42949',
+        default: false,
+        key: '41P13T71t40B8F8f',
+        merchantId: '42865',
+        portalId: '2030968'
+      },
+      onDeletePsp: jest.fn()
+    })
+    getByText(/Delete/i)
   })
 
   test('should submit BS_PAYONE parameters', done => {

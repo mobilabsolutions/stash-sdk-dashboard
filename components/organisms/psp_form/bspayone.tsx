@@ -27,7 +27,7 @@ const ButtonContainer = styled.div`
 
 export default function BSPayone(p: Props) {
   const { getText } = useLocalization()
-  const { psp, onUpdatePsp, onCancel } = p
+  const { psp, onUpdatePsp, onCancel, onDeletePsp } = p
   const initialValues = {
     merchantId: psp.merchantId ? psp.merchantId : '',
     portalId: psp.portalId ? psp.portalId : '',
@@ -108,6 +108,13 @@ export default function BSPayone(p: Props) {
               <SecondaryButton
                 label={getText('Cancel')}
                 onClick={() => onCancel()}
+                disabled={p.isUpdate}
+              />
+            )}
+            {!!onDeletePsp && (
+              <SecondaryButton
+                label={getText('Delete')}
+                onClick={() => onDeletePsp(psp.type)}
                 disabled={p.isUpdate}
               />
             )}
