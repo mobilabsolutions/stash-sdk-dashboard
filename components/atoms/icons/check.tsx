@@ -1,6 +1,12 @@
 import React from 'react'
 
-export default function CarteBleue({ width = 40, height = 40, ...props }) {
+export default function CarteBleue({
+  width = 40,
+  height = 40,
+  circleColor = '#3EBD93',
+  checkStroke = '#FFF',
+  ...props
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,9 +16,9 @@ export default function CarteBleue({ width = 40, height = 40, ...props }) {
       viewBox="0 0 40 40"
     >
       <g fill="none" fillRule="evenodd">
-        <circle cx="20" cy="20" r="20" fill="#3EBD93" />
+        <circle cx="20" cy="20" r="20" fill={circleColor} />
         <path
-          stroke="#FFF"
+          stroke={checkStroke}
           strokeLinecap="round"
           strokeWidth="2"
           d="M11.667 21.481l5.128 5.186L28.333 15"

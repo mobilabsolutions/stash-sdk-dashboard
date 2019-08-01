@@ -13,6 +13,20 @@ const Label = styled.label`
   text-transform: capitalize;
   color: ${props => props.theme.shade.A200};
 `
+
+const DropDown = Buffer.from(
+  `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="4" viewBox="0 0 8 4">
+    <defs>
+        <path id="a" d="M146 14h8l-4 4z"/>
+    </defs>
+    <g fill="#747F86" fill-rule="nonzero" transform="translate(-146 -14)">
+        <use xlink:href="#a"/>
+        <use xlink:href="#a"/>
+    </g>
+</svg>
+`
+).toString('base64')
+
 const Select = styled.select`
   width: 60px;
   height: 32px;
@@ -25,11 +39,8 @@ const Select = styled.select`
   border: solid 1px #ededed;
   background-color: #ffffff;
   /* New select icon */
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%);
-  background-position: calc(100% - 15px) calc(1em - 4px),
-    calc(100% - 10px) calc(1em - 4px);
-  background-size: 5px 5px, 5px 5px;
+  background-image: url(data:image/svg+xml;base64,${DropDown});
+  background-position: calc(100% - 8px) calc(1em - 2px);
   background-repeat: no-repeat;
 `
 
