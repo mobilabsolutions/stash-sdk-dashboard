@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { PSP } from '../../../types/psp'
 import PspForm from '../psp_form'
 import { useLocalization, useToast } from '../../../hooks'
 import { useApi } from '.'
 import styled from '../../styled'
-import { ToastSuccess, ToastError } from '../../molecules'
+import { ToastSuccess, ToastError, WarnPopup } from '../../molecules'
+import { WarnButton } from '../../atoms'
 
 interface Props {
   pspList: Array<PSP>
@@ -20,6 +21,7 @@ export default function PspFormList(props: Props) {
   const { pspList, onUpdatePsp, onDeletePsp } = props
   const { getText } = useLocalization()
   const { success: toastSuccess, error: toastError } = useToast()
+  const [pspToDelete, setPspToDelete] = useState(null)
   const {
     isloading: isUpdating,
     error: updateError,
@@ -48,22 +50,43 @@ export default function PspFormList(props: Props) {
   } = useApi(
     onDeletePsp,
     () => {
-      toastSuccess(getText('PSP configuration deleted.'))
+      toastSuccess(({ onClose }) => (
+        <ToastSuccess onClose={onClose}>
+          {getText('PSP configuration deleted.')}
+        </ToastSuccess>
+      ))
+      setPspToDelete(null)
     },
     () => {
-      toastError(
-        getText('An error occurred trying to delete the PSP. Try again.')
-      )
+      toastError(({ onClose }) => (
+        <ToastError onClose={onClose}>
+          {getText('An error occurred trying to delete the PSP. Try again.')}
+        </ToastError>
+      ))
+      setPspToDelete(null)
     }
   )
   return (
     <div>
+      <WarnPopup
+        action={getText('Delete')}
+        onAction={() => deletePsp(pspToDelete)}
+        show={!!pspToDelete}
+        PrimaryButtonEl={p => <WarnButton type="button" {...p} />}
+        onClose={() => setPspToDelete(null)}
+        header={getText(
+          'Are you sure you want to delete this PSP configuration?'
+        )}
+      >
+        {}
+      </WarnPopup>
+
       {pspList.map((p, i) => {
         return (
           <ItemContainer key={`${p.type}-${i}`}>
             <PspForm
               psp={p}
-              onDeletePsp={deletePsp}
+              onDeletePsp={pspList.length > 1 ? setPspToDelete : null} // At least one psp should remain
               isUpdate={isUpdating}
               updateError={updateError}
               isDeleting={isDeleting}

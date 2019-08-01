@@ -1,5 +1,6 @@
 import { testRender, deepRender } from '../../../test_utils'
 import PspCreateForm from './psp_create_form'
+import PspFormList from './psp_form_list'
 import { fireEvent, queryByAttribute } from 'react-testing-library'
 import { ToastProvider } from '../../../hooks/use_toast'
 import { cleanup } from 'react-testing-library'
@@ -74,5 +75,48 @@ describe('PspCreateForm', () => {
     expect(baseElement.firstChild).toMatchSnapshot(
       'the form for the creation of the selected PSP'
     )
+  })
+})
+
+describe('PspFormList', () => {
+  afterEach(cleanup)
+  const PspListWithToast = ToastWrapper(PspFormList)
+  const BSPayone = {
+    type: 'BS_PAYONE',
+    merchantId: '428651',
+    portalId: '20309681',
+    key: '41P13T71t40B8F8f1',
+    accountId: '429491',
+    default: false
+  }
+  const Braintree = {
+    type: 'BRAINTREE',
+    merchantId: 'merchantid1',
+    publicKey: 'publickey',
+    privateKey: 'privatekey1',
+    default: true
+  }
+  const pspList = [BSPayone, Braintree]
+  test('should allow delete a psp', () => {
+    const onDeletePsp = jest.fn()
+    const onUpdatePsp = jest.fn()
+    const { queryAllByText } = deepRender(PspListWithToast, {
+      pspList,
+      onDeletePsp,
+      onUpdatePsp
+    })
+    const delButtons = queryAllByText(/Delete/i)
+    expect(delButtons.length).toBe(2)
+  })
+  test('should NOT allow delete a psp IF there is only one', () => {
+    const onDeletePsp = jest.fn()
+    const onUpdatePsp = jest.fn()
+    const { queryAllByText } = deepRender(PspListWithToast, {
+      pspList: [BSPayone],
+      onDeletePsp,
+      onUpdatePsp
+    })
+    const delButtons = queryAllByText(/Delete/i)
+    expect(delButtons.length).toBe(0)
   })
 })
