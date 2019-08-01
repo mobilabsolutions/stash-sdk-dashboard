@@ -40,7 +40,7 @@ const Button = styled.button`
   > span {
     display: block;
     font-size: 14px;
-    padding: 0.75em 1em;
+    padding: 0.75em 1.5em;
   }
   background-color: ${props => props.theme.red.A400};
   width: ${getWidth};
