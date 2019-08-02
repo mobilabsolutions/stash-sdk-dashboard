@@ -28,7 +28,7 @@ const ButtonContainer = styled.div`
 
 export default function Adyen(p: Props) {
   const { getText } = useLocalization()
-  const { psp, onUpdatePsp, onCancel } = p
+  const { psp, onUpdatePsp, onCancel, onDeletePsp } = p
   const [production, setProduction] = useState(
     !!psp.merchantId || !psp.sandboxMerchantId
   )
@@ -271,6 +271,13 @@ export default function Adyen(p: Props) {
                 <SecondaryButton
                   label={getText('Cancel')}
                   onClick={() => onCancel()}
+                  disabled={p.isUpdate}
+                />
+              )}
+              {!!onDeletePsp && (
+                <SecondaryButton
+                  label={getText('Delete')}
+                  onClick={() => onDeletePsp(psp.type)}
                   disabled={p.isUpdate}
                 />
               )}

@@ -25,7 +25,7 @@ exports[`Disabled PrimaryButton Should Render 2`] = `
 
 exports[`Disabled WarnButton Should Render 1`] = `
 <button
-  className="warn__Button-sc-5cg2rp-0 gxotsG"
+  className="warn__Button-sc-5cg2rp-0 dvuhBt"
   disabled={true}
   onClick={null}
   type="submit"
@@ -440,7 +440,7 @@ exports[`SecondaryButton Should Render 1`] = `
 
 exports[`WarnButton Should Render 1`] = `
 <button
-  className="warn__Button-sc-5cg2rp-0 gxotsG"
+  className="warn__Button-sc-5cg2rp-0 dvuhBt"
   disabled={false}
   onClick={null}
   type="submit"

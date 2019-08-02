@@ -247,6 +247,9 @@ export default {
     de:
       'Beim Erstellen der PSP ist ein Fehler aufgetreten. Versuchen Sie es nochmal.'
   },
+  'Are you sure you want to delete this PSP configuration?': {
+    de: 'Möchten Sie diese PSP-Konfiguration wirklich löschen?'
+  },
   'Transaction ID': { de: 'Transaktions-ID' },
   'Customer ID': { de: 'Kundennummer' }
 }
