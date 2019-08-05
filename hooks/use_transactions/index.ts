@@ -92,8 +92,15 @@ function getUrlWithFilter(ep: string, merchantId: string, state: State) {
   url += `&offset=${state.startPos}`
   //--------------- Filter DATES
   if (state.startDate)
-    url += `&createdAtStart=${state.startDate.utc().format()}`
-  if (state.endDate) url += `&createdAtEnd=${state.endDate.utc().format()}`
+    url += `&createdAtStart=${state.startDate
+      .clone()
+      .utc()
+      .format()}`
+  if (state.endDate)
+    url += `&createdAtEnd=${state.endDate
+      .clone()
+      .utc()
+      .format()}`
 
   ////---------------
   //--------------- Filter ACTION and STATUS
@@ -139,8 +146,8 @@ export const useTransactions = () => {
     }),
     (state, { startDate = null, endDate = null, ...rest }) => ({
       ...state,
-      startDate: startDate ? moment(startDate, moment.defaultFormatUtc) : null,
-      endDate: endDate ? moment(endDate, moment.defaultFormatUtc) : null,
+      startDate: startDate ? moment(startDate) : null,
+      endDate: endDate ? moment(endDate) : null,
       ...rest
     })
   )
