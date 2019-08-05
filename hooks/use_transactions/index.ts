@@ -146,8 +146,8 @@ export const useTransactions = () => {
     }),
     (state, { startDate = null, endDate = null, ...rest }) => ({
       ...state,
-      startDate: startDate ? moment(startDate, moment.defaultFormatUtc) : null,
-      endDate: endDate ? moment(endDate, moment.defaultFormatUtc) : null,
+      startDate: startDate ? moment(startDate) : null,
+      endDate: endDate ? moment(endDate) : null,
       ...rest
     })
   )
