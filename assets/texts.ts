@@ -251,5 +251,9 @@ export default {
     de: 'Möchten Sie diese PSP-Konfiguration wirklich löschen?'
   },
   'Transaction ID': { de: 'Transaktions-ID' },
-  'Customer ID': { de: 'Kundennummer' }
+  'Customer ID': { de: 'Kundennummer' },
+  'Key Performance': { de: 'Schlüsselleistung' },
+  'Sales Volume': { de: 'Verkaufsvolumen' },
+  'Refunded Transactions': { de: 'Rückerstattete Transaktionen' },
+  Chargebacks: { de: 'Rückbuchungen' }
 }
