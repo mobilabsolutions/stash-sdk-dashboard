@@ -49,7 +49,7 @@ export default function PerformanceCard(p: Props) {
       <div className="left">
         <p.iconEl />
       </div>
-      <div className="right">
+      <div data-testid="card-title" className="right">
         <Title style={amountStyle}>{amount}</Title>
         <span style={titleStyle}>{title}</span>
       </div>
