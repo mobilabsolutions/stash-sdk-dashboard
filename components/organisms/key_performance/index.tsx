@@ -55,7 +55,7 @@ export function KeyPerformance(p: Props) {
       <Grid.Col l={3} m={6}>
         <PerformanceCard
           title={getText('Transactions')}
-          amount={nrOfRefundedTransactions}
+          amount={nrOfTransactions}
           amountStyle={{ color: '#4f5995' }}
           iconEl={Transactions}
         />
@@ -63,7 +63,7 @@ export function KeyPerformance(p: Props) {
       <Grid.Col l={3} m={6}>
         <PerformanceCard
           title={getText('Refunded Transactions')}
-          amount={nrOfTransactions}
+          amount={nrOfRefundedTransactions}
           amountStyle={{ color: theme.mobilab.A700 }}
           iconEl={Refund}
         />
