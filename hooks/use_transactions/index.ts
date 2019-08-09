@@ -94,11 +94,19 @@ function getUrlWithFilter(ep: string, merchantId: string, state: State) {
   if (state.startDate)
     url += `&createdAtStart=${state.startDate
       .clone()
+      .hours(0)
+      .minutes(0)
+      .seconds(0)
+      .milliseconds(0)
       .utc()
       .format()}`
   if (state.endDate)
     url += `&createdAtEnd=${state.endDate
       .clone()
+      .hours(23)
+      .minutes(59)
+      .seconds(59)
+      .milliseconds(999)
       .utc()
       .format()}`
 
@@ -214,20 +222,8 @@ export const useTransactions = () => {
   const setRange = (fromDate: Moment, toDate: Moment) =>
     setState(prevState => ({
       ...prevState,
-      startDate: fromDate
-        ? fromDate
-            .hours(0)
-            .minutes(0)
-            .seconds(0)
-            .milliseconds(0)
-        : null,
-      endDate: toDate
-        ? toDate
-            .hours(23)
-            .minutes(59)
-            .seconds(59)
-            .milliseconds(999)
-        : null,
+      startDate: fromDate,
+      endDate: toDate,
       startPos: 0
     }))
 

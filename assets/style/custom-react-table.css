@@ -46,3 +46,6 @@
 .DateRangePickerInput_clearDates_svg {
   vertical-align: unset;
 }
+.DayPicker_weekHeader {
+  transform: translateY(-8px);
+}
