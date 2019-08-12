@@ -1,5 +1,7 @@
-import { useCallback } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import Router from 'next/router'
+import SockJS from 'sockjs-client'
+import * as StompJs from '@stomp/stompjs'
 
 import { useSessionStorage } from '../use_session_storage'
 import { isClient } from '../../assets/payment.static'
@@ -8,6 +10,7 @@ const BACKEND_HOST = isClient
   ? ''
   : process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
 
+const SOCKET_URL = process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
 enum Method {
   GET = 'GET',
   POST = 'POST',
@@ -204,6 +207,55 @@ export const useApi = () => {
     [refresh, token]
   )
 
+  const useSocket = useCallback(
+    (
+      url: string,
+      topic: string,
+      subscription: (response: any) => void,
+      onError?: (response: any) => void
+    ) => {
+      const client = new StompJs.Client({
+        reconnectDelay: 3000
+      })
+      client.webSocketFactory = function() {
+        return new SockJS(`${SOCKET_URL}${url}?access_token=${token}`)
+      }
+      client.onConnect = () => {
+        socket.subscribe(topic, ({ body }) => {
+          subscription(JSON.parse(body))
+        })
+      }
+
+      client.onWebSocketError = function(frame) {
+        !!onError && onError(frame)
+      }
+
+      client.onWebSocketClose = (e: CloseEvent) => {
+        if (e.code == 1002) {
+          //Unauthorized access handle
+          console.log(e)
+
+          refresh()
+            .then(accessToken => {
+              client.webSocketFactory = () =>
+                new SockJS(`${SOCKET_URL}${url}?access_token=${accessToken}`)
+            })
+            .catch(() => {
+              Router.push('/login')
+            })
+        }
+      }
+      const [socket, setSocket] = useState(client)
+      useEffect(() => {
+        return () => {
+          socket.deactivate()
+        }
+      }, [socket])
+      return [socket, setSocket]
+    },
+    [token]
+  )
+
   const login = useCallback(
     (username: string, password: string) =>
       oauthApi('/api/v1/oauth/token', {
@@ -236,6 +288,7 @@ export const useApi = () => {
     get,
     getRaw,
     put,
+    useSocket,
     patch,
     post,
     del,
