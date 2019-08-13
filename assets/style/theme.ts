@@ -24,11 +24,18 @@ interface Spacing {
   xxxxlarge: string
 }
 
+interface GraphHeight {
+  small: string
+  medium: string
+  large: string
+}
+
 export interface ThemeInterface {
   font: string
   fontHeadline: string
   fontTransactions: string
   white: string
+  graphHeight: GraphHeight
   primary: Color
   shade: Color
   red: Color
@@ -42,6 +49,11 @@ export default {
   fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
   fontTransactions: 'Lato,Raleway,Helvetica,Arial,sans-serif',
   white: '#fff',
+  graphHeight: {
+    small: '200px',
+    medium: '300px',
+    large: '500px'
+  },
   spacing: {
     xxsmall: '4px',
     xsmall: '8px',
