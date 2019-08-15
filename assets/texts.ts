@@ -255,5 +255,8 @@ export default {
   'Key Performance': { de: 'Schlüsselleistung' },
   'Sales Volume': { de: 'Verkaufsvolumen' },
   'Refunded Transactions': { de: 'Rückerstattete Transaktionen' },
+  'Today´s Activity': { de: 'Aktivitäten von heute' },
+  Today: { de: 'Heute' },
+  'No data': { de: 'Keine Daten' },
   Chargebacks: { de: 'Rückbuchungen' }
 }
