@@ -1,28 +1,36 @@
 import React from 'react'
-import { KeyPerformance, LiveData } from '../../organisms'
+import { KeyPerformance, LiveData, TodaysActivity } from '../../organisms'
 import styled from '../../styled'
 import { Grid } from '../../atoms'
-import { KPMixer } from './mixers'
+import { KPMixer, TAMixer } from './mixers'
 import { KeyPerformance as KP } from 'types'
+import moment from 'moment'
 
 const Card = styled.div`
-  height: 120px;
+  min-height: 120px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
 `
+const selectedDay = moment().add(-1, 'day') // In the future this could be selected by user
 
 export default function HomeDashboard() {
   return (
     <LiveData>
-      {({ keyPerformance }) => (
+      {({ keyPerformance, todaysActivity }) => (
         <>
           <KPMixer liveData={keyPerformance}>
             {(props: KP) => <KeyPerformance {...props} />}
           </KPMixer>
           <Grid.Row>
             <Grid.Col l={8} m={6}>
-              <Card></Card>
+              <Card>
+                <TAMixer selectedDay={selectedDay} liveData={todaysActivity}>
+                  {props => (
+                    <TodaysActivity selectedDay={selectedDay} {...props} />
+                  )}
+                </TAMixer>
+              </Card>
             </Grid.Col>
             <Grid.Col l={4} m={6}>
               <Card></Card>
