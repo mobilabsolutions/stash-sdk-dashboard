@@ -24,6 +24,7 @@ const ActivityContainer = styled.div`
   }
   .graph {
     width: 100%;
+    display: flex;
     height: ${p => p.theme.graphHeight.medium};
   }
   .no-data {
