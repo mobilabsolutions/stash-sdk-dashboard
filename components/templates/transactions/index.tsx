@@ -14,6 +14,7 @@ import {
 import { getMappedStatus } from '../../../assets/payment.static'
 import Link from 'next/link'
 import { Status } from '../../molecules'
+import NoTransactions from './no_transactions'
 
 const headerStyle = {
   fontSize: '16px',
@@ -102,7 +103,7 @@ export default ({
     return isLoading ? (
       <CenteredText>{getText('Loading Data')}</CenteredText>
     ) : (
-      <CenteredText>{getText('No Data')}</CenteredText>
+      <NoTransactions />
     )
   }
 
