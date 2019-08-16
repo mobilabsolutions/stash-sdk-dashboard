@@ -258,5 +258,12 @@ export default {
   'Today´s Activity': { de: 'Aktivitäten von heute' },
   Today: { de: 'Heute' },
   'No data': { de: 'Keine Daten' },
-  Chargebacks: { de: 'Rückbuchungen' }
+  Chargebacks: { de: 'Rückbuchungen' },
+  'No transaction to show.': {
+    de: 'Keine Transaktion zum Anzeigen.'
+  },
+  'Sorry, we could not find any transaction matching your filtering choice.': {
+    de:
+      'Wir konnten leider keine Transaktionen finden, die der Filterauswahl entsprechen.'
+  }
 }
