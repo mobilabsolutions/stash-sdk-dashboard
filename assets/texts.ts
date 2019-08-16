@@ -255,5 +255,12 @@ export default {
   'Key Performance': { de: 'Schlüsselleistung' },
   'Sales Volume': { de: 'Verkaufsvolumen' },
   'Refunded Transactions': { de: 'Rückerstattete Transaktionen' },
-  Chargebacks: { de: 'Rückbuchungen' }
+  Chargebacks: { de: 'Rückbuchungen' },
+  'No transaction to show.': {
+    de: 'Keine Transaktion zum Anzeigen.'
+  },
+  'Sorry, we could not find any transaction matching your filtering choice.': {
+    de:
+      'Wir konnten leider keine Transaktionen finden, die der Filterauswahl entsprechen.'
+  }
 }
