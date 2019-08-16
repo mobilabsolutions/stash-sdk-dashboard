@@ -110,10 +110,10 @@ const Container = styled.div`
   }
 `
 
-export default function NoTransactions() {
+export default function NoTransactions(props) {
   const { getText } = useLocalization()
   return (
-    <Container>
+    <Container {...props}>
       <div className="internal">
         <Pict />
         <H1>{getText('No transaction to show.')}</H1>

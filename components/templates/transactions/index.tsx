@@ -103,7 +103,11 @@ export default ({
     return isLoading ? (
       <CenteredText>{getText('Loading Data')}</CenteredText>
     ) : (
-      <NoTransactions />
+      <NoTransactions
+        style={{
+          height: `calc(100% - 24px - ${filterHeight || 0}px)`
+        }}
+      />
     )
   }
 
