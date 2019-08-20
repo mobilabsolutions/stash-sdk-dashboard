@@ -256,11 +256,11 @@ export default {
   'Sales Volume': { de: 'Verkaufsvolumen' },
   'Refunded Transactions': { de: 'Rückerstattete Transaktionen' },
   Chargebacks: { de: 'Rückbuchungen' },
-  'No transaction to show.': {
+  'No transaction found.': {
     de: 'Keine Transaktion zum Anzeigen.'
   },
-  'Sorry, we could not find any transaction matching your filtering choice.': {
+  "Sorry, we couldn't find any transaction matching your filters.": {
     de:
-      'Wir konnten leider keine Transaktionen finden, die der Filterauswahl entsprechen.'
+      'Wir konnten leider keine Transaktion finden, die Ihren Filtern entspricht.'
   }
 }
