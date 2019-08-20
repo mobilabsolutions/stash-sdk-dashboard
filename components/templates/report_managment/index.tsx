@@ -37,15 +37,14 @@ const ReportItem = styled.div`
     transform: translate(10px, 10px);
     position: absolute;
     font-size: 12px;
-    font-weight: bold;
   }
   .report-action {
     float: right;
     display: flex;
     button {
       padding: 8px;
-      font-weight: bold;
       display: flex;
+      transform: translate(0px, 2px);
       span {
         color: ${p => p.theme.shade.A200};
         margin: auto;
