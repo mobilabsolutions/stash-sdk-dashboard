@@ -116,10 +116,10 @@ export default function NoTransactions(props) {
     <Container {...props}>
       <div className="internal">
         <Pict />
-        <H1>{getText('No transaction to show.')}</H1>
+        <H1>{getText('No transaction found.')}</H1>
         <span>
           {getText(
-            'Sorry, we could not find any transaction matching your filtering choice.'
+            "Sorry, we couldn't find any transaction matching your filters."
           )}
         </span>
       </div>
