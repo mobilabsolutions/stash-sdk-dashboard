@@ -1,5 +1,10 @@
 import React from 'react'
-import { KeyPerformance, LiveData, TodaysActivity } from '../../organisms'
+import {
+  KeyPerformance,
+  LiveData,
+  TodaysActivity,
+  Notifications
+} from '../../organisms'
 import styled from '../../styled'
 import { Grid } from '../../atoms'
 import { KPMixer, TAMixer } from './mixers'
@@ -33,12 +38,9 @@ export default function HomeDashboard() {
               </Card>
             </Grid.Col>
             <Grid.Col l={4} m={6}>
-              <Card></Card>
-            </Grid.Col>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Col>
-              <Card></Card>
+              <Card>
+                <Notifications />
+              </Card>
             </Grid.Col>
           </Grid.Row>
         </>
