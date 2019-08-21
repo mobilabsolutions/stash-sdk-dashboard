@@ -2,15 +2,18 @@ import { useCallback, useState, useEffect } from 'react'
 import Router from 'next/router'
 import SockJS from 'sockjs-client'
 import * as StompJs from '@stomp/stompjs'
-
+import getConfig from 'next/config'
 import { useSessionStorage } from '../use_session_storage'
 import { isClient } from '../../assets/payment.static'
 
+const { publicRuntimeConfig } = getConfig()
+const { API_UPSTREAM } = publicRuntimeConfig
+
 const BACKEND_HOST = isClient
   ? ''
-  : process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
+  : API_UPSTREAM || 'https://payment-dev.mblb.net'
 
-const SOCKET_URL = process.env.API_UPSTREAM || 'https://payment-dev.mblb.net'
+const SOCKET_URL = API_UPSTREAM || 'https://payment-dev.mblb.net'
 enum Method {
   GET = 'GET',
   POST = 'POST',
