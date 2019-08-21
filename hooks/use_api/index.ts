@@ -13,7 +13,10 @@ const BACKEND_HOST = isClient
   ? ''
   : API_UPSTREAM || 'https://payment-dev.mblb.net'
 
-const SOCKET_URL = API_UPSTREAM || 'https://payment-dev.mblb.net'
+const SOCKET_URL = (API_UPSTREAM || 'https://payment-dev.mblb.net').replace(
+  '/payment-sdk-backend',
+  ''
+)
 enum Method {
   GET = 'GET',
   POST = 'POST',
@@ -240,8 +243,13 @@ export const useApi = () => {
 
           refresh()
             .then(accessToken => {
-              client.webSocketFactory = () =>
-                new SockJS(`${SOCKET_URL}${url}?access_token=${accessToken}`)
+              client.webSocketFactory = () => {
+                console.log('---->', SOCKET_URL)
+
+                return new SockJS(
+                  `${SOCKET_URL}${url}?access_token=${accessToken}`
+                )
+              }
             })
             .catch(() => {
               Router.push('/login')

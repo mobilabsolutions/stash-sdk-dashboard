@@ -7,10 +7,7 @@ module.exports = withTypescript({
     pagesBufferLength: 10
   },
   publicRuntimeConfig: {
-    API_UPSTREAM: (process.env.API_UPSTREAM || '').replace(
-      'payment-sdk-backend',
-      ''
-    )
+    API_UPSTREAM: process.env.API_UPSTREAM
   },
   ...withCSS()
 })
