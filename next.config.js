@@ -8,7 +8,7 @@ module.exports = withTypescript({
   },
   publicRuntimeConfig: {
     API_UPSTREAM: (process.env.API_UPSTREAM || '').replace(
-      '/payment-sdk-backend',
+      'payment-sdk-backend',
       ''
     )
   },
