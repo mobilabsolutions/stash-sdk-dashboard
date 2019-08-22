@@ -31,6 +31,7 @@ const Container = styled.div`
   width: 100%;
   tspan {
     color: #a3aaaf;
+    font-size: 12px;
   }
 `
 
@@ -63,7 +64,7 @@ export default function ActivityAreaChart(props: Props) {
             tickFormatter={() => ''}
             axisLine={false}
           />
-          <YAxis axisLine={false} stroke={'a3aaaf'} />
+          <YAxis axisLine={false} stroke={'#a3aaaf'} />
           <CartesianGrid stroke={'#edeff0'} vertical={false} />
           <Tooltip
             labelFormatter={timeFormater}
