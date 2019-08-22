@@ -23,7 +23,7 @@ const ActivityContainer = styled.div`
 
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => ({
   time: moment()
-    .add('days', -n)
+    .add(-n, 'days')
     .unix(),
   amount: Math.floor(Math.random() * 100 * 34)
 }))
