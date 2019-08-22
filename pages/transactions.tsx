@@ -85,6 +85,7 @@ export default () => {
           capture={capture}
           numberOfPages={numberOfPages}
           setPage={setPage}
+          isFiltered={showFilter}
           resetPageSizeTo={resetPageSizeTo}
           pageSize={pageSize}
           totalCount={totalCount}
