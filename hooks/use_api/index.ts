@@ -7,16 +7,13 @@ import { useSessionStorage } from '../use_session_storage'
 import { isClient } from '../../assets/payment.static'
 
 const { publicRuntimeConfig } = getConfig() || { publicRuntimeConfig: {} }
-const { API_UPSTREAM } = publicRuntimeConfig
+const { API_UPSTREAM, NAMESPACE = 'dev' } = publicRuntimeConfig
 
 const BACKEND_HOST = isClient
   ? ''
   : API_UPSTREAM || 'https://payment-dev.mblb.net'
 
-const SOCKET_URL = (API_UPSTREAM || 'https://payment-dev.mblb.net').replace(
-  '/payment-sdk-backend',
-  ''
-)
+const SOCKET_URL = API_UPSTREAM || `https://payment-${NAMESPACE}.mblb.net`
 enum Method {
   GET = 'GET',
   POST = 'POST',
@@ -244,8 +241,6 @@ export const useApi = () => {
           refresh()
             .then(accessToken => {
               client.webSocketFactory = () => {
-                console.log('---->', SOCKET_URL)
-
                 return new SockJS(
                   `${SOCKET_URL}${url}?access_token=${accessToken}`
                 )

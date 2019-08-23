@@ -7,7 +7,8 @@ module.exports = withTypescript({
     pagesBufferLength: 10
   },
   publicRuntimeConfig: {
-    API_UPSTREAM: process.env.API_UPSTREAM
+    API_UPSTREAM: process.env.API_UPSTREAM,
+    NAMESPACE: process.env.NAMESPACE
   },
   ...withCSS()
 })
