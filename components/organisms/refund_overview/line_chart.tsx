@@ -8,15 +8,33 @@ import {
   Tooltip,
   ResponsiveContainer
 } from 'recharts'
-import moment from 'moment'
+import { useLocalization } from '../../../hooks'
+import styled from '../../styled'
 
-const timeFormater = (time: number) => moment(time * 1000).format('ddd')
+const useFormatter = () => {
+  const { formatAmount } = useLocalization()
+  return (amount: number = 0) => formatAmount('EUR', amount / 100).value
+}
 
-const Label = ({ children }) => (
-  <span style={{ color: '#ffffff' }}>{children}</span>
-)
+const SpanTooltip = styled.span`
+  background-color: #4f5995;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px 16px;
+  border-radius: 5px;
+`
 
-export default function RefundLineChart(props) {
+export default function RefundLineChart(props: { data: any[] }) {
+  const formatter = useFormatter()
+  const CustomTooltip = ({ active, payload }) => {
+    if (active) {
+      return (
+        <SpanTooltip className="custom-tooltip">
+          {formatter(payload[0].value as number)}
+        </SpanTooltip>
+      )
+    }
+  }
   return (
     <ResponsiveContainer>
       <LineChart
@@ -24,19 +42,25 @@ export default function RefundLineChart(props) {
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
       >
         <XAxis
-          dataKey="time"
-          type="number"
-          stroke={'a3aaaf'}
+          dataKey="day"
+          stroke={'#ffffff'}
           allowDuplicatedCategory={false}
-          domain={['dataMin', 'dataMax']}
-          tickFormatter={v => <Label>{timeFormater(v)}</Label>}
           axisLine={false}
+          tickLine={false}
+          tickMargin={10}
         />
-        <YAxis axisLine={false} stroke={'a3aaaf'} />
-        <CartesianGrid stroke={'#edeff0'} vertical={false} />
+        <YAxis
+          axisLine={false}
+          stroke={'#ffffff'}
+          type="number"
+          tickMargin={2}
+          tickLine={false}
+          tickFormatter={formatter}
+        />
+        <CartesianGrid stroke={'#ededed'} vertical={false} />
         <Tooltip
-          labelStyle={{ fontWeight: 'bold' }}
-          labelFormatter={timeFormater}
+          content={CustomTooltip}
+          formatter={val => [formatter(val as number), '']}
         />
         <Line
           type="linear"
