@@ -17,10 +17,10 @@ const useFormatter = () => {
 export enum PaymentMethodColor {
   CC = '#3aede5',
   PAY_PAL = '#747f86',
-  SEPA = '#609df6',
-  KLARNA = '#f27969',
-  APPLE_PAY = '#4f5995',
-  GOOGLE_PAY = '#00be41'
+  SEPA = '#609df6'
+  // KLARNA = '#f27969',
+  // APPLE_PAY = '#4f5995',
+  // GOOGLE_PAY = '#00be41'
 }
 
 export default function PaymentMLineChart(props: { data: any[] }) {
