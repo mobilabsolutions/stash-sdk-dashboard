@@ -13,7 +13,8 @@ import styled from '../../styled'
 
 const useFormatter = () => {
   const { formatAmount } = useLocalization()
-  return (amount: number = 0) => formatAmount('EUR', amount / 100).value
+  return (amount: number = 0) =>
+    amount === 0 ? '0' : formatAmount('EUR', amount / 100).value
 }
 
 const SpanTooltip = styled.span`

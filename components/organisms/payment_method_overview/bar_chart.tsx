@@ -11,10 +11,11 @@ import {
 import { useLocalization } from '../../../hooks'
 const useFormatter = () => {
   const { formatAmount } = useLocalization()
-  return (amount: number = 0) => formatAmount('EUR', amount / 100).value
+  return (amount: number = 0) =>
+    amount === 0 ? '0' : formatAmount('EUR', amount / 100).value
 }
 export enum PaymentMethodColor {
-  CC = '#3aed5',
+  CC = '#3aede5',
   PAY_PAL = '#747f86',
   SEPA = '#609df6',
   KLARNA = '#f27969',
