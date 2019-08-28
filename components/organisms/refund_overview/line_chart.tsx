@@ -54,8 +54,8 @@ export default function RefundLineChart(props: { data: any[] }) {
           axisLine={false}
           stroke={'#ffffff'}
           type="number"
-          tickMargin={2}
-          tickLine={false}
+          tickMargin={8}
+          tickSize={8}
           tickFormatter={formatter}
         />
         <CartesianGrid stroke={'#ededed'} vertical={false} />
@@ -67,6 +67,8 @@ export default function RefundLineChart(props: { data: any[] }) {
           type="linear"
           dataKey="amount"
           name="Amount"
+          strokeWidth={2}
+          dot={false}
           isAnimationActive={false}
           stroke="#ffffff"
           connectNulls
