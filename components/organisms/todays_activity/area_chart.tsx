@@ -34,36 +34,33 @@ const Container = styled.div`
     font-size: 12px;
   }
 `
-// const data = [
-//   0,
-//   1,
-//   2,
-//   3,
-//   4,
-//   5,
-//   6,
-//   7,
-//   8,
-//   9,
-//   10,
-//   11,
-//   12,
-//   13,
-//   14,
-//   15,
-//   16,
-//   17,
-//   18,
-//   19,
-//   20,
-//   21,
-//   22,
-//   23
-// ].map(hr => ({
-//   today: Math.floor(Math.random() * 100),
-//   selectedDay: Math.floor(Math.random() * 100),
-//   time: hr
-// }))
+
+const INTERVAL = 8
+
+//12am...8am...4pm...11pm
+const CustomizedAxisTick = props => {
+  const { x, y, fill, payload, index } = props
+  console.log(props)
+  if (index % INTERVAL !== 0 && index !== 23) return null
+  return (
+    <g className="recharts-layer recharts-cartesian-axis-tick">
+      <text
+        stroke="none"
+        width="646"
+        height="30"
+        x={x}
+        y={y}
+        fill={fill}
+        className="recharts-text recharts-cartesian-axis-tick-value"
+        textAnchor="middle"
+      >
+        <tspan x={x} dy="0.71em">
+          {timeFormater(payload.value)}
+        </tspan>
+      </text>
+    </g>
+  )
+}
 
 export default function ActivityAreaChart(props: Props) {
   const { getText } = useLocalization()
@@ -93,11 +90,15 @@ export default function ActivityAreaChart(props: Props) {
           <XAxis
             dataKey="time"
             type="number"
-            stroke={'a3aaaf'}
-            tickCount={24}
+            stroke={'#a3aaaf'}
             allowDuplicatedCategory={false}
             domain={['dataMin', 'dataMax']}
-            tickFormatter={() => ''}
+            tick={CustomizedAxisTick}
+            interval={0}
+            tickCount={24}
+            tickFormatter={timeFormater}
+            tickLine={false}
+            tickMargin={8}
             axisLine={false}
           />
           <YAxis
