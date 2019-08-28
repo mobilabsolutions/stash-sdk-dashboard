@@ -68,7 +68,7 @@ const customProvider = provided => ({
 export default function ChartOverviews() {
   const [selectedOverview, setSelectedOverview] = useState<
     'refund' | 'payment'
-  >('refund')
+  >('payment')
   const { getText } = useLocalization()
   const options = Object.entries(ColorMap)
     .filter(opt => opt[0] !== selectedOverview)
