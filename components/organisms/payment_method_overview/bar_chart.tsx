@@ -39,7 +39,7 @@ export default function PaymentMLineChart(props: { data: any[] }) {
           axisLine={false}
           tickLine={false}
           tickMargin={10}
-          tickFormatter={v => getText(v)}
+          tickFormatter={(v: string) => getText(v.slice(0, 3))}
         />
         <YAxis
           axisLine={false}
