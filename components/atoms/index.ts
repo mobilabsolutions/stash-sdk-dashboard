@@ -58,6 +58,7 @@ export { default as SalesVolume } from './icons/sales_volume'
 export { default as Transactions } from './icons/transactions'
 export { default as Chargebacks } from './icons/chargebacks'
 export { default as Refund } from './icons/refund'
+export { default as EmptyFilterPage } from './icons/empty_filter_page'
 
 export { default as Input } from './input/input'
 export { default as InputFieldWrapper } from './input/field_wrapper'
