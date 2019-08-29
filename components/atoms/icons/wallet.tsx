@@ -49,7 +49,7 @@ export default function Wallet() {
           />
         </filter>
       </defs>
-      <g fill="none" fill-rule="evenodd">
+      <g fill="none" fillRule="evenodd">
         <g opacity=".495" transform="translate(55.733 20.713)">
           <rect width="90.892" height="61.112" fill="#EDEFF0" rx="6.636" />
         </g>
@@ -87,19 +87,15 @@ export default function Wallet() {
             fill="#AFB3CF"
             rx="1.738"
           />
-          <g
-            stroke="#FFF"
-            stroke-width=".72"
-            transform="translate(7.191 8.105)"
-          >
-            <path stroke-linecap="square" d="M5.226 3.57H.348" />
+          <g stroke="#FFF" strokeWidth=".72" transform="translate(7.191 8.105)">
+            <path strokeLinecap="square" d="M5.226 3.57H.348" />
             <rect width="11.821" height="10.792" x=".36" y=".36" rx="1.8" />
           </g>
           <ellipse
             cx="70.808"
             cy="14.223"
             fill="#ED4E39"
-            fill-opacity=".8"
+            fillOpacity=".8"
             rx="5.187"
             ry="5.217"
           />
@@ -107,7 +103,7 @@ export default function Wallet() {
             cx="77.999"
             cy="14.223"
             fill="#ED4E39"
-            fill-opacity=".5"
+            fillOpacity=".5"
             rx="5.187"
             ry="5.217"
           />
@@ -147,8 +143,8 @@ export default function Wallet() {
             rx="1.738"
           />
         </g>
-        <g stroke="#FFF" stroke-width=".72" transform="translate(80.903 45.03)">
-          <path stroke-linecap="square" d="M5.226 3.57H.348" />
+        <g stroke="#FFF" strokeWidth=".72" transform="translate(80.903 45.03)">
+          <path strokeLinecap="square" d="M5.226 3.57H.348" />
           <rect width="11.821" height="10.792" x=".36" y=".36" rx="1.8" />
         </g>
         <g transform="translate(145.894 44.29)">
@@ -221,13 +217,13 @@ export default function Wallet() {
           </g>
           <g
             stroke="#FFF"
-            stroke-width=".72"
+            strokeWidth=".72"
             transform="translate(100.679 62.14)"
           >
-            <path stroke-linecap="square" d="M5.226 3.57H.348" />
+            <path strokeLinecap="square" d="M5.226 3.57H.348" />
             <rect width="11.821" height="10.792" x=".36" y=".36" rx="1.8" />
           </g>
-          <g fill-rule="nonzero">
+          <g fillRule="nonzero">
             <path
               fill="#263B80"
               d="M165.655 65.98c-.672-.758-1.92-1.138-3.648-1.138h-4.801c-.288 0-.576.285-.672.57l-1.92 12.422c0 .286.191.475.383.475h2.977l.768-4.646v.189c.096-.285.384-.57.672-.57h1.44c2.785 0 4.896-1.138 5.568-4.267v-.285c-.095 0-.095 0 0 0 .097-1.232-.095-1.99-.767-2.75"
