@@ -45,21 +45,45 @@ const global_columns_def = {
   headerStyle
 }
 
-export default ({
-  data,
-  isLoading,
-  numberOfPages,
-  selectedPage,
-  setPage,
-  isFiltered,
-  refund,
-  capture,
-  filterHeight,
-  totalCount,
-  pageSize,
-  resetPageSizeTo,
-  reverse
-}) => {
+interface Action {
+  isLoading: boolean
+  error: any
+  action: Function
+  setError: Function
+}
+interface Props {
+  data: any[]
+  isLoading: boolean
+  numberOfPages: number
+  selectedPage: number
+  setPage: (p: number) => void
+  isFiltered: boolean
+  refund: Action
+  capture: Action
+  reverse: Action
+  filterHeight: number
+  totalCount: number
+  pageSize: number
+  resetPageSizeTo: (p: number) => void
+  error: any
+}
+
+export default (props: Props) => {
+  const {
+    data,
+    isLoading,
+    numberOfPages,
+    selectedPage,
+    setPage,
+    isFiltered,
+    refund,
+    capture,
+    filterHeight,
+    totalCount,
+    pageSize,
+    resetPageSizeTo,
+    reverse
+  } = props
   const { getText, formatDate, formatAmount } = useLocalization()
   const [action, setAction] = useState(null)
   const [selected, setSelected] = useState(null)
