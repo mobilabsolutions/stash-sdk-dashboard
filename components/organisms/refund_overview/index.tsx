@@ -1,9 +1,7 @@
 import React, { memo } from 'react'
 import styled from '../../styled'
-import { useLocalization } from '../../../hooks'
-import { H4 } from '../../atoms'
+import { useLocalization, useRefundOverview } from '../../../hooks'
 import LineChart from './line_chart'
-import moment from 'moment'
 
 const ActivityContainer = styled.div`
   padding: ${p => p.theme.spacing.medium};
@@ -15,24 +13,21 @@ const ActivityContainer = styled.div`
     width: 100%;
     display: flex;
     height: ${p => p.theme.graphHeight.medium};
+    tspan {
+      font-size: 12px !important;
+    }
   }
   .no-data {
     margin: auto;
+    color: #ffffff;
   }
 `
 
-const data = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => ({
-  time: moment()
-    .add(-n, 'days')
-    .unix(),
-  amount: Math.floor(Math.random() * 100 * 34)
-}))
-
 export function RefundOverview() {
   const { getText } = useLocalization()
+  const { data } = useRefundOverview()
   return (
     <ActivityContainer>
-      <H4 className="title">{getText('Refunds Overview')}</H4>
       <div className="graph">
         {data.length ? (
           <LineChart data={data} />

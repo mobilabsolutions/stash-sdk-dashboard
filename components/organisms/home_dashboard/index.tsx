@@ -3,7 +3,8 @@ import {
   KeyPerformance,
   LiveData,
   TodaysActivity,
-  Notifications
+  Notifications,
+  ChartOverviews
 } from '../../organisms'
 import styled from '../../styled'
 import { Grid } from '../../atoms'
@@ -40,6 +41,13 @@ export default function HomeDashboard() {
             <Grid.Col l={4} m={6}>
               <Card>
                 <Notifications />
+              </Card>
+            </Grid.Col>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Col>
+              <Card>
+                <ChartOverviews />
               </Card>
             </Grid.Col>
           </Grid.Row>

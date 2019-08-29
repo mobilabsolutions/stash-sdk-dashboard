@@ -80,11 +80,12 @@ const styles = {
 }
 
 export default function Select(props) {
+  const { components = {}, ...rest } = props
   return (
     <ReactSelect
-      {...props}
       styles={styles}
-      components={{ Option, IndicatorSeparator }}
+      {...rest}
+      components={{ Option, IndicatorSeparator, ...components }}
     />
   )
 }

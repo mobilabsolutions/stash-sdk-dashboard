@@ -265,5 +265,22 @@ export default {
   "Sorry, we couldn't find any transaction matching your filters.": {
     de:
       'Wir konnten leider keine Transaktion finden, die Ihren Filtern entspricht.'
-  }
+  },
+  Yesterday: { de: 'Gestern' },
+  Sunday: { de: 'Sonntag' },
+  Sun: { de: 'Sonntag' },
+  Monday: { de: 'Montag' },
+  Mon: { de: 'Montag' },
+  Tuesday: { de: 'Dienstag' },
+  Tue: { de: 'Dienstag' },
+  Wednesday: { de: 'Mittwoch' },
+  Wed: { de: 'Mittwoch' },
+  Thursday: { de: 'Donnerstag' },
+  Thu: { de: 'Donnerstag' },
+  Friday: { de: 'Freitag' },
+  Fri: { de: 'Freitag' },
+  Saturday: { de: 'Samstag' },
+  Sat: { de: 'Samstag' },
+  Notifications: { de: 'Benachrichtigungen' },
+  'Refund Overview': { de: 'Rückerstattungsübersicht' }
 }

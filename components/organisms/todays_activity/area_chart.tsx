@@ -35,6 +35,33 @@ const Container = styled.div`
   }
 `
 
+const INTERVAL = 8
+
+//12am...8am...4pm...11pm
+const CustomizedAxisTick = props => {
+  const { x, y, fill, payload, index } = props
+  console.log(props)
+  if (index % INTERVAL !== 0 && index !== 23) return null
+  return (
+    <g className="recharts-layer recharts-cartesian-axis-tick">
+      <text
+        stroke="none"
+        width="646"
+        height="30"
+        x={x}
+        y={y}
+        fill={fill}
+        className="recharts-text recharts-cartesian-axis-tick-value"
+        textAnchor="middle"
+      >
+        <tspan x={x} dy="0.71em">
+          {timeFormater(payload.value)}
+        </tspan>
+      </text>
+    </g>
+  )
+}
+
 export default function ActivityAreaChart(props: Props) {
   const { getText } = useLocalization()
   return (
@@ -45,26 +72,42 @@ export default function ActivityAreaChart(props: Props) {
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="35%" stopColor="#609df6" />
-              <stop offset="65%" stopColor="rgba(117, 169, 246, 0.39)" />
+            <linearGradient
+              x1="50%"
+              x2="50%"
+              y1="50%"
+              y2="100%"
+              id="selectedDay"
+            >
+              <stop offset="40%" stopColor="#609df6" />
+              <stop offset="100%" stopColor="rgba(117, 169, 246, 0.39)" />
             </linearGradient>
-            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#3aede5" />
-              <stop offset="95%" stopColor="rgba(4, 139, 133, 0)" />
+            <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="today">
+              <stop offset="0%" stopColor="rgba(4, 139, 133, 0)" />
+              <stop offset="50%" stopColor="#3aede5" />
             </linearGradient>
           </defs>
           <XAxis
             dataKey="time"
             type="number"
-            stroke={'a3aaaf'}
-            tickCount={24}
+            stroke={'#a3aaaf'}
             allowDuplicatedCategory={false}
             domain={['dataMin', 'dataMax']}
-            tickFormatter={() => ''}
+            tick={CustomizedAxisTick}
+            interval={0}
+            tickCount={24}
+            tickFormatter={timeFormater}
+            tickLine={false}
+            tickMargin={8}
             axisLine={false}
           />
-          <YAxis axisLine={false} stroke={'#a3aaaf'} />
+          <YAxis
+            axisLine={false}
+            stroke={'#a3aaaf'}
+            tickSize={8}
+            tickLine={{ stroke: '#edeff0' }}
+            tickMargin={16}
+          />
           <CartesianGrid stroke={'#edeff0'} vertical={false} />
           <Tooltip
             labelFormatter={timeFormater}
@@ -72,22 +115,20 @@ export default function ActivityAreaChart(props: Props) {
           />
           <Legend />
           <Area
-            type="monotone"
-            connectNulls
-            name={getText('Yesterday')}
-            dataKey="selectedDay"
-            stroke="#3aede5"
-            isAnimationActive={false}
-            fill="url(#colorPv)"
-          />
-          <Area
-            type="monotone"
             dataKey="today"
             isAnimationActive={false}
             name={getText('Today')}
-            stroke="#609df6"
+            stroke="#3aede5"
             connectNulls
-            fill="url(#colorUv)"
+            fill="url(#today)"
+          />
+          <Area
+            connectNulls
+            name={getText('Yesterday')}
+            dataKey="selectedDay"
+            stroke="#609df6"
+            isAnimationActive={false}
+            fill="url(#selectedDay)"
           />
         </AreaChart>
       </ResponsiveContainer>
