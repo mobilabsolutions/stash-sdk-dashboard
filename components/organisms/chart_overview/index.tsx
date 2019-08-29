@@ -11,10 +11,6 @@ const Container = styled.div<{ color?: string }>`
   background-color: ${({ color = 'white' }) => color};
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
-  .select {
-  }
-  .chart-area {
-  }
 `
 
 const IndicatorContainer = styled.div<{ color: string }>`
@@ -133,7 +129,7 @@ export default function ChartOverviews() {
           setSelectedOverview(value)
         }}
       />
-      <div className="chart-area">{<Chart />}</div>
+      <Chart />
     </Container>
   )
 }
