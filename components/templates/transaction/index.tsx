@@ -6,20 +6,41 @@ import {
   TransactionTimeline
 } from '../../organisms'
 import styled from '../../styled'
+import { LoadingError } from '../../molecules'
+import { useLocalization } from '../../../hooks'
 
 interface DetailProps {
   details: any
   refund: any
   reverse: any
   capture: any
+  error: boolean
 }
 
 const DetailItem = styled.div`
   padding-top: 24px;
 `
 
+const BackText = styled.span`
+  color: ${p => p.theme.shade.A200};
+  margin: auto;
+  width: 300px;
+  text-align: center;
+`
+
 const TransactionDetails = (props: DetailProps) => {
-  const { details, refund, reverse, capture } = props
+  const { details, refund, reverse, capture, error } = props
+  const { getText } = useLocalization()
+  if (error)
+    return (
+      <LoadingError mainText={getText('Oops! Something went wrong.')}>
+        <BackText>
+          {getText(
+            'Unable to show the current transaction. Try again later or refresh the page.'
+          )}
+        </BackText>
+      </LoadingError>
+    )
 
   return (
     details && (

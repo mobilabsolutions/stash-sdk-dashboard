@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
-import { Timestamp, Reason, CustomerId, Amount, IdLink } from './styled'
+import {
+  Timestamp,
+  Reason,
+  CustomerId,
+  Amount,
+  IdLink,
+  BackText
+} from './styled'
 import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
@@ -13,7 +20,7 @@ import {
 } from '../../organisms'
 import { getMappedStatus } from '../../../assets/payment.static'
 import Link from 'next/link'
-import { Status } from '../../molecules'
+import { Status, LoadingError } from '../../molecules'
 import NoTransactions from './no_transactions'
 
 const headerStyle = {
@@ -82,6 +89,7 @@ export default (props: Props) => {
     totalCount,
     pageSize,
     resetPageSizeTo,
+    error,
     reverse
   } = props
   const { getText, formatDate, formatAmount } = useLocalization()
@@ -125,6 +133,22 @@ export default (props: Props) => {
   }
 
   if (!data || data.length === 0) {
+    //When no data an error is also recived)
+    if (error && error.statusCode != 400)
+      return (
+        <LoadingError
+          mainText={getText('Oops! Something went wrong.')}
+          style={{
+            height: `calc(100% - 24px - ${filterHeight || 0}px)`
+          }}
+        >
+          <BackText>
+            {getText(
+              'Unable to show the transactions overview. Try again later or refresh the page.'
+            )}
+          </BackText>
+        </LoadingError>
+      )
     return isLoading ? (
       <CenteredText>{getText('Loading Data')}</CenteredText>
     ) : isFiltered ? (
