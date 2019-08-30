@@ -102,3 +102,9 @@ export const IdLink = styled.span`
   color: ${p => p.theme.primary.A500};
   cursor: pointer;
 `
+export const BackText = styled.span`
+  color: ${p => p.theme.shade.A200};
+  margin: auto;
+  width: 300px;
+  text-align: center;
+`
