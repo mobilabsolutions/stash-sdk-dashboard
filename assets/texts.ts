@@ -266,6 +266,8 @@ export default {
     de:
       'Wir konnten leider keine Transaktion finden, die Ihren Filtern entspricht.'
   },
+  'Upload Header Logo': { de: 'Header-Logo hochladen' },
+  Logo: { de: 'Logo' },
   Yesterday: { de: 'Gestern' },
   Sunday: { de: 'Sonntag' },
   Sun: { de: 'Sonntag' },
