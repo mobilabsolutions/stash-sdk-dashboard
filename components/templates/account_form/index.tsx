@@ -11,7 +11,8 @@ import { VerticalScrollContainer } from '../../atoms'
 import {
   ChangePassword,
   KeysConfiguration,
-  PspConfiguration
+  PspConfiguration,
+  CustomizeLogo
 } from '../../organisms'
 import { useEffect } from 'react'
 import styled from '../../styled'
@@ -113,6 +114,7 @@ export default function AccountForm({ setIsLoading }) {
         }}
         render={props => <ChangePassword {...props} />}
       />
+      <CustomizeLogo />
       <KeysConfiguration
         keys={keys}
         onDelete={keyEntry => removeKey(keyEntry.id)}

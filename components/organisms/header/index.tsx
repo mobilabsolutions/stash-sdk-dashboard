@@ -2,7 +2,7 @@ import Router from 'next/router'
 
 import styled from '../../styled'
 
-import { useLocalization, useApi } from '../../../hooks'
+import { useLocalization, useApi, useLogo } from '../../../hooks'
 import { Logo, LogoutIcon } from '../../atoms'
 import HeaderNavItem from './nav_item'
 import { Loading } from '../../molecules'
@@ -22,9 +22,18 @@ const HtmlHeader = styled.header`
   }
 `
 
-const LogoContainer = styled.div`
-  padding-left: 32px;
-  padding-right: 32px;
+const LogoContainer = styled.div<{ img?: string }>`
+  background-image: ${p => (p.img ? `url(${p.img})` : 'unset')};
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 50px;
+  width: 157px;
+  margin-left: 32px;
+  margin-right: 32px;
+  svg {
+    transform: translateY(5px);
+  }
 `
 
 const Nav = styled.nav`
@@ -40,11 +49,11 @@ const LoadingContainer = styled.div`
 export default function Header({ activePath, isLoading = false }) {
   const { getText } = useLocalization()
   const { logout } = useApi()
-
+  const { imgBase64 } = useLogo()
   return (
     <HtmlHeader>
-      <LogoContainer>
-        <Logo />
+      <LogoContainer img={imgBase64}>
+        {!imgBase64 && <Logo width={86} />}
       </LogoContainer>
       <Nav>
         <HeaderNavItem

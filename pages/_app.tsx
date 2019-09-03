@@ -48,7 +48,9 @@ export default class extends App<Props> {
               <NewTheme>
                 <ToastProvider>
                   <SessionProvider>
-                    <Component {...pageProps} />
+                    <LogoProvider>
+                      <Component {...pageProps} />
+                    </LogoProvider>
                   </SessionProvider>
                 </ToastProvider>
               </NewTheme>
