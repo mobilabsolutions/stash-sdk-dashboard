@@ -58,7 +58,8 @@
     ],
     "setupFilesAfterEnv": [
       "react-testing-library/cleanup-after-each",
-      "<rootDir>/enzyme.config.ts"
+      "<rootDir>/enzyme.config.ts",
+      "<rootDir>/setupJest.ts"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -66,6 +67,7 @@
       "js",
       "json"
     ],
+    "automock": false,
     "testURL": "http://localhost:3000/"
   },
   "nodemonConfig": {
@@ -132,6 +134,7 @@
     "eslint-plugin-react-hooks": "1.6.0",
     "eslint-plugin-standard": "4.0.0",
     "jest": "24.8.0",
+    "jest-fetch-mock": "2.1.2",
     "license-checker": "^25.0.1",
     "nodemon": "1.19.1",
     "pino-pretty": "3.1.0",
