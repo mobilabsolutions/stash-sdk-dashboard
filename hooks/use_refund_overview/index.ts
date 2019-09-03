@@ -31,7 +31,7 @@ const useRefundOverview = () => {
         setState(prev => ({ ...prev, loading: false, error }))
       })
   }
-  useEffect(load, [merchantId, get])
+  useEffect(load, [])
   return {
     ...state,
     load

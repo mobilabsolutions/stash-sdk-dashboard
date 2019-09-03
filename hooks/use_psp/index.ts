@@ -35,7 +35,7 @@ export const usePsp = () => {
       .catch((error: any) => setState({ data: [], isLoading: false, error }))
   }
 
-  useEffect(loadPsps, [get, merchantId])
+  useEffect(loadPsps, [])
 
   const save = useCallback(
     (pspId, pspConfig) => {

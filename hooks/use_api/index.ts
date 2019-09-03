@@ -1,9 +1,9 @@
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useContext } from 'react'
 import Router from 'next/router'
 import SockJS from 'sockjs-client'
 import * as StompJs from '@stomp/stompjs'
 import getConfig from 'next/config'
-import { useSessionStorage } from '../use_session_storage'
+import { sessionContext } from './session_context'
 import { isClient } from '../../assets/payment.static'
 
 const { publicRuntimeConfig } = getConfig() || { publicRuntimeConfig: {} }
@@ -14,7 +14,7 @@ const BACKEND_HOST = isClient
   : API_UPSTREAM || 'https://payment-dev.mblb.net'
 
 const SOCKET_URL = API_UPSTREAM || `https://payment-${NAMESPACE}.mblb.net`
-enum Method {
+export enum Method {
   GET = 'GET',
   POST = 'POST',
   DELETE = 'DELETE',
@@ -22,27 +22,41 @@ enum Method {
   PATCH = 'PATCH'
 }
 
-const apiCall = (
+export const apiCall = (
   token: string,
   refresh: () => Promise<string>,
   method: Method,
   path: string,
-  content: object = null,
+  content: object | BodyInit = null,
   headers = {},
-  getRaw = false
+  getRaw = false,
+  stringify = true
 ) => {
-  const request: RequestInit = {
-    method,
-    headers: {
+  const getHeaders = _token => {
+    if (typeof headers == 'function')
+      return headers({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${_token}`
+      })
+
+    return {
       ...headers,
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`
-    },
+      Authorization: `Bearer ${_token}`
+    }
+  }
+
+  const request: RequestInit = {
+    method,
+    headers: getHeaders(token),
     credentials: 'include'
   }
 
+  const getContent = () =>
+    stringify ? JSON.stringify(content) : (content as BodyInit)
+
   if (content) {
-    request.body = JSON.stringify(content)
+    request.body = getContent()
   }
 
   const url = `${BACKEND_HOST}${path}`
@@ -65,14 +79,12 @@ const apiCall = (
                 didRefresh = true
                 return processApiCall({
                   method,
-                  headers: {
-                    ...headers,
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${accessToken}`
-                  },
-                  body: !!content ? JSON.stringify(content) : null,
+                  headers: getHeaders(accessToken),
+                  body: !!content ? getContent() : null,
                   credentials: 'include'
                 })
+                  .then(resolve)
+                  .catch(reject)
               })
               .catch(error => {
                 if (error.statusCode && error.statusCode === 401) {
@@ -120,7 +132,7 @@ const apiCall = (
   return processApiCall(request)
 }
 
-const oauthApi = (path: string, body: Object) => {
+export const oauthApi = (path: string, body: Object) => {
   const formData = new FormData()
   Object.keys(body).forEach(key => {
     formData.append(key, body[key])
@@ -154,10 +166,16 @@ const oauthApi = (path: string, body: Object) => {
 }
 
 export const useApi = () => {
-  const [token, setToken] = useSessionStorage('access_token', '')
-  const [refreshToken, setRefreshToken] = useSessionStorage('refresh_token', '')
-  const [userId, setUserId] = useSessionStorage('user_id', '')
-  const [merchantId, setMerchantId] = useSessionStorage('merchant_id', '')
+  const {
+    token,
+    setToken,
+    refreshToken,
+    setRefreshToken,
+    userId,
+    setUserId,
+    merchantId,
+    setMerchantId
+  } = useContext(sessionContext)
 
   const parseJwt = useCallback((jwtRaw: string) => {
     const parts = jwtRaw.split('.')
@@ -201,8 +219,17 @@ export const useApi = () => {
     [refresh, token]
   )
   const post = useCallback(
-    (path: string, content: object, headers: object = {}) =>
-      apiCall(token, refresh, Method.POST, path, content, headers),
+    (path: string, content: object, headers: object = {}, stringify = true) =>
+      apiCall(
+        token,
+        refresh,
+        Method.POST,
+        path,
+        content,
+        headers,
+        false,
+        stringify
+      ),
     [refresh, token]
   )
   const del = useCallback(

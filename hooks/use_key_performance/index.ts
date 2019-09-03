@@ -43,7 +43,7 @@ export default () => {
       )
   }
 
-  useEffect(load, [merchantId, get])
+  useEffect(load, [])
 
   return {
     ...state,

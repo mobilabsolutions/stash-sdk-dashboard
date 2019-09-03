@@ -53,7 +53,7 @@ export default (date: Moment) => {
       })
   }
 
-  useEffect(load, [merchantId, get])
+  useEffect(load, [])
 
   return {
     ...state,
