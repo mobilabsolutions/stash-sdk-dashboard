@@ -29,6 +29,7 @@ export default () => {
     text,
     setText,
     isLoading,
+    error,
     reverse,
     totalCount,
     clearFilters,
@@ -89,6 +90,7 @@ export default () => {
           resetPageSizeTo={resetPageSizeTo}
           pageSize={pageSize}
           totalCount={totalCount}
+          error={error}
           selectedPage={selectedPage}
         />
       </CustomVerticalScrollContainer>

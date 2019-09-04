@@ -154,6 +154,40 @@ exports[`PspForm should render ADYEN fields for production 1`] = `
             </div>
           </div>
         </div>
+        <h3
+          className="h3-sc-1przhcr-0 adyen__H4-sc-1klwv2m-0 jqgzYR"
+        >
+          Client Encryption Key
+        </h3>
+        <div
+          className="field_wrapper-n32k2e-0 irXinp"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            style={Object {}}
+          />
+          <div
+            className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+          >
+            <div
+              className="input_wrapper-sc-15hmhfy-0 duFQAu"
+              style={Object {}}
+            >
+              <input
+                autoFocus={false}
+                className="input__HtmlInput-rcagn3-0 iMczqN"
+                name="clientEncryptionKey"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Client Encryption Key"
+                type="text"
+                value="secret-encripted-key"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <h3
@@ -427,6 +461,40 @@ exports[`PspForm should render ADYEN fields for production and sandbox 1`] = `
                 placeholder="Production URL Prefix"
                 type="text"
                 value="random-mobilab"
+              />
+            </div>
+          </div>
+        </div>
+        <h3
+          className="h3-sc-1przhcr-0 adyen__H4-sc-1klwv2m-0 jqgzYR"
+        >
+          Client Encryption Key
+        </h3>
+        <div
+          className="field_wrapper-n32k2e-0 irXinp"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            style={Object {}}
+          />
+          <div
+            className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+          >
+            <div
+              className="input_wrapper-sc-15hmhfy-0 duFQAu"
+              style={Object {}}
+            >
+              <input
+                autoFocus={false}
+                className="input__HtmlInput-rcagn3-0 iMczqN"
+                name="clientEncryptionKey"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Client Encryption Key"
+                type="text"
+                value="secret-encripted-key"
               />
             </div>
           </div>
@@ -1368,6 +1436,7 @@ exports[`PspForm should submit ADYEN production parameters 1`] = `
 Array [
   "ADYEN",
   Object {
+    "clientEncryptionKey": "encription-key",
     "country": "DE",
     "currency": "EUR",
     "locale": "de-DE",
