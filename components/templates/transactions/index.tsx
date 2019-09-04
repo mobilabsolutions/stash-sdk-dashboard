@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useLocalization } from '../../../hooks'
 import CenteredText from './centered_text'
-import { Timestamp, Reason, CustomerId, Amount, IdLink } from './styled'
+import {
+  Timestamp,
+  Reason,
+  CustomerId,
+  Amount,
+  IdLink,
+  BackText
+} from './styled'
 import 'react-table/react-table.css'
 import '../../../assets/style/custom-react-table.css'
 import ReactTable, { ReactTableDefaults } from 'react-table'
@@ -13,7 +20,7 @@ import {
 } from '../../organisms'
 import { getMappedStatus } from '../../../assets/payment.static'
 import Link from 'next/link'
-import { Status } from '../../molecules'
+import { Status, LoadingError } from '../../molecules'
 import NoTransactions from './no_transactions'
 
 const headerStyle = {
@@ -45,21 +52,46 @@ const global_columns_def = {
   headerStyle
 }
 
-export default ({
-  data,
-  isLoading,
-  numberOfPages,
-  selectedPage,
-  setPage,
-  isFiltered,
-  refund,
-  capture,
-  filterHeight,
-  totalCount,
-  pageSize,
-  resetPageSizeTo,
-  reverse
-}) => {
+interface Action {
+  isLoading: boolean
+  error: any
+  action: Function
+  setError: Function
+}
+interface Props {
+  data: any[]
+  isLoading: boolean
+  numberOfPages: number
+  selectedPage: number
+  setPage: (p: number) => void
+  isFiltered: boolean
+  refund: Action
+  capture: Action
+  reverse: Action
+  filterHeight: number
+  totalCount: number
+  pageSize: number
+  resetPageSizeTo: (p: number) => void
+  error: any
+}
+
+export default (props: Props) => {
+  const {
+    data,
+    isLoading,
+    numberOfPages,
+    selectedPage,
+    setPage,
+    isFiltered,
+    refund,
+    capture,
+    filterHeight,
+    totalCount,
+    pageSize,
+    resetPageSizeTo,
+    error,
+    reverse
+  } = props
   const { getText, formatDate, formatAmount } = useLocalization()
   const [action, setAction] = useState(null)
   const [selected, setSelected] = useState(null)
@@ -101,6 +133,22 @@ export default ({
   }
 
   if (!data || data.length === 0) {
+    //When no data an error is also recived)
+    if (error && error.statusCode != 400)
+      return (
+        <LoadingError
+          mainText={getText('Oops! Something went wrong.')}
+          style={{
+            height: `calc(100% - 24px - ${filterHeight || 0}px)`
+          }}
+        >
+          <BackText>
+            {getText(
+              'Unable to show the transactions overview. Try again later or refresh the page.'
+            )}
+          </BackText>
+        </LoadingError>
+      )
     return isLoading ? (
       <CenteredText>{getText('Loading Data')}</CenteredText>
     ) : isFiltered ? (

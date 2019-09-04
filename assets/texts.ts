@@ -259,6 +259,15 @@ export default {
   Today: { de: 'Heute' },
   'No data': { de: 'Keine Daten' },
   Chargebacks: { de: 'Rückbuchungen' },
+  'Oops! Something went wrong.': { de: 'Hoppla! Etwas ist schief gelaufen.' },
+  'Unable to show the transactions overview. Try again later or refresh the page.': {
+    de:
+      'Die Transaktionsübersicht kann nicht angezeigt werden. Versuchen Sie es später noch einmal oder aktualisieren Sie die Seite.'
+  },
+  'Unable to show the current transaction. Try again later or refresh the page.': {
+    de:
+      'Die aktuelle Transaktion kann nicht angezeigt werden. Versuchen Sie es später noch einmal oder aktualisieren Sie die Seite.'
+  },
   'No transaction found.': {
     de: 'Keine Transaktion zum Anzeigen.'
   },
