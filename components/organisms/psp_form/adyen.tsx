@@ -41,7 +41,8 @@ export default function Adyen(p: Props) {
     urlPrefix: psp.urlPrefix ? psp.urlPrefix : '',
     currency: psp.currency ? psp.currency : '',
     sandboxMerchantId: psp.sandboxMerchantId ? psp.sandboxMerchantId : '',
-    sandboxPublicKey: psp.sandboxPublicKey ? psp.sandboxPublicKey : ''
+    sandboxPublicKey: psp.sandboxPublicKey ? psp.sandboxPublicKey : '',
+    clientEncryptionKey: psp.clientEncryptionKey || ''
   }
   return (
     <Formik
@@ -53,6 +54,7 @@ export default function Adyen(p: Props) {
         urlPrefix,
         sandboxMerchantId,
         sandboxPublicKey,
+        clientEncryptionKey,
         ...rest
       }) => {
         let validateValues = production
@@ -60,6 +62,7 @@ export default function Adyen(p: Props) {
               merchantId,
               publicKey,
               urlPrefix,
+              clientEncryptionKey,
               ...rest
             }
           : {
@@ -75,6 +78,7 @@ export default function Adyen(p: Props) {
         urlPrefix,
         sandboxMerchantId,
         sandboxPublicKey,
+        clientEncryptionKey,
         ...rest
       }) => {
         let submitValues = production
@@ -82,6 +86,7 @@ export default function Adyen(p: Props) {
               merchantId,
               publicKey,
               urlPrefix,
+              clientEncryptionKey,
               sandboxMerchantId: psp.sandboxMerchantId,
               sandboxPublicKey: psp.sandboxPublicKey,
               ...rest
@@ -104,6 +109,7 @@ export default function Adyen(p: Props) {
             urlPrefix,
             sandboxMerchantId,
             sandboxPublicKey,
+            clientEncryptionKey,
             ...rest
           } = props.initialValues
           const constantValues = {
@@ -113,11 +119,18 @@ export default function Adyen(p: Props) {
           }
           if (production) {
             return isEqual(
-              { merchantId, publicKey, urlPrefix, ...rest },
+              {
+                merchantId,
+                publicKey,
+                urlPrefix,
+                clientEncryptionKey,
+                ...rest
+              },
               {
                 merchantId: props.values.merchantId,
                 publicKey: props.values.publicKey,
                 urlPrefix: props.values.urlPrefix,
+                clientEncryptionKey: props.values.clientEncryptionKey,
                 ...constantValues
               }
             )
@@ -183,6 +196,19 @@ export default function Adyen(p: Props) {
                               field={field}
                               form={form}
                               placeholder={getText('Production URL Prefix')}
+                            />
+                          </>
+                        )}
+                      />
+                      <Field
+                        name="clientEncryptionKey"
+                        render={({ field, form }) => (
+                          <>
+                            <H4>{getText('Client Encryption Key')}</H4>
+                            <Input
+                              field={field}
+                              form={form}
+                              placeholder={getText('Client Encryption Key')}
                             />
                           </>
                         )}

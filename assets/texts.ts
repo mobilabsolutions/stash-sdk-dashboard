@@ -275,6 +275,7 @@ export default {
     de:
       'Wir konnten leider keine Transaktion finden, die Ihren Filtern entspricht.'
   },
+  'Client Encryption Key': { de: 'Client-Verschlüsselungsschlüssel' },
   Yesterday: { de: 'Gestern' },
   Sunday: { de: 'Sonntag' },
   Sun: { de: 'Sonntag' },

@@ -36,6 +36,7 @@ describe('PspForm', () => {
         currency: 'EUR',
         default: true,
         locale: 'de-DE',
+        clientEncryptionKey: 'secret-encripted-key',
         sandboxMerchantId: 'MobilabSolutionsGmbHCOM',
         sandboxPublicKey:
           'AQEvhmfuXNWTK0Qc+iSdnWYxq+WZe4RBGIdDV2tF4XWptmUJF0ekWxGCOMqMyvGxdyIQwV1bDb7kfNy1WIxIIkxgBw==-/MmC/tMOJx8t2FsKezDHBYyB9e73SBUtYk0oSC+fT1o=-7LzJDCZLmZNg98BT',
@@ -51,6 +52,7 @@ describe('PspForm', () => {
         currency: 'EUR',
         default: true,
         locale: 'de-DE',
+        clientEncryptionKey: 'secret-encripted-key',
         merchantId: 'MobilabSolutionsGmbHCOM',
         publicKey:
           'AQEvhmfuXNWTK0Qc+iSdnWYxq+WZe4RBGIdDV2tF4XWptmUJF0ekWxGCOMqMyvGxdyIQwV1bDb7kfNy1WIxIIkxgBw==-/MmC/tMOJx8t2FsKezDHBYyB9e73SBUtYk0oSC+fT1o=-7LzJDCZLmZNg98BT',
@@ -66,6 +68,7 @@ describe('PspForm', () => {
         currency: 'EUR',
         default: true,
         locale: 'de-DE',
+        clientEncryptionKey: 'secret-encripted-key',
         merchantId: 'MobilabSolutionsGmbHCOM',
         sandboxMerchantId: 'MobilabSolutionsGmbHCOM',
         sandboxPublicKey:
@@ -192,7 +195,8 @@ describe('PspForm', () => {
         merchantId: '',
         sandboxPublicKey: '',
         publicKey: '',
-        urlPrefix: ''
+        urlPrefix: '',
+        clientEncryptionKey: ''
       },
       onUpdatePsp,
       onCancel: () => {}
@@ -205,6 +209,9 @@ describe('PspForm', () => {
     })
     fireEvent.change(getByPlaceholderText('Production URL Prefix'), {
       target: { value: 'random-mobilab' }
+    })
+    fireEvent.change(getByPlaceholderText('Client Encryption Key'), {
+      target: { value: 'encription-key' }
     })
     fireEvent.change(getByPlaceholderText('Country'), {
       target: { value: 'DE' }
