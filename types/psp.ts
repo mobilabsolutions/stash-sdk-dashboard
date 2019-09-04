@@ -21,4 +21,5 @@ export interface PSP {
   type: PspType
   urlPrefix?: string
   clientEncryptionKey?: string
+  sandboxClientEncryptionKey?: string
 }

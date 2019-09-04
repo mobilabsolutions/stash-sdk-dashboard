@@ -42,7 +42,8 @@ export default function Adyen(p: Props) {
     currency: psp.currency ? psp.currency : '',
     sandboxMerchantId: psp.sandboxMerchantId ? psp.sandboxMerchantId : '',
     sandboxPublicKey: psp.sandboxPublicKey ? psp.sandboxPublicKey : '',
-    clientEncryptionKey: psp.clientEncryptionKey || ''
+    clientEncryptionKey: psp.clientEncryptionKey || '',
+    sandboxClientEncryptionKey: psp.sandboxClientEncryptionKey || ''
   }
   return (
     <Formik
@@ -55,6 +56,7 @@ export default function Adyen(p: Props) {
         sandboxMerchantId,
         sandboxPublicKey,
         clientEncryptionKey,
+        sandboxClientEncryptionKey,
         ...rest
       }) => {
         let validateValues = production
@@ -67,6 +69,7 @@ export default function Adyen(p: Props) {
             }
           : {
               sandboxMerchantId,
+              sandboxClientEncryptionKey,
               sandboxPublicKey,
               ...rest
             }
@@ -79,6 +82,7 @@ export default function Adyen(p: Props) {
         sandboxMerchantId,
         sandboxPublicKey,
         clientEncryptionKey,
+        sandboxClientEncryptionKey,
         ...rest
       }) => {
         let submitValues = production
@@ -89,6 +93,7 @@ export default function Adyen(p: Props) {
               clientEncryptionKey,
               sandboxMerchantId: psp.sandboxMerchantId,
               sandboxPublicKey: psp.sandboxPublicKey,
+              sandboxClientEncryptionKey: psp.sandboxClientEncryptionKey,
               ...rest
             }
           : {
@@ -97,6 +102,7 @@ export default function Adyen(p: Props) {
               urlPrefix: psp.urlPrefix,
               sandboxMerchantId,
               sandboxPublicKey,
+              sandboxClientEncryptionKey,
               ...rest
             }
         onUpdatePsp(psp.type, submitValues as Psp)
@@ -110,6 +116,7 @@ export default function Adyen(p: Props) {
             sandboxMerchantId,
             sandboxPublicKey,
             clientEncryptionKey,
+            sandboxClientEncryptionKey,
             ...rest
           } = props.initialValues
           const constantValues = {
@@ -136,10 +143,17 @@ export default function Adyen(p: Props) {
             )
           }
           return isEqual(
-            { sandboxMerchantId, sandboxPublicKey, ...rest },
+            {
+              sandboxMerchantId,
+              sandboxPublicKey,
+              sandboxClientEncryptionKey,
+              ...rest
+            },
             {
               sandboxMerchantId: props.values.sandboxMerchantId,
               sandboxPublicKey: props.values.sandboxPublicKey,
+              sandboxClientEncryptionKey:
+                props.values.sandboxClientEncryptionKey,
               ...constantValues
             }
           )
@@ -244,6 +258,21 @@ export default function Adyen(p: Props) {
                               form={form}
                               icon={<KeyIcon />}
                               placeholder={getText('Sandbox Public Key')}
+                            />
+                          </>
+                        )}
+                      />
+                      <Field
+                        name="sandboxClientEncryptionKey"
+                        render={({ field, form }) => (
+                          <>
+                            <H4>{getText('Sandbox Client Encryption Key')}</H4>
+                            <Input
+                              field={field}
+                              form={form}
+                              placeholder={getText(
+                                'Sandbox Client Encryption Key'
+                              )}
                             />
                           </>
                         )}

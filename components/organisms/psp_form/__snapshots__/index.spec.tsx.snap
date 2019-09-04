@@ -742,6 +742,40 @@ exports[`PspForm should render ADYEN fields for sandbox 1`] = `
             />
           </div>
         </div>
+        <h3
+          className="h3-sc-1przhcr-0 adyen__H4-sc-1klwv2m-0 jqgzYR"
+        >
+          Sandbox Client Encryption Key
+        </h3>
+        <div
+          className="field_wrapper-n32k2e-0 irXinp"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            style={Object {}}
+          />
+          <div
+            className="input__InputErrorWrapper-sc-1dz7i8-0 cAUOWl"
+          >
+            <div
+              className="input_wrapper-sc-15hmhfy-0 duFQAu"
+              style={Object {}}
+            >
+              <input
+                autoFocus={false}
+                className="input__HtmlInput-rcagn3-0 iMczqN"
+                name="sandboxClientEncryptionKey"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Sandbox Client Encryption Key"
+                type="text"
+                value="secret-encripted-key"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <h3
@@ -1442,6 +1476,7 @@ Array [
     "locale": "de-DE",
     "merchantId": "MobilabSolutionsGmbHCOM",
     "publicKey": "AQEvhmfuXNWTK0Qc+iSdnWYxq+WZe4R",
+    "sandboxClientEncryptionKey": "",
     "sandboxMerchantId": "",
     "sandboxPublicKey": "",
     "urlPrefix": "random-mobilab",
@@ -1458,6 +1493,7 @@ Array [
     "locale": "de-DE",
     "merchantId": "",
     "publicKey": "",
+    "sandboxClientEncryptionKey": "sb-client-encrytion-key",
     "sandboxMerchantId": "SBMobilabSolutionsGmbHCOM",
     "sandboxPublicKey": "SBAQEvhmfuXNWTK0Qc+iSdnWYxq+WZe4R",
     "urlPrefix": "",

@@ -36,7 +36,7 @@ describe('PspForm', () => {
         currency: 'EUR',
         default: true,
         locale: 'de-DE',
-        clientEncryptionKey: 'secret-encripted-key',
+        sandboxClientEncryptionKey: 'secret-encripted-key',
         sandboxMerchantId: 'MobilabSolutionsGmbHCOM',
         sandboxPublicKey:
           'AQEvhmfuXNWTK0Qc+iSdnWYxq+WZe4RBGIdDV2tF4XWptmUJF0ekWxGCOMqMyvGxdyIQwV1bDb7kfNy1WIxIIkxgBw==-/MmC/tMOJx8t2FsKezDHBYyB9e73SBUtYk0oSC+fT1o=-7LzJDCZLmZNg98BT',
@@ -196,7 +196,8 @@ describe('PspForm', () => {
         sandboxPublicKey: '',
         publicKey: '',
         urlPrefix: '',
-        clientEncryptionKey: ''
+        clientEncryptionKey: '',
+        sandboxClientEncryptionKey: ''
       },
       onUpdatePsp,
       onCancel: () => {}
@@ -245,7 +246,8 @@ describe('PspForm', () => {
           merchantId: '',
           sandboxPublicKey: '',
           publicKey: '',
-          urlPrefix: ''
+          urlPrefix: '',
+          sandboxClientEncryptionKey: ''
         },
         onUpdatePsp,
         onCancel: () => {}
@@ -269,6 +271,9 @@ describe('PspForm', () => {
     })
     fireEvent.change(getByPlaceholderText('Sandbox Public Key'), {
       target: { value: 'SBAQEvhmfuXNWTK0Qc+iSdnWYxq+WZe4R' }
+    })
+    fireEvent.change(getByPlaceholderText('Sandbox Client Encryption Key'), {
+      target: { value: 'sb-client-encrytion-key' }
     })
     const Button = getByText('Save').parentElement
     fireEvent.click(Button)

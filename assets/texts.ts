@@ -278,6 +278,9 @@ export default {
   'Upload Header Logo': { de: 'Header-Logo hochladen' },
   Logo: { de: 'Logo' },
   'Client Encryption Key': { de: 'Client-Verschlüsselungsschlüssel' },
+  'Sandbox Client Encryption Key': {
+    de: 'Sandbox-Client-Verschlüsselungsschlüssel'
+  },
   Yesterday: { de: 'Gestern' },
   Sunday: { de: 'Sonntag' },
   Sun: { de: 'Sonntag' },
