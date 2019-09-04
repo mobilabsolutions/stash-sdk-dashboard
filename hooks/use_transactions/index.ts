@@ -208,9 +208,7 @@ export const useTransactions = () => {
     state.status,
     state.text,
     state.refreshCounter,
-    state.paymentMethod,
-    token,
-    apiGet
+    state.paymentMethod
   ])
 
   const numberOfPages =

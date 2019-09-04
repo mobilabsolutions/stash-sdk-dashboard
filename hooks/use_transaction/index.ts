@@ -68,7 +68,7 @@ export const useTransaction = transactionId => {
     }
 
     loadData()
-  }, [transactionId, token])
+  }, [transactionId])
 
   const refund = useRefund(loadData)
 

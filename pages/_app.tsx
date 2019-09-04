@@ -4,9 +4,11 @@ import Head from 'next/head'
 import { theme } from '../assets/style'
 import { ThemeProvider } from '../components/styled'
 import { NextContextProvider } from '../hooks/use_next_context'
+import { SessionProvider } from '../hooks/use_api/session_context'
 import { ToastProvider } from '../hooks/use_toast'
 import { ThemeProvider as NewTheme } from '@zendeskgarden/react-theming'
 import '@zendeskgarden/react-pagination/dist/styles.css'
+import { LogoProvider } from '../hooks/use_logo'
 type Props = {
   context: object
 }
@@ -45,7 +47,11 @@ export default class extends App<Props> {
             <ThemeProvider theme={theme}>
               <NewTheme>
                 <ToastProvider>
-                  <Component {...pageProps} />
+                  <SessionProvider>
+                    <LogoProvider>
+                      <Component {...pageProps} />
+                    </LogoProvider>
+                  </SessionProvider>
                 </ToastProvider>
               </NewTheme>
             </ThemeProvider>

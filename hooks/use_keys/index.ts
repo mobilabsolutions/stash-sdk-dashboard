@@ -29,7 +29,7 @@ export const useKeys = () => {
       .catch((error: any) =>
         setState(prev => ({ ...prev, data: [], isLoading: false, error }))
       )
-  }, [get, merchantId])
+  }, [])
 
   const create = useCallback(
     (type: string, name?: string) => {

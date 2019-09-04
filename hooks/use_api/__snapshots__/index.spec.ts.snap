@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Api flow should GET the data 1`] = `
+Object {
+  "result": Object {
+    "any": "data",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`Api flow should reconnect and GET the data 1`] = `
+Object {
+  "result": Object {
+    "any": "data",
+  },
+  "statusCode": 200,
+}
+`;

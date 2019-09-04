@@ -67,6 +67,7 @@ export { default as InputWrapper } from './input/input_wrapper'
 export { default as InputIconWrapper } from './input/icon_wrapper'
 export { default as InputVisibilityIcon } from './input/visibility_icon'
 export { default as InputErrorMessage } from './input/error_message'
+export { default as InputFile } from './input/file'
 
 export { default as Title } from './text/title'
 export { default as H1 } from './text/h1'
