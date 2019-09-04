@@ -6,8 +6,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
-  Legend
+  ResponsiveContainer
 } from 'recharts'
 import moment from 'moment'
 import { useLocalization } from '../../../hooks'
