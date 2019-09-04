@@ -30,13 +30,43 @@ const ActivityContainer = styled.div`
   .no-data {
     margin: auto;
   }
+  .header {
+  }
+`
+
+const Legend = styled.div`
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin-top: -40px;
+`
+const LegendItem = styled.span<{ color: string }>`
+  color: ${p => p.theme.shade.A200};
+  margin-left: 16px;
+  font-size: 14px;
+  ::before {
+    height: 12px;
+    width: 12px;
+    content: '';
+    display: inline-block;
+    transform: translate(-4px, 1px);
+    color: ${p => p.color};
+    border-radius: 6px;
+    background-color: ${p => p.color};
+  }
 `
 
 export function TodaysActivityCmp(props: Props) {
   const { getText } = useLocalization()
   return (
     <ActivityContainer>
-      <H4 className="title">{getText('Today´s Activity')}</H4>
+      <div className="header">
+        <H4 className="title">{getText('Today´s Activity')}</H4>
+        <Legend>
+          <LegendItem color="#609df6">{getText('Yesterday')}</LegendItem>
+          <LegendItem color="#07d0c7">{getText('Today')}</LegendItem>
+        </Legend>
+      </div>
       <div className="graph">
         {props.data.length ? (
           <ActivityAreaChart

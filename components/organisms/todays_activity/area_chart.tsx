@@ -84,7 +84,7 @@ export default function ActivityAreaChart(props: Props) {
             </linearGradient>
             <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="today">
               <stop offset="0%" stopColor="rgba(4, 139, 133, 0)" />
-              <stop offset="50%" stopColor="#3aede5" />
+              <stop offset="50%" stopColor="#07d0c7" />
             </linearGradient>
           </defs>
           <XAxis
@@ -113,12 +113,11 @@ export default function ActivityAreaChart(props: Props) {
             labelFormatter={timeFormater}
             labelStyle={{ fontWeight: 'bold' }}
           />
-          <Legend />
           <Area
             dataKey="today"
             isAnimationActive={false}
             name={getText('Today')}
-            stroke="#3aede5"
+            stroke="#07d0c7"
             connectNulls
             fill="url(#today)"
           />
