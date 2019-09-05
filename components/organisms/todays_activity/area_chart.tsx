@@ -34,12 +34,17 @@ const Container = styled.div`
   }
 `
 
+const useFormatter = () => {
+  const { formatAmount } = useLocalization()
+  return (amount: number = 0) =>
+    amount === 0 ? '0' : formatAmount('EUR', amount).value
+}
+
 const INTERVAL = 8
 
 //12am...8am...4pm...11pm
 const CustomizedAxisTick = props => {
   const { x, y, fill, payload, index } = props
-  console.log(props)
   if (index % INTERVAL !== 0 && index !== 23) return null
   return (
     <g className="recharts-layer recharts-cartesian-axis-tick">
@@ -60,15 +65,18 @@ const CustomizedAxisTick = props => {
     </g>
   )
 }
+// The function was generated [here](https://mycurvefit.com/)
+//y = 12334540 + (-26.85997 - 12334540)/(1 + (x/79427.87)^1.346958)
 
 export default function ActivityAreaChart(props: Props) {
   const { getText } = useLocalization()
+  const currencyFormatter = useFormatter()
   return (
     <Container>
       <ResponsiveContainer>
         <AreaChart
           data={props.data}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          margin={{ top: 10, right: 30, left: 16, bottom: 0 }}
         >
           <defs>
             <linearGradient
@@ -105,11 +113,13 @@ export default function ActivityAreaChart(props: Props) {
             stroke={'#a3aaaf'}
             tickSize={8}
             tickLine={{ stroke: '#edeff0' }}
+            tickFormatter={currencyFormatter}
             tickMargin={16}
           />
           <CartesianGrid stroke={'#edeff0'} vertical={false} />
           <Tooltip
             labelFormatter={timeFormater}
+            formatter={val => currencyFormatter(val as number)}
             labelStyle={{ fontWeight: 'bold' }}
           />
           <Area
