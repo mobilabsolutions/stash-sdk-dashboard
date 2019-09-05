@@ -40,7 +40,7 @@ export default function RefundLineChart(props: { data: any[] }) {
     <ResponsiveContainer>
       <LineChart
         data={props.data}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        margin={{ top: 10, right: 30, left: 8, bottom: 0 }}
       >
         <XAxis
           dataKey="day"
