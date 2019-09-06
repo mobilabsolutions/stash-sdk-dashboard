@@ -4,7 +4,10 @@ import styled from '../../styled'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${p => p.theme.spacing.xxlarge};
+  margin-top: ${p => p.theme.spacing.xxlarge};
+  margin-left: ${p => p.theme.spacing.xxlarge};
+  margin-right: ${p => p.theme.spacing.xxlarge};
+  margin-bottom: 0;
 `
 const Form = styled.form`
   display: flex;
