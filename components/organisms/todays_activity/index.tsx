@@ -39,6 +39,7 @@ const Legend = styled.div`
   flex-direction: row;
   float: right;
   margin-top: -40px;
+  margin-right: 28px;
 `
 const LegendItem = styled.span<{ color: string }>`
   color: ${p => p.theme.shade.A200};
