@@ -82,7 +82,6 @@ export default (props: Props) => {
     numberOfPages,
     selectedPage,
     setPage,
-    isFiltered,
     refund,
     capture,
     filterHeight,
@@ -151,13 +150,13 @@ export default (props: Props) => {
       )
     return isLoading ? (
       <CenteredText>{getText('Loading Data')}</CenteredText>
-    ) : isFiltered ? (
+    ) : (
       <NoTransactions
         style={{
           height: `calc(100% - 24px - ${filterHeight || 0}px)`
         }}
       />
-    ) : null
+    )
   }
 
   return (

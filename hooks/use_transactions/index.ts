@@ -70,7 +70,7 @@ function getActionFromState(state: State): TransactionAction | '' {
 function getInitValue(): State {
   return {
     data: [],
-    isLoading: false,
+    isLoading: true,
     startDate: null,
     endDate: null,
     startPos: 0,
@@ -132,7 +132,6 @@ export const useTransactions = () => {
     'transactions-state',
     getInitValue(),
     ({
-      isLoading,
       startDate,
       endDate,
       startPos,
@@ -142,7 +141,6 @@ export const useTransactions = () => {
       paymentMethod,
       text
     }) => ({
-      isLoading,
       startDate,
       endDate,
       startPos,
