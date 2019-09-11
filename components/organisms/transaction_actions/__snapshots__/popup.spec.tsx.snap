@@ -12,15 +12,15 @@ exports[`PopUp Should Render capture form 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
       >
         <span
-          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+          className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
         >
           Are you sure you want to capture this transaction?
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
         >
           <svg
             height={24}
@@ -79,15 +79,15 @@ exports[`PopUp Should Render loading state 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
       >
         <span
-          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+          className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
         >
           Are you sure you want to reverse the transaction?
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
         >
           <svg
             height={24}
@@ -128,7 +128,7 @@ exports[`PopUp Should Render loading state 1`] = `
               }
             >
               <h3
-                className="h3-sc-1przhcr-0 bqBPGG"
+                className="h3-sc-1przhcr-0 bTguNJ"
               >
                 Description
               </h3>
@@ -147,7 +147,7 @@ exports[`PopUp Should Render loading state 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="input__HtmlInput-rcagn3-0 iMczqN"
+                  className="input__HtmlInput-rcagn3-0 iVhIct"
                   name="reason"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -544,15 +544,15 @@ exports[`PopUp Should Render refund form 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
       >
         <span
-          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+          className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
         >
           Refund Payment
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
         >
           <svg
             height={24}
@@ -580,10 +580,10 @@ exports[`PopUp Should Render refund form 1`] = `
             className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
           >
             <span
-              className="refund__Value-a7ak7z-0 iETVAo"
+              className="refund__Value-a7ak7z-0 boFIDv"
             >
               <label
-                className="radio__Label-sc-1hx8hak-0 dnPjqz"
+                className="radio__Label-sc-1hx8hak-0 bosTDa"
                 label="Partial"
               >
                 Partial
@@ -597,7 +597,7 @@ exports[`PopUp Should Render refund form 1`] = `
                 <span />
               </label>
               <label
-                className="radio__Label-sc-1hx8hak-0 dnPjqz"
+                className="radio__Label-sc-1hx8hak-0 bosTDa"
                 label="Full"
               >
                 Full
@@ -629,7 +629,7 @@ exports[`PopUp Should Render refund form 1`] = `
               }
             >
               <h3
-                className="h3-sc-1przhcr-0 bqBPGG"
+                className="h3-sc-1przhcr-0 bTguNJ"
               >
                 Refund
               </h3>
@@ -648,7 +648,7 @@ exports[`PopUp Should Render refund form 1`] = `
               >
                 <input
                   autoFocus={false}
-                  className="input_currency__HtmlInput-obstnl-0 cVRLQV"
+                  className="input_currency__HtmlInput-obstnl-0 fTIhBn"
                   disabled={true}
                   name="refund"
                   onBlur={[Function]}
@@ -680,7 +680,7 @@ exports[`PopUp Should Render refund form 1`] = `
               }
             >
               <h3
-                className="h3-sc-1przhcr-0 bqBPGG"
+                className="h3-sc-1przhcr-0 bTguNJ"
               >
                 Description
               </h3>
@@ -699,7 +699,7 @@ exports[`PopUp Should Render refund form 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="input__HtmlInput-rcagn3-0 iMczqN"
+                  className="input__HtmlInput-rcagn3-0 iVhIct"
                   name="reason"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -804,15 +804,15 @@ exports[`PopUp Should Render reverse form 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 cxwPtC"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
       >
         <span
-          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+          className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
         >
           Are you sure you want to reverse the transaction?
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 bfSodX"
+          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
         >
           <svg
             height={24}
@@ -853,7 +853,7 @@ exports[`PopUp Should Render reverse form 1`] = `
               }
             >
               <h3
-                className="h3-sc-1przhcr-0 bqBPGG"
+                className="h3-sc-1przhcr-0 bTguNJ"
               >
                 Description
               </h3>
@@ -872,7 +872,7 @@ exports[`PopUp Should Render reverse form 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="input__HtmlInput-rcagn3-0 iMczqN"
+                  className="input__HtmlInput-rcagn3-0 iVhIct"
                   name="reason"
                   onBlur={[Function]}
                   onChange={[Function]}

@@ -27,23 +27,20 @@ const ButtonContainer = styled.div`
   }
 `
 const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: block;
   border-bottom: 1px solid #ededed;
   padding: 24px;
 `
 
 const HeaderTitle = styled.span`
-  display: block;
   color: ${props => props.theme.shade.A700};
   font-size: 1.2em;
   font-weight: bold;
-  font-family: Ubuntu, Raleway, Helvetica, Arial, sans-serif;
-  width: 24em;
 `
 
 const HeaderClose = styled.div`
   padding-left: 12px;
+  float: right;
   cursor: pointer;
 `
 
