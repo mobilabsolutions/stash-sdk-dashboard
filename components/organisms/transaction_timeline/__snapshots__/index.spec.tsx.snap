@@ -3,7 +3,7 @@
 exports[`TransactionTimeline Should Render 1`] = `
 <div>
   <h2
-    className="h2-m2oto9-0 detail_view__Title-inrqp5-1 ibbisR"
+    className="h2-m2oto9-0 detail_view__Title-inrqp5-1 fpIhlI"
   >
     Timeline
   </h2>
@@ -66,7 +66,7 @@ exports[`TransactionTimeline Should Render 1`] = `
 exports[`TransactionTimeline Should ommit empty reasons 1`] = `
 <div>
   <h2
-    className="h2-m2oto9-0 detail_view__Title-inrqp5-1 ibbisR"
+    className="h2-m2oto9-0 detail_view__Title-inrqp5-1 fpIhlI"
   >
     Timeline
   </h2>

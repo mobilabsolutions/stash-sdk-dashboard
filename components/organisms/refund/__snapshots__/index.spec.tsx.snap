@@ -12,10 +12,10 @@ exports[`RefundForm Should Render 1`] = `
       className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
     >
       <span
-        className="refund__Value-a7ak7z-0 iETVAo"
+        className="refund__Value-a7ak7z-0 boFIDv"
       >
         <label
-          className="radio__Label-sc-1hx8hak-0 dnPjqz"
+          className="radio__Label-sc-1hx8hak-0 bosTDa"
           label="Partial"
         >
           Partial
@@ -29,7 +29,7 @@ exports[`RefundForm Should Render 1`] = `
           <span />
         </label>
         <label
-          className="radio__Label-sc-1hx8hak-0 dnPjqz"
+          className="radio__Label-sc-1hx8hak-0 bosTDa"
           label="Full"
         >
           Full
@@ -61,7 +61,7 @@ exports[`RefundForm Should Render 1`] = `
         }
       >
         <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
+          className="h3-sc-1przhcr-0 bTguNJ"
         >
           Refund
         </h3>
@@ -80,7 +80,7 @@ exports[`RefundForm Should Render 1`] = `
         >
           <input
             autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 cVRLQV"
+            className="input_currency__HtmlInput-obstnl-0 fTIhBn"
             disabled={true}
             name="refund"
             onBlur={[Function]}
@@ -112,7 +112,7 @@ exports[`RefundForm Should Render 1`] = `
         }
       >
         <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
+          className="h3-sc-1przhcr-0 bTguNJ"
         >
           Description
         </h3>
@@ -131,7 +131,7 @@ exports[`RefundForm Should Render 1`] = `
         >
           <input
             autoFocus={true}
-            className="input__HtmlInput-rcagn3-0 iMczqN"
+            className="input__HtmlInput-rcagn3-0 iVhIct"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
@@ -184,10 +184,10 @@ exports[`RefundForm Should use loading status 1`] = `
       className="refund__FormItemContainer-a7ak7z-1 iBWkWY"
     >
       <span
-        className="refund__Value-a7ak7z-0 iETVAo"
+        className="refund__Value-a7ak7z-0 boFIDv"
       >
         <label
-          className="radio__Label-sc-1hx8hak-0 dnPjqz"
+          className="radio__Label-sc-1hx8hak-0 bosTDa"
           label="Partial"
         >
           Partial
@@ -201,7 +201,7 @@ exports[`RefundForm Should use loading status 1`] = `
           <span />
         </label>
         <label
-          className="radio__Label-sc-1hx8hak-0 dnPjqz"
+          className="radio__Label-sc-1hx8hak-0 bosTDa"
           label="Full"
         >
           Full
@@ -233,7 +233,7 @@ exports[`RefundForm Should use loading status 1`] = `
         }
       >
         <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
+          className="h3-sc-1przhcr-0 bTguNJ"
         >
           Refund
         </h3>
@@ -252,7 +252,7 @@ exports[`RefundForm Should use loading status 1`] = `
         >
           <input
             autoFocus={false}
-            className="input_currency__HtmlInput-obstnl-0 cVRLQV"
+            className="input_currency__HtmlInput-obstnl-0 fTIhBn"
             disabled={true}
             name="refund"
             onBlur={[Function]}
@@ -284,7 +284,7 @@ exports[`RefundForm Should use loading status 1`] = `
         }
       >
         <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
+          className="h3-sc-1przhcr-0 bTguNJ"
         >
           Description
         </h3>
@@ -303,7 +303,7 @@ exports[`RefundForm Should use loading status 1`] = `
         >
           <input
             autoFocus={true}
-            className="input__HtmlInput-rcagn3-0 iMczqN"
+            className="input__HtmlInput-rcagn3-0 iVhIct"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}

@@ -4,11 +4,7 @@ import { Page, Filter } from '../components/organisms'
 import { Transactions, TransactionHeader } from '../components/templates'
 import { useTokenCheck, useTransactions, useClientRect } from '../hooks'
 import { VerticalScrollContainer } from '../components/atoms'
-import styled from '../components/styled'
 
-const CustomVerticalScrollContainer = styled(VerticalScrollContainer)`
-  font-family: ${props => props.theme.fontTransactions};
-`
 const FILTER_HEIGHT = 68
 
 export default () => {
@@ -55,7 +51,7 @@ export default () => {
       activePath="/transactions"
       isLoading={isLoading || exportCSV.downloading}
     >
-      <CustomVerticalScrollContainer>
+      <VerticalScrollContainer>
         <TransactionHeader
           toggleFilter={toggleFilter}
           showFilter={showFilter}
@@ -93,7 +89,7 @@ export default () => {
           error={error}
           selectedPage={selectedPage}
         />
-      </CustomVerticalScrollContainer>
+      </VerticalScrollContainer>
     </Page>
   )
 }

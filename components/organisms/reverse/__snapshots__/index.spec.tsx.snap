@@ -25,7 +25,7 @@ exports[`CaptureForm Should Render 1`] = `
         }
       >
         <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
+          className="h3-sc-1przhcr-0 bTguNJ"
         >
           Description
         </h3>
@@ -44,7 +44,7 @@ exports[`CaptureForm Should Render 1`] = `
         >
           <input
             autoFocus={true}
-            className="input__HtmlInput-rcagn3-0 iMczqN"
+            className="input__HtmlInput-rcagn3-0 iVhIct"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}
@@ -110,7 +110,7 @@ exports[`CaptureForm Should use loading status 1`] = `
         }
       >
         <h3
-          className="h3-sc-1przhcr-0 bqBPGG"
+          className="h3-sc-1przhcr-0 bTguNJ"
         >
           Description
         </h3>
@@ -129,7 +129,7 @@ exports[`CaptureForm Should use loading status 1`] = `
         >
           <input
             autoFocus={true}
-            className="input__HtmlInput-rcagn3-0 iMczqN"
+            className="input__HtmlInput-rcagn3-0 iVhIct"
             name="reason"
             onBlur={[Function]}
             onChange={[Function]}

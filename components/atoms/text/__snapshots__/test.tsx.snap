@@ -2,84 +2,84 @@
 
 exports[`ActiveH1 Should render 1`] = `
 <h1
-  className="h1_active-fbufqz-0 gFKkAx"
+  className="h1_active-fbufqz-0 bKZVMO"
 />
 `;
 
 exports[`ActiveH2 Should render 1`] = `
 <h2
-  className="h2_active-sc-1r3712n-0 gzoUbG"
+  className="h2_active-sc-1r3712n-0 gRiiVa"
 />
 `;
 
 exports[`ActiveH3 Should render 1`] = `
 <h3
-  className="h3_active-x7etx6-0 jFMuZM"
+  className="h3_active-x7etx6-0 gaKiyV"
 />
 `;
 
 exports[`ActiveH4 Should render 1`] = `
 <h4
-  className="h4_active-tx568s-0 beCDsK"
+  className="h4_active-tx568s-0 fSxkud"
 />
 `;
 
 exports[`Body Should render 1`] = `
 <span
-  className="body-otgu5j-0 fWtemn"
+  className="body-otgu5j-0 ehwZSH"
 />
 `;
 
 exports[`H1 Should render 1`] = `
 <h1
-  className="h1-sc-1ivb2ca-0 hnQWsF"
+  className="h1-sc-1ivb2ca-0 iRkRlP"
 />
 `;
 
 exports[`H2 Should render 1`] = `
 <h2
-  className="h2-m2oto9-0 exTpbo"
+  className="h2-m2oto9-0 ilQvPd"
 />
 `;
 
 exports[`H3 Should render 1`] = `
 <h3
-  className="h3-sc-1przhcr-0 bqBPGG"
+  className="h3-sc-1przhcr-0 bTguNJ"
 />
 `;
 
 exports[`H4 Should render 1`] = `
 <h4
-  className="h4-sc-1tkem18-0 iOcsze"
+  className="h4-sc-1tkem18-0 ejNHmL"
 />
 `;
 
 exports[`LargeBody Should render 1`] = `
 <span
-  className="body_large-sc-10mlfdu-0 jlXjHV"
+  className="body_large-sc-10mlfdu-0 eLbhpA"
 />
 `;
 
 exports[`PlusBody Should render 1`] = `
 <span
-  className="body_plus-sc-1agi60b-0 hHOuqG"
+  className="body_plus-sc-1agi60b-0 hoiQKK"
 />
 `;
 
 exports[`SmallBody Should render 1`] = `
 <span
-  className="body_small-y3hyj7-0 hDqUfH"
+  className="body_small-y3hyj7-0 hBuYnQ"
 />
 `;
 
 exports[`Title Should render 1`] = `
 <title
-  className="title-lfui3j-0 kZhQXb"
+  className="title-lfui3j-0 bjLtKL"
 />
 `;
 
 exports[`Warning Should render 1`] = `
 <span
-  className="warning-sc-1gapla4-0 hUzoGX"
+  className="warning-sc-1gapla4-0 gBrAkD"
 />
 `;

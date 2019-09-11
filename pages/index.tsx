@@ -8,7 +8,6 @@ const CustomScrollContainer = styled(VerticalScrollContainer)`
   max-width: 1224px;
   margin: auto;
   padding-top: 40px;
-  font-family: ${props => props.theme.fontTransactions};
 `
 
 export default () => {
