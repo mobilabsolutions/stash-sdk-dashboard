@@ -30,6 +30,7 @@ const DropDown = Buffer.from(
 const Select = styled.select`
   width: 60px;
   height: 32px;
+  font-size: 14px !important;
   border-radius: 4px;
   appearance: none;
   display: inline-block;
