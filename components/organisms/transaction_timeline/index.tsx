@@ -3,7 +3,6 @@ import { DetailView, TextCurrency } from '../../molecules'
 import { useLocalization } from '../../../hooks'
 import { TimeAction } from '../../../hooks/types'
 import styled from '../../styled'
-import moment from 'moment'
 
 interface TimeProps {
   timeline: Array<TimeAction>
@@ -21,12 +20,10 @@ const TimeActionItem = styled.td`
 `
 
 const Info = ({ action, status, reason, amount, createdDate, currencyId }) => {
-  const timestamp = moment(createdDate).format()
-
   const { getText, formatDate } = useLocalization()
   return (
     <span>
-      {formatDate(timestamp)}
+      {formatDate(createdDate)}
       <span className="item-details">
         {' - '}
         {getText(action)} {getText(status)} - {reason ? `${reason} - ` : ''}
