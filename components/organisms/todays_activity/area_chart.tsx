@@ -124,7 +124,6 @@ export default function ActivityAreaChart(props: Props) {
           />
           <Area
             dataKey="today"
-            isAnimationActive={false}
             name={getText('Today')}
             stroke="#07d0c7"
             connectNulls
@@ -135,7 +134,6 @@ export default function ActivityAreaChart(props: Props) {
             name={getText('Yesterday')}
             dataKey="selectedDay"
             stroke="#609df6"
-            isAnimationActive={false}
             fill="url(#selectedDay)"
           />
         </AreaChart>

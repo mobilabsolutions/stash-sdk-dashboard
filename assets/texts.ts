@@ -281,6 +281,7 @@ export default {
   'Sandbox Client Encryption Key': {
     de: 'Sandbox-Client-Verschlüsselungsschlüssel'
   },
+  '%{amount} transactions': { de: '%{amount} transactions' },
   Yesterday: { de: 'Gestern' },
   Sunday: { de: 'Sonntag' },
   Sun: { de: 'Sonntag' },

@@ -61,6 +61,630 @@ Array [
 ]
 `;
 
+exports[`Mixer for "live" and "static" data should work for "Notifications" 1`] = `
+<div>
+  <div
+    class="notifications__ActivityContainer-sc-1qam14b-0 eYMokQ"
+  >
+    <h4
+      class="title h4-sc-1tkem18-0 iOcsze"
+    >
+      Notifications
+    </h4>
+    <div
+      class="notification-list"
+    >
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#ECFEFD"
+                r="16"
+              />
+              <path
+                d="M13.666 12.922c-.978 0-1.813.344-2.505 1.031a3.38 3.38 0 0 0-1.037 2.489.536.536 0 0 1-.164.395.544.544 0 0 1-.398.163.544.544 0 0 1-.398-.163.536.536 0 0 1-.164-.395c0-1.282.455-2.375 1.365-3.28.91-.904 2.01-1.356 3.3-1.356h5.369l-1.873-1.86a.524.524 0 0 1-.156-.388c0-.155.055-.287.164-.395A.544.544 0 0 1 17.567 9c.156 0 .286.052.39.155l2.871 2.853a.54.54 0 0 1 0 .79l-2.793 2.76a.507.507 0 0 1-.39.17.544.544 0 0 1-.398-.162.536.536 0 0 1-.164-.395.55.55 0 0 1 .172-.404l1.857-1.845h-5.446zm9.162 2.249a.5.5 0 0 1 .172.387c0 1.282-.456 2.375-1.367 3.28-.912.904-2.013 1.356-3.305 1.356h-5.375l1.875 1.86a.524.524 0 0 1 .156.388.536.536 0 0 1-.164.395.545.545 0 0 1-.398.163.532.532 0 0 1-.39-.155l-2.876-2.853a.567.567 0 0 1-.156-.395c0-.15.052-.282.156-.395l2.797-2.76a.508.508 0 0 1 .39-.17c.157 0 .29.054.4.162.109.109.163.24.163.395a.524.524 0 0 1-.156.388l-1.875 1.86h5.453a3.43 3.43 0 0 0 2.508-1.03 3.378 3.378 0 0 0 1.039-2.489c0-.155.055-.287.164-.395a.545.545 0 0 1 .398-.163c.157 0 .287.057.391.17z"
+                fill="#048B85"
+                fill-rule="nonzero"
+                stroke="#048B85"
+                stroke-width=".5"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              CC
+            </span>
+            <span
+              class="description"
+              title="Refunded 30$"
+            >
+              Refunded 30$
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="15/09/2019 10:40:40"
+          >
+            a few seconds ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#EDEEF5"
+                r="16"
+              />
+              <path
+                d="M18.82 16.64l-3.32-3.32L18.82 10v2.5h5.82v1.64h-5.82v2.5zm-5 .86V15l3.32 3.32-3.32 3.32v-2.5H8V17.5h5.82z"
+                fill="#4F5995"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              Sunday
+            </span>
+            <span
+              class="description"
+              title="8 transactions"
+            >
+              8 transactions
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="15/09/2019 10:40:40"
+          >
+            a few seconds ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#ECFEFD"
+                r="16"
+              />
+              <path
+                d="M13.666 12.922c-.978 0-1.813.344-2.505 1.031a3.38 3.38 0 0 0-1.037 2.489.536.536 0 0 1-.164.395.544.544 0 0 1-.398.163.544.544 0 0 1-.398-.163.536.536 0 0 1-.164-.395c0-1.282.455-2.375 1.365-3.28.91-.904 2.01-1.356 3.3-1.356h5.369l-1.873-1.86a.524.524 0 0 1-.156-.388c0-.155.055-.287.164-.395A.544.544 0 0 1 17.567 9c.156 0 .286.052.39.155l2.871 2.853a.54.54 0 0 1 0 .79l-2.793 2.76a.507.507 0 0 1-.39.17.544.544 0 0 1-.398-.162.536.536 0 0 1-.164-.395.55.55 0 0 1 .172-.404l1.857-1.845h-5.446zm9.162 2.249a.5.5 0 0 1 .172.387c0 1.282-.456 2.375-1.367 3.28-.912.904-2.013 1.356-3.305 1.356h-5.375l1.875 1.86a.524.524 0 0 1 .156.388.536.536 0 0 1-.164.395.545.545 0 0 1-.398.163.532.532 0 0 1-.39-.155l-2.876-2.853a.567.567 0 0 1-.156-.395c0-.15.052-.282.156-.395l2.797-2.76a.508.508 0 0 1 .39-.17c.157 0 .29.054.4.162.109.109.163.24.163.395a.524.524 0 0 1-.156.388l-1.875 1.86h5.453a3.43 3.43 0 0 0 2.508-1.03 3.378 3.378 0 0 0 1.039-2.489c0-.155.055-.287.164-.395a.545.545 0 0 1 .398-.163c.157 0 .287.057.391.17z"
+                fill="#048B85"
+                fill-rule="nonzero"
+                stroke="#048B85"
+                stroke-width=".5"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              CC
+            </span>
+            <span
+              class="description"
+              title="Refunded 10$"
+            >
+              Refunded 10$
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="15/09/2019 10:35:40"
+          >
+            5 minutes ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#ECFEFD"
+                r="16"
+              />
+              <path
+                d="M13.666 12.922c-.978 0-1.813.344-2.505 1.031a3.38 3.38 0 0 0-1.037 2.489.536.536 0 0 1-.164.395.544.544 0 0 1-.398.163.544.544 0 0 1-.398-.163.536.536 0 0 1-.164-.395c0-1.282.455-2.375 1.365-3.28.91-.904 2.01-1.356 3.3-1.356h5.369l-1.873-1.86a.524.524 0 0 1-.156-.388c0-.155.055-.287.164-.395A.544.544 0 0 1 17.567 9c.156 0 .286.052.39.155l2.871 2.853a.54.54 0 0 1 0 .79l-2.793 2.76a.507.507 0 0 1-.39.17.544.544 0 0 1-.398-.162.536.536 0 0 1-.164-.395.55.55 0 0 1 .172-.404l1.857-1.845h-5.446zm9.162 2.249a.5.5 0 0 1 .172.387c0 1.282-.456 2.375-1.367 3.28-.912.904-2.013 1.356-3.305 1.356h-5.375l1.875 1.86a.524.524 0 0 1 .156.388.536.536 0 0 1-.164.395.545.545 0 0 1-.398.163.532.532 0 0 1-.39-.155l-2.876-2.853a.567.567 0 0 1-.156-.395c0-.15.052-.282.156-.395l2.797-2.76a.508.508 0 0 1 .39-.17c.157 0 .29.054.4.162.109.109.163.24.163.395a.524.524 0 0 1-.156.388l-1.875 1.86h5.453a3.43 3.43 0 0 0 2.508-1.03 3.378 3.378 0 0 0 1.039-2.489c0-.155.055-.287.164-.395a.545.545 0 0 1 .398-.163c.157 0 .287.057.391.17z"
+                fill="#048B85"
+                fill-rule="nonzero"
+                stroke="#048B85"
+                stroke-width=".5"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              PayPal
+            </span>
+            <span
+              class="description"
+              title="Failed refund 40$"
+            >
+              Failed refund 40$
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="15/09/2019 09:40:40"
+          >
+            an hour ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#EDEEF5"
+                r="16"
+              />
+              <path
+                d="M18.82 16.64l-3.32-3.32L18.82 10v2.5h5.82v1.64h-5.82v2.5zm-5 .86V15l3.32 3.32-3.32 3.32v-2.5H8V17.5h5.82z"
+                fill="#4F5995"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              Saturday
+            </span>
+            <span
+              class="description"
+              title="0 transactions"
+            >
+              0 transactions
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="14/09/2019 10:40:40"
+          >
+            a day ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#FFE3E3"
+                r="16"
+              />
+              <path
+                d="M17 9c1.36 0 2.62.34 3.78 1.02a7.488 7.488 0 0 1 2.7 2.7 7.343 7.343 0 0 1 1.02 3.78c0 1.36-.34 2.62-1.02 3.78a7.488 7.488 0 0 1-2.7 2.7A7.343 7.343 0 0 1 17 24c-.853 0-1.67-.137-2.45-.41a7.27 7.27 0 0 1-2.11-1.15l1.16-1.18a6.72 6.72 0 0 0 1.62.78c.573.187 1.167.28 1.78.28a5.74 5.74 0 0 0 2.94-.78 5.87 5.87 0 0 0 2.1-2.1 5.74 5.74 0 0 0 .78-2.94 5.74 5.74 0 0 0-.78-2.94 5.87 5.87 0 0 0-2.1-2.1 5.74 5.74 0 0 0-2.94-.78 5.74 5.74 0 0 0-2.94.78 5.87 5.87 0 0 0-2.1 2.1 5.74 5.74 0 0 0-.78 2.94h2.5l-3.36 3.32L7 16.5h2.5c0-1.36.34-2.62 1.02-3.78a7.488 7.488 0 0 1 2.7-2.7A7.343 7.343 0 0 1 17 9zm1.68 7.5c0 .453-.167.847-.5 1.18-.333.333-.727.5-1.18.5-.453 0-.847-.167-1.18-.5a1.614 1.614 0 0 1-.5-1.18c0-.453.167-.847.5-1.18.333-.333.727-.5 1.18-.5.453 0 .847.167 1.18.5.333.333.5.727.5 1.18z"
+                fill="#F27969"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              SEPA
+            </span>
+            <span
+              class="description"
+              title="Chargeback 150$"
+            >
+              Chargeback 150$
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="13/09/2019 12:40:40"
+          >
+            2 days ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#EDEEF5"
+                r="16"
+              />
+              <path
+                d="M18.82 16.64l-3.32-3.32L18.82 10v2.5h5.82v1.64h-5.82v2.5zm-5 .86V15l3.32 3.32-3.32 3.32v-2.5H8V17.5h5.82z"
+                fill="#4F5995"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              Friday
+            </span>
+            <span
+              class="description"
+              title="58 transactions"
+            >
+              58 transactions
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="13/09/2019 10:40:40"
+          >
+            2 days ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#EDEEF5"
+                r="16"
+              />
+              <path
+                d="M18.82 16.64l-3.32-3.32L18.82 10v2.5h5.82v1.64h-5.82v2.5zm-5 .86V15l3.32 3.32-3.32 3.32v-2.5H8V17.5h5.82z"
+                fill="#4F5995"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              Thursday
+            </span>
+            <span
+              class="description"
+              title="9 transactions"
+            >
+              9 transactions
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="12/09/2019 10:40:40"
+          >
+            3 days ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#EDEEF5"
+                r="16"
+              />
+              <path
+                d="M18.82 16.64l-3.32-3.32L18.82 10v2.5h5.82v1.64h-5.82v2.5zm-5 .86V15l3.32 3.32-3.32 3.32v-2.5H8V17.5h5.82z"
+                fill="#4F5995"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              Wednesday
+            </span>
+            <span
+              class="description"
+              title="0 transactions"
+            >
+              0 transactions
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="11/09/2019 10:40:40"
+          >
+            4 days ago
+          </span>
+        </div>
+      </div>
+      <div
+        class="notifications__NotificationWrapper-sc-1qam14b-1 bXaIig"
+        data-testid="notification-el"
+      >
+        <div
+          class="left"
+        >
+          <span
+            class="vertical-line"
+          />
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                fill="#EDEEF5"
+                r="16"
+              />
+              <path
+                d="M18.82 16.64l-3.32-3.32L18.82 10v2.5h5.82v1.64h-5.82v2.5zm-5 .86V15l3.32 3.32-3.32 3.32v-2.5H8V17.5h5.82z"
+                fill="#4F5995"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+          <div
+            class="title-container"
+          >
+            <span
+              class="title"
+            >
+              Tuesday
+            </span>
+            <span
+              class="description"
+              title="4 transactions"
+            >
+              4 transactions
+            </span>
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <span
+            class="time"
+            title="10/09/2019 10:40:40"
+          >
+            5 days ago
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Mixer for "live" and "static" data should work for "Todays Activity": render al series 1`] = `
 <div>
   <div

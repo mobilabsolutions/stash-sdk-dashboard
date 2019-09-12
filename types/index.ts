@@ -1,5 +1,7 @@
 export { default as KeyPerformance } from './key_performance'
 export { default as Notifications } from './notifications'
+export { Root as StaticNotifications } from './notifications'
+export { Transaction as NotificationTransaction } from './notifications'
 export { default as TodaysActivity } from './todays_activity'
 export { PSP } from './psp'
 export { PspType } from './psp'
