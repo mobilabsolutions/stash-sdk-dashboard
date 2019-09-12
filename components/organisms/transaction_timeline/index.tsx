@@ -21,7 +21,7 @@ const TimeActionItem = styled.td`
 `
 
 const Info = ({ action, status, reason, amount, createdDate, currencyId }) => {
-  const timestamp = moment(createdDate).toDate()
+  const timestamp = moment(createdDate).format()
 
   const { getText, formatDate } = useLocalization()
   return (
