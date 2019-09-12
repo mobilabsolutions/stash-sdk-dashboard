@@ -154,6 +154,18 @@ function getDateFromWeekday(_weekDay: string) {
     .locale(moment().locale())
 }
 
+const LAST_N = 5
+
+const onlyLastNDays = (n: number) => ({ date = moment() }) => {
+  return (
+    moment()
+      .add(-n, 'days')
+      .hour(0)
+      .minute(0)
+      .unix() <= date.unix()
+  )
+}
+
 export function Notifications(props: Props) {
   const { getText } = useLocalization()
   return (
@@ -177,6 +189,7 @@ export function Notifications(props: Props) {
             }))
           )
           .sort((a, b) => b.date.unix() - a.date.unix())
+          .filter(onlyLastNDays(LAST_N))
           .map(({ title, description, date }, i) => (
             <Notification
               key={`${i}-${title}`}
