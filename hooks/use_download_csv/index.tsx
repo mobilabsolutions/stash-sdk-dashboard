@@ -1,5 +1,5 @@
 import FileSaver from 'file-saver'
-import { useApi } from '../use_api'
+import { useApi, useToast, useLocalization } from '..'
 import { useState } from 'react'
 
 const getInitial = () => ({
@@ -12,6 +12,8 @@ const type = 'text/csv;charset=ISO-8859-1'
 export default (url?: string, filename?: string) => {
   const [state, setstate] = useState(getInitial())
   const { getRaw } = useApi()
+  const { error: toastError } = useToast()
+  const { getText } = useLocalization()
 
   async function download(customUrl?: string, customFilename?: string) {
     setstate({ downloading: true, error: false })
@@ -23,6 +25,9 @@ export default (url?: string, filename?: string) => {
       setstate({ downloading: false, error: false })
     } catch (e) {
       setstate({ downloading: false, error: true })
+      toastError(() =>
+        getText('An error occurred trying to download the CSV. Try again.')
+      )
     }
   }
 

@@ -1,6 +1,7 @@
 import { useApi } from '..'
 import { useState, useEffect } from 'react'
 import { Report } from '../../types'
+import { useToast, useLocalization } from '..'
 
 interface State {
   reportList: Report[]
@@ -23,6 +24,8 @@ function initial() {
 export default () => {
   const { get, del, merchantId } = useApi()
   const [state, setState] = useState<State>(initial())
+  const { error: toastError } = useToast()
+  const { getText } = useLocalization()
   const loadReportList = () => {
     setState(prev => ({ ...prev, loading: true, errorLoading: null }))
     get(`/api/v1/report/${merchantId}`)
@@ -36,6 +39,11 @@ export default () => {
       })
       .catch(errorLoading => {
         setState(prev => ({ ...prev, loading: false, errorLoading }))
+        toastError(() =>
+          getText(
+            'An error occurred trying to get the list of reports. Try again.'
+          )
+        )
       })
   }
   const deleteReport = (filterName: string) => {
@@ -54,6 +62,9 @@ export default () => {
       })
       .catch(errorDeleting => {
         setState(prev => ({ ...prev, deleting: false, errorDeleting }))
+        toastError(() =>
+          getText('An error occurred trying to delete the report. Try again.')
+        )
       })
   }
 
