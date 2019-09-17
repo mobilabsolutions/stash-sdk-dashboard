@@ -9,17 +9,17 @@ const getInitial = () => ({
 
 const type = 'text/csv;charset=ISO-8859-1'
 
-export default (url: string, filename: string) => {
+export default (url?: string, filename?: string) => {
   const [state, setstate] = useState(getInitial())
   const { getRaw } = useApi()
 
-  async function download() {
+  async function download(customUrl?: string, customFilename?: string) {
     setstate({ downloading: true, error: false })
     try {
-      const { result } = await getRaw(url)
+      const { result } = await getRaw(!!customUrl ? customUrl : url)
       const text = await result.text()
       var blob = new Blob([text], { type })
-      FileSaver.saveAs(blob, filename)
+      FileSaver.saveAs(blob, !!customFilename ? customFilename : filename)
       setstate({ downloading: false, error: false })
     } catch (e) {
       setstate({ downloading: false, error: true })
