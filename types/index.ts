@@ -1,6 +1,7 @@
 export { default as KeyPerformance } from './key_performance'
 export { default as Notifications } from './notifications'
 export { default as TodaysActivity } from './todays_activity'
+export { default as Report } from './report'
 export { PSP } from './psp'
 export { PspType } from './psp'
 export { Notification } from './notifications'
