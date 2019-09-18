@@ -420,7 +420,7 @@ exports[`Report list should show empty list 1`] = `
       </g>
     </svg>
     <h1
-      className="h1-sc-1ivb2ca-0 hnQWsF"
+      className="h1-sc-1ivb2ca-0 iRkRlP"
     >
       No reports created yet.
     </h1>
