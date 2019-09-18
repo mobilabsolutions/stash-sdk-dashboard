@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report creation should list default reports 1`] = `
+<div
+  className="overlay-sc-1up1mft-0 MmcNI"
+  onClick={[Function]}
+>
+  <div
+    className="popup__Content-br7oqf-0 dLDWKT"
+  >
+    <div
+      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+    >
+      <div
+        className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
+      >
+        <span
+          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+        >
+          Select one of the default reports
+        </span>
+        <div
+          className="action_popup__HeaderClose-sc-6dvik9-5 bdeNdS"
+        >
+          <svg
+            height={24}
+            onClick={[MockFunction]}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.707 11.293l5.657-5.657-5.657 5.657zM12 12zm-.707.707l-5.657 5.657 5.657-5.657zM13.414 12l5.657 5.657a1 1 0 0 1-1.414 1.414L12 13.414l-5.657 5.657a1 1 0 1 1-1.414-1.414L10.586 12 4.929 6.343A1 1 0 0 1 6.343 4.93L12 10.586l5.657-5.657a1 1 0 0 1 1.414 1.414L13.414 12zm-.707.707l5.657 5.657-5.657-5.657zm-1.414-1.414L5.636 5.636l5.657 5.657z"
+              fill="#a3aaaf"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="report_creation__Wrapper-sc-1bzzh01-1 idsckk"
+      >
+        <div
+          className="report_creation__ItemWrapper-sc-1bzzh01-0 cMHPBJ"
+          onClick={[Function]}
+        >
+          <div
+            className="check-mark"
+          >
+            <svg
+              height={16}
+              viewBox="0 0 40 40"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="#d1d5d7"
+                  r="20"
+                />
+                <path
+                  d="M11.667 21.481l5.128 5.186L28.333 15"
+                  stroke="#FFF"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="central-icon"
+          >
+            <svg
+              height={32}
+              viewBox="0 0 32 32"
+              width={32}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  fill="#B7D2FB"
+                  r="16"
+                />
+                <path
+                  d="M21.672 12.719c.219.219.328.479.328.781v9.375c0 .313-.11.578-.328.797a1.085 1.085 0 0 1-.797.328h-9.75c-.313 0-.578-.11-.797-.328a1.085 1.085 0 0 1-.328-.797V9.125c0-.313.11-.578.328-.797.219-.219.484-.328.797-.328h5.406c.157 0 .308.031.453.094.021.01.037.02.047.031.021 0 .042.01.063.031.094.052.172.11.234.172l4.344 4.39zm-1.422.156l-3.125-3.156v3.156h3.125zm.625 10V14h-3.75c-.313 0-.578-.11-.797-.328a1.085 1.085 0 0 1-.328-.797v-3.75h-4.875v13.75h9.75z"
+                  fill="#2E7EF2"
+                />
+              </g>
+            </svg>
+          </div>
+          <span
+            className="title"
+          >
+            Transactions Monthly Overview
+          </span>
+        </div>
+        <div
+          className="report_creation__ItemWrapper-sc-1bzzh01-0 cMHPBJ"
+          onClick={[Function]}
+        >
+          <div
+            className="check-mark"
+          >
+            <svg
+              height={16}
+              viewBox="0 0 40 40"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="#d1d5d7"
+                  r="20"
+                />
+                <path
+                  d="M11.667 21.481l5.128 5.186L28.333 15"
+                  stroke="#FFF"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="central-icon"
+          >
+            <svg
+              height={32}
+              viewBox="0 0 32 32"
+              width={32}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  fill="#B7D2FB"
+                  r="16"
+                />
+                <path
+                  d="M21.672 12.719c.219.219.328.479.328.781v9.375c0 .313-.11.578-.328.797a1.085 1.085 0 0 1-.797.328h-9.75c-.313 0-.578-.11-.797-.328a1.085 1.085 0 0 1-.328-.797V9.125c0-.313.11-.578.328-.797.219-.219.484-.328.797-.328h5.406c.157 0 .308.031.453.094.021.01.037.02.047.031.021 0 .042.01.063.031.094.052.172.11.234.172l4.344 4.39zm-1.422.156l-3.125-3.156v3.156h3.125zm.625 10V14h-3.75c-.313 0-.578-.11-.797-.328a1.085 1.085 0 0 1-.328-.797v-3.75h-4.875v13.75h9.75z"
+                  fill="#2E7EF2"
+                />
+              </g>
+            </svg>
+          </div>
+          <span
+            className="title"
+          >
+            Refunds Monthly Overview
+          </span>
+        </div>
+        <div
+          className="report_creation__ItemWrapper-sc-1bzzh01-0 cMHPBJ"
+          onClick={[Function]}
+        >
+          <div
+            className="check-mark"
+          >
+            <svg
+              height={16}
+              viewBox="0 0 40 40"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="#d1d5d7"
+                  r="20"
+                />
+                <path
+                  d="M11.667 21.481l5.128 5.186L28.333 15"
+                  stroke="#FFF"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="central-icon"
+          >
+            <svg
+              height={32}
+              viewBox="0 0 32 32"
+              width={32}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  fill="#B7D2FB"
+                  r="16"
+                />
+                <path
+                  d="M21.672 12.719c.219.219.328.479.328.781v9.375c0 .313-.11.578-.328.797a1.085 1.085 0 0 1-.797.328h-9.75c-.313 0-.578-.11-.797-.328a1.085 1.085 0 0 1-.328-.797V9.125c0-.313.11-.578.328-.797.219-.219.484-.328.797-.328h5.406c.157 0 .308.031.453.094.021.01.037.02.047.031.021 0 .042.01.063.031.094.052.172.11.234.172l4.344 4.39zm-1.422.156l-3.125-3.156v3.156h3.125zm.625 10V14h-3.75c-.313 0-.578-.11-.797-.328a1.085 1.085 0 0 1-.328-.797v-3.75h-4.875v13.75h9.75z"
+                  fill="#2E7EF2"
+                />
+              </g>
+            </svg>
+          </div>
+          <span
+            className="title"
+          >
+            Chargebacks
+          </span>
+        </div>
+        <div
+          className="report_creation__ItemWrapper-sc-1bzzh01-0 dKMRZh"
+          onClick={[Function]}
+        >
+          <div
+            className="check-mark"
+          />
+          <div
+            className="central-icon"
+          >
+            <svg
+              height="32"
+              viewBox="0 0 32 32"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  fill="#B7D2FB"
+                  r="16"
+                />
+                <path
+                  d="M20 16.586h-3.348V20h-1.32v-3.414H12v-1.188h3.331V12h1.321v3.398H20z"
+                  fill="#2E7EF2"
+                  fillRule="nonzero"
+                />
+              </g>
+            </svg>
+          </div>
+          <span
+            className="title"
+          >
+            Set up your own report
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
