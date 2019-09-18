@@ -8,7 +8,6 @@ const HtmlInput = styled.input`
   border: none;
   color: ${props => props.theme.shade.A700};
   display: block;
-  font-family: ${props => props.theme.font};
   font-size: 14px;
   margin-left: ${p => p.theme.spacing.small};
   margin-right: ${p => p.theme.spacing.small};

@@ -33,7 +33,6 @@ interface GraphHeight {
 export interface ThemeInterface {
   font: string
   fontHeadline: string
-  fontTransactions: string
   white: string
   graphHeight: GraphHeight
   primary: Color
@@ -45,9 +44,8 @@ export interface ThemeInterface {
 }
 
 export default {
-  font: 'Raleway,Ubuntu,Helvetica,Arial,sans-serif',
-  fontHeadline: 'Ubuntu,Raleway,Helvetica,Arial,sans-serif',
-  fontTransactions: 'Lato,Raleway,Helvetica,Arial,sans-serif',
+  font: 'Lato,Ubuntu,Helvetica,Arial,sans-serif',
+  fontHeadline: 'Lato,Ubuntu,Helvetica,Arial,sans-serif',
   white: '#fff',
   graphHeight: {
     small: '200px',

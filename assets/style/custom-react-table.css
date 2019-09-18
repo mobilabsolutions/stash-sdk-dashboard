@@ -19,6 +19,7 @@
 }
 
 .DateInput_input {
+  font-weight: inherit;
   border-radius: 4px;
   background-color: #f6f7f7;
   padding: 6px 11px 6px;
@@ -26,9 +27,9 @@
   border-bottom: unset;
   margin: 0px;
 }
-.DateInput_input ::placeholder {
+.DateInput_input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
+  color: #a3aaaf;
   opacity: 1; /* Firefox */
 }
 

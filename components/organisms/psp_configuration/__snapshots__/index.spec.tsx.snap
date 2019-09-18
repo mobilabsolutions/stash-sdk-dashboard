@@ -201,7 +201,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
     >
       <div>
         <h3
-          class="h3-sc-1przhcr-0 bqBPGG"
+          class="h3-sc-1przhcr-0 bTguNJ"
         >
           BS Payone
         </h3>
@@ -209,7 +209,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
           class="psp_form__Form-u54q1b-0 QkbWZ"
         >
           <h3
-            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 fVpzqA"
           >
             Merchant ID
           </h3>
@@ -236,7 +236,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
                 </svg>
               </div>
               <input
-                class="input__HtmlInput-rcagn3-0 iMczqN"
+                class="input__HtmlInput-rcagn3-0 iVhIct"
                 name="merchantId"
                 placeholder="Merchant ID"
                 type="text"
@@ -245,7 +245,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
             </div>
           </div>
           <h3
-            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 fVpzqA"
           >
             Portal ID
           </h3>
@@ -272,7 +272,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
                 </svg>
               </div>
               <input
-                class="input__HtmlInput-rcagn3-0 iMczqN"
+                class="input__HtmlInput-rcagn3-0 iVhIct"
                 name="portalId"
                 placeholder="Portal ID"
                 type="text"
@@ -281,7 +281,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
             </div>
           </div>
           <h3
-            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 fVpzqA"
           >
             Key
           </h3>
@@ -309,7 +309,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
                 </svg>
               </div>
               <input
-                class="input__HtmlInput-rcagn3-0 iMczqN"
+                class="input__HtmlInput-rcagn3-0 iVhIct"
                 name="key"
                 placeholder="Key"
                 type="text"
@@ -318,7 +318,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
             </div>
           </div>
           <h3
-            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 jCMFDG"
+            class="h3-sc-1przhcr-0 bspayone__H4-sc-9o178t-0 fVpzqA"
           >
             Account ID
           </h3>
@@ -345,7 +345,7 @@ exports[`PspCreateForm should render: the form for the creation of the selected 
                 </svg>
               </div>
               <input
-                class="input__HtmlInput-rcagn3-0 iMczqN"
+                class="input__HtmlInput-rcagn3-0 iVhIct"
                 name="accountId"
                 placeholder="Account ID"
                 type="text"

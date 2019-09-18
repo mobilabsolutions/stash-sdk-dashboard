@@ -33,12 +33,9 @@ const HeaderContainer = styled.div`
 `
 
 const HeaderTitle = styled.span`
-  display: block;
   color: ${props => props.theme.shade.A700};
   font-size: 1.2em;
   font-weight: bold;
-  font-family: Ubuntu, Raleway, Helvetica, Arial, sans-serif;
-  width: 24em;
 `
 
 const HeaderClose = styled.div`

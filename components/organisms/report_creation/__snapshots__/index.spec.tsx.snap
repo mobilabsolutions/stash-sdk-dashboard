@@ -15,7 +15,7 @@ exports[`Report creation should list default reports 1`] = `
         className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
       >
         <span
-          className="action_popup__HeaderTitle-sc-6dvik9-4 gMUEfV"
+          className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
         >
           Select one of the default reports
         </span>

@@ -12,18 +12,6 @@ export default {
     font-style: normal;
   }
 
-
-  @font-face {
-    font-family: 'Raleway';
-    src: url('/static/fonts/Raleway-Regular.ttf');
-  }
-
-  @font-face {
-    font-family: 'Raleway';
-    src: url('/static/fonts/Raleway-Bold.ttf');
-    font-weight: bold;
-  }
-
   @font-face {
     font-family: 'Ubuntu';
     src: url('/static/fonts/Ubuntu-Regular.ttf');
@@ -40,7 +28,7 @@ export default {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Raleway, Ubuntu, Helvetica, Arial, sans-serif;
+    font-family: Lato, Ubuntu, Helvetica, Arial, sans-serif;
   }
   *,
   *::before,

@@ -341,7 +341,7 @@ exports[`Filter Selects should not use "" value 1`] = `
       </svg>
       <input
         autoFocus={false}
-        className="input_search__HtmlInput-sc-1voy22s-0 DOKMm"
+        className="input_search__HtmlInput-sc-1voy22s-0 iocwMH"
         disabled={false}
         name="search-text"
         onBlur={[Function]}
@@ -698,7 +698,7 @@ exports[`Filter Selects should use "all" value 1`] = `
       </svg>
       <input
         autoFocus={false}
-        className="input_search__HtmlInput-sc-1voy22s-0 DOKMm"
+        className="input_search__HtmlInput-sc-1voy22s-0 iocwMH"
         disabled={false}
         name="search-text"
         onBlur={[Function]}
