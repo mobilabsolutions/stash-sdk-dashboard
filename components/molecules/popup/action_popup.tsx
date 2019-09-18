@@ -29,7 +29,6 @@ const ButtonContainer = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #ededed;
   padding: 24px;
 `
 
@@ -43,8 +42,12 @@ const HeaderTitle = styled.span`
 `
 
 const HeaderClose = styled.div`
-  padding-left: 12px;
   cursor: pointer;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 48px;
 `
 
 export function WarnPopup({
