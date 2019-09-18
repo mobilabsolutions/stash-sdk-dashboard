@@ -140,22 +140,21 @@ interface NProps {
 }
 
 const mapDays = [
-  'Sunday',
+  'There is no 0 on ISO date',
   'Monday',
   'Tuesday',
   'Wednesday',
   'Thursday',
   'Friday',
-  'Saturday'
+  'Saturday',
+  'Sunday'
 ]
 
 export function NotificationMixer(props: NProps) {
   const { data } = useNotifications()
   const { liveData, children } = props
   const [state, setState] = useState<StaticNotifications>(data)
-  const moment_en = moment()
-  moment_en.locale('en')
-  const _day = mapDays[moment_en.weekday()] // Using this approach in order to get the same weekday if diferent locale
+  const _day = mapDays[moment().isoWeekday()]
   useEffect(() => {
     setState(data)
   }, [data])

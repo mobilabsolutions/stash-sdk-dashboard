@@ -140,18 +140,13 @@ const mapDays = {
   Thursday: 4,
   Friday: 5,
   Saturday: 6,
-  Sunday: 0
+  Sunday: 7
 }
 
 function getDateFromWeekday(_weekDay: string) {
-  const moment_en = moment()
-  moment_en.locale('en')
-
-  const weekDay = mapDays[_weekDay] || 0 // Using this approach in order to get the same weekday if diferent locale
-  const shouldSubstract = moment_en.weekday() < weekDay
-  return moment_en
-    .weekday(shouldSubstract ? weekDay - 7 : weekDay)
-    .locale(moment().locale())
+  const weekDay = mapDays[_weekDay] || 0
+  const shouldSubstract = moment().isoWeekday() < weekDay
+  return moment().isoWeekday(shouldSubstract ? weekDay - 7 : weekDay)
 }
 
 const LAST_N = 5
