@@ -24,7 +24,7 @@ const useLogoControl = () => {
   const uploadLogo = (formData: object) => {
     setState(prev => ({ ...prev, uploading: true, error: false }))
     post(
-      `api/v1/merchant/${merchantId}/logo`,
+      `/api/v1/merchant/${merchantId}/logo`,
       formData,
       ({ Authorization }) => ({ Authorization }),
       false
@@ -40,7 +40,7 @@ const useLogoControl = () => {
   useEffect(() => {
     if (!state.uploading && merchantId) {
       setState(prev => ({ ...prev, loading: true }))
-      getRaw(`api/v1/merchant/${merchantId}/logo`)
+      getRaw(`/api/v1/merchant/${merchantId}/logo`)
         .then(async r => {
           var reader = new FileReader()
           reader.onloadend = function() {

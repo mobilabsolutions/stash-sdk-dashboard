@@ -8,7 +8,7 @@ import {
 } from '../../organisms'
 import styled from '../../styled'
 import { Grid } from '../../atoms'
-import { KPMixer, TAMixer } from './mixers'
+import { KPMixer, TAMixer, NotificationMixer } from './mixers'
 import { KeyPerformance as KP } from 'types'
 import moment from 'moment'
 
@@ -23,7 +23,7 @@ const selectedDay = moment().add(-1, 'day') // In the future this could be selec
 export default function HomeDashboard() {
   return (
     <LiveData>
-      {({ keyPerformance, todaysActivity }) => (
+      {({ keyPerformance, todaysActivity, notifications }) => (
         <>
           <KPMixer liveData={keyPerformance}>
             {(props: KP) => <KeyPerformance {...props} />}
@@ -40,7 +40,9 @@ export default function HomeDashboard() {
             </Grid.Col>
             <Grid.Col l={4} m={6}>
               <Card>
-                <Notifications />
+                <NotificationMixer liveData={notifications}>
+                  {props => <Notifications {...props} />}
+                </NotificationMixer>
               </Card>
             </Grid.Col>
           </Grid.Row>

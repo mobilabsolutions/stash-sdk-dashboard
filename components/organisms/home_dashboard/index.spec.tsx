@@ -66,8 +66,8 @@ jest.mock('../../../hooks/use_day_activity', () => {
     { time: '22', amount: 0 },
     { time: '23', amount: 0 }
   ]
-  return (date: { day: () => number }) => {
-    if (date.day() === 15) {
+  return (date: Moment) => {
+    if (date.date() === 15) {
       return {
         activities: todayAct,
         loading: false,
@@ -81,27 +81,49 @@ jest.mock('../../../hooks/use_day_activity', () => {
     }
   }
 })
-import { KPMixer, TAMixer } from './mixers'
-import KeyPerformance from '../key_performance'
-import { deepRender } from '../../../test_utils'
-
-jest.mock('moment', () => {
-  //Mock moment to alway get the same date, should be improved
-  function mm() {
-    const date = {
-      hour: 10,
-      day: 15
-    }
-    return {
-      chageTime: () => {},
-      hour: () => date.hour,
-      day: () => date.day
-    }
-  }
-  mm.defineLocale = jest.fn()
-  mm.locale = jest.fn()
-  return mm
+const mocked_notifications = {
+  data: {
+    notifications: [
+      {
+        paymentMethod: 'CC',
+        content: 'Refunded 10$',
+        date: '2019-09-15 10:35:40'
+      },
+      {
+        paymentMethod: 'PayPal',
+        content: 'Failed refund 40$',
+        date: '2019-09-15 09:40:40'
+      },
+      {
+        paymentMethod: 'SEPA',
+        content: 'Chargeback 150$',
+        date: '2019-09-13 12:40:40'
+      }
+    ],
+    transactions: [
+      { day: 'Wednesday', nrOfTransactions: 0 },
+      { day: 'Thursday', nrOfTransactions: 9 },
+      { day: 'Friday', nrOfTransactions: 58 },
+      { day: 'Saturday', nrOfTransactions: 0 },
+      { day: 'Sunday', nrOfTransactions: 0 },
+      { day: 'Monday', nrOfTransactions: 20 },
+      { day: 'Tuesday', nrOfTransactions: 4 }
+    ]
+  },
+  loading: false,
+  error: null
+}
+jest.mock('../../../hooks/use_notifications', () => () => {
+  //mock hook to avoid fetch calls
+  return mocked_notifications
 })
+
+import { KPMixer, TAMixer, NotificationMixer } from './mixers'
+import KeyPerformance from '../key_performance'
+import Notifications from '../notifications'
+import { deepRender } from '../../../test_utils'
+import moment, { Moment } from 'moment'
+import MockDate from 'mockdate'
 
 const withMix = (Mixer, Cmp) => ({ liveData, ...rest }) => (
   <Mixer liveData={liveData} {...rest}>
@@ -110,6 +132,14 @@ const withMix = (Mixer, Cmp) => ({ liveData, ...rest }) => (
 )
 
 describe('Mixer for "live" and "static" data', () => {
+  beforeAll(() => {
+    MockDate.set(1568536840000) //Sep 15 2019 10:40:40
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
   test('should work for "KeyPerformance"', () => {
     const Mixed = withMix(KPMixer, KeyPerformance)
     const { getAllByTestId } = deepRender(Mixed, {
@@ -148,9 +178,7 @@ describe('Mixer for "live" and "static" data', () => {
         time: '10:30:26',
         amount: 2345
       },
-      selectedDay: {
-        day: () => 14
-      }
+      selectedDay: moment().date(14)
     })
     expect(container.firstChild).toMatchSnapshot('render al series')
     expect(getByTestId('today-10').textContent).toEqual('218.82') // Last serie for todays data should sum the live data recieved
@@ -163,14 +191,25 @@ describe('Mixer for "live" and "static" data', () => {
         time: '11:30:26',
         amount: 2345
       },
-      selectedDay: {
-        day: () => 14
-      }
+      selectedDay: moment().date(14)
     })
 
     expect(getByTestId('today-10').textContent).toEqual('195.37')
     expect(getByTestId('today-11').textContent).toEqual('23.45')
   })
 
-  //... Will continue
+  test('should work for "Notifications"', () => {
+    const Mixed = withMix(NotificationMixer, Notifications)
+    const { baseElement, getAllByTestId } = deepRender(Mixed, {
+      liveData: {
+        notification: {
+          paymentMethod: 'CC',
+          content: 'Refunded 30$'
+        },
+        nrOfTransactions: 8
+      }
+    })
+    expect(baseElement.firstChild).toMatchSnapshot()
+    expect(getAllByTestId('notification-el').length).toEqual(10)
+  })
 })
