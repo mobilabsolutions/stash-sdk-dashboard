@@ -57,7 +57,7 @@ export function TransactionHeader(
       <Header ref={headerRef}>
         <H4>{getText('Transactions Overview')}</H4>
         <BtnContainer>
-          <HeaderBtn onClick={downloadCSV}>
+          <HeaderBtn onClick={() => downloadCSV()}>
             <Export />
             <span>{getText('Export')}</span>
           </HeaderBtn>
