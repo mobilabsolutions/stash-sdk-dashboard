@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
+import { Chargebacks, Transactions, Refund, H4 } from '../../atoms'
 import {
-  Chargebacks,
-  Transactions,
-  Refund,
-  H4,
-  FlatButton,
-  ArrowBack
-} from '../../atoms'
+  NotificationTransaction,
+  Notification as NotificationType
+} from '../../../types'
+import moment from 'moment'
+
+const MAX_NOT = 10
 
 const ActivityContainer = styled.div`
   padding: ${p => p.theme.spacing.medium};
@@ -38,7 +38,7 @@ const ActivityContainer = styled.div`
   }
 `
 
-const Notification = styled.div`
+const NotificationWrapper = styled.div`
   width: 100%;
   background-color: #ffffff;
   margin: 16px 0px;
@@ -48,6 +48,13 @@ const Notification = styled.div`
   .left {
     display: flex;
   }
+  .vertical-line {
+    width: 1px;
+    background-color: #e6ebf0;
+    border: solid 1px #e6ebf0;
+    float: left;
+    transform: translate(17px, 38px);
+  }
   .title-container {
     display: flex;
     flex-direction: column;
@@ -56,6 +63,14 @@ const Notification = styled.div`
   .description {
     font-size: 14px;
     color: ${p => p.theme.shade.A200};
+    margin-top: 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: initial;
+    word-wrap: break-word;
   }
   .time {
     font-size: 12px;
@@ -64,88 +79,125 @@ const Notification = styled.div`
   .right {
     float: right;
     margin-top: -40px;
+    margin-right: 10px;
+  }
+  :last-child .vertical-line {
+    background-color: transparent;
+    border: solid 1px transparent;
   }
 `
 
-export default function Notifications() {
+const Icon = ({ type }) => {
+  switch (type) {
+    case 'Refunded':
+    case 'Failed':
+      return <Refund />
+    case 'Chargeback':
+      return <Chargebacks />
+    default:
+      return <Transactions />
+  }
+}
+
+function getTypeFromDesc(desc: string) {
+  return desc.split(' ')[0]
+}
+
+const Notification = ({
+  title = '',
+  description = '',
+  time,
+  date = moment()
+}) => (
+  <NotificationWrapper data-testid="notification-el">
+    <div className="left">
+      <span className="vertical-line"></span>
+      <Icon type={getTypeFromDesc(description)} />
+      <div className="title-container">
+        <span className="title">{title}</span>
+        <span className="description" title={description}>
+          {description}
+        </span>
+      </div>
+    </div>
+    <div className="right">
+      <span className="time" title={date.format('DD/MM/YYYY HH:mm:ss')}>
+        {time}
+      </span>
+    </div>
+  </NotificationWrapper>
+)
+
+interface Props {
+  notifications: NotificationType[]
+  transactions: NotificationTransaction[]
+}
+
+const mapDays = {
+  Monday: 1,
+  Tuesday: 2,
+  Wednesday: 3,
+  Thursday: 4,
+  Friday: 5,
+  Saturday: 6,
+  Sunday: 7
+}
+
+function getDateFromWeekday(_weekDay: string) {
+  const weekDay = mapDays[_weekDay] || 0
+  const shouldSubstract = moment().isoWeekday() < weekDay
+  return moment().isoWeekday(shouldSubstract ? weekDay - 7 : weekDay)
+}
+
+const LAST_N = 5
+
+const onlyLastNDays = (n: number) => ({ date = moment() }) => {
+  return (
+    moment()
+      .add(-n, 'days')
+      .hour(0)
+      .minute(0)
+      .unix() <= date.unix()
+  )
+}
+
+export function Notifications(props: Props) {
   const { getText } = useLocalization()
   return (
     <ActivityContainer>
       <H4 className="title">{getText('Notifications')}</H4>
-      <FlatButton>
-        <span>View all</span>
-        <ArrowBack
-          height={13}
-          width={13}
-          fill={'#a3aaaf'}
-          style={{
-            marginLeft: '8px',
-            transform: 'rotate(180deg) translateY(-2px)'
-          }}
-        />
-      </FlatButton>
       <div className="notification-list">
-        <Notification>
-          <div className="left">
-            <Refund />
-            <div className="title-container">
-              <span className="title">PayPal</span>
-              <span className="description">Refunded 1000€</span>
-            </div>
-          </div>
-          <div className="right">
-            <span className="time">1 hour ago</span>
-          </div>
-        </Notification>
-        <Notification>
-          <div className="left">
-            <Chargebacks />
-            <div className="title-container">
-              <span className="title">SEPA</span>
-              <span className="description">Chargeback 30€ from SEPA</span>
-            </div>
-          </div>
-          <div className="right">
-            <span className="time">2 hour ago</span>
-          </div>
-        </Notification>
-        <Notification>
-          <div className="left">
-            <Transactions />
-            <div className="title-container">
-              <span className="title">Yesterday</span>
-              <span className="description">234 Transactions</span>
-            </div>
-          </div>
-          <div className="right">
-            <span className="time">24 hour ago</span>
-          </div>
-        </Notification>
-        <Notification>
-          <div className="left">
-            <Refund />
-            <div className="title-container">
-              <span className="title">Credit Card</span>
-              <span className="description">Mastercard 370€ - ***3456</span>
-            </div>
-          </div>
-          <div className="right">
-            <span className="time">24 hour ago</span>
-          </div>
-        </Notification>
-        <Notification>
-          <div className="left">
-            <Chargebacks />
-            <div className="title-container">
-              <span className="title">SEPA</span>
-              <span className="description">Chargeback 330€ from SEPA</span>
-            </div>
-          </div>
-          <div className="right">
-            <span className="time">2 days ago</span>
-          </div>
-        </Notification>
+        {props.notifications
+          .filter(notification => !!notification) // Skipping null notification for pending, need fix from backend
+          .map(notification => ({
+            title: notification.paymentMethod,
+            description: notification.content,
+            date: moment(notification.date)
+          }))
+          .concat(
+            props.transactions.map(transaction => ({
+              title: transaction.day,
+              description: getText('%{amount} transactions', {
+                amount: transaction.nrOfTransactions
+              }),
+              date: getDateFromWeekday(transaction.day)
+            }))
+          )
+          .sort((a, b) => b.date.unix() - a.date.unix())
+          .filter(onlyLastNDays(LAST_N))
+          .map(({ title, description, date }, i) => (
+            <Notification
+              key={`${i}-${title}`}
+              title={title}
+              description={description}
+              date={date}
+              time={date.fromNow()}
+            />
+          ))
+          .slice(0, MAX_NOT)}
       </div>
     </ActivityContainer>
   )
 }
+
+export default memo(Notifications)

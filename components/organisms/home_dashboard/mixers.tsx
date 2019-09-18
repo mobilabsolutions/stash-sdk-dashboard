@@ -1,8 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useKeyPerformance, useDayActivity } from '../../../hooks'
+import {
+  useKeyPerformance,
+  useDayActivity,
+  useNotifications
+} from '../../../hooks'
 import { ReactElementLike } from 'prop-types'
-import { KeyPerformance, TodaysActivity } from '../../../types'
+import {
+  KeyPerformance,
+  TodaysActivity,
+  Notifications,
+  StaticNotifications
+} from '../../../types'
 import moment from 'moment'
 
 //===========> Key Performance
@@ -27,6 +36,7 @@ export function KPMixer(props: KPProps) {
   }, [allowStream])
   useEffect(() => {
     allowStream &&
+      liveData &&
       setState(prev => ({
         nrOfChargebacks: liveData.nrOfChargebacks + prev.nrOfChargebacks,
         nrOfRefundedTransactions:
@@ -45,8 +55,6 @@ interface TAProps {
   selectedDay: moment.Moment
   liveData: TodaysActivity
 }
-
-const today = moment()
 
 const timeReg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/
 
@@ -90,7 +98,7 @@ function mixDataForPlot(
 export function TAMixer(props: TAProps) {
   const { selectedDay, children, liveData } = props
   const { activities: selectedDayActivity } = useDayActivity(selectedDay)
-  const { activities: todayActivities } = useDayActivity(today)
+  const { activities: todayActivities } = useDayActivity(moment())
   const [live, setLive] = useState<TodaysActivity[]>([])
   useEffect(() => {
     const nowHour = moment().hour()
@@ -122,4 +130,53 @@ export function TAMixer(props: TAProps) {
   }, [liveData])
 
   return <>{children({ data: mixDataForPlot(live, selectedDayActivity) })}</>
+}
+
+//===========> Notifications
+
+interface NProps {
+  children: (props: StaticNotifications) => ReactElementLike
+  liveData: Notifications
+}
+
+const mapDays = [
+  'There is no 0 on ISO date',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday'
+]
+
+export function NotificationMixer(props: NProps) {
+  const { data } = useNotifications()
+  const { liveData, children } = props
+  const [state, setState] = useState<StaticNotifications>(data)
+  const _day = mapDays[moment().isoWeekday()]
+  useEffect(() => {
+    setState(data)
+  }, [data])
+  useEffect(() => {
+    if (liveData) {
+      setState({
+        notifications: liveData.notification
+          ? [liveData.notification, ...state.notifications]
+          : state.notifications,
+        transactions: [
+          ...state.transactions.map(({ day, nrOfTransactions }) =>
+            day === _day
+              ? {
+                  day,
+                  nrOfTransactions:
+                    nrOfTransactions + (liveData.nrOfTransactions || 0)
+                }
+              : { day, nrOfTransactions }
+          )
+        ]
+      })
+    }
+  }, [liveData])
+  return <>{children(state)}</>
 }

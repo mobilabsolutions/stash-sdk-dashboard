@@ -27,8 +27,8 @@ const ButtonContainer = styled.div`
   }
 `
 const HeaderContainer = styled.div`
-  display: block;
-  border-bottom: 1px solid #ededed;
+  display: flex;
+  flex-direction: row;
   padding: 24px;
 `
 
@@ -39,9 +39,12 @@ const HeaderTitle = styled.span`
 `
 
 const HeaderClose = styled.div`
-  padding-left: 12px;
-  float: right;
   cursor: pointer;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 48px;
 `
 
 export function WarnPopup({

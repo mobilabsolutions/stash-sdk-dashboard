@@ -25,8 +25,9 @@ export const useLocalization = () => {
       (value: number) => localizedNumber(value, locale),
       [locale]
     ),
-    formatDate: useCallback((value: Date) => localizedDate(value, locale), [
-      locale
-    ])
+    formatDate: useCallback(
+      (value: Date | string) => localizedDate(value, locale),
+      [locale]
+    )
   }
 }

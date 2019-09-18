@@ -3,6 +3,7 @@ import { useTokenCheck } from '../hooks'
 import styled from '../components/styled'
 import { VerticalScrollContainer } from '../components/atoms'
 import { ReportManagment } from '../components/templates'
+import { useState } from 'react'
 
 const CustomScrollContainer = styled(VerticalScrollContainer)`
   max-width: 920px;
@@ -12,11 +13,11 @@ const CustomScrollContainer = styled(VerticalScrollContainer)`
 
 export default () => {
   useTokenCheck()
-
+  const [isLoading, setisLoading] = useState(false)
   return (
-    <Page activePath="/reports">
+    <Page activePath="/reports" isLoading={isLoading}>
       <CustomScrollContainer>
-        <ReportManagment />
+        <ReportManagment setisLoading={setisLoading} />
       </CustomScrollContainer>
     </Page>
   )

@@ -181,6 +181,18 @@ export default {
     de:
       'Es dauert 5-10 Tage, bis die Rückerstattung auf der Kundenabrechnung erscheint.'
   },
+  'Select one of the default reports': {
+    de: 'Wählen Sie einen der Standardberichte aus'
+  },
+  'Transactions Monthly Overview': { de: 'Transaktionen Monatsübersicht' },
+  'Refunds Monthly Overview': { de: 'Rückerstattungen Monatsübersicht' },
+  'Set up your own report': { de: 'Erstellen Sie Ihren eigenen Bericht' },
+  'No reports created yet.': { de: 'Es wurden noch keine Berichte erstellt.' },
+  'Please, generate a report first.': {
+    de: 'Bitte erst einen Bericht erstellen.'
+  },
+  'Download CSV': { de: 'CSV herunterladen' },
+  'Delete Report': { de: 'Bericht löschen' },
   Filter: {},
   'Payment Method': {},
   'Search Payments…': {},
@@ -281,6 +293,7 @@ export default {
   'Sandbox Client Encryption Key': {
     de: 'Sandbox-Client-Verschlüsselungsschlüssel'
   },
+  '%{amount} transactions': { de: '%{amount} transactions' },
   Yesterday: { de: 'Gestern' },
   Sunday: { de: 'Sonntag' },
   Sun: { de: 'Sonntag' },

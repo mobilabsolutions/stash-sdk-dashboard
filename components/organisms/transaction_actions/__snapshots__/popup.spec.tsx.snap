@@ -12,7 +12,7 @@ exports[`PopUp Should Render capture form 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
       >
         <span
           className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
@@ -20,7 +20,7 @@ exports[`PopUp Should Render capture form 1`] = `
           Are you sure you want to capture this transaction?
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
+          className="action_popup__HeaderClose-sc-6dvik9-5 bdeNdS"
         >
           <svg
             height={24}
@@ -79,7 +79,7 @@ exports[`PopUp Should Render loading state 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
       >
         <span
           className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
@@ -87,7 +87,7 @@ exports[`PopUp Should Render loading state 1`] = `
           Are you sure you want to reverse the transaction?
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
+          className="action_popup__HeaderClose-sc-6dvik9-5 bdeNdS"
         >
           <svg
             height={24}
@@ -544,7 +544,7 @@ exports[`PopUp Should Render refund form 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
       >
         <span
           className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
@@ -552,7 +552,7 @@ exports[`PopUp Should Render refund form 1`] = `
           Refund Payment
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
+          className="action_popup__HeaderClose-sc-6dvik9-5 bdeNdS"
         >
           <svg
             height={24}
@@ -804,7 +804,7 @@ exports[`PopUp Should Render reverse form 1`] = `
       className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
     >
       <div
-        className="action_popup__HeaderContainer-sc-6dvik9-3 KXGMa"
+        className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
       >
         <span
           className="action_popup__HeaderTitle-sc-6dvik9-4 kaaICz"
@@ -812,7 +812,7 @@ exports[`PopUp Should Render reverse form 1`] = `
           Are you sure you want to reverse the transaction?
         </span>
         <div
-          className="action_popup__HeaderClose-sc-6dvik9-5 cSPJgt"
+          className="action_popup__HeaderClose-sc-6dvik9-5 bdeNdS"
         >
           <svg
             height={24}
