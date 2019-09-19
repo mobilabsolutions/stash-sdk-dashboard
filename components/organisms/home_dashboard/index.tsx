@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   KeyPerformance,
   LiveData,
@@ -18,9 +18,10 @@ const Card = styled.div`
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
 `
-const selectedDay = moment().add(-1, 'day') // In the future this could be selected by user
+const yesterday = moment().add(-1, 'day') // In the future this could be selected by user
 
 export default function HomeDashboard() {
+  const [selectedDay, setSelectedDay] = useState(yesterday)
   return (
     <LiveData>
       {({ keyPerformance, todaysActivity, notifications }) => (
@@ -33,7 +34,11 @@ export default function HomeDashboard() {
               <Card>
                 <TAMixer selectedDay={selectedDay} liveData={todaysActivity}>
                   {props => (
-                    <TodaysActivity selectedDay={selectedDay} {...props} />
+                    <TodaysActivity
+                      selectedDay={selectedDay}
+                      onSelectedChange={setSelectedDay}
+                      {...props}
+                    />
                   )}
                 </TAMixer>
               </Card>

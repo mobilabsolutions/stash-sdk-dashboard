@@ -53,7 +53,7 @@ export default (date: Moment) => {
       })
   }
 
-  useEffect(load, [])
+  useEffect(load, [date])
 
   return {
     ...state,

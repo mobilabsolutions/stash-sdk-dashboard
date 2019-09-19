@@ -4,9 +4,10 @@ import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
 import { H4 } from '../../atoms'
 import ActivityAreaChart from './area_chart'
-
+import SingleDate from './single_date_picker'
 interface Props {
   selectedDay: moment.Moment
+  onSelectedChange: (d: moment.Moment) => void
   data: MixedResult[]
 }
 
@@ -64,7 +65,20 @@ export function TodaysActivityCmp(props: Props) {
       <div className="header">
         <H4 className="title">{getText('Today´s Activity')}</H4>
         <Legend>
-          <LegendItem color="#609df6">{getText('Yesterday')}</LegendItem>
+          <SingleDate
+            numberOfMonths={1}
+            date={props.selectedDay}
+            onDateChange={props.onSelectedChange}
+            renderInput={() => {
+              const text =
+                moment()
+                  .add(-1, 'day')
+                  .date() == props.selectedDay.date()
+                  ? getText('Yesterday')
+                  : props.selectedDay.format('DD/MM/YYYY')
+              return <LegendItem color="#609df6">{text}</LegendItem>
+            }}
+          />
           <LegendItem color="#07d0c7">{getText('Today')}</LegendItem>
         </Legend>
       </div>
