@@ -36,15 +36,18 @@ const HeaderTitle = styled.span`
   color: ${props => props.theme.shade.A700};
   font-size: 1.2em;
   font-weight: bold;
+  padding-right: 48px;
 `
 
 const HeaderClose = styled.div`
-  cursor: pointer;
   position: absolute;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   padding-right: 48px;
+  svg {
+    cursor: pointer;
+  }
 `
 
 export function WarnPopup({
