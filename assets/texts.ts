@@ -310,5 +310,6 @@ export default {
   Saturday: { de: 'Samstag' },
   Sat: { de: 'Samstag' },
   Notifications: { de: 'Benachrichtigungen' },
-  'Refund Overview': { de: 'Rückerstattungsübersicht' }
+  'Refund Overview': { de: 'Rückerstattungsübersicht' },
+  'Welcome %{merchantName}!': { de: 'Willkommen %{merchantName}!' }
 }
