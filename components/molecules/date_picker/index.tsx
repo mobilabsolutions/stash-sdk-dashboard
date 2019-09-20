@@ -6,6 +6,8 @@ export default function DatePicker({
   initialFromDate,
   initialToDate,
   onDatesChange,
+  onFocusChange,
+  focusedInput,
   ...props
 }) {
   const [range, _setRange] = useState({
@@ -35,6 +37,10 @@ export default function DatePicker({
       endDate={range.toDate}
       startDatePlaceholderText={getText('From')}
       endDatePlaceholderText={getText('To')}
+      onFocusChange={onFocusChange}
+      focusedInput={focusedInput}
+      startDateId="startDateId"
+      endDateId="endDateId"
       onDatesChange={({ startDate, endDate }) => {
         _setRange({ fromDate: startDate, toDate: endDate })
         //When clear cross is pressed

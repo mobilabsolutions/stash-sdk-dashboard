@@ -18,13 +18,13 @@ exports[`Filter Selects should not use "" value 1`] = `
             className="DateInput DateInput_1"
           >
             <input
-              aria-describedby="DateInput__screen-reader-message-filter_start_date_id"
+              aria-describedby="DateInput__screen-reader-message-startDateId"
               aria-label="From"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
-              id="filter_start_date_id"
-              name="filter_start_date_id"
+              id="startDateId"
+              name="startDateId"
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -36,7 +36,7 @@ exports[`Filter Selects should not use "" value 1`] = `
             />
             <p
               className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-filter_start_date_id"
+              id="DateInput__screen-reader-message-startDateId"
             >
               Navigate forward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
             </p>
@@ -60,13 +60,13 @@ exports[`Filter Selects should not use "" value 1`] = `
             className="DateInput DateInput_1"
           >
             <input
-              aria-describedby="DateInput__screen-reader-message-filter_end_date_id"
+              aria-describedby="DateInput__screen-reader-message-endDateId"
               aria-label="To"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
-              id="filter_end_date_id"
-              name="filter_end_date_id"
+              id="endDateId"
+              name="endDateId"
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -78,7 +78,7 @@ exports[`Filter Selects should not use "" value 1`] = `
             />
             <p
               className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-filter_end_date_id"
+              id="DateInput__screen-reader-message-endDateId"
             >
               Navigate backward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
             </p>
@@ -375,13 +375,13 @@ exports[`Filter Selects should use "all" value 1`] = `
             className="DateInput DateInput_1"
           >
             <input
-              aria-describedby="DateInput__screen-reader-message-filter_start_date_id"
+              aria-describedby="DateInput__screen-reader-message-startDateId"
               aria-label="From"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
-              id="filter_start_date_id"
-              name="filter_start_date_id"
+              id="startDateId"
+              name="startDateId"
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -393,7 +393,7 @@ exports[`Filter Selects should use "all" value 1`] = `
             />
             <p
               className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-filter_start_date_id"
+              id="DateInput__screen-reader-message-startDateId"
             >
               Navigate forward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
             </p>
@@ -417,13 +417,13 @@ exports[`Filter Selects should use "all" value 1`] = `
             className="DateInput DateInput_1"
           >
             <input
-              aria-describedby="DateInput__screen-reader-message-filter_end_date_id"
+              aria-describedby="DateInput__screen-reader-message-endDateId"
               aria-label="To"
               autoComplete="off"
               className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
               disabled={false}
-              id="filter_end_date_id"
-              name="filter_end_date_id"
+              id="endDateId"
+              name="endDateId"
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -435,7 +435,7 @@ exports[`Filter Selects should use "all" value 1`] = `
             />
             <p
               className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-filter_end_date_id"
+              id="DateInput__screen-reader-message-endDateId"
             >
               Navigate backward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
             </p>

@@ -71,6 +71,12 @@ const CustomizedAxisTick = props => {
 export default function ActivityAreaChart(props: Props) {
   const { getText } = useLocalization()
   const currencyFormatter = useFormatter()
+  const text =
+    moment()
+      .add(-1, 'day')
+      .date() == props.selectedDay.date()
+      ? getText('Yesterday')
+      : props.selectedDay.format('DD/MM/YYYY')
   return (
     <Container>
       <ResponsiveContainer>
@@ -131,7 +137,7 @@ export default function ActivityAreaChart(props: Props) {
           />
           <Area
             connectNulls
-            name={getText('Yesterday')}
+            name={text}
             dataKey="selectedDay"
             stroke="#609df6"
             fill="url(#selectedDay)"

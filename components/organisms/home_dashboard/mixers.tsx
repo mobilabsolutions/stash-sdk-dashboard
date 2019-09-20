@@ -98,10 +98,11 @@ function mixDataForPlot(
 export function TAMixer(props: TAProps) {
   const { selectedDay, children, liveData } = props
   const { activities: selectedDayActivity } = useDayActivity(selectedDay)
-  const { activities: todayActivities } = useDayActivity(moment())
+  const [today] = useState<moment.Moment>(moment())
+  const { activities: todayActivities } = useDayActivity(today)
   const [live, setLive] = useState<TodaysActivity[]>([])
   useEffect(() => {
-    const nowHour = moment().hour()
+    const nowHour = today.hour()
     setLive(todayActivities.filter(act => Number(act.time) <= nowHour))
   }, [todayActivities])
 
@@ -109,7 +110,7 @@ export function TAMixer(props: TAProps) {
     if (liveData) {
       const lastAct = live.length
         ? live[live.length - 1]
-        : { amount: 0, time: moment().hour() }
+        : { amount: 0, time: today.hour() }
       const [, ldHr] = timeReg.exec(liveData.time)
 
       const shouldPush = Number(ldHr) > Number(lastAct.time)
