@@ -174,7 +174,9 @@ export const useApi = () => {
     userId,
     setUserId,
     merchantId,
-    setMerchantId
+    setMerchantId,
+    merchantName,
+    setMerchantName
   } = useContext(sessionContext)
 
   const parseJwt = useCallback((jwtRaw: string) => {
@@ -304,10 +306,19 @@ export const useApi = () => {
         setUserId(payload.user_name)
         if (payload.authorities.length === 1)
           setMerchantId(payload.authorities[0])
-
+        if (payload.merchant_name) {
+          setMerchantName(payload.merchant_name)
+        }
         return true
       }),
-    [parseJwt, setMerchantId, setRefreshToken, setToken, setUserId]
+    [
+      parseJwt,
+      setMerchantId,
+      setMerchantName,
+      setRefreshToken,
+      setToken,
+      setUserId
+    ]
   )
 
   const logout = useCallback(() => {
@@ -315,7 +326,8 @@ export const useApi = () => {
     setRefreshToken(null)
     setUserId(null)
     setMerchantId(null)
-  }, [setMerchantId, setRefreshToken, setToken, setUserId])
+    setMerchantName(null)
+  }, [setMerchantId, setRefreshToken, setToken, setUserId, setMerchantName])
 
   return {
     get,
@@ -330,6 +342,7 @@ export const useApi = () => {
     logout,
     refresh,
     userId,
-    merchantId
+    merchantId,
+    merchantName
   }
 }
