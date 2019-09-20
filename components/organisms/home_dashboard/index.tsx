@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import {
   KeyPerformance,
   LiveData,
@@ -7,10 +7,12 @@ import {
   ChartOverviews
 } from '../../organisms'
 import styled from '../../styled'
-import { Grid } from '../../atoms'
+import { Grid, H3 } from '../../atoms'
 import { KPMixer, TAMixer, NotificationMixer } from './mixers'
 import { KeyPerformance as KP } from 'types'
 import moment from 'moment'
+import { sessionContext } from '../../../hooks/use_api/session_context'
+import { useLocalization } from '../../../hooks'
 
 const Card = styled.div`
   min-height: 120px;
@@ -20,7 +22,7 @@ const Card = styled.div`
 `
 const yesterday = moment().add(-1, 'day') // In the future this could be selected by user
 
-export default function HomeDashboard() {
+export function HomeDashboard() {
   const [selectedDay, setSelectedDay] = useState(yesterday)
   return (
     <LiveData>
@@ -61,5 +63,23 @@ export default function HomeDashboard() {
         </>
       )}
     </LiveData>
+  )
+}
+
+const Title = styled(H3)`
+  margin-bottom: 32px;
+  margin-left: 16px;
+`
+
+export default () => {
+  const { merchantName } = useContext(sessionContext)
+  const { getText } = useLocalization()
+  return (
+    <>
+      {merchantName && (
+        <Title>{getText('Welcome %{merchantName}!', { merchantName })}</Title>
+      )}
+      <HomeDashboard />
+    </>
   )
 }

@@ -9,6 +9,7 @@ export const SessionProvider = ({ children }) => {
   const [refreshToken, setRefreshToken] = useSessionStorage('refresh_token', '')
   const [userId, setUserId] = useSessionStorage('user_id', '')
   const [merchantId, setMerchantId] = useSessionStorage('merchant_id', '')
+  const [merchantName, setMerchantName] = useSessionStorage('merchant_name', '')
   return (
     <sessionContext.Provider
       value={{
@@ -19,7 +20,9 @@ export const SessionProvider = ({ children }) => {
         userId,
         setUserId,
         merchantId,
-        setMerchantId
+        setMerchantId,
+        merchantName,
+        setMerchantName
       }}
     >
       {children}
