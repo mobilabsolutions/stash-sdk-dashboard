@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import moment from 'moment'
 import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
-import { H4 } from '../../atoms'
+import { H4, ArrowDown } from '../../atoms'
 import ActivityAreaChart from './area_chart'
 import SingleDate from './single_date_picker'
 interface Props {
@@ -46,6 +46,9 @@ const LegendItem = styled.span<{ color: string }>`
   color: ${p => p.theme.shade.A200};
   margin-left: 16px;
   font-size: 14px;
+  svg {
+    margin-left: 8px;
+  }
   ::before {
     height: 12px;
     width: 12px;
@@ -76,7 +79,11 @@ export function TodaysActivityCmp(props: Props) {
                   .date() == props.selectedDay.date()
                   ? getText('Yesterday')
                   : props.selectedDay.format('DD/MM/YYYY')
-              return <LegendItem color="#609df6">{text}</LegendItem>
+              return (
+                <LegendItem color="#609df6">
+                  {text} <ArrowDown fill="#a3aaaf" />
+                </LegendItem>
+              )
             }}
           />
           <LegendItem color="#07d0c7">{getText('Today')}</LegendItem>
