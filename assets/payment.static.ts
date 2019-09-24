@@ -1,5 +1,5 @@
 import { theme } from './style'
-import { TransactionAction, TransactionStatus } from '../hooks/types'
+import { TransactionAction, TransactionStatus } from '../types'
 
 export const statusToAction = {
   'pre-Authorised': TransactionAction.PREAUTH,
