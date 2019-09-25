@@ -60,13 +60,13 @@ export default function InputCurrency(props) {
           fixedDecimalScale
           onChange={ev => {
             const value = (ev.target.value || '0')
-              .replace(symbol, '')
-              .replace(group, '')
+              .replace(new RegExp(symbol, 'g'), '')
+              .replace(new RegExp(group, 'g'), '')
               .replace(decimal, '.')
             onChange({ target: { value: Number(value), name } })
           }}
-          suffix={symbolAtEnd ? symbol : ''}
-          prefix={!symbolAtEnd ? symbol : ''}
+          suffix={symbolAtEnd && !props.notCurrency ? symbol : ''}
+          prefix={!symbolAtEnd && !props.notCurrency ? symbol : ''}
           autoFocus={autoFocus}
         />
       )}
