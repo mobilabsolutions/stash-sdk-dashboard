@@ -46,6 +46,7 @@ function TheInput(
     placeholder = 'Insert text',
     title = '',
     initialValue = '',
+    withDeabounce = true,
     disabled = false,
     autoFocus = false
   },
@@ -58,7 +59,7 @@ function TheInput(
 
   const [_value, setValue] = useState(initialValue)
 
-  const debouncedSearchTerm = useDebounce(_value, 500)
+  const debouncedSearchTerm = useDebounce(_value, withDeabounce ? 500 : 0)
   useEffect(() => {
     debouncedSearchTerm !== value && onChange(debouncedSearchTerm)
   }, [debouncedSearchTerm])
