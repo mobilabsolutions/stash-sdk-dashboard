@@ -10,6 +10,7 @@ const Content = styled.div`
   display: flex;
   min-height: 100px;
   min-width: 100px;
+  max-height: 100%;
   background-color: ${props => props.theme.white};
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
   position: relative;
