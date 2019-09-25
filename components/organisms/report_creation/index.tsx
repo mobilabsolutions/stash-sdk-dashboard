@@ -1,16 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ActionPopup } from '../../molecules'
 import styled from '../../styled'
 import { Report, Check } from '../../atoms'
 import { useLocalization } from '../../../hooks'
 import Theme from '../../../assets/style/theme'
-import moment from 'moment'
-
-enum DEFAUL_REPORTS {
-  OVERVIEW = 'Transactions Monthly Overview',
-  REFUND = 'Refunds Monthly Overview',
-  CHARGEBACK = 'Chargebacks'
-}
+import CustomReports from './custom_report'
+import DefaultReport from './default_report'
 
 interface Props {
   show: boolean
@@ -93,42 +88,58 @@ const Add = () => (
   </svg>
 )
 
-const DefaultReport = ReporItem(Report)
+const DefaultReportEl = ReporItem(Report)
 const CustomReport = ReporItem(Add)
 
 const Wrapper = styled.div`
   display: flex;
-  margin: 16px 32px 40px 40px;
+  margin: 16px 32px 24px 40px;
 `
 
 export default function ReportCreation(props: Props) {
   const { show, onClose, downloadReport } = props
   const { getText } = useLocalization()
-
+  const [showFilters, setShowFilters] = useState(false)
+  const _onClose = () => {
+    onClose()
+    setShowFilters(false)
+  }
   return (
     <ActionPopup
       show={show}
-      onClose={onClose}
-      header={getText('Select one of the default reports')}
+      onClose={_onClose}
+      header={getText(
+        showFilters
+          ? 'Generate a new Report'
+          : 'Select one of the default reports'
+      )}
     >
       <Wrapper>
-        {Object.entries(DEFAUL_REPORTS).map(([key, value]) => (
-          <DefaultReport
-            onClick={() => {
-              const date = moment().format('YYYYMMDD')
-              downloadReport(`${value}_${date}`, 'default', { reportType: key })
-              onClose()
+        {showFilters && (
+          <CustomReports
+            downloadReport={(filterName: string, parameters = {}) => {
+              downloadReport(filterName, 'custom', parameters)
+              _onClose()
             }}
-            title={getText(value)}
-            key={key}
           />
-        ))}
-        <CustomReport
-          title={getText('Set up your own report')}
-          dashed
-          checkMark={false}
-          onClick={() => {}}
-        />
+        )}
+        {!showFilters && (
+          <>
+            <DefaultReport
+              El={DefaultReportEl}
+              onClick={_onClose}
+              downloadReport={downloadReport}
+            />
+            <CustomReport
+              title={getText('Set up your own report')}
+              dashed
+              checkMark={false}
+              onClick={() => {
+                setShowFilters(true)
+              }}
+            />
+          </>
+        )}
       </Wrapper>
     </ActionPopup>
   )
