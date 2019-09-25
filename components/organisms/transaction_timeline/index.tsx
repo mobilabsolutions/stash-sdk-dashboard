@@ -1,7 +1,7 @@
 import React from 'react'
 import { DetailView, TextCurrency } from '../../molecules'
 import { useLocalization } from '../../../hooks'
-import { TimeAction } from '../../../hooks/types'
+import { TimeAction } from '../../../types/transaction'
 import styled from '../../styled'
 
 interface TimeProps {
