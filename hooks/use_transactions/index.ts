@@ -6,7 +6,11 @@ import { useStoredState, useDownloadcsv } from '..'
 import { useApi } from '../use_api'
 import { useRefund, useReverse, useCapture } from './actions'
 import { statusToAction, isClient } from '../../assets/payment.static'
-import { TransactionAction, TransactionStatus, PaymentMethod } from '../types'
+import {
+  TransactionAction,
+  TransactionStatus,
+  PaymentMethod
+} from '../../types/transaction'
 
 interface Transaction {
   action: TransactionAction

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useRefund, useReverse, useCapture } from '../use_transactions/actions'
 import { useApi } from '../use_api'
 import Router from 'next/router'
-import { TransactionDetails } from '../types'
+import { TransactionDetails } from '../../types/transaction'
 import { isClient } from '../../assets/payment.static'
 
 interface TransactionState {

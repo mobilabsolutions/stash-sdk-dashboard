@@ -35,13 +35,19 @@ const Wrapper = styled.div`
 const getStringParamsFromObject = (parameters = {}) =>
   Object.entries(parameters).reduce(
     (str, [name, value]) =>
-      `${str}&${name}=${encodeURIComponent(value.toString())}`,
+      value ? `${str}&${name}=${encodeURIComponent(value.toString())}` : str,
     ''
   )
 
 export default function ReportManagment({ setisLoading }) {
   const { getText } = useLocalization()
-  const { reportList, loading, errorLoading, deleteReport } = useReports()
+  const {
+    reportList,
+    loading,
+    errorLoading,
+    deleteReport,
+    loadReportList
+  } = useReports()
   const { merchantId } = useApi()
   const exportCSV = useDownloadcsv()
 
@@ -58,6 +64,7 @@ export default function ReportManagment({ setisLoading }) {
     setisLoading(true)
     exportCSV.download(URL, filterName).finally(() => {
       setisLoading(false)
+      loadReportList()
     })
   }
   const [show, setShow] = useState(false)

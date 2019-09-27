@@ -5,7 +5,7 @@ import {
   PaymentMethod,
   PersonalData,
   SepaConfig
-} from '../../../hooks/types'
+} from '../../../types/transaction'
 import { useLocalization } from '../../../hooks'
 import { DetailView, Iban, CreditCardMask } from '../../molecules'
 import styled from '../../styled'

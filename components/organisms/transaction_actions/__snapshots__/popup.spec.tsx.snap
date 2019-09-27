@@ -6,10 +6,10 @@ exports[`PopUp Should Render capture form 1`] = `
   onClick={[Function]}
 >
   <div
-    className="popup__Content-br7oqf-0 dLDWKT"
+    className="popup__Content-br7oqf-0 bmovpd"
   >
     <div
-      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+      className="action_popup__PopupContainer-sc-6dvik9-0 fwzUyw"
     >
       <div
         className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
@@ -73,10 +73,10 @@ exports[`PopUp Should Render loading state 1`] = `
   onClick={[Function]}
 >
   <div
-    className="popup__Content-br7oqf-0 dLDWKT"
+    className="popup__Content-br7oqf-0 bmovpd"
   >
     <div
-      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+      className="action_popup__PopupContainer-sc-6dvik9-0 fwzUyw"
     >
       <div
         className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
@@ -538,10 +538,10 @@ exports[`PopUp Should Render refund form 1`] = `
   onClick={[Function]}
 >
   <div
-    className="popup__Content-br7oqf-0 dLDWKT"
+    className="popup__Content-br7oqf-0 bmovpd"
   >
     <div
-      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+      className="action_popup__PopupContainer-sc-6dvik9-0 fwzUyw"
     >
       <div
         className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"
@@ -798,10 +798,10 @@ exports[`PopUp Should Render reverse form 1`] = `
   onClick={[Function]}
 >
   <div
-    className="popup__Content-br7oqf-0 dLDWKT"
+    className="popup__Content-br7oqf-0 bmovpd"
   >
     <div
-      className="action_popup__PopupContainer-sc-6dvik9-0 fEHenQ"
+      className="action_popup__PopupContainer-sc-6dvik9-0 fwzUyw"
     >
       <div
         className="action_popup__HeaderContainer-sc-6dvik9-3 pQDGY"

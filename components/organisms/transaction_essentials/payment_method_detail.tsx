@@ -5,7 +5,7 @@ import {
   PayPalConfig,
   PersonalData,
   SepaConfig
-} from '../../../hooks/types'
+} from '../../../types/transaction'
 import { PayPal, Sepa } from '../../atoms'
 import { PaymentMethod as PM } from '../../organisms'
 import styled from '../../styled'

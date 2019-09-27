@@ -311,5 +311,15 @@ export default {
   Sat: { de: 'Samstag' },
   Notifications: { de: 'Benachrichtigungen' },
   'Refund Overview': { de: 'Rückerstattungsübersicht' },
-  'Welcome %{merchantName}!': { de: 'Willkommen %{merchantName}!' }
+  'Existent Reports': { de: 'Bestehende Berichte' },
+  'Welcome %{merchantName}!': { de: 'Willkommen %{merchantName}!' },
+  'Generate a new Report': { de: 'Erstellen Sie einen neuen Bericht' },
+  'Report Name': { de: 'Berichtsname' },
+  'Show more': { de: 'Zeig mehr' },
+  'Generate Report': { de: 'Bericht generieren' },
+  Keyword: { de: 'Stichwort' },
+  'Show less': { de: 'Zeige weniger' },
+  'Customer Id': { de: 'Kundennummer' },
+  'Transaction Id': { de: 'Transaktions-ID' },
+  'Merchant Transaction Id': { de: 'Händlertransaktions-ID' }
 }

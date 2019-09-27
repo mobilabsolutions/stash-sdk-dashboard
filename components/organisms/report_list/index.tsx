@@ -18,15 +18,17 @@ const ReportItem = styled.div`
   background-color: #ffffff;
   padding: 8px 16px;
   margin-bottom: 8px;
+  display: flex;
   .report-title {
-    margin: auto 0px;
-    transform: translate(10px, 10px);
-    position: absolute;
+    margin: auto 8px;
     font-size: 12px;
+    text-overflow: ellipsis;
   }
   .report-action {
-    float: right;
+    flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     button {
       padding: 8px;
       display: flex;
@@ -64,7 +66,9 @@ export default function ReportList(p: Props) {
       {p.reportList.map((report, i) => (
         <ReportItem key={`${i}-${report.filterName}`}>
           <Report />
-          <span className="report-title">{report.filterName}</span>
+          <span className="report-title" title={report.filterName}>
+            {report.filterName}
+          </span>
           <span className="report-action">
             <FlatButton
               onClick={() => {
