@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu layout should change content 1`] = `
+<div>
+  <div
+    class="menu_layout__Wrapper-sc-110xcxw-0 jcgmSY"
+  >
+    <div
+      class="menu-area"
+    >
+      <div
+        class="menu-item"
+        data-testid="menu-0"
+      >
+        String Title
+      </div>
+      <div
+        class="menu-item"
+        data-testid="menu-1"
+      >
+        <h1>
+          Function Title
+        </h1>
+      </div>
+      <div
+        class="menu-item"
+        data-testid="menu-2"
+      >
+        <h1>
+          Function Title 1
+        </h1>
+      </div>
+    </div>
+    <div
+      class="content-area"
+    >
+      <span>
+        Content 3
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Menu layout should render 1`] = `
+<div
+  className="menu_layout__Wrapper-sc-110xcxw-0 jcgmSY"
+>
+  <div
+    className="menu-area"
+  >
+    <div
+      className="menu-item"
+      data-testid="menu-0"
+      onClick={[Function]}
+    >
+      String Title
+    </div>
+    <div
+      className="menu-item"
+      data-testid="menu-1"
+      onClick={[Function]}
+    >
+      <h1>
+        Function Title
+      </h1>
+    </div>
+    <div
+      className="menu-item"
+      data-testid="menu-2"
+      onClick={[Function]}
+    >
+      <h1>
+        Function Title 1
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-area"
+  >
+    <span>
+      Content 1
+    </span>
+  </div>
+</div>
+`;
