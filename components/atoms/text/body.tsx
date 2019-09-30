@@ -8,5 +8,5 @@ export default styled.span`
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: ${props => props.theme.shade.A200};
+  color: ${props => props.theme.shade.A700};
 `
