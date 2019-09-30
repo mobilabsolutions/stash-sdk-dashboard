@@ -310,6 +310,7 @@ export default {
   Saturday: { de: 'Samstag' },
   Sat: { de: 'Samstag' },
   Notifications: { de: 'Benachrichtigungen' },
+  Profile: { de: 'Profile' },
   'Refund Overview': { de: 'Rückerstattungsübersicht' },
   'Existent Reports': { de: 'Bestehende Berichte' },
   'Welcome %{merchantName}!': { de: 'Willkommen %{merchantName}!' },
