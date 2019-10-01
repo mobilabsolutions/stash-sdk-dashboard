@@ -92,6 +92,7 @@ export interface TransactionDetails {
   action: TransactionAction
   aliasId: string
   amount: number
+  initialAmount: number
   createdDate: string
   currencyId: string
   merchantCustomerId: string

@@ -8,9 +8,15 @@ import {
 import styled from '../../styled'
 import { LoadingError } from '../../molecules'
 import { useLocalization } from '../../../hooks'
+import {
+  TransactionDetails as TransactionModel,
+  TimeAction,
+  TransactionAction,
+  TransactionStatus
+} from '../../../types/transaction'
 
 interface DetailProps {
-  details: any
+  details: TransactionModel
   refund: any
   reverse: any
   capture: any
@@ -27,6 +33,12 @@ const BackText = styled.span`
   width: 300px;
   text-align: center;
 `
+
+const getRemaining = (acc: number, time: TimeAction) =>
+  time.action === TransactionAction.REFUND &&
+  time.status === TransactionStatus.SUCCESS
+    ? acc + time.amount
+    : acc
 
 const TransactionDetails = (props: DetailProps) => {
   const { details, refund, reverse, capture, error } = props
@@ -55,6 +67,8 @@ const TransactionDetails = (props: DetailProps) => {
             currency={details.currencyId}
             status={details.status}
             action={details.action}
+            initialAmount={details.initialAmount}
+            usedAmount={details.timelineInfo.reduce(getRemaining, 0)}
             date={details.createdDate}
             extra={details.paymentInfo.extra}
           />
