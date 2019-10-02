@@ -82,7 +82,11 @@ export const getStatusBackgroundColor = (status: string) => {
 
 export const isClient = typeof window === 'object'
 
-export function getActionsByStatus(status: string): Array<{ type: string }> {
+export function getActionsByStatus(
+  status: string,
+  usedAmount?: number,
+  initialAmount?: number
+): Array<{ type: string; amount?: number }> {
   switch (status) {
     case 'authorised':
     case 'captured':
@@ -98,6 +102,16 @@ export function getActionsByStatus(status: string): Array<{ type: string }> {
         },
         {
           type: 'reverse'
+        }
+      ]
+    case 'refunded':
+      if (initialAmount === usedAmount) {
+        return []
+      }
+      return [
+        {
+          type: 'refund',
+          amount: initialAmount - usedAmount
         }
       ]
     default:

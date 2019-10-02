@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions should NOT show refund for partials if used amount is the same 1`] = `
+<div
+  className="actions__ActionContainer-zdsni1-0 ktFnMw"
+/>
+`;
+
+exports[`Actions should show refund for authorised 1`] = `
+<div
+  className="actions__ActionContainer-zdsni1-0 ktFnMw"
+>
+  <button
+    className="actions__ActBtn-zdsni1-1 ecmOiL flat__Button-sc-182ug78-0 jscbCh"
+    label="refund"
+    onClick={[Function]}
+  >
+    Refund
+  </button>
+</div>
+`;
+
+exports[`Actions should show refund for partials 1`] = `
+<div
+  className="actions__ActionContainer-zdsni1-0 ktFnMw"
+>
+  <button
+    className="actions__ActBtn-zdsni1-1 ecmOiL flat__Button-sc-182ug78-0 jscbCh"
+    label="refund"
+    onClick={[Function]}
+  >
+    Refund
+  </button>
+</div>
+`;

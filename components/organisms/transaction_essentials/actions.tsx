@@ -34,6 +34,8 @@ interface ActionProps {
   currency: string
   transactionId: string
   amount: number
+  initialAmount: number
+  usedAmount: number
 }
 export default function Actions(props: ActionProps) {
   const { getText } = useLocalization()
@@ -45,10 +47,12 @@ export default function Actions(props: ActionProps) {
     action,
     transactionId,
     currency,
-    amount
+    amount,
+    initialAmount,
+    usedAmount
   } = props
   const _status = getMappedStatus(status, action)
-  const actions = getActionsByStatus(_status)
+  const actions = getActionsByStatus(_status, usedAmount, initialAmount)
   const clearError = _action => {
     const map = {
       refund: refund.setError,
@@ -73,10 +77,12 @@ export default function Actions(props: ActionProps) {
     }
     return map[_action]
   }
-  const [_action, setAction] = useState(null)
+  const [_action, setAction] = useState<{ type: string; amount?: number }>({
+    type: null
+  })
   const onClose = () => {
     isActionError(action) && clearError(action)
-    setAction(null)
+    setAction({ type: null })
   }
 
   return (
@@ -86,7 +92,7 @@ export default function Actions(props: ActionProps) {
           <ActBtn
             key={`${i}-${act.type}`}
             label={act.type}
-            onClick={() => setAction(act.type)}
+            onClick={() => setAction(act)}
           >
             {getText(act.type)}
           </ActBtn>
@@ -94,8 +100,8 @@ export default function Actions(props: ActionProps) {
       </ActionContainer>
       <TransactionActionsPopup
         onClose={onClose}
-        isLoading={isActionLoading(_action)}
-        hasError={isActionError(_action)}
+        isLoading={isActionLoading(_action.type)}
+        hasError={isActionError(_action.type)}
         successActionText={getText('Back to Details')}
         onAction={(
           action: string,
@@ -122,9 +128,9 @@ export default function Actions(props: ActionProps) {
               return ''
           }
         }}
-        action={_action}
-        initialRefund={amount}
-        show={!!_action}
+        action={_action.type}
+        initialRefund={_action.amount ? _action.amount / 100 : amount}
+        show={!!_action.type}
         currencyId={currency}
       />
     </>

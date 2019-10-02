@@ -28,6 +28,8 @@ interface ActionControl {
 }
 interface EssentilasProps {
   amount: number
+  initialAmount: number
+  usedAmount: number
   currency: string
   status: string
   action: string
@@ -91,6 +93,8 @@ export default function TransactionEssentials(props: EssentilasProps) {
     refund,
     capture,
     reverse,
+    initialAmount,
+    usedAmount,
     transactionId
   } = props
   const _status = getMappedStatus(status, action)
@@ -134,6 +138,8 @@ export default function TransactionEssentials(props: EssentilasProps) {
             transactionId={transactionId}
             currency={currency}
             amount={amount}
+            initialAmount={initialAmount}
+            usedAmount={usedAmount}
           />
         </PartWrapper>
         <DetailList>

@@ -322,5 +322,6 @@ export default {
   'Show less': { de: 'Zeige weniger' },
   'Customer Id': { de: 'Kundennummer' },
   'Transaction Id': { de: 'Transaktions-ID' },
+  'Back to Details': { de: 'Back to Details' },
   'Merchant Transaction Id': { de: 'Händlertransaktions-ID' }
 }
