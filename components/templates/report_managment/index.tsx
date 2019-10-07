@@ -71,7 +71,7 @@ export default function ReportManagment({ setisLoading }) {
   return (
     <Wrapper>
       <div className="header">
-        <span className="title">{getText('Existent Reports')}</span>
+        <span className="title">{getText('Existing reports')}</span>
         <PrimaryButton
           style={{ float: 'right' }}
           label={getText('Generate a new Report')}

@@ -312,7 +312,7 @@ export default {
   Notifications: { de: 'Benachrichtigungen' },
   Profile: { de: 'Profile' },
   'Refund Overview': { de: 'Rückerstattungsübersicht' },
-  'Existent Reports': { de: 'Bestehende Berichte' },
+  'Existing reports': { de: 'Bestehende Berichte' },
   'Welcome %{merchantName}!': { de: 'Willkommen %{merchantName}!' },
   'Generate a new Report': { de: 'Erstellen Sie einen neuen Bericht' },
   'Report Name': { de: 'Berichtsname' },
