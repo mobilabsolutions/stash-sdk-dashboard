@@ -1,24 +1,28 @@
-import { useState } from 'react'
 import { Formik } from 'formik'
 
-import { useLocalization } from '../../../hooks'
+import { useLocalization, useApi } from '../../../hooks'
 import { ForgotPassword, ForgotPasswordConfirmed } from '../../organisms'
+import { useState } from 'react'
 
-export default function ResetPasswordForm({ email = '' }) {
+export default function ResetPasswordForm({ email = '', merchantId = '' }) {
   const { getText } = useLocalization()
-  const [send, setSend] = useState(false)
+  const [sent, setSent] = useState(false)
 
-  if (send) {
+  const { resetPassword } = useApi()
+
+  if (sent) {
     return <ForgotPasswordConfirmed />
   }
 
   return (
     <Formik
-      initialValues={{ email }}
+      initialValues={{ email, merchantId }}
       validate={values => {
         let errors: any = {}
 
         if (!values.email) errors.email = getText('Field is required.')
+        if (!values.merchantId)
+          errors.merchantId = getText('Field is required.')
         if (
           values.email.indexOf('@') === -1 ||
           values.email.indexOf('.') === -1
@@ -28,10 +32,20 @@ export default function ResetPasswordForm({ email = '' }) {
         return errors
       }}
       validateOnBlur={false}
-      onSubmit={(_, actions) => {
+      onSubmit={({ email, merchantId }, actions) => {
         actions.setSubmitting(true)
-        setSend(true)
-        actions.setSubmitting(false)
+        resetPassword(email, merchantId)
+          .then(() => {
+            setSent(true)
+          })
+          .catch(() => {
+            actions.setErrors({
+              merchantId: getText('Merchant Id is not correct.')
+            })
+          })
+          .finally(() => {
+            actions.setSubmitting(false)
+          })
       }}
       render={props => <ForgotPassword {...props} />}
     />

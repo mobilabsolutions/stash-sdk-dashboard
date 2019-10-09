@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { Field, FormikProps } from 'formik'
 
 import { useLocalization } from '../../../hooks'
-import { PrimaryButton, H2, H4, IllustrationPassword } from '../../atoms'
+import { PrimaryButton, H2, IllustrationPassword } from '../../atoms'
 import { Input } from '../../molecules'
 import styled from '../../styled'
 import AnonymousForm from '../anonymous_form'
@@ -10,9 +10,17 @@ import AnonymousForm from '../anonymous_form'
 const Wrapper = styled.div`
   justify-self: center;
   align-self: center;
-  width: 300px;
+  width: 370px;
   > .title {
-    padding-left: ${p => p.theme.spacing.xsmall};
+    padding-bottom: ${p => p.theme.spacing.large};
+    h2 {
+      color: ${p => p.theme.primary.A500};
+      padding-left: ${p => p.theme.spacing.xsmall};
+    }
+    span {
+      color: ${p => p.theme.shade.A200};
+      font-size: 14px;
+    }
   }
   > .button {
     display: flex;
@@ -32,16 +40,17 @@ function ForgotPassword(
   return (
     <AnonymousForm
       handleSubmit={props.handleSubmit}
+      illustrationStyle={{ backgroundColor: '#ffffff' }}
       illustration={<IllustrationPassword />}
     >
       <Wrapper>
         <div className="title">
           <H2>{getText('Please enter your email address')}</H2>
-          <H4>
+          <span>
             {getText(
               'You will receive in few minutes an email with a link to reset your password.'
             )}
-          </H4>
+          </span>
         </div>
         <Field
           name="email"
@@ -55,10 +64,20 @@ function ForgotPassword(
             />
           )}
         />
+        <Field
+          name="merchantId"
+          render={({ field, form }) => (
+            <Input
+              ref={emailField}
+              field={field}
+              form={form}
+              placeholder={getText('Merchant Id')}
+            />
+          )}
+        />
         <div className="button">
           <PrimaryButton
             label={getText('Send me an email')}
-            isFullSize
             disabled={!props.isValid}
           />
         </div>

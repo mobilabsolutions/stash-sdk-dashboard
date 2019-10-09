@@ -239,6 +239,30 @@ export const useApi = () => {
     [refresh, token]
   )
 
+  const resetPassword = (email: string, merchantId: string) =>
+    new Promise((resolve, reject) => {
+      fetch(
+        `${BACKEND_HOST}/api/v1/merchant/${merchantId}/user/forgot-password?email=${encodeURIComponent(
+          email
+        )}`,
+        {
+          method: Method.POST,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      )
+        .then(response => {
+          if (response.status !== 201) {
+            const error: any = new Error('Reset request failed')
+            error.statusCode = response.status
+            reject(error)
+          }
+          resolve(true)
+        })
+        .catch(reject)
+    })
+
   const useSocket = useCallback(
     (
       url: string,
@@ -341,6 +365,7 @@ export const useApi = () => {
     login,
     logout,
     refresh,
+    resetPassword,
     userId,
     merchantId,
     merchantName
