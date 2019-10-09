@@ -35,6 +35,7 @@ const Form = styled.form`
 export default function AnonymousForm({
   handleSubmit,
   illustration = null,
+  illustrationStyle = {},
   children
 }) {
   return (
@@ -45,7 +46,9 @@ export default function AnonymousForm({
         </div>
         {children}
       </Form>
-      <div className="illustration">{illustration || <Illustration />}</div>
+      <div className="illustration" style={illustrationStyle}>
+        {illustration || <Illustration />}
+      </div>
     </Wrapper>
   )
 }
