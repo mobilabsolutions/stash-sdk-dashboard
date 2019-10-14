@@ -8,7 +8,8 @@ export { default as BackButton } from './button/back'
 export { default as Link } from './link'
 export { default as Overlay } from './container/overlay'
 export {
-  default as VerticalScrollContainer
+  default as VerticalScrollContainer,
+  ScrollMargin
 } from './container/vertical_scroll_container'
 
 export { default as Logo } from './icons/logo'
