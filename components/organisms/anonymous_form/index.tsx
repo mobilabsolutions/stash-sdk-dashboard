@@ -1,5 +1,6 @@
 import { Illustration, Logo } from '../../atoms'
 import styled from '../../styled'
+import Link from 'next/link'
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,6 +27,9 @@ const Form = styled.form`
   flex-direction: column;
   height: 100%;
   > .logo {
+    > svg {
+      cursor: pointer;
+    }
     padding-top: 40px;
     padding-left: 40px;
     padding-bottom: 120px;
@@ -40,9 +44,11 @@ export default function AnonymousForm({
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit}>
-        <div className="logo">
-          <Logo />
-        </div>
+        <Link href="/login">
+          <div className="logo">
+            <Logo />
+          </div>
+        </Link>
         {children}
       </Form>
       <div className="illustration">{illustration || <Illustration />}</div>

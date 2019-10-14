@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { IllustrationPassword, Logo, H2, H4 } from '../../atoms'
 import styled from '../../styled'
 import { useLocalization } from '../../../hooks'
@@ -27,6 +28,9 @@ const LeftWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   > .logo {
+    > svg {
+      cursor: pointer;
+    }
     padding-top: 40px;
     padding-left: 40px;
     padding-bottom: 120px;
@@ -47,9 +51,11 @@ export default function ForgotPasswordConfirmed() {
   return (
     <Wrapper>
       <LeftWrapper>
-        <div className="logo">
-          <Logo />
-        </div>
+        <Link href="/login">
+          <div className="logo">
+            <Logo />
+          </div>
+        </Link>
         <ContentWrapper>
           <H2>{getText('Email has been send')}</H2>
           <H4>{getText('Check your Email and follow the instructions.')}</H4>
