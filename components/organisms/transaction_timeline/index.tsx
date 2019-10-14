@@ -26,7 +26,8 @@ const Info = ({ action, status, reason, amount, createdDate, currencyId }) => {
       {formatDate(createdDate)}
       <span className="item-details">
         {' - '}
-        {getText(action)} {getText(status)} - {reason ? `${reason} - ` : ''}
+        {getText(`${status}-ADJ`)} {getText(action)} -{' '}
+        {reason ? `${reason} - ` : ''}
         <TextCurrency currencyId={currencyId} value={amount / 100} />
       </span>
     </span>

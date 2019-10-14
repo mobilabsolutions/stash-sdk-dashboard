@@ -25,7 +25,7 @@ export default function CustomizeLogo() {
       <ContentWrapper>
         <Form encType="multipart/form-data">
           <InputFile
-            label={getText('Upload Header Logo')}
+            label={getText('Upload a new file')}
             onChange={e => {
               const files = e.target.files
               const formData = new FormData()

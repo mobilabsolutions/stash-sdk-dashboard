@@ -82,7 +82,7 @@ export default function ReportList(p: Props) {
                 p.deleteReport(report.filterName)
               }}
             >
-              <Trash /> <span>{getText('Delete Report')}</span>
+              <Trash /> <span>{getText('Delete')}</span>
             </FlatButton>
           </span>
         </ReportItem>

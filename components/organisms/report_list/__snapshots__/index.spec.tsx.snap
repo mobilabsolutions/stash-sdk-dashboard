@@ -77,7 +77,7 @@ exports[`Report list should display list of reports 1`] = `
         </svg>
          
         <span>
-          Delete Report
+          Delete
         </span>
       </button>
     </span>
@@ -155,7 +155,7 @@ exports[`Report list should display list of reports 1`] = `
         </svg>
          
         <span>
-          Delete Report
+          Delete
         </span>
       </button>
     </span>
@@ -233,7 +233,7 @@ exports[`Report list should display list of reports 1`] = `
         </svg>
          
         <span>
-          Delete Report
+          Delete
         </span>
       </button>
     </span>
@@ -311,7 +311,7 @@ exports[`Report list should display list of reports 1`] = `
         </svg>
          
         <span>
-          Delete Report
+          Delete
         </span>
       </button>
     </span>

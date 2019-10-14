@@ -35,7 +35,7 @@ const ColorMap = {
     colorOposite: '#0c133f',
     secondColor: '#ffffff',
     secondColorOposite: '#4f5995',
-    label: 'Payment Method'
+    label: 'Used Payment Methods'
   }
 }
 const IndicatorsContainerCreator = (color: string) => props => {
@@ -80,7 +80,7 @@ export default function ChartOverviews() {
       marginBottom: '48px',
       marginLeft: '24px',
       transform: 'translateY(24px)',
-      maxWidth: '190px'
+      maxWidth: '270px'
     }),
     indicatorsContainer: p => ({ ...p, color: '#ffffff' }),
     placeholder: customProvider,

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from '../../styled'
 import { ReactElementLike } from 'prop-types'
+import { ScrollMargin } from '../../atoms'
 
 interface Menu {
   title: string | ((active: boolean) => ReactElementLike)
@@ -28,14 +29,6 @@ const Wrapper = styled.div`
       cursor: pointer;
     }
   }
-  .content-area {
-    width: 100%;
-    overflow: auto;
-    height: 100%;
-    overflow-y: scroll;
-    max-width: 902px;
-    margin: auto;
-  }
 `
 
 export default function MenuLayout(p: Props) {
@@ -58,9 +51,9 @@ export default function MenuLayout(p: Props) {
           </div>
         ))}
       </div>
-      <div className="content-area">
+      <ScrollMargin maxWidth="902px">
         {menu.find((_t, i) => i === active).render()}
-      </div>
+      </ScrollMargin>
     </Wrapper>
   )
 }

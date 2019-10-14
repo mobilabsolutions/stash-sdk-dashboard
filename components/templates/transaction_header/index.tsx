@@ -65,7 +65,7 @@ export function TransactionHeader(
         <BtnContainer>
           <HeaderBtn onClick={toggleFilter}>
             <Settings width={21} height={18} style={{ marginRight: '8px' }} />
-            <span>{getText('Filter')}</span>
+            <span>{getText('Filters')}</span>
             {showFilter ? (
               <ArrowUp style={{ marginLeft: '8px' }} />
             ) : (

@@ -3,7 +3,7 @@
 exports[`Menu layout should change content 1`] = `
 <div>
   <div
-    class="menu_layout__Wrapper-sc-110xcxw-0 jcgmSY"
+    class="menu_layout__Wrapper-sc-110xcxw-0 bbHmeo"
   >
     <div
       class="menu-area"
@@ -32,11 +32,15 @@ exports[`Menu layout should change content 1`] = `
       </div>
     </div>
     <div
-      class="content-area"
+      class="vertical_scroll_container__Container-bnn76i-0 iKbzRd"
     >
-      <span>
-        Content 3
-      </span>
+      <div
+        class="vertical_scroll_container__MarginContainer-bnn76i-1 eYFwBI"
+      >
+        <span>
+          Content 3
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -44,7 +48,7 @@ exports[`Menu layout should change content 1`] = `
 
 exports[`Menu layout should render 1`] = `
 <div
-  className="menu_layout__Wrapper-sc-110xcxw-0 jcgmSY"
+  className="menu_layout__Wrapper-sc-110xcxw-0 bbHmeo"
 >
   <div
     className="menu-area"
@@ -76,11 +80,15 @@ exports[`Menu layout should render 1`] = `
     </div>
   </div>
   <div
-    className="content-area"
+    className="vertical_scroll_container__Container-bnn76i-0 iKbzRd"
   >
-    <span>
-      Content 1
-    </span>
+    <div
+      className="vertical_scroll_container__MarginContainer-bnn76i-1 eYFwBI"
+    >
+      <span>
+        Content 1
+      </span>
+    </div>
   </div>
 </div>
 `;
