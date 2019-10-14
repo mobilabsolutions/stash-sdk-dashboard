@@ -1,7 +1,7 @@
 import React from 'react'
 import { Page } from '../components/organisms'
 import { withRouter, RouterProps } from 'next/router'
-import { useTransaction, useLocalization } from '../hooks'
+import { useTransaction } from '../hooks'
 import { VerticalScrollContainer, BackButton } from '../components/atoms'
 import { TransactionDetails } from '../components/templates'
 import styled from '../components/styled'
@@ -19,7 +19,6 @@ const CustomScrollContainer = styled(VerticalScrollContainer)`
 
 const TransactionPage = ({ router }: DetailProps) => {
   const { transactionId } = router.query
-  const { getText } = useLocalization()
 
   const {
     details,
@@ -33,7 +32,7 @@ const TransactionPage = ({ router }: DetailProps) => {
     <Page activePath={'/transactions'} isLoading={isLoading}>
       <CustomScrollContainer>
         <Link href="/transactions">
-          <BackButton>{getText('Back to transactions overview')}</BackButton>
+          <BackButton>{''}</BackButton>
         </Link>
         <TransactionDetails
           details={details}
