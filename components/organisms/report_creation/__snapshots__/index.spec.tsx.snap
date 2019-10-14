@@ -899,7 +899,7 @@ exports[`Report creation should list default reports 1`] = `
           <span
             className="title"
           >
-            Transactions Monthly Overview
+            Monthly Transactions Overview
           </span>
         </div>
         <div
@@ -963,7 +963,7 @@ exports[`Report creation should list default reports 1`] = `
           <span
             className="title"
           >
-            Refunds Monthly Overview
+            Monthly Refunds Overview
           </span>
         </div>
         <div
@@ -1027,7 +1027,7 @@ exports[`Report creation should list default reports 1`] = `
           <span
             className="title"
           >
-            Chargebacks
+            Chargebacks Overview
           </span>
         </div>
         <div

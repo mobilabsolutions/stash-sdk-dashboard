@@ -31,7 +31,7 @@ export default function ChangePassword(
   const { getText } = useLocalization()
 
   return (
-    <PageForm title={getText('Account')} handleSubmit={props.handleSubmit}>
+    <PageForm title={getText('Password')} handleSubmit={props.handleSubmit}>
       <LeftRight>
         <div className="left">
           <Field

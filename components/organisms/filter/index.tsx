@@ -135,7 +135,7 @@ export default forwardRef<HTMLDivElement, any>(
           <InputSearch
             field={{ onChange: setText, name: 'search-text', value: text }}
             initialValue={text}
-            placeholder={getText('Search Payments…')}
+            placeholder={getText('Search')}
           />
         </ItemWrapper>
         {isFiltered && (

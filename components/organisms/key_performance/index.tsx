@@ -62,7 +62,7 @@ export function KeyPerformance(p: Props) {
       </Grid.Col>
       <Grid.Col l={3} m={6}>
         <PerformanceCard
-          title={getText('Refunded Transactions')}
+          title={getText('Refunds')}
           amount={nrOfRefundedTransactions}
           amountStyle={{ color: theme.mobilab.A700 }}
           iconEl={Refund}

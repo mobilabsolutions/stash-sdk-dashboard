@@ -4,9 +4,9 @@ import { useLocalization } from '../../../hooks'
 import { ReactComponentLike } from 'prop-types'
 
 enum DEFAUL_REPORTS {
-  OVERVIEW = 'Transactions Monthly Overview',
-  REFUND = 'Refunds Monthly Overview',
-  CHARGEBACK = 'Chargebacks'
+  OVERVIEW = 'Monthly Transactions Overview',
+  REFUND = 'Monthly Refunds Overview',
+  CHARGEBACK = 'Chargebacks Overview'
 }
 
 interface Props {

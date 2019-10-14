@@ -28,21 +28,21 @@ describe('Report creation', () => {
       downloadReport,
       onClose: jest.fn()
     })
-    getByText('Transactions Monthly Overview').click()
+    getByText('Monthly Transactions Overview').click()
     expect(downloadReport).toHaveBeenCalledWith(
-      'Transactions Monthly Overview_20190916',
+      'Monthly Transactions Overview_20190916',
       'default',
       { reportType: 'OVERVIEW' }
     )
-    getByText('Chargebacks').click()
+    getByText('Chargebacks Overview').click()
     expect(downloadReport).toHaveBeenCalledWith(
-      'Chargebacks_20190916',
+      'Chargebacks Overview_20190916',
       'default',
       { reportType: 'CHARGEBACK' }
     )
-    getByText('Refunds Monthly Overview').click()
+    getByText('Monthly Refunds Overview').click()
     expect(downloadReport).toHaveBeenCalledWith(
-      'Refunds Monthly Overview_20190916',
+      'Monthly Refunds Overview_20190916',
       'default',
       { reportType: 'REFUND' }
     )

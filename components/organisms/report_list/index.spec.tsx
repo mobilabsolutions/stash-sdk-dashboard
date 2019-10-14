@@ -60,7 +60,7 @@ describe('Report list', () => {
       ],
       deleteReport
     })
-    getAllByText('Delete Report')[1].click()
+    getAllByText('Delete')[1].click()
     expect(deleteReport).toBeCalledWith('Second report 10-12-2020')
   })
 })
