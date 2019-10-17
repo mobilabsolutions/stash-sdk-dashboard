@@ -1,0 +1,56 @@
+name: CI
+
+on: [push, pull_request]
+env:
+  REGISTRY: hub.mblb.net/payment-sdk-dashboard-open
+  CLUSTER_NAME: main
+  REGION: europe-west3
+  PROJECT_ID: payment-server-reloaded
+  REGISTRY_HOSTNAME: eu.gcr.io
+  IMAGE_NAME: payment-dashboard
+  BASE_IMAGE: ${REGISTRY_HOSTNAME}/${PROJECT_ID}/${IMAGE_NAME}
+  INITIAL_IMAGE: ${BASE_IMAGE}:commit-${GITHUB_SHA}
+
+jobs:
+  build:
+    name: Docker build
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image - GCP
+      
+      run: docker build -t ${INITIAL_IMAGE} ${HOME}
+    - uses: actions/gcloud/auth@master
+      env:
+        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+    - uses: actions/gcloud/cli@master
+      with:
+        args: |
+          gcloud config set project ${PROJECT_ID}
+          gcloud auth configure-docker --quiet
+    - name: Tag Docker Images
+      run: |
+        if ${{ github.head_ref != ''}}; then
+          docker tag ${INITIAL_IMAGE} ${BASE_IMAGE}:pr-${{ github.head_ref }}
+        fi
+        if ${{ endsWith(github.ref, 'master') }}; then
+          docker tag ${INITIAL_IMAGE} ${BASE_IMAGE}:latest
+        fi
+        docker tag ${INITIAL_IMAGE} ${BASE_IMAGE}:commit-${GITHUB_SHA}
+    - name: Push Docker Images
+      run: docker push ${BASE_IMAGE}
+  deploy-dev:
+    if: startsWith(github.ref, 'master')
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: azure/k8s-actions/setup-kubectl@master
+      with:
+        version: '1.11.0'
+    - name: Deploy DEV
+      run: cd ${GITHUB_WORKSPACE}/payment-sdk-dashboard && chmod +x k8s/gcp-dev-deploy.sh && ./k8s/gcp-dev-deploy.sh
+       
+         
+    
+          
