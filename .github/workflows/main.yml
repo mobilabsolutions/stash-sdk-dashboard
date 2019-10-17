@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image - GCP
       
-      run: docker build -t ${INITIAL_IMAGE} .
+      run: docker build -t eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }} .
     - uses: actions/gcloud/auth@master
       env:
         GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
@@ -32,14 +32,14 @@ jobs:
     - name: Tag Docker Images
       run: |
         if ${{ github.head_ref != ''}}; then
-          docker tag ${INITIAL_IMAGE} ${BASE_IMAGE}:pr-${{ github.head_ref }}
+          docker tag eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }} eu.gcr.io/payment-server-reloaded/payment-dashboard:pr-${{ github.head_ref }}
         fi
         if ${{ endsWith(github.ref, 'master') }}; then
-          docker tag ${INITIAL_IMAGE} ${BASE_IMAGE}:latest
+          docker tag eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }} eu.gcr.io/payment-server-reloaded/payment-dashboard:latest
         fi
-        docker tag ${INITIAL_IMAGE} ${BASE_IMAGE}:commit-${GITHUB_SHA}
+        docker tag eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }} eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.head_ref }}
     - name: Push Docker Images
-      run: docker push ${BASE_IMAGE}
+      run: docker push eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }}
   deploy-dev:
     if: startsWith(github.ref, 'master')
     runs-on: ubuntu-latest
