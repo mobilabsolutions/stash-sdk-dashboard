@@ -50,7 +50,7 @@ jobs:
         run: cd ${GITHUB_WORKSPACE}/payment-sdk-dashboard && ./k8s/gcp-dev-deploy.sh
   deploy-demo:
     if: contains(github.head_ref, 'demo')
-    deploy: Deploy Demo
+    name: Deploy Demo
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
