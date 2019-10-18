@@ -23,9 +23,10 @@ jobs:
           GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
       - uses: actions/gcloud/cli@master
         with:
-          args: |
-            config set project ${PROJECT_ID}
-            auth configure-docker --quiet
+          args: config set project ${PROJECT_ID}
+      - uses: actions/gcloud/cli@master
+        with:
+          args: auth configure-docker --quiet
       - name: Tag Docker Images
         run: |
           if ${{ github.head_ref != ''}}; then
