@@ -37,8 +37,8 @@ jobs:
         uses: actions/gcloud/cli@master
         with:
           args: |
-          auth configure-docker --quiet
-          docker push eu.gcr.io/payment-server-reloaded/payment-dashboard
+            auth configure-docker --quiet
+            docker push eu.gcr.io/payment-server-reloaded/payment-dashboard
   deploy-dev:
     if: startsWith(github.ref, 'master')
     name: Deploy Dev
