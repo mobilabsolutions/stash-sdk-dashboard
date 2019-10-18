@@ -8,8 +8,6 @@ env:
   PROJECT_ID: payment-server-reloaded
   REGISTRY_HOSTNAME: eu.gcr.io
   IMAGE_NAME: payment-dashboard
-  BASE_IMAGE: ${{$REGISTRY_HOSTNAME}}/${{$PROJECT_ID}}/${{$IMAGE_NAME}}
-  INITIAL_IMAGE: ${{$BASE_IMAGE}}:commit-${{$GITHUB_SHA}}
 
 jobs:
   build:
