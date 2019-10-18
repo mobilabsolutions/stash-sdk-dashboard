@@ -24,8 +24,8 @@ jobs:
       - uses: actions/gcloud/cli@master
         with:
           args: |
-            gcloud config set project ${PROJECT_ID}
-            gcloud auth configure-docker --quiet
+            config set project ${PROJECT_ID}
+            auth configure-docker --quiet
       - name: Tag Docker Images
         run: |
           if ${{ github.head_ref != ''}}; then
@@ -36,7 +36,7 @@ jobs:
           fi
           docker tag eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }} eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.head_ref }}
       - name: Push Docker Images
-        run: docker push eu.gcr.io/payment-server-reloaded/payment-dashboard:commit-${{ github.sha }}
+        run: docker push eu.gcr.io/payment-server-reloaded/payment-dashboard
   deploy-dev:
     if: startsWith(github.ref, 'master')
     name: Deploy Dev
