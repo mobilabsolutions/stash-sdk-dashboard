@@ -6,8 +6,7 @@ Provides a web dashboard for the Stash! SDK.
 
 ## Features
 
-- Authorization is done via a Token
-- Displays the Transactions
+- Displays transactions
 - Filter by date, status, payment method and reason
 - Paging, if too many results
 - Display a detailed view of transactions
