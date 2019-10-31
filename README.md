@@ -16,9 +16,6 @@ Provides a web dashboard for the Stash! SDK.
 - Reverse of "pre-authorised" transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
 - Multilingual (currently English and German)
 
-[Current Version](https://payment-dev.mblb.net)
-
-
 ## Requirements
 
 - node.js (10+ recommended)
