@@ -1,38 +1,13 @@
-sudo: required
-
 services:
-  - docker
-
+- docker
 language: bash
-
-env:
-  - CLUSTER_NAME=main REGION="europe-west3" PROJECT_ID="payment-server-reloaded" REGISTRY_HOSTNAME="eu.gcr.io"
-
 branches:
   only:
-    - master
-    - /^(\d+\.)?(\d+\.)?\d+(-demo)?$/
-
-before_script:
-  - cd ${HOME} && { curl -sL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-207.0.0-linux-x86_64.tar.gz | tar xz; ./google-cloud-sdk/install.sh --quiet; cd -; };
-  - source ${HOME}/google-cloud-sdk/path.bash.inc
-  - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.11.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
-
+  - master
+  - "/^(\\d+\\.)?(\\d+\\.)?\\d+(-demo)?$/"
 script:
-  - ${TRAVIS_BUILD_DIR}/scripts/travis_build.sh
-  - ${TRAVIS_BUILD_DIR}/scripts/travis-gcp-build.sh
-
-deploy:
-  - provider: script
-    skip_cleanup: true
-    # deploy to kube dev namespace
-    script: ${TRAVIS_BUILD_DIR}/k8s/gcp-dev-deploy.sh
-    on:
-      branch: master
-  - provider: script
-    skip_cleanup: true
-      # deploy to kube demo namespace
-    script: ${TRAVIS_BUILD_DIR}/k8s/gcp-demo-deploy.sh
-    on:
-      tags: true      
-
+- "${TRAVIS_BUILD_DIR}/scripts/travis_build.sh"
+env:
+  global:
+  - secure: pckJOAXOPiuwAhf5d82uOlWJK0VcTGKRC0QUs3igHI0lT8E5AR62OA6aQbejXj9uDc8T6NOzVsg6BQb+BurgpS51PxzXADWUKW4IKy+UE2y6j8V6jfiqayOknLDJ4vxyH+NFmnZmP1Fh1YkphEXyVKXDzg3z4+63p5U1SzLiGfjH2I9HjIm5Y6bbQVhRYehzcuwaBJXtQRZhHCVxnyr2DskmKGn0B9AkkQRr6sUHXi8p0+2JbDGfX3uHSgZuzqBhSVNXMFNVxKhOUFEMgK/avlgOUWan5OMwxcThbFbNfb778WIFqPBKSRfY7dYfIa/2tDF9vQ1RWqMGTD34fO+g7PSFChJtXusbniqoM9v2nVMyKZS4sBznTH+V8oQ1CuKb07BdHB5bcdOpC5TPfD3B48BM0P4TL/0WbMAuyoJi0p8tKrR8gHVC9kzLb3ONDrUJ4TDE2085pscf1rb9rp0M4zUtmUIkRtLaBcmEqp8xZlB9Ef5cfOQs05NU4lCdJM2ODWYdsv0Fdr8l2/GMsxGW9FKrPqRwpnOr0t/kj4HRWxP8We+xTgU5edHCSagjDE9gY7GdbfmHdPoLnIWByArGlLq71DIsTm1S44jP3lWv24TLtIXYlfBhzLIZoc81uh6wmBDcBqhuQb6QUkWvviZtkZKjW0Z1qMKsU88HVnLuEkw=
+  - secure: bjNEH0BFUm6i4SNV2RG6+y38pMFzHCBQ7FbUO98NDG5PuFB9E3tMoCKFVakA5mYNyALKJv6EcePxkLnDewH9/GFlF7/WKKzH5o2oA8UBdmvoU7CaZUx3mKtWKxq8bNPFQYJDa4IiCnO83CLHa9a6aRoe5Pdv8J72LKVTVG6HVeRatEgsngTcKvgCuuzqu6nkMWzOLp+9pdyJflb2yhm+6oo/3rTYW7OnCiqERjb2wdmd/ZtLpGPvG17brKHfU6ZthijvPCkwT0btsKz1NYAKF+oM86CSP3p2JCVhxSjfoN9k6hnqQuXG4UJK0sG5gvrQUZxw9lJMg/9Io2cr9cjEvVaH8YR2Y0CyKQm6Zaeaylff+ChkDRc/4zyPybP2WYoDRIcyTBsHuvXujsoKQoHgpVmV9LfEC/UfP5Q7B0+HPDuTJv8ktMp23PAjPb6o+fVBOFy4fU1bs9yTxoXuTXL7hmQp7TY8GtrGy+PGb37qiJrIZUtJCSbVsYxCuIUoZaQ/X6dlGl/siur5b6VWfEDkGCLIIfLXYGqHm0t4r9XQkbMQ/vK95y1yvW/fYLJkv0dN90YccZn8Ua4I7E9kgps+GdJGxMlCQQNxQODaNEAfBh1V65vzbvkW1znOjfkgi52kFcSu7NT3oDw9icSkYJA5mZbUML2JZgOMm1Ee/bjYJmM=

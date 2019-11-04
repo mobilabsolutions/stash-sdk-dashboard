@@ -17,7 +17,7 @@ Provides a web dashboard for the Stash! SDK.
 
 ## Requirements
 
-- node.js (10+ recommended)
+- node.js 10+
 - Docker
 
 ## Development
