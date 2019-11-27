@@ -4,12 +4,12 @@ if [ ! -z ${DEBUG:+X} ]; then
   set -x;
 fi
 
-PROJECT_ID="mobilabsolutions/payment-sdk-dashboard-open"
+PROJECT_ID="mobilabsolutions/stash-sdk-dashboard"
 REGISTRY="docker.pkg.github.com"
 
 docker login ${REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_TOKEN}
 
-IMAGE_NAME="payment-dashboard"
+IMAGE_NAME="stash-dashboard"
 BASE_IMAGE=${REGISTRY}/${PROJECT_ID}/${IMAGE_NAME}
 INITIAL_IMAGE=${BASE_IMAGE}:commit-${TRAVIS_COMMIT}
 
