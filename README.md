@@ -10,10 +10,11 @@ Provides a web dashboard for the Stash! SDK.
 - Filter by date, status, payment method and reason
 - Paging, if too many results
 - Display a detailed view of transactions
-- Refund of "authorised" and "captured" Transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
-- Capture of "pre-authorised" transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
-- Reverse of "pre-authorised" transactions (See [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions))
-- Multilingual (currently English and German)
+- [Transaction actions](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/wiki/Transaction-actions)
+  - Refund of "authorised" and "captured" Transactions
+  - Capture of "pre-authorised" transactions
+  - Reverse of "pre-authorised" transactions
+
 
 ## Requirements
 
