@@ -100,3 +100,7 @@ npm run version:major
 - [/server](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/server) fastify backend (upstream, next.js, healthcheck)
 - [/static](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/static) static files like fonts, images and css
 - [/test_utils](https://github.com/mobilabsolutions/payment-sdk-dashboard-open/tree/master/test_utils) test helpers
+
+## Feedback
+
+The Stash! Dashboard is in active development, we welcome your feedback! Please use GitHub Issues or write us at stash@mobilabsolutions.com to report an issue or give a feedback.
